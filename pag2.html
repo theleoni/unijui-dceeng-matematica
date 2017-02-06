@@ -11,8 +11,10 @@
 
     <title>Thumbnail Gallery - Start Bootstrap Template</title>
 
+	 <link rel="stylesheet" type="text/css" href="css/style.css"> 
+
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/thumbnail-gallery.css" rel="stylesheet">
@@ -70,25 +72,47 @@
 <!-- Teste -->
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
+			
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb dropdown">
                 <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="img/logo_proj.png" alt="">
-                </a>
+                    <img onmouseover="myFunction(document.getElementById('menuImagem1'))" class="dropbtn" src="img/logo_proj.png" alt="">
+				</a>
+					<div onmouseleave="teste(document.getElementById('menuImagem1'))" id="menuImagem1" class="dropdown-content">
+							<a href="#1">Item de menu #1.1</a>
+							<a href="#2">Item de menu #1.2</a>
+							<a href="#3">Item de menu #1.3</a>
+						</div>            
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb dropdown">
+                <a class="thumbnail" href="#">
+                    <img onmouseover="myFunction(document.getElementById('menuImagem2'))" class="dropbtn" src="img/logo_proj.png" alt="">
+				</a>
+						<div onmouseleave="teste(document.getElementById('menuImagem2'))" id="menuImagem2" class="dropdown-content">
+							<a href="#1">Item de menu #2.1</a>
+							<a href="#2">Item de menu #2.2</a>
+							<a href="#3">Item de menu #2.3</a>
+						</div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
                 <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="img/logo_proj.png" alt="">
-                </a>
+                    <img onmouseover="myFunction(document.getElementById('menuImagem3'))" class="dropbtn" src="img/logo_proj.png" alt="">
+				</a>
+						<div onmouseleave="teste(document.getElementById('menuImagem3'))" id="menuImagem3" class="dropdown-content">
+							<a href="#1">Item de menu #3.1</a>
+							<a href="#2">Item de menu #3.2</a>
+							<a href="#3">Item de menu #3.3</a>
+						</div>               
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
                 <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="img/logo_proj.png" alt="">
-                </a>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
-                <a class="thumbnail" href="#">
-                    <img class="img-responsive" src="img/logo_proj.png" alt="">
-                </a>
+				    <img onmouseover="myFunction(document.getElementById('menuImagem4'))" class="dropbtn" src="img/logo_proj.png" alt="">
+				</a>
+	
+						<div onmouseleave="teste(document.getElementById('menuImagem4'))" id="menuImagem4" class="dropdown-content">
+							<a href="#1">Item de menu #4.1</a>
+							<a href="#2">Item de menu #4.2</a>
+							<a href="#3">Item de menu #4.3</a>
+						</div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 thumb">
                 <a class="thumbnail" href="#">
@@ -148,6 +172,48 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
+	<script>
+
+	<!-- Exibe menu ao passar o mouse pela imagem -->
+
+
+		<!-- Fecha o menu ao tirar ao remover o mouse do mesmo -->
+		function teste (div) {
+		div.classList.remove('show');
+		}
+		
+		function myFunction(div) {
+			
+			/* Fecha os demais menus abertos */
+			var dropdowns = document.getElementsByClassName("dropdown-content");
+			var i;
+			for (i = 0; i < dropdowns.length; i++) {
+				var openDropdown = dropdowns[i];
+					if (openDropdown.classList.contains('show')) {
+						openDropdown.classList.remove('show');
+				}
+				}
+				
+				/* Abre o menu selecionado */
+			div.classList.toggle("show");
+		}
+
+
+		
+	<!-- Fecha o dropdown se o usuario clicar fora dele -->
+		window.onclick = function(event) {
+			if (!event.target.matches('.dropbtn')) {
+				var dropdowns = document.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++) {
+					var openDropdown = dropdowns[i];
+						if (openDropdown.classList.contains('show')) {
+							openDropdown.classList.remove('show');
+						}
+				}
+			}
+}
+</script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
