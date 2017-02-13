@@ -4,6 +4,76 @@ body {
     overflow-x: hidden;
 }
 
+.thumb-custom {
+  margin: 10px;
+  display: block;
+  padding: 0px;
+  line-height: 1.42857143;
+  border: 1px solid #ddd;
+  border-radius: 0px;
+  -webkit-transition: border .2s ease-in-out;
+       -o-transition: border .2s ease-in-out;
+          transition: border .2s ease-in-out;
+}
+.thumb-custom img {
+  margin-top: 25px;
+  width: 30%;
+}
+
+.thumb-custom h3 {
+  color: #fff;
+  margin: 0px;
+  margin-bottom: 25px;
+}
+
+.thumb-par {
+  background-color: #00CCFF;
+}
+
+.thumb-impar {
+  background-color: #FF6B00;
+}
+
+.sem-borda {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+.custom-drop-btn {
+    color: white;
+    padding: 1px;
+    font-size: 1px;
+    border: none;
+    cursor: pointer;
+}
+
+.custom-drop {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-drop-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.custom-drop-content a {
+    color: black;
+    padding: 5px 3px;
+    text-decoration: none;
+    display: block;
+}
+
+.custom-drop a:hover {background-color: #f1f1f1}
+
+.show-custom-drop {display:block;}
+
 /*
 Fill
 */
