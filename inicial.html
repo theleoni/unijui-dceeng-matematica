@@ -19,38 +19,13 @@
       <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
       <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
-      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-      <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
 
   </head>
 
   <body>
-    <!-- Header
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <img class="img-responsive" src="img/profile.png" alt="">
-                    <div class="intro-text">
-                        <span class="name">Start Bootstrap</span>
-                        <hr class="star-light">
-                        <span class="skills">Web Developer - Graphic Artist - User Experience Designer</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-  -->
-
+  
     <div class="row sem-borda">
-      <!--
-Alterar o título da Página
-document.title = 'This is the new page title.'
-    -->
+	
       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 sem-borda"
       onmouseover="abrirCustomDrop(document.getElementById('menuImagem1'))">
         <div class="thumb-custom thumb-par">
@@ -58,8 +33,6 @@ document.title = 'This is the new page title.'
             <img class="text-center custom-drop-btn" src="assets/img/ic_folder.svg">
           </center>
 
-        <!--<div onmouseleave="fecharCustomDropLost(document.getElementById('menuImagem1'))" id="menuImagem1" class="custom-drop-content">
-        -->
           <div onmouseleave="fecharCustomDropLost(document.getElementById('menuImagem1'))" id="menuImagem1" class="custom-drop-content">
             <a href="#1">Item de menu #1.1</a>
             <a href="#2">Item de menu #1.2</a>
@@ -97,33 +70,27 @@ document.title = 'This is the new page title.'
         </div>
       </div>
     </div>
-<!--
-    <script>
-    function abrirCustomDrop(div) {
-      document.title = 'Abacate';
 
-      div.classList.toggle("show-custom-drop");
-    }
-    </script>
--->
 
       <!-- Dropdown -->
       <script src="assets/js/custom-drop.js"/>
 
-    <!-- jQuery -->
-    <script src="assets/js/jquery.js"/>
+		<!-- jQuery -->
+		<script src="assets/js/jquery.js"/>
+	
+	
+		<!-- Bootstrap Core JavaScript -->
+		<script src="assets/js/bootstrap.min.js"/>
     <script>
-    //$( document ).ready(function() {
-//      console.log( "ready!" );
-      //$( "#menuImagem1" ).focusin(function() {
-        //  console.log('aqui');
-      //  $( this ).find( "span" ).css( "display", "inline" ).fadeOut( 1000 );
-      //});
-    //});
+    /*$( document ).ready(function() {
+		console.log( "ready!" );
+		$( "#menuImagem1" ).focusin(function() {
+			console.log('aqui');
+			$( this ).find( "span" ).css( "display", "inline" ).fadeOut( 1000 );
+		});
+	}); */
     </script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="assets/js/bootstrap.min.js"/>
 
   </body>
 
