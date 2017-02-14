@@ -39,18 +39,6 @@ body {
   margin: 0px;
 }
 
-.conteudo-modificado {
-  position: 0px, 0px;
-  width: 100%;
-  height: 100%;
-}
-
-.conteudo-modificado iframe {
-  border: 0px;
-  width: 100%;
-  height: 100%;
-}
-
 .custom-drop-btn {
     color: white;
     padding: 1px;
@@ -68,6 +56,8 @@ body {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
+	width: calc(100% - 20px);
+	margin-top: 45px;
     min-width: 160px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);

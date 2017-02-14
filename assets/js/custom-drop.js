@@ -1,4 +1,4 @@
-  /* Fecha o menu ao tirar ao remover o mouse do mesmo */
+  /* Fecha o menu ao perder o foco */
   function fecharCustomDropLost(div) {
     div.classList.remove('show-custom-drop');
   }
@@ -14,9 +14,8 @@
       }
     }
   }
-
+	/* Abre o menu, e fecha os demais que estão abertos através da função fecharCustomDrop() */
   function abrirCustomDrop(div) {
-    document.title = 'Abacate';
     fecharCustomDrop();
     div.classList.toggle("show-custom-drop");
   }
