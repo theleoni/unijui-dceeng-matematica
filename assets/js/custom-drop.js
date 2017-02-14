@@ -16,7 +16,6 @@
   }
 	/* Abre o menu, e fecha os demais que estão abertos através da função fecharCustomDrop() */
   function abrirCustomDrop(div) {
-    document.title = 'Abacate';
     fecharCustomDrop();
     div.classList.toggle("show-custom-drop");
   }
