@@ -251,14 +251,73 @@ body {
 
 .scene2Sub1 {
 	position: fixed;
-	top: 25%;
-	bottom: 25%;
-	height: 50%;
+	top: 20%;
+	bottom: 20%;
+	height: 60%;
 
-	left: 12.5%;
-	right: 12.5%;
-	width: 75%;
+	left: 10%;
+	right: 10%;
+	width: 80%;
 	
-	border-radius: 10%;
+	border-radius: 2%;
 	background-color: #018BB2;
+	
+	z-index: 0;
+}
+
+.scene2Sub2 {
+	position: fixed;
+	top: 22%;
+	bottom: 22%;
+	height: 56%;
+
+	left: 42%;
+	right: 11%;
+	width: 47%;
+	
+	border-radius: 5%;
+	background-color: #FFFFFF;
+	
+}
+
+.imagemUsina {
+	position: fixed;
+	left: 13%;
+	top: 35%;
+	z-index: 1;
+	max-width: 33vw;
+	max-height: 29vh;
+	height: auto;
+	width: auto;
+}
+
+.textoUsina {
+	position: fixed;
+	left: 44%;
+	top: 35%;
+	right: 13%;
+	z-index: 1;
+	
+	font-size: calc((3vh + 1.5vw)/2);
+	font-family: 'Roboto Condensed', sans-serif;
+	color: #000000;
+}
+
+.tituloUsina {
+	position: fixed;
+	left: 44%;
+	top: 27%;
+	z-index: 1;
+	
+	font-size: calc((5vh + 2.5vw)/2);
+	font-family: 'Roboto Condensed', sans-serif;
+	color: #000000;
+	font-weight: 900;
+}
+
+.imagemFecharUsinas {
+	position: fixed;
+	left: 85%;
+	top: 25%;
+	z-index: 1;
 }

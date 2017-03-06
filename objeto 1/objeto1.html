@@ -118,30 +118,40 @@
 
 		<div id="additionalScene2" class="imageAlignBottom">
 			<div >
-				<img onclick="showMoreInfo()" class="imagemHidreletrica" title="Usina Hidrelétrica" src="assets/img/hidreletrica.png">
+				<img onclick="showMoreInfo('hidreletrica')" class="imagemHidreletrica" title="Usina Hidrelétrica" src="assets/img/hidreletrica.png">
 			</div>
 			<div id="imagemEolicaScene2">
-				<img onclick="showMoreInfo()" class="imagemEolica"  title="Usina Eólica" src="assets/img/eolica.png">
+				<img onclick="showMoreInfo('eolica')" class="imagemEolica"  title="Usina Eólica" src="assets/img/eolica.png">
 			</div>
 			<div id="imagemFossilScene2">
-				<img onclick="showMoreInfo()"  class="imagemFossil"  title="" src="assets/img/fossil.png">
+				<img onclick="showMoreInfo('fossil')"  class="imagemFossil"  title="" src="assets/img/fossil.png">
 			</div>
 			<div id="imagemNuclearScene2" >
-				<img onclick="showMoreInfo()"  class="imagemNuclear" title="Usina Nuclear" src="assets/img/nuclear.png">
+				<img onclick="showMoreInfo('nuclear')"  class="imagemNuclear" title="Usina Nuclear" src="assets/img/nuclear.png">
 			</div>
 			<div id="imagemSolarScene2">
-				<img onclick="showMoreInfo()"  class="imagemSolar"  title="Usina Solar" src="assets/img/solar.png">
+				<img onclick="showMoreInfo('solar')"  class="imagemSolar"  title="Usina Solar" src="assets/img/solar.png">
 			</div>
 			<div id="imagemBiomassaScene2">
-				<img onclick="showMoreInfo()"  class="imagemBiomassa"  title="Usina de Biomassa" src="assets/img/biomassa.png">
+				<img onclick="showMoreInfo('biomassa')"  class="imagemBiomassa"  title="Usina de Biomassa" src="assets/img/biomassa.png">
 			</div>
-			
-			<div id="scene2Text1" class="scene2Text1"> Interaja com os elementos para conhecer mais sobre os meios de produção de energia elétrica </div>
-			<div id="scene2Bubble1"> <img class="scene2Bubble1" src="assets/img/bubble1.png"> </div>
+			<div id="mensagem">
+				<div id="scene2Text1" class="scene2Text1"> Interaja com os elementos para conhecer mais sobre os meios de produção de energia elétrica </div>
+				<div id="scene2Bubble1"> <img class="scene2Bubble1" src="assets/img/bubble1.png"> </div>
+			</div>
 
 		</div>
-					<div id="scene2Sub1" class="scene2Sub1"> <h1> hasiudasd </h1> </div>
+		<div id=detalhesUsinas>		
+			<div id="scene2Sub1" class="scene2Sub1"> </div>
+			<div id="scene2Sub2" class="scene2Sub2"> </div>
+			<div id="tituloUsina" class="tituloUsina">  </div>
+			<div id="textoUsina" class="textoUsina">  </div>
+			<div id="imagemUsina"> <img class="imagemUsina" id="imgUsina"> </div>
+			<div id="imagemFecharUsinas">
+				<img title="Fechar" onclick="restoreScene2()" class="imagemFecharUsinas" src="assets/img/fechar.png">
+			</div>
 
+		</div>
 
 	</div>
 </div>
