@@ -1,0 +1,158 @@
+<html>
+<head>
+	<!-- jQuery -->
+	<script src="assets/js/jquery.js"></script>
+
+	<!-- Bootstrap -->
+	<script src="assets/js/bootstrap.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="assets/js/custom.js"> </script>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+	<!--Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/customObjeto.css">
+
+	<!-- Fontes -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+</head>
+
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid" width="100%">
+    <div class="navbar-header">
+      <a href= "#" > <img class="positionLeft" src="assets\img\logo_proj.png" height="100%"></a>
+		<div id="title" class="positionCenter textTitle">
+			A ESTATÍSTICA E CONSUMO DE ENERGIA ELÉTRICA 
+		</div>
+      <ul class="nav navbar-nav pull-right"><a href="#"><img class="positionRight" src="assets\img\logo_unijui_branco.png" height="90%" ></a></ul>
+    </div>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div id="geral" class="container-fluid">
+	<div id="scene0">
+		<div class="row" id="rowInputName">
+			<div class="col-md-4"></div>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="inputNome" maxlength="55" placeholder="Insira o seu nome"> </input>
+				<div class="row">
+					<div class="col-md-12">
+						<center> 
+							<button type="button" id= "botaoNome" oncLick="saveName()" class="btn btn-primary btn-block">Confirmar</button>
+						</center>
+					</div>
+				</div>
+		
+				<div class="row">
+					<div class="col-md-12">
+						<div id="alertNome" class="alert alert-danger" role="alert">
+							<center><strong>Oops!</strong> Você precisa colocar o seu nome.</center>
+						</div>
+					</div>
+				</div>
+		
+		
+			</div>
+	  
+
+		</div>
+		
+		<div class="imagemPlaneta">
+				<img id="imagemPlanetaScene0" src="assets/img/planeta.png">
+		</div>
+	</div>
+	
+
+		<div id="imagensFixas"> 
+			<div id="imagemHelp" >
+				<img title= "Ajuda" class="imagemFixaHelp" src="assets/img/ajuda.png">
+			</div>
+			<div id="imagemFechar">
+				<a href="index.html">
+				<img title="Sair" class="imagemFixaFechar" src="assets/img/fechar.png">
+				</a>
+			</div>
+			<div id="imagemSetaEsquerda" >
+				<img title="Voltar" class="imagemFixaSetaEsquerda" onclick="previousScene()" height="32px" width="50px" src="assets/img/seta_esquerda.png">
+			</div>
+			<div id="imagemSetaDireita">
+				<img title="Avançar" class="imagemFixaSetaDireita"  onClick="nextScene()" height="32px" width="50px" src="assets/img/seta_direita.png">
+			</div>
+		</div>
+
+		
+		
+		
+		
+
+	<div id="scene1"> 
+		<div id="scene1Text1" class="scene1Text1"> <!-- Texto colocado através do javascript --> </div>
+		<div id="scene1Text2" class="scene1Text2"> Para avançar clique na seta no canto inferior direito da tela </div>
+		<div id="scene1Bubble1"> <img class="scene1Bubble1" src="assets/img/bubble1.png"> </div>
+		<div id="scene1Bubble2"> <img class="scene1Bubble2"src="assets/img/bubble2.png"> </div>
+		<div id="imagemEngenheiroScene1" >
+			<img class="imagemEngenheiro"  src="assets/img/engenheiro_esquerda.png">
+		</div>	
+		<div class="imagemPlaneta">
+				<img id="imagemPlanetaScene1" src="assets/img/planeta.png">
+		</div>
+	</div>
+	
+	
+	<div id="scene2">
+		<div id="imagemEngenheiro2">
+			<img class="imagemEngenheiro"   src="assets/img/engenheiro_esquerda.png">
+		</div>	
+		<div class="imagemPlaneta">
+			<img id="imagemPlaneta2" src="assets/img/planeta.png">
+		</div>
+
+		<div id="additionalScene2">
+			<div id="imagemHidreletricaScene2">
+				<img onclick="showMoreInfo()" class="imagemHidreletrica" title="Usina Hidrelétrica" src="assets/img/hidreletrica.png">
+			</div>
+			<div id="imagemEolicaScene2">
+				<img onclick="showMoreInfo()" class="imagemEolica"  title="Usina Eólica" src="assets/img/eolica.png">
+			</div>
+			<div id="imagemFossilScene2">
+				<img onclick="showMoreInfo()"  class="imagemFossil"  title="" src="assets/img/fossil.png">
+			</div>
+			<div id="imagemNuclearScene2" >
+				<img onclick="showMoreInfo()"  class="imagemNuclear" title="Usina Nuclear" src="assets/img/nuclear.png">
+			</div>
+			<div id="imagemSolarScene2">
+				<img onclick="showMoreInfo()"  class="imagemSolar"  title="Usina Solar" src="assets/img/solar.png">
+			</div>
+			<div id="imagemBiomassaScene2">
+				<img onclick="showMoreInfo()"  class="imagemBiomassa"  title="Usina de Biomassa" src="assets/img/biomassa.png">
+			</div>
+			
+			<div id="scene2Text1" class="scene2Text1"> Interaja com os elementos para conhecer mais sobre os meios de produção de energia elétrica </div>
+			<div id="scene2Bubble1"> <img class="scene2Bubble1" src="assets/img/bubble1.png"> </div>
+
+			<div id="scene2Sub1"> </div>
+		</div>
+		
+
+	</div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>
