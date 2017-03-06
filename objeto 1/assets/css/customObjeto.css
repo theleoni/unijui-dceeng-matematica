@@ -248,3 +248,17 @@ body {
 	height: 9.5vh;
 	z-index: 0;
 }
+
+.scene2Sub1 {
+	position: fixed;
+	top: 25%;
+	bottom: 25%;
+	height: 50%;
+
+	left: 12.5%;
+	right: 12.5%;
+	width: 75%;
+	
+	border-radius: 10%;
+	background-color: #018BB2;
+}

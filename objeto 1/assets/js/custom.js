@@ -7,9 +7,15 @@
 		$("#scene1").hide();
 		$("#scene2").hide();
 		$("#imagensFixas").hide();
-		$("usinasScene2").hide();
 
 });
+
+
+	function pressedEnter(event) {
+		if (event.keyCode == 13) {
+			saveName();
+		}
+	}
 
 
 
@@ -68,7 +74,8 @@
 	
 	function showMoreInfo() {
 		$("body").css("background-color", "gray");
-		$("scene2Sub1").show();
+		$('#scene2Sub1').show();
+		
 	}
 	
 
@@ -120,11 +127,11 @@
 				case 2:
 					$("#scene2").show();
 					$('#additionalScene2').hide();
-					$("#scene2Sub1").hide();
 
 					$('.imagemPlaneta').css('right',-30 + '%');; 
 					$('.imagemEngenheiro').css('right',5.85 + '%');; 
 					moveImageScene2();
+					$('#scene2Sub1').hide();
 
 				break;
 			}
