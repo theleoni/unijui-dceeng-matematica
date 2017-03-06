@@ -1,0 +1,247 @@
+html,
+body {
+	padding-top: 6%;
+    overflow-x: hidden;
+}
+
+
+	/* Imagens Fixas */
+	
+.imagemFixaHelp {
+	position: fixed;
+	cursor: help;
+	right: 8%;
+	top: 11%;
+	height: 4.16%;
+	width: 3%;
+	z-index: 5;
+}
+.imagemFixaFechar {
+	cursor: pointer;
+	position: fixed;
+	right: 3.5%;
+	top: 11%;
+	height: 4.16%;
+	width: 3%;
+	z-index: 5;
+
+}
+.imagemFixaSetaEsquerda {
+	cursor: pointer;
+	position: fixed;
+	left: 3%;
+	bottom: 5%;
+	z-index: 5;
+
+}
+.imagemFixaSetaDireita {
+	cursor: pointer;
+	position: fixed;
+	right: 3%;
+	bottom: 5%;
+	z-index: 5;
+
+}
+
+
+	/*IMAGENS GERAIS */
+	
+.imagemPlaneta {
+	position: fixed;
+	right: -11.4%;
+	top: 35%;
+	max-width: 29%;
+	height: auto;
+	width: auto;
+	z-index:0;
+}
+.imagemEngenheiro {
+	position: fixed;
+	right: 24.8%;
+	top:30vh;
+	max-width: 11vw;
+	height: auto;
+	width: auto;
+	z-index: 1;
+}
+
+
+	/* NAVBAR */
+	
+.navbar {
+	height: 10% !important;
+	background-color: #00458e;
+}
+
+.positionRight {
+	right: 3%;
+	top: 2%;
+	position: absolute;
+}
+
+.positionLeft {
+	left: 3%;
+	top: 2%;
+	position: absolute;
+}
+
+.positionCenter {
+	left: 36%;
+	right:41%;
+	position:absolute;
+}
+
+.textTitle {
+	color: #FFFFFF;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: calc((3vh + 2vw)/2);
+	text-align: center;
+}
+
+.navbar-nav {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+}
+
+
+	/* SCENE 1 */
+	
+
+.scene1Text1 {
+	position: fixed;
+	left: 25%;
+	top: 30%;
+	right: 40%;
+	text-align: justify;
+	z-index: 1;
+	color: #FFFFFF;
+	font-size: calc((2vh + 1vw)/2);
+	font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+.scene1Text2 {
+	position:fixed;
+	left: 32.5%;
+	top: 47%;
+	right: 40%;
+	text-align: justify;
+	z-index: 1;
+	color: #FFFFFF;
+	font-size: calc((2vh + 1vw)/2);
+	font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+.scene1Bubble1 {
+	position: fixed;
+	left: 24%;
+	top: 29%;
+	right: 40%;
+	z-index:0;
+	width: 42vw;
+	height: 12vh;
+}
+
+.scene1Bubble2 {
+	position:fixed;
+	left: 32%;
+	top: 46%;
+	right: 40%;
+	z-index: 0;
+	width: 31vw;
+	height: 5vh;
+}
+
+
+	/* SCENE 2 */
+	
+.imagemHidreletrica {
+	cursor: pointer;
+	position: fixed;
+	left: 2vw;
+	top:24vh;
+	max-width: 28vw;
+	max-height: 24vh;
+	height: auto;
+	width: auto;
+}
+
+.imagemEolica {
+	cursor: pointer;
+	position: fixed;
+	left: 27vw;
+	top:24vh;
+	max-width: 28vw;
+	max-height: 24vh;
+	height: auto;
+	width: auto;
+}
+
+.imagemFossil {
+	cursor: pointer;
+	position: fixed;
+	left: 51vw;
+	top:24vh;
+	max-width: 28vw;
+	max-height: 24vh;
+	height: auto;
+	width: auto;
+}
+
+.imagemNuclear {
+	cursor: pointer;
+	position: fixed;
+	left: 2vw;
+	top:57vh;
+	max-width: 28vw;
+	max-height: 24vh;
+	height: auto;
+	width: auto;
+}
+
+.imagemSolar {
+	cursor: pointer;
+	position: fixed;
+	left: 27vw;
+	top:57vh;
+	max-width: 28vw;
+	max-height: 24vh;
+	height: auto;
+	width: auto;
+}
+
+.imagemBiomassa {
+	cursor: pointer;
+	position: fixed;
+	left: 51vw;
+	top:57vh;
+	max-width: 28vw;
+	max-height: 24vh;
+	height: auto;
+	width: auto;
+}
+
+.scene2Text1 {
+	position: fixed;
+	top: 37vh;
+	left: 70vw;
+	right: 16vw;
+	font-size: calc((2vh + 1vw)/2);
+	font-family: 'Roboto Condensed', sans-serif;
+	color: #FFFFFF;
+	z-index: 1;
+}
+
+
+.scene2Bubble1 {
+	position: fixed;
+	top: 36vh;
+	left: 69vw;
+	right: 16vw;
+	width: 17vw;
+	height: 9.5vh;
+	z-index: 0;
+}
