@@ -29,7 +29,7 @@
 		<div id="title" class="positionCenter textTitle">
 			A ESTATÍSTICA E CONSUMO DE ENERGIA ELÉTRICA
 		</div>
-      <ul class="nav navbar-nav pull-right"><a href="#"><img class="positionRight" src="assets\img\logo_unijui_branco.png" height="80%" ></a></ul>
+      <ul class="nav navbar-nav"><a href="#"><img class="positionRight" src="assets\img\logo_unijui_branco.png" height="80%" ></a></ul>
     </div>
 
       </ul>
@@ -37,10 +37,30 @@
   </div>
 </nav>
 
-
+	<div class="row">
+		<div id="imagensFixas"> 
+			
+			<div class="col-xs-offset-10 col-xs-1 text-right" id="imagemHelp">
+				<img title= "Ajuda" class="imagemFixaHelp" src="assets/img/ajuda.png">
+			</div>
+			<div class="col-xs-1" id="imagemFechar">
+				<a href="index.html">
+				<img title="Sair" class="imagemFixaFechar" src="assets/img/fechar.png">
+				</a>
+			</div>
+				<div id="imagemSetaEsquerda" >
+				<img title="Voltar" class="imagemFixaSetaEsquerda" onclick="previousScene()" height="32px" width="50px" src="assets/img/seta_esquerda.png">
+			</div>
+			<div id="imagemSetaDireita">
+				<img title="Avançar" class="imagemFixaSetaDireita"  onClick="nextScene()" height="32px" width="50px" src="assets/img/seta_direita.png">
+			</div>
+		</div>
+	</div>
+	
+	
 <div id="geral" class="container-fluid">
 	<div id="scene0">
-		<div class="row" id="rowInputName">
+		<div class="row marginName" id="rowInputName">
 			<div class="col-md-4"></div>
 			<div class="col-md-4">
 				<input type="text" class="form-control" id="inputNome" maxlength="55" onkeypress="pressedEnter(event)" placeholder="Insira o seu nome"> </input>
@@ -72,27 +92,7 @@
 	</div>
 	
 
-		<div id="imagensFixas"> 
-			<div id="imagemHelp" >
-				<img title= "Ajuda" class="imagemFixaHelp" src="assets/img/ajuda.png">
-			</div>
-			<div id="imagemFechar">
-				<a href="index.html">
-				<img title="Sair" class="imagemFixaFechar" src="assets/img/fechar.png">
-				</a>
-			</div>
-			<div id="imagemSetaEsquerda" >
-				<img title="Voltar" class="imagemFixaSetaEsquerda" onclick="previousScene()" height="32px" width="50px" src="assets/img/seta_esquerda.png">
-			</div>
-			<div id="imagemSetaDireita">
-				<img title="Avançar" class="imagemFixaSetaDireita"  onClick="nextScene()" height="32px" width="50px" src="assets/img/seta_direita.png">
-			</div>
-		</div>
-
-		
-		
-		
-		
+			
 
 	<div id="scene1"> 
 		<div id="scene1Text1" class="scene1Text1"> <!-- Texto colocado através do javascript --> </div>
@@ -108,7 +108,9 @@
 	</div>
 	
 	
+	
 	<div id="scene2">
+	
 		<div id="imagemEngenheiro2">
 			<img class="imagemEngenheiro"   src="assets/img/engenheiro_esquerda.png">
 		</div>	
@@ -154,7 +156,24 @@
 		</div>
 
 	</div>
-</div>
+
+	
+	
+		
+		<div id="scene3">
+			<div class="row marginImposto">
+					<div id="imagensImpostos">
+						<div class="noPadding col-xs-2"> <img class="imagensImpostos" src="assets/img/icms.png"> </div>
+						<div class="noPadding col-xs-2"> <img class="imagensImpostos" src="assets/img/tusd.png"> </div>
+						<div class="noPadding col-xs-2"> <img class="imagensImpostos" src="assets/img/cofins.png"> </div>
+						<div class="noPadding col-xs-2"> <img class="imagensImpostos" src="assets/img/cip.png"> </div>
+						<div class="noPadding col-xs-2"> <img class="imagensImpostos" src="assets/img/pispasep.png"> </div>
+						<div class="noPadding col-xs-2"> <img class="imagensImpostos" src="assets/img/tust.png"></div>
+					</div>		
+			</div>
+		</div>
+	
+	</div>
 
 
 

@@ -6,6 +6,8 @@
 		$("#alertNome").hide();
 		$("#scene1").hide();
 		$("#scene2").hide();
+		$("#scene3").hide();
+
 		$("#imagensFixas").hide();
 
 });
@@ -19,6 +21,9 @@
 
 
 
+	
+	
+	
   /* Pega o nome inserido pelo usuário */
 	function saveName() {
 		
@@ -31,6 +36,13 @@
 			moveImageScene1();
 		}
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 	/* SCENE 1 */
 	
@@ -55,6 +67,13 @@
 		function hideFixedImages() {
 			$("#imagensFixas").hide();
 		}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	/* SCENE 2 */
@@ -134,6 +153,17 @@
 	  
 	  
 	  
+	  /*Scene 3 */
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  /* Funções Gerais */
 	  	
 	function nextScene() {
 		if (scene == 332189123) {
@@ -179,8 +209,10 @@
 					$('.imagemEngenheiro').css('right',5.85 + '%');; 
 					moveImageScene2();
 					$('#detalhesUsinas').hide();
-
-				break;
+					break;
+					
+				case 3:
+					$("#scene3").show();
 			}
 	  }
 	  
@@ -203,7 +235,7 @@
 					break;
 					
 				case 3:
-					$("#scene2").hide();
+					$("#scene3").hide();
 					break;
 			}
 	  }

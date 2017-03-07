@@ -1,24 +1,26 @@
 html,
 body {
-	padding-top: 6%;
+	padding-top: 59px;
     overflow-x: hidden;
 }
+
+
+.marginName {
+	margin-top: 50px;
+}
+
 
 	/* Imagens Fixas */
 
 .imagemFixaHelp {
-	position: fixed;
 	cursor: help;
-	right: 8%;
-	top: 11%;
 	z-index: 5;
+	z-index: 1;
 }
 .imagemFixaFechar {
 	cursor: pointer;
-	position: fixed;
-	right: 3.5%;
-	top: 11%;
 	z-index: 5;
+	z-index: 1;
 
 }
 .imagemFixaSetaEsquerda {
@@ -27,6 +29,8 @@ body {
 	left: 3%;
 	bottom: 5%;
 	z-index: 5;
+	width: 2.2%;
+	height: 4%;
 
 }
 .imagemFixaSetaDireita {
@@ -35,8 +39,16 @@ body {
 	right: 3%;
 	bottom: 5%;
 	z-index: 5;
+	width: 2.2%;
+	height: 4%;
 
 }
+
+
+
+
+
+
 
 
 	/*IMAGENS GERAIS */
@@ -61,11 +73,19 @@ body {
 }
 
 
+
+
+
+
+
+
+
 	/* NAVBAR */
 
 .navbar {
-	height: 10% !important;
+	height: 108px !important;
 	background-color: #00458e;
+	z-index: 0;
 }
 
 .positionRight {
@@ -75,10 +95,6 @@ body {
 	transform: translateY(10%);
 }
 
-@media screen and (min-width: 600px) {
-	.positionRight {
-	}
-}
 
 .positionLeft {
 	left: 3%;
@@ -107,6 +123,17 @@ body {
     display: block;
     text-align: center;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 	/* SCENE 1 */
@@ -157,6 +184,15 @@ body {
 	width: 31vw;
 	height: 5vh;
 }
+
+
+
+
+
+
+
+
+
 
 
 	/* SCENE 2 */
@@ -316,8 +352,36 @@ body {
 }
 
 .imagemFecharUsinas {
+	cursor: pointer;
 	position: fixed;
 	left: 85%;
 	top: 25%;
 	z-index: 1;
 }
+
+
+
+
+
+
+
+
+	/* SCENE 3 */
+	
+	
+.imagensImpostos {
+	max-width: 22vw;
+	max-height: 11vh;
+	height: auto;
+	width: auto;
+	width: 100%;
+}
+
+.noPadding {
+	padding: 0;
+}
+
+.marginImposto {
+	margin-top: 50px;
+}
+	
