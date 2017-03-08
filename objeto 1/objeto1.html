@@ -161,15 +161,22 @@
 	
 		
 		<div id="scene3">
-			<div class="row marginImposto">
+			<div class="row marginImposto paddingLeftImposto">
 					<div id="imagensImpostos">
-						<div class="noPadding col-xs-2"> <img class="imagensImpostos" src="assets/img/icms.png"> </div>
-						<div class="noPadding col-xs-2"> <img class="imagensImpostos" src="assets/img/tusd.png"> </div>
-						<div class="noPadding col-xs-2"> <img class="imagensImpostos" src="assets/img/cofins.png"> </div>
-						<div class="noPadding col-xs-2"> <img class="imagensImpostos" src="assets/img/cip.png"> </div>
-						<div class="noPadding col-xs-2"> <img class="imagensImpostos" src="assets/img/pispasep.png"> </div>
-						<div class="noPadding col-xs-2"> <img class="imagensImpostos" src="assets/img/tust.png"></div>
+						<div class="col-xs-5 noPadding">
+							<div class="noPadding col-xs-4"> <img onclick="showImposto('icms')" class="imagensImpostos" src="assets/img/icms.png"> </div>
+							<div class="noPadding col-xs-4"> <img onclick="showImposto('tusd')" class="imagensImpostos" src="assets/img/tusd.png"> </div>
+							<div class="noPadding col-xs-4"> <img onclick="showImposto('cofins')" class="imagensImpostos" src="assets/img/cofins.png"> </div>
+						</div>
+						<div class="col-xs-5 noPadding">
+							<div class="noPadding col-xs-4"> <img onclick="showImposto('cip')" class="imagensImpostos" src="assets/img/cip.png"> </div>
+							<div class="noPadding col-xs-4"> <img onclick="showImposto('pispasep')" class="imagensImpostos" src="assets/img/pispasep.png"> </div>
+							<div class="noPadding col-xs-4"> <img onclick="showImposto('tust')" class="imagensImpostos" src="assets/img/tust.png"></div>
+						</div>
 					</div>		
+					<div id="containerImposto" class="col-xs-10 containerImposto textoImposto"> 
+					</div>
+					
 			</div>
 		</div>
 	

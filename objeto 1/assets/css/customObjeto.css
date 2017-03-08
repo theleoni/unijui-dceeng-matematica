@@ -372,16 +372,29 @@ body {
 .imagensImpostos {
 	max-width: 22vw;
 	max-height: 11vh;
-	height: auto;
-	width: auto;
+	height: 100%;
 	width: 100%;
 }
 
 .noPadding {
-	padding: 0;
+	padding: 0px;
 }
 
+.paddingLeftImposto {
+	padding-left: 12px;
+}
 .marginImposto {
 	margin-top: 50px;
 }
+
 	
+.containerImposto {
+	height: 20%;
+}
+.textoImposto {
+	font-family: 'Roboto Condensed', sans-serif;
+	color: #FFFFFF;
+	padding: 15px 5px 5px 15px;
+	font-size: 1.5em;
+	word-wrap: break-word;
+}

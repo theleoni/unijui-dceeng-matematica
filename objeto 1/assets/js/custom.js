@@ -155,10 +155,37 @@
 	  
 	  /*Scene 3 */
 	  
+	  function showImposto(imposto) {
+		  $("#containerImposto").show();
+		  
+		  switch (imposto) {
+			case 'icms':
+				$("#containerImposto").css("background-color", "#654E44");
+				break;
+			
+			case 'tusd':
+				$("#containerImposto").css("background-color", "#5E35B1");
+				break;	
+				
+			case 'cofins':
+				$("#containerImposto").css("background-color", "#D26F4C");
+				break;
+			
+			case 'cip':
+				$("#containerImposto").css("background-color", "#7CB342");
+				break;
+				
+			case 'pispasep':
+				$("#containerImposto").css("background-color", "#09AFC3");
+				break;
+			
+			case 'tust':
+				$("#containerImposto").css("background-color", "#880E4F");
+				break;				
+				}
 	  
 	  
-	  
-	  
+	  }
 	  
 	  
 	  
@@ -213,6 +240,7 @@
 					
 				case 3:
 					$("#scene3").show();
+					$("#containerImposto").hide();
 			}
 	  }
 	  
