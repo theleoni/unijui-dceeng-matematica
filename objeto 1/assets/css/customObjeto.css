@@ -166,15 +166,56 @@ body {
     text-align: center;
 }
 
+
+@media (max-width:768px) {
+	.imagemLogoResponsivaNavbar {
+	max-width: 12%;
+}
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+	.imagemLogoResponsivaNavbar {
+	max-width: 7%;
+}
+}
+
+@media (min-width: 1280px) {
+	.imagemLogoResponsivaNavbar {
+	max-width: 3.5%;
+}
+}
+
+
+
 .imagemLogoResponsivaNavbar {
 	display: block;
-	max-width: 6.5%;
 	height: auto;
 }
 
+
+
+@media (max-width:768px) {
+	.imagemUnijuiResponsivaNavbar {
+	max-width: 20%;
+}
+}
+
+@media (min-width:769px) and (max-width: 1280px) {
+	.imagemUnijuiResponsivaNavbar {
+	max-width: 15%;
+}
+}
+
+@media (min-width: 1280px) {
+	.imagemUnijuiResponsivaNavbar {
+	max-width: 10%;
+}
+}
+
+
+
 .imagemUnijuiResponsivaNavbar {
 	display: block;
-	max-width: 20%;
 	height: auto;
 }
 
