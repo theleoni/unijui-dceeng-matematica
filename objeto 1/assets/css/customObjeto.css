@@ -278,7 +278,7 @@ body {
 }
 
 .scene2Sub1 {
-	position: fixed;
+	position: absolute;
 	top: 20%;
 	bottom: 20%;
 	height: 60%;
@@ -294,7 +294,7 @@ body {
 }
 
 .scene2Sub2 {
-	position: fixed;
+	position: absolute;
 	top: 22%;
 	bottom: 22%;
 	height: 56%;
@@ -387,6 +387,29 @@ body {
 	font-family: 'Roboto Condensed', sans-serif;
 	color: #FFFFFF;
 	padding: 15px 5px 5px 15px;
-	font-size: 1.5em;
 	word-wrap: break-word;
+}
+
+@media (max-width:400px) {
+	.textoImposto {
+		font-size: 8px;
+	}
+}
+
+@media (min-width:400px) and (max-width:650px) {
+	.textoImposto {
+		font-size: 10px;
+	}
+}
+
+@media (min-width:650px) and (max-width: 800px) {
+	.textoImposto {
+		font-size: 13px;
+	}
+}
+
+@media (min-width:800px) {
+	.textoImposto {
+		font-size: 15px;
+	}
 }

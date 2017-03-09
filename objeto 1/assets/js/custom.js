@@ -164,12 +164,12 @@
 				
 			case 'cofins':
 				$("#containerImposto").css("background-color", "#D26F4C");
-				$("#containerImposto").html("Teste");
+				$("#containerImposto").html("Contribuição Social para Financiamento da Seguridade Social, destinada a financiar as despesas das áreas de Saúde, Previdência, e Assistência social. COFINS leva 4.45% do valor de sua fatura");
 				break;
 			
 			case 'cip':
 				$("#containerImposto").css("background-color", "#7CB342");
-				$("#containerImposto").html("Teste");
+				$("#containerImposto").html("Contribuição de Iluminação Pública, é uma taxa cobrada baseada no custo total do serviço/manutenção do sistema de iluminação pública");
 				break;
 				
 			case 'pispasep':
@@ -179,7 +179,7 @@
 			
 			case 'tust':
 				$("#containerImposto").css("background-color", "#880E4F");
-				$("#containerImposto").html("Teste");
+				$("#containerImposto").html("Tarifa de Uso do Sistema de Transmissão, que remunera instalações, equipamentos e componentes da rede de transmissão. (Imposto estabelecido pela Agência Nacional de Energia Elétrica, dando poder para as concessionárias cobraram de seus clientes sobre a conta de energia)");
 				break;				
 				}
 	  
