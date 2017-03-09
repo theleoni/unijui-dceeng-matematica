@@ -25,11 +25,11 @@
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
     <div class="navbar-header">
-      <a href= "#" > <img class="positionLeft" src="assets\img\logo_proj.png" height="80%"></a>
+      <a href= "#" > <img class="positionLeft imagemLogoResponsivaNavbar" src="assets\img\logo_proj.png" height="80%"></a>
 		<div id="title" class="positionCenter textTitle">
 			A ESTATÍSTICA E CONSUMO DE ENERGIA ELÉTRICA
 		</div>
-      <ul class="nav navbar-nav"><a href="#"><img class="positionRight" src="assets\img\logo_unijui_branco.png" height="80%" ></a></ul>
+      <ul class="nav navbar-nav"><a href="#"><img class="positionRight imagemUnijuiResponsivaNavbar" src="assets\img\logo_unijui_branco.png" height="80%" ></a></ul>
     </div>
 
       </ul>
@@ -86,63 +86,105 @@
 
 		</div>
 		
-		<div class="imagemPlaneta">
-				<img id="imagemPlanetaScene0" src="assets/img/planeta.png">
+		
+		<!--
+		<div class="row">
+			<div class="col-xs-offset-10 col-xs-2" id="imagemPlanetaScene0">
+				<img class="width300" src="assets/img/planeta.png">
+			</div>
 		</div>
+		-->
 	</div>
 	
 
 			
 
 	<div id="scene1"> 
-		<div id="scene1Text1" class="scene1Text1"> <!-- Texto colocado através do javascript --> </div>
-		<div id="scene1Text2" class="scene1Text2"> Para avançar clique na seta no canto inferior direito da tela </div>
-		<div id="scene1Bubble1"> <img class="scene1Bubble1" src="assets/img/bubble1.png"> </div>
-		<div id="scene1Bubble2"> <img class="scene1Bubble2"src="assets/img/bubble2.png"> </div>
-		<div id="imagemEngenheiroScene1" >
-			<img class="imagemEngenheiro"  src="assets/img/engenheiro_esquerda.png">
-		</div>	
-		<div class="imagemPlaneta">
-				<img id="imagemPlanetaScene1" src="assets/img/planeta.png">
+		<div class="row">
+			<div class="col-xs-7" style="margin-top:5vh; position:relative">
+				<div id="scene1Bubble1"> <img class="scene1Bubble1" src="assets/img/bubble1.png"> </div>
+				<div id="scene1Text1" class="scene1Text1"> <!-- Texto colocado através do javascript --> </div>
+			</div>
 		</div>
+		<div class="row">
+			<div class="col-xs-7" style="margin-top:13vh; position:relative">
+				<div id="scene1Bubble2"> <img class="scene1Bubble2"src="assets/img/bubble2.png"> </div>
+				<div id="scene1Text2" class="scene1Text2"> Para avançar clique na seta no canto inferior direito da tela </div>
+			</div>
+		</div>
+		<!--
+		<div class="row">
+			<div class="col-offset-xs-8 col-xs-2">
+				<div id="imagemEngenheiroScene1" >
+					<img class="imagemEngenheiro"  src="assets/img/engenheiro_esquerda.png">
+				</div>
+			</div>
+			<div class="col-xs-2">
+				<div class="imagemPlaneta">
+						<img class="width300" id="imagemPlanetaScene1" src="assets/img/planeta.png">
+				</div>
+			</div>
+		</div>
+		-->
 	</div>
 	
 	
 	
 	<div id="scene2">
 	
+		<!--
 		<div id="imagemEngenheiro2">
 			<img class="imagemEngenheiro"   src="assets/img/engenheiro_esquerda.png">
 		</div>	
 		<div class="imagemPlaneta">
 			<img id="imagemPlaneta2" src="assets/img/planeta.png">
 		</div>
+		-->
 
-		<div id="additionalScene2" class="imageAlignBottom">
-			<div >
-				<img onclick="showMoreInfo('hidreletrica')" class="imagemHidreletrica" title="Usina Hidrelétrica" src="assets/img/hidreletrica.png">
-			</div>
-			<div id="imagemEolicaScene2">
-				<img onclick="showMoreInfo('eolica')" class="imagemEolica"  title="Usina Eólica" src="assets/img/eolica.png">
-			</div>
-			<div id="imagemFossilScene2">
-				<img onclick="showMoreInfo('fossil')"  class="imagemFossil"  title="" src="assets/img/fossil.png">
-			</div>
-			<div id="imagemNuclearScene2" >
-				<img onclick="showMoreInfo('nuclear')"  class="imagemNuclear" title="Usina Nuclear" src="assets/img/nuclear.png">
-			</div>
-			<div id="imagemSolarScene2">
-				<img onclick="showMoreInfo('solar')"  class="imagemSolar"  title="Usina Solar" src="assets/img/solar.png">
-			</div>
-			<div id="imagemBiomassaScene2">
-				<img onclick="showMoreInfo('biomassa')"  class="imagemBiomassa"  title="Usina de Biomassa" src="assets/img/biomassa.png">
-			</div>
-			<div id="mensagem">
-				<div id="scene2Text1" class="scene2Text1"> Interaja com os elementos para conhecer mais sobre os meios de produção de energia elétrica </div>
-				<div id="scene2Bubble1"> <img class="scene2Bubble1" src="assets/img/bubble1.png"> </div>
-			</div>
+			<div id="additionalScene2">
+			<div class="row" style="height:40%">
 
-		</div>
+					<div class="col-xs-2">
+						<div>
+							<img onclick="showMoreInfo('hidreletrica')" class="imagemUsinasGeral img-responsive" title="Usina Hidrelétrica" src="assets/img/hidreletrica.png">
+						</div>
+					</div>
+					<div class="col-xs-2">
+						<div id="imagemEolicaScene2">
+							<img onclick="showMoreInfo('eolica')" class="imagemUsinasGeral img-responsive"  title="Usina Eólica" src="assets/img/eolica.png">
+						</div>
+					</div>
+					<div class="col-xs-2">
+						<div id="imagemFossilScene2">
+							<img onclick="showMoreInfo('fossil')"  class="imagemUsinasGeral img-responsive"  title="" src="assets/img/fossil.png">
+						</div>
+					</div>
+					<div class="col-xs-2" style="margin-top: 5vh;">
+						<div id="scene2Text1" class="scene2Text1"> Interaja com os elementos para conhecer mais sobre os meios de produção de energia elétrica </div>
+						<div id="scene2Bubble1"> <img class="scene2Bubble1" src="assets/img/bubble1.png"> </div>
+					</div>
+			</div>
+				<div class="row">
+					<div class="col-xs-2">
+						<div id="imagemNuclearScene2" >
+							<img onclick="showMoreInfo('nuclear')"  class="imagemUsinasGeral" title="Usina Nuclear" src="assets/img/nuclear.png">
+						</div>
+					</div>
+					<div class="col-xs-2">
+						<div id="imagemSolarScene2">
+							<img onclick="showMoreInfo('solar')"  class="imagemUsinasGeral"  title="Usina Solar" src="assets/img/solar.png">
+						</div>
+					</div>
+					<div class="col-xs-2">
+						<div id="imagemBiomassaScene2">
+							<img onclick="showMoreInfo('biomassa')"  class="imagemUsinasGeral"  title="Usina de Biomassa" src="assets/img/biomassa.png">
+						</div>
+					</div>
+					</div>
+				</div>
+
+			
+		
 		<div id=detalhesUsinas>		
 			<div id="scene2Sub1" class="scene2Sub1"> </div>
 			<div id="scene2Sub2" class="scene2Sub2"> </div>

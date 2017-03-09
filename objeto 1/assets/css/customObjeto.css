@@ -9,18 +9,20 @@ body {
 	margin-top: 50px;
 }
 
-
+.width300{
+	width: 300%;
+}
 	/* Imagens Fixas */
 
 .imagemFixaHelp {
 	cursor: help;
-	z-index: 5;
 	z-index: 1;
+	width: 50%;
 }
 .imagemFixaFechar {
 	cursor: pointer;
-	z-index: 5;
 	z-index: 1;
+	width: 50%;
 
 }
 .imagemFixaSetaEsquerda {
@@ -54,21 +56,16 @@ body {
 	/*IMAGENS GERAIS */
 
 .imagemPlaneta {
-	position: fixed;
-	right: -11.4%;
-	top: 35%;
-	max-width: 29%;
+	position: absolute;
 	height: auto;
 	width: auto;
 	z-index:0;
 }
 .imagemEngenheiro {
-	position: fixed;
-	right: 24.8%;
-	top:30vh;
-	max-width: 11vw;
+	position: absolute;
+	left: 80%;
+	max-width: 100%;
 	height: auto;
-	width: auto;
 	z-index: 1;
 }
 
@@ -82,12 +79,24 @@ body {
 
 	/* NAVBAR */
 
+	
 .navbar {
-	height: 108px !important;
 	background-color: #00458e;
 	z-index: 0;
+	height: auto;
 }
+	@media (max-width: 500px) {
+		
+.navbar {
+	max-height: 75px !important;
+}
+	}
+		@media (min-width: 500px) {
 
+.navbar {
+	height: 108px !important;
+}
+		}
 .positionRight {
 	right: 3%;
 	top: 2%;
@@ -124,8 +133,17 @@ body {
     text-align: center;
 }
 
+.imagemLogoResponsivaNavbar {
+	display: block;
+	max-width: 6.5%;
+	height: auto;
+}
 
-
+.imagemUnijuiResponsivaNavbar {
+	display: block;
+	max-width: 20%;
+	height: auto;
+}
 
 
 
@@ -140,10 +158,9 @@ body {
 
 
 .scene1Text1 {
-	position: fixed;
-	left: 25%;
-	top: 30%;
-	right: 40%;
+	position: absolute;
+	left: 32%;
+	right: 5%;
 	text-align: justify;
 	z-index: 1;
 	color: #FFFFFF;
@@ -153,10 +170,9 @@ body {
 }
 
 .scene1Text2 {
-	position:fixed;
-	left: 32.5%;
-	top: 47%;
-	right: 40%;
+	position:absolute;
+	left: 32%;
+	right: 20%;
 	text-align: justify;
 	z-index: 1;
 	color: #FFFFFF;
@@ -165,10 +181,12 @@ body {
 
 }
 
+
+
 .scene1Bubble1 {
-	position: fixed;
-	left: 24%;
-	top: 29%;
+	position: absolute;
+	left: 31%;
+	top: 100%;
 	right: 40%;
 	z-index:0;
 	width: 42vw;
@@ -176,9 +194,8 @@ body {
 }
 
 .scene1Bubble2 {
-	position:fixed;
-	left: 32%;
-	top: 46%;
+	position: absolute;
+	left: 31%;
 	right: 40%;
 	z-index: 0;
 	width: 31vw;
@@ -197,92 +214,34 @@ body {
 
 	/* SCENE 2 */
 
-.imagemHidreletrica {
+.imagemUsinasGeral {
 	cursor: pointer;
-	position: fixed;
-	left: 2vw;
-	top:24vh;
-	max-width: 28vw;
-	max-height: 24vh;
+	position: absolute;
+	width: 20vw;
 	height: auto;
-	width: auto;
+	margin-bottom: 15vh;
 }
 
-.imagemEolica {
-	cursor: pointer;
-	position: fixed;
-	left: 27vw;
-	top:24vh;
-	max-width: 28vw;
-	max-height: 24vh;
-	height: auto;
-	width: auto;
-}
-
-.imagemFossil {
-	cursor: pointer;
-	position: fixed;
-	left: 51vw;
-	top:24vh;
-	max-width: 28vw;
-	max-height: 24vh;
-	height: auto;
-	width: auto;
-}
-
-.imagemNuclear {
-	cursor: pointer;
-	position: fixed;
-	left: 2vw;
-	top:57vh;
-	max-width: 28vw;
-	max-height: 24vh;
-	height: auto;
-	width: auto;
-}
-
-.imagemSolar {
-	cursor: pointer;
-	position: fixed;
-	left: 27vw;
-	top:57vh;
-	max-width: 28vw;
-	max-height: 24vh;
-	height: auto;
-	width: auto;
-}
-
-.imagemBiomassa {
-	cursor: pointer;
-	position: fixed;
-	left: 51vw;
-	top:57vh;
-	max-width: 28vw;
-	max-height: 24vh;
-	height: auto;
-	width: auto;
-}
 
 .scene2Text1 {
-	position: fixed;
-	top: 37vh;
-	left: 70vw;
-	right: 16vw;
+	position: absolute;
+	left: 40%;
+	right: 28%;
+	text-align: justify;
+	z-index: 2;
+	color: #FFFFFF;
 	font-size: calc((2vh + 1vw)/2);
 	font-family: 'Roboto Condensed', sans-serif;
-	color: #FFFFFF;
-	z-index: 1;
 }
 
 
 .scene2Bubble1 {
-	position: fixed;
-	top: 36vh;
-	left: 69vw;
-	right: 16vw;
-	width: 17vw;
-	height: 9.5vh;
-	z-index: 0;
+	position: absolute;
+	left: 40%;
+	right: 28%;
+	z-index:1;
+	width: 20vw;
+	height: 10vh;
 }
 
 .scene2Sub1 {

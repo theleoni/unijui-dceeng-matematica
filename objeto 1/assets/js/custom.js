@@ -47,18 +47,11 @@
 	/* SCENE 1 */
 	
 	function moveImageScene1() {
-		if (i < 1.1) {	  
-			$('.imagemPlaneta').css('right',i + '%');;  
-			i+= 0.125;
-		}
-		else {
+			$(".imagemPlaneta").animate({right: '+=100%'}, 1200);
 			showFixedImages();
 			nextScene();
 			return false;
-		}
-		
-		setTimeout(function(){moveImageScene1();},20);
-	}
+			}
 	
 		function showFixedImages() {
 		$("#imagensFixas").show();
@@ -79,7 +72,7 @@
 	/* SCENE 2 */
 	
 	function moveImageScene2() {
-		if (i > -30) {	  
+		/*if (i > -30) {	  
 			$('.imagemPlaneta').css('right',i + '%');;  
 			if (i > -18) {
 				$('.imagemEngenheiro').css('right',(i + 23.7) + '%');;  
@@ -87,12 +80,12 @@
 			} else {
 				i-= 0.5;}
 		}
-		else {
+		else { */
 			$('#additionalScene2').show();
-			return false;
+			/*return false;
 		}
 		
-		setTimeout(function(){moveImageScene2();},20);
+		setTimeout(function(){moveImageScene2();},20);*/
 	}
 	
 	function showMoreInfo(usina) {
@@ -161,26 +154,32 @@
 		  switch (imposto) {
 			case 'icms':
 				$("#containerImposto").css("background-color", "#654E44");
+				$("#containerImposto").html("Teste");
 				break;
 			
 			case 'tusd':
 				$("#containerImposto").css("background-color", "#5E35B1");
+				$("#containerImposto").html("Tarifa de Uso do Sistema de Distribuição, que remunera instalações, equipamentos e componentes da rede de distribuição para levar a energia até as casas (Imposto estabelecido pela ANEEL, dando poder para as concessionarias cobrarem de seus clientes sobre a conta de energia");
 				break;	
 				
 			case 'cofins':
 				$("#containerImposto").css("background-color", "#D26F4C");
+				$("#containerImposto").html("Teste");
 				break;
 			
 			case 'cip':
 				$("#containerImposto").css("background-color", "#7CB342");
+				$("#containerImposto").html("Teste");
 				break;
 				
 			case 'pispasep':
 				$("#containerImposto").css("background-color", "#09AFC3");
+				$("#containerImposto").html("Programas de Integração Social e de Formação do Patrimônio do Servidor Público, tem como finalidade o financiamento do programa do Seguro-Desemprego e o abono aos empregados que recebem até dois salários mínimos mensais. De forma geral, o contribuinte acaba pagando no PIS a alíquota de 0.95% do valor de consumo da energia elétrica.");
 				break;
 			
 			case 'tust':
 				$("#containerImposto").css("background-color", "#880E4F");
+				$("#containerImposto").html("Teste");
 				break;				
 				}
 	  
@@ -221,10 +220,8 @@
 			switch (scene) {
 				case 1:
 					$("#scene1").show();
-					$('.imagemPlaneta').css('right',1.1 + '%');; 
-					$('.imagemEngenheiro').css('right',24.8 + '%');;  
-					
-
+					/*$('.imagemPlaneta').css('right',1.1 + '%');; 
+					$('.imagemEngenheiro').css('right',24.8 + '%');*/
 					$("#scene1Text1").html("Olá " + nome + "! Eu sou o engenheiro Euler, estou aqui para auxiliá-lo neste percurso de aprendizado, a partir da matemática iremos conhecer os modos de geração de energia elétrica, o caminho e o custo até chegar à sua casa.");
 					break;
 					
