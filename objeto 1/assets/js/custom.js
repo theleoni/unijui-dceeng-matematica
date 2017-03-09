@@ -154,7 +154,7 @@
 		  switch (imposto) {
 			case 'icms':
 				$("#containerImposto").css("background-color", "#654E44");
-				$("#containerImposto").html("Teste");
+				$("#containerImposto").html("Poderá levar até 30% do valor consumido, este imposto é cobrado referente a circulação de mercadorias (eletrodomésticos, alimentos, cosméticos e outras mercadorias relacionadas ao segmentos) e prestação de serviços de transporte interestadual e intermunicipal e comunicação.");
 				break;
 			
 			case 'tusd':
