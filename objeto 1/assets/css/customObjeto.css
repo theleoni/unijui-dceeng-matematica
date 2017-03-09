@@ -299,15 +299,13 @@ body {
 	
 }
 
-.imagemUsina {
-	position: fixed;
-	left: 13%;
-	top: 35%;
+.animacaoUsina {
+	position: absolute;
 	z-index: 1;
-	max-width: 33vw;
-	max-height: 29vh;
+	max-width: 35vw;
 	height: auto;
 	width: auto;
+	margin-top: 9%;
 }
 
 .textoUsina {

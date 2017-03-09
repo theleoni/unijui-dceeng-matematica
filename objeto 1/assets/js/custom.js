@@ -97,33 +97,33 @@
 		hideFixedImages();
 		switch (usina) {
 			case 'hidreletrica': 
-				$('#imgUsina').attr("src", "assets/img/hidreletrica.png");
+				$('#imgUsina').attr("src", "assets/img/hidreletrica_animada.mp4");
 				$('#textoUsina').html("Energia gerada pela água em usinas Hidrelétricas. A energia contida nas correntezas de rios é transformada em energia cinética que movimenta uma turbina, movendo um gerador que por sua vez irá gerar energia elétrica");
 				$('#tituloUsina').html("Energia Hídrica");
 
 				break;
 			case 'eolica':
-				$('#imgUsina').attr("src", "assets/img/eolica.png");
+				$('#imgUsina').attr("src", "assets/img/eolica_animada.mp4");
 				$('#textoUsina').html("É a energia gerada pelo vento, grandes turibinas são posicionadas em locais abertos e com grande quantidade de vento. O vento, ao mover as turbinas gera energia elétrica através de um gerador.");
 				$('#tituloUsina').html("Energia Eólica");
 				break;
 			case 'fossil':
-				$('#imgUsina').attr("src", "assets/img/fossil.png");
+				$('#imgUsina').attr("src", "assets/img/fossil_animada.mp4");
 				$('#textoUsina').html("Energia gerada através de reações químicas de combustão de materiais orgânicos decompostos, quando as ligações químicas dos hidrocarbonetos são quebradas, a energia é liberada");
 				$('#tituloUsina').html("Energia Fóssil");
 				break;
 			case 'nuclear':
-				$('#imgUsina').attr("src", "assets/img/nuclear.png");
+				$('#imgUsina').attr("src", "assets/img/nuclear_animada.mp4");
 				$('#textoUsina').html("Utiliza a energia proveniente de reações de fissão nuclear para gerar energia. A fissão nuclear libera grande quantidade de calor que aquece a água e produz o vapor responsável por movimentar as turbinas do gerador em grandes velocidades, gerando a corrente elétrica.");
 				$('#tituloUsina').html("Energia Nuclear");
 				break;
 			case 'solar':
-				$('#imgUsina').attr("src", "assets/img/solar.png");
+				$('#imgUsina').attr("src", "assets/img/solar_animada.mp4");
 				$('#textoUsina').html("É a energia irradiada pelo sol. Pode ser utilizada para geração de calor, ou pode ser convertida em energia elétrica através de células fotovoltaicas");
 				$('#tituloUsina').html("Energia Solar");
 				break;	
 			case 'biomassa':
-				$('#imgUsina').attr("src", "assets/img/biomassa.png");
+				$('#imgUsina').attr("src", "assets/img/biomassa_animada.mp4");
 				$('#textoUsina').html("Gerada através da decomposição de materiais orgânicos (esterco, resto de alimentos). É transformada em energia por meio de combustão, gaseificação e fermentação");
 				$('#tituloUsina').html("Energia de Biomassa");
 				break;	
