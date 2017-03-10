@@ -441,8 +441,14 @@ body {
 	}
 }
 
-@media (min-width:800px) {
+@media (min-width:800px) and (max-width: 1600px) {
 	.textoImposto {
 		font-size: 15px;
+	}
+}
+
+@media (min-width:1600px) {
+	.textoImposto {
+		font-size: 22px;
 	}
 }
