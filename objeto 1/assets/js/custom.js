@@ -47,7 +47,6 @@
 	/* SCENE 1 */
 	
 	function moveImageScene1() {
-			$(".imagemPlaneta").animate({right: '+=100%'}, 1200);
 			showFixedImages();
 			nextScene();
 			return false;
