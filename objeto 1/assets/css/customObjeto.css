@@ -181,7 +181,7 @@ body {
 
 @media (min-width: 1280px) {
 	.imagemLogoResponsivaNavbar {
-	max-width: 3.5%;
+	max-width: 4%;
 }
 }
 
@@ -208,9 +208,10 @@ body {
 
 @media (min-width: 1280px) {
 	.imagemUnijuiResponsivaNavbar {
-	max-width: 10%;
+	max-width: 12%;
 }
 }
+
 
 
 
