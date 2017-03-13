@@ -9,12 +9,6 @@ body {
 	margin-top: 50px;
 }
 
-.posicaoEngenheiro{
-	width: 200%;
-	height: auto;
-	display: block;
-	margin-left: -75%;
-}
 	/* Imagens Fixas */
 
 .imagemFixaHelp {
@@ -281,6 +275,12 @@ body {
 }
 
 
+.imagemPlaneta01{
+	width: 200%;
+	height: auto;
+	display: block;
+	margin-left: -75%;
+}
 
 
 
@@ -388,7 +388,13 @@ body {
 }
 
 
-
+.imagemEngenheiro02 {
+	position: absolute;
+	max-width: 40%;
+	z-index: 1;
+	top: 50%;
+	margin-top: -4%;
+}
 
 
 
