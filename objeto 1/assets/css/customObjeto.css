@@ -9,8 +9,11 @@ body {
 	margin-top: 50px;
 }
 
-.width300{
-	width: 300%;
+.posicaoEngenheiro{
+	width: 200%;
+	height: auto;
+	display: block;
+	margin-left: -75%;
 }
 	/* Imagens Fixas */
 
@@ -63,8 +66,10 @@ body {
 }
 .imagemEngenheiro {
 	position: absolute;
-	max-width: 30%;
+	max-width: 40%;
 	z-index: 1;
+	top: 50%;
+	margin-top: -24%;
 }
 
 
