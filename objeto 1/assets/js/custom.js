@@ -33,7 +33,7 @@
 		else {
 			nome = $("#inputNome").val(); 
 			$("#rowInputName").remove();
-			moveImageScene1();
+			fadeScene1();
 		}
 	}
 	
@@ -46,15 +46,16 @@
 	
 	/* SCENE 1 */
 	
-	function moveImageScene1() {
+	function fadeScene1() {
 			showFixedImages();
 			nextScene();
 			return false;
 			}
 	
+
 		function showFixedImages() {
 		$("#imagensFixas").show();
-	}
+		}
 	
 		function hideFixedImages() {
 			$("#imagensFixas").hide();
@@ -70,29 +71,11 @@
 	
 	/* SCENE 2 */
 	
-	function moveImageScene2() {
-		/*if (i > -30) {	  
-			$('.imagemPlaneta').css('right',i + '%');;  
-			if (i > -18) {
-				$('.imagemEngenheiro').css('right',(i + 23.7) + '%');;  
-				i-= 0.175;
-			} else {
-				i-= 0.5;}
-		}
-		else { */
-			$('#additionalScene2').show();
-			/*return false;
-		}
-		
-		setTimeout(function(){moveImageScene2();},20);*/
-	}
-	
 	function showMoreInfo(usina) {
 		$("body").css("background-color", "gray");
 		$('#detalhesUsinas').show();
 	 	$('#additionalScene2').hide();
 		$('#mensagem').hide(); 
-		$('#imagemEngenheiro2').hide();
 		hideFixedImages();
 		switch (usina) {
 			case 'hidreletrica': 
@@ -132,10 +115,9 @@
 
 	  
 	function restoreScene2() {
-		loadScene('2');
+		loadScene();
 		showFixedImages();
 		$('#mensagem').show(); 
-		$('#imagemEngenheiro2').show();
 		$("body").css("background-color", "white");
 
 	}
@@ -219,19 +201,13 @@
 			switch (scene) {
 				case 1:
 					$("#scene1").show();
-					/*$('.imagemPlaneta').css('right',1.1 + '%');; 
-					$('.imagemEngenheiro').css('right',24.8 + '%');*/
 					$("#scene1Text1").html("Olá " + nome + "! Eu sou o engenheiro Euler, estou aqui para auxiliá-lo neste percurso de aprendizado, a partir da matemática iremos conhecer os modos de geração de energia elétrica, o caminho e o custo até chegar à sua casa.");
 					break;
 					
 				case 2:
 					$("#scene2").show();
-					$('#additionalScene2').hide();
-
-					$('.imagemPlaneta').css('right',-30 + '%');; 
-					$('.imagemEngenheiro').css('right',5.85 + '%');; 
-					moveImageScene2();
 					$('#detalhesUsinas').hide();
+					$('#additionalScene2').show();
 					break;
 					
 				case 3:
