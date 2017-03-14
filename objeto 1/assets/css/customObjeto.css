@@ -470,14 +470,14 @@ body {
 	top: 100%;
 	right: 50%;
 	z-index:0;
-	width: 8vw;
-	height: 36vh;
+	width: 16vw;
+	height: 14vh;
 }
 
 .scene3Text1 {
 	position: absolute;
 	left: 32%;
-	right: 5%;
+	right: -90%;
 	text-align: justify;
 	z-index: 1;
 	color: #FFFFFF;
@@ -491,5 +491,6 @@ body {
 	max-width: 40%;
 	z-index: 1;
 	top: 50%;
+	left: 50%;
 	margin-top: -4%;
 }
