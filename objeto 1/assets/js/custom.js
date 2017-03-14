@@ -76,7 +76,7 @@
 		$('#detalhesUsinas').show();
 	 	$('#additionalScene2').hide();
 		$('#mensagem').hide();
-		$('imagemEngenheiro2').hide();
+		$('#imagemEngenheiro2').hide();
 		hideFixedImages();
 		switch (usina) {
 			case 'hidreletrica': 
@@ -118,7 +118,7 @@
 	function restoreScene2() {
 		loadScene();
 		showFixedImages();
-		$('imagemEngenheiro2').show();
+		$('#imagemEngenheiro2').show();
 		$('#mensagem').show(); 
 		$("body").css("background-color", "white");
 

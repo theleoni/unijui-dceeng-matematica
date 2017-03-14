@@ -462,3 +462,34 @@ body {
 		font-size: 22px;
 	}
 }
+
+.scene3Bubble1 {
+	position: absolute;
+	margin-left: 10%;
+	left: 12%;
+	top: 100%;
+	right: 50%;
+	z-index:0;
+	width: 8vw;
+	height: 36vh;
+}
+
+.scene3Text1 {
+	position: absolute;
+	left: 32%;
+	right: 5%;
+	text-align: justify;
+	z-index: 1;
+	color: #FFFFFF;
+	font-size: calc((2vh + 1vw)/1.8);
+	font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+.imagemEngenheiro03 {
+	position: absolute;
+	max-width: 40%;
+	z-index: 1;
+	top: 50%;
+	margin-top: -4%;
+}
