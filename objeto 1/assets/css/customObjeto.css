@@ -172,15 +172,15 @@ body {
 }
 }
 
-@media (min-width: 769px) and (max-width: 1280px) {
+@media (min-width: 769px) and (max-width: 1600px) {
 	.imagemLogoResponsivaNavbar {
-	max-width: 7%;
+	max-width: 6%;
 }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1600px) {
 	.imagemLogoResponsivaNavbar {
-	max-width: 4%;
+	max-width: 5%;
 }
 }
 
@@ -199,13 +199,13 @@ body {
 }
 }
 
-@media (min-width:769px) and (max-width: 1280px) {
+@media (min-width:769px) and (max-width: 1600px) {
 	.imagemUnijuiResponsivaNavbar {
-	max-width: 15%;
+	max-width: 17%;
 }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1600px) {
 	.imagemUnijuiResponsivaNavbar {
 	max-width: 12%;
 }
@@ -218,14 +218,6 @@ body {
 	display: block;
 	height: auto;
 }
-
-
-
-
-
-
-
-
 
 
 	/* SCENE 1 */
