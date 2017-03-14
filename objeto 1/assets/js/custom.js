@@ -1,7 +1,13 @@
   var nome;
   var i = -11.4;
   var scene = 0;
+  var fadeTime = 500;
   
+
+  function sleep(ms) {
+  	return new Promise(resolve => setTimeout(resolve, ms));
+	}
+
   $( document ).ready(function() {
 		$("#alertNome").hide();
 		$("#scene1").hide();
@@ -33,7 +39,8 @@
 		else {
 			nome = $("#inputNome").val(); 
 			$("#rowInputName").remove();
-			fadeScene1();
+			showFixedImages();
+			nextScene();
 		}
 	}
 	
@@ -45,13 +52,7 @@
 	
 	
 	/* SCENE 1 */
-	
-	function fadeScene1() {
-			showFixedImages();
-			nextScene();
-			return false;
-			}
-	
+		
 
 		function showFixedImages() {
 		$("#imagensFixas").show();
@@ -174,25 +175,27 @@
 	  
 	  /* Funções Gerais */
 	  	
-	function nextScene() {
+	async function nextScene() {
 		if (scene == 332189123) {
 		
 		}
 		else {
 			unloadScene();
 			scene++;
+			await sleep(fadeTime);
 			loadScene();
 		}
 	}
 	
 	
-	function previousScene() {
+	async function previousScene() {
 		if (scene == 1) {
 			
 		}
 		else {
 			unloadScene();
 			scene--;
+			await sleep(fadeTime);
 			loadScene();
 		}
 	}
@@ -202,19 +205,19 @@
 		  
 			switch (scene) {
 				case 1:
-					$("#scene1").show();
+					$("#scene1").fadeIn(fadeTime);
 					$("#scene1Text1").html("Olá " + nome + "! Eu sou o engenheiro Euler, estou aqui para auxiliá-lo neste percurso de aprendizado, a partir da matemática iremos conhecer os modos de geração de energia elétrica, o caminho e o custo até chegar à sua casa.");
 					break;
 					
 				case 2:
-					$("#scene2").show();
+					$("#scene2").fadeIn(fadeTime);
 					$('#detalhesUsinas').hide();
 					$('#additionalScene2').show();
 
 					break;
 					
 				case 3:
-					$("#scene3").show();
+					$("#scene3").fadeIn(fadeTime);
 					$("#containerImposto").hide();
 			}
 	  }
@@ -226,19 +229,19 @@
 		  
 			switch (scene) {
 				case 0:
-					$("#scene0").hide();
+					$("#scene0").fadeOut(fadeTime);
 					break;
 					
 				case 1:
-					$("#scene1").hide();
+					$("#scene1").fadeOut(fadeTime);
 					break;
 				
 				case 2:
-					$("#scene2").hide();
+					$("#scene2").fadeOut(fadeTime);
 					break;
 					
 				case 3:
-					$("#scene3").hide();
+					$("#scene3").fadeOut(fadeTime);
 					break;
 			}
 	  }
