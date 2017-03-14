@@ -15,6 +15,10 @@ body {
 	cursor: help;
 	z-index: 1;
 	font-size: 40px;
+	color: gray;
+}
+
+.iconFixoHelp:hover {
 	color: black;
 }
 
@@ -24,6 +28,8 @@ body {
 	font-size: 40px;
 	color: black;
 }
+.iconFixoFechar:hover { color: red; }
+
 .iconFixoSetaEsquerda {
 	cursor: pointer;
 	position: absolute;
@@ -32,8 +38,12 @@ body {
 	z-index: 5;
 	top: 90%;
 	font-size: 40px;
-
+	color: gray;
 }
+.iconFixoSetaEsquerda:hover {
+	color: black;
+}
+
 .iconFixoSetaDireita {
 	cursor: pointer;
 	position: absolute;
@@ -42,10 +52,12 @@ body {
 	z-index: 5;
 	top: 90%;
 	font-size: 40px;
-
+	color: gray;
 }
 
-
+.iconFixoSetaDireita:hover {
+	color: black;
+}
 
 
 
@@ -218,6 +230,12 @@ body {
 	display: block;
 	height: auto;
 }
+
+
+
+
+
+
 
 
 	/* SCENE 1 */
@@ -473,6 +491,7 @@ body {
 	position: absolute;
 	left: 32%;
 	right: -90%;
+	top: 3%;
 	text-align: justify;
 	z-index: 1;
 	color: #FFFFFF;

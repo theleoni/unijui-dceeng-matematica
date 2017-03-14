@@ -207,17 +207,20 @@
 				case 1:
 					$("#scene1").fadeIn(fadeTime);
 					$("#scene1Text1").html("Olá " + nome + "! Eu sou o engenheiro Euler, estou aqui para auxiliá-lo neste percurso de aprendizado, a partir da matemática iremos conhecer os modos de geração de energia elétrica, o caminho e o custo até chegar à sua casa.");
+					$("#tituloGeral").html("");
 					break;
 					
 				case 2:
 					$("#scene2").fadeIn(fadeTime);
 					$('#detalhesUsinas').hide();
 					$('#additionalScene2').show();
+					$("#tituloGeral").html("Formas de produção de energia");
 
 					break;
 					
 				case 3:
 					$("#scene3").fadeIn(fadeTime);
+					$("#tituloGeral").html("Impostos pagos sobre a energia elétrica");
 					$("#containerImposto").hide();
 			}
 	  }
@@ -226,7 +229,7 @@
 	  
 	  
 	  function unloadScene() {
-		  
+		  	$("#tituloGeral").html("");
 			switch (scene) {
 				case 0:
 					$("#scene0").fadeOut(fadeTime);
