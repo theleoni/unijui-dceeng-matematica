@@ -11,35 +11,37 @@ body {
 
 	/* Imagens Fixas */
 
-.imagemFixaHelp {
+.iconFixoHelp {
 	cursor: help;
 	z-index: 1;
-	width: 50%;
+	font-size: 40px;
+	color: black;
 }
-.imagemFixaFechar {
+
+.iconFixoFechar {
 	cursor: pointer;
 	z-index: 1;
-	width: 50%;
-
+	font-size: 40px;
+	color: black;
 }
-.imagemFixaSetaEsquerda {
+.iconFixoSetaEsquerda {
 	cursor: pointer;
-	position: fixed;
+	position: absolute;
 	left: 3%;
 	bottom: 5%;
 	z-index: 5;
-	width: 2.2%;
-	height: 4%;
+	top: 90%;
+	font-size: 40px;
 
 }
-.imagemFixaSetaDireita {
+.iconFixoSetaDireita {
 	cursor: pointer;
-	position: fixed;
+	position: absolute;
 	right: 3%;
 	bottom: 5%;
 	z-index: 5;
-	width: 2.2%;
-	height: 4%;
+	top: 90%;
+	font-size: 40px;
 
 }
 
