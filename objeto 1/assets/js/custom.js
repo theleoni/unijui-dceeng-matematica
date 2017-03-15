@@ -182,9 +182,12 @@
 	  		case 1:
 	  			$("#scene4QuestionNumber").html("1.");
 	  			$("#scene4Question").html("Exemplo de questão número 1. De acordo com as informações apresentadas, é correto afirmar que a fruta preferida do fulano é: " )
-	  			$("#opcaoA").html("<span class='containerLetra'>A</span>Banana")
+	  			$("#opcaoA").html("<span class='containerLetra'>A</span>Banana");
 	  			$("#opcaoB").html("<span class='containerLetra'>B</span>Maçã");
-	  			grafico();
+	  			$("#opcaoC").html("<span class='containerLetra'>C</span>Pêssego");
+	  			$("#opcaoD").html("<span class='containerLetra'>D</span>Mamão");
+
+	  			grafico1();
 	  			break;
 
 	  	}
@@ -192,7 +195,7 @@
 
 
 
-		function grafico() {
+		function grafico1() {
 			$(document).ready(function () {
 
 
@@ -244,8 +247,6 @@
 				});
 			});
 			}
-
-
 	  
 	  
 	  /* Funções Gerais */
