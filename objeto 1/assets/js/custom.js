@@ -4,6 +4,8 @@
   var fadeTime = 500;
   var questionNumber = 1;
   var listeningToKeyPress = false;
+  var questaoSelecionada;
+  var answers = ["'#opcaoA'", "'#opcaoC'"];
 
   function sleep(ms) {
   	return new Promise(resolve => setTimeout(resolve, ms));
@@ -22,7 +24,7 @@
 
 
 	function pressedEnter(event) {
-		if (event.keyCode == 13) {
+		if (event.keyCode == 13 && scene == 0) {
 			saveName();
 		}
 	}
@@ -193,22 +195,35 @@
 	  	}
 	  }
 
-
-	  function selectQuestion (elemento) {
-	  	$(elemento).toggleClass('btn-primary').siblings().removeClass('btn-primary');
-
+	  //Verifica se a resposta selecionada está correta
+	  function checkAnswer() {
+	  		//TODO
 	  }
 
+
+	  //Realiza a troca da seleção e salva a seleção atual em uma variável
+	  function selectQuestion (elemento) {
+	  	$(elemento).toggleClass('btn-primary').siblings().removeClass('btn-primary');
+	  }
+
+	  //Binda o evento de clicar no botão à troca de sleleção
 		$(document).on('click', '.btn-questoes', function () {
 			selectQuestion(this);
 		});
 	
+		//Binda o evento de clicar no botão de enviar ao método checkAnswer
+		$(document).on('click', '#enviarResposta', function () {
+			checkAnswer();
+		});
 
 
  		$(document).bind('keydown', function(event) {
 				if(listeningToKeyPress) {
 					var code = event.keyCode;
 					switch (code) {
+						case 13:
+							checkAnswer(questaoSelecionada);
+							break;
 						case 65:
 							selectQuestion($("#opcaoA"));
 							break;
