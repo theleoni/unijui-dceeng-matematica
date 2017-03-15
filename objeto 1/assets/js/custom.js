@@ -181,13 +181,64 @@
 	  	switch (questionNumber) {
 	  		case 1:
 	  			$("#scene4QuestionNumber").html("1.");
-	  			$("#scene4Question").html("Exemplo de questão número 1. De acordo com as informações apresentadas selecione a alternativa correta" )
+	  			$("#scene4Question").html("Exemplo de questão número 1. De acordo com as informações apresentadas, é correto afirmar que a fruta preferida do fulano é: " )
+	  			grafico();
 	  			break;
 
 	  	}
 	  }
 
 
+
+		function grafico() {
+			$(document).ready(function () {
+
+
+				// Gera o gráfico
+				Highcharts.chart('scene4Graph', {
+					chart: {
+						type: 'pie',
+					},
+					title: {
+						text: 'Quantidade de frutas que o fulano comeu'
+					},
+					tooltip: {
+						pointFormat: '{series.name}: <b>{point.y}</b>'
+					},
+					plotOptions: {
+						pie: {
+							allowPointSelect: true,
+							cursor: 'pointer',
+							dataLabels: {
+								enabled: true
+							},
+							showInLegend: true
+						}
+					},
+					series: [{
+						name: 'Fruta',
+						colorByPoint: true,
+						data: [{
+							name: 'Maçã',
+							y: 2
+						}, {
+							name: 'Melância',
+							y: 1
+		
+						}, {
+							name: 'Banana',
+							y: 4
+						}, {
+							name: 'Mamão',
+							y: 1
+						}, {
+							name: 'Pêssego',
+							y: 3
+						}]
+					}]
+				});
+			});
+			}
 
 
 	  
@@ -201,7 +252,6 @@
 		else {
 			unloadScene();
 			scene++;
-			console.log(scene);
 			await sleep(fadeTime);
 			loadScene();
 		}

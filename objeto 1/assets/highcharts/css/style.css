@@ -1,0 +1,24 @@
+#grafico{
+    width:30%;
+	height:20%
+    background-color:orange;
+    position: absolute;
+    z-index: 1;
+    padding:50px;
+	top: 200px;
+	left: 40%;
+	visibility: visible;
+
+   }
+  #atras{ 
+	width: 100%;
+	height: 100%;
+    position: absolute;
+	z-index: 0;
+    top:70px;
+    left:50px;
+    background-color:wheat;
+    padding:20px; 
+	visibility: visible;
+
+    }

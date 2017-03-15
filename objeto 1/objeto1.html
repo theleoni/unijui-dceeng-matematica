@@ -9,6 +9,12 @@
 	<!-- Custom JS -->
 	<script src="assets/js/custom.js"> </script>
 
+	<!-- HighCharts -->
+	<script src="assets/highcharts/code/highcharts.js"> </script>
+
+	<!-- Teste -->
+	<script src="assets/js/gerarGrafico.js"> </script>
+
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 
@@ -231,13 +237,21 @@
 
 	<div id="scene4">
 		<div class="row">
-			<div class="col-xs-5">
+			<div class="col-xs-6">
 				<div id="scene4QuestionContainer">
 					<span id="scene4QuestionNumber" class="questionNumber"></span>
 					<span id="scene4Question" class="questionText"></span>
 				</div>
+				<div class="row">
+
+					<div class="col-xs-5"> 
+						<button type="button" class="btn btn-block btn-secondary btn-questoes"> <span class="containerLetra">A</span>Banana</button>
+						<button type="button" class="btn btn-block btn-secondary btn-questoes"> <span class="containerLetra">B</span>Maçã</button>
+
+					</div>
+				</div>
 			</div>
-			<div class="col-xs-7">
+			<div class="col-xs-6">
 				<div id="scene4Graph">
 
 				</div>
