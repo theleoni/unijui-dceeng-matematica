@@ -46,7 +46,9 @@
 	}
 	
 	
-	
+		$(document).on('click', '.btn-questoes', function () {
+    		$(this).toggleClass('btn-primary').siblings().removeClass('btn-primary');
+		});
 	
 	
 	
