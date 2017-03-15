@@ -102,13 +102,13 @@
 		<div class="row">
 			<div class="col-xs-7" style="margin-top:5vh; position:relative">
 				<div id="scene1Bubble1"> <img class="scene1Bubble1" src="assets/img/bubble1.png"> </div>
-				<div id="scene1Text1" class="scene1Text1"> <!-- Texto colocado através do javascript --> </div>
+				<p id="scene1Text1" class="scene1Text1"> <!-- Texto colocado através do javascript --> </p>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-xs-7" style="margin-top:13vh; position:relative">
 				<div id="scene1Bubble2"> <img class="scene1Bubble2"src="assets/img/bubble2.png"> </div>
-				<div id="scene1Text2" class="scene1Text2"> Para avançar clique na seta no canto inferior direito da tela </div>
+				<p id="scene1Text2" class="scene1Text2"> Para avançar clique na seta no canto inferior direito da tela </p>
 			</div>
 		</div>
 		
@@ -158,7 +158,7 @@
 						</div>
 					</div>
 					<div class="col-xs-2" style="margin-top: 5vh;">
-						<div id="scene2Text1" class="scene2Text1"> Interaja com os elementos para conhecer mais sobre os meios de produção de energia elétrica </div>
+						<p id="scene2Text1" class="scene2Text1"> Interaja com os elementos para conhecer mais sobre os meios de produção de energia elétrica </p>
 						<div id="scene2Bubble1"> <img class="scene2Bubble1" src="assets/img/bubble1.png"> </div>
 					</div>
 				</div>
@@ -183,13 +183,13 @@
 
 			
 		
-		<div id=detalhesUsinas>		
+		<div id="detalhesUsinas">		
 			<div class="row">
 				<div class="col-xs-offset-1 col-xs-9">
 					<div id="scene2Sub1" class="scene2Sub1"> </div>
 					<div id="scene2Sub2" class="scene2Sub2"> </div>
-					<div id="tituloUsina" class="tituloUsina">  </div>
-					<div id="textoUsina" class="textoUsina">  </div>
+					<p id="tituloUsina" class="tituloUsina">  </p>
+					<p id="textoUsina" class="textoUsina">  </p>
 					<div id="animacaoUsina"> <video autoplay loop class="animacaoUsina" id="imgUsina"> </div>
 					<div id="imagemFecharUsinas">
 						<span title="Fechar" id="imagemFecharUsinas" onclick="restoreScene2()" class="iconFecharUsinas glyphicon glyphicon-remove-circle">
@@ -200,7 +200,7 @@
 	</div>	
 	
 		
-		<div id="scene3">
+	<div id="scene3">
 			<div class="row marginImposto paddingLeftImposto">
 				<div id="imagensImpostos">
 					<div class="col-xs-4 noPadding">
@@ -216,7 +216,7 @@
 				</div>		
 				<div class="col-xs-1">
 					<div id="scene3Bubble1"> <img class="scene3Bubble1"src="assets/img/bubble2.png"> </div>
-					<div id="scene3Text1" class="scene3Text1"> Interaja com os elementos para conhecer mais sobre os impostos da tarifa de energia elétrica </div>
+					<p id="scene3Text1" class="scene3Text1"> Interaja com os elementos para conhecer mais sobre os impostos da tarifa de energia elétrica </p>
 				</div>
 				<div class="col-xs-3">
 					<div id="imagemEngenheiro2">
@@ -227,8 +227,23 @@
 
 			</div>
 					
-		</div>
+	</div>
 
+	<div id="scene4">
+		<div class="row">
+			<div class="col-xs-5">
+				<div id="scene4QuestionContainer">
+					<span id="scene4QuestionNumber" class="questionNumber"></span>
+					<span id="scene4Question" class="questionText"></span>
+				</div>
+			</div>
+			<div class="col-xs-7">
+				<div id="scene4Graph">
+
+				</div>
+			</div>		
+		</div>
+	</div>
 </div>
 
 </body>

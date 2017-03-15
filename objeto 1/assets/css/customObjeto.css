@@ -507,3 +507,18 @@ body {
 	left: 50%;
 	margin-top: -4%;
 }
+
+
+/* SCENE 04 */
+
+.questionNumber {
+	font-family: : 'Roboto Condensed', sans-serif;
+	font-size: 40px;
+	color: #DB8422;
+}
+
+.questionText {
+	font-family: : 'Roboto Condensed', sans-serif;
+	font-size: 16px;
+	color: black;
+}

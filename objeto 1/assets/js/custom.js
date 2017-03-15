@@ -2,7 +2,7 @@
   var i = -11.4;
   var scene = 0;
   var fadeTime = 500;
-  
+  var questionNumber = 1;
 
   function sleep(ms) {
   	return new Promise(resolve => setTimeout(resolve, ms));
@@ -13,6 +13,7 @@
 		$("#scene1").hide();
 		$("#scene2").hide();
 		$("#scene3").hide();
+		$("#scene4").hide();
 
 		$("#imagensFixas").hide();
 
@@ -171,6 +172,24 @@
 	  }
 	  
 	  
+
+
+	  /* Scene 4 */
+
+	  function loadQuestion () {
+
+	  	switch (questionNumber) {
+	  		case 1:
+	  			$("#scene4QuestionNumber").html("1.");
+	  			$("#scene4Question").html("Exemplo de questão número 1. De acordo com as informações apresentadas selecione a alternativa correta" )
+	  			break;
+
+	  	}
+	  }
+
+
+
+
 	  
 	  
 	  /* Funções Gerais */
@@ -182,6 +201,7 @@
 		else {
 			unloadScene();
 			scene++;
+			console.log(scene);
 			await sleep(fadeTime);
 			loadScene();
 		}
@@ -222,6 +242,12 @@
 					$("#scene3").fadeIn(fadeTime);
 					$("#tituloGeral").html("Impostos pagos sobre a energia elétrica");
 					$("#containerImposto").hide();
+					break;
+			
+				case 4:
+					$("#scene4").fadeIn(fadeTime);
+					loadQuestion();
+					break;
 			}
 	  }
 	  
@@ -245,6 +271,9 @@
 					
 				case 3:
 					$("#scene3").fadeOut(fadeTime);
+					break;
+				case 4:
+					$("#scene4").fadeOut(fadeTime);
 					break;
 			}
 	  }
