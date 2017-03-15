@@ -3,6 +3,7 @@
   var scene = 0;
   var fadeTime = 500;
   var questionNumber = 1;
+  var listeningToKeyPress = false;
 
   function sleep(ms) {
   	return new Promise(resolve => setTimeout(resolve, ms));
@@ -46,10 +47,7 @@
 	}
 	
 	
-		$(document).on('click', '.btn-questoes', function () {
-    		$(this).toggleClass('btn-primary').siblings().removeClass('btn-primary');
-		});
-	
+
 	
 	
 	
@@ -196,6 +194,37 @@
 	  }
 
 
+	  function selectQuestion (elemento) {
+	  	$(elemento).toggleClass('btn-primary').siblings().removeClass('btn-primary');
+
+	  }
+
+		$(document).on('click', '.btn-questoes', function () {
+			selectQuestion(this);
+		});
+	
+
+
+ 		$(document).bind('keydown', function(event) {
+				if(listeningToKeyPress) {
+					var code = event.keyCode;
+					switch (code) {
+						case 65:
+							selectQuestion($("#opcaoA"));
+							break;
+						case 66:
+							selectQuestion($("#opcaoB"));
+							break;
+						case 67:
+							selectQuestion($("#opcaoC"));
+							break;
+						case 68:
+							selectQuestion($("#opcaoD"));
+							break;
+					}
+
+				}
+			});
 
 		function grafico1() {
 			$(document).ready(function () {
@@ -305,6 +334,8 @@
 				case 4:
 					$("#scene4").fadeIn(fadeTime);
 					loadQuestion();
+					listeningToKeyPress = true;
+
 					break;
 			}
 	  }
@@ -332,6 +363,7 @@
 					break;
 				case 4:
 					$("#scene4").fadeOut(fadeTime);
+					listeningToKeyPress = false;
 					break;
 			}
 	  }

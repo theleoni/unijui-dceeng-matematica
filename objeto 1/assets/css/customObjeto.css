@@ -552,3 +552,7 @@ body {
 .btn-questoes:hover {
 	background-color: #c4c2c2;
 }
+
+.btn-enviar {
+	margin-top: 50px;
+}
