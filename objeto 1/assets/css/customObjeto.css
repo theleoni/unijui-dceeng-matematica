@@ -190,9 +190,14 @@ body {
 }
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1600px) and (max-width:1920px) {
 	.imagemLogoResponsivaNavbar {
-	max-width: 5%;
+	max-width: 4%;
+}
+}
+@media (min-width: 1920px) {
+	.imagemLogoResponsivaNavbar {
+	max-width: 3.5%;
 }
 }
 
@@ -217,9 +222,15 @@ body {
 }
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1600px) and (max-width: 1920px) {
 	.imagemUnijuiResponsivaNavbar {
 	max-width: 12%;
+}
+}
+
+@media (min-width: 1920px) {
+	.imagemUnijuiResponsivaNavbar {
+	max-width: 10%;
 }
 }
 
