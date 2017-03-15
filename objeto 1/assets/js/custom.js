@@ -182,6 +182,8 @@
 	  		case 1:
 	  			$("#scene4QuestionNumber").html("1.");
 	  			$("#scene4Question").html("Exemplo de questão número 1. De acordo com as informações apresentadas, é correto afirmar que a fruta preferida do fulano é: " )
+	  			$("#opcaoA").html("<span class='containerLetra'>A</span>Banana")
+	  			$("#opcaoB").html("<span class='containerLetra'>B</span>Maçã");
 	  			grafico();
 	  			break;
 
@@ -209,8 +211,11 @@
 						pie: {
 							allowPointSelect: true,
 							cursor: 'pointer',
-							dataLabels: {
-								enabled: true
+						 dataLabels: {
+              			 	enabled: true,
+                			format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+
+
 							},
 							showInLegend: true
 						}
