@@ -251,7 +251,7 @@
 					var code = event.keyCode;
 					switch (code) {
 						case 13:
-							checkAnswer(questaoSelecionada);
+							$('#enviarResposta').trigger('click');
 							break;
 						case 65:
 							selectQuestion($("#opcaoA"));
