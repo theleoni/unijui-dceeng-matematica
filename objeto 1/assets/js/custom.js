@@ -23,6 +23,17 @@
 });
 
 
+		$(document).on('click', '#iconSetaDireita', function () {
+			nextScene();
+		});
+
+
+
+		$(document).on('click', '#iconSetaEsquerda', function () {
+			previousScene();
+		});
+
+
 	function pressedEnter(event) {
 		if (event.keyCode == 13 && scene == 0) {
 			saveName();
@@ -203,8 +214,9 @@
 	  					console.log("Correto");
 	  					$("#alertAnswer").addClass("alert-success");
 	  					$("#alertAnswer").removeClass("alert-danger");
+	  					$("#iconSetaDireita").show();
 
-  						$("#alertAnswer").html("Resposta correta! Clique em algum lugar para prosseguir");
+  						$("#alertAnswer").html("Resposta correta! Prossiga para a próxima questão");
 
 	  				}
 	  				else {
@@ -365,6 +377,7 @@
 			
 				case 4:
 					$("#scene4").fadeIn(fadeTime);
+					$("#iconSetaDireita").hide();
 					loadQuestion();
 					listeningToKeyPress = true;
 
