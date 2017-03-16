@@ -5,7 +5,6 @@
   var questionNumber = 1;
   var listeningToKeyPress = false;
   var questaoSelecionada;
-  var answers = ["'#opcaoA'", "'#opcaoC'"];
 
   function sleep(ms) {
   	return new Promise(resolve => setTimeout(resolve, ms));
