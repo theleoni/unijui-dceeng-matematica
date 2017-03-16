@@ -5,6 +5,7 @@
   var questionNumber = 1;
   var listeningToKeyPress = false;
   var questaoSelecionada;
+  var corretas = [false, false];
 
   function sleep(ms) {
   	return new Promise(resolve => setTimeout(resolve, ms));
@@ -214,7 +215,7 @@
 	  					$("#alertAnswer").addClass("alert-success");
 	  					$("#alertAnswer").removeClass("alert-danger");
 	  					$("#iconSetaDireita").show();
-
+	  					corretas[0] = true;
   						$("#alertAnswer").html("Resposta correta! Prossiga para a próxima questão");
 
 	  				}
@@ -376,7 +377,11 @@
 			
 				case 4:
 					$("#scene4").fadeIn(fadeTime);
-					$("#iconSetaDireita").hide();
+
+					if (corretas[0] == false) {
+						$("#iconSetaDireita").hide();
+					}
+
 					loadQuestion();
 					listeningToKeyPress = true;
 
