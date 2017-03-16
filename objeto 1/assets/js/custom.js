@@ -197,7 +197,24 @@
 
 	  //Verifica se a resposta selecionada está correta
 	  function checkAnswer() {
-	  		//TODO
+	  		switch (questionNumber) {
+	  			case 1:
+	  				if($("#opcaoA").hasClass("btn-primary")) {
+	  					console.log("Correto");
+	  					$("#alertAnswer").addClass("alert-success");
+	  					$("#alertAnswer").removeClass("alert-danger");
+
+  						$("#alertAnswer").html("Resposta correta! Clique em algum lugar para prosseguir");
+
+	  				}
+	  				else {
+	  					console.log("Errado");
+	  					$("#alertAnswer").addClass("alert-danger");
+	  					$("#alertAnswer").removeClass("alert-success");
+
+  						$("#alertAnswer").html("Resposta errada! Tente novamente");
+	  				}
+	  		}
 	  }
 
 
