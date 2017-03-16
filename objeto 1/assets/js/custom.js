@@ -211,7 +211,6 @@
 	  		switch (questionNumber) {
 	  			case 1:
 	  				if($("#opcaoA").hasClass("btn-primary")) {
-	  					console.log("Correto");
 	  					$("#alertAnswer").addClass("alert-success");
 	  					$("#alertAnswer").removeClass("alert-danger");
 	  					$("#iconSetaDireita").show();
@@ -220,7 +219,6 @@
 
 	  				}
 	  				else {
-	  					console.log("Errado");
 	  					$("#alertAnswer").addClass("alert-danger");
 	  					$("#alertAnswer").removeClass("alert-success");
 
