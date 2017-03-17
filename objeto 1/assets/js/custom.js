@@ -246,12 +246,14 @@
 	  	switch (questionNumber) {
 	  		case 1:
 
+	  			$("#opcaoA").show().siblings().show();
 	  			$("#scene4QuestionNumber").html("1.");
 	  			$("#scene4Question").html("De acordo com o gráfico, qual o aparelho que possuí o <b>maior</b> consumo de energia" )
 	  			$("#opcaoA").html("<span class='containerLetra'>A</span>Iluminação");
 	  			$("#opcaoB").html("<span class='containerLetra'>B</span>Televisão");
 	  			$("#opcaoC").html("<span class='containerLetra'>C</span>Chuveiro elétrico");
 	  			$("#opcaoD").html("<span class='containerLetra'>D</span>Geladeira e Freezer");
+	  			$("#questionGroup").hide();
 
 	  			grafico1();
 
@@ -268,13 +270,15 @@
 	  			break;
 
 	  		case 2:
-
+	  			$("#opcaoA").show().siblings().show();
 	  			$("#scene4QuestionNumber").html("2.");
 	  			$("#scene4Question").html("De acordo com o gráfico, qual o aparelho que possuí o <b>menor</b> consumo de energia" )
 	  			$("#opcaoA").html("<span class='containerLetra'>A</span>Ferro Elétrico");
 	  			$("#opcaoB").html("<span class='containerLetra'>B</span>Outros");
 	  			$("#opcaoC").html("<span class='containerLetra'>C</span>Televisão");
 	  			$("#opcaoD").html("<span class='containerLetra'>D</span>Maquina de lavar");
+	  			$("#questionGroup").hide();
+
 
 
 	  				if (corretas[1] == false) {
@@ -287,6 +291,22 @@
 					}
 
 	  			break;
+
+	  		case 3:
+	  			$("#questionGroup").show();
+	  			$("#scene4QuestionNumber").html("3.");
+	  			$("#scene4Question").html("De acordo com o gráfico, durante qual mês houve o maior consumo de energia elétrica?" )
+	  			$("#opcaoA").hide().siblings().hide();
+	  			grafico2();
+
+	  				if (corretas[2] == false) {
+						$("#iconSetaDireita").hide();
+						resetQuestionButtons();
+					}
+					else {
+						disableQuestionButtons();
+						$("#iconSetaDireita").show();
+					}
 
 	  	}
 	  }
@@ -337,19 +357,23 @@
   						$("#alertAnswer").html(mensagemRespostaErrada);
   						$("#alertAnswer").show();
 	  				}
+	  				break;
+
+	  			case 3:
+
 
 	  		}
 	  }
 
 
 	  //Realiza a troca da seleção e salva a seleção atual em uma variável
-	  function selectQuestion (elemento) {
+	  function selectAnswer (elemento) {
 	  	$(elemento).toggleClass('btn-primary').siblings().removeClass('btn-primary');
 	  }
 
 	  //Binda o evento de clicar no botão à troca de sleleção
 		$(document).on('click', '.btn-questoes', function () {
-			selectQuestion(this);
+			selectAnswer(this);
 		});
 	
 		//Binda o evento de clicar no botão de enviar ao método checkAnswer
@@ -366,16 +390,24 @@
 							$('#enviarResposta').trigger('click');
 							break;
 						case 65:
-							selectQuestion($("#opcaoA"));
+							if (!($("#opcaoA").prop("disabled"))) {
+								selectAnswer($("#opcaoA"));
+							}
 							break;
 						case 66:
-							selectQuestion($("#opcaoB"));
+							if (!($("#opcaoB").prop("disabled"))) {
+								selectAnswer($("#opcaoB"));
+							}						
 							break;
 						case 67:
-							selectQuestion($("#opcaoC"));
+							if (!($("#opcaoC").prop("disabled"))) {
+								selectAnswer($("#opcaoC"));
+							}
 							break;
 						case 68:
-							selectQuestion($("#opcaoD"));
+							if (!($("#opcaoD").prop("disabled"))) {
+								selectAnswer($("#opcaoD"));
+							}
 							break;
 					}
 
@@ -466,7 +498,9 @@
 			});
 			}
 	  
-	  
+	 	function grafico2() {
+	 		
+	 	}
 	  /* Funções Gerais */
 	  	
 	async function nextScene() {
