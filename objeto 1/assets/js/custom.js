@@ -8,6 +8,9 @@
   var corretas = [false, false];
   mensagemRespostaCorreta = "Resposta correta! Prossiga para a próxima questão   <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>";
   mensagemRespostaErrada = "Resposta errada! Tente novamente   <span class='glyphicon glyphicon-remove' aria-hidden='true'</span>";
+  msgIntroQuestoes1 = "Agora que você já sabe um pouco sobre a produção da eletricidade, vamos analisar, interpretar e responder algumas questões a partir de diferentes tipos de gráficos, referentes ao consumo de energia.";
+  msgIntroQuestoes2 = "Por gráfico entendemos, que é uma forma de transmitir dados e informação estatística. Eles, os gráficos, são usados em meio de comunicação como, jornais, televisão, páginas de internet. Algumas formas em que se utilizam os gráficos são para representar variação de indicadores financeiros, pesquisa de opinião, entre outros."
+  var updateText = false;
 
   function sleep(ms) {
   	return new Promise(resolve => setTimeout(resolve, ms));
@@ -27,14 +30,63 @@
 
 
 		$(document).on('click', '#iconSetaDireita', function () {
-			nextScene();
+			switch (scene) {
+				case 1:
+				case 2:
+				case 3:
+					nextScene();
+					break;
+				case 4:
+					if (updateText == false) {
+						$("#scene4Text1").html(msgIntroQuestoes2);
+						updateText = true;
+						console.log(scene);
+						break;
+					}
+					else {
+						nextScene();
+						break;
+					}
+				case 5:
+					questionNumber++;
+					loadQuestion();
+					break;
+			}
 		});
 
 
 
 		$(document).on('click', '#iconSetaEsquerda', function () {
-			previousScene();
-		});
+			switch (scene) {
+				case 1:
+				case 2:
+				case 3:
+				case 4:
+					if(updateText == true) {
+						$("#scene4Text1").html(msgIntroQuestoes1);
+						updateText = true;
+						console.log(scene);
+						break;
+					} else {
+					previousScene();
+					break;
+				}
+				case 5:
+					switch(questionNumber) {
+						case 1:
+							previousScene();
+							break;
+						case 5:
+							nextScene();
+							break;
+						default:
+							questionNumber--;
+							loadQuestion();
+							break;
+					}
+
+
+			}		});
 
 
 	function pressedEnter(event) {
@@ -196,14 +248,40 @@
 
 	  	switch (questionNumber) {
 	  		case 1:
+	  				if (corretas[0] == false) {
+						$("#iconSetaDireita").hide();
+						resetQuestionButtons();
+					}
+					else {
+						disableQuestionButtons();
+						$("#iconSetaDireita").show();
+
+					}
 	  			$("#scene4QuestionNumber").html("1.");
-	  			$("#scene4Question").html("De acordo com o gráfico, qual o aparelho que possuí o maior consumo de energia" )
+	  			$("#scene4Question").html("De acordo com o gráfico, qual o aparelho que possuí o <b>maior</b> consumo de energia" )
 	  			$("#opcaoA").html("<span class='containerLetra'>A</span>Iluminação");
 	  			$("#opcaoB").html("<span class='containerLetra'>B</span>Televisão");
 	  			$("#opcaoC").html("<span class='containerLetra'>C</span>Chuveiro elétrico");
 	  			$("#opcaoD").html("<span class='containerLetra'>D</span>Geladeira e Freezer");
 
 	  			grafico1();
+	  			break;
+
+	  		case 2:
+	  				if (corretas[1] == false) {
+						$("#iconSetaDireita").hide();
+						resetQuestionButtons();
+					}
+					else {
+						disableQuestionButtons();
+						iconSetaDireita.show();
+					}
+	  			$("#scene4QuestionNumber").html("2.");
+	  			$("#scene4Question").html("De acordo com o gráfico, qual o aparelho que possuí o <b>menor</b> consumo de energia" )
+	  			$("#opcaoA").html("<span class='containerLetra'>A</span>Ferro Elétrico");
+	  			$("#opcaoB").html("<span class='containerLetra'>B</span>Outros");
+	  			$("#opcaoC").html("<span class='containerLetra'>C</span>Televisão");
+	  			$("#opcaoD").html("<span class='containerLetra'>D</span>Maquina de lavar");
 	  			break;
 
 	  	}
@@ -217,8 +295,12 @@
 	  					$("#alertAnswer").addClass("alert-success");
 	  					$("#alertAnswer").removeClass("alert-danger");
 	  					$("#iconSetaDireita").show();
+
 	  					corretas[0] = true;
+	  					disableQuestionButtons();
+
   						$("#alertAnswer").html(mensagemRespostaCorreta);
+    					$("#alertAnswer").show();
 
 	  				}
 	  				else {
@@ -226,7 +308,32 @@
 	  					$("#alertAnswer").removeClass("alert-success");
 
   						$("#alertAnswer").html(mensagemRespostaErrada);
+  						$("#alertAnswer").show();
+
 	  				}
+	  				break;
+
+
+	  			case 2:
+	  				if($("#opcaoB").hasClass("btn-primary")) {
+	  					$("#alertAnswer").addClass("alert-success");
+	  					$("#alertAnswer").removeClass("alert-danger");
+	  					$("#iconSetaDireita").show();
+
+	  					corretas[1] = true;
+	  					disableQuestionButtons();
+
+  						$("#alertAnswer").html(mensagemRespostaCorreta);
+    					$("#alertAnswer").show();
+	  				}
+	  				else {
+	  					$("#alertAnswer").addClass("alert-danger");
+	  					$("#alertAnswer").removeClass("alert-success");
+
+  						$("#alertAnswer").html(mensagemRespostaErrada);
+  						$("#alertAnswer").show();
+	  				}
+
 	  		}
 	  }
 
@@ -270,6 +377,30 @@
 
 				}
 			});
+
+
+ 			function resetQuestionButtons() {
+ 			 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', false);
+ 				$("#opcaoA").removeClass('btn-primary').siblings().removeClass('btn-primary');
+
+ 			 	 $("#alertAnswer").hide();
+
+
+ 			}
+
+ 			function disableQuestionButtons () 	{
+ 				switch(questionNumber) {
+ 					case 1:
+ 					 	$("#opcaoD").prop('disabled', false).siblings().prop('disabled', true);
+ 						$("#opcaoD").toggleClass('btn-primary');
+ 						break;
+ 				
+ 					case 2:
+ 					 	$("#opcaoB").prop('disabled', false).siblings().prop('disabled', true);
+ 						$("#opcaoB").toggleClass('btn-primary');
+ 						break;
+ 			}
+ 		}
 
 		function grafico1() {
 			$(document).ready(function () {
@@ -388,11 +519,6 @@
 					break;
 				case 5:
 					$("#scene5").fadeIn(fadeTime);
-
-					if (corretas[0] == false) {
-						$("#iconSetaDireita").hide();
-					}
-
 					loadQuestion();
 					listeningToKeyPress = true;
 
