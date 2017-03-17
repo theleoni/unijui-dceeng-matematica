@@ -520,7 +520,42 @@ body {
 }
 
 
+
 /* SCENE 04 */
+
+.imagemEngenheiro04 {
+	position: absolute;
+	max-width: 40%;
+	z-index: 1;
+	top: 50%;
+	left: 50%;
+	margin-top: 15%;
+}
+
+.scene4Bubble1 {
+	position: absolute;
+	left: -8%;
+	top: 12%;
+	width: 70vw;
+	height: 40vh;
+}
+
+.scene4Text1 {
+	position: absolute;
+	left: -5%;
+	line-height: 125%;
+	right: -10%;
+	top: 2000%;
+	text-align: justify;
+	z-index: 1;
+	color: #FFFFFF;
+	font-size: calc((4vh + 2vw)/1.9);
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+
+/* SCENE 05 */
 
 .questionNumber {
 	font-family: : 'Roboto Condensed', sans-serif;
