@@ -195,11 +195,11 @@
 	  	switch (questionNumber) {
 	  		case 1:
 	  			$("#scene4QuestionNumber").html("1.");
-	  			$("#scene4Question").html("Exemplo de questão número 1. De acordo com as informações apresentadas, é correto afirmar que a fruta preferida do fulano é: " )
-	  			$("#opcaoA").html("<span class='containerLetra'>A</span>Banana");
-	  			$("#opcaoB").html("<span class='containerLetra'>B</span>Maçã");
-	  			$("#opcaoC").html("<span class='containerLetra'>C</span>Pêssego");
-	  			$("#opcaoD").html("<span class='containerLetra'>D</span>Mamão");
+	  			$("#scene4Question").html("De acordo com o gráfico, qual o aparelho que possuí o maior consumo de energia" )
+	  			$("#opcaoA").html("<span class='containerLetra'>A</span>Iluminação");
+	  			$("#opcaoB").html("<span class='containerLetra'>B</span>Televisão");
+	  			$("#opcaoC").html("<span class='containerLetra'>C</span>Chuveiro elétrico");
+	  			$("#opcaoD").html("<span class='containerLetra'>D</span>Geladeira e Freezer");
 
 	  			grafico1();
 	  			break;
@@ -211,7 +211,7 @@
 	  function checkAnswer() {
 	  		switch (questionNumber) {
 	  			case 1:
-	  				if($("#opcaoA").hasClass("btn-primary")) {
+	  				if($("#opcaoD").hasClass("btn-primary")) {
 	  					$("#alertAnswer").addClass("alert-success");
 	  					$("#alertAnswer").removeClass("alert-danger");
 	  					$("#iconSetaDireita").show();
@@ -275,11 +275,11 @@
 
 				// Gera o gráfico
 				Highcharts.chart('scene4Graph', {
-					chart: {
-						type: 'pie',
-					},
+				    chart: {
+				        type: 'pie',
+				    },
 					title: {
-						text: 'Quantidade de frutas que o fulano comeu'
+						text: 'Utilização de energia elétrica por aparelhos eletrônicos'
 					},
 					tooltip: {
 						pointFormat: '{series.name}: <b>{point.y}</b>'
@@ -301,22 +301,29 @@
 						name: 'Fruta',
 						colorByPoint: true,
 						data: [{
-							name: 'Maçã',
-							y: 2
+							name: 'Geladeira e Freezer',
+							y: 30
 						}, {
-							name: 'Melância',
-							y: 1
+							name: 'Chuveiro elétrico',
+							y: 25
 		
 						}, {
-							name: 'Banana',
+							name: 'Iluminação',
+							y: 20
+						}, {
+							name: 'Televisão',
+							y: 10
+						}, {
+							name: 'Ferro Elétrico',
+							y: 6
+						}, {
+							name: 'Maquina de lavar',
+							y: 5
+						}, {
+							name: 'Outros',
 							y: 4
-						}, {
-							name: 'Mamão',
-							y: 1
-						}, {
-							name: 'Pêssego',
-							y: 3
-						}]
+						}
+						]
 					}]
 				});
 			});
@@ -375,6 +382,7 @@
 					break;
 				case 4:
 					$("#scene4").fadeIn(fadeTime);
+					$("#iconSetaDireita").show();
 					break;
 				case 5:
 					$("#scene5").fadeIn(fadeTime);
