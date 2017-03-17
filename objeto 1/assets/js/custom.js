@@ -17,6 +17,7 @@
 		$("#scene2").hide();
 		$("#scene3").hide();
 		$("#scene4").hide();
+		$("#scene5").hide();
 
 		$("#imagensFixas").hide();
 
@@ -372,9 +373,11 @@
 					$("#tituloGeral").html("Impostos pagos sobre a energia elétrica");
 					$("#containerImposto").hide();
 					break;
-			
 				case 4:
 					$("#scene4").fadeIn(fadeTime);
+					break;
+				case 5:
+					$("#scene5").fadeIn(fadeTime);
 
 					if (corretas[0] == false) {
 						$("#iconSetaDireita").hide();
@@ -410,6 +413,9 @@
 					break;
 				case 4:
 					$("#scene4").fadeOut(fadeTime);
+ 					break;
+				case 5:
+					$("#scene5").fadeOut(fadeTime);
 					listeningToKeyPress = false;
 					break;
 			}
