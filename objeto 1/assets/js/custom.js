@@ -6,6 +6,8 @@
   var listeningToKeyPress = false;
   var questaoSelecionada;
   var corretas = [false, false];
+  mensagemRespostaCorreta = "Resposta correta! Prossiga para a próxima questão   <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>";
+  mensagemRespostaErrada = "Resposta errada! Tente novamente   <span class='glyphicon glyphicon-remove' aria-hidden='true'</span>";
 
   function sleep(ms) {
   	return new Promise(resolve => setTimeout(resolve, ms));
@@ -216,14 +218,14 @@
 	  					$("#alertAnswer").removeClass("alert-danger");
 	  					$("#iconSetaDireita").show();
 	  					corretas[0] = true;
-  						$("#alertAnswer").html("Resposta correta! Prossiga para a próxima questão");
+  						$("#alertAnswer").html(mensagemRespostaCorreta);
 
 	  				}
 	  				else {
 	  					$("#alertAnswer").addClass("alert-danger");
 	  					$("#alertAnswer").removeClass("alert-success");
 
-  						$("#alertAnswer").html("Resposta errada! Tente novamente");
+  						$("#alertAnswer").html(mensagemRespostaErrada);
 	  				}
 	  		}
 	  }
