@@ -40,7 +40,6 @@
 					if (updateText == false) {
 						$("#scene4Text1").html(msgIntroQuestoes2);
 						updateText = true;
-						console.log(scene);
 						break;
 					}
 					else {
@@ -65,7 +64,6 @@
 					if(updateText == true) {
 						$("#scene4Text1").html(msgIntroQuestoes1);
 						updateText = true;
-						console.log(scene);
 						break;
 					} else {
 					previousScene();
@@ -245,9 +243,18 @@
 	  /* Scene 4 */
 
 	  function loadQuestion () {
-
 	  	switch (questionNumber) {
 	  		case 1:
+
+	  			$("#scene4QuestionNumber").html("1.");
+	  			$("#scene4Question").html("De acordo com o gráfico, qual o aparelho que possuí o <b>maior</b> consumo de energia" )
+	  			$("#opcaoA").html("<span class='containerLetra'>A</span>Iluminação");
+	  			$("#opcaoB").html("<span class='containerLetra'>B</span>Televisão");
+	  			$("#opcaoC").html("<span class='containerLetra'>C</span>Chuveiro elétrico");
+	  			$("#opcaoD").html("<span class='containerLetra'>D</span>Geladeira e Freezer");
+
+	  			grafico1();
+
 	  				if (corretas[0] == false) {
 						$("#iconSetaDireita").hide();
 						resetQuestionButtons();
@@ -257,31 +264,28 @@
 						$("#iconSetaDireita").show();
 
 					}
-	  			$("#scene4QuestionNumber").html("1.");
-	  			$("#scene4Question").html("De acordo com o gráfico, qual o aparelho que possuí o <b>maior</b> consumo de energia" )
-	  			$("#opcaoA").html("<span class='containerLetra'>A</span>Iluminação");
-	  			$("#opcaoB").html("<span class='containerLetra'>B</span>Televisão");
-	  			$("#opcaoC").html("<span class='containerLetra'>C</span>Chuveiro elétrico");
-	  			$("#opcaoD").html("<span class='containerLetra'>D</span>Geladeira e Freezer");
 
-	  			grafico1();
 	  			break;
 
 	  		case 2:
-	  				if (corretas[1] == false) {
-						$("#iconSetaDireita").hide();
-						resetQuestionButtons();
-					}
-					else {
-						disableQuestionButtons();
-						iconSetaDireita.show();
-					}
+
 	  			$("#scene4QuestionNumber").html("2.");
 	  			$("#scene4Question").html("De acordo com o gráfico, qual o aparelho que possuí o <b>menor</b> consumo de energia" )
 	  			$("#opcaoA").html("<span class='containerLetra'>A</span>Ferro Elétrico");
 	  			$("#opcaoB").html("<span class='containerLetra'>B</span>Outros");
 	  			$("#opcaoC").html("<span class='containerLetra'>C</span>Televisão");
 	  			$("#opcaoD").html("<span class='containerLetra'>D</span>Maquina de lavar");
+
+
+	  				if (corretas[1] == false) {
+						$("#iconSetaDireita").hide();
+						resetQuestionButtons();
+					}
+					else {
+						disableQuestionButtons();
+						$("#iconSetaDireita").show();
+					}
+
 	  			break;
 
 	  	}
@@ -392,12 +396,12 @@
  				switch(questionNumber) {
  					case 1:
  					 	$("#opcaoD").prop('disabled', false).siblings().prop('disabled', true);
- 						$("#opcaoD").toggleClass('btn-primary');
+ 						$("#opcaoD").toggleClass('btn-primary').siblings().removeClass('btn-primary');
  						break;
  				
  					case 2:
  					 	$("#opcaoB").prop('disabled', false).siblings().prop('disabled', true);
- 						$("#opcaoB").toggleClass('btn-primary');
+ 						$("#opcaoB").toggleClass('btn-primary').siblings().removeClass('btn-primary');
  						break;
  			}
  		}
