@@ -5,7 +5,7 @@
   var questionNumber = 1;
   var listeningToKeyPress = false;
   var questaoSelecionada;
-  var corretas = [false, false];
+  var corretas = [false, false, false];
   mensagemRespostaCorreta = "Resposta correta! Prossiga para a próxima questão   <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>";
   mensagemRespostaErrada = "Resposta errada! Tente novamente   <span class='glyphicon glyphicon-remove' aria-hidden='true'</span>";
   msgIntroQuestoes1 = "Agora que você já sabe um pouco sobre a produção da eletricidade, vamos analisar, interpretar e responder algumas questões a partir de diferentes tipos de gráficos, referentes ao consumo de energia.";
@@ -243,6 +243,7 @@
 	  /* Scene 4 */
 
 	  function loadQuestion () {
+
 	  	switch (questionNumber) {
 	  		case 1:
 
@@ -278,7 +279,7 @@
 	  			$("#opcaoC").html("<span class='containerLetra'>C</span>Televisão");
 	  			$("#opcaoD").html("<span class='containerLetra'>D</span>Maquina de lavar");
 	  			$("#questionGroup").hide();
-
+	  			grafico1();
 
 
 	  				if (corretas[1] == false) {
@@ -293,10 +294,12 @@
 	  			break;
 
 	  		case 3:
+	  			$("#opcaoA").hide().siblings().hide();
+	  			$("#enviarResposta").show();
+	  			$("#enviarResposta").prop('disabled', false);
 	  			$("#questionGroup").show();
 	  			$("#scene4QuestionNumber").html("3.");
 	  			$("#scene4Question").html("De acordo com o gráfico, durante qual mês houve o maior consumo de energia elétrica?" )
-	  			$("#opcaoA").hide().siblings().hide();
 	  			grafico2();
 
 	  				if (corretas[2] == false) {
@@ -313,6 +316,7 @@
 
 	  //Verifica se a resposta selecionada está correta
 	  function checkAnswer() {
+
 	  		switch (questionNumber) {
 	  			case 1:
 	  				if($("#opcaoD").hasClass("btn-primary")) {
@@ -360,7 +364,25 @@
 	  				break;
 
 	  			case 3:
+	  				if($("#botaoDezembro").hasClass("btn-primary")) {
+	  					$("#alertAnswer").addClass("alert-success");
+	  					$("#alertAnswer").removeClass("alert-danger");
+	  					$("#iconSetaDireita").show();
 
+	  					corretas[2] = true;
+	  					disableQuestionButtons();
+
+  						$("#alertAnswer").html(mensagemRespostaCorreta);
+    					$("#alertAnswer").show();
+	  				}
+	  				else {
+	  					$("#alertAnswer").addClass("alert-danger");
+	  					$("#alertAnswer").removeClass("alert-success");
+
+  						$("#alertAnswer").html(mensagemRespostaErrada);
+  						$("#alertAnswer").show();
+	  				}
+	  				break;
 
 	  		}
 	  }
@@ -416,15 +438,29 @@
 
 
  			function resetQuestionButtons() {
- 			 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', false);
- 				$("#opcaoA").removeClass('btn-primary').siblings().removeClass('btn-primary');
+ 				console.log("Reset question:  " + questionNumber)
+ 			 	switch (questionNumber) {
+ 			 		case 1:
+ 			 		case 2:
+		  			 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', false);
+		 				$("#opcaoA").removeClass('btn-primary').siblings().removeClass('btn-primary');
 
- 			 	 $("#alertAnswer").hide();
+		 			 	 $("#alertAnswer").hide();
+		 			 	 break;
+		 			case 3:
+		  			 	$("#botaoDezembro").prop('disabled', false).siblings().prop('disabled', false);
+		 				$("#botaoDezembro").removeClass('btn-primary').siblings().removeClass('btn-primary');
+
+		 			 	 $("#alertAnswer").hide();
+		 				break;
+ 			 	}
+
 
 
  			}
 
  			function disableQuestionButtons () 	{
+
  				switch(questionNumber) {
  					case 1:
  					 	$("#opcaoD").prop('disabled', false).siblings().prop('disabled', true);
@@ -435,6 +471,12 @@
  					 	$("#opcaoB").prop('disabled', false).siblings().prop('disabled', true);
  						$("#opcaoB").toggleClass('btn-primary').siblings().removeClass('btn-primary');
  						break;
+ 					case 3:
+ 						$("#botaoDezembro").prop('disabled', false).siblings().prop('disabled', true);
+ 						$("#botaoDezembro").toggleClass('btn-primary').siblings().removeClass('btn-primary');
+ 						$("#enviarResposta").prop('disabled', true);
+ 						break;
+
  			}
  		}
 
@@ -500,6 +542,57 @@
 	  
 	 	function grafico2() {
 	 		
+			Highcharts.chart('scene4Graph', {
+			    chart: {
+			        type: 'column'
+			    },
+			    title: {
+			        text: 'Consumo de energia elétrica de uma residência'
+			    },
+			    subtitle: {
+			        text: 'Fonte: Professor Hugo Gomes'
+			    },
+			    xAxis: {
+			        categories: [
+			            'Jan',
+			            'Fev',
+			            'Mar',
+			            'Abr',
+			            'Mai',
+			            'Jun',
+			            'Jul',
+			            'Ago',
+			            'Set',
+			            'Out',
+			            'Nov',
+			            'Dez'
+			        ],
+			        crosshair: true
+			    },
+			    yAxis: {
+			        min: 0,
+			        title: {
+			            text: 'KwH'
+			        }
+			    },
+			    tooltip: {
+					pointFormat: 'Consumo: <b>{point.y}</b> KwH',
+			        shared: true
+			    },
+			    plotOptions: {
+			        column: {
+			            pointPadding: 0.2,
+			            borderWidth: 0
+			        }
+			    },
+			    series: [{
+			        name: '',
+			        data: [375, 300, 275, 280, 267, 254, 380, 310, 301, 312, 327, 382]
+			    }]
+			});
+
+
+
 	 	}
 	  /* Funções Gerais */
 	  	
