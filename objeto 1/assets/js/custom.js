@@ -5,7 +5,7 @@
   var questionNumber = 1;
   var listeningToKeyPress = false;
   var questaoSelecionada;
-  var corretas = [false, false, false];
+  var corretas = [false, false, false, false];
   mensagemRespostaCorreta = "Resposta correta! Prossiga para a próxima questão   <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>";
   mensagemRespostaErrada = "Resposta errada! Tente novamente   <span class='glyphicon glyphicon-remove' aria-hidden='true'</span>";
   msgIntroQuestoes1 = "Agora que você já sabe um pouco sobre a produção da eletricidade, vamos analisar, interpretar e responder algumas questões a partir de diferentes tipos de gráficos, referentes ao consumo de energia.";
@@ -310,6 +310,30 @@
 						disableQuestionButtons();
 						$("#iconSetaDireita").show();
 					}
+				break;
+
+
+			case 4:
+				$("#questionGroup").hide();
+				$("#opcaoA").show().siblings().show();
+	  			$("#scene4QuestionNumber").html("4.");
+	  			$("#scene4Question").html("De acordo com o gráfico, qual é a média de consumo de energia elétrica durante o ano?" )
+	  			$("#opcaoA").html("<span class='containerLetra'>A</span>313,58");
+	  			$("#opcaoB").html("<span class='containerLetra'>B</span>323,47");
+	  			$("#opcaoC").html("<span class='containerLetra'>C</span>300");
+	  			$("#opcaoD").html("<span class='containerLetra'>D</span>12");
+	  			$("#questionGroup").hide();
+	  			grafico2();
+
+	  				if (corretas[3] == false) {
+						$("#iconSetaDireita").hide();
+						resetQuestionButtons();
+					}
+					else {
+						disableQuestionButtons();
+						$("#iconSetaDireita").show();
+					}
+	  			break;
 
 	  	}
 	  }
@@ -384,6 +408,27 @@
 	  				}
 	  				break;
 
+	  			case 4:
+	  				if($("#opcaoA").hasClass("btn-primary")) {
+	  					$("#alertAnswer").addClass("alert-success");
+	  					$("#alertAnswer").removeClass("alert-danger");
+	  					$("#iconSetaDireita").show();
+
+	  					corretas[3] = true;
+	  					disableQuestionButtons();
+
+  						$("#alertAnswer").html(mensagemRespostaCorreta);
+    					$("#alertAnswer").show();
+	  				}
+	  				else {
+	  					$("#alertAnswer").addClass("alert-danger");
+	  					$("#alertAnswer").removeClass("alert-success");
+
+  						$("#alertAnswer").html(mensagemRespostaErrada);
+  						$("#alertAnswer").show();
+	  				}
+	  				break;
+
 	  		}
 	  }
 
@@ -438,10 +483,10 @@
 
 
  			function resetQuestionButtons() {
- 				console.log("Reset question:  " + questionNumber)
  			 	switch (questionNumber) {
  			 		case 1:
  			 		case 2:
+ 			 		case 4:
 		  			 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', false);
 		 				$("#opcaoA").removeClass('btn-primary').siblings().removeClass('btn-primary');
 
@@ -475,6 +520,10 @@
  						$("#botaoDezembro").prop('disabled', false).siblings().prop('disabled', true);
  						$("#botaoDezembro").toggleClass('btn-primary').siblings().removeClass('btn-primary');
  						$("#enviarResposta").prop('disabled', true);
+ 						break;
+ 					case 4:
+ 					 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', true);
+ 						$("#opcaoA").toggleClass('btn-primary').siblings().removeClass('btn-primary');
  						break;
 
  			}
