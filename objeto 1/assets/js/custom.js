@@ -5,7 +5,7 @@
   var questionNumber = 1;
   var listeningToKeyPress = false;
   var questaoSelecionada;
-  var corretas = [false, false, false, false, false];
+  var corretas = [false, false, false, false, false, false];
   var updateText = false;
   var dataJSON;
 
@@ -364,6 +364,29 @@
 						$("#iconSetaDireita").show();
 					}
 	  			break;
+	  		case 6:
+				$("#questionGroup").hide();
+				$("#opcaoA").show().siblings().show();
+	  			$("#scene4QuestionNumber").html(dataJSON.questao6.numeroQuestao);
+	  			$("#scene4Question").html(dataJSON.questao6.textoQuestao )
+	  			$("#opcaoA").html(dataJSON.questao6.alternativa1Questao);
+	  			$("#opcaoB").html(dataJSON.questao6.alternativa2Questao);
+	  			$("#opcaoC").html(dataJSON.questao6.alternativa3Questao);
+	  			$("#opcaoD").html(dataJSON.questao6.alternativa4Questao);
+	  			$("#questionGroup").hide();
+	  			grafico3();
+
+	  				if (corretas[5] == false) {
+	  					console.log("false");
+						$("#iconSetaDireita").hide();
+						resetQuestionButtons();
+					}
+					else {
+						console.log("True");
+						disableQuestionButtons();
+						$("#iconSetaDireita").show();
+					}
+				break;
 
 	  	}
 	  }
@@ -420,6 +443,14 @@
 	  				}
 	  				break;
 
+	  			case 6:
+	  				if($("#opcaoD").hasClass("btn-primary")) {
+	  					respostaCorreta();
+	  				}
+	  				else {
+	  					respostaErrada();
+	  				}
+	  				break;
 	  		}
 	  }
 
@@ -478,6 +509,7 @@
  			 		case 1:
  			 		case 2:
  			 		case 5:
+ 			 		case 6:
 		  			 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', false);
 		 				$("#opcaoA").removeClass('btn-primary').siblings().removeClass('btn-primary');
 
@@ -527,7 +559,11 @@
  						$("#opcaoA").toggleClass('btn-primary').siblings().removeClass('btn-primary');
 						updateAlertOnQuestionChange();
  						break;
-
+ 					case 6:
+ 					 	$("#opcaoD").prop('disabled', false).siblings().prop('disabled', true);
+ 						$("#opcaoD").toggleClass('btn-primary').siblings().removeClass('btn-primary');
+						updateAlertOnQuestionChange();
+ 						break;
  			}
  		}
 
@@ -673,6 +709,52 @@
 
 
 
+	 	}
+
+
+
+	 	function grafico3() {
+	 		Highcharts.chart('scene4Graph', {
+
+			    title: {
+			        text: 'Consumo de energia elétrica em KwH na residência de alunos'
+			    },
+
+			    subtitle: {
+			        text: 'Fonte:'
+			    },
+
+			    yAxis: {
+			        title: {
+			            text: 'KwH'
+			        }
+			    },
+			    xAxis: {
+			    			        categories: [
+						            'Set',
+						            'Out',
+						            'Nov',
+						            'Dez',
+						            'Jan',
+						            'Fev',
+						            'Mar',
+						        ],
+			        title: {
+			            text: 'Meses'
+			        }
+			    },
+			    legend: {
+			        layout: 'vertical',
+			        align: 'right',
+			        verticalAlign: 'middle'
+			    },
+
+			    series: [{
+			        name: 'Consumo',
+			        data: [450, 550, 557, 723, 732, 752, 750]
+			    }]
+
+			});
 	 	}
 
 	  /* Funções Gerais */

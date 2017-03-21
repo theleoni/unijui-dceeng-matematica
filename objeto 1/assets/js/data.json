@@ -69,5 +69,12 @@
 	"alternativa2Questao": "<span class='containerLetra'>B</span>323,47",
 	"alternativa3Questao": "<span class='containerLetra'>C</span>300",
 	"alternativa4Questao": "<span class='containerLetra'>D</span>12"
-	}
+	},
+	"questao6": {
+		"numeroQuestao": "6.",
+		"textoQuestao": "De acordo com o gráfico, quais são os três meses com maior consumo de energia?",
+		"alternativa1Questao": "<span class='containerLetra'>A</span>Novembro, Dezembro e Fevereiro",
+		"alternativa2Questao": "<span class='containerLetra'>B</span>Dezembro, Fevereiro e Março",
+		"alternativa3Questao": "<span class='containerLetra'>C</span>Dezembro, Janeiro e Fevereiro",
+		"alternativa4Questao": "<span class='containerLetra'>D</span>Janeiro, Fevereiro e Março"	}
 }
