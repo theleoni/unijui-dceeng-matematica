@@ -6,15 +6,11 @@
   var listeningToKeyPress = false;
   var questaoSelecionada;
   var corretas = [false, false, false, false, false];
-  mensagemRespostaCorreta = "Resposta correta! Prossiga para a próxima questão   <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>";
-  mensagemRespostaErrada = "Resposta errada! Tente novamente   <span class='glyphicon glyphicon-remove' aria-hidden='true'</span>";
-  msgIntroQuestoes1 = "Agora que você já sabe um pouco sobre a produção da eletricidade, vamos analisar, interpretar e responder algumas questões a partir de diferentes tipos de gráficos, referentes ao consumo de energia.";
-  msgIntroQuestoes2 = "Por gráfico entendemos, que é uma forma de transmitir dados e informação estatística. Eles, os gráficos, são usados em meio de comunicação como, jornais, televisão, páginas de internet. Algumas formas em que se utilizam os gráficos são para representar variação de indicadores financeiros, pesquisa de opinião, entre outros."
   var updateText = false;
-  var questoes;
+  var dataJSON;
 
-  	$.getJSON('assets/js/teste.json', function(data) {
-  	questoes = data;
+  	$.getJSON('assets/js/data.json', function(data) {
+  		dataJSON = data;
   	  });
 
 
@@ -44,7 +40,7 @@
 					break;
 				case 4:
 					if (updateText == false) {
-						$("#scene4Text1").html(msgIntroQuestoes2);
+						$("#scene4Text1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
 						updateText = true;
 						break;
 					}
@@ -75,7 +71,7 @@
 				case 3:
 				case 4:
 					if(updateText == true) {
-						$("#scene4Text1").html(msgIntroQuestoes1);
+						$("#scene4Text1").html(dataJSON.mensagensQuestoes.mensagemIntroQuestoesIniciais);
 						updateText = false;
 						break;
 					} else {
@@ -159,34 +155,34 @@
 		switch (usina) {
 			case 'hidreletrica': 
 				$('#imgUsina').attr("src", "assets/img/hidreletrica_animada.mp4");
-				$('#textoUsina').html("Energia gerada pela água em usinas Hidrelétricas. A energia contida nas correntezas de rios é transformada em energia cinética que movimenta uma turbina, movendo um gerador que por sua vez irá gerar energia elétrica");
-				$('#tituloUsina').html("Energia Hídrica");
+				$('#textoUsina').html(dataJSON.textosUsinas.usinaHidreletrica);
+				$('#tituloUsina').html(dataJSON.textosUsinas.titleHidreletrica);
 
 				break;
 			case 'eolica':
 				$('#imgUsina').attr("src", "assets/img/eolica_animada.mp4");
-				$('#textoUsina').html("É a energia gerada pelo vento, grandes turibinas são posicionadas em locais abertos e com grande quantidade de vento. O vento, ao mover as turbinas gera energia elétrica através de um gerador.");
-				$('#tituloUsina').html("Energia Eólica");
+				$('#textoUsina').html(dataJSON.textosUsinas.usinaEolica);
+				$('#tituloUsina').html(dataJSON.textosUsinas.titleEolica);
 				break;
 			case 'fossil':
 				$('#imgUsina').attr("src", "assets/img/fossil_animada.mp4");
-				$('#textoUsina').html("Energia gerada através de reações químicas de combustão de materiais orgânicos decompostos, quando as ligações químicas dos hidrocarbonetos são quebradas, a energia é liberada");
-				$('#tituloUsina').html("Energia Fóssil");
+				$('#textoUsina').html(dataJSON.textosUsinas.usinaFossil);
+				$('#tituloUsina').html(dataJSON.textosUsinas.titleFossil);
 				break;
 			case 'nuclear':
 				$('#imgUsina').attr("src", "assets/img/nuclear_animada.mp4");
-				$('#textoUsina').html("Utiliza a energia proveniente de reações de fissão nuclear para gerar energia. A fissão nuclear libera grande quantidade de calor que aquece a água e produz o vapor responsável por movimentar as turbinas do gerador em grandes velocidades, gerando a corrente elétrica.");
-				$('#tituloUsina').html("Energia Nuclear");
+				$('#textoUsina').html(dataJSON.textosUsinas.usinaNuclear);
+				$('#tituloUsina').html(dataJSON.textosUsinas.titleNuclear);
 				break;
 			case 'solar':
 				$('#imgUsina').attr("src", "assets/img/solar_animada.mp4");
-				$('#textoUsina').html("É a energia irradiada pelo sol. Pode ser utilizada para geração de calor, ou pode ser convertida em energia elétrica através de células fotovoltaicas");
-				$('#tituloUsina').html("Energia Solar");
+				$('#textoUsina').html(dataJSON.textosUsinas.usinaSolar);
+				$('#tituloUsina').html(dataJSON.textosUsinas.titleSolar);
 				break;	
 			case 'biomassa':
 				$('#imgUsina').attr("src", "assets/img/biomassa_animada.mp4");
-				$('#textoUsina').html("Gerada através da decomposição de materiais orgânicos (esterco, resto de alimentos). É transformada em energia por meio de combustão, gaseificação e fermentação");
-				$('#tituloUsina').html("Energia de Biomassa");
+				$('#textoUsina').html(dataJSON.textosUsinas.usinaBiomassa);
+				$('#tituloUsina').html(dataJSON.textosUsinas.titleBiomassa);
 				break;	
 		}
 	}
@@ -215,32 +211,32 @@
 		  switch (imposto) {
 			case 'icms':
 				$("#containerImposto").css("background-color", "#654E44");
-				$("#containerImposto").html("Poderá levar até 30% do valor consumido, este imposto é cobrado referente a circulação de mercadorias (eletrodomésticos, alimentos, cosméticos e outras mercadorias relacionadas ao segmentos) e prestação de serviços de transporte interestadual e intermunicipal e comunicação.");
+				$("#containerImposto").html(dataJSON.textosImpostos.icms);
 				break;
 			
 			case 'tusd':
 				$("#containerImposto").css("background-color", "#5E35B1");
-				$("#containerImposto").html("Tarifa de Uso do Sistema de Distribuição, que remunera instalações, equipamentos e componentes da rede de distribuição para levar a energia até as casas (Imposto estabelecido pela ANEEL, dando poder para as concessionarias cobrarem de seus clientes sobre a conta de energia");
+				$("#containerImposto").html(dataJSON.textosImpostos.tusd);
 				break;	
 				
 			case 'cofins':
 				$("#containerImposto").css("background-color", "#D26F4C");
-				$("#containerImposto").html("Contribuição Social para Financiamento da Seguridade Social, destinada a financiar as despesas das áreas de Saúde, Previdência, e Assistência social. COFINS leva 4.45% do valor de sua fatura");
+				$("#containerImposto").html(dataJSON.textosImpostos.cofins);
 				break;
 			
 			case 'cip':
 				$("#containerImposto").css("background-color", "#7CB342");
-				$("#containerImposto").html("Contribuição de Iluminação Pública, é uma taxa cobrada baseada no custo total do serviço/manutenção do sistema de iluminação pública");
+				$("#containerImposto").html(dataJSON.textosImpostos.cip);
 				break;
 				
 			case 'pispasep':
 				$("#containerImposto").css("background-color", "#09AFC3");
-				$("#containerImposto").html("Programas de Integração Social e de Formação do Patrimônio do Servidor Público, tem como finalidade o financiamento do programa do Seguro-Desemprego e o abono aos empregados que recebem até dois salários mínimos mensais. De forma geral, o contribuinte acaba pagando no PIS a alíquota de 0.95% do valor de consumo da energia elétrica.");
+				$("#containerImposto").html(dataJSON.textosImpostos.pispasep);
 				break;
 			
 			case 'tust':
 				$("#containerImposto").css("background-color", "#880E4F");
-				$("#containerImposto").html("Tarifa de Uso do Sistema de Transmissão, que remunera instalações, equipamentos e componentes da rede de transmissão. (Imposto estabelecido pela Agência Nacional de Energia Elétrica, dando poder para as concessionárias cobraram de seus clientes sobre a conta de energia)");
+				$("#containerImposto").html(dataJSON.textosImpostos.tust);
 				break;				
 				}
 	  
@@ -258,12 +254,12 @@
 	  		case 1:
 
 	  			$("#opcaoA").show().siblings().show();
-	  			$("#scene4QuestionNumber").html(questoes.questao1.numeroQuestao);
-	  			$("#scene4Question").html(questoes.questao1.textoQuestao)
-	  			$("#opcaoA").html(questoes.questao1.alternativa1Questao);
-	  			$("#opcaoB").html(questoes.questao1.alternativa2Questao);
-	  			$("#opcaoC").html(questoes.questao1.alternativa3Questao);
-	  			$("#opcaoD").html(questoes.questao1.alternativa4Questao);
+	  			$("#scene4QuestionNumber").html(dataJSON.questao1.numeroQuestao);
+	  			$("#scene4Question").html(dataJSON.questao1.textoQuestao)
+	  			$("#opcaoA").html(dataJSON.questao1.alternativa1Questao);
+	  			$("#opcaoB").html(dataJSON.questao1.alternativa2Questao);
+	  			$("#opcaoC").html(dataJSON.questao1.alternativa3Questao);
+	  			$("#opcaoD").html(dataJSON.questao1.alternativa4Questao);
 	  			$("#questionGroup").hide();
 
 	  			grafico1();
@@ -282,12 +278,12 @@
 
 	  		case 2:
 	  			$("#opcaoA").show().siblings().show();
-	  			$("#scene4QuestionNumber").html(questoes.questao2.numeroQuestao);
-	  			$("#scene4Question").html(questoes.questao2.textoQuestao)
-	  			$("#opcaoA").html(questoes.questao2.alternativa1Questao);
-	  			$("#opcaoB").html(questoes.questao2.alternativa2Questao);
-	  			$("#opcaoC").html(questoes.questao2.alternativa3Questao);
-	  			$("#opcaoD").html(questoes.questao2.alternativa4Questao);
+	  			$("#scene4QuestionNumber").html(dataJSON.questao2.numeroQuestao);
+	  			$("#scene4Question").html(dataJSON.questao2.textoQuestao)
+	  			$("#opcaoA").html(dataJSON.questao2.alternativa1Questao);
+	  			$("#opcaoB").html(dataJSON.questao2.alternativa2Questao);
+	  			$("#opcaoC").html(dataJSON.questao2.alternativa3Questao);
+	  			$("#opcaoD").html(dataJSON.questao2.alternativa4Questao);
 	  			$("#questionGroup").hide();
 	  			grafico1();
 
@@ -308,8 +304,8 @@
 	  			$("#enviarResposta").show();
 	  			$("#enviarResposta").prop('disabled', false);
 	  			$("#questionGroup").show();
-	  			$("#scene4QuestionNumber").html(questoes.questao3.numeroQuestao);
-	  			$("#scene4Question").html(questoes.questao3.textoQuestao);
+	  			$("#scene4QuestionNumber").html(dataJSON.questao3.numeroQuestao);
+	  			$("#scene4Question").html(dataJSON.questao3.textoQuestao);
 	  			grafico2();
 
 	  				if (corretas[2] == false) {
@@ -327,8 +323,8 @@
 	  			$("#enviarResposta").show();
 	  			$("#enviarResposta").prop('disabled', false);
 	  			$("#questionGroup").show();
-	  			$("#scene4QuestionNumber").html(questoes.questao4.numeroQuestao);
-	  			$("#scene4Question").html(questoes.questao4.textoQuestao);
+	  			$("#scene4QuestionNumber").html(dataJSON.questao4.numeroQuestao);
+	  			$("#scene4Question").html(dataJSON.questao4.textoQuestao);
 	  			grafico2();
 
 	  				if (corretas[3] == false) {
@@ -344,12 +340,12 @@
 			case 5:
 				$("#questionGroup").hide();
 				$("#opcaoA").show().siblings().show();
-	  			$("#scene4QuestionNumber").html("4.");
-	  			$("#scene4Question").html("De acordo com o gráfico, qual é a média de consumo de energia elétrica durante o ano?" )
-	  			$("#opcaoA").html("<span class='containerLetra'>A</span>313,58");
-	  			$("#opcaoB").html("<span class='containerLetra'>B</span>323,47");
-	  			$("#opcaoC").html("<span class='containerLetra'>C</span>300");
-	  			$("#opcaoD").html("<span class='containerLetra'>D</span>12");
+	  			$("#scene4QuestionNumber").html(dataJSON.questao5.numeroQuestao);
+	  			$("#scene4Question").html(dataJSON.questao5.textoQuestao )
+	  			$("#opcaoA").html(dataJSON.questao5.alternativa1Questao);
+	  			$("#opcaoB").html(dataJSON.questao5.alternativa2Questao);
+	  			$("#opcaoC").html(dataJSON.questao5.alternativa3Questao);
+	  			$("#opcaoD").html(dataJSON.questao5.alternativa4Questao);
 	  			$("#questionGroup").hide();
 	  			grafico2();
 
@@ -544,12 +540,12 @@
  		function respostaErrada() {
  			$("#alertAnswer").addClass("alert-danger");
 	  		$("#alertAnswer").removeClass("alert-success");
-  			$("#alertAnswer").html(mensagemRespostaErrada);
+  			$("#alertAnswer").html(dataJSON.mensagensQuestoes.respostaIncorreta);
   			$("#alertAnswer").show();
  		}
 
  		function updateAlertOnQuestionChange() {
- 		  	$("#alertAnswer").html(mensagemRespostaCorreta);
+ 		  	$("#alertAnswer").html(dataJSON.mensagensQuestoes.respostaCorreta);
     		$("#alertAnswer").show();
     		$("#alertAnswer").addClass("alert-success");
 	  		$("#alertAnswer").removeClass("alert-danger");
@@ -702,7 +698,7 @@
 			switch (scene) {
 				case 1:
 					$("#scene1").fadeIn(fadeTime);
-					$("#scene1Text1").html("Olá " + nome + "! Eu sou o engenheiro Euler, estou aqui para auxiliá-lo neste percurso de aprendizado, a partir da matemática iremos conhecer os modos de geração de energia elétrica, o caminho e o custo até chegar à sua casa.");
+					$("#scene1Text1").html("Olá " + nome + dataJSON.stringsGerais.scene01Balao01);
 					$("#tituloGeral").html("");
 					break;
 					
@@ -710,13 +706,13 @@
 					$("#scene2").fadeIn(fadeTime);
 					$('#detalhesUsinas').hide();
 					$('#additionalScene2').show();
-					$("#tituloGeral").html("Formas de produção de energia");
+					$("#tituloGeral").html(dataJSON.stringsGerais.title1);
 
 					break;
 					
 				case 3:
 					$("#scene3").fadeIn(fadeTime);
-					$("#tituloGeral").html("Impostos pagos sobre a energia elétrica");
+					$("#tituloGeral").html(dataJSON.stringsGerais.title2);
 					$("#containerImposto").hide();
 					break;
 				case 4:

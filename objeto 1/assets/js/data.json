@@ -1,0 +1,73 @@
+{
+	"stringsGerais": {
+		"scene01Balao01": "! Eu sou o engenheiro Euler, estou aqui para auxiliá-lo neste percurso de aprendizado, a partir da matemática iremos conhecer os modos de geração de energia elétrica, o caminho e o custo até chegar à sua casa.",
+		"title1": "Formas de produção de energia",
+		"title2": "Impostos pagos sobre a energia elétrica"
+	},
+
+	"textosUsinas": {
+		"titleHidreletrica": "Energia Hídrica",
+		"usinaHidreletrica": "Energia gerada pela água em usinas Hidrelétricas. A energia contida nas correntezas de rios é transformada em energia cinética que movimenta uma turbina, movendo um gerador que por sua vez irá gerar energia elétrica",
+		"titleEolica": "Energia Eólica",
+		"usinaEolica": "É a energia gerada pelo vento, grandes turibinas são posicionadas em locais abertos e com grande quantidade de vento. O vento, ao mover as turbinas gera energia elétrica através de um gerador.",
+		"titleFossil": "Energia Fóssil",
+		"usinaFossil": "Energia gerada através de reações químicas de combustão de materiais orgânicos decompostos, quando as ligações químicas dos hidrocarbonetos são quebradas, a energia é liberada",
+		"titleNuclear": "Energia Nuclear",
+		"usinaNuclear": "Utiliza a energia proveniente de reações de fissão nuclear para gerar energia. A fissão nuclear libera grande quantidade de calor que aquece a água e produz o vapor responsável por movimentar as turbinas do gerador em grandes velocidades, gerando a corrente elétrica.",
+		"titleSolar": "Energia Solar",
+		"usinaSolar": "É a energia irradiada pelo sol. Pode ser utilizada para geração de calor, ou pode ser convertida em energia elétrica através de células fotovoltaicas",
+		"titleBiomassa": "Energia de Biomassa",
+		"usinaBiomassa": "Gerada através da decomposição de materiais orgânicos (esterco, resto de alimentos). É transformada em energia por meio de combustão, gaseificação e fermentação"
+	},
+
+	"textosImpostos": {
+		"icms": "Poderá levar até 30% do valor consumido, este imposto é cobrado referente a circulação de mercadorias (eletrodomésticos, alimentos, cosméticos e outras mercadorias relacionadas ao segmentos) e prestação de serviços de transporte interestadual e intermunicipal e comunicação.",
+		"tusd": "Tarifa de Uso do Sistema de Distribuição, que remunera instalações, equipamentos e componentes da rede de distribuição para levar a energia até as casas (Imposto estabelecido pela ANEEL, dando poder para as concessionarias cobrarem de seus clientes sobre a conta de energia",
+		"cofins": "Contribuição Social para Financiamento da Seguridade Social, destinada a financiar as despesas das áreas de Saúde, Previdência, e Assistência social. COFINS leva 4.45% do valor de sua fatura",
+		"cip": "Contribuição de Iluminação Pública, é uma taxa cobrada baseada no custo total do serviço/manutenção do sistema de iluminação pública",
+		"pispasep": "Programas de Integração Social e de Formação do Patrimônio do Servidor Público, tem como finalidade o financiamento do programa do Seguro-Desemprego e o abono aos empregados que recebem até dois salários mínimos mensais. De forma geral, o contribuinte acaba pagando no PIS a alíquota de 0.95% do valor de consumo da energia elétrica.",
+		"tust": "Tarifa de Uso do Sistema de Transmissão, que remunera instalações, equipamentos e componentes da rede de transmissão. (Imposto estabelecido pela Agência Nacional de Energia Elétrica, dando poder para as concessionárias cobraram de seus clientes sobre a conta de energia)"
+	},
+	"mensagensQuestoes": {
+		"respostaCorreta": "Resposta correta! Prossiga para a próxima questão   <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>",
+		"respostaIncorreta": "Resposta errada! Tente novamente   <span class='glyphicon glyphicon-remove' aria-hidden='true'</span>",
+		"mensagemIntroQuestoesIniciais": "Agora que você já sabe um pouco sobre a produção da eletricidade, vamos analisar, interpretar e responder algumas questões a partir de diferentes tipos de gráficos, referentes ao consumo de energia.",
+		"mensagem2IntroQuestoesIniciais": "Por gráfico entendemos, que é uma forma de transmitir dados e informação estatística. Eles, os gráficos, são usados em meio de comunicação como, jornais, televisão, páginas de internet. Algumas formas em que se utilizam os gráficos são para representar variação de indicadores financeiros, pesquisa de opinião, entre outros."
+	},
+	"questao1": {
+	"numeroQuestao": "1.",
+	"textoQuestao": "De acordo com o gráfico, qual o aparelho que possuí o <b>maior</b> consumo de energia",
+	"alternativa1Questao": "<span class='containerLetra'>A</span>Iluminação",
+	"alternativa2Questao": "<span class='containerLetra'>B</span>Televisão",
+	"alternativa3Questao": "<span class='containerLetra'>C</span>Chuveiro elétrico",
+	"alternativa4Questao": "<span class='containerLetra'>D</span>Geladeira e Freezer"
+	},
+
+	"questao2": {
+	"numeroQuestao": "2.",
+	"textoQuestao": "De acordo com o gráfico, qual o aparelho que possuí o <b>menor</b> consumo de energia",
+	"alternativa1Questao": "<span class='containerLetra'>A</span>Ferro Elétrico",
+	"alternativa2Questao": "<span class='containerLetra'>B</span>Outros",
+	"alternativa3Questao": "<span class='containerLetra'>C</span>Televisão",
+	"alternativa4Questao": "<span class='containerLetra'>D</span>Maquina de lavar"
+	},
+
+	"questao3": {
+		"numeroQuestao": "3.",
+		"textoQuestao": "De acordo com o gráfico, durante qual mês houve o <b>maior</b> consumo de energia elétrica?"
+	},
+
+	"questao4": {
+		"numeroQuestao": "4.",
+		"textoQuestao": "De acordo com o gráfico, durante qual mês houve o <b>menor</b> consumo de energia elétrica?"
+	},
+
+	"questao5": {
+	"numeroQuestao": "5.",
+	"textoQuestao": "De acordo com o gráfico, qual é a média de consumo de energia elétrica durante o ano?" ,
+	"alternativa1Questao": "<span class='containerLetra'>A</span>313,58",
+	"alternativa2Questao": "<span class='containerLetra'>B</span>323,47",
+	"alternativa3Questao": "<span class='containerLetra'>C</span>300",
+	"alternativa4Questao": "<span class='containerLetra'>D</span>12"
+	}
+}
