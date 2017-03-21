@@ -9,15 +9,19 @@
   var updateText = false;
   var dataJSON;
 
+
+  	//Recupera as informações do arquivo data.json
   	$.getJSON('assets/js/data.json', function(data) {
   		dataJSON = data;
   	  });
 
-
+  	//Adiciona um sleep equivalente ao tempo passado como input
   function sleep(ms) {
   	return new Promise(resolve => setTimeout(resolve, ms));
 	}
 
+
+	//Oculta as cenas ao carregar a página
   $( document ).ready(function() {
 		$("#alertNome").hide();
 		$("#scene1").hide();
@@ -30,7 +34,7 @@
 
 });
 
-
+  		//Realiza as ações necessárias ao se clicar na seta direita (Troca de cena ou troca de questão)
 		$(document).on('click', '#iconSetaDireita', function () {
 			switch (scene) {
 				case 1:
@@ -63,7 +67,7 @@
 		});
 
 
-
+		 //Realiza as ações necessárias ao se clicar na seta esquerda (Troca de cena ou troca de questão)
 		$(document).on('click', '#iconSetaEsquerda', function () {
 			switch (scene) {
 				case 1:
@@ -92,7 +96,7 @@
 
 			}		});
 
-
+		//Verifica se a tecla pressionada foi enter (Utilizado na cena inicial, para confirmação do nome)
 	function pressedEnter(event) {
 		if (event.keyCode == 13 && scene == 0) {
 			saveName();
@@ -126,11 +130,12 @@
 	
 	/* SCENE 1 */
 		
-
+		//Exibe as imagens fixas (Setas, ajuda e fechar)
 		function showFixedImages() {
 		$("#imagensFixas").show();
 		}
 	
+		//Ocultas as imagens fixas (Setas, ajuda e fechar)
 		function hideFixedImages() {
 			$("#imagensFixas").hide();
 		}
@@ -144,7 +149,7 @@
 	
 	
 	/* SCENE 2 */
-	
+	//Exibe as informações especificas sobre cada usina, trocando a cor do background e ocultando o que for desnecessário
 	function showMoreInfo(usina) {
 		$("body").css("background-color", "gray");
 		$('#detalhesUsinas').show();
@@ -188,7 +193,7 @@
 	}
 	
 
-	  
+	  //Restaura o estado da cena 2, após a visualização dos dados da usina
 	function restoreScene2() {
 		loadScene();
 		showFixedImages();
@@ -205,6 +210,7 @@
 	  
 	  /*Scene 3 */
 	  
+	  //Atualiza os dados contidos no container do imposto, trocando o texto e a cor do background
 	  function showImposto(imposto) {
 		  $("#containerImposto").show();
 		  
@@ -247,7 +253,7 @@
 
 
 	  /* Scene 4 */
-
+	  //Carrega a questão, tendo como base a variável questionNumber
 	  function loadQuestion () {
 
 	  	switch (questionNumber) {
@@ -362,15 +368,13 @@
 	  	}
 	  }
 
-	  //Verifica se a resposta selecionada está correta
+	  //Verifica se a resposta selecionada está correta, e chama o método correto
 	  function checkAnswer() {
 
 	  		switch (questionNumber) {
 	  			case 1:
 	  				if($("#opcaoD").hasClass("btn-primary")) {
-	  					corretas[0] = true;
 	  					respostaCorreta();
-
 	  				}
 	  				else {
 	  					respostaErrada();
@@ -435,7 +439,7 @@
 			checkAnswer();
 		});
 
-
+		//Verifica se as teclas A, B, C, D ou ENTER foram pressionadas, e realiza a função respectiva (Selecionar alternativa / Enviar resposta)
  		$(document).bind('keydown', function(event) {
 				if(listeningToKeyPress) {
 					var code = event.keyCode;
@@ -468,7 +472,7 @@
 				}
 			});
 
-
+ 			//Coloca as alternativas no estado inicial, para que o aluno possa responder (Botões ativos, e nenhuma opção selecionada)
  			function resetQuestionButtons() {
  			 	switch (questionNumber) {
  			 		case 1:
@@ -491,43 +495,43 @@
 
 
  			}
-
+ 			//Desabilitada os botões de resposta, chama método para exibir a mensagem de resposta correta,  e deixa a resposta marcada selecionada (Para após o aluno ter respondido corretamente a questão)
  			function disableQuestionButtons () 	{
 
  				switch(questionNumber) {
  					case 1:
  					 	$("#opcaoD").prop('disabled', false).siblings().prop('disabled', true);
  						$("#opcaoD").toggleClass('btn-primary').siblings().removeClass('btn-primary');
-						updateAlertOnQuestionChange	();
+						updateAlertOnQuestionChange();
  						break;
  				
  					case 2:
  					 	$("#opcaoB").prop('disabled', false).siblings().prop('disabled', true);
  						$("#opcaoB").toggleClass('btn-primary').siblings().removeClass('btn-primary');
-						updateAlertOnQuestionChange	();
+						updateAlertOnQuestionChange();
  						break;
  					case 3:
  						$("#botaoDezembro").prop('disabled', false).siblings().prop('disabled', true);
  						$("#botaoDezembro").toggleClass('btn-primary').siblings().removeClass('btn-primary');
  						$("#enviarResposta").prop('disabled', true);
-						updateAlertOnQuestionChange	();
+						updateAlertOnQuestionChange();
  						break;
  					case 4:
  						$("#botaoJunho").prop('disabled', false).siblings().prop('disabled', true);
  						$("#botaoJunho").toggleClass('btn-primary').siblings().removeClass('btn-primary');
  						$("#enviarResposta").prop('disabled', true);
-						updateAlertOnQuestionChange	();
+						updateAlertOnQuestionChange();
  						break;
  					case 5:
  					 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', true);
  						$("#opcaoA").toggleClass('btn-primary').siblings().removeClass('btn-primary');
-						updateAlertOnQuestionChange	();
+						updateAlertOnQuestionChange();
  						break;
 
  			}
  		}
 
-
+ 		//Realiza as ações necessárias caso a resposta do aluno esteja correta (Adicionar "true" ao vetor de verificação, desabilitar os botõe e exibir o icone de seta para a direita)
  		function respostaCorreta() {
 	  		$("#iconSetaDireita").show();
 
@@ -537,6 +541,7 @@
 
  		}
 
+ 		//Realiza as ações necessárias caso a resposta do aluno esteja errada (Exibe alerta de resposta incorreta)
  		function respostaErrada() {
  			$("#alertAnswer").addClass("alert-danger");
 	  		$("#alertAnswer").removeClass("alert-success");
@@ -544,6 +549,7 @@
   			$("#alertAnswer").show();
  		}
 
+ 		//Exibe o alerta de respsota correta (Método chamado quando o aluno acerta a questão, e quando muda de tela para uma questão já respondida)
  		function updateAlertOnQuestionChange() {
  		  	$("#alertAnswer").html(dataJSON.mensagensQuestoes.respostaCorreta);
     		$("#alertAnswer").show();
@@ -551,6 +557,8 @@
 	  		$("#alertAnswer").removeClass("alert-danger");
  		}
 
+
+	  	//Método utilizado para criar o gráfico utilizado nas questões 1 e 2
 		function grafico1() {
 			$(document).ready(function () {
 
@@ -610,7 +618,8 @@
 				});
 			});
 			}
-	  
+	  	
+	  	//Método utilizado para criar o gráfico utilizado nas questões 3 e 4
 	 	function grafico2() {
 	 		
 			Highcharts.chart('scene4Graph', {
@@ -665,8 +674,9 @@
 
 
 	 	}
+
 	  /* Funções Gerais */
-	  	
+	  	//Função que realiza a troca de uma cena para a próxima, bem como adicionar um sleep igual ao tempo de fade
 	async function nextScene() {
 		if (scene == 332189123) {
 		
@@ -679,7 +689,7 @@
 		}
 	}
 	
-	
+		//Função que realiza a troca de uma cena para a anterior, bem como adicionar um sleep igual ao tempo de fade
 	async function previousScene() {
 		if (scene == 1) {
 			
@@ -692,7 +702,7 @@
 		}
 	}
 	
-	  
+	  	//Função que realiza o carregamento da cena de acordo com a variável "scene". Responsável por adicionar o fade à troca de cenas e realizar a alteração do título
 	  function loadScene() {
 		  
 			switch (scene) {
@@ -730,7 +740,7 @@
 	  
 	  
 	  
-	  
+	  	//Função que realiza a remoção da cena atual, inserindo um fade para que ela seja removida
 	  function unloadScene() {
 		  	$("#tituloGeral").html("");
 			switch (scene) {
