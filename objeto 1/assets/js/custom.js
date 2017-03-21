@@ -5,12 +5,18 @@
   var questionNumber = 1;
   var listeningToKeyPress = false;
   var questaoSelecionada;
-  var corretas = [false, false, false, false];
+  var corretas = [false, false, false, false, false];
   mensagemRespostaCorreta = "Resposta correta! Prossiga para a próxima questão   <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>";
   mensagemRespostaErrada = "Resposta errada! Tente novamente   <span class='glyphicon glyphicon-remove' aria-hidden='true'</span>";
   msgIntroQuestoes1 = "Agora que você já sabe um pouco sobre a produção da eletricidade, vamos analisar, interpretar e responder algumas questões a partir de diferentes tipos de gráficos, referentes ao consumo de energia.";
   msgIntroQuestoes2 = "Por gráfico entendemos, que é uma forma de transmitir dados e informação estatística. Eles, os gráficos, são usados em meio de comunicação como, jornais, televisão, páginas de internet. Algumas formas em que se utilizam os gráficos são para representar variação de indicadores financeiros, pesquisa de opinião, entre outros."
   var updateText = false;
+  var questoes;
+
+  	$.getJSON('assets/js/teste.json', function(data) {
+  	questoes = data;
+  	  });
+
 
   function sleep(ms) {
   	return new Promise(resolve => setTimeout(resolve, ms));
@@ -47,9 +53,16 @@
 						break;
 					}
 				case 5:
-					questionNumber++;
-					loadQuestion();
-					break;
+					switch(questionNumber) {
+						default: 
+							questionNumber++;
+							loadQuestion();
+							break;
+						case 10:
+						nextScene();
+						break;
+
+					}
 			}
 		});
 
@@ -73,9 +86,6 @@
 					switch(questionNumber) {
 						case 1:
 							previousScene();
-							break;
-						case 5:
-							nextScene();
 							break;
 						default:
 							questionNumber--;
@@ -248,12 +258,12 @@
 	  		case 1:
 
 	  			$("#opcaoA").show().siblings().show();
-	  			$("#scene4QuestionNumber").html("1.");
-	  			$("#scene4Question").html("De acordo com o gráfico, qual o aparelho que possuí o <b>maior</b> consumo de energia" )
-	  			$("#opcaoA").html("<span class='containerLetra'>A</span>Iluminação");
-	  			$("#opcaoB").html("<span class='containerLetra'>B</span>Televisão");
-	  			$("#opcaoC").html("<span class='containerLetra'>C</span>Chuveiro elétrico");
-	  			$("#opcaoD").html("<span class='containerLetra'>D</span>Geladeira e Freezer");
+	  			$("#scene4QuestionNumber").html(questoes.questao1.numeroQuestao);
+	  			$("#scene4Question").html(questoes.questao1.textoQuestao)
+	  			$("#opcaoA").html(questoes.questao1.alternativa1Questao);
+	  			$("#opcaoB").html(questoes.questao1.alternativa2Questao);
+	  			$("#opcaoC").html(questoes.questao1.alternativa3Questao);
+	  			$("#opcaoD").html(questoes.questao1.alternativa4Questao);
 	  			$("#questionGroup").hide();
 
 	  			grafico1();
@@ -272,12 +282,12 @@
 
 	  		case 2:
 	  			$("#opcaoA").show().siblings().show();
-	  			$("#scene4QuestionNumber").html("2.");
-	  			$("#scene4Question").html("De acordo com o gráfico, qual o aparelho que possuí o <b>menor</b> consumo de energia" )
-	  			$("#opcaoA").html("<span class='containerLetra'>A</span>Ferro Elétrico");
-	  			$("#opcaoB").html("<span class='containerLetra'>B</span>Outros");
-	  			$("#opcaoC").html("<span class='containerLetra'>C</span>Televisão");
-	  			$("#opcaoD").html("<span class='containerLetra'>D</span>Maquina de lavar");
+	  			$("#scene4QuestionNumber").html(questoes.questao2.numeroQuestao);
+	  			$("#scene4Question").html(questoes.questao2.textoQuestao)
+	  			$("#opcaoA").html(questoes.questao2.alternativa1Questao);
+	  			$("#opcaoB").html(questoes.questao2.alternativa2Questao);
+	  			$("#opcaoC").html(questoes.questao2.alternativa3Questao);
+	  			$("#opcaoD").html(questoes.questao2.alternativa4Questao);
 	  			$("#questionGroup").hide();
 	  			grafico1();
 
@@ -298,8 +308,8 @@
 	  			$("#enviarResposta").show();
 	  			$("#enviarResposta").prop('disabled', false);
 	  			$("#questionGroup").show();
-	  			$("#scene4QuestionNumber").html("3.");
-	  			$("#scene4Question").html("De acordo com o gráfico, durante qual mês houve o maior consumo de energia elétrica?" )
+	  			$("#scene4QuestionNumber").html(questoes.questao3.numeroQuestao);
+	  			$("#scene4Question").html(questoes.questao3.textoQuestao);
 	  			grafico2();
 
 	  				if (corretas[2] == false) {
@@ -312,8 +322,26 @@
 					}
 				break;
 
+	  		case 4:
+	  			$("#opcaoA").hide().siblings().hide();
+	  			$("#enviarResposta").show();
+	  			$("#enviarResposta").prop('disabled', false);
+	  			$("#questionGroup").show();
+	  			$("#scene4QuestionNumber").html(questoes.questao4.numeroQuestao);
+	  			$("#scene4Question").html(questoes.questao4.textoQuestao);
+	  			grafico2();
 
-			case 4:
+	  				if (corretas[3] == false) {
+						$("#iconSetaDireita").hide();
+						resetQuestionButtons();
+					}
+					else {
+						disableQuestionButtons();
+						$("#iconSetaDireita").show();
+					}
+				break;
+
+			case 5:
 				$("#questionGroup").hide();
 				$("#opcaoA").show().siblings().show();
 	  			$("#scene4QuestionNumber").html("4.");
@@ -409,6 +437,28 @@
 	  				break;
 
 	  			case 4:
+	  				if($("#botaoJunho").hasClass("btn-primary")) {
+	  					$("#alertAnswer").addClass("alert-success");
+	  					$("#alertAnswer").removeClass("alert-danger");
+	  					$("#iconSetaDireita").show();
+
+	  					corretas[2] = true;
+	  					disableQuestionButtons();
+
+  						$("#alertAnswer").html(mensagemRespostaCorreta);
+    					$("#alertAnswer").show();
+	  				}
+	  				else {
+	  					$("#alertAnswer").addClass("alert-danger");
+	  					$("#alertAnswer").removeClass("alert-success");
+
+  						$("#alertAnswer").html(mensagemRespostaErrada);
+  						$("#alertAnswer").show();
+	  				}
+	  				break;
+
+
+	  			case 5:
 	  				if($("#opcaoA").hasClass("btn-primary")) {
 	  					$("#alertAnswer").addClass("alert-success");
 	  					$("#alertAnswer").removeClass("alert-danger");
@@ -486,13 +536,14 @@
  			 	switch (questionNumber) {
  			 		case 1:
  			 		case 2:
- 			 		case 4:
+ 			 		case 5:
 		  			 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', false);
 		 				$("#opcaoA").removeClass('btn-primary').siblings().removeClass('btn-primary');
 
 		 			 	 $("#alertAnswer").hide();
 		 			 	 break;
 		 			case 3:
+		 			case 4:
 		  			 	$("#botaoDezembro").prop('disabled', false).siblings().prop('disabled', false);
 		 				$("#botaoDezembro").removeClass('btn-primary').siblings().removeClass('btn-primary');
 
@@ -522,6 +573,10 @@
  						$("#enviarResposta").prop('disabled', true);
  						break;
  					case 4:
+ 						$("#botaoJunho").prop('disabled', false).siblings().prop('disabled', true);
+ 						$("#botaoJunho").toggleClass('btn-primary').siblings().removeClass('btn-primary');
+ 						$("#enviarResposta").prop('disabled', true);
+ 					case 5:
  					 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', true);
  						$("#opcaoA").toggleClass('btn-primary').siblings().removeClass('btn-primary');
  						break;

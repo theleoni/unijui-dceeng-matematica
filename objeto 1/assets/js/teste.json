@@ -1,0 +1,34 @@
+{
+	"questao1": {
+	"numeroQuestao": "1.",
+	"textoQuestao": "De acordo com o gráfico, qual o aparelho que possuí o <b>maior</b> consumo de energia",
+	"alternativa1Questao": "<span class='containerLetra'>A</span>Iluminação",
+	"alternativa2Questao": "<span class='containerLetra'>B</span>Televisão",
+	"alternativa3Questao": "<span class='containerLetra'>C</span>Chuveiro elétrico",
+	"alternativa4Questao": "<span class='containerLetra'>D</span>Geladeira e Freezer"
+	},
+	"questao2": {
+	"numeroQuestao": "2.",
+	"textoQuestao": "De acordo com o gráfico, qual o aparelho que possuí o <b>menor</b> consumo de energia",
+	"alternativa1Questao": "<span class='containerLetra'>A</span>Ferro Elétrico",
+	"alternativa2Questao": "<span class='containerLetra'>B</span>Outros",
+	"alternativa3Questao": "<span class='containerLetra'>C</span>Televisão",
+	"alternativa4Questao": "<span class='containerLetra'>D</span>Maquina de lavar"
+	},
+	"questao3": {
+		"numeroQuestao": "3.",
+		"textoQuestao": "De acordo com o gráfico, durante qual mês houve o <b>maior</b> consumo de energia elétrica?"
+	},
+	"questao4": {
+		"numeroQuestao": "4.",
+		"textoQuestao": "De acordo com o gráfico, durante qual mês houve o <b>menor</b> consumo de energia elétrica?"
+	},
+	"questao5": {
+	"numeroQuestao": "5.",
+	"textoQuestao": "De acordo com o gráfico, qual é a média de consumo de energia elétrica durante o ano?" ,
+	"alternativa1Questao": "<span class='containerLetra'>A</span>313,58",
+	"alternativa2Questao": "<span class='containerLetra'>B</span>323,47",
+	"alternativa3Questao": "<span class='containerLetra'>C</span>300",
+	"alternativa4Questao": "<span class='containerLetra'>D</span>12"
+	}
+}
