@@ -76,7 +76,7 @@
 				case 4:
 					if(updateText == true) {
 						$("#scene4Text1").html(msgIntroQuestoes1);
-						updateText = true;
+						updateText = false;
 						break;
 					} else {
 					previousScene();
@@ -353,7 +353,7 @@
 	  			$("#questionGroup").hide();
 	  			grafico2();
 
-	  				if (corretas[3] == false) {
+	  				if (corretas[4] == false) {
 						$("#iconSetaDireita").hide();
 						resetQuestionButtons();
 					}
@@ -442,7 +442,7 @@
 	  					$("#alertAnswer").removeClass("alert-danger");
 	  					$("#iconSetaDireita").show();
 
-	  					corretas[2] = true;
+	  					corretas[3] = true;
 	  					disableQuestionButtons();
 
   						$("#alertAnswer").html(mensagemRespostaCorreta);
@@ -464,7 +464,7 @@
 	  					$("#alertAnswer").removeClass("alert-danger");
 	  					$("#iconSetaDireita").show();
 
-	  					corretas[3] = true;
+	  					corretas[4] = true;
 	  					disableQuestionButtons();
 
   						$("#alertAnswer").html(mensagemRespostaCorreta);
@@ -571,14 +571,19 @@
  						$("#botaoDezembro").prop('disabled', false).siblings().prop('disabled', true);
  						$("#botaoDezembro").toggleClass('btn-primary').siblings().removeClass('btn-primary');
  						$("#enviarResposta").prop('disabled', true);
+ 						$("#alertAnswer").show();
+
  						break;
  					case 4:
  						$("#botaoJunho").prop('disabled', false).siblings().prop('disabled', true);
  						$("#botaoJunho").toggleClass('btn-primary').siblings().removeClass('btn-primary');
  						$("#enviarResposta").prop('disabled', true);
+ 						$("#alertAnswer").show();
+ 						break;
  					case 5:
  					 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', true);
  						$("#opcaoA").toggleClass('btn-primary').siblings().removeClass('btn-primary');
+
  						break;
 
  			}
