@@ -372,23 +372,12 @@
 	  		switch (questionNumber) {
 	  			case 1:
 	  				if($("#opcaoD").hasClass("btn-primary")) {
-	  					$("#alertAnswer").addClass("alert-success");
-	  					$("#alertAnswer").removeClass("alert-danger");
-	  					$("#iconSetaDireita").show();
-
 	  					corretas[0] = true;
-	  					disableQuestionButtons();
-
-  						$("#alertAnswer").html(mensagemRespostaCorreta);
-    					$("#alertAnswer").show();
+	  					respostaCorreta();
 
 	  				}
 	  				else {
-	  					$("#alertAnswer").addClass("alert-danger");
-	  					$("#alertAnswer").removeClass("alert-success");
-
-  						$("#alertAnswer").html(mensagemRespostaErrada);
-  						$("#alertAnswer").show();
+	  					respostaErrada();
 
 	  				}
 	  				break;
@@ -396,86 +385,38 @@
 
 	  			case 2:
 	  				if($("#opcaoB").hasClass("btn-primary")) {
-	  					$("#alertAnswer").addClass("alert-success");
-	  					$("#alertAnswer").removeClass("alert-danger");
-	  					$("#iconSetaDireita").show();
-
-	  					corretas[1] = true;
-	  					disableQuestionButtons();
-
-  						$("#alertAnswer").html(mensagemRespostaCorreta);
-    					$("#alertAnswer").show();
+	  					respostaCorreta();
 	  				}
 	  				else {
-	  					$("#alertAnswer").addClass("alert-danger");
-	  					$("#alertAnswer").removeClass("alert-success");
-
-  						$("#alertAnswer").html(mensagemRespostaErrada);
-  						$("#alertAnswer").show();
+	  					respostaErrada();
 	  				}
 	  				break;
 
 	  			case 3:
 	  				if($("#botaoDezembro").hasClass("btn-primary")) {
-	  					$("#alertAnswer").addClass("alert-success");
-	  					$("#alertAnswer").removeClass("alert-danger");
-	  					$("#iconSetaDireita").show();
-
-	  					corretas[2] = true;
-	  					disableQuestionButtons();
-
-  						$("#alertAnswer").html(mensagemRespostaCorreta);
-    					$("#alertAnswer").show();
+	  					respostaCorreta();
 	  				}
 	  				else {
-	  					$("#alertAnswer").addClass("alert-danger");
-	  					$("#alertAnswer").removeClass("alert-success");
-
-  						$("#alertAnswer").html(mensagemRespostaErrada);
-  						$("#alertAnswer").show();
+	  					respostaErrada();
 	  				}
 	  				break;
 
 	  			case 4:
 	  				if($("#botaoJunho").hasClass("btn-primary")) {
-	  					$("#alertAnswer").addClass("alert-success");
-	  					$("#alertAnswer").removeClass("alert-danger");
-	  					$("#iconSetaDireita").show();
-
-	  					corretas[3] = true;
-	  					disableQuestionButtons();
-
-  						$("#alertAnswer").html(mensagemRespostaCorreta);
-    					$("#alertAnswer").show();
+	  					respostaCorreta();
 	  				}
 	  				else {
-	  					$("#alertAnswer").addClass("alert-danger");
-	  					$("#alertAnswer").removeClass("alert-success");
-
-  						$("#alertAnswer").html(mensagemRespostaErrada);
-  						$("#alertAnswer").show();
+	  					respostaErrada();
 	  				}
 	  				break;
 
 
 	  			case 5:
 	  				if($("#opcaoA").hasClass("btn-primary")) {
-	  					$("#alertAnswer").addClass("alert-success");
-	  					$("#alertAnswer").removeClass("alert-danger");
-	  					$("#iconSetaDireita").show();
-
-	  					corretas[4] = true;
-	  					disableQuestionButtons();
-
-  						$("#alertAnswer").html(mensagemRespostaCorreta);
-    					$("#alertAnswer").show();
+	  					respostaCorreta();
 	  				}
 	  				else {
-	  					$("#alertAnswer").addClass("alert-danger");
-	  					$("#alertAnswer").removeClass("alert-success");
-
-  						$("#alertAnswer").html(mensagemRespostaErrada);
-  						$("#alertAnswer").show();
+	  					respostaErrada();
 	  				}
 	  				break;
 
@@ -561,32 +502,57 @@
  					case 1:
  					 	$("#opcaoD").prop('disabled', false).siblings().prop('disabled', true);
  						$("#opcaoD").toggleClass('btn-primary').siblings().removeClass('btn-primary');
+						updateAlertOnQuestionChange	();
  						break;
  				
  					case 2:
  					 	$("#opcaoB").prop('disabled', false).siblings().prop('disabled', true);
  						$("#opcaoB").toggleClass('btn-primary').siblings().removeClass('btn-primary');
+						updateAlertOnQuestionChange	();
  						break;
  					case 3:
  						$("#botaoDezembro").prop('disabled', false).siblings().prop('disabled', true);
  						$("#botaoDezembro").toggleClass('btn-primary').siblings().removeClass('btn-primary');
  						$("#enviarResposta").prop('disabled', true);
- 						$("#alertAnswer").show();
-
+						updateAlertOnQuestionChange	();
  						break;
  					case 4:
  						$("#botaoJunho").prop('disabled', false).siblings().prop('disabled', true);
  						$("#botaoJunho").toggleClass('btn-primary').siblings().removeClass('btn-primary');
  						$("#enviarResposta").prop('disabled', true);
- 						$("#alertAnswer").show();
+						updateAlertOnQuestionChange	();
  						break;
  					case 5:
  					 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', true);
  						$("#opcaoA").toggleClass('btn-primary').siblings().removeClass('btn-primary');
-
+						updateAlertOnQuestionChange	();
  						break;
 
  			}
+ 		}
+
+
+ 		function respostaCorreta() {
+	  		$("#iconSetaDireita").show();
+
+    		disableQuestionButtons();
+    		corretas[questionNumber-1] = true;
+    		console.log(questionNumber-1);
+
+ 		}
+
+ 		function respostaErrada() {
+ 			$("#alertAnswer").addClass("alert-danger");
+	  		$("#alertAnswer").removeClass("alert-success");
+  			$("#alertAnswer").html(mensagemRespostaErrada);
+  			$("#alertAnswer").show();
+ 		}
+
+ 		function updateAlertOnQuestionChange() {
+ 		  	$("#alertAnswer").html(mensagemRespostaCorreta);
+    		$("#alertAnswer").show();
+    		$("#alertAnswer").addClass("alert-success");
+	  		$("#alertAnswer").removeClass("alert-danger");
  		}
 
 		function grafico1() {
