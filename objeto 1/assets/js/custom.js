@@ -42,6 +42,7 @@
 				case 2:
 				case 3:
 				case 6:
+				case 7:
 					nextScene();
 					break;
 				case 4:
@@ -76,6 +77,7 @@
 				case 2:
 				case 3:
 				case 6:
+				case 7:
 					previousScene();
 					break;
 				case 4:
