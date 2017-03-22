@@ -58,7 +58,7 @@
 							questionNumber++;
 							loadQuestion();
 							break;
-						case 10:
+						case 6:
 						nextScene();
 						break;
 
@@ -73,6 +73,9 @@
 				case 1:
 				case 2:
 				case 3:
+				case 6:
+					previousScene();
+					break;
 				case 4:
 					if(updateText == true) {
 						$("#scene4Text1").html(dataJSON.mensagensQuestoes.mensagemIntroQuestoesIniciais);
