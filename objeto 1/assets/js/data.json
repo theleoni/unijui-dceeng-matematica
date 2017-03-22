@@ -76,5 +76,9 @@
 		"alternativa1Questao": "<span class='containerLetra'>A</span>Novembro, Dezembro e Fevereiro",
 		"alternativa2Questao": "<span class='containerLetra'>B</span>Dezembro, Fevereiro e Março",
 		"alternativa3Questao": "<span class='containerLetra'>C</span>Dezembro, Janeiro e Fevereiro",
-		"alternativa4Questao": "<span class='containerLetra'>D</span>Janeiro, Fevereiro e Março"	}
+		"alternativa4Questao": "<span class='containerLetra'>D</span>Janeiro, Fevereiro e Março"	
+	},
+	"mensagensCaminhoEnergia": {
+
+	}
 }

@@ -29,6 +29,7 @@
 		$("#scene3").hide();
 		$("#scene4").hide();
 		$("#scene5").hide();
+		$("#scene6").hide();
 
 		$("#imagensFixas").hide();
 
@@ -40,6 +41,7 @@
 				case 1:
 				case 2:
 				case 3:
+				case 6:
 					nextScene();
 					break;
 				case 4:
@@ -789,7 +791,6 @@
 	
 	  	//Função que realiza o carregamento da cena de acordo com a variável "scene". Responsável por adicionar o fade à troca de cenas e realizar a alteração do título
 	  function loadScene() {
-		  
 			switch (scene) {
 				case 1:
 					$("#scene1").fadeIn(fadeTime);
@@ -813,13 +814,18 @@
 				case 4:
 					$("#scene4").fadeIn(fadeTime);
 					$("#iconSetaDireita").show();
+
 					break;
 				case 5:
 					$("#scene5").fadeIn(fadeTime);
 					loadQuestion();
 					listeningToKeyPress = true;
-
 					break;
+				case 6:
+					$("#scene6").fadeIn(fadeTime);
+					$("#iconSetaDireita").show();
+					break;
+
 			}
 	  }
 	  
@@ -851,6 +857,9 @@
 					$("#scene5").fadeOut(fadeTime);
 					listeningToKeyPress = false;
 					break;
+				case 6:
+					$("#scene6").fadeOut(fadeTime);
+ 					break;
 			}
 	  }
 	 
