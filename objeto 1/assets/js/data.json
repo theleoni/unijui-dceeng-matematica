@@ -82,6 +82,14 @@
 		"numeroQuestao": "7.",
 		"textoQuestao": "De acordo com o gráfico e a tabela apresentados, qual a diferença em <b>porcentagem</b> da produção entre <i>Energia Solar</i> e <i>Energia Hidrelétrica</i>?"
 	},
+	"questao8": {
+	"numeroQuestao": "8.",
+	"textoQuestao": "De acordo com o gráfico, qual a forma de produção de energia mais utilizada no Brasil?",
+	"alternativa1Questao": "<span class='containerLetra'>A</span>Hidrelétrica",
+	"alternativa2Questao": "<span class='containerLetra'>B</span>Solar",
+	"alternativa3Questao": "<span class='containerLetra'>C</span>Gás Natural",
+	"alternativa4Questao": "<span class='containerLetra'>D</span>Biomassa"	
+	},
 	"mensagensCaminhoEnergia": {
 
 	}

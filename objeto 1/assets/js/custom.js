@@ -420,6 +420,28 @@
 						$("#iconSetaDireita").show();
 					}
 				break;
+
+			case 8:
+				$("#opcaoA").show().siblings().show();
+	  			$("#scene4QuestionNumber").html(dataJSON.questao8.numeroQuestao);
+	  			$("#scene4Question").html(dataJSON.questao8.textoQuestao )
+	  			$("#opcaoA").html(dataJSON.questao8.alternativa1Questao);
+	  			$("#opcaoB").html(dataJSON.questao8.alternativa2Questao);
+	  			$("#opcaoC").html(dataJSON.questao8.alternativa3Questao);
+	  			$("#opcaoD").html(dataJSON.questao8.alternativa4Questao);
+	  			$("#questionGroup").hide();
+	  			$("#inputRespostaScene4").hide();
+	  			grafico3();
+
+	  				if (corretas[7] == false) {
+						$("#iconSetaDireita").hide();
+						resetQuestionButtons();
+					}
+					else {
+						disableQuestionButtons();
+						$("#iconSetaDireita").show();
+					}
+				break;
 	  	}
 	  }
 
@@ -493,6 +515,14 @@
 	  				}
 	  				break;
 
+	  			case 8:
+	  				if($("#opcaoA").hasClass("btn-primary")) {
+	  					respostaCorreta();
+	  				}
+	  				else {
+	  					respostaErrada();
+	  				}
+	  				break;
 	  		}
 	  }
 
@@ -552,22 +582,21 @@
  			 		case 2:
  			 		case 5:
  			 		case 6:
+ 			 		case 8:
 		  			 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', false);
 		 				$("#opcaoA").removeClass('btn-primary').siblings().removeClass('btn-primary');
-
-		 			 	 $("#alertAnswer").hide();
-		 			 	 break;
+		 			 	$("#alertAnswer").hide();
+		 			 	break;
 		 			case 3:
 		 			case 4:
 		  			 	$("#botaoDezembro").prop('disabled', false).siblings().prop('disabled', false);
 		 				$("#botaoDezembro").removeClass('btn-primary').siblings().removeClass('btn-primary');
-
-		 			 	 $("#alertAnswer").hide();
+						$("#alertAnswer").hide();
 		 				break;
 		 			case 7:
-		 				$("#enviarResposta").prop('disabled', false)
+		 				$("#enviarResposta").prop('disabled', false);
+		 				$("#inputNumberScene4").prop('type', 'number');
 		 			 	$("#alertAnswer").hide();
-
 		 				break;
  			 	}
 
@@ -616,8 +645,12 @@
  						$("#inputNumberScene4").prop('disabled', true);
  						$("#inputNumberScene4").prop('placeholder', '63.99');
  						updateAlertOnQuestionChange();
-
- 					break;
+ 						break;
+ 					case 8:
+ 					 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', true);
+ 						$("#opcaoA").toggleClass('btn-primary').siblings().removeClass('btn-primary');
+						updateAlertOnQuestionChange();
+ 						break;			
  			}
  		}
 
@@ -821,6 +854,9 @@
 				    },
 					title: {
 						text: 'Oferta interna de energia elétrica por fonte - Brasil, 2015'
+					},
+					subtitle: {
+						text: "Fonte: Empresa de Pesquisa Energética – EPE"
 					},
 					tooltip: {
 						pointFormat: '{series.name}: <b>{point.y}</b>'
