@@ -31,6 +31,7 @@
 		$("#scene4").hide();
 		$("#scene5").hide();
 		$("#scene6").hide();
+		$("#scene7").hide();
 
 		$("#imagensFixas").hide();
 
@@ -909,6 +910,27 @@
 			});
 			}
 
+
+
+		function contentSwitcher()	{
+			/*if (scene == 7) {
+				for (var i = 1; i < 7; i++) {
+					switch (i) {
+						case 1:
+							$('#imgCirculo').attr("src", "assets/img/placeholder1.jpg");
+							$('#textoScene7').html("Texto 1");
+							sleep(5000);
+							break;
+						case 2:
+							$('#imgCirculo').attr("src", "assets/img/placeholder2.jpg");
+							$('#textoScene7').html("Texto 2");
+							sleep(5000);
+							break;
+
+					}
+				}
+			}*/
+		}
 	  /* Funções Gerais */
 	  	//Função que realiza a troca de uma cena para a próxima, bem como adicionar um sleep igual ao tempo de fade
 	async function nextScene() {
@@ -972,6 +994,12 @@
 					$("#scene6").fadeIn(fadeTime);
 					$("#iconSetaDireita").show();
 					break;
+				case 7:
+					$("#scene7").fadeIn(fadeTime);
+					$("#iconSetaDireita").show();
+					$("#tituloGeral").html(dataJSON.stringsGerais.title3);
+					contentSwitcher();
+					break;
 
 			}
 	  }
@@ -1006,6 +1034,9 @@
 					break;
 				case 6:
 					$("#scene6").fadeOut(fadeTime);
+ 					break;
+				case 7:
+					$("#scene7").fadeOut(fadeTime);
  					break;
 			}
 	  }

@@ -140,6 +140,13 @@ body {
 	margin-top: 15px;
 }
 
+.textTitleContent {
+	font-family: 'Roboto Condensed', sans-serif;
+	text-align: center;
+	margin-top: 15px;
+	margin-left: 52%;
+}
+
 
 	@media (max-width: 300px) {
 		.textTitle {
@@ -622,4 +629,12 @@ body {
 	color: #FFFFFF;
 	font-size: calc((4vh + 2vw)/1.9);
 	font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+
+/* SCENE 07 */
+
+.imagemCircular {
+	border-radius: 50%;
 }
