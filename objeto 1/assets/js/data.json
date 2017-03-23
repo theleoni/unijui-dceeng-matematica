@@ -36,7 +36,7 @@
 	},
 	"questao1": {
 	"numeroQuestao": "1.",
-	"textoQuestao": "De acordo com o gráfico, qual o aparelho que possuí o <b>maior</b> consumo de energia",
+	"textoQuestao": "De acordo com o gráfico, qual o aparelho que possuí o <b>maior</b> consumo de energia?",
 	"alternativa1Questao": "<span class='containerLetra'>A</span>Iluminação",
 	"alternativa2Questao": "<span class='containerLetra'>B</span>Televisão",
 	"alternativa3Questao": "<span class='containerLetra'>C</span>Chuveiro elétrico",
@@ -45,7 +45,7 @@
 
 	"questao2": {
 	"numeroQuestao": "2.",
-	"textoQuestao": "De acordo com o gráfico, qual o aparelho que possuí o <b>menor</b> consumo de energia",
+	"textoQuestao": "De acordo com o gráfico, qual o aparelho que possuí o <b>menor</b> consumo de energia?",
 	"alternativa1Questao": "<span class='containerLetra'>A</span>Ferro Elétrico",
 	"alternativa2Questao": "<span class='containerLetra'>B</span>Outros",
 	"alternativa3Questao": "<span class='containerLetra'>C</span>Televisão",
