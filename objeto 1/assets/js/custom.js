@@ -5,9 +5,10 @@
   var questionNumber = 1;
   var listeningToKeyPress = false;
   var questaoSelecionada;
-  var corretas = [false, false, false, false, false, false];
+  var corretas = [false, false, false, false, false, false, false, false];
   var updateText = false;
   var dataJSON;
+  var respostaCorreta7 = 63.99;
 
 
   	//Recupera as informações do arquivo data.json
@@ -61,9 +62,9 @@
 							questionNumber++;
 							loadQuestion();
 							break;
-						case 6:
-						nextScene();
-						break;
+						case 8:
+							nextScene();
+							break;
 
 					}
 			}
@@ -274,7 +275,7 @@
 	  			$("#opcaoC").html(dataJSON.questao1.alternativa3Questao);
 	  			$("#opcaoD").html(dataJSON.questao1.alternativa4Questao);
 	  			$("#questionGroup").hide();
-
+	  			$("#inputRespostaScene4").hide();
 	  			grafico1();
 
 	  				if (corretas[0] == false) {
@@ -298,6 +299,8 @@
 	  			$("#opcaoC").html(dataJSON.questao2.alternativa3Questao);
 	  			$("#opcaoD").html(dataJSON.questao2.alternativa4Questao);
 	  			$("#questionGroup").hide();
+	  			$("#inputRespostaScene4").hide();
+
 	  			grafico1();
 
 
@@ -319,6 +322,7 @@
 	  			$("#questionGroup").show();
 	  			$("#scene4QuestionNumber").html(dataJSON.questao3.numeroQuestao);
 	  			$("#scene4Question").html(dataJSON.questao3.textoQuestao);
+
 	  			grafico2();
 
 	  				if (corretas[2] == false) {
@@ -338,6 +342,8 @@
 	  			$("#questionGroup").show();
 	  			$("#scene4QuestionNumber").html(dataJSON.questao4.numeroQuestao);
 	  			$("#scene4Question").html(dataJSON.questao4.textoQuestao);
+	  			$("#inputRespostaScene4").hide();
+
 	  			grafico2();
 
 	  				if (corretas[3] == false) {
@@ -360,6 +366,8 @@
 	  			$("#opcaoC").html(dataJSON.questao5.alternativa3Questao);
 	  			$("#opcaoD").html(dataJSON.questao5.alternativa4Questao);
 	  			$("#questionGroup").hide();
+	  			$("#inputRespostaScene4").hide();
+
 	  			grafico2();
 
 	  				if (corretas[4] == false) {
@@ -372,7 +380,6 @@
 					}
 	  			break;
 	  		case 6:
-				$("#questionGroup").hide();
 				$("#opcaoA").show().siblings().show();
 	  			$("#scene4QuestionNumber").html(dataJSON.questao6.numeroQuestao);
 	  			$("#scene4Question").html(dataJSON.questao6.textoQuestao )
@@ -381,20 +388,38 @@
 	  			$("#opcaoC").html(dataJSON.questao6.alternativa3Questao);
 	  			$("#opcaoD").html(dataJSON.questao6.alternativa4Questao);
 	  			$("#questionGroup").hide();
+	  			$("#inputRespostaScene4").hide();
 	  			grafico3();
 
 	  				if (corretas[5] == false) {
-	  					console.log("false");
 						$("#iconSetaDireita").hide();
 						resetQuestionButtons();
 					}
 					else {
-						console.log("True");
 						disableQuestionButtons();
 						$("#iconSetaDireita").show();
 					}
 				break;
 
+	  		case 7:
+	  			$("#opcaoA").hide().siblings().hide();
+	  			$("#enviarResposta").show();
+	  			$("#enviarResposta").prop('disabled', false);
+	  			$("#scene4QuestionNumber").html(dataJSON.questao7.numeroQuestao);
+	  			$("#scene4Question").html(dataJSON.questao7.textoQuestao )
+	  			$("#inputRespostaScene4").show();
+	  			grafico4();
+
+	  				if (corretas[6] == false) {
+						$("#iconSetaDireita").hide();
+						resetQuestionButtons();
+					}
+					else {
+						console.log("");
+						disableQuestionButtons();
+						$("#iconSetaDireita").show();
+					}
+				break;
 	  	}
 	  }
 
@@ -458,6 +483,16 @@
 	  					respostaErrada();
 	  				}
 	  				break;
+
+	  			case 7:
+	  				if($("#inputNumberScene4").val() == respostaCorreta7) {
+	  					respostaCorreta();
+	  				}
+	  				else {
+	  					respostaErrada();
+	  				}
+	  				break;
+
 	  		}
 	  }
 
@@ -529,6 +564,11 @@
 
 		 			 	 $("#alertAnswer").hide();
 		 				break;
+		 			case 7:
+		 				$("#enviarResposta").prop('disabled', false)
+		 			 	$("#alertAnswer").hide();
+
+		 				break;
  			 	}
 
 
@@ -571,6 +611,13 @@
  						$("#opcaoD").toggleClass('btn-primary').siblings().removeClass('btn-primary');
 						updateAlertOnQuestionChange();
  						break;
+ 					case 7:
+ 						$("#enviarResposta").prop('disabled', true);
+ 						$("#inputNumberScene4").prop('disabled', true);
+ 						$("#inputNumberScene4").prop('placeholder', '63.99');
+ 						updateAlertOnQuestionChange();
+
+ 					break;
  			}
  		}
 
@@ -580,7 +627,6 @@
 
     		disableQuestionButtons();
     		corretas[questionNumber-1] = true;
-    		console.log(questionNumber-1);
 
  		}
 
@@ -631,7 +677,7 @@
 						}
 					},
 					series: [{
-						name: 'Fruta',
+						name: 'Aparelho',
 						colorByPoint: true,
 						data: [{
 							name: 'Geladeira e Freezer',
@@ -719,7 +765,7 @@
 	 	}
 
 
-
+	 	//Método utilizado parar criar o gráfico utilizado nas questões 5 e 6
 	 	function grafico3() {
 	 		Highcharts.chart('scene4Graph', {
 
@@ -763,6 +809,69 @@
 
 			});
 	 	}
+	 	//Método utilizado para criar o gráfico utilizado nas questões 7 e 8
+	 	function grafico4() {
+			$(document).ready(function () {
+
+
+				// Gera o gráfico
+				Highcharts.chart('scene4Graph', {
+				    chart: {
+				        type: 'pie',
+				    },
+					title: {
+						text: 'Oferta interna de energia elétrica por fonte - Brasil, 2015'
+					},
+					tooltip: {
+						pointFormat: '{series.name}: <b>{point.y}</b>'
+					},
+					plotOptions: {
+						pie: {
+							allowPointSelect: true,
+							cursor: 'pointer',
+						 dataLabels: {
+              			 	enabled: true,
+                			format: '<b>{point.name}</b>: {point.percentage:.2f} %',
+
+
+							},
+							showInLegend: true
+						}
+					},
+					series: [{
+						name: 'Oferta',
+						colorByPoint: true,
+						data: [{
+							name: 'Hidrelétrica',
+							y: 64.0
+						}, {
+							name: 'Gás Natural',
+							y: 12.79
+		
+						}, {
+							name: 'Biomassa',
+							y: 8
+						}, {
+							name: 'Derivados de Petróleo',
+							y: 4.8
+						}, {
+							name: 'Carvão e Derivados',
+							y: 4.5
+						}, {
+							name: 'Eólica',
+							y: 3.5
+						}, {
+							name: 'Nuclear',
+							y: 2.4
+						}, {
+							name: 'Solar',
+							y: 0.01
+						}
+						]
+					}]
+				});
+			});
+			}
 
 	  /* Funções Gerais */
 	  	//Função que realiza a troca de uma cena para a próxima, bem como adicionar um sleep igual ao tempo de fade

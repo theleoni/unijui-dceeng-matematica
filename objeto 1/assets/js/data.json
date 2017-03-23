@@ -78,6 +78,10 @@
 		"alternativa3Questao": "<span class='containerLetra'>C</span>Dezembro, Janeiro e Fevereiro",
 		"alternativa4Questao": "<span class='containerLetra'>D</span>Janeiro, Fevereiro e Março"	
 	},
+	"questao7": {
+		"numeroQuestao": "7.",
+		"textoQuestao": "De acordo com o gráfico e a tabela apresentados, qual a diferença em <b>porcentagem</b> da produção entre <i>Energia Solar</i> e <i>Energia Hidrelétrica</i>?"
+	},
 	"mensagensCaminhoEnergia": {
 
 	}
