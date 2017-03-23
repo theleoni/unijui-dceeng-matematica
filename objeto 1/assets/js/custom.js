@@ -431,7 +431,7 @@
 	  			$("#opcaoD").html(dataJSON.questao8.alternativa4Questao);
 	  			$("#questionGroup").hide();
 	  			$("#inputRespostaScene4").hide();
-	  			grafico3();
+	  			grafico4();
 
 	  				if (corretas[7] == false) {
 						$("#iconSetaDireita").hide();
