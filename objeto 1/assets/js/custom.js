@@ -1,12 +1,14 @@
   var nome;
   var i = -11.4;
   var scene = 0;
+  var transmissionBeingShown = 1;
   var fadeTime = 500;
   var questionNumber = 1;
   var listeningToKeyPress = false;
   var questaoSelecionada;
   var corretas = [false, false, false, false, false, false, false, false];
   var updateText = false;
+  var firstTimeTransmission = true;
   var dataJSON;
   var respostaCorreta7 = 63.99;
 
@@ -82,6 +84,7 @@
 				case 7:
 					previousScene();
 					break;
+
 				case 4:
 					if(updateText == true) {
 						$("#scene4Text1").html(dataJSON.mensagensQuestoes.mensagemIntroQuestoesIniciais);
@@ -104,6 +107,8 @@
 
 
 			}		});
+
+
 
 		//Verifica se a tecla pressionada foi enter (Utilizado na cena inicial, para confirmação do nome)
 	function pressedEnter(event) {
@@ -912,25 +917,75 @@
 
 
 
-		function contentSwitcher()	{
-			/*if (scene == 7) {
-				for (var i = 1; i < 7; i++) {
-					switch (i) {
-						case 1:
-							$('#imgCirculo').attr("src", "assets/img/placeholder1.jpg");
-							$('#textoScene7').html("Texto 1");
-							sleep(5000);
-							break;
-						case 2:
-							$('#imgCirculo').attr("src", "assets/img/placeholder2.jpg");
-							$('#textoScene7').html("Texto 2");
-							sleep(5000);
-							break;
+		function contentSwitcher() {
+		    setTimeout(function () {
+				switch (transmissionBeingShown) {
+							case 1:
+							case 2:
+							case 3:
+							case 4:
+							case 5:
+								loadTransmissionData();
+								contentSwitcher(++transmissionBeingShown);
+								break;
+						}
 
-					}
-				}
-			}*/
+			    }, 5000);
+
 		}
+
+		async function loadTransmissionData() {
+				switch (transmissionBeingShown) {
+							case 1:
+								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title1);
+								$('#imgCirculo').fadeOut(500);
+								$('#textoScene7').fadeOut(500);
+								await sleep(500);
+
+								$('#imgCirculo').attr("src", "assets/img/placeholder2.jpg").fadeIn(1000);
+								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg1).fadeIn(1000);
+								break;
+							case 2:
+								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title2);
+								$('#imgCirculo').fadeOut(500);
+								$('#textoScene7').fadeOut(500);
+								await sleep(500);
+								$('#imgCirculo').attr("src", "assets/img/placeholder3.jpg").fadeIn(1000);
+								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg2).fadeIn(1000);
+								break;
+							case 3:
+								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title3);
+								$('#imgCirculo').fadeOut(500);
+								$('#textoScene7').fadeOut(500);
+								await sleep(500);
+								$('#imgCirculo').attr("src", "assets/img/placeholder4.jpg").fadeIn(1000);
+								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg3).fadeIn(1000);
+								break;
+							case 4:
+								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title4);
+								$('#imgCirculo').fadeOut(500);
+								$('#textoScene7').fadeOut(500);
+								await sleep(500);
+								$('#imgCirculo').attr("src", "assets/img/placeholder5.jpg").fadeIn(1000);
+								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg4).fadeIn(1000);
+								break;
+							case 5:
+								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title5);
+								$('#imgCirculo').fadeOut(500);
+								$('#textoScene7').fadeOut(500);
+								await sleep(500);
+								$('#imgCirculo').attr("src", "assets/img/placeholder6.jpg").fadeIn(1000);
+								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
+								
+
+								//$('#setaTransmissaoDireita').prop('disabled', false);
+								//$('#setaTransmissaoEsquerda').prop('disabled', false);
+
+								break;
+						}
+			
+		}
+
 	  /* Funções Gerais */
 	  	//Função que realiza a troca de uma cena para a próxima, bem como adicionar um sleep igual ao tempo de fade
 	async function nextScene() {
@@ -997,7 +1052,6 @@
 				case 7:
 					$("#scene7").fadeIn(fadeTime);
 					$("#iconSetaDireita").show();
-					$("#tituloGeral").html(dataJSON.stringsGerais.title3);
 					contentSwitcher();
 					break;
 

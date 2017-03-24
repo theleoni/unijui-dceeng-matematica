@@ -2,8 +2,7 @@
 	"stringsGerais": {
 		"scene01Balao01": "! Eu sou o engenheiro Euler, estou aqui para auxiliá-lo neste percurso de aprendizado, a partir da matemática iremos conhecer os modos de geração de energia elétrica, o caminho e o custo até chegar à sua casa.",
 		"title1": "Formas de produção de energia",
-		"title2": "Impostos pagos sobre a energia elétrica",
-		"title3": "TRANSMISSÃO"
+		"title2": "Impostos pagos sobre a energia elétrica"
 	},
 
 	"textosUsinas": {
@@ -92,6 +91,15 @@
 	"alternativa4Questao": "<span class='containerLetra'>D</span>Biomassa"	
 	},
 	"mensagensCaminhoEnergia": {
-
+		"title1": "Subestação elevadora",
+		"title2": "Transmissão",
+		"title3": "Subestação abaixadora",
+		"title4": "Distribuição",
+		"title5": "Transformador para tensão final",
+		"msg1": "No próximo passo a energia é direcionada para a subestação elevadora, em que encontra-se transformadores que elevam a tensão para a transmissão (aproximadamente acima de 230.000 V)",
+		"msg2": "Na etapa seguinte, depois da subestação elevadora de tensão, a energia é passada para as linhas de transmissão, em que a elevação de energia são para que as perdas de energia sejam minimizadas, através do aquecimento por efeito Joule, neste ponto são linhas que percorrem por centenas de quilômetros onde cabos de alta tensão são sustentados por torres que fazem a transmissão de energia elétrica até chegar a subestação abaixadora",
+		"msg3": "Na subestação de distribuição, em que a tensão é abaixada novamente, através de transformadores, a energia segue para as redes de distribuição nas cidades",
+		"msg4": "O próximo passo, a energia é percorrida, depois da subestação de distribuição, para a fiação dos postes, em que é direcionada para os transformadores abaixadores novamente para a os consumidores",
+		"msg5": "Na última etapa, depois de passar pelos transformadores, que são energizados pelas linhas de distribuição, a energia é rebaixada para tensões em que usamos em nossas residências. Nesta etapa a energia é utilizada no mesmo momento em que é gerada"
 	}
 }

@@ -638,3 +638,28 @@ body {
 .imagemCircular {
 	border-radius: 50%;
 }
+
+.titleCaminho {
+    font-weight: bold;
+    font-size: calc((4vh + 2vw)/1.9);
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.textoScene7 {
+    text-align: justify;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 3%;
+    font-size: calc((2vh + 1vw)/1.5);
+}
+
+.setaTransmissao {
+	cursor: pointer;
+	font-size: 32px;
+	margin-top: 150%;
+	color: gray;
+}
+
+
+.setaTransmissao:hover {
+	color: green;
+}
