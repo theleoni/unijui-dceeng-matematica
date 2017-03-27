@@ -938,6 +938,7 @@
 								break;
 							case 6:
 								firstTimeTransmission = false;
+								loadTransmissionData();
 								$("#iconSetaEsquerda").show();
 								$("#iconSetaDireita").show();
 								$('#setaTransmissaoDireita').toggleClass('glyphIconDisabled');
@@ -1012,24 +1013,21 @@
 
 
 				$(document).on('click', '#setaTransmissaoDireita', function () {
-
-					if (transmissionBeingShown < 6) {
-						transmissionBeingShown++;
-						loadTransmissionData();
-					}
-					else {
-
-					}
+						if (!($("#setaTransmissaoDireita").hasClass('glyphIconDisabled'))) {
+							if (transmissionBeingShown < 6) {
+								transmissionBeingShown++;
+								loadTransmissionData();
+							}
+						}
 
 					});
 
 				$(document).on('click', '#setaTransmissaoEsquerda', function () {
-					if (transmissionBeingShown > 1) {
-						transmissionBeingShown--;
-						loadTransmissionData();
-					}
-					else {
-						
+					if (!($("#setaTransmissaoEsquerda").hasClass('glyphIconDisabled'))) {
+						if (transmissionBeingShown > 1) {
+							transmissionBeingShown--;
+							loadTransmissionData();
+						}
 					}
 
 					});
