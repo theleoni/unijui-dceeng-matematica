@@ -152,10 +152,16 @@ body {
 		.textTitle {
 			font-size: 6px;
 		}
+		.textTitleContent {
+			font-size: 5px;
+		}
 	}
 	@media (min-width: 300px) and (max-width: 500px) {
 		.textTitle {
 			font-size: 8px;
+		}
+		.textTitleContent {
+			font-size: 6px;
 		}
 	}
 	
@@ -163,17 +169,26 @@ body {
 		.textTitle {
 			font-size: 14px;
 		}
+		.textTitleContent {
+			font-size: 12px;
+		}
 	}
 	
 	@media (min-width: 700px) and (max-width: 950px) {	
 		.textTitle {
 			font-size: 19px;
 		}
+		.textTitleContent {
+			font-size: 16px;
+		}
 	}
 	
 	@media (min-width: 1200px) {
 		.textTitle {
 			font-size: 25px;
+		}
+		.textTitleContent {
+			font-size: 20px;
 		}
 	}
 
@@ -189,11 +204,17 @@ body {
 	.imagemLogoResponsivaNavbar {
 	max-width: 12%;
 }
+	.imagemUnijuiResponsivaNavbar {
+	max-width: 20%;
+}
 }
 
 @media (min-width: 769px) and (max-width: 1600px) {
 	.imagemLogoResponsivaNavbar {
 	max-width: 6%;
+}
+	.imagemUnijuiResponsivaNavbar {
+	max-width: 17%;
 }
 }
 
@@ -201,10 +222,16 @@ body {
 	.imagemLogoResponsivaNavbar {
 	max-width: 4%;
 }
+	.imagemUnijuiResponsivaNavbar {
+	max-width: 12%;
+}
 }
 @media (min-width: 1920px) {
 	.imagemLogoResponsivaNavbar {
 	max-width: 3.5%;
+}
+	.imagemUnijuiResponsivaNavbar {
+	max-width: 10%;
 }
 }
 
@@ -214,34 +241,6 @@ body {
 	display: block;
 	height: auto;
 }
-
-
-
-@media (max-width:768px) {
-	.imagemUnijuiResponsivaNavbar {
-	max-width: 20%;
-}
-}
-
-@media (min-width:769px) and (max-width: 1600px) {
-	.imagemUnijuiResponsivaNavbar {
-	max-width: 17%;
-}
-}
-
-@media (min-width: 1600px) and (max-width: 1920px) {
-	.imagemUnijuiResponsivaNavbar {
-	max-width: 12%;
-}
-}
-
-@media (min-width: 1920px) {
-	.imagemUnijuiResponsivaNavbar {
-	max-width: 10%;
-}
-}
-
-
 
 
 .imagemUnijuiResponsivaNavbar {
