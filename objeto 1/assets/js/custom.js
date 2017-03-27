@@ -1,7 +1,7 @@
   var nome;
   var i = -11.4;
   var scene = 0;
-  var transmissionBeingShown = 1;
+  var transmissionBeingShown = 2;
   var fadeTime = 500;
   var questionNumber = 1;
   var listeningToKeyPress = false;
@@ -9,9 +9,9 @@
   var corretas = [false, false, false, false, false, false, false, false];
   var updateText = false;
   var firstTimeTransmission = true;
+  var ftTransmission = true;
   var dataJSON;
   var respostaCorreta7 = 63.99;
-
 
   	//Recupera as informações do arquivo data.json
   	$.getJSON('assets/js/data.json', function(data) {
@@ -918,8 +918,16 @@
 
 
 		function contentSwitcher() {
-		    setTimeout(function () {
-				switch (transmissionBeingShown) {
+			if (ftTransmission) { //Gambiarra para funcionar o ocultamento/disable nos botões
+				$("#iconSetaEsquerda").hide();
+				$("#iconSetaDireita").hide();
+				$('#setaTransmissaoDireita').toggleClass('glyphIconDisabled');
+  				$('#setaTransmissaoEsquerda').toggleClass('glyphIconDisabled');
+  				ftTransmission = false;
+			}
+			if (firstTimeTransmission) {
+		  	  setTimeout(function () {
+					switch (transmissionBeingShown) {
 							case 1:
 							case 2:
 							case 3:
@@ -928,9 +936,21 @@
 								loadTransmissionData();
 								contentSwitcher(++transmissionBeingShown);
 								break;
-						}
+							case 6:
+								firstTimeTransmission = false;
+								$("#iconSetaEsquerda").show();
+								$("#iconSetaDireita").show();
+								$('#setaTransmissaoDireita').toggleClass('glyphIconDisabled');
+								$('#setaTransmissaoEsquerda').toggleClass('glyphIconDisabled');
+								break;
 
-			    }, 5000);
+							}
+
+				    }, 5000);
+			}
+			else {
+				loadTransmissionData();
+			}
 
 		}
 
@@ -942,7 +962,7 @@
 								$('#textoScene7').fadeOut(500);
 								await sleep(500);
 
-								$('#imgCirculo').attr("src", "assets/img/placeholder2.jpg").fadeIn(1000);
+								$('#imgCirculo').attr("src", "assets/img/placeholder1.jpg").fadeIn(1000);
 								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg1).fadeIn(1000);
 								break;
 							case 2:
@@ -950,7 +970,7 @@
 								$('#imgCirculo').fadeOut(500);
 								$('#textoScene7').fadeOut(500);
 								await sleep(500);
-								$('#imgCirculo').attr("src", "assets/img/placeholder3.jpg").fadeIn(1000);
+								$('#imgCirculo').attr("src", "assets/img/placeholder2.jpg").fadeIn(1000);
 								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg2).fadeIn(1000);
 								break;
 							case 3:
@@ -958,7 +978,7 @@
 								$('#imgCirculo').fadeOut(500);
 								$('#textoScene7').fadeOut(500);
 								await sleep(500);
-								$('#imgCirculo').attr("src", "assets/img/placeholder4.jpg").fadeIn(1000);
+								$('#imgCirculo').attr("src", "assets/img/placeholder3.jpg").fadeIn(1000);
 								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg3).fadeIn(1000);
 								break;
 							case 4:
@@ -966,7 +986,7 @@
 								$('#imgCirculo').fadeOut(500);
 								$('#textoScene7').fadeOut(500);
 								await sleep(500);
-								$('#imgCirculo').attr("src", "assets/img/placeholder5.jpg").fadeIn(1000);
+								$('#imgCirculo').attr("src", "assets/img/placeholder4.jpg").fadeIn(1000);
 								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg4).fadeIn(1000);
 								break;
 							case 5:
@@ -974,17 +994,53 @@
 								$('#imgCirculo').fadeOut(500);
 								$('#textoScene7').fadeOut(500);
 								await sleep(500);
+								$('#imgCirculo').attr("src", "assets/img/placeholder5.jpg").fadeIn(1000);
+								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
+								break;
+							case 6:
+								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title6);
+								$('#imgCirculo').fadeOut(500);
+								$('#textoScene7').fadeOut(500);
+								await sleep(500);
 								$('#imgCirculo').attr("src", "assets/img/placeholder6.jpg").fadeIn(1000);
 								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
-								
-
-								//$('#setaTransmissaoDireita').prop('disabled', false);
-								//$('#setaTransmissaoEsquerda').prop('disabled', false);
-
-								break;
-						}
+								setaTransmissaoClicavel = true;
+								break;						
+							}
 			
 		}
+
+
+				$(document).on('click', '#setaTransmissaoDireita', function () {
+
+					if (transmissionBeingShown < 6) {
+						transmissionBeingShown++;
+						loadTransmissionData();
+					}
+					else {
+
+					}
+
+					});
+
+				$(document).on('click', '#setaTransmissaoEsquerda', function () {
+					if (transmissionBeingShown > 1) {
+						transmissionBeingShown--;
+						loadTransmissionData();
+					}
+					else {
+						
+					}
+
+					});
+
+
+
+
+
+
+
+
 
 	  /* Funções Gerais */
 	  	//Função que realiza a troca de uma cena para a próxima, bem como adicionar um sleep igual ao tempo de fade
@@ -1091,6 +1147,7 @@
  					break;
 				case 7:
 					$("#scene7").fadeOut(fadeTime);
+					transmissionBeingShown = 1;
  					break;
 			}
 	  }

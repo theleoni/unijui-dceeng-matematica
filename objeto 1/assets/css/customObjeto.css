@@ -663,3 +663,7 @@ body {
 .setaTransmissao:hover {
 	color: green;
 }
+
+.glyphIconDisabled {
+	cursor: not-allowed;
+}
