@@ -1046,6 +1046,11 @@
 		        plotBorderWidth: null,
 		        plotShadow: false,
 		        backgroundColor: 'rgba(0,0,0,0)',
+				margin: [0, 0, 0, 0],
+    			spacingTop: 0,
+      			spacingBottom: 0,
+    			spacingLeft: 0,
+    			spacingRight: 0,
 		        type: 'pie'
 
 			    },
@@ -1057,6 +1062,7 @@
 			    },
 			    plotOptions: {
 			        pie: {
+			        	size:'100%',
 			            allowPointSelect: true,
 			            cursor: 'pointer',
 			            dataLabels: {
