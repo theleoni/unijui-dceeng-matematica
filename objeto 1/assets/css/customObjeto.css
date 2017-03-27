@@ -407,11 +407,16 @@ body {
 .iconFecharUsinas {
 	position: absolute;
 	cursor: pointer;
+	color:black;
 	margin-left: 93%;
 	margin-top: 5%;
 	z-index: 3;
 	max-width: 3%;
 	font-size: 40px;
+}
+
+.iconFecharUsinas:hover {
+	color:red;
 }
 
 

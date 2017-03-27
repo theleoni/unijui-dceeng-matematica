@@ -1108,7 +1108,9 @@
 					$("#iconSetaDireita").show();
 					contentSwitcher();
 					break;
-
+				case 8:
+					$("#scene8").fadeIn(fadeTime);
+					break;
 			}
 	  }
 	  
@@ -1146,6 +1148,9 @@
 				case 7:
 					$("#scene7").fadeOut(fadeTime);
 					transmissionBeingShown = 1;
+ 					break;
+ 				case 8:
+ 					$("#scene8").fadeOut(fadeTime);
  					break;
 			}
 	  }
