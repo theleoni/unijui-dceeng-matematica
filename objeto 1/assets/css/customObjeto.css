@@ -708,8 +708,9 @@ body {
 	z-index: 1;
 	color: #FFFFFF;
 	margin-top: 1%;
-}
-
-#tabelaMatrizEnergetica{
 	display: table;
 }
+
+th, td { padding: 5px; }
+
+
