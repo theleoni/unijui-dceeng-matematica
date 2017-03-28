@@ -1040,18 +1040,10 @@
 /* SCENE ? */
 
 	function graphMatrizEnergetica() {
-			Highcharts.chart('graphMatrizEnergetica', {
+			var chart = Highcharts.chart('graphMatrizEnergetica', {
 		    	chart: {
-		        plotBackgroundColor: null,
-		        plotBorderWidth: null,
-		        plotShadow: false,
 		        backgroundColor: 'rgba(0,0,0,0)',
-				margin: [0, 0, 0, 0],
-    			spacingTop: 0,
-      			spacingBottom: 0,
-    			spacingLeft: 0,
-    			spacingRight: 0,
-		        type: 'pie'
+		        type: 'pie',
 
 			    },
 			    title: {
@@ -1062,15 +1054,14 @@
 			    },
 			    plotOptions: {
 			        pie: {
-			        	size:'100%',
 			            allowPointSelect: true,
 			            cursor: 'pointer',
 			            dataLabels: {
 			                enabled: true,
-			                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+			                format: '{point.name}: {point.percentage:.1f} %',
 			                style: {
-			                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-			                }
+                   				 textOutline: false, 
+              				  }
 			            }
 			        }
 			    },
@@ -1078,28 +1069,30 @@
 			        name: 'Brands',
 			        colorByPoint: true,
 			        data: [{
-			            name: 'Microsoft Internet Explorer',
+			            name: 'Hidrelétrica',
 			            y: 56.33
 			        }, {
-			            name: 'Chrome',
+			            name: 'Biomassa',
 			            y: 24.03,
 			            sliced: true,
 			            selected: true
 			        }, {
-			            name: 'Firefox',
+			            name: 'Fóssil',
 			            y: 10.38
 			        }, {
-			            name: 'Safari',
+			            name: 'G',
 			            y: 4.77
 			        }, {
-			            name: 'Opera',
+			            name: 'ADASd',
 			            y: 0.91
 			        }, {
-			            name: 'Proprietary or Undetectable',
+			            name: 'ASDD',
 			            y: 0.2
 			        }]
 			    }]
 			});
+
+ 	 chart.reflow();
 	}
 
 

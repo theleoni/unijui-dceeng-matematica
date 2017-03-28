@@ -698,15 +698,18 @@ body {
 
 .fundoMatrizEnergetica {
 	position: absolute;
-	height: 40vh;
-	margin-top: 8%;
+	height: 55vh;
 	border-radius: 3%;
 	background-color: #C55500;
 	z-index: 0;
-	margin-top: 2%;
 }
 
 .tableDadosMatrizEnergetica {
 	z-index: 1;
 	color: #FFFFFF;
+	margin-top: 1%;
+}
+
+#tabelaMatrizEnergetica{
+	display: table;
 }
