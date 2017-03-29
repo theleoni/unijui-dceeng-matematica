@@ -175,32 +175,41 @@
 				$('#imgUsina').attr("src", "assets/img/hidreletrica_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaHidreletrica);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleHidreletrica);
-
+				$('#scene2Sub1').css("background-color", "#008CAF")
 				break;
 			case 'eolica':
 				$('#imgUsina').attr("src", "assets/img/eolica_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaEolica);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleEolica);
+				$('#scene2Sub1').css("background-color", "#008CAF")
 				break;
 			case 'fossil':
 				$('#imgUsina').attr("src", "assets/img/fossil_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaFossil);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleFossil);
+				$('#scene2Sub1').css("background-color", "#0C99AB")
+
 				break;
 			case 'nuclear':
 				$('#imgUsina').attr("src", "assets/img/nuclear_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaNuclear);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleNuclear);
+				$('#scene2Sub1').css("background-color", "#0C99AB")
+
 				break;
 			case 'solar':
 				$('#imgUsina').attr("src", "assets/img/solar_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaSolar);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleSolar);
+				$('#scene2Sub1').css("background-color", "#0C99AB")
+
 				break;	
 			case 'biomassa':
 				$('#imgUsina').attr("src", "assets/img/biomassa_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaBiomassa);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleBiomassa);
+				$('#scene2Sub1').css("background-color", "#008CAF")
+
 				break;	
 		}
 	}
