@@ -19,10 +19,9 @@
   	  });
 
   	//Adiciona um sleep equivalente ao tempo passado como input
-  function sleep(ms) {
-  	return new Promise(resolve => setTimeout(resolve, ms));
+	function sleep (time) {
+	return new Promise((resolve) => setTimeout(resolve, time));
 	}
-
 
 	//Oculta as cenas ao carregar a página
   $( document ).ready(function() {
@@ -955,56 +954,64 @@
 
 		}
 
-		async function loadTransmissionData() {
+		function loadTransmissionData() {
 				switch (transmissionBeingShown) {
 							case 1:
 								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title1);
 								$('#imgCirculo').fadeOut(500);
 								$('#textoScene7').fadeOut(500);
-								await sleep(500);
-
-								$('#imgCirculo').attr("src", "assets/img/placeholder1.jpg").fadeIn(1000);
-								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg1).fadeIn(1000);
+								sleep(500).then(() => {
+									$('#imgCirculo').attr("src", "assets/img/placeholder1.jpg").fadeIn(1000);
+									$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg1).fadeIn(1000);
+								});
 								break;
+
 							case 2:
 								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title2);
 								$('#imgCirculo').fadeOut(500);
 								$('#textoScene7').fadeOut(500);
-								await sleep(500);
-								$('#imgCirculo').attr("src", "assets/img/placeholder2.jpg").fadeIn(1000);
-								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg2).fadeIn(1000);
+								sleep(500).then(() => {
+									$('#imgCirculo').attr("src", "assets/img/placeholder2.jpg").fadeIn(1000);
+									$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg2).fadeIn(1000);
+								});								
 								break;
 							case 3:
 								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title3);
 								$('#imgCirculo').fadeOut(500);
 								$('#textoScene7').fadeOut(500);
-								await sleep(500);
+								sleep(500).then(() => {
 								$('#imgCirculo').attr("src", "assets/img/placeholder3.jpg").fadeIn(1000);
 								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg3).fadeIn(1000);
+								});	
+
 								break;
 							case 4:
 								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title4);
 								$('#imgCirculo').fadeOut(500);
 								$('#textoScene7').fadeOut(500);
-								await sleep(500);
-								$('#imgCirculo').attr("src", "assets/img/placeholder4.jpg").fadeIn(1000);
-								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg4).fadeIn(1000);
+								sleep(500).then(() => {
+									$('#imgCirculo').attr("src", "assets/img/placeholder4.jpg").fadeIn(1000);
+									$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg4).fadeIn(1000);
+								});									
 								break;
 							case 5:
 								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title5);
 								$('#imgCirculo').fadeOut(500);
 								$('#textoScene7').fadeOut(500);
-								await sleep(500);
-								$('#imgCirculo').attr("src", "assets/img/placeholder5.jpg").fadeIn(1000);
-								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
+								sleep(500).then(() => {
+									$('#imgCirculo').attr("src", "assets/img/placeholder5.jpg").fadeIn(1000);
+									$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
+								});									
 								break;
 							case 6:
 								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title6);
 								$('#imgCirculo').fadeOut(500);
 								$('#textoScene7').fadeOut(500);
-								await sleep(500);
+								sleep(500).then(() => {
 								$('#imgCirculo').attr("src", "assets/img/placeholder6.jpg").fadeIn(1000);
 								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
+								});	
+
 								setaTransmissaoClicavel = true;
 								break;						
 							}
@@ -1102,28 +1109,31 @@
 
 	  /* Funções Gerais */
 	  	//Função que realiza a troca de uma cena para a próxima, bem como adicionar um sleep igual ao tempo de fade
-	async function nextScene() {
+	function nextScene() {
 		if (scene == 332189123) {
 		
 		}
 		else {
 			unloadScene();
 			scene++;
-			await sleep(fadeTime);
-			loadScene();
+			sleep(fadeTime).then(() => {
+				loadScene();
+			});			
+
 		}
 	}
 	
 		//Função que realiza a troca de uma cena para a anterior, bem como adicionar um sleep igual ao tempo de fade
-	async function previousScene() {
+	function previousScene() {
 		if (scene == 1) {
 			
 		}
 		else {
 			unloadScene();
 			scene--;
-			await sleep(fadeTime);
-			loadScene();
+			sleep(fadeTime).then(() => {
+				loadScene();
+			});				
 		}
 	}
 	
