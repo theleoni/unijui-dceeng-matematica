@@ -102,6 +102,9 @@ body {
 		.navbar {
 			max-height: 75px !important;
 		}
+		.body {
+			height: calc(100vh-75px);
+		}
 	}
 	
 	
@@ -109,6 +112,9 @@ body {
 			.navbar {
 				height: 108px !important;
 			}
+		.body {
+			height: calc(100vh-108px);
+		}
 		}
 		
 .positionRight {
