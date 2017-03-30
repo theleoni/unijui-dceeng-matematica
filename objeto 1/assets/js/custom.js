@@ -7,7 +7,7 @@
   var listeningToKeyPress = false;
   var questaoSelecionada;
   var corretas = [false, false, false, false, false, false, false, false];
-  var updateText = false;
+  var updateText = [false, false];
   var firstTimeTransmission = true;
   var ftTransmission = true;
   var dataJSON;
@@ -50,23 +50,19 @@
 					nextScene();
 					break;
 				case 4:
-
-					switch(scene4Counter) {
-						case 1:
-							$("#scene4Text1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
-							scene4Counter++;
-							break;
-
-
-					}
-					if (updateText == false) {
+					if (updateText[0] == false) {
 						$("#scene4Text1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
-						updateText = true;
+						updateText[0] = true;
 						break;
+					}
+					else if (updateText[1] == false) {
+						$("#scene4Text1").html(dataJSON.mensagensQuestoes.mensagem3IntroQuestoesIniciais);
+						updateText[1] = true;
+						break;		
 					}
 					else {
 						nextScene();
-						break;
+						break;	
 					}
 				case 5:
 					switch(questionNumber) {
@@ -95,9 +91,13 @@
 					break;
 
 				case 4:
-					if(updateText == true) {
+					if(updateText[0] == true && updateText[1] == true) {
+						$("#scene4Text1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
+						updateText[1] = false;
+						break;
+					} else if (updateText[0] == true) {
 						$("#scene4Text1").html(dataJSON.mensagensQuestoes.mensagemIntroQuestoesIniciais);
-						updateText = false;
+						updateText[0] = false;
 						break;
 					} else {
 					previousScene();
