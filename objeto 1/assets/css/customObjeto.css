@@ -528,7 +528,7 @@ body {
 
 .imagemEngenheiro03 {
 	position: absolute;
-	max-width: 40%;
+	max-width: 33%;
 	z-index: 1;
 	top: 50%;
 	left: 50%;
@@ -541,7 +541,7 @@ body {
 
 .imagemEngenheiro04 {
 	position: absolute;
-	max-width: 40%;
+	max-width: 33%;
 	z-index: 1;
 	top: 50%;
 	left: 50%;
@@ -612,7 +612,7 @@ body {
 
 .imagemEngenheiro06 {
 	position: absolute;
-	max-width: 40%;
+	max-width: 33%;
 	z-index: 1;
 	top: 50%;
 	left: 50%;
@@ -645,9 +645,14 @@ body {
 /* SCENE 07 */
 
 .imagemCircular {
-	border-radius: 50%;
+	border-radius: 60%;
 }
 
+.img-circular-responsive {
+	max-width: 65%;
+	height: auto;
+	display: block;
+}
 .titleCaminho {
     font-weight: bold;
     font-size: calc((4vh + 2vw)/1.9);
@@ -724,3 +729,4 @@ th, td { padding: 5px; }
 	display:block;
 	height: 100%;
 }
+

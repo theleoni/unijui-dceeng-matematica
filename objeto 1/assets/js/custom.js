@@ -12,6 +12,7 @@
   var ftTransmission = true;
   var dataJSON;
   var respostaCorreta7 = 63.99;
+  var scene4Counter = 1;
 
   	//Recupera as informações do arquivo data.json
   	$.getJSON('assets/js/data.json', function(data) {
@@ -49,6 +50,15 @@
 					nextScene();
 					break;
 				case 4:
+
+					switch(scene4Counter) {
+						case 1:
+							$("#scene4Text1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
+							scene4Counter++;
+							break;
+
+
+					}
 					if (updateText == false) {
 						$("#scene4Text1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
 						updateText = true;
@@ -290,6 +300,7 @@
 	  			$("#opcaoD").html(dataJSON.questao1.alternativa4Questao);
 	  			$("#questionGroup").hide();
 	  			$("#inputRespostaScene4").hide();
+	  			$("#pularQuestoes").show();
 	  			grafico1();
 
 	  				if (corretas[0] == false) {
@@ -955,7 +966,7 @@
 
 							}
 
-				    }, 5000);
+				    }, 10000);
 			}
 			else {
 				loadTransmissionData();
@@ -970,7 +981,7 @@
 								$('#imgCirculo').fadeOut(500);
 								$('#textoScene7').fadeOut(500);
 								sleep(500).then(() => {
-									$('#imgCirculo').attr("src", "assets/img/placeholder1.jpg").fadeIn(1000);
+									$('#imgCirculo').attr("src", "assets/img/circular1.gif").fadeIn(1000);
 									$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg1).fadeIn(1000);
 								});
 								break;
@@ -980,7 +991,7 @@
 								$('#imgCirculo').fadeOut(500);
 								$('#textoScene7').fadeOut(500);
 								sleep(500).then(() => {
-									$('#imgCirculo').attr("src", "assets/img/placeholder2.jpg").fadeIn(1000);
+									$('#imgCirculo').attr("src", "assets/img/circular2.gif").fadeIn(1000);
 									$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg2).fadeIn(1000);
 								});								
 								break;
@@ -989,7 +1000,7 @@
 								$('#imgCirculo').fadeOut(500);
 								$('#textoScene7').fadeOut(500);
 								sleep(500).then(() => {
-								$('#imgCirculo').attr("src", "assets/img/placeholder3.jpg").fadeIn(1000);
+								$('#imgCirculo').attr("src", "assets/img/circular3.gif").fadeIn(1000);
 								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg3).fadeIn(1000);
 								});	
 
@@ -999,7 +1010,7 @@
 								$('#imgCirculo').fadeOut(500);
 								$('#textoScene7').fadeOut(500);
 								sleep(500).then(() => {
-									$('#imgCirculo').attr("src", "assets/img/placeholder4.jpg").fadeIn(1000);
+									$('#imgCirculo').attr("src", "assets/img/circular4.gif").fadeIn(1000);
 									$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg4).fadeIn(1000);
 								});									
 								break;
@@ -1008,7 +1019,7 @@
 								$('#imgCirculo').fadeOut(500);
 								$('#textoScene7').fadeOut(500);
 								sleep(500).then(() => {
-									$('#imgCirculo').attr("src", "assets/img/placeholder5.jpg").fadeIn(1000);
+									$('#imgCirculo').attr("src", "assets/img/circular5.gif").fadeIn(1000);
 									$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
 								});									
 								break;
@@ -1017,7 +1028,7 @@
 								$('#imgCirculo').fadeOut(500);
 								$('#textoScene7').fadeOut(500);
 								sleep(500).then(() => {
-								$('#imgCirculo').attr("src", "assets/img/placeholder6.jpg").fadeIn(1000);
+								$('#imgCirculo').attr("src", "assets/img/circular6.gif").fadeIn(1000);
 								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
 								});	
 
@@ -1047,6 +1058,25 @@
 					}
 
 					});
+
+
+
+
+
+
+
+
+/* REMOVER ANTES DA VERSÃO FINAL */
+
+				$(document).on('click', '#pularQuestoes', function () {
+					$("#iconSetaDireita").show();
+					nextScene();
+					
+					});
+
+
+
+
 
 
 
