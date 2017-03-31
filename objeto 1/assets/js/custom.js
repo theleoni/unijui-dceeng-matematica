@@ -12,7 +12,6 @@
   var ftTransmission = true;
   var dataJSON;
   var respostaCorreta7 = 63.99;
-  var scene4Counter = 1;
 
   	//Recupera as informações do arquivo data.json
   	$.getJSON('assets/js/data.json', function(data) {
@@ -37,6 +36,7 @@
 		$("#sceneX").hide();
 		$("#imagensFixas").hide();
 
+
 });
 
   		//Realiza as ações necessárias ao se clicar na seta direita (Troca de cena ou troca de questão)
@@ -53,6 +53,7 @@
 					if (updateText[0] == false) {
 						$("#scene4Text1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
 						updateText[0] = true;
+						$("#imagensCena4").fadeIn(300);
 						break;
 					}
 					else if (updateText[1] == false) {
@@ -87,6 +88,7 @@
 				case 3:
 				case 6:
 				case 7:
+				case 8:
 					previousScene();
 					break;
 
@@ -98,6 +100,7 @@
 					} else if (updateText[0] == true) {
 						$("#scene4Text1").html(dataJSON.mensagensQuestoes.mensagemIntroQuestoesIniciais);
 						updateText[0] = false;
+						$("#imagensCena4").fadeOut(300);
 						break;
 					} else {
 					previousScene();
@@ -1104,7 +1107,7 @@
 			            cursor: 'pointer',
 			            dataLabels: {
 			                enabled: true,
-			                format: '{point.name}: {point.percentage:.1f} %',
+			                format: '{point.name}: {point.y}',
 			                style: {
                    				 textOutline: false, 
               				  }
@@ -1116,24 +1119,22 @@
 			        colorByPoint: true,
 			        data: [{
 			            name: 'Hidrelétrica',
-			            y: 56.33
+			            y: 33
 			        }, {
 			            name: 'Biomassa',
-			            y: 24.03,
-			            sliced: true,
-			            selected: true
+			            y: 45
 			        }, {
 			            name: 'Fóssil',
-			            y: 10.38
+			            y: 22
 			        }, {
 			            name: 'G',
-			            y: 4.77
+			            y: 31
 			        }, {
 			            name: 'ADASd',
-			            y: 0.91
+			            y: 12
 			        }, {
 			            name: 'ASDD',
-			            y: 0.2
+			            y: 1
 			        }]
 			    }]
 			});
@@ -1200,6 +1201,7 @@
 					break;
 				case 4:
 					$("#scene4").fadeIn(fadeTime);
+					$("#imagensCena4").hide();
 					$("#iconSetaDireita").show();
 
 					break;

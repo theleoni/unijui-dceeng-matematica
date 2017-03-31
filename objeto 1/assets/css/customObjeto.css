@@ -569,7 +569,11 @@ body {
 	font-family: 'Roboto Condensed', sans-serif;
 }
 
-
+.imagensScene4 {
+	border-radius: 40%;
+	margin-top: 55vh;
+	max-width: 180%;
+}
 
 /* SCENE 05 */
 
