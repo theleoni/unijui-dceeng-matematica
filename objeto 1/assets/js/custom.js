@@ -195,6 +195,7 @@
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaEolica);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleEolica);
 				$('#scene2Sub1').css("background-color", "#008CAF")
+				$('#imgDetalhesScene2').attr('src', 'assets/img/detalhe_eolica.png')
 				break;
 			case 'fossil':
 				$('#imgUsina').attr("src", "assets/img/fossil_animada.mp4");
@@ -215,6 +216,7 @@
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaSolar);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleSolar);
 				$('#scene2Sub1').css("background-color", "#0C99AB")
+				$('#imgDetalhesScene2').attr('src', 'assets/img/detalhe_solar.png')
 
 				break;	
 			case 'biomassa':

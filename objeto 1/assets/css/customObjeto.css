@@ -436,7 +436,11 @@ body {
 }
 
 
-
+.imagemDetalheUsinas {
+	margin-top: 32vh;
+	margin-left: 20vh;
+	max-width: 75%;
+}
 
 
 	/* SCENE 3 */
