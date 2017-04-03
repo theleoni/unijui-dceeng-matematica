@@ -339,13 +339,14 @@ body {
 
 .scene2Text1 {
 	position: absolute;
-	left: 41%;
+	left: 43%;
 	right: -40%;
 	text-align: justify;
 	z-index: 2;
 	color: #FFFFFF;
 	font-size: calc((2vh + 1vw)/2);
 	font-family: 'Roboto Condensed', sans-serif;
+	top: 0.5vh;
 }
 
 
@@ -521,7 +522,7 @@ body {
 	position: absolute;
 	left: 32%;
 	right: -90%;
-	top: 3%;
+	top: 0.25vh;
 	text-align: justify;
 	z-index: 1;
 	color: #FFFFFF;
