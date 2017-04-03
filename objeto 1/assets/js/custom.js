@@ -12,6 +12,9 @@
   var ftTransmission = true;
   var dataJSON;
   var respostaCorreta7 = 63.99;
+  var respostasMatrizEnergetica = [534, 8.86, 1251, 61.34, 42, 0.01, 2, 1.24, 418, 6.58, 2412, 16.85, 5.11];
+  var inputRespostasMatrizEnergetica;
+
 
   	//Recupera as informações do arquivo data.json
   	$.getJSON('assets/js/data.json', function(data) {
@@ -1145,9 +1148,38 @@
 	}
 
 
+		$(document).on('click', '#botaoMatrizVerificar', function () {
+			var verificacaoLocal = true;
+			getInputValues();
+			for (var i = 0; i < respostasMatrizEnergetica.length; i++) {
+				if (!(inputRespostasMatrizEnergetica[i].val().replace(/,/g, '.') == respostasMatrizEnergetica[i])) {
+					inputRespostasMatrizEnergetica[i].css('background-color', 'red');
+					verificacaoLocal = false;
+					$("#alertMatriz").show();
+				}
+				else {
+					inputRespostasMatrizEnergetica[i].css('background-color', '');
+				}
+			}
+			if (verificacaoLocal == true) {
+				$("#alertMatriz").hide();
+				graphMatrizEnergetica();
+				$(this).hide();
+			}
+
+		});
 
 
 
+		function getInputValues() {
+			inputRespostasMatrizEnergetica = [$("#inputNumeroUsinasBiomassa"), $("#inputConsumoUsinasBiomassa"),
+			 $("#inputNumeroUsinasHidrica"), $("#inputConsumoUsinasHidrica"),
+			  $("#inputNumeroUsinasSolar"), $("#inputConsumoUsinasSolar"),
+			   $("#inputNumeroUsinasNuclear"), $("#inputConsumoUsinasNuclear"),
+			    $("#inputNumeroUsinasEolica"), $("#inputConsumoUsinasEolica"),
+			     $("#inputNumeroUsinasFossil"), $("#inputConsumoUsinasFossil"),
+			      $("#inputConsumoImportacao") ];
+		}
 
 	  /* Funções Gerais */
 	  	//Função que realiza a troca de uma cena para a próxima, bem como adicionar um sleep igual ao tempo de fade
@@ -1223,7 +1255,7 @@
 					break;
 				case 8:
 					$("#sceneX").fadeIn(fadeTime);
-					graphMatrizEnergetica();
+					$("#alertMatriz").hide()
 					break;
 			}
 	  }
