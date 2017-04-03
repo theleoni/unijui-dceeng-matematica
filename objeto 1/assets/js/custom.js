@@ -1104,11 +1104,11 @@
 			        text: 'Browser market shares January, 2015 to May, 2015'
 			    },
 			    tooltip: {
-			        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+			        pointFormat: '{series.name}: <b>{point.y}</b>'
 			    },
 			    plotOptions: {
 			        pie: {
-			            allowPointSelect: true,
+			            allowPointSelect: false,
 			            cursor: 'pointer',
 			            dataLabels: {
 			                enabled: true,
@@ -1120,26 +1120,26 @@
 			        }
 			    },
 			    series: [{
-			        name: 'Brands',
+			        name: 'Usinas ',
 			        colorByPoint: true,
 			        data: [{
 			            name: 'Hidrelétrica',
-			            y: 33
+			            y: 1251
 			        }, {
 			            name: 'Biomassa',
-			            y: 45
+			            y: 534
 			        }, {
 			            name: 'Fóssil',
-			            y: 22
+			            y: 2412
 			        }, {
-			            name: 'G',
-			            y: 31
+			            name: 'Eólica',
+			            y: 418
 			        }, {
-			            name: 'ADASd',
-			            y: 12
+			            name: 'Nuclear',
+			            y: 2
 			        }, {
-			            name: 'ASDD',
-			            y: 1
+			            name: 'Solar',
+			            y: 42
 			        }]
 			    }]
 			});
