@@ -739,3 +739,7 @@ th, td { padding: 5px; }
 	height: 100%;
 }
 
+.divTabelaMatrizEnergetica {
+	max-height: 55vh;
+	overflow: auto;
+}
