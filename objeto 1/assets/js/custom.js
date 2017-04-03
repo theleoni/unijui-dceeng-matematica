@@ -192,6 +192,8 @@
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaHidreletrica);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleHidreletrica);
 				$('#scene2Sub1').css("background-color", "#008CAF")
+				$('#imgDetalhesScene2').attr('src', 'assets/img/detalhe_hidreletrica.png')
+
 				break;
 			case 'eolica':
 				$('#imgUsina').attr("src", "assets/img/eolica_animada.mp4");
