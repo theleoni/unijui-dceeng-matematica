@@ -207,6 +207,8 @@
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaFossil);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleFossil);
 				$('#scene2Sub1').css("background-color", "#0C99AB")
+				$('#imgDetalhesScene2').attr('src', 'assets/img/detalhe_fossil.png')
+
 
 				break;
 			case 'nuclear':
@@ -214,6 +216,8 @@
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaNuclear);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleNuclear);
 				$('#scene2Sub1').css("background-color", "#0C99AB")
+				$('#imgDetalhesScene2').attr('src', 'assets/img/detalhe_nuclear.png')
+
 
 				break;
 			case 'solar':
@@ -229,6 +233,7 @@
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaBiomassa);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleBiomassa);
 				$('#scene2Sub1').css("background-color", "#008CAF")
+				$('#imgDetalhesScene2').attr('src', 'assets/img/detalhe_biomassa.png')
 
 				break;	
 		}
