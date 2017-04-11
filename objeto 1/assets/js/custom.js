@@ -42,6 +42,12 @@
 
 });
 
+
+
+  		$(document).on('click', '#botaoNome', function () {
+  			saveName();
+});
+
   		//Realiza as ações necessárias ao se clicar na seta direita (Troca de cena ou troca de questão)
 		$(document).on('click', '#iconSetaDireita', function () {
 			switch (scene) {
