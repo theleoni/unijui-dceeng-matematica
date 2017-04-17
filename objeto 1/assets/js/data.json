@@ -33,7 +33,7 @@
 		"respostaIncorreta": "Resposta errada! Tente novamente   <span class='glyphicon glyphicon-remove' aria-hidden='true'</span>",
 		"mensagemIntroQuestoesIniciais": "Agora que você já sabe um pouco sobre a produção da eletricidade, vamos analisar, interpretar e responder algumas questões a partir de diferentes tipos de gráficos, referentes ao consumo de energia.",
 		"mensagem2IntroQuestoesIniciais": "Por gráfico entendemos, que é uma forma de transmitir dados e informação estatística. Eles, os gráficos, são usados em meio de comunicação como, jornais, televisão, páginas de internet. Algumas formas em que se utilizam os gráficos são para representar variação de indicadores financeiros, pesquisa de opinião, entre outros.",
-		"mensagem3IntroQuestoesIniciais": "Esta é a mensagem 3"
+		"mensagem3IntroQuestoesIniciais": "A Estatística é uma parte da Matemática Aplicada que fornece métodos para a coleta, organização, descrição, análise,  interpretação.  Informação estatística consiste na apresentação dos resultados de uma pesquisa."
 	},
 	"questao1": {
 	"numeroQuestao": "1.",

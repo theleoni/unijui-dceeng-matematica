@@ -311,18 +311,28 @@
 	
 	function showConjuntoImagens1IntroQuestoesGraficos () {
 		$('#sceneIntroGraficosImg1').attr("src", "assets/img/imagem1CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg1').attr('title', 'Jornais');
 		$('#sceneIntroGraficosImg2').attr("src", "assets/img/imagem2CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg2').attr('title', 'Livros');
 		$('#sceneIntroGraficosImg3').attr("src", "assets/img/imagem3CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg3').attr('title', 'Computador');
 		$('#sceneIntroGraficosImg4').attr("src", "assets/img/imagem4CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg4').attr('title', 'Televisão');
 		$('#sceneIntroGraficosImg1').show().siblings().show();
 
 	}
 	
 	function showConjuntoImagens2IntroQuestoesGraficos() {
-		$('#sceneIntroGraficosImg1').attr("src", "assets/img/imagem5CenaIntroGraficos.png").fadeIn(500);
-		$('#sceneIntroGraficosImg2').attr("src", "assets/img/imagem6CenaIntroGraficos.png").fadeIn(500);
-		$('#sceneIntroGraficosImg3').attr("src", "assets/img/imagem7CenaIntroGraficos.png").fadeIn(500);
-		$('#sceneIntroGraficosImg4').hide();
+		$('#sceneIntroGraficosImg1').show().siblings().show();
+		$('#sceneIntroGraficosImg1').hide();
+		$('#sceneIntroGraficosImg2').attr("src", "assets/img/imagem5CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg2').attr('title', 'Coleta');
+		$('#sceneIntroGraficosImg3').attr("src", "assets/img/imagem6CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg3').attr('title', 'Descrição, Análise, e Interpretação');
+		$('#sceneIntroGraficosImg4').attr("src", "assets/img/imagem7CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg4').attr('title', 'Organização');
+
+
 	}
 
 	  /* Scene 4 */
