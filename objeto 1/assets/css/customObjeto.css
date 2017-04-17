@@ -266,7 +266,7 @@ body {
 	/* SCENE 1 */
 
 
-.scene1Text1 {
+.sceneIntroGeralText1 {
 	position: absolute;
 	left: 32%;
 	right: 5%;
@@ -278,7 +278,7 @@ body {
 
 }
 
-.scene1Text2 {
+.sceneIntroGeralText2 {
 	position:absolute;
 	left: 32%;
 	right: 20%;
@@ -292,7 +292,7 @@ body {
 
 
 
-.scene1Bubble1 {
+.sceneIntroGeralBubble1 {
 	position: absolute;
 	left: 31%;
 	top: 100%;
@@ -302,7 +302,7 @@ body {
 	height: 12vh;
 }
 
-.scene1Bubble2 {
+.sceneIntroGeralBubble2 {
 	position: absolute;
 	left: 31%;
 	right: 40%;
@@ -312,7 +312,7 @@ body {
 }
 
 
-.imagemPlaneta01{
+.imagemPlanetaIntroGeral{
 	width: 200%;
 	height: auto;
 	display: block;
@@ -337,7 +337,7 @@ body {
 }
 
 
-.scene2Text1 {
+.sceneTiposUsinasText1 {
 	position: absolute;
 	left: 43%;
 	right: -40%;
@@ -350,7 +350,7 @@ body {
 }
 
 
-.scene2Bubble1 {
+.sceneTiposUsinasBubble1 {
 	position: absolute;
 	left: 40%;
 	right: 28%;
@@ -359,7 +359,7 @@ body {
 	height: 10vh;
 }
 
-.scene2Sub1 {
+.sceneTiposUsinasSub1 {
 	position: absolute;
 	height: 70vh;
 	width: 100%;
@@ -368,7 +368,7 @@ body {
 	margin-top: 2%;
 }
 
-.scene2Sub2 {
+.sceneTiposUsinasSub2 {
 	position: absolute;
 	height: 65vh;
 	width: 55%;
@@ -428,7 +428,7 @@ body {
 }
 
 
-.imagemEngenheiro02 {
+.imagemEngenheiroTiposUsinas {
 	position: absolute;
 	max-width: 40%;
 	z-index: 1;
@@ -507,7 +507,7 @@ body {
 	}
 }
 
-.scene3Bubble1 {
+.sceneImpostosBubble1 {
 	position: absolute;
 	margin-left: 10%;
 	left: 12%;
@@ -518,7 +518,7 @@ body {
 	height: 14vh;
 }
 
-.scene3Text1 {
+.sceneImpostosText1 {
 	position: absolute;
 	left: 32%;
 	right: -90%;
@@ -531,7 +531,7 @@ body {
 
 }
 
-.imagemEngenheiro03 {
+.imagemEngenheiroImpostos {
 	position: absolute;
 	max-width: 33%;
 	z-index: 1;
@@ -544,7 +544,7 @@ body {
 
 /* SCENE 04 */
 
-.imagemEngenheiro04 {
+.imagemEngenheiroIntroGraficos {
 	position: absolute;
 	max-width: 33%;
 	z-index: 1;
@@ -553,7 +553,7 @@ body {
 	margin-top: 15%;
 }
 
-.scene4Bubble1 {
+.sceneIntroGraficosBubble1 {
 	position: absolute;
 	left: -8%;
 	top: 12%;
@@ -561,7 +561,7 @@ body {
 	height: 40vh;
 }
 
-.scene4Text1 {
+.sceneIntroGraficosText1 {
 	position: absolute;
 	left: -5%;
 	line-height: 125%;
@@ -574,8 +574,8 @@ body {
 	font-family: 'Roboto Condensed', sans-serif;
 }
 
-.imagensScene4 {
-	border-radius: 40%;
+.imagenssceneIntroGraficos {
+	border-radius: 15%;
 	margin-top: 55vh;
 	max-width: 180%;
 }
@@ -619,7 +619,7 @@ body {
 
 /* SCENE 06 */
 
-.imagemEngenheiro06 {
+.imagemEngenheiroIntroCaminhos {
 	position: absolute;
 	max-width: 33%;
 	z-index: 1;
@@ -628,7 +628,7 @@ body {
 	margin-top: 15%;
 }
 
-.scene6Bubble1 {
+.sceneIntroCaminhosBubble1 {
 	position: absolute;
 	left: 32%;
 	top: 12%;
@@ -636,7 +636,7 @@ body {
 	height: 30vh;
 }
 
-.scene6Text1 {
+.sceneIntroCaminhosText1 {
 	position: absolute;
 	left: 34%;
 	line-height: 125%;
@@ -668,7 +668,7 @@ body {
 	font-family: 'Roboto Condensed', sans-serif;
 }
 
-.textoScene7 {
+.textosceneCaminhosEnergia {
     text-align: justify;
     font-family: 'Roboto Condensed', sans-serif;
     margin-top: 3%;

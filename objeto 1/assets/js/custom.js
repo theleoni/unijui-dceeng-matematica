@@ -29,13 +29,13 @@
 	//Oculta as cenas ao carregar a página
   $( document ).ready(function() {
 		$("#alertNome").hide();
-		$("#scene1").hide();
-		$("#scene2").hide();
-		$("#scene3").hide();
-		$("#scene4").hide();
-		$("#scene5").hide();
-		$("#scene6").hide();
-		$("#scene7").hide();
+		$("#sceneIntroGeral").hide();
+		$("#sceneTiposUsinas").hide();
+		$("#sceneImpostos").hide();
+		$("#sceneIntroGraficos").hide();
+		$("#sceneQuestoesGraficos").hide();
+		$("#sceneIntroCaminhos").hide();
+		$("#sceneCaminhosEnergia").hide();
 		$("#sceneX").hide();
 		$("#imagensFixas").hide();
 
@@ -60,13 +60,16 @@
 					break;
 				case 4:
 					if (updateText[0] == false) {
-						$("#scene4Text1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
+						$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
 						updateText[0] = true;
-						$("#imagensCena4").fadeIn(300);
+						$("#imagensCena4").show();
+						showConjuntoImagens1IntroQuestoesGraficos();
 						break;
 					}
 					else if (updateText[1] == false) {
-						$("#scene4Text1").html(dataJSON.mensagensQuestoes.mensagem3IntroQuestoesIniciais);
+						$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem3IntroQuestoesIniciais);
+						showConjuntoImagens2IntroQuestoesGraficos();
+
 						updateText[1] = true;
 						break;		
 					}
@@ -103,11 +106,13 @@
 
 				case 4:
 					if(updateText[0] == true && updateText[1] == true) {
-						$("#scene4Text1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
+						$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
 						updateText[1] = false;
+						showConjuntoImagens1IntroQuestoesGraficos();
+
 						break;
 					} else if (updateText[0] == true) {
-						$("#scene4Text1").html(dataJSON.mensagensQuestoes.mensagemIntroQuestoesIniciais);
+						$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagemIntroQuestoesIniciais);
 						updateText[0] = false;
 						$("#imagensCena4").fadeOut(300);
 						break;
@@ -159,10 +164,8 @@
 	
 	
 
-	
-	
-	
-	
+
+
 	/* SCENE 1 */
 		
 		//Exibe as imagens fixas (Setas, ajuda e fechar)
@@ -188,32 +191,32 @@
 	function showMoreInfo(usina) {
 		$("body").css("background-color", "gray");
 		$('#detalhesUsinas').show();
-	 	$('#additionalScene2').hide();
+	 	$('#additionalSceneTiposUsinas').hide();
 		$('#mensagem').hide();
-		$('#imagemEngenheiro2').hide();
+		$('#imagemEngenheiroTiposUsinas').hide();
 		hideFixedImages();
 		switch (usina) {
 			case 'hidreletrica': 
 				$('#imgUsina').attr("src", "assets/img/hidreletrica_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaHidreletrica);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleHidreletrica);
-				$('#scene2Sub1').css("background-color", "#008CAF")
-				$('#imgDetalhesScene2').attr('src', 'assets/img/detalhe_hidreletrica.png')
+				$('#sceneTiposUsinasSub1').css("background-color", "#008CAF")
+				$('#imgDetalhesSceneTiposUsinas').attr('src', 'assets/img/detalhe_hidreletrica.png')
 
 				break;
 			case 'eolica':
 				$('#imgUsina').attr("src", "assets/img/eolica_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaEolica);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleEolica);
-				$('#scene2Sub1').css("background-color", "#008CAF")
-				$('#imgDetalhesScene2').attr('src', 'assets/img/detalhe_eolica.png')
+				$('#sceneTiposUsinasSub1').css("background-color", "#008CAF")
+				$('#imgDetalhesSceneTiposUsinas').attr('src', 'assets/img/detalhe_eolica.png')
 				break;
 			case 'fossil':
 				$('#imgUsina').attr("src", "assets/img/fossil_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaFossil);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleFossil);
-				$('#scene2Sub1').css("background-color", "#0C99AB")
-				$('#imgDetalhesScene2').attr('src', 'assets/img/detalhe_fossil.png')
+				$('#sceneTiposUsinasSub1').css("background-color", "#0C99AB")
+				$('#imgDetalhesSceneTiposUsinas').attr('src', 'assets/img/detalhe_fossil.png')
 
 
 				break;
@@ -221,8 +224,8 @@
 				$('#imgUsina').attr("src", "assets/img/nuclear_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaNuclear);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleNuclear);
-				$('#scene2Sub1').css("background-color", "#0C99AB")
-				$('#imgDetalhesScene2').attr('src', 'assets/img/detalhe_nuclear.png')
+				$('#sceneTiposUsinasSub1').css("background-color", "#0C99AB")
+				$('#imgDetalhesSceneTiposUsinas').attr('src', 'assets/img/detalhe_nuclear.png')
 
 
 				break;
@@ -230,16 +233,16 @@
 				$('#imgUsina').attr("src", "assets/img/solar_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaSolar);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleSolar);
-				$('#scene2Sub1').css("background-color", "#0C99AB")
-				$('#imgDetalhesScene2').attr('src', 'assets/img/detalhe_solar.png')
+				$('#sceneTiposUsinasSub1').css("background-color", "#0C99AB")
+				$('#imgDetalhesSceneTiposUsinas').attr('src', 'assets/img/detalhe_solar.png')
 
 				break;	
 			case 'biomassa':
 				$('#imgUsina').attr("src", "assets/img/biomassa_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaBiomassa);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleBiomassa);
-				$('#scene2Sub1').css("background-color", "#008CAF")
-				$('#imgDetalhesScene2').attr('src', 'assets/img/detalhe_biomassa.png')
+				$('#sceneTiposUsinasSub1').css("background-color", "#008CAF")
+				$('#imgDetalhesSceneTiposUsinas').attr('src', 'assets/img/detalhe_biomassa.png')
 
 				break;	
 		}
@@ -247,10 +250,10 @@
 	
 
 	  //Restaura o estado da cena 2, após a visualização dos dados da usina
-	function restoreScene2() {
+	function restoresceneTiposUsinas() {
 		loadScene();
 		showFixedImages();
-		$('#imagemEngenheiro2').show();
+		$('#imagemEngenheiroTiposUsinas').show();
 		$('#mensagem').show(); 
 		$("body").css("background-color", "white");
 
@@ -304,6 +307,23 @@
 	  
 	  
 
+	  	/* Intro questões */
+	
+	function showConjuntoImagens1IntroQuestoesGraficos () {
+		$('#sceneIntroGraficosImg1').attr("src", "assets/img/imagem1CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg2').attr("src", "assets/img/imagem2CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg3').attr("src", "assets/img/imagem3CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg4').attr("src", "assets/img/imagem4CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg1').show().siblings().show();
+
+	}
+	
+	function showConjuntoImagens2IntroQuestoesGraficos() {
+		$('#sceneIntroGraficosImg1').attr("src", "assets/img/imagem5CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg2').attr("src", "assets/img/imagem6CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg3').attr("src", "assets/img/imagem7CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg4').hide();
+	}
 
 	  /* Scene 4 */
 	  //Carrega a questão, tendo como base a variável questionNumber
@@ -313,14 +333,14 @@
 	  		case 1:
 
 	  			$("#opcaoA").show().siblings().show();
-	  			$("#scene4QuestionNumber").html(dataJSON.questao1.numeroQuestao);
-	  			$("#scene4Question").html(dataJSON.questao1.textoQuestao)
+	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao1.numeroQuestao);
+	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao1.textoQuestao)
 	  			$("#opcaoA").html(dataJSON.questao1.alternativa1Questao);
 	  			$("#opcaoB").html(dataJSON.questao1.alternativa2Questao);
 	  			$("#opcaoC").html(dataJSON.questao1.alternativa3Questao);
 	  			$("#opcaoD").html(dataJSON.questao1.alternativa4Questao);
 	  			$("#questionGroup").hide();
-	  			$("#inputRespostaScene4").hide();
+	  			$("#inputRespostasceneQuestoesGraficos").hide();
 	  			$("#pularQuestoes").show();
 	  			grafico1();
 
@@ -338,14 +358,14 @@
 
 	  		case 2:
 	  			$("#opcaoA").show().siblings().show();
-	  			$("#scene4QuestionNumber").html(dataJSON.questao2.numeroQuestao);
-	  			$("#scene4Question").html(dataJSON.questao2.textoQuestao)
+	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao2.numeroQuestao);
+	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao2.textoQuestao)
 	  			$("#opcaoA").html(dataJSON.questao2.alternativa1Questao);
 	  			$("#opcaoB").html(dataJSON.questao2.alternativa2Questao);
 	  			$("#opcaoC").html(dataJSON.questao2.alternativa3Questao);
 	  			$("#opcaoD").html(dataJSON.questao2.alternativa4Questao);
 	  			$("#questionGroup").hide();
-	  			$("#inputRespostaScene4").hide();
+	  			$("#inputRespostasceneQuestoesGraficos").hide();
 
 	  			grafico1();
 
@@ -366,8 +386,8 @@
 	  			$("#enviarResposta").show();
 	  			$("#enviarResposta").prop('disabled', false);
 	  			$("#questionGroup").show();
-	  			$("#scene4QuestionNumber").html(dataJSON.questao3.numeroQuestao);
-	  			$("#scene4Question").html(dataJSON.questao3.textoQuestao);
+	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao3.numeroQuestao);
+	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao3.textoQuestao);
 
 	  			grafico2();
 
@@ -386,9 +406,9 @@
 	  			$("#enviarResposta").show();
 	  			$("#enviarResposta").prop('disabled', false);
 	  			$("#questionGroup").show();
-	  			$("#scene4QuestionNumber").html(dataJSON.questao4.numeroQuestao);
-	  			$("#scene4Question").html(dataJSON.questao4.textoQuestao);
-	  			$("#inputRespostaScene4").hide();
+	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao4.numeroQuestao);
+	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao4.textoQuestao);
+	  			$("#inputRespostasceneQuestoesGraficos").hide();
 
 	  			grafico2();
 
@@ -405,14 +425,14 @@
 			case 5:
 				$("#questionGroup").hide();
 				$("#opcaoA").show().siblings().show();
-	  			$("#scene4QuestionNumber").html(dataJSON.questao5.numeroQuestao);
-	  			$("#scene4Question").html(dataJSON.questao5.textoQuestao )
+	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao5.numeroQuestao);
+	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao5.textoQuestao )
 	  			$("#opcaoA").html(dataJSON.questao5.alternativa1Questao);
 	  			$("#opcaoB").html(dataJSON.questao5.alternativa2Questao);
 	  			$("#opcaoC").html(dataJSON.questao5.alternativa3Questao);
 	  			$("#opcaoD").html(dataJSON.questao5.alternativa4Questao);
 	  			$("#questionGroup").hide();
-	  			$("#inputRespostaScene4").hide();
+	  			$("#inputRespostasceneQuestoesGraficos").hide();
 
 	  			grafico2();
 
@@ -427,14 +447,14 @@
 	  			break;
 	  		case 6:
 				$("#opcaoA").show().siblings().show();
-	  			$("#scene4QuestionNumber").html(dataJSON.questao6.numeroQuestao);
-	  			$("#scene4Question").html(dataJSON.questao6.textoQuestao )
+	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao6.numeroQuestao);
+	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao6.textoQuestao )
 	  			$("#opcaoA").html(dataJSON.questao6.alternativa1Questao);
 	  			$("#opcaoB").html(dataJSON.questao6.alternativa2Questao);
 	  			$("#opcaoC").html(dataJSON.questao6.alternativa3Questao);
 	  			$("#opcaoD").html(dataJSON.questao6.alternativa4Questao);
 	  			$("#questionGroup").hide();
-	  			$("#inputRespostaScene4").hide();
+	  			$("#inputRespostasceneQuestoesGraficos").hide();
 	  			grafico3();
 
 	  				if (corretas[5] == false) {
@@ -451,9 +471,9 @@
 	  			$("#opcaoA").hide().siblings().hide();
 	  			$("#enviarResposta").show();
 	  			$("#enviarResposta").prop('disabled', false);
-	  			$("#scene4QuestionNumber").html(dataJSON.questao7.numeroQuestao);
-	  			$("#scene4Question").html(dataJSON.questao7.textoQuestao )
-	  			$("#inputRespostaScene4").show();
+	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao7.numeroQuestao);
+	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao7.textoQuestao )
+	  			$("#inputRespostasceneQuestoesGraficos").show();
 	  			grafico4();
 
 	  				if (corretas[6] == false) {
@@ -469,14 +489,14 @@
 
 			case 8:
 				$("#opcaoA").show().siblings().show();
-	  			$("#scene4QuestionNumber").html(dataJSON.questao8.numeroQuestao);
-	  			$("#scene4Question").html(dataJSON.questao8.textoQuestao )
+	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao8.numeroQuestao);
+	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao8.textoQuestao )
 	  			$("#opcaoA").html(dataJSON.questao8.alternativa1Questao);
 	  			$("#opcaoB").html(dataJSON.questao8.alternativa2Questao);
 	  			$("#opcaoC").html(dataJSON.questao8.alternativa3Questao);
 	  			$("#opcaoD").html(dataJSON.questao8.alternativa4Questao);
 	  			$("#questionGroup").hide();
-	  			$("#inputRespostaScene4").hide();
+	  			$("#inputRespostasceneQuestoesGraficos").hide();
 	  			grafico4();
 
 	  				if (corretas[7] == false) {
@@ -553,7 +573,7 @@
 	  				break;
 
 	  			case 7:
-	  				if($("#inputNumberScene4").val() == respostaCorreta7) {
+	  				if($("#inputNumbersceneQuestoesGraficos").val() == respostaCorreta7) {
 	  					respostaCorreta();
 	  				}
 	  				else {
@@ -641,7 +661,7 @@
 		 				break;
 		 			case 7:
 		 				$("#enviarResposta").prop('disabled', false);
-		 				$("#inputNumberScene4").prop('type', 'number');
+		 				$("#inputNumbersceneQuestoesGraficos").prop('type', 'number');
 		 			 	$("#alertAnswer").hide();
 		 				break;
  			 	}
@@ -688,8 +708,8 @@
  						break;
  					case 7:
  						$("#enviarResposta").prop('disabled', true);
- 						$("#inputNumberScene4").prop('disabled', true);
- 						$("#inputNumberScene4").prop('placeholder', '63.99');
+ 						$("#inputNumbersceneQuestoesGraficos").prop('disabled', true);
+ 						$("#inputNumbersceneQuestoesGraficos").prop('placeholder', '63.99');
  						updateAlertOnQuestionChange();
  						break;
  					case 8:
@@ -732,7 +752,7 @@
 
 
 				// Gera o gráfico
-				Highcharts.chart('scene4Graph', {
+				Highcharts.chart('sceneIntroGraficosGraph', {
 				    chart: {
 				        type: 'pie',
 				    },
@@ -790,7 +810,7 @@
 	  	//Método utilizado para criar o gráfico utilizado nas questões 3 e 4
 	 	function grafico2() {
 	 		
-			Highcharts.chart('scene4Graph', {
+			Highcharts.chart('sceneIntroGraficosGraph', {
 			    chart: {
 			        type: 'column'
 			    },
@@ -846,7 +866,7 @@
 
 	 	//Método utilizado parar criar o gráfico utilizado nas questões 5 e 6
 	 	function grafico3() {
-	 		Highcharts.chart('scene4Graph', {
+	 		Highcharts.chart('sceneIntroGraficosGraph', {
 
 			    title: {
 			        text: 'Consumo de energia elétrica em KwH na residência de alunos'
@@ -894,7 +914,7 @@
 
 
 				// Gera o gráfico
-				Highcharts.chart('scene4Graph', {
+				Highcharts.chart('sceneIntroGraficosGraph', {
 				    chart: {
 				        type: 'pie',
 				    },
@@ -1000,57 +1020,57 @@
 							case 1:
 								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title1);
 								$('#imgCirculo').fadeOut(500);
-								$('#textoScene7').fadeOut(500);
+								$('#textosceneCaminhosEnergia').fadeOut(500);
 								sleep(500).then(() => {
 									$('#imgCirculo').attr("src", "assets/img/circular1.gif").fadeIn(1000);
-									$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg1).fadeIn(1000);
+									$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg1).fadeIn(1000);
 								});
 								break;
 
 							case 2:
 								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title2);
 								$('#imgCirculo').fadeOut(500);
-								$('#textoScene7').fadeOut(500);
+								$('#textosceneCaminhosEnergia').fadeOut(500);
 								sleep(500).then(() => {
 									$('#imgCirculo').attr("src", "assets/img/circular2.gif").fadeIn(1000);
-									$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg2).fadeIn(1000);
+									$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg2).fadeIn(1000);
 								});								
 								break;
 							case 3:
 								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title3);
 								$('#imgCirculo').fadeOut(500);
-								$('#textoScene7').fadeOut(500);
+								$('#textosceneCaminhosEnergia').fadeOut(500);
 								sleep(500).then(() => {
 								$('#imgCirculo').attr("src", "assets/img/circular3.gif").fadeIn(1000);
-								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg3).fadeIn(1000);
+								$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg3).fadeIn(1000);
 								});	
 
 								break;
 							case 4:
 								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title4);
 								$('#imgCirculo').fadeOut(500);
-								$('#textoScene7').fadeOut(500);
+								$('#textosceneCaminhosEnergia').fadeOut(500);
 								sleep(500).then(() => {
 									$('#imgCirculo').attr("src", "assets/img/circular4.gif").fadeIn(1000);
-									$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg4).fadeIn(1000);
+									$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg4).fadeIn(1000);
 								});									
 								break;
 							case 5:
 								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title5);
 								$('#imgCirculo').fadeOut(500);
-								$('#textoScene7').fadeOut(500);
+								$('#textosceneCaminhosEnergia').fadeOut(500);
 								sleep(500).then(() => {
 									$('#imgCirculo').attr("src", "assets/img/circular5.gif").fadeIn(1000);
-									$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
+									$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
 								});									
 								break;
 							case 6:
 								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title6);
 								$('#imgCirculo').fadeOut(500);
-								$('#textoScene7').fadeOut(500);
+								$('#textosceneCaminhosEnergia').fadeOut(500);
 								sleep(500).then(() => {
 								$('#imgCirculo').attr("src", "assets/img/circular6.gif").fadeIn(1000);
-								$('#textoScene7').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
+								$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
 								});	
 
 								setaTransmissaoClicavel = true;
@@ -1228,41 +1248,41 @@
 	  function loadScene() {
 			switch (scene) {
 				case 1:
-					$("#scene1").fadeIn(fadeTime);
-					$("#scene1Text1").html("Olá " + nome + dataJSON.stringsGerais.scene01Balao01);
+					$("#sceneIntroGeral").fadeIn(fadeTime);
+					$("#sceneIntroGeralText1").html("Olá " + nome + dataJSON.stringsGerais.sceneIntroGeralBalao01);
 					$("#tituloGeral").html("");
 					break;
 					
 				case 2:
-					$("#scene2").fadeIn(fadeTime);
+					$("#sceneTiposUsinas").fadeIn(fadeTime);
 					$('#detalhesUsinas').hide();
-					$('#additionalScene2').show();
+					$('#additionalSceneTiposUsinas').show();
 					$("#tituloGeral").html(dataJSON.stringsGerais.title1);
 
 					break;
 					
 				case 3:
-					$("#scene3").fadeIn(fadeTime);
+					$("#sceneImpostos").fadeIn(fadeTime);
 					$("#tituloGeral").html(dataJSON.stringsGerais.title2);
 					$("#containerImposto").hide();
 					break;
 				case 4:
-					$("#scene4").fadeIn(fadeTime);
+					$("#sceneIntroGraficos").fadeIn(fadeTime);
 					$("#imagensCena4").hide();
 					$("#iconSetaDireita").show();
 
 					break;
 				case 5:
-					$("#scene5").fadeIn(fadeTime);
+					$("#sceneQuestoesGraficos").fadeIn(fadeTime);
 					loadQuestion();
 					listeningToKeyPress = true;
 					break;
 				case 6:
-					$("#scene6").fadeIn(fadeTime);
+					$("#sceneIntroCaminhos").fadeIn(fadeTime);
 					$("#iconSetaDireita").show();
 					break;
 				case 7:
-					$("#scene7").fadeIn(fadeTime);
+					$("#sceneCaminhosEnergia").fadeIn(fadeTime);
 					$("#iconSetaDireita").show();
 					contentSwitcher();
 					break;
@@ -1280,32 +1300,32 @@
 		  	$("#tituloGeral").html("");
 			switch (scene) {
 				case 0:
-					$("#scene0").fadeOut(fadeTime);
+					$("#sceneIntroNome").fadeOut(fadeTime);
 					break;
 					
 				case 1:
-					$("#scene1").fadeOut(fadeTime);
+					$("#sceneIntroGeral").fadeOut(fadeTime);
 					break;
 				
 				case 2:
-					$("#scene2").fadeOut(fadeTime);
+					$("#sceneTiposUsinas").fadeOut(fadeTime);
 					break;
 					
 				case 3:
-					$("#scene3").fadeOut(fadeTime);
+					$("#sceneImpostos").fadeOut(fadeTime);
 					break;
 				case 4:
-					$("#scene4").fadeOut(fadeTime);
+					$("#sceneIntroGraficos").fadeOut(fadeTime);
  					break;
 				case 5:
-					$("#scene5").fadeOut(fadeTime);
+					$("#sceneQuestoesGraficos").fadeOut(fadeTime);
 					listeningToKeyPress = false;
 					break;
 				case 6:
-					$("#scene6").fadeOut(fadeTime);
+					$("#sceneIntroCaminhos").fadeOut(fadeTime);
  					break;
 				case 7:
-					$("#scene7").fadeOut(fadeTime);
+					$("#sceneCaminhosEnergia").fadeOut(fadeTime);
 					transmissionBeingShown = 1;
  					break;
  				case 8:
