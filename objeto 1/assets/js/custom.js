@@ -62,7 +62,7 @@
 					if (updateText[0] == false) {
 						$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
 						updateText[0] = true;
-						$("#imagensCena4").show();
+						$("#imagensIntroGraficos").show();
 						showConjuntoImagens1IntroQuestoesGraficos();
 						break;
 					}
@@ -114,7 +114,7 @@
 					} else if (updateText[0] == true) {
 						$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagemIntroQuestoesIniciais);
 						updateText[0] = false;
-						$("#imagensCena4").fadeOut(300);
+						$("#imagensIntroGraficos").fadeOut(300);
 						break;
 					} else {
 					previousScene();
@@ -124,6 +124,13 @@
 					switch(questionNumber) {
 						case 1:
 							previousScene();
+
+
+							//Tempo de espera até a cena carregar, ou as imagens não irão aparecer
+							sleep(500).then(() => {
+								$("#imagensIntroGraficos").show();
+							});
+
 							break;
 						default:
 							questionNumber--;
@@ -323,14 +330,15 @@
 	}
 	
 	function showConjuntoImagens2IntroQuestoesGraficos() {
-		$('#sceneIntroGraficosImg1').show().siblings().show();
-		$('#sceneIntroGraficosImg1').hide();
 		$('#sceneIntroGraficosImg2').attr("src", "assets/img/imagem5CenaIntroGraficos.png").fadeIn(500);
 		$('#sceneIntroGraficosImg2').attr('title', 'Coleta');
 		$('#sceneIntroGraficosImg3').attr("src", "assets/img/imagem6CenaIntroGraficos.png").fadeIn(500);
 		$('#sceneIntroGraficosImg3').attr('title', 'Descrição, Análise, e Interpretação');
 		$('#sceneIntroGraficosImg4').attr("src", "assets/img/imagem7CenaIntroGraficos.png").fadeIn(500);
 		$('#sceneIntroGraficosImg4').attr('title', 'Organização');
+		$('#sceneIntroGraficosImg1').show().siblings().show();
+		$('#sceneIntroGraficosImg1').hide();
+
 
 
 	}
@@ -1272,9 +1280,8 @@
 				
 				case 3:
 					$("#sceneIntroGraficos").fadeIn(fadeTime);
-					$("#imagensCena4").hide();
+					$("#imagensIntroGraficos").hide();
 					$("#iconSetaDireita").show();
-
 					break;
 				case 4:
 					$("#sceneQuestoesGraficos").fadeIn(fadeTime);
