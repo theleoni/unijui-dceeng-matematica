@@ -53,12 +53,12 @@
 			switch (scene) {
 				case 1:
 				case 2:
-				case 3:
+				case 5:
 				case 6:
 				case 7:
 					nextScene();
 					break;
-				case 4:
+				case 3:
 					if (updateText[0] == false) {
 						$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
 						updateText[0] = true;
@@ -77,7 +77,7 @@
 						nextScene();
 						break;	
 					}
-				case 5:
+				case 4:
 					switch(questionNumber) {
 						default: 
 							questionNumber++;
@@ -97,14 +97,14 @@
 			switch (scene) {
 				case 1:
 				case 2:
-				case 3:
+				case 5:
 				case 6:
 				case 7:
 				case 8:
 					previousScene();
 					break;
 
-				case 4:
+				case 3:
 					if(updateText[0] == true && updateText[1] == true) {
 						$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
 						updateText[1] = false;
@@ -120,7 +120,7 @@
 					previousScene();
 					break;
 				}
-				case 5:
+				case 4:
 					switch(questionNumber) {
 						case 1:
 							previousScene();
@@ -1268,37 +1268,36 @@
 					$('#detalhesUsinas').hide();
 					$('#additionalSceneTiposUsinas').show();
 					$("#tituloGeral").html(dataJSON.stringsGerais.title1);
-
 					break;
-					
+				
 				case 3:
-					$("#sceneImpostos").fadeIn(fadeTime);
-					$("#tituloGeral").html(dataJSON.stringsGerais.title2);
-					$("#containerImposto").hide();
-					break;
-				case 4:
 					$("#sceneIntroGraficos").fadeIn(fadeTime);
 					$("#imagensCena4").hide();
 					$("#iconSetaDireita").show();
 
 					break;
-				case 5:
+				case 4:
 					$("#sceneQuestoesGraficos").fadeIn(fadeTime);
 					loadQuestion();
 					listeningToKeyPress = true;
 					break;
-				case 6:
+				case 5:
 					$("#sceneIntroCaminhos").fadeIn(fadeTime);
 					$("#iconSetaDireita").show();
 					break;
-				case 7:
+				case 6:
 					$("#sceneCaminhosEnergia").fadeIn(fadeTime);
 					$("#iconSetaDireita").show();
 					contentSwitcher();
 					break;
-				case 8:
+				case 7:
 					$("#sceneX").fadeIn(fadeTime);
 					$("#alertMatriz").hide()
+					break;
+				case 8:
+					$("#sceneImpostos").fadeIn(fadeTime);
+					$("#tituloGeral").html(dataJSON.stringsGerais.title2);
+					$("#containerImposto").hide();
 					break;
 			}
 	  }
@@ -1312,35 +1311,32 @@
 				case 0:
 					$("#sceneIntroNome").fadeOut(fadeTime);
 					break;
-					
 				case 1:
 					$("#sceneIntroGeral").fadeOut(fadeTime);
 					break;
-				
 				case 2:
 					$("#sceneTiposUsinas").fadeOut(fadeTime);
 					break;
-					
 				case 3:
-					$("#sceneImpostos").fadeOut(fadeTime);
-					break;
-				case 4:
 					$("#sceneIntroGraficos").fadeOut(fadeTime);
  					break;
-				case 5:
+				case 4:
 					$("#sceneQuestoesGraficos").fadeOut(fadeTime);
 					listeningToKeyPress = false;
 					break;
-				case 6:
+				case 5:
 					$("#sceneIntroCaminhos").fadeOut(fadeTime);
  					break;
-				case 7:
+				case 6:
 					$("#sceneCaminhosEnergia").fadeOut(fadeTime);
 					transmissionBeingShown = 1;
  					break;
- 				case 8:
+ 				case 7:
  					$("#sceneX").fadeOut(fadeTime);
  					break;
+				case 8:
+					$("#sceneImpostos").fadeOut(fadeTime);
+					break;
 			}
 	  }
 	 
