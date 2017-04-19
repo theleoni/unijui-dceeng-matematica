@@ -12,7 +12,7 @@
   var ftTransmission = true;
   var dataJSON;
   var respostaCorreta7 = 63.99;
-  var respostasMatrizEnergetica = [534, 8.86, 1251, 61.34, 42, 0.01, 2, 1.24, 418, 6.58, 2412, 16.85, 5.11];
+  var respostasMatrizEnergetica = [8.86, 1251, 0.01, 2, 2412, 5.11];
   var inputRespostasMatrizEnergetica;
 
 
@@ -1223,13 +1223,15 @@
 
 
 		function getInputValues() {
-			inputRespostasMatrizEnergetica = [$("#inputNumeroUsinasBiomassa"), $("#inputConsumoUsinasBiomassa"),
-			 $("#inputNumeroUsinasHidrica"), $("#inputConsumoUsinasHidrica"),
-			  $("#inputNumeroUsinasSolar"), $("#inputConsumoUsinasSolar"),
-			   $("#inputNumeroUsinasNuclear"), $("#inputConsumoUsinasNuclear"),
-			    $("#inputNumeroUsinasEolica"), $("#inputConsumoUsinasEolica"),
-			     $("#inputNumeroUsinasFossil"), $("#inputConsumoUsinasFossil"),
-			      $("#inputConsumoImportacao") ];
+			inputRespostasMatrizEnergetica = 
+			[
+			$("#inputConsumoUsinasBiomassa"),
+			$("#inputNumeroUsinasHidrica"),
+			$("#inputConsumoUsinasSolar"),
+			$("#inputNumeroUsinasNuclear"),
+			$("#inputNumeroUsinasFossil"), 
+			$("#inputConsumoImportacao") 
+			      ];
 		}
 
 	  /* Funções Gerais */
