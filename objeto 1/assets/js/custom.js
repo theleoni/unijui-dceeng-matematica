@@ -17,6 +17,33 @@
   var clicouRecentemente = false;
 
 
+function preloadVideo(arrayOfmp4){
+
+	    $(arrayOfmp4).each(function () {
+			var req = new XMLHttpRequest();
+			req.open('GET', this, true);
+			req.responseType = 'blob';
+
+			req.onload = function() {
+			   // Onload is triggered even on 404
+			   // so we need to check the status code
+			   if (this.status === 200) {
+			      var videoBlob = this.response;
+			      var vid = URL.createObjectURL(videoBlob); // IE10+
+			      // Video is now downloaded
+			      // and we can set it as source on the video element
+			      video.src = vid;
+			   }
+			}
+			req.onerror = function() {
+			   // Error
+			}
+
+			req.send();
+    });
+	
+}
+
   	//Recupera as informações do arquivo data.json
   	$.getJSON('assets/js/data.json', function(data) {
   		dataJSON = data;
@@ -39,6 +66,15 @@
 		$("#sceneCaminhosEnergia").hide();
 		$("#sceneX").hide();
 		$("#imagensFixas").hide();
+		preloadVideo([
+			'assets/img/biomassa_animada.mp4',
+			'assets/img/eolica_animada.mp4',
+			'assets/img/fossil_animada.mp4',
+			'assets/img/nuclear_animada.mp4',
+			'assets/img/hidreletrica_animada.mp4',
+			'assets/img/solar_animada.mp4'
+
+			])
 		preload([
     'assets/img/detalhe_biomassa.png',
     'assets/img/detalhe_hidreletrica.png',
@@ -61,7 +97,6 @@
     'assets/img/imagem5CenaIntroGraficos.png',
     'assets/img/imagem6CenaIntroGraficos.png',
     'assets/img/imagem7CenaIntroGraficos.png',
-
     'assets/img/CIP.png',
     'assets/img/COFINS.png',
     'assets/img/ICMS.png',
@@ -88,7 +123,6 @@
 
   		//Realiza as ações necessárias ao se clicar na seta direita (Troca de cena ou troca de questão)
 		$(document).on('click', '#iconSetaDireita', function () {
-			console.log(clicouRecentemente);
 			if (!clicouRecentemente) {
 
 
@@ -96,7 +130,7 @@
 				clicouRecentemente = true;
 	     			  setTimeout(function(){ 
 	     			  	clicouRecentemente = false; 
-	     			  }, 100); 
+	     			  }, 1000); 
 
 
 
@@ -554,7 +588,6 @@
 						resetQuestionButtons();
 					}
 					else {
-						console.log("");
 						disableQuestionButtons();
 						$("#iconSetaDireita").show();
 					}
@@ -1586,6 +1619,5 @@
 function preload(arrayOfImages) {
     $(arrayOfImages).each(function () {
         $('<img />').attr('src',this).appendTo('body').css('display','none');
-        console.log(this + "Preloaded")
     });
 }
