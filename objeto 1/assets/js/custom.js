@@ -42,7 +42,13 @@
 
 		preload([
     'assets/img/biomassa.png',
-    'assets/img/detalhe_biomassa.png'
+    'assets/img/detalhe_biomassa.png',
+    'aseets/img/detalhe_hidreletrica',
+    'assets/img/detalhe_eolica',
+    'assets/img/detalhe_fossil',
+    'assets/img/detalhe_nuclear',
+    'assets/img/detalhe_solar'
+
 ]);
 
 
