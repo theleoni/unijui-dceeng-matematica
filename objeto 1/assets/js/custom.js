@@ -6,7 +6,7 @@
   var questionNumber = 1;
   var listeningToKeyPress = false;
   var questaoSelecionada;
-  var corretas = [false, false, false, false, false, false, false, false];
+  var corretas = [false, false, false, false, false, false, false, false, false];
   var updateText = [false, false];
   var firstTimeTransmission = true;
   var ftTransmission = true;
@@ -59,7 +59,7 @@
 				clicouRecentemente = true;
 	     			  setTimeout(function(){ 
 	     			  	clicouRecentemente = false; 
-	     			  }, 2500); 
+	     			  }, 100); 
 
 
 
@@ -97,7 +97,7 @@
 								questionNumber++;
 								loadQuestion();
 								break;
-							case 8:
+							case 9:
 								nextScene();
 								break;
 
@@ -544,6 +544,28 @@
 						$("#iconSetaDireita").show();
 					}
 				break;
+
+			case 9:
+				$("#opcaoA").show().siblings().show();
+	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao9.numeroQuestao);
+	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao9.textoQuestao )
+	  			$("#opcaoA").html(dataJSON.questao9.alternativa1Questao);
+	  			$("#opcaoB").html(dataJSON.questao9.alternativa2Questao);
+	  			$("#opcaoC").html(dataJSON.questao9.alternativa3Questao);
+	  			$("#opcaoD").html(dataJSON.questao9.alternativa4Questao);
+	  			$("#questionGroup").hide();
+	  			$("#inputRespostasceneQuestoesGraficos").hide();
+	  			grafico5();
+
+	  				if (corretas[8] == false) {
+						$("#iconSetaDireita").hide();
+						resetQuestionButtons();
+					}
+					else {
+						disableQuestionButtons();
+						$("#iconSetaDireita").show();
+					}
+				break;
 	  	}
 	  }
 
@@ -625,6 +647,14 @@
 	  					respostaErrada();
 	  				}
 	  				break;
+	  			case 9:
+	  				if($("#opcaoD").hasClass("btn-primary")) {
+	  					respostaCorreta();
+	  				}
+	  				else {
+	  					respostaErrada();
+	  				}
+	  				break;
 	  		}
 	  }
 
@@ -685,6 +715,7 @@
  			 		case 5:
  			 		case 6:
  			 		case 8:
+ 			 		case 9:
 		  			 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', false);
 		 				$("#opcaoA").removeClass('btn-primary').siblings().removeClass('btn-primary');
 		 			 	$("#alertAnswer").hide();
@@ -752,7 +783,11 @@
  					 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', true);
  						$("#opcaoA").toggleClass('btn-primary').siblings().removeClass('btn-primary');
 						updateAlertOnQuestionChange();
- 						break;			
+ 						break;
+ 					case 9:			
+ 					 	$("#opcaoD").prop('disabled', false).siblings().prop('disabled', true);
+ 						$("#opcaoD").toggleClass('btn-primary').siblings().removeClass('btn-primary');
+						updateAlertOnQuestionChange();
  			}
  		}
 
@@ -788,7 +823,7 @@
 
 
 				// Gera o gráfico
-				Highcharts.chart('sceneIntroGraficosGraph', {
+				Highcharts.chart('sceneQuestoesGraph', {
 				    chart: {
 				        type: 'pie',
 				    },
@@ -846,7 +881,7 @@
 	  	//Método utilizado para criar o gráfico utilizado nas questões 3 e 4
 	 	function grafico2() {
 	 		
-			Highcharts.chart('sceneIntroGraficosGraph', {
+			Highcharts.chart('sceneQuestoesGraph', {
 			    chart: {
 			        type: 'column'
 			    },
@@ -876,11 +911,11 @@
 			    yAxis: {
 			        min: 0,
 			        title: {
-			            text: 'KwH'
+			            text: 'kWh'
 			        }
 			    },
 			    tooltip: {
-					pointFormat: 'Consumo: <b>{point.y}</b> KwH',
+					pointFormat: 'Consumo: <b>{point.y}</b> kWh',
 			        shared: true
 			    },
 			    plotOptions: {
@@ -902,10 +937,10 @@
 
 	 	//Método utilizado parar criar o gráfico utilizado nas questões 5 e 6
 	 	function grafico3() {
-	 		Highcharts.chart('sceneIntroGraficosGraph', {
+	 		Highcharts.chart('sceneQuestoesGraph', {
 
 			    title: {
-			        text: 'Consumo de energia elétrica em KwH na residência de alunos'
+			        text: 'Consumo de energia elétrica em kWh na residência de alunos'
 			    },
 
 			    subtitle: {
@@ -914,7 +949,7 @@
 
 			    yAxis: {
 			        title: {
-			            text: 'KwH'
+			            text: 'kWh'
 			        }
 			    },
 			    xAxis: {
@@ -950,7 +985,7 @@
 
 
 				// Gera o gráfico
-				Highcharts.chart('sceneIntroGraficosGraph', {
+				Highcharts.chart('sceneQuestoesGraph', {
 				    chart: {
 				        type: 'pie',
 				    },
@@ -1011,6 +1046,65 @@
 			});
 			}
 
+
+
+			function grafico5() {
+				Highcharts.chart('sceneQuestoesGraph', {
+				    chart: {
+				        type: 'bar'
+				    },
+				    title: {
+				        text: 'Consumo de energia elétrica por região geográfica em Janeiro de 2017 em GWh'
+				    },
+				    subtitle: {
+				        text: 'Fonte: '
+				    },
+				    xAxis: {
+				        categories: ['Centro-Oeste', 'Sul', 'Sudeste', 'Nordeste', 'Norte'],
+				        title: {
+				            text: 'Região'
+				        }
+				    },
+				    yAxis: {
+				        min: 0,
+				        title: {
+				            text: 'Consumo (GWh)',
+				            align: 'high'
+				        },
+				        labels: {
+				            overflow: 'justify'
+				        }
+				    },
+				    tooltip: {
+				        valueSuffix: ' GWh'
+				    },
+				    plotOptions: {
+				        bar: {
+				            dataLabels: {
+				                enabled: true
+				            }
+				        }
+				    },
+				    legend: {
+				        layout: 'vertical',
+				        align: 'right',
+				        verticalAlign: 'top',
+				        x: -40,
+				        y: 80,
+				        floating: true,
+				        borderWidth: 1,
+				        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+				        shadow: true
+				    },
+				    credits: {
+				        enabled: false
+				    },
+				    series: [{
+				        name: 'Consumo de energia',
+				        data: [2865, 7281, 19679, 6731, 2752]
+				    }]
+				});
+			}
 
 
 		function contentSwitcher() {
@@ -1170,7 +1264,7 @@
 
 			    },
 			    title: {
-			        text: 'Browser market shares January, 2015 to May, 2015'
+			        text: 'Dados da Matriz Energética Brasileira'
 			    },
 			    tooltip: {
 			        pointFormat: '{series.name}: <b>{point.y}</b>'

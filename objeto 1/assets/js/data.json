@@ -91,6 +91,14 @@
 	"alternativa3Questao": "<span class='containerLetra'>C</span>Gás Natural",
 	"alternativa4Questao": "<span class='containerLetra'>D</span>Biomassa"	
 	},
+	"questao9": {
+		"numeroQuestao": "9.",
+		"textoQuestao": "Qual a região do Brasil que teve mais consumo de energia elétrica em 2017?",
+		"alternativa1Questao": "<span class='containerLetra'>A</span>Sul",
+		"alternativa2Questao": "<span class='containerLetra'>B</span>Norte",
+		"alternativa3Questao": "<span class='containerLetra'>C</span>Nordeste",
+		"alternativa4Questao": "<span class='containerLetra'>D</span>Sudeste"	
+	},
 	"mensagensCaminhoEnergia": {
 		"title1": "Geração",
 		"title2": "Subestação elevadora",
@@ -106,3 +114,4 @@
 		"msg6": "Na última etapa, depois de passar pelos transformadores, que são energizados pelas linhas de distribuição, a energia é rebaixada para tensões em que usamos em nossas residências. Nesta etapa a energia é utilizada no mesmo momento em que é gerada"
 	}
 }
+ 
