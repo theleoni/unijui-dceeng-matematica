@@ -1216,6 +1216,10 @@
 				$("#alertMatriz").hide();
 				graphMatrizEnergetica();
 				$(this).hide();
+				//Disable nos inputs
+				for (var i = 0; i < inputRespostasMatrizEnergetica.length; i++) {
+					inputRespostasMatrizEnergetica[i].prop('disabled', true);
+				}
 			}
 
 		});
