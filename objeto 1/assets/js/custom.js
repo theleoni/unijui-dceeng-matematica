@@ -39,20 +39,51 @@
 		$("#sceneCaminhosEnergia").hide();
 		$("#sceneX").hide();
 		$("#imagensFixas").hide();
-
-		preload([
+		$.when(preload([
     'assets/img/detalhe_biomassa.png',
-    'aseets/img/detalhe_hidreletrica.png',
+    'assets/img/detalhe_hidreletrica.png',
     'assets/img/detalhe_eolica.png',
     'assets/img/detalhe_fossil.png',
     'assets/img/detalhe_nuclear.png',
-    'assets/img/detalhe_solar.png'
+    'assets/img/detalhe_solar.png',
+    'assets/img/biomassa.png',
+    'assets/img/eolica.png',
+    'assets/img/fossil.png',
+    'assets/img/hidreletrica.png',
+    'assets/img/nuclear.png',
+    'assets/img/solar.png',
+    'assets/img/bubble1.png',
+    'assets/img/bubble2.png',
+    'assets/img/imagem1CenaIntroGraficos.png',
+    'assets/img/imagem2CenaIntroGraficos.png',
+    'assets/img/imagem3CenaIntroGraficos.png',
+    'assets/img/imagem4CenaIntroGraficos.png',
+    'assets/img/imagem5CenaIntroGraficos.png',
+    'assets/img/imagem6CenaIntroGraficos.png',
+    'assets/img/imagem7CenaIntroGraficos.png',
 
-]);
+    'assets/img/CIP.png',
+    'assets/img/COFINS.png',
+    'assets/img/ICMS.png',
+    'assets/img/PISPASEP.png',
+    'assets/img/TUST.png',
+    'assets/img/engenheiro_esquerda.png',
+    'assets/img/circular1.gif',
+    'assets/img/circular2.gif',
+    'assets/img/circular3.gif',
+    'assets/img/circular4.gif',
+    'assets/img/circular5.gif',
+    'assets/img/circular6.gif'
+])).then(exibirConteudo());
+
+		
 
 
 });
 
+  function exibirConteudo() {
+  	$("body").css("display","block");
+  }
 
 
   		$(document).on('click', '#botaoNome', function () {
