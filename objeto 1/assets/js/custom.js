@@ -14,6 +14,7 @@
   var respostaCorreta7 = 63.99;
   var respostasMatrizEnergetica = [8.86, 1251, 0.01, 2, 2412, 5.11];
   var inputRespostasMatrizEnergetica;
+  var clicouRecentemente = false;
 
 
   	//Recupera as informações do arquivo data.json
@@ -50,45 +51,62 @@
 
   		//Realiza as ações necessárias ao se clicar na seta direita (Troca de cena ou troca de questão)
 		$(document).on('click', '#iconSetaDireita', function () {
-			switch (scene) {
-				case 1:
-				case 2:
-				case 5:
-				case 6:
-				case 7:
-					nextScene();
-					break;
-				case 3:
-					if (updateText[0] == false) {
-						$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
-						updateText[0] = true;
-						$("#imagensIntroGraficos").show();
-						showConjuntoImagens1IntroQuestoesGraficos();
-						break;
-					}
-					else if (updateText[1] == false) {
-						$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem3IntroQuestoesIniciais);
-						showConjuntoImagens2IntroQuestoesGraficos();
+			console.log(clicouRecentemente);
+			if (!clicouRecentemente) {
 
-						updateText[1] = true;
-						break;		
-					}
-					else {
+
+				//Delay entre as trocas de tela
+				clicouRecentemente = true;
+	     			  setTimeout(function(){ 
+	     			  	clicouRecentemente = false; 
+	     			  }, 2500); 
+
+
+
+
+				switch (scene) {
+					case 1:
+					case 2:
+					case 5:
+					case 6:
+					case 7:
 						nextScene();
-						break;	
-					}
-				case 4:
-					switch(questionNumber) {
-						default: 
-							questionNumber++;
-							loadQuestion();
+						break;
+					case 3:
+						if (updateText[0] == false) {
+							$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
+							updateText[0] = true;
+							$("#imagensIntroGraficos").show();
+							showConjuntoImagens1IntroQuestoesGraficos();
 							break;
-						case 8:
-							nextScene();
-							break;
+						}
+						else if (updateText[1] == false) {
+							$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem3IntroQuestoesIniciais);
+							showConjuntoImagens2IntroQuestoesGraficos();
 
-					}
+							updateText[1] = true;
+							break;		
+						}
+						else {
+							nextScene();
+							break;	
+						}
+					case 4:
+						switch(questionNumber) {
+							default: 
+								questionNumber++;
+								loadQuestion();
+								break;
+							case 8:
+								nextScene();
+								break;
+
+						}
 			}
+				} else {
+					alert("Espere para passar à próxima tela")
+				}
+
 		});
 
 
