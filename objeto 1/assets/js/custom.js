@@ -39,7 +39,7 @@
 		$("#sceneCaminhosEnergia").hide();
 		$("#sceneX").hide();
 		$("#imagensFixas").hide();
-		$.when(preload([
+		preload([
     'assets/img/detalhe_biomassa.png',
     'assets/img/detalhe_hidreletrica.png',
     'assets/img/detalhe_eolica.png',
@@ -74,7 +74,7 @@
     'assets/img/circular4.gif',
     'assets/img/circular5.gif',
     'assets/img/circular6.gif'
-])).then(exibirConteudo());
+]);
 
 		
 
