@@ -40,6 +40,11 @@
 		$("#sceneX").hide();
 		$("#imagensFixas").hide();
 
+		preload([
+    'assets/img/biomassa.png',
+    'assets/img/detalhe_biomassa.png'
+]);
+
 
 });
 
@@ -1543,7 +1548,11 @@
 					break;
 			}
 	  }
-	 $(function () {
-    $('body').show();
-});
-	  
+
+
+
+function preload(arrayOfImages) {
+    $(arrayOfImages).each(function () {
+        $('<img />').attr('src',this).appendTo('body').css('display','none');
+    });
+}
