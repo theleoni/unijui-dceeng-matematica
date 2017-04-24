@@ -99,6 +99,10 @@
 		"alternativa3Questao": "<span class='containerLetra'>C</span>Nordeste",
 		"alternativa4Questao": "<span class='containerLetra'>D</span>Sudeste"	
 	},
+	"questao10": {
+		"numeroQuestao": "10.",
+		"textoQuestao": "Complete a tabela de acordo com o gráfico"
+	},
 	"mensagensCaminhoEnergia": {
 		"title1": "Geração",
 		"title2": "Subestação elevadora",

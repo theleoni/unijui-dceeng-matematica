@@ -6,7 +6,7 @@
   var questionNumber = 1;
   var listeningToKeyPress = false;
   var questaoSelecionada;
-  var corretas = [false, false, false, false, false, false, false, false, false];
+  var corretas = [false, false, false, false, false, false, false, false, false, false];
   var updateText = [false, false];
   var firstTimeTransmission = true;
   var ftTransmission = true;
@@ -97,7 +97,7 @@
 								questionNumber++;
 								loadQuestion();
 								break;
-							case 9:
+							case 10:
 								nextScene();
 								break;
 
@@ -566,8 +566,30 @@
 						$("#iconSetaDireita").show();
 					}
 				break;
+	  	
+
+	  		case 10:
+				$("#opcaoA").hide().siblings().hide();
+	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao10.numeroQuestao);
+	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao10.textoQuestao )
+	  			$("#questionGroup").hide();
+	  			$("#inputRespostasceneQuestoesGraficos").hide();
+	  			$("#enviarResposta").show();
+	  			$("#enviarResposta").prop('disabled', false);
+	  			grafico6();
+
+	  				if (corretas[9] == false) {
+						$("#iconSetaDireita").hide();
+						resetQuestionButtons();
+					}
+					else {
+						disableQuestionButtons();
+						$("#iconSetaDireita").show();
+					}
+				break;
 	  	}
 	  }
+	  
 
 	  //Verifica se a resposta selecionada está correta, e chama o método correto
 	  function checkAnswer() {
@@ -654,6 +676,8 @@
 	  				else {
 	  					respostaErrada();
 	  				}
+	  				break;
+	  			case 10:
 	  				break;
 	  		}
 	  }
@@ -1047,7 +1071,7 @@
 			}
 
 
-
+	 	//Método utilizado parar criar o gráfico utilizado na questão 9
 			function grafico5() {
 				Highcharts.chart('sceneQuestoesGraph', {
 				    chart: {
@@ -1105,6 +1129,61 @@
 				    }]
 				});
 			}
+
+
+
+
+
+	  	//Método utilizado para criar o gráfico utilizado na questão 10
+	 	function grafico6() {
+	 		
+			Highcharts.chart('sceneQuestoesGraph', {
+			    chart: {
+			        type: 'column'
+			    },
+			    title: {
+			        text: 'Potência média por aparelho (Watts)'
+			    },
+			    subtitle: {
+			        text: 'Fonte: '
+			    },
+			    xAxis: {
+			        categories: [
+			            'Celular',
+			            'Lâmpada',
+			            'Impressora',
+			            'Televisor 21\'',
+			            'Ventilador'
+			        ],
+			        crosshair: true
+			    },
+			    yAxis: {
+			        min: 0,
+			        title: {
+			            text: 'Watts'
+			        }
+			    },
+			    tooltip: {
+					pointFormat: 'Potência: ',
+			        shared: true
+			    },
+			    plotOptions: {
+			        column: {
+			            pointPadding: 0.2,
+			            borderWidth: 0
+			        }
+			    },
+			    series: [{
+			        name: 'Potência em Watts',
+			        data: [7, 14, 45, 78, 100]
+			    }]
+			});
+
+
+
+	 	}
+
+
 
 
 		function contentSwitcher() {
@@ -1464,5 +1543,7 @@
 					break;
 			}
 	  }
-	 
+	 $(function () {
+    $('body').show();
+});
 	  
