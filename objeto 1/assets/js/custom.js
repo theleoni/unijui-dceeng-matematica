@@ -81,10 +81,6 @@
 
 });
 
-  function exibirConteudo() {
-  	$("body").css("display","block");
-  }
-
 
   		$(document).on('click', '#botaoNome', function () {
   			saveName();
