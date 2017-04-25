@@ -309,7 +309,40 @@
 								<span class="input-group-addon">%</span>
 						</div>
 
+						<div id="tabelaQuestoesGraficos">
+							<table class="table table-responsive table-bordered tableDadosQuestao10">
+							    <thead>
+							      <tr>
+							        <th>Aparelho</th>
+							        <th>Potência</th>
+							      </tr>
+							    </thead>
+							    
+							    <tbody>
+							      <tr>
+							        <td>Celular</td>
+							        <td>7</td>
 
+							      </tr>
+							      <tr>
+							        <td>Impressora</td>
+							        <td><input id="inputPotenciaImpressora" type="text" class="form-control" ></td>
+							      </tr>
+							      <tr>
+							        <td>Lâmpada</td>
+							        <td><input id="inputPotenciaLampada" type="text" class="form-control"></td>
+							      </tr>
+							      <tr>	
+							        <td>Televisor 21'</td>
+							        <td><input id="inputPotenciaTelevisor" type="text" class="form-control" ></td>
+							      </tr>
+							      <tr>
+							        <td>Ventilador</td>
+							        <td>100</td>
+							      </tr>				      				      
+							    </tbody>
+						  	</table>
+						</div>
 
 
 						<button id="enviarResposta" type="button" class="btn btn-block btn-info btn-enviar"> Confirmar resposta </button>
@@ -368,7 +401,7 @@
 	</div>
 
 
-	<div id="sceneX">
+	<div id="sceneMatrizEnergetica">
 		<div class="row">
 			<div class="col-xs-4">
 				<p id="titleMatrizEnergetica" class="titleMatrizEnergetica"> Conhecendo os dados sobre a Matriz Energética Brasileira </p>
@@ -397,7 +430,7 @@
 						        <td><input id="inputConsumoUsinasBiomassa" type="text" class="form-control"></td>
 						      </tr>
 						      <tr>
-						        <td>Hídrica</td>
+						        <td>Hidrelétrica</td>
 						        <td><input id="inputNumeroUsinasHidrica" type="text" class="form-control" ></td>
 						        <td>282.396.846</td>
 						        <td>61,34</td>
@@ -442,15 +475,33 @@
  					</div>
  					<div class="col-xs-6">
  						<div id="graphMatrizEnergetica"> </div>
- 						<button id="botaoMatrizVerificar" type="button" class="btn btn-block btn-info botaoMatrizVerificar""> Gerar gráfico </button>
+ 						<button id="botaoMatrizVerificar" type="button" class="btn btn-block btn-info botaoMatrizVerificar"> Gerar gráfico </button>
 
  					</div>
 				 </div>
 				
 				</div>
 
-				<span id="questionNumberMatrizEnergetica" class="questionNumber"></span>
-				<span id="questionMatrizEnergetica" class="questionText"></span>
+				<div id="containerQuestoesMatrizEnergetica" class="col-xs-12 containerQuestoesMatriz"> 
+					<div class="col-xs-12">
+						<span id="questionNumberMatrizEnergetica" class="questionNumber"></span>
+						<span id="questionMatrizEnergetica" class="questionText"></span>
+					</div>
+					<div class="col-xs-7">
+						<div class="col-xs-12">
+							<input id="inputRespostasMatrizEnergetica" type="text" class="form-control">
+						</div>
+
+						<div class="col-xs-12">	
+							<button id="enviarRespostaMatriz" type="button" class="btn btn-block btn-info btn-enviar"> Confirmar resposta </button>
+							<div id="alertAnswerMatriz" class="alert">	</div>
+						</div>
+					</div>
+
+
+				</div>
+
+
 			</div>
 
 		</div>

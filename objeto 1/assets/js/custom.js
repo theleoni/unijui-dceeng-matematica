@@ -6,16 +6,18 @@
   var questionNumber = 1;
   var listeningToKeyPress = false;
   var questaoSelecionada;
-  var corretas = [false, false, false, false, false, false, false, false, false, false];
+  var corretas = [false, false, false, false, false, false, false, false, false, false, false, false, false, false];
   var updateText = [false, false];
   var firstTimeTransmission = true;
   var ftTransmission = true;
   var dataJSON;
   var respostaCorreta7 = 63.99;
+  var respostasCorretasQuestion10 = [45, 14, 78];
+  var inputRespostasQuestao10;
   var respostasMatrizEnergetica = [8.86, 1251, 0.01, 2, 2412, 5.11];
   var inputRespostasMatrizEnergetica;
   var clicouRecentemente = false;
-
+  var graficoMatrizGerado = false;
 
 function preloadVideo(arrayOfmp4){
 
@@ -32,7 +34,7 @@ function preloadVideo(arrayOfmp4){
 			      var vid = URL.createObjectURL(videoBlob); // IE10+
 			      // Video is now downloaded
 			      // and we can set it as source on the video element
-			      video.src = vid;
+			      this.src = vid;
 			   }
 			}
 			req.onerror = function() {
@@ -64,7 +66,7 @@ function preloadVideo(arrayOfmp4){
 		$("#sceneQuestoesGraficos").hide();
 		$("#sceneIntroCaminhos").hide();
 		$("#sceneCaminhosEnergia").hide();
-		$("#sceneX").hide();
+		$("#sceneMatrizEnergetica").hide();
 		$("#imagensFixas").hide();
 		preloadVideo([
 			'assets/img/biomassa_animada.mp4',
@@ -130,7 +132,7 @@ function preloadVideo(arrayOfmp4){
 				clicouRecentemente = true;
 	     			  setTimeout(function(){ 
 	     			  	clicouRecentemente = false; 
-	     			  }, 1000); 
+	     			  }, 1); 
 
 
 
@@ -140,9 +142,22 @@ function preloadVideo(arrayOfmp4){
 					case 2:
 					case 5:
 					case 6:
-					case 7:
 						nextScene();
 						break;
+
+					case 7:
+						switch(questionNumber) {
+							default: 
+								questionNumber++;
+								loadQuestion();
+								break;
+							case 14:
+								questionNumber++;
+								nextScene();
+								break;
+						}
+						break;
+
 					case 3:
 						if (updateText[0] == false) {
 							$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
@@ -169,6 +184,7 @@ function preloadVideo(arrayOfmp4){
 								loadQuestion();
 								break;
 							case 10:
+								questionNumber++;
 								nextScene();
 								break;
 
@@ -186,13 +202,14 @@ function preloadVideo(arrayOfmp4){
 			switch (scene) {
 				case 1:
 				case 2:
-				case 5:
 				case 6:
-				case 7:
-				case 8:
 					previousScene();
 					break;
-
+				case 8:
+				case 5:
+					questionNumber--;
+					previousScene();
+					break;
 				case 3:
 					if(updateText[0] == true && updateText[1] == true) {
 						$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
@@ -226,6 +243,18 @@ function preloadVideo(arrayOfmp4){
 							loadQuestion();
 							break;
 					}
+				case 7:
+					switch(questionNumber) {
+						case 11:
+							questionNumber--;
+							previousScene();
+							break;
+						default:
+							questionNumber--;
+							loadQuestion();
+							break;
+					}
+
 
 
 			}		});
@@ -434,7 +463,7 @@ function preloadVideo(arrayOfmp4){
 
 	  /* Scene 4 */
 	  //Carrega a questão, tendo como base a variável questionNumber
-	  function loadQuestion () {
+	  function loadQuestion() {
 
 	  	switch (questionNumber) {
 	  		case 1:
@@ -448,6 +477,7 @@ function preloadVideo(arrayOfmp4){
 	  			$("#opcaoD").html(dataJSON.questao1.alternativa4Questao);
 	  			$("#questionGroup").hide();
 	  			$("#inputRespostasceneQuestoesGraficos").hide();
+	  			$("#tabelaQuestoesGraficos").hide();
 	  			$("#pularQuestoes").show();
 	  			grafico1();
 
@@ -472,6 +502,7 @@ function preloadVideo(arrayOfmp4){
 	  			$("#opcaoC").html(dataJSON.questao2.alternativa3Questao);
 	  			$("#opcaoD").html(dataJSON.questao2.alternativa4Questao);
 	  			$("#questionGroup").hide();
+	  			$("#tabelaQuestoesGraficos").hide();
 	  			$("#inputRespostasceneQuestoesGraficos").hide();
 
 	  			grafico1();
@@ -494,6 +525,7 @@ function preloadVideo(arrayOfmp4){
 	  			$("#enviarResposta").prop('disabled', false);
 	  			$("#questionGroup").show();
 	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao3.numeroQuestao);
+	  			$("#tabelaQuestoesGraficos").hide();
 	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao3.textoQuestao);
 
 	  			grafico2();
@@ -513,6 +545,7 @@ function preloadVideo(arrayOfmp4){
 	  			$("#enviarResposta").show();
 	  			$("#enviarResposta").prop('disabled', false);
 	  			$("#questionGroup").show();
+	  			$("#tabelaQuestoesGraficos").hide();
 	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao4.numeroQuestao);
 	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao4.textoQuestao);
 	  			$("#inputRespostasceneQuestoesGraficos").hide();
@@ -539,6 +572,7 @@ function preloadVideo(arrayOfmp4){
 	  			$("#opcaoC").html(dataJSON.questao5.alternativa3Questao);
 	  			$("#opcaoD").html(dataJSON.questao5.alternativa4Questao);
 	  			$("#questionGroup").hide();
+	  			$("#tabelaQuestoesGraficos").hide();
 	  			$("#inputRespostasceneQuestoesGraficos").hide();
 
 	  			grafico2();
@@ -560,6 +594,7 @@ function preloadVideo(arrayOfmp4){
 	  			$("#opcaoB").html(dataJSON.questao6.alternativa2Questao);
 	  			$("#opcaoC").html(dataJSON.questao6.alternativa3Questao);
 	  			$("#opcaoD").html(dataJSON.questao6.alternativa4Questao);
+	  			$("#tabelaQuestoesGraficos").hide();
 	  			$("#questionGroup").hide();
 	  			$("#inputRespostasceneQuestoesGraficos").hide();
 	  			grafico3();
@@ -579,7 +614,8 @@ function preloadVideo(arrayOfmp4){
 	  			$("#enviarResposta").show();
 	  			$("#enviarResposta").prop('disabled', false);
 	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao7.numeroQuestao);
-	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao7.textoQuestao )
+	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao7.textoQuestao);
+	  			$("#tabelaQuestoesGraficos").hide();
 	  			$("#inputRespostasceneQuestoesGraficos").show();
 	  			grafico4();
 
@@ -601,6 +637,7 @@ function preloadVideo(arrayOfmp4){
 	  			$("#opcaoB").html(dataJSON.questao8.alternativa2Questao);
 	  			$("#opcaoC").html(dataJSON.questao8.alternativa3Questao);
 	  			$("#opcaoD").html(dataJSON.questao8.alternativa4Questao);
+	  			$("#tabelaQuestoesGraficos").hide();
 	  			$("#questionGroup").hide();
 	  			$("#inputRespostasceneQuestoesGraficos").hide();
 	  			grafico4();
@@ -623,6 +660,7 @@ function preloadVideo(arrayOfmp4){
 	  			$("#opcaoB").html(dataJSON.questao9.alternativa2Questao);
 	  			$("#opcaoC").html(dataJSON.questao9.alternativa3Questao);
 	  			$("#opcaoD").html(dataJSON.questao9.alternativa4Questao);
+	  			$("#tabelaQuestoesGraficos").hide();
 	  			$("#questionGroup").hide();
 	  			$("#inputRespostasceneQuestoesGraficos").hide();
 	  			grafico5();
@@ -646,6 +684,8 @@ function preloadVideo(arrayOfmp4){
 	  			$("#inputRespostasceneQuestoesGraficos").hide();
 	  			$("#enviarResposta").show();
 	  			$("#enviarResposta").prop('disabled', false);
+				$("#tabelaQuestoesGraficos").show();
+
 	  			grafico6();
 
 	  				if (corretas[9] == false) {
@@ -657,6 +697,65 @@ function preloadVideo(arrayOfmp4){
 						$("#iconSetaDireita").show();
 					}
 				break;
+
+			case 11:
+
+				$("#questionNumberMatrizEnergetica").html(dataJSON.questao11.numeroQuestao);
+				$("#questionMatrizEnergetica").html(dataJSON.questao11.textoQuestao);
+
+					if (corretas[10] == false) {
+						$("#iconSetaDireita").hide();
+						resetQuestionButtons();
+					}
+					else {
+						disableQuestionButtons();
+						$("#iconSetaDireita").show();
+
+					}
+				break;
+			case 12:
+				$("#questionNumberMatrizEnergetica").html(dataJSON.questao12.numeroQuestao);
+				$("#questionMatrizEnergetica").html(dataJSON.questao12.textoQuestao);
+					if (corretas[11] == false) {
+						$("#iconSetaDireita").hide();
+						resetQuestionButtons();
+					}
+					else {
+						disableQuestionButtons();
+						$("#iconSetaDireita").show();
+
+					}
+				break;
+
+				case 13:
+					$("#questionNumberMatrizEnergetica").html(dataJSON.questao13.numeroQuestao);
+					$("#questionMatrizEnergetica").html(dataJSON.questao13.textoQuestao);
+						if (corretas[12] == false) {
+							$("#iconSetaDireita").hide();
+							resetQuestionButtons();
+						}
+						else {
+							disableQuestionButtons();
+							$("#iconSetaDireita").show();
+
+						}
+				break;
+
+				case 14:
+					$("#questionNumberMatrizEnergetica").html(dataJSON.questao14.numeroQuestao);
+					$("#questionMatrizEnergetica").html(dataJSON.questao14.textoQuestao);
+						if (corretas[13] == false) {
+							$("#iconSetaDireita").hide();
+							resetQuestionButtons();
+						}
+						else {
+							disableQuestionButtons();
+							$("#iconSetaDireita").show();
+
+						}
+				break;
+
+
 	  	}
 	  }
 	  
@@ -748,11 +847,63 @@ function preloadVideo(arrayOfmp4){
 	  				}
 	  				break;
 	  			case 10:
-	  				break;
+	  				var testeLocal = false;
+		  			getInputValuesQuestion10();
+		  			for (var i = 0; i < respostasCorretasQuestion10.length; i++) {
+		  				if (inputRespostasQuestao10[i].val() == respostasCorretasQuestion10[i]) {
+		  				} else {
+		  					respostaErrada();
+		  					console.log(inputRespostasQuestao10[i].val() + " !=  " + respostasCorretasQuestion10[i]);
+		  					testeLocal = true;
+		  				}
+		  			}
+		  			console.log(testeLocal);
+		  			if (testeLocal == false) {
+		  				respostaCorreta();
+		  			}
+		  			break;
+
+		  		case 11:
+		  			if ($("#inputRespostasMatrizEnergetica").val().toLowerCase() == "fóssil" || $("#inputRespostasMatrizEnergetica").val().toLowerCase() == "fossil" ) {
+						respostaCorreta();	
+						} else {
+						respostaErrada();
+						}
+					break;
+		  		case 12:
+		  			if ($("#inputRespostasMatrizEnergetica").val().toLowerCase() == "nuclear") {
+						respostaCorreta();	
+						} else {
+						respostaErrada();
+						}
+					break;
+				case 13:
+		  			if ($("#inputRespostasMatrizEnergetica").val().toLowerCase() == "hidrelétrica" || $("#inputRespostasMatrizEnergetica").val().toLowerCase() == "hidreletrica")  {
+						respostaCorreta();	
+						} else {
+						respostaErrada();
+						}
+					break;
+				case 14:
+		  			if ($("#inputRespostasMatrizEnergetica").val().toLowerCase() == "aneel")  {
+						respostaCorreta();	
+						} else {
+						respostaErrada();
+						}
+					break;
 	  		}
 	  }
 
 
+
+		function getInputValuesQuestion10() {
+			inputRespostasQuestao10 = 
+			[
+			$("#inputPotenciaImpressora"),
+			$("#inputPotenciaLampada"),
+			$("#inputPotenciaTelevisor")
+			      ];
+		}
 	  //Realiza a troca da seleção e salva a seleção atual em uma variável
 	  function selectAnswer (elemento) {
 	  	$(elemento).toggleClass('btn-primary').siblings().removeClass('btn-primary');
@@ -767,6 +918,11 @@ function preloadVideo(arrayOfmp4){
 		$(document).on('click', '#enviarResposta', function () {
 			checkAnswer();
 		});
+
+		$(document).on('click', '#enviarRespostaMatriz', function () {
+			checkAnswer();
+		});
+
 
 		//Verifica se as teclas A, B, C, D ou ENTER foram pressionadas, e realiza a função respectiva (Selecionar alternativa / Enviar resposta)
  		$(document).bind('keydown', function(event) {
@@ -825,13 +981,28 @@ function preloadVideo(arrayOfmp4){
 		 				$("#inputNumbersceneQuestoesGraficos").prop('type', 'number');
 		 			 	$("#alertAnswer").hide();
 		 				break;
+		 			case 10:
+		 				$("#enviarResposta").prop('disabled', false);
+		 			 	$("#alertAnswer").hide();
+		 			 	break;
+		 			case 11: 
+		 			case 12:
+		 			case 13:
+		 			case 14:
+		 			 	$("#inputRespostasMatrizEnergetica").prop('disabled', false);
+		 			 	$("#inputRespostasMatrizEnergetica").val("");
+		 			 	$("#alertAnswerMatriz").hide();
+		 			 	break;
+
+
+
  			 	}
 
 
 
  			}
  			//Desabilitada os botões de resposta, chama método para exibir a mensagem de resposta correta,  e deixa a resposta marcada selecionada (Para após o aluno ter respondido corretamente a questão)
- 			function disableQuestionButtons () 	{
+ 			function disableQuestionButtons() 	{
 
  				switch(questionNumber) {
  					case 1:
@@ -882,7 +1053,41 @@ function preloadVideo(arrayOfmp4){
  					 	$("#opcaoD").prop('disabled', false).siblings().prop('disabled', true);
  						$("#opcaoD").toggleClass('btn-primary').siblings().removeClass('btn-primary');
 						updateAlertOnQuestionChange();
+						break;
+					case 10: 
+						for (var i = 0; i < respostasCorretasQuestion10.length; i++) {
+							inputRespostasQuestao10[i].prop('disabled', true);
+						}
+
+						updateAlertOnQuestionChange();
+						break;
+					case 11: 
+						$("#inputRespostasMatrizEnergetica").prop('disabled', true);
+						updateAlertOnQuestionChange();
+						$("#inputNumbersceneQuestoesGraficos").prop('placeholder', 'Fóssil');
+
+						break;
+					case 12:
+						$("#inputRespostasMatrizEnergetica").prop('disabled', true);
+						$("#inputNumbersceneQuestoesGraficos").prop('placeholder', 'Nuclear');
+
+						updateAlertOnQuestionChange();
+						break;
+					case 13:
+						$("#inputRespostasMatrizEnergetica").prop('disabled', true);
+						$("#inputNumbersceneQuestoesGraficos").prop('placeholder', 'Hidrelétrica');
+						updateAlertOnQuestionChange();
+						break;
+					case 14:
+						$("#inputRespostasMatrizEnergetica").prop('disabled', true);
+						$("#inputNumbersceneQuestoesGraficos").prop('placeholder', 'ANEEL');
+						updateAlertOnQuestionChange();
+						break;
+
+
+
  			}
+
  		}
 
  		//Realiza as ações necessárias caso a resposta do aluno esteja correta (Adicionar "true" ao vetor de verificação, desabilitar os botõe e exibir o icone de seta para a direita)
@@ -896,18 +1101,32 @@ function preloadVideo(arrayOfmp4){
 
  		//Realiza as ações necessárias caso a resposta do aluno esteja errada (Exibe alerta de resposta incorreta)
  		function respostaErrada() {
- 			$("#alertAnswer").addClass("alert-danger");
-	  		$("#alertAnswer").removeClass("alert-success");
-  			$("#alertAnswer").html(dataJSON.mensagensQuestoes.respostaIncorreta);
-  			$("#alertAnswer").show();
+ 			if (questionNumber <= 10) {
+	 			$("#alertAnswer").addClass("alert-danger");
+		  		$("#alertAnswer").removeClass("alert-success");
+	  			$("#alertAnswer").html(dataJSON.mensagensQuestoes.respostaIncorreta);
+	  			$("#alertAnswer").show(); 
+  			} else if (questionNumber > 10) {
+	  			$("#alertAnswerMatriz").addClass("alert-danger");
+		  		$("#alertAnswerMatriz").removeClass("alert-success");
+	  			$("#alertAnswerMatriz").html(dataJSON.mensagensQuestoes.respostaIncorreta);
+	  			$("#alertAnswerMatriz").show(); 
+  			}
  		}
 
  		//Exibe o alerta de respsota correta (Método chamado quando o aluno acerta a questão, e quando muda de tela para uma questão já respondida)
  		function updateAlertOnQuestionChange() {
+ 			if (questionNumber <= 10) {
  		  	$("#alertAnswer").html(dataJSON.mensagensQuestoes.respostaCorreta);
     		$("#alertAnswer").show();
     		$("#alertAnswer").addClass("alert-success");
-	  		$("#alertAnswer").removeClass("alert-danger");
+	  		$("#alertAnswer").removeClass("alert-danger"); 
+	  	} else if (questionNumber > 10) {
+	  		$("#alertAnswerMatriz").html(dataJSON.mensagensQuestoes.respostaCorreta);
+    		$("#alertAnswerMatriz").show();
+    		$("#alertAnswerMatriz").addClass("alert-success");
+	  		$("#alertAnswerMatriz").removeClass("alert-danger"); 
+	  	}
  		}
 
 
@@ -1234,7 +1453,7 @@ function preloadVideo(arrayOfmp4){
 			        }
 			    },
 			    tooltip: {
-					pointFormat: 'Potência: ',
+					pointFormat: 'Potência: {point.y}',
 			        shared: true
 			    },
 			    plotOptions: {
@@ -1286,7 +1505,7 @@ function preloadVideo(arrayOfmp4){
 
 							}
 
-				    }, 10000);
+				    }, 1);
 			}
 			else {
 				loadTransmissionData();
@@ -1476,7 +1695,10 @@ function preloadVideo(arrayOfmp4){
 			if (verificacaoLocal == true) {
 				$("#alertMatriz").hide();
 				graphMatrizEnergetica();
+				$("#containerQuestoesMatrizEnergetica").show();
+				loadQuestion();
 				$(this).hide();
+				graficoMatrizGerado = true;
 				//Disable nos inputs
 				for (var i = 0; i < inputRespostasMatrizEnergetica.length; i++) {
 					inputRespostasMatrizEnergetica[i].prop('disabled', true);
@@ -1565,13 +1787,20 @@ function preloadVideo(arrayOfmp4){
 					contentSwitcher();
 					break;
 				case 7:
-					$("#sceneX").fadeIn(fadeTime);
-					$("#alertMatriz").hide()
+					$("#sceneMatrizEnergetica").fadeIn(fadeTime);
+					$("#alertMatriz").hide();
+					$("#containerQuestoesMatrizEnergetica").hide();
+					$("#iconSetaDireita").hide();
+					if (graficoMatrizGerado == true) {
+						$("#containerQuestoesMatrizEnergetica").show();
+						loadQuestion();
+					}
 					break;
 				case 8:
 					$("#sceneImpostos").fadeIn(fadeTime);
 					$("#tituloGeral").html(dataJSON.stringsGerais.title2);
 					$("#containerImposto").hide();
+
 					break;
 			}
 	  }
@@ -1606,7 +1835,7 @@ function preloadVideo(arrayOfmp4){
 					transmissionBeingShown = 1;
  					break;
  				case 7:
- 					$("#sceneX").fadeOut(fadeTime);
+ 					$("#sceneMatrizEnergetica").fadeOut(fadeTime);
  					break;
 				case 8:
 					$("#sceneImpostos").fadeOut(fadeTime);

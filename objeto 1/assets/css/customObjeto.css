@@ -747,3 +747,15 @@ th, td { padding: 5px; }
 .botaoMatrizVerificar {
 	margin-top: 48vh;
 }
+
+
+.tableDadosQuestao10 {
+	z-index: 1;
+	margin-top: 1%;
+	display: table;
+	color: #000000;
+}
+
+.containerQuestoesMatriz {
+	margin-top: 56vh;
+}

@@ -103,6 +103,22 @@
 		"numeroQuestao": "10.",
 		"textoQuestao": "Complete a tabela de acordo com o gráfico"
 	},
+	"questao11": {
+		"numeroQuestao": "1.",
+		"textoQuestao": "Das formas de produção de energia elétrica, qual é a que apresenta o maior número de usinas?"
+		},
+	"questao12": {
+		"numeroQuestao": "2.",
+		"textoQuestao": "Das formas de produção de energia elétrica, qual é a que apresenta o menor número de usinas?"
+		},
+	"questao13": {
+		"numeroQuestao": "3.",
+		"textoQuestao": "Qual das formas de produção de energia elétrica é a que mais produz em kW?"
+	},
+	"questao14": {
+		"numeroQuestao": "4.",
+		"textoQuestao": "Qual a a sigla da Agência de onde tem origem as informações trazidas no texto? "
+	},
 	"mensagensCaminhoEnergia": {
 		"title1": "Geração",
 		"title2": "Subestação elevadora",
