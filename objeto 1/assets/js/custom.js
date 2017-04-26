@@ -6,7 +6,7 @@
   var questionNumber = 1;
   var listeningToKeyPress = false;
   var questaoSelecionada;
-  var corretas = [false, false, false, false, false, false, false, false, false, false, false, false, false, false];
+  var corretas = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
   var updateText = [false, false];
   var firstTimeTransmission = true;
   var ftTransmission = true;
@@ -27,13 +27,9 @@ function preloadVideo(arrayOfmp4){
 			req.responseType = 'blob';
 
 			req.onload = function() {
-			   // Onload is triggered even on 404
-			   // so we need to check the status code
 			   if (this.status === 200) {
 			      var videoBlob = this.response;
-			      var vid = URL.createObjectURL(videoBlob); // IE10+
-			      // Video is now downloaded
-			      // and we can set it as source on the video element
+			      var vid = URL.createObjectURL(videoBlob); 
 			      this.src = vid;
 			   }
 			}
@@ -151,7 +147,7 @@ function preloadVideo(arrayOfmp4){
 								questionNumber++;
 								loadQuestion();
 								break;
-							case 14:
+							case 15:
 								questionNumber++;
 								nextScene();
 								break;
@@ -702,6 +698,10 @@ function preloadVideo(arrayOfmp4){
 
 				$("#questionNumberMatrizEnergetica").html(dataJSON.questao11.numeroQuestao);
 				$("#questionMatrizEnergetica").html(dataJSON.questao11.textoQuestao);
+				$("#botaoMatrizQuestoesSim").hide();
+				$("#botaoMatrizQuestoesNao").hide();			
+				$("#inputRespostasMatrizEnergetica").show();
+				$("#enviarRespostaMatriz").show();
 
 					if (corretas[10] == false) {
 						$("#iconSetaDireita").hide();
@@ -716,6 +716,11 @@ function preloadVideo(arrayOfmp4){
 			case 12:
 				$("#questionNumberMatrizEnergetica").html(dataJSON.questao12.numeroQuestao);
 				$("#questionMatrizEnergetica").html(dataJSON.questao12.textoQuestao);
+				$("#botaoMatrizQuestoesSim").hide();
+				$("#botaoMatrizQuestoesNao").hide();
+				$("#inputRespostasMatrizEnergetica").show();
+				$("#enviarRespostaMatriz").show();
+
 					if (corretas[11] == false) {
 						$("#iconSetaDireita").hide();
 						resetQuestionButtons();
@@ -730,6 +735,13 @@ function preloadVideo(arrayOfmp4){
 				case 13:
 					$("#questionNumberMatrizEnergetica").html(dataJSON.questao13.numeroQuestao);
 					$("#questionMatrizEnergetica").html(dataJSON.questao13.textoQuestao);
+					$("#botaoMatrizQuestoesSim").hide();
+					$("#botaoMatrizQuestoesNao").hide();
+
+					$("#inputRespostasMatrizEnergetica").show();
+					$("#enviarRespostaMatriz").show();
+
+
 						if (corretas[12] == false) {
 							$("#iconSetaDireita").hide();
 							resetQuestionButtons();
@@ -744,6 +756,13 @@ function preloadVideo(arrayOfmp4){
 				case 14:
 					$("#questionNumberMatrizEnergetica").html(dataJSON.questao14.numeroQuestao);
 					$("#questionMatrizEnergetica").html(dataJSON.questao14.textoQuestao);
+					$("#botaoMatrizQuestoesSim").hide();
+					$("#botaoMatrizQuestoesNao").hide();
+
+					$("#inputRespostasMatrizEnergetica").show();
+					$("#enviarRespostaMatriz").show();
+
+
 						if (corretas[13] == false) {
 							$("#iconSetaDireita").hide();
 							resetQuestionButtons();
@@ -755,7 +774,25 @@ function preloadVideo(arrayOfmp4){
 						}
 				break;
 
+				case 15:
+					$("#questionNumberMatrizEnergetica").html(dataJSON.questao15.numeroQuestao);
+					$("#questionMatrizEnergetica").html(dataJSON.questao15.textoQuestao);
+					$("#botaoMatrizQuestoesSim").show();
+					$("#botaoMatrizQuestoesNao").show();
 
+					$("#inputRespostasMatrizEnergetica").hide();
+					$("#enviarRespostaMatriz").hide();
+
+						if (corretas[14] == false) {
+							$("#iconSetaDireita").hide();
+							resetQuestionButtons();
+						}
+						else {
+							disableQuestionButtons();
+							$("#iconSetaDireita").show();
+
+						}
+				break;
 	  	}
 	  }
 	  
@@ -891,6 +928,15 @@ function preloadVideo(arrayOfmp4){
 						respostaErrada();
 						}
 					break;
+				case 15:
+	  				if($("#botaoMatrizQuestoesNao").hasClass("btn-primary")) {
+	  					respostaCorreta();
+	  				}
+	  				else {
+	  					respostaErrada();
+
+	  				}
+	  				break;
 	  		}
 	  }
 
@@ -909,11 +955,17 @@ function preloadVideo(arrayOfmp4){
 	  	$(elemento).toggleClass('btn-primary').siblings().removeClass('btn-primary');
 	  }
 
-	  //Binda o evento de clicar no botão à troca de sleleção
+	  //Binda o evento de clicar no botão à troca de seleção
 		$(document).on('click', '.btn-questoes', function () {
 			selectAnswer(this);
 		});
 	
+		  //Binda o evento de clicar no botão à troca de seleção nas questões das matrizes
+		$(document).on('click', '.btnQuestoesMatriz', function () {
+			selectAnswer(this);
+		});
+	
+
 		//Binda o evento de clicar no botão de enviar ao método checkAnswer
 		$(document).on('click', '#enviarResposta', function () {
 			checkAnswer();
@@ -923,11 +975,19 @@ function preloadVideo(arrayOfmp4){
 			checkAnswer();
 		});
 
+		$(document).on('click', '#botaoMatrizQuestoesNao', function () {
+			checkAnswer();
+		});
+
+		$(document).on('click', '#botaoMatrizQuestoesSim', function () {
+			checkAnswer();
+		});
 
 		//Verifica se as teclas A, B, C, D ou ENTER foram pressionadas, e realiza a função respectiva (Selecionar alternativa / Enviar resposta)
  		$(document).bind('keydown', function(event) {
 				if(listeningToKeyPress) {
 					var code = event.keyCode;
+					if (scene == 4) {
 					switch (code) {
 						case 13:
 							$('#enviarResposta').trigger('click');
@@ -953,7 +1013,12 @@ function preloadVideo(arrayOfmp4){
 							}
 							break;
 					}
-
+				}
+				else if (scene == 7) {
+					if (code == 13) {
+						$('#enviarRespostaMatriz').trigger('click');
+					}
+				}
 				}
 			});
 
@@ -993,6 +1058,11 @@ function preloadVideo(arrayOfmp4){
 		 			 	$("#inputRespostasMatrizEnergetica").val("");
 		 			 	$("#alertAnswerMatriz").hide();
 		 			 	break;
+		 			 case 15:
+		 			 	$("#botaoMatrizQuestoesNao").prop('disabled',false).siblings().prop('disabled',false);
+		 				$("#botaoMatrizQuestoesNao").removeClass('btn-primary').siblings().removeClass('btn-primary');
+						$("#alertAnswerMatriz").hide();
+		 				break;
 
 
 
@@ -1083,7 +1153,13 @@ function preloadVideo(arrayOfmp4){
 						$("#inputNumbersceneQuestoesGraficos").prop('placeholder', 'ANEEL');
 						updateAlertOnQuestionChange();
 						break;
-
+ 					case 15:			
+ 					 	$("#botaoMatrizQuestoesNao").prop('disabled', false);
+ 					 	$("#botaoMatrizQuestoesSim").prop('disabled', true);
+ 						$("#botaoMatrizQuestoesNao").toggleClass('btn-primary');
+						$("#botaoMatrizQuestoesSim").removeClass('btn-primary');
+						updateAlertOnQuestionChange();
+						break;
 
 
  			}
@@ -1697,6 +1773,7 @@ function preloadVideo(arrayOfmp4){
 				graphMatrizEnergetica();
 				$("#containerQuestoesMatrizEnergetica").show();
 				loadQuestion();
+				listeningToKeyPress = true;
 				$(this).hide();
 				graficoMatrizGerado = true;
 				//Disable nos inputs
@@ -1794,6 +1871,7 @@ function preloadVideo(arrayOfmp4){
 					if (graficoMatrizGerado == true) {
 						$("#containerQuestoesMatrizEnergetica").show();
 						loadQuestion();
+						listeningToKeyPress = true;
 					}
 					break;
 				case 8:
@@ -1836,6 +1914,7 @@ function preloadVideo(arrayOfmp4){
  					break;
  				case 7:
  					$("#sceneMatrizEnergetica").fadeOut(fadeTime);
+ 					listeningToKeyPress = false;
  					break;
 				case 8:
 					$("#sceneImpostos").fadeOut(fadeTime);

@@ -119,6 +119,10 @@
 		"numeroQuestao": "4.",
 		"textoQuestao": "Qual a a sigla da Agência de onde tem origem as informações trazidas no texto? "
 	},
+	"questao15": {
+		"numeroQuestao": "5.",
+		"textoQuestao": "O gráfico apresenta todos os dados contidos na tabela? "
+	},
 	"mensagensCaminhoEnergia": {
 		"title1": "Geração",
 		"title2": "Subestação elevadora",
