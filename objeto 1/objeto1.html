@@ -511,6 +511,83 @@
 
 		</div>
 	</div>
+
+	<div id="scenePotenciaEletrodomesticos">
+		<div class="row">
+			<div class="col-xs-5">
+				<p id="textoPotenciaEletro" class="textoPotenciaEletro"> A tabela a seguir apresenta os principais eletrodomésticos e suas quantidades em uma residência com três pessoas, a potência elétrica de cada equipamento e o tempo mensal de funcionamento em horas.<br> O valor da energia(VE) de cada aparelho é calculado da seguinte maneira: <br><span class="equation"> VE = P/1000 * ∆t * VALOR </span>, onde P é a potência em Watts, ∆t é o tempo em horas de uso. <br>Informe o preço de 1KWh de energia que sua companhia de energia elétrica cobra. Caso você não saiba, coloque 0,50</p>
+
+					<div id="valorEnergiaEletrica">
+						<p class="textoPotenciaEletro">Valor: </p>
+						<div class="input-group col-xs-4">
+							<span class="input-group-addon">R$</span>
+							<input id="inputValorEnergiaEletrica" type="number" class="form-control">
+						</div>
+					</div>
+				<p class="textoPotenciaEletro"> Complete os gastos da primeira e última linha da tabela . Consulte a ajuda caso necessite.</p>
+				</p>
+			</div>
+
+			<div class="col-xs-offset-1 col-xs-6">
+						<table class="table table-responsive table-bordered tableDadosMatrizEnergetica">
+						    <thead>
+						      <tr>
+						        <th>Origem</th>
+						        <th>Nº de Usinas</th>
+						        <th>Consumo em kW</th>
+						        <th>% do consumo</th>
+						      </tr>
+						    </thead>
+						    
+						    <tbody>
+						      <tr>
+						        <td>Biomassa</td>
+						        <td>534</td>
+						        <td>40.789.632</td>
+						        <td><input id="inputConsumoUsinasBiomassa" type="text" class="form-control"></td>
+						      </tr>
+						      <tr>
+						        <td>Hidrelétrica</td>
+						        <td><input id="inputNumeroUsinasHidrica" type="text" class="form-control" ></td>
+						        <td>282.396.846</td>
+						        <td>61,34</td>
+						      </tr>
+						      <tr>
+						        <td>Solar</td>
+						        <td>42</td>
+						        <td>46.038</td>
+						        <td><input id="inputConsumoUsinasSolar" type="text" class="form-control"></td>
+						      </tr>
+						      <tr>
+						        <td>Nuclear</td>
+						        <td><input id="inputNumeroUsinasNuclear" type="text" class="form-control" ></td>
+						        <td>5.708.707</td>
+						        <td>1,24</td>
+						      </tr>
+						      <tr>
+						        <td>Eólica</td>
+						        <td>418</td>
+						        <td>30.282.978</td>
+						        <td>6,58</td>
+						      </tr>
+						      <tr>
+						        <td>Fóssil</td>
+						        <td><input id="inputNumeroUsinasFossil" type="text" class="form-control" ></td>
+						        <td>77.620.000</td>
+						        <td>16,86</td>
+						      </tr>
+						      <tr>
+						        <td>Importação</td>
+						        <td>---</td>
+						        <td>23.525.398</td>
+						        <td><input id="inputConsumoImportacao" type="text" class="form-control"></td>
+
+						      </tr>				      				      
+						    </tbody>
+						  	</table>
+			</div>
+		</div>
+	</div>
 </div>
 
 </body>

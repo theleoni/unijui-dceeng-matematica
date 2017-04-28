@@ -63,6 +63,7 @@ function preloadVideo(arrayOfmp4){
 		$("#sceneIntroCaminhos").hide();
 		$("#sceneCaminhosEnergia").hide();
 		$("#sceneMatrizEnergetica").hide();
+		$("#scenePotenciaEletrodomesticos").hide();
 		$("#imagensFixas").hide();
 		preloadVideo([
 			'assets/img/biomassa_animada.mp4',
@@ -138,6 +139,7 @@ function preloadVideo(arrayOfmp4){
 					case 2:
 					case 5:
 					case 6:
+					case 8:
 						nextScene();
 						break;
 
@@ -199,6 +201,7 @@ function preloadVideo(arrayOfmp4){
 				case 1:
 				case 2:
 				case 6:
+				case 9:
 					previousScene();
 					break;
 				case 8:
@@ -1878,7 +1881,9 @@ function preloadVideo(arrayOfmp4){
 					$("#sceneImpostos").fadeIn(fadeTime);
 					$("#tituloGeral").html(dataJSON.stringsGerais.title2);
 					$("#containerImposto").hide();
-
+					break;
+				case 9:
+					$("#scenePotenciaEletrodomesticos").fadeIn(fadeTime);
 					break;
 			}
 	  }
@@ -1918,6 +1923,9 @@ function preloadVideo(arrayOfmp4){
  					break;
 				case 8:
 					$("#sceneImpostos").fadeOut(fadeTime);
+					break;
+				case 9:
+					$("#scenePotenciaEletrodomesticos").fadeOut(fadeTime);
 					break;
 			}
 	  }

@@ -759,3 +759,17 @@ th, td { padding: 5px; }
 .containerQuestoesMatriz {
 	margin-top: 56vh;
 }
+
+
+
+
+.textoPotenciaEletro {
+	text-align: justify;
+    font-family: 'Roboto Condensed', sans-serif;
+    margin-top: 3%;
+    font-size: calc((2vh + 1vw)/1.5);
+}
+
+.equation {
+	color: #e29024;
+}
