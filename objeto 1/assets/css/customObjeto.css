@@ -773,3 +773,14 @@ th, td { padding: 5px; }
 .equation {
 	color: #e29024;
 }
+
+.img-tabela {
+	max-width: 100%;
+	height: auto;
+	display: block;
+
+}
+
+.celulaTabela {
+	width: 10%;
+}
