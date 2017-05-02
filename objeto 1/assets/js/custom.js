@@ -64,6 +64,8 @@ function preloadVideo(arrayOfmp4){
 		$("#sceneCaminhosEnergia").hide();
 		$("#sceneMatrizEnergetica").hide();
 		$("#scenePotenciaEletrodomesticos").hide();
+		$("#sceneVideo").hide();
+		$("#sceneIntroBandeirasEnergia").hide();
 		$("#imagensFixas").hide();
 		preloadVideo([
 			'assets/img/biomassa_animada.mp4',
@@ -140,6 +142,8 @@ function preloadVideo(arrayOfmp4){
 					case 5:
 					case 6:
 					case 8:
+					case 9:
+					case 10:
 						nextScene();
 						break;
 
@@ -202,6 +206,7 @@ function preloadVideo(arrayOfmp4){
 				case 2:
 				case 6:
 				case 9:
+				case 10:
 					previousScene();
 					break;
 				case 8:
@@ -897,7 +902,6 @@ function preloadVideo(arrayOfmp4){
 		  					testeLocal = true;
 		  				}
 		  			}
-		  			console.log(testeLocal);
 		  			if (testeLocal == false) {
 		  				respostaCorreta();
 		  			}
@@ -1684,7 +1688,7 @@ function preloadVideo(arrayOfmp4){
 
 
 
-/* REMOVER ANTES DA VERSÃO FINAL */
+			/* REMOVER ANTES DA VERSÃO FINAL */
 
 				$(document).on('click', '#pularQuestoes', function () {
 					$("#iconSetaDireita").show();
@@ -1911,6 +1915,14 @@ function preloadVideo(arrayOfmp4){
 				case 9:
 					$("#scenePotenciaEletrodomesticos").fadeIn(fadeTime);
 					break;
+				case 10:
+					$("#sceneVideo").fadeIn(fadeTime);
+					break;
+				case 11:
+					$("#sceneIntroBandeirasEnergia").fadeIn(fadeTime);
+					$("#tituloGeral").html(dataJSON.stringsGerais.title3);
+
+					break;
 			}
 	  }
 	  
@@ -1952,6 +1964,12 @@ function preloadVideo(arrayOfmp4){
 					break;
 				case 9:
 					$("#scenePotenciaEletrodomesticos").fadeOut(fadeTime);
+					break;
+				case 10:
+					$("#sceneVideo").fadeOut(fadeTime);
+					break;
+				case 11:
+					$("#sceneIntroBandeirasEnergia").fadeOut(fadeTime);
 					break;
 			}
 	  }

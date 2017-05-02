@@ -782,3 +782,62 @@ th, td { padding: 5px; }
 .celulaTabela {
 	width: 10%;
 }
+
+
+.sceneIntroBandeirasBubble1 {
+	position: absolute;
+	left: 0%;
+	top: 80%;
+	right: 40%;
+	z-index:0;
+	width: 65vw;
+	height:60vh;
+}
+
+.sceneIntroBandeirasTitle1 {
+	position: absolute;
+	margin-top: 13%;
+	left: 12%;
+	right: 60%;
+	text-align: justify;
+	z-index: 1;
+	color: #FFFFFF;
+	font-size: calc((2vh + 1vw)/1.4);
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.sceneIntroBandeirasTitle2 {
+	position: absolute;
+	margin-top: 13%;
+	left: 58%;
+	right: -2%;
+	text-align: justify;
+	z-index: 1;
+	color: #FFFFFF;
+	font-size: calc((2vh + 1vw)/1.4);
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.sceneIntroBandeirasText1 {
+	position: absolute;
+	margin-top: 21%;
+	left: 13%;
+	right: 47%;
+	text-align: justify;
+	z-index: 1;
+	color: #FFFFFF;
+	font-size: calc((2vh + 1vw)/1.9);
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.sceneIntroBandeirasText2 {
+	position: absolute;
+	margin-top: 18%;
+	left: 61%;
+	right: -2%;
+	text-align: justify;
+	z-index: 1;
+	color: #FFFFFF;
+	font-size: calc((2vh + 1vw)/1.8);
+	font-family: 'Roboto Condensed', sans-serif;
+}
