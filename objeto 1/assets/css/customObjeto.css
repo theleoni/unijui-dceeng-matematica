@@ -774,11 +774,9 @@ th, td { padding: 5px; }
 	color: #e29024;
 }
 
-.img-tabela {
-	max-width: 100%;
-	height: auto;
-	display: block;
 
+.tdCentralizado {
+	text-align: center;
 }
 
 .celulaTabela {

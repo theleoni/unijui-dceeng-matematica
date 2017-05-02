@@ -1801,6 +1801,32 @@ function preloadVideo(arrayOfmp4){
 			      ];
 		}
 
+		$(document).on('click', '#botaoAtualizarTabelaPotencia', function () {
+			$("#gastoMensalTelevisao").html(parseFloat(($("#quantidadeTelevisao").html() * ($("#potenciaTelevisao").html()/1000) * $("#tempoTelevisao").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+			$("#gastoMensalMaquinaDeLavar").html(parseFloat(($("#quantidadeMaquinaDeLavar").html() * ($("#potenciaMaquinaDeLavar").html()/1000) * $("#tempoMaquinaDeLavar").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+			$("#gastoMensalChuveiro").html(parseFloat(($("#quantidadeChuveiro").html() * ($("#potenciaChuveiro").html()/1000) * $("#tempoChuveiro").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+			$("#gastoMensalGeladeira").html(parseFloat(($("#quantidadeGeladeira").html() * ($("#potenciaGeladeira").html()/1000) * $("#tempoGeladeira").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+			$("#gastoMensalComputador").html(parseFloat(($("#quantidadeComputador").html() * ($("#potenciaComputador").html()/1000) * $("#tempoComputador").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+			$("#gastoMensalLampada").html(parseFloat(($("#quantidadeLampada").html() * ($("#potenciaLampada").html()/1000) * $("#tempoLampada").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+			$("#gastoMensalFerro").html(parseFloat(($("#quantidadeFerro").html() * ($("#potenciaFerro").html()/1000) * $("#tempoFerro").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+			$("#gastoMensalCelular").html(parseFloat(($("#quantidadeCelular").html() * ($("#potenciaCelular").html()/1000) * $("#tempoCelular").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+			
+			$("#valorTotalTabelaPotencia").html((
+				parseFloat($("#gastoMensalTelevisao").html()) + 
+				parseFloat($("#gastoMensalMaquinaDeLavar").html()) + 
+				parseFloat($("#gastoMensalChuveiro").html()) + 
+				parseFloat($("#gastoMensalGeladeira").html()) + 
+				parseFloat($("#gastoMensalComputador").html()) + 
+				parseFloat($("#gastoMensalLampada").html()) + 
+				parseFloat($("#gastoMensalFerro").html()) + 
+				parseFloat($("#gastoMensalCelular").html())).toFixed(2));
+		});
+
+		
+
+
+
+
 	  /* Funções Gerais */
 	  	//Função que realiza a troca de uma cena para a próxima, bem como adicionar um sleep igual ao tempo de fade
 	function nextScene() {

@@ -519,13 +519,19 @@
 
 					<div id="valorEnergiaEletrica">
 						<p class="textoPotenciaEletro">Valor: </p>
-						<div class="input-group col-xs-4">
-							<span class="input-group-addon">R$</span>
-							<input id="inputValorEnergiaEletrica" type="number" class="form-control">
+						<div class="col-xs-4">
+							<div class="input-group">
+								<span class="input-group-addon">R$</span>
+								<input id="inputValorEnergiaEletrica" type="number" class="testeInput form-control">
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<button type="button" id="botaoAtualizarTabelaPotencia" class="btn btn-primary btn-block">Atualizar tabela</button>
 						</div>
 					</div>
-				<p class="textoPotenciaEletro"> Complete os gastos da primeira e última linha da tabela . Consulte a ajuda caso necessite.</p>
-				</p>
+				<div class="col-xs-12" style="padding-left:0px">
+					<p class="textoPotenciaEletro"> Complete os gastos da primeira e última linha da tabela . Consulte a ajuda caso necessite.</p>
+				</div>
 			</div>
 
 			<div class="col-xs-offset-1 col-xs-6">
@@ -542,32 +548,64 @@
 						    
 						    <tbody>
 							     <tr>
-							        <td><img class="img-tabela" src="assets/img/televisaoTabela.png"></td>
-							        <td>3</td>
-							        <td>3</td>
-							        <td>3</td>
-							      	<td>3</td>
+							        <td class="tdCentralizado"><img title="Televisão" class="img-tabela" src="assets/img/televisaoTabela.png"></td>
+							        <td id="quantidadeTelevisao" class="tdCentralizado">1</td>
+							        <td id="potenciaTelevisao" class="tdCentralizado">90</td>
+							        <td id="tempoTelevisao" class="tdCentralizado">60</td>
+							      	<td id="gastoMensalTelevisao" class="tdCentralizado"></td>
 							     </tr>
 						    	<tr>
-							        <td><img class="img-tabela" src="assets/img/televisaoTabela.png"></td>
-							        <td>3</td>
-							        <td>3</td>
-							        <td>3</td>
-							      	<td>3</td>
+							        <td class="tdCentralizado"><img title="Maquina de lavar" class="img-tabela" src="assets/img/maquinaDeLavarTabela.png"></td>
+							        <td id="quantidadeMaquinaDeLavar" class="tdCentralizado">1</td>
+							        <td id="potenciaMaquinaDeLavar" class="tdCentralizado">1000</td>
+							        <td id="tempoMaquinaDeLavar" class="tdCentralizado">20</td>
+							      	<td id="gastoMensalMaquinaDeLavar" class="tdCentralizado"></td>
 						     	</tr>
 						    	<tr>
-							        <td><img class="img-tabela" src="assets/img/televisaoTabela.png"></td>
-							        <td>3</td>
-							        <td>3</td>
-							        <td>3</td>
-							      	<td>3</td>
+							        <td class="tdCentralizado"><img title="Chuveiro" class="img-tabela" src="assets/img/chuveiroTabela.png"></td>
+							        <td id="quantidadeChuveiro" class="tdCentralizado">1</td>
+							        <td id="potenciaChuveiro" class="tdCentralizado">5500</td>
+							        <td id="tempoChuveiro" class="tdCentralizado">23</td>
+							      	<td id="gastoMensalChuveiro" class="tdCentralizado"></td>
 						     	</tr>
 						      	<tr>
-							        <td><img class="img-tabela" src="assets/img/televisaoTabela.png"></td>
-							        <td>3</td>
-							        <td>3</td>
-							        <td>3</td>
-							      	<td>3</td>
+							        <td class="tdCentralizado"><img title="Geladeira" class="img-tabela" src="assets/img/geladeiraTabela.png"></td>
+							        <td id="quantidadeGeladeira" class="tdCentralizado">1</td>
+							        <td id="potenciaGeladeira" class="tdCentralizado">250</td>
+							        <td id="tempoGeladeira" class="tdCentralizado">720</td>
+							      	<td id="gastoMensalGeladeira" class="tdCentralizado"></td>
+			      				</tr>
+			      			     <tr>
+							        <td class="tdCentralizado"><img title="Computador" class="img-tabela" src="assets/img/computadorTabela.png"></td>
+							        <td id="quantidadeComputador" class="tdCentralizado">1</td>
+							        <td id="potenciaComputador" class="tdCentralizado">300</td>
+							        <td id="tempoComputador" class="tdCentralizado">60</td>
+							      	<td id="gastoMensalComputador" class="tdCentralizado"></td>
+							     </tr>
+						    	<tr>
+							        <td class="tdCentralizado"><img title="Lâmpada" class="img-tabela" src="assets/img/lampadaTabela.png"></td>
+							        <td id="quantidadeLampada" class="tdCentralizado">6</td>
+							        <td id="potenciaLampada" class="tdCentralizado">20</td>
+							        <td id="tempoLampada" class="tdCentralizado">120</td>
+							      	<td id="gastoMensalLampada" class="tdCentralizado"></td>
+						     	</tr>
+						    	<tr>
+							        <td class="tdCentralizado"><img title="Ferro de passar" class="img-tabela" src="assets/img/ferroDePassarTabela.png"></td>
+							        <td id="quantidadeFerro" class="tdCentralizado">1</td>
+							        <td id="potenciaFerro" class="tdCentralizado">1000</td>
+							        <td id="tempoFerro" class="tdCentralizado">6</td>
+							      	<td id="gastoMensalFerro" class="tdCentralizado"></td>
+						     	</tr>
+						      	<tr>
+							        <td class="tdCentralizado"><img class="img-tabela" src="assets/img/celularTabela.png"></td>
+							        <td id="quantidadeCelular" class="tdCentralizado">3</td>
+							        <td id="potenciaCelular" class="tdCentralizado">7</td>
+							        <td id="tempoCelular" class="tdCentralizado">30</td>
+							      	<td id="gastoMensalCelular" class="tdCentralizado"></td>
+			      				</tr>
+			      				 <tr>
+							        <td colspan="4">Total</td>
+							      	<td id="valorTotalTabelaPotencia" class="tdCentralizado"></td>
 			      				</tr>
 						    </tbody>
 						  	</table>
