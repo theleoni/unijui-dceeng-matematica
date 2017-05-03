@@ -786,7 +786,7 @@ th, td { padding: 5px; }
 
 .sceneIntroBandeirasBubble1 {
 	position: absolute;
-	left: 0%;
+	left: -15%;
 	top: 80%;
 	right: 40%;
 	z-index:0;
