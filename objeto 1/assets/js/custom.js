@@ -144,6 +144,7 @@ function preloadVideo(arrayOfmp4){
 					case 8:
 					case 9:
 					case 10:
+					case 11:
 						nextScene();
 						break;
 
@@ -207,6 +208,7 @@ function preloadVideo(arrayOfmp4){
 				case 6:
 				case 9:
 				case 10:
+				case 11:
 					previousScene();
 					break;
 				case 8:
@@ -1921,9 +1923,11 @@ function preloadVideo(arrayOfmp4){
 				case 11:
 					$("#sceneIntroBandeirasEnergia").fadeIn(fadeTime);
 					$("#tituloGeral").html(dataJSON.stringsGerais.title3);
-
 					break;
-			}
+				case 12:
+					$("#sceneBandeirasEnergia").fadeIn(fadeTime);
+					$("#tituloGeral").html(dataJSON.stringsGerais.title4);
+					break;			}
 	  }
 	  
 	  
@@ -1970,6 +1974,9 @@ function preloadVideo(arrayOfmp4){
 					break;
 				case 11:
 					$("#sceneIntroBandeirasEnergia").fadeOut(fadeTime);
+					break;
+				case 12:
+					$("#sceneBandeirasEnergia").fadeOut(fadeTime);
 					break;
 			}
 	  }
