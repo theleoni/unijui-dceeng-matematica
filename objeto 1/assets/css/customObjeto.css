@@ -868,3 +868,11 @@ th, td { padding: 5px; }
 .subBandeiras {
 	font-size: calc((2vh + 1vw)/1.5);
 }
+
+.bandeirasOpcoes {
+	margin-top: 20%;
+}
+
+.bandeiraOpcao {
+	cursor: pointer;
+}

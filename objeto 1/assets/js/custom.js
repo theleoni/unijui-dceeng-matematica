@@ -6,7 +6,7 @@
   var questionNumber = 1;
   var listeningToKeyPress = false;
   var questaoSelecionada;
-  var corretas = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
+  var corretas = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
   var updateText = [false, false];
   var firstTimeTransmission = true;
   var ftTransmission = true;
@@ -67,6 +67,7 @@ function preloadVideo(arrayOfmp4){
 		$("#sceneVideo").hide();
 		$("#sceneIntroBandeirasEnergia").hide();
 		$("#sceneBandeirasEnergia").hide();
+		$("#sceneQuestoesBandeiras").hide();
 		$("#imagensFixas").hide();
 		preloadVideo([
 			'assets/img/biomassa_animada.mp4',
@@ -146,7 +147,20 @@ function preloadVideo(arrayOfmp4){
 					case 9:
 					case 10:
 					case 11:
+					case 12:
 						nextScene();
+						break;
+					case 13:
+						switch(questionNumber) {
+							default: 
+								questionNumber++;
+								loadQuestion();
+								break;
+							case 19:
+								questionNumber++;
+								nextScene();
+								break;
+						}
 						break;
 
 					case 7:
@@ -210,10 +224,12 @@ function preloadVideo(arrayOfmp4){
 				case 9:
 				case 10:
 				case 11:
+				case 12:
 					previousScene();
 					break;
 				case 8:
 				case 5:
+				case 14:
 					questionNumber--;
 					previousScene();
 					break;
@@ -804,6 +820,12 @@ function preloadVideo(arrayOfmp4){
 
 						}
 				break;
+
+				case 16:
+					$("#questionNumberBandeiras").html(dataJSON.questao16.numeroQuestao)
+					$("#questaoBandeira").html(dataJSON.questao16.textoQuestao);
+					$("#bandeirasOpcoes").show();
+				break;
 	  	}
 	  }
 	  
@@ -947,6 +969,9 @@ function preloadVideo(arrayOfmp4){
 
 	  				}
 	  				break;
+	  			case 16:
+	  				// TODO
+	  				break;
 	  		}
 	  }
 
@@ -1074,7 +1099,9 @@ function preloadVideo(arrayOfmp4){
 						$("#alertAnswerMatriz").hide();
 		 				break;
 
-
+		 				case 16:
+		 				//todo
+		 				break;
 
  			 	}
 
@@ -1171,7 +1198,9 @@ function preloadVideo(arrayOfmp4){
 						updateAlertOnQuestionChange();
 						break;
 
-
+						case 16:
+						//Todo
+						break;
  			}
 
  		}
@@ -1928,7 +1957,13 @@ function preloadVideo(arrayOfmp4){
 				case 12:
 					$("#sceneBandeirasEnergia").fadeIn(fadeTime);
 					$("#tituloGeral").html(dataJSON.stringsGerais.title4);
-					break;			}
+					break;		
+				case 13:
+					$("#sceneQuestoesBandeiras").fadeIn(fadeTime);
+					$("#tituloGeral").html(dataJSON.stringsGerais.title4);
+					break;
+
+						}
 	  }
 	  
 	  
@@ -1978,6 +2013,9 @@ function preloadVideo(arrayOfmp4){
 					break;
 				case 12:
 					$("#sceneBandeirasEnergia").fadeOut(fadeTime);
+					break;
+				case 13:
+					$("#sceneQuestoesBandeiras").fadeOut(fadeTime);
 					break;
 			}
 	  }
