@@ -846,7 +846,7 @@ th, td { padding: 5px; }
 .titulosBandeiras {
 	position:absolute;
 	width:100%; 
-	bottom:77%;
+	top:2%;
 	left:12%; 
 	color: #FFFFFF;
 	font-size: calc((2vh + 1vw)/0.8);
@@ -863,4 +863,8 @@ th, td { padding: 5px; }
 	color: #FFFFFF;
 	font-size: calc((2vh + 1vw)/1.4);
 	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.subBandeiras {
+	font-size: calc((2vh + 1vw)/1.5);
 }
