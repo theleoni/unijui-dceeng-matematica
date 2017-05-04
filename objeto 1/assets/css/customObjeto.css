@@ -841,3 +841,26 @@ th, td { padding: 5px; }
 	font-size: calc((2vh + 1vw)/1.4);
 	font-family: 'Roboto Condensed', sans-serif;
 }
+
+
+.titulosBandeiras {
+	position:absolute;
+	width:100%; 
+	bottom:77%;
+	left:12%; 
+	color: #FFFFFF;
+	font-size: calc((2vh + 1vw)/0.8);
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+.textosBandeiras {
+	position:absolute;
+	width:100%; 
+	bottom:45%;
+	left:3%; 
+	top:19%;
+	color: #FFFFFF;
+	font-size: calc((2vh + 1vw)/1.4);
+	font-family: 'Roboto Condensed', sans-serif;
+}

@@ -66,6 +66,7 @@ function preloadVideo(arrayOfmp4){
 		$("#scenePotenciaEletrodomesticos").hide();
 		$("#sceneVideo").hide();
 		$("#sceneIntroBandeirasEnergia").hide();
+		$("#sceneBandeirasEnergia").hide();
 		$("#imagensFixas").hide();
 		preloadVideo([
 			'assets/img/biomassa_animada.mp4',
