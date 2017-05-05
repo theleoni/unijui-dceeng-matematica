@@ -134,6 +134,10 @@
 		"numeroQuestao": "2.",
 		"textoQuestao": "Qual bandeira tarifária é a mais cara?"
 	},
+	"questao18": {
+		"numeroQuestao": "3.",
+		"textoQuestao": "Qual o valor máximo de acréscimo para cada 100kWh?"
+	},
 	"mensagensCaminhoEnergia": {
 		"title1": "Geração",
 		"title2": "Subestação elevadora",

@@ -12,6 +12,7 @@
   var ftTransmission = true;
   var dataJSON;
   var respostaCorreta7 = 63.99;
+  var respostaCorreta18 = 4.50;
   var respostasCorretasQuestion10 = [45, 14, 78];
   var inputRespostasQuestao10;
   var respostasMatrizEnergetica = [8.86, 1251, 0.01, 2, 2412, 5.11];
@@ -866,6 +867,26 @@ function preloadVideo(arrayOfmp4){
 
 						}
 				break;
+
+
+				case 18:
+					$("#questionNumberBandeiras").html(dataJSON.questao18.numeroQuestao)
+					$("#questaoBandeira").html(dataJSON.questao18.textoQuestao);
+					$("#bandeirasOpcoes").hide();
+					$("#inputBandeiras").show();
+
+						if (corretas[17] == false) {
+							$("#iconSetaDireita").hide();
+							resetQuestionButtons();
+						}
+						else {
+							disableQuestionButtons();
+							$("#iconSetaDireita").show();
+
+						}
+				break;
+
+
 	  	}
 	  }
 	  
@@ -1024,6 +1045,14 @@ function preloadVideo(arrayOfmp4){
 	  					respostaErrada();
 	  				}
 	  				break;
+	  			case 18:
+	  				if ($("#inputValorBandeiras") == respostaCorreta18) {
+	  					respostaCorreta();
+	  				}
+	  				else {
+	  					respostaErrada();
+	  				}
+	  				break;
 	  		}
 	  }
 
@@ -1055,10 +1084,14 @@ function preloadVideo(arrayOfmp4){
 
 		//Binda o evento de clicar no botão de enviar ao método checkAnswer
 		$(document).on('click', '#enviarResposta', function () {
-			checkAnswer();
+			checkAnswer();				
 		});
 
 		$(document).on('click', '#enviarRespostaMatriz', function () {
+			checkAnswer();
+		});
+
+		$(document).on('click', '#enviarRespostaBandeiras', function () {
 			checkAnswer();
 		});
 
@@ -1169,6 +1202,15 @@ function preloadVideo(arrayOfmp4){
 
 		 				break;
 
+
+		 			case 18:
+		 				$("#enviarRespostaBandeiras").prop('disabled', false);
+		 			 	$("#inputValorBandeiras").val("");
+		 				$("#alertAnswerBandeiras").hide();
+
+
+		 			break;
+
  			 	}
 
 
@@ -1277,7 +1319,18 @@ function preloadVideo(arrayOfmp4){
 						$("#bandeiraVermelhaOpcao").attr("src", "assets/img/bandeiraVermelha.png")
 						$('.bandeiraOpcao').css('cursor','not-allowed');
 						updateAlertOnQuestionChange();
+
 						break;
+
+					case 18:
+		 				$("#enviarRespostaBandeiras").prop('disabled', true);
+		 				$("#inputValorBandeiras").prop('disabled', "true");
+		 			 	$("#inputValorBandeiras").prop('placeholder', "4,50");
+		 				$("#alertAnswerBandeiras").hide();
+						updateAlertOnQuestionChange();
+
+
+		 			break;
  			}
 
  		}
