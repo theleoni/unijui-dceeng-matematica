@@ -42,10 +42,10 @@
 	<div class="row">
 		<div id="imagensFixas"> 
 			
-			<div class="col-xs-offset-3 col-xs-4">
+			<div class="col-xs-offset-4 col-xs-4">
 				<div id="tituloGeral" class="textTitleContent"> </div>
 			</div>
-			<div class="col-xs-offset-3 col-xs-1 text-right" id="iconHelp">
+			<div class="col-xs-offset-2 col-xs-1 text-right" id="iconHelp">
 				<span title= "Ajuda" class="iconFixoHelp glyphicon glyphicon-question-sign"> </span>
 			</div>
 			<div class="col-xs-1" id="iconFechar">
@@ -641,19 +641,19 @@
 	<div id="sceneBandeirasEnergia">
 		<div class="row">
 			<div class="col-xs-offset-3 col-xs-2 noPadding">
-				<img class="img-responsive" src="assets/img/bandeiraVerde.png">
+				<img class="img-responsive" src="assets/img/bandeiraVerdeComListra.png">
 				<p class="titulosBandeiras"> VERDE </p>
 				<p class="textosBandeiras"> Hidreletricas operam normalmente </p>
 				<p class="subBandeiras" style="color:#5BB433"> ♦ Não há alteração na tarifa </p>
 			</div>
 			<div class="col-xs-2 noPadding">
-				<img class="img-responsive" src="assets/img/bandeiraAmarela.png">
+				<img class="img-responsive" src="assets/img/bandeiraAmarelaComListra.png">
 				<p class="titulosBandeiras"> AMARELA </p>
 				<p class="textosBandeiras"> Usinas térmicas ativadas </p>
 				<p class="subBandeiras" style="color:#FFC100"> ♦ Acrescente R$1,50 para cada 100kWh </p>
 			</div>
 			<div class="col-xs-2 noPadding">
-				<img class="img-responsive" src="assets/img/bandeiraVermelha.png">
+				<img class="img-responsive" src="assets/img/bandeiraVermelhaComListra.png">
 				<p class="titulosBandeiras"> VERMELHA </p>
 				<p class="textosBandeiras"> Usinas térmicas ativadas e alta demanda </p>
 				<p class="subBandeiras" style="color:#FF4132"> ♦ Patamar 1: Acrescente R$3,00 para cada 100kWh<br>
@@ -664,27 +664,33 @@
 
 	<div id="sceneQuestoesBandeiras">
 		<div class="row">
-			<div class="col-xs-12">
+			
+				<div class="col-xs-offset-4 col-xs-7 questaoBandeira">
+					<span id="questionNumberBandeiras" class="questionNumber"></span>
+					<span id="questaoBandeira" class="questionText">	 </span>
+				</div>
 
-				<span id="questionNumberBandeiras" class="questionNumber"></span>
-				<span id="questaoBandeira" class="questionText">	 </span>
-
-
-				<div id="bandeirasOpcoes" class="bandeirasOpcoes">
+				<div id="col-xs-offset-4 bandeirasOpcoes">
 					<div class="col-xs-offset-4">
 						<div class="col-xs-2 noPadding">
-							<img class="img-responsive bandeiraOpcao" src="assets/img/bandeiraVerde.png">
+							<img id="bandeiraVerdeOpcao" class="img-responsive bandeiraOpcao" src="assets/img/bandeiraVerde.png">
 						</div>
 						<div class="col-xs-2 noPadding">
-							<img class="img-responsive bandeiraOpcao" src="assets/img/bandeiraAmarela.png">
+							<img id="bandeiraAmarelaOpcao" class="img-responsive bandeiraOpcao" src="assets/img/bandeiraAmarela.png">
 						</div>
 						<div class="col-xs-2 noPadding">
-							<img class="img-responsive bandeiraOpcao" src="assets/img/bandeiraVermelha.png">
+							<img id="bandeiraVermelhaOpcao" class="img-responsive bandeiraOpcao" src="assets/img/bandeiraVermelha.png">
 						</div>
 					 </div>
 
 					</div>
 				<div id="inputBandeiras"> </div>
+
+
+
+
+			<div class="col-xs-offset-4 col-xs-4">
+				<div id="alertAnswerBandeiras" class="alert">	</div>
 			</div>
 		</div>
 	</div>

@@ -130,6 +130,10 @@
 		"numeroQuestao": "1.",
 		"textoQuestao": "Clique na bandeira tarifária que está livre de acréscimo"
 	},
+	"questao17": {
+		"numeroQuestao": "2.",
+		"textoQuestao": "Qual bandeira tarifária é a mais cara?"
+	},
 	"mensagensCaminhoEnergia": {
 		"title1": "Geração",
 		"title2": "Subestação elevadora",

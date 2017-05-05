@@ -18,6 +18,7 @@
   var inputRespostasMatrizEnergetica;
   var clicouRecentemente = false;
   var graficoMatrizGerado = false;
+  var bandeiraSelecionada;
 
 function preloadVideo(arrayOfmp4){
 
@@ -233,6 +234,16 @@ function preloadVideo(arrayOfmp4){
 					questionNumber--;
 					previousScene();
 					break;
+				case 13:
+				switch(questionNumber) {
+						case 16:
+							previousScene();
+							break;
+						default:
+							questionNumber--;
+							loadQuestion();
+							break;
+					}
 				case 3:
 					if(updateText[0] == true && updateText[1] == true) {
 						$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
@@ -825,6 +836,35 @@ function preloadVideo(arrayOfmp4){
 					$("#questionNumberBandeiras").html(dataJSON.questao16.numeroQuestao)
 					$("#questaoBandeira").html(dataJSON.questao16.textoQuestao);
 					$("#bandeirasOpcoes").show();
+					$("#inputBandeiras").hide();
+
+						if (corretas[15] == false) {
+							$("#iconSetaDireita").hide();
+							resetQuestionButtons();
+						}
+						else {
+							disableQuestionButtons();
+							$("#iconSetaDireita").show();
+
+						}
+				break;
+
+
+				case 17:
+					$("#questionNumberBandeiras").html(dataJSON.questao17.numeroQuestao)
+					$("#questaoBandeira").html(dataJSON.questao17.textoQuestao);
+					$("#bandeirasOpcoes").show();
+					$("#inputBandeiras").hide();
+
+						if (corretas[16] == false) {
+							$("#iconSetaDireita").hide();
+							resetQuestionButtons();
+						}
+						else {
+							disableQuestionButtons();
+							$("#iconSetaDireita").show();
+
+						}
 				break;
 	  	}
 	  }
@@ -923,7 +963,6 @@ function preloadVideo(arrayOfmp4){
 		  				if (inputRespostasQuestao10[i].val() == respostasCorretasQuestion10[i]) {
 		  				} else {
 		  					respostaErrada();
-		  					console.log(inputRespostasQuestao10[i].val() + " !=  " + respostasCorretasQuestion10[i]);
 		  					testeLocal = true;
 		  				}
 		  			}
@@ -970,7 +1009,20 @@ function preloadVideo(arrayOfmp4){
 	  				}
 	  				break;
 	  			case 16:
-	  				// TODO
+	  				if ($("#bandeiraVerdeOpcao").is(bandeiraSelecionada)) {
+	  					respostaCorreta();
+	  				}
+	  				else {
+	  					respostaErrada();
+	  				}
+	  				break;
+	  			case 17:
+	  			if ($("#bandeiraVermelhaOpcao").is(bandeiraSelecionada)) {
+	  					respostaCorreta();
+	  				}
+	  				else {
+	  					respostaErrada();
+	  				}
 	  				break;
 	  		}
 	  }
@@ -1017,6 +1069,14 @@ function preloadVideo(arrayOfmp4){
 		$(document).on('click', '#botaoMatrizQuestoesSim', function () {
 			checkAnswer();
 		});
+
+		$(document).on('click', '.bandeiraOpcao', function () {
+			if (corretas[questionNumber-1] == false) {
+			bandeiraSelecionada = $(this);
+			checkAnswer();
+		}
+		});
+
 
 		//Verifica se as teclas A, B, C, D ou ENTER foram pressionadas, e realiza a função respectiva (Selecionar alternativa / Enviar resposta)
  		$(document).bind('keydown', function(event) {
@@ -1099,8 +1159,14 @@ function preloadVideo(arrayOfmp4){
 						$("#alertAnswerMatriz").hide();
 		 				break;
 
-		 				case 16:
-		 				//todo
+		 			case 16:
+		 			case 17:
+						$("#bandeiraVerdeOpcao").attr("src", "assets/img/bandeiraVerde.png")
+						$("#bandeiraAmarelaOpcao").attr("src", "assets/img/bandeiraAmarela.png")
+						$("#bandeiraVermelhaOpcao").attr("src", "assets/img/bandeiraVermelha.png")
+						$('.bandeiraOpcao').css('cursor','pointer');
+						$("#alertAnswerBandeiras").hide();
+
 		 				break;
 
  			 	}
@@ -1198,8 +1264,19 @@ function preloadVideo(arrayOfmp4){
 						updateAlertOnQuestionChange();
 						break;
 
-						case 16:
-						//Todo
+					case 16:
+						$("#bandeiraVerdeOpcao").attr("src", "assets/img/bandeiraVerde.png")
+						$("#bandeiraAmarelaOpcao").attr("src", "assets/img/bandeiraCinza.png")
+						$("#bandeiraVermelhaOpcao").attr("src", "assets/img/bandeiraCinza.png")
+						$('.bandeiraOpcao').css('cursor','not-allowed');
+						updateAlertOnQuestionChange();
+						break;
+					case 17:
+						$("#bandeiraVerdeOpcao").attr("src", "assets/img/bandeiraCinza.png")
+						$("#bandeiraAmarelaOpcao").attr("src", "assets/img/bandeiraCinza.png")
+						$("#bandeiraVermelhaOpcao").attr("src", "assets/img/bandeiraVermelha.png")
+						$('.bandeiraOpcao').css('cursor','not-allowed');
+						updateAlertOnQuestionChange();
 						break;
  			}
 
@@ -1221,12 +1298,16 @@ function preloadVideo(arrayOfmp4){
 		  		$("#alertAnswer").removeClass("alert-success");
 	  			$("#alertAnswer").html(dataJSON.mensagensQuestoes.respostaIncorreta);
 	  			$("#alertAnswer").show(); 
-  			} else if (questionNumber > 10) {
+  			} else if (questionNumber > 10 && questionNumber < 16) {
 	  			$("#alertAnswerMatriz").addClass("alert-danger");
 		  		$("#alertAnswerMatriz").removeClass("alert-success");
 	  			$("#alertAnswerMatriz").html(dataJSON.mensagensQuestoes.respostaIncorreta);
 	  			$("#alertAnswerMatriz").show(); 
-  			}
+  			} else if (questionNumber >= 16) {
+	  			$("#alertAnswerBandeiras").addClass("alert-danger");
+		  		$("#alertAnswerBandeiras").removeClass("alert-success");
+	  			$("#alertAnswerBandeiras").html(dataJSON.mensagensQuestoes.respostaIncorreta);
+	  			$("#alertAnswerBandeiras").show();   			}
  		}
 
  		//Exibe o alerta de respsota correta (Método chamado quando o aluno acerta a questão, e quando muda de tela para uma questão já respondida)
@@ -1236,11 +1317,16 @@ function preloadVideo(arrayOfmp4){
     		$("#alertAnswer").show();
     		$("#alertAnswer").addClass("alert-success");
 	  		$("#alertAnswer").removeClass("alert-danger"); 
-	  	} else if (questionNumber > 10) {
+	  	} else if (questionNumber > 10 && questionNumber < 16) {
 	  		$("#alertAnswerMatriz").html(dataJSON.mensagensQuestoes.respostaCorreta);
     		$("#alertAnswerMatriz").show();
     		$("#alertAnswerMatriz").addClass("alert-success");
 	  		$("#alertAnswerMatriz").removeClass("alert-danger"); 
+	  	} else if (questionNumber >= 16) {
+	  		$("#alertAnswerBandeiras").html(dataJSON.mensagensQuestoes.respostaCorreta);
+    		$("#alertAnswerBandeiras").show();
+    		$("#alertAnswerBandeiras").addClass("alert-success");
+	  		$("#alertAnswerBandeiras").removeClass("alert-danger"); 
 	  	}
  		}
 
@@ -1594,8 +1680,8 @@ function preloadVideo(arrayOfmp4){
 			if (ftTransmission) { //Gambiarra para funcionar o ocultamento/disable nos botões
 				$("#iconSetaEsquerda").hide();
 				$("#iconSetaDireita").hide();
-				$('#setaTransmissaoDireita').toggleClass('glyphIconDisabled');
-  				$('#setaTransmissaoEsquerda').toggleClass('glyphIconDisabled');
+				$('#setaTransmissaoDireita').toggleClass('disabledCursor');
+  				$('#setaTransmissaoEsquerda').toggleClass('disabledCursor');
   				ftTransmission = false;
 			}
 			if (firstTimeTransmission) {
@@ -1614,8 +1700,8 @@ function preloadVideo(arrayOfmp4){
 								loadTransmissionData();
 								$("#iconSetaEsquerda").show();
 								$("#iconSetaDireita").show();
-								$('#setaTransmissaoDireita').toggleClass('glyphIconDisabled');
-								$('#setaTransmissaoEsquerda').toggleClass('glyphIconDisabled');
+								$('#setaTransmissaoDireita').toggleClass('disabledCursor');
+								$('#setaTransmissaoEsquerda').toggleClass('disabledCursor');
 								break;
 
 							}
@@ -1694,7 +1780,7 @@ function preloadVideo(arrayOfmp4){
 
 
 				$(document).on('click', '#setaTransmissaoDireita', function () {
-						if (!($("#setaTransmissaoDireita").hasClass('glyphIconDisabled'))) {
+						if (!($("#setaTransmissaoDireita").hasClass('disabledCursor'))) {
 							if (transmissionBeingShown < 6) {
 								transmissionBeingShown++;
 								loadTransmissionData();
@@ -1704,7 +1790,7 @@ function preloadVideo(arrayOfmp4){
 					});
 
 				$(document).on('click', '#setaTransmissaoEsquerda', function () {
-					if (!($("#setaTransmissaoEsquerda").hasClass('glyphIconDisabled'))) {
+					if (!($("#setaTransmissaoEsquerda").hasClass('disabledCursor'))) {
 						if (transmissionBeingShown > 1) {
 							transmissionBeingShown--;
 							loadTransmissionData();
@@ -1961,6 +2047,7 @@ function preloadVideo(arrayOfmp4){
 				case 13:
 					$("#sceneQuestoesBandeiras").fadeIn(fadeTime);
 					$("#tituloGeral").html(dataJSON.stringsGerais.title4);
+					loadQuestion();
 					break;
 
 						}
