@@ -1046,7 +1046,7 @@ function preloadVideo(arrayOfmp4){
 	  				}
 	  				break;
 	  			case 18:
-	  				if ($("#inputValorBandeiras") == respostaCorreta18) {
+	  				if ($("#inputValorBandeiras").val() == respostaCorreta18) {
 	  					respostaCorreta();
 	  				}
 	  				else {
