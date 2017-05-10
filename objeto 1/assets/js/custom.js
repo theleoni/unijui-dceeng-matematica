@@ -71,6 +71,7 @@ function preloadVideo(arrayOfmp4){
 		$("#sceneBandeirasEnergia").hide();
 		$("#sceneQuestoesBandeiras").hide();
 		$("#imagensFixas").hide();
+		$("#sceneDistribuicaoTarifa").hide();
 		preloadVideo([
 			'assets/img/biomassa_animada.mp4',
 			'assets/img/eolica_animada.mp4',
