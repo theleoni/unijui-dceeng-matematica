@@ -1109,6 +1109,10 @@ function preloadVideo(arrayOfmp4){
 			checkAnswer();
 		});
 
+		$(document).on('click', '#enviarRespostaTabelaImpostos', function() {
+			checkAnswer();
+		});
+
 		$(document).on('click', '.bandeiraOpcao', function () {
 			if (corretas[questionNumber-1] == false) {
 			bandeiraSelecionada = $(this);
