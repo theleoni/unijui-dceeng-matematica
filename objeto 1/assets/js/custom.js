@@ -239,13 +239,16 @@ function preloadVideo(arrayOfmp4){
 				case 13:
 				switch(questionNumber) {
 						case 16:
+						console.log("Oi");
 							previousScene();
 							break;
 						default:
+						console.log("tchau");
 							questionNumber--;
 							loadQuestion();
 							break;
 					}
+					break;
 				case 3:
 					if(updateText[0] == true && updateText[1] == true) {
 						$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
@@ -279,6 +282,7 @@ function preloadVideo(arrayOfmp4){
 							loadQuestion();
 							break;
 					}
+					break;
 				case 7:
 					switch(questionNumber) {
 						case 11:
@@ -289,7 +293,8 @@ function preloadVideo(arrayOfmp4){
 							questionNumber--;
 							loadQuestion();
 							break;
-					}
+					}	
+					break;
 
 
 
@@ -2093,17 +2098,22 @@ function preloadVideo(arrayOfmp4){
 				case 11:
 					$("#sceneIntroBandeirasEnergia").fadeIn(fadeTime);
 					$("#tituloGeral").html(dataJSON.stringsGerais.title3);
+					$("#iconSetaDireita").show();
+
 					break;
 				case 12:
 					$("#sceneBandeirasEnergia").fadeIn(fadeTime);
 					$("#tituloGeral").html(dataJSON.stringsGerais.title4);
+					$("#iconSetaDireita").show();
 					break;		
 				case 13:
 					$("#sceneQuestoesBandeiras").fadeIn(fadeTime);
 					$("#tituloGeral").html(dataJSON.stringsGerais.title4);
 					loadQuestion();
 					break;
-
+				case 14:
+					$("#sceneDistribuicaoTarifa").fadeIn(fadeTime);
+					break;
 						}
 	  }
 	  
@@ -2157,6 +2167,9 @@ function preloadVideo(arrayOfmp4){
 					break;
 				case 13:
 					$("#sceneQuestoesBandeiras").fadeOut(fadeTime);
+					break;
+				case 14:
+					$("#sceneDistribuicaoTarifa").fadeOut(fadeTime);
 					break;
 			}
 	  }

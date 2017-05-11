@@ -786,16 +786,14 @@ th, td { padding: 5px; }
 .sceneIntroBandeirasBubble1 {
 	position: absolute;
 	left: -15%;
-	top: 80%;
 	right: 40%;
 	z-index:0;
 	width: 85vw;
-	height:75vh;
 }
 
 .sceneIntroBandeirasTitle1 {
 	position: absolute;
-	margin-top: 15%;
+	margin-top: 22%;
 	left: 0%;
 	right: 60%;
 	text-align: justify;
@@ -807,7 +805,7 @@ th, td { padding: 5px; }
 
 .sceneIntroBandeirasTitle2 {
 	position: absolute;
-	margin-top: 15%;
+	margin-top: 22%;
 	left: 58%;
 	right: -20%;
 	text-align: justify;
@@ -819,7 +817,7 @@ th, td { padding: 5px; }
 
 .sceneIntroBandeirasText1 {
 	position: absolute;
-	margin-top: 21%;
+	margin-top: 29%;
 	left: 2%;
 	right: 47%;
 	text-align: justify;
@@ -831,7 +829,7 @@ th, td { padding: 5px; }
 
 .sceneIntroBandeirasText2 {
 	position: absolute;
-	margin-top: 21%;
+	margin-top: 29%;
 	left: 61%;
 	right: -20%;
 	text-align: justify;
@@ -862,6 +860,10 @@ th, td { padding: 5px; }
 	color: #FFFFFF;
 	font-size: calc((2vh + 1vw)/1.4);
 	font-family: 'Roboto Condensed', sans-serif;
+}
+
+#textoBandeiraVermelha {
+	top: 16%;
 }
 
 .subBandeiras {
