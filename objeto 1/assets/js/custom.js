@@ -6,7 +6,7 @@
   var questionNumber = 1;
   var listeningToKeyPress = false;
   var questaoSelecionada;
-  var corretas = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
+  var corretas = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
   var updateText = [false, false];
   var firstTimeTransmission = true;
   var ftTransmission = true;
@@ -69,6 +69,7 @@ function preloadVideo(arrayOfmp4){
 		$("#sceneVideo").hide();
 		$("#sceneIntroBandeirasEnergia").hide();
 		$("#sceneBandeirasEnergia").hide();
+		$("#sceneQuestaoImposto").hide();
 		$("#sceneQuestoesBandeiras").hide();
 		$("#imagensFixas").hide();
 		$("#sceneDistribuicaoTarifa").hide();
@@ -153,13 +154,17 @@ function preloadVideo(arrayOfmp4){
 					case 12:
 						nextScene();
 						break;
+					case 14:
+						questionNumber++;
+						break;
+
 					case 13:
 						switch(questionNumber) {
 							default: 
 								questionNumber++;
 								loadQuestion();
 								break;
-							case 19:
+							case 18:
 								questionNumber++;
 								nextScene();
 								break;
@@ -239,11 +244,9 @@ function preloadVideo(arrayOfmp4){
 				case 13:
 				switch(questionNumber) {
 						case 16:
-						console.log("Oi");
 							previousScene();
 							break;
 						default:
-						console.log("tchau");
 							questionNumber--;
 							loadQuestion();
 							break;
@@ -892,6 +895,20 @@ function preloadVideo(arrayOfmp4){
 						}
 				break;
 
+				case 19:
+					$("#questionNumberImposto").html(dataJSON.questao19.numeroQuestao);
+					$("#questionImposto").html(dataJSON.questao19.textoquestao);
+					grafico7();
+						if (corretas[18] == false) {
+							$("#iconSetaDireita").hide();
+							resetQuestionButtons();
+						}
+						else {
+							disableQuestionButtons();
+							$("#iconSetaDireita").show();
+
+						}
+				break;
 
 	  	}
 	  }
@@ -1059,9 +1076,18 @@ function preloadVideo(arrayOfmp4){
 	  					respostaErrada();
 	  				}
 	  				break;
-	  		}
-	  }
+	  		
+	  			case 19:
+		  			if ($("#radioImpostos input[type='radio']:checked").val() == "a") {
+		  				respostaCorreta();
+		  			}
+		  			else {
+		  				respostaErrada()
+		  			}
+		  			break;
 
+	  }
+}
 
 
 		function getInputValuesQuestion10() {
@@ -1112,6 +1138,11 @@ function preloadVideo(arrayOfmp4){
 		$(document).on('click', '#enviarRespostaTabelaImpostos', function() {
 			checkAnswer();
 		});
+
+		$(document).on('click', '#enviarRespostaImposto', function () {
+			checkAnswer();
+		});
+
 
 		$(document).on('click', '.bandeiraOpcao', function () {
 			if (corretas[questionNumber-1] == false) {
@@ -1218,9 +1249,12 @@ function preloadVideo(arrayOfmp4){
 		 			 	$("#inputValorBandeiras").val("");
 		 				$("#alertAnswerBandeiras").hide();
 
+		 				break;
 
-		 			break;
-
+		 			case 19:
+		 				$("#enviarRespostaImposto").prop('disabled', false);
+		 			 	$("#alertAnswerImposto").hide();
+		 			 	break;
  			 	}
 
 
@@ -1339,8 +1373,17 @@ function preloadVideo(arrayOfmp4){
 		 				$("#alertAnswerBandeiras").hide();
 						updateAlertOnQuestionChange();
 
+		 				break;
 
-		 			break;
+		 			case 19:
+		 				$("#radioButtonA").prop('checked', true);
+		 				$("#radioButtonA").prop('disabled', false).siblings().prop('disabled', true);
+		 				$("#alertAnswerImposto").hide();
+		 				updateAlertOnQuestionChange();
+
+		 				break;
+
+
  			}
 
  		}
@@ -1366,11 +1409,17 @@ function preloadVideo(arrayOfmp4){
 		  		$("#alertAnswerMatriz").removeClass("alert-success");
 	  			$("#alertAnswerMatriz").html(dataJSON.mensagensQuestoes.respostaIncorreta);
 	  			$("#alertAnswerMatriz").show(); 
-  			} else if (questionNumber >= 16) {
+  			} else if (questionNumber >= 16 && questionNumber < 19) {
 	  			$("#alertAnswerBandeiras").addClass("alert-danger");
 		  		$("#alertAnswerBandeiras").removeClass("alert-success");
 	  			$("#alertAnswerBandeiras").html(dataJSON.mensagensQuestoes.respostaIncorreta);
-	  			$("#alertAnswerBandeiras").show();   			}
+	  			$("#alertAnswerBandeiras").show();   			
+	  		} else if (questionNumber >= 19) {
+	  			$("#alertAnswerImposto").addClass("alert-danger");
+		  		$("#alertAnswerImposto").removeClass("alert-success");
+	  			$("#alertAnswerImposto").html(dataJSON.mensagensQuestoes.respostaIncorreta);
+	  			$("#alertAnswerImposto").show();  
+	  		}
  		}
 
  		//Exibe o alerta de respsota correta (Método chamado quando o aluno acerta a questão, e quando muda de tela para uma questão já respondida)
@@ -1385,11 +1434,16 @@ function preloadVideo(arrayOfmp4){
     		$("#alertAnswerMatriz").show();
     		$("#alertAnswerMatriz").addClass("alert-success");
 	  		$("#alertAnswerMatriz").removeClass("alert-danger"); 
-	  	} else if (questionNumber >= 16) {
+	  	} else if (questionNumber >= 16 && questionNumber < 19) {
 	  		$("#alertAnswerBandeiras").html(dataJSON.mensagensQuestoes.respostaCorreta);
     		$("#alertAnswerBandeiras").show();
     		$("#alertAnswerBandeiras").addClass("alert-success");
 	  		$("#alertAnswerBandeiras").removeClass("alert-danger"); 
+	  	} else if (questionNumber >= 19) {
+	  		$("#alertAnswerImposto").html(dataJSON.mensagensQuestoes.respostaCorreta);
+    		$("#alertAnswerImposto").show();
+    		$("#alertAnswerImposto").addClass("alert-success");
+	  		$("#alertAnswerImposto").removeClass("alert-danger"); 
 	  	}
  		}
 
@@ -1737,6 +1791,56 @@ function preloadVideo(arrayOfmp4){
 	 	}
 
 
+ 		function grafico7() {
+			$(document).ready(function () {
+
+
+				// Gera o gráfico
+				Highcharts.chart('graphImposto', {
+				    chart: {
+				        type: 'pie',
+				    },
+					title: {
+						text: 'Valor final da energia elétrica'
+					},
+					subtitle: {
+						text: "Fonte: ?"
+					},
+					tooltip: {
+						pointFormat: '{series.name}: <b>{point.y}</b>'
+					},
+					plotOptions: {
+						pie: {
+							allowPointSelect: true,
+							cursor: 'pointer',
+						 dataLabels: {
+              			 	enabled: true,
+                			format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+
+
+							},
+							showInLegend: true
+						}
+					},
+					series: [{
+						name: 'Oferta',
+						colorByPoint: true,
+						data: [{
+							name: 'Tributos: ICMS e PIS/COFINS',
+							y: 29.5
+						}, {
+							name: 'Parcela A: Compra de energia, Transmissão de energia, e Encargos Setoriais',
+							y: 53.5
+		
+						}, {
+							name: 'Parcela B: Distribuição de Energia',
+							y: 17
+						}
+						]
+					}]
+				});
+			});
+			}
 
 
 		function contentSwitcher() {
@@ -2116,6 +2220,10 @@ function preloadVideo(arrayOfmp4){
 					loadQuestion();
 					break;
 				case 14:
+					$("#sceneQuestaoImposto").fadeIn(fadeTime);
+					loadQuestion();
+					break;
+				case 15:
 					$("#sceneDistribuicaoTarifa").fadeIn(fadeTime);
 					break;
 						}
@@ -2173,6 +2281,9 @@ function preloadVideo(arrayOfmp4){
 					$("#sceneQuestoesBandeiras").fadeOut(fadeTime);
 					break;
 				case 14:
+					$("#sceneQuestaoImposto").fadeOut(fadeTime);
+					break;
+				case 15:
 					$("#sceneDistribuicaoTarifa").fadeOut(fadeTime);
 					break;
 			}

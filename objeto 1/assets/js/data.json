@@ -138,6 +138,10 @@
 		"numeroQuestao": "3.",
 		"textoQuestao": "Qual o valor máximo de acréscimo para cada 100kWh?"
 	},
+	"questao19": {
+		"numeroQuestao": "1.",
+		"textoQuestao": "Considerando as informações da tabela e do gráfico, analise as afirmãções abaixo.<br>I - Os custos de energia referente à compra, transmissão e encargos setoriais representam atualmente o maior percentual do valor final da energia, seguido dos custos com tributos.<br>II - A parcela referente aos custos com distribuição representa 17% dos custos do valor final.<br>III - O maior percentual dos custos do valor final de energia elétrica são impostos.<br>IV - A parte dos custos de enregia refente à compra, transmissão e encargos setoriais representam atualmente menos da metade do valor final da energia.<br>V - A parcela refernente aos custos com distribuição representa 29,5% dos custos do valor final"
+	},
 	"mensagensCaminhoEnergia": {
 		"title1": "Geração",
 		"title2": "Subestação elevadora",
