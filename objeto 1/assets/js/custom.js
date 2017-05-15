@@ -897,7 +897,7 @@ function preloadVideo(arrayOfmp4){
 
 				case 19:
 					$("#questionNumberImposto").html(dataJSON.questao19.numeroQuestao);
-					$("#questionImposto").html(dataJSON.questao19.textoquestao);
+					$("#questionImposto").html(dataJSON.questao19.textoQuestao);
 					grafico7();
 						if (corretas[18] == false) {
 							$("#iconSetaDireita").hide();
