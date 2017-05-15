@@ -522,7 +522,6 @@ function preloadVideo(arrayOfmp4){
 	  			$("#questionGroup").hide();
 	  			$("#inputRespostasceneQuestoesGraficos").hide();
 	  			$("#tabelaQuestoesGraficos").hide();
-	  			$("#pularQuestoes").show();
 	  			grafico1();
 
 	  				if (corretas[0] == false) {
@@ -1964,21 +1963,6 @@ function preloadVideo(arrayOfmp4){
 						}
 					}
 
-					});
-
-
-
-
-
-
-
-
-			/* REMOVER ANTES DA VERSÃO FINAL */
-
-				$(document).on('click', '#pularQuestoes', function () {
-					$("#iconSetaDireita").show();
-					nextScene();
-					
 					});
 
 
