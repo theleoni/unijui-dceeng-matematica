@@ -16,7 +16,7 @@
   var respostasCorretasQuestion10 = [45, 14, 78];
   var inputRespostasQuestao10;
   var inputRespostasConta;
-  var respostasConta = [25.5, 35.5, 21.1, 13.5, 2.4];
+  var respostasConta = [25.5, 37.5, 21.1, 13.5, 2.4];
   var respostasMatrizEnergetica = [8.86, 1251, 0.01, 2, 2412, 5.11];
   var inputRespostasMatrizEnergetica;
   var clicouRecentemente = false;
