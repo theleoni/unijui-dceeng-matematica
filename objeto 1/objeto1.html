@@ -404,7 +404,7 @@
 		<div class="row">
 			<div class="col-xs-4">
 				<p id="titleMatrizEnergetica" class="titleMatrizEnergetica"> Conhecendo os dados sobre a Matriz Energética Brasileira </p>
-				<p id="textoMatrizEnergetica" class="textoMatrizEnergetica"> Segundo dados da ANEEL (Agência Nacional de Energia Elétrica), cerca de 94,89% da energia elétrica consumida é produzida no Brasil, e o restante é importada dos países vizinhos (Paraguai, Argentina, Venezuela e Uruguai). Esta produção advém de usinas do tipo: hidrelétricas, solar, eólica, nuclear, fóssil e biomassa. Existem 534 usinas que produzem energia de origem biomassa, estas são responsáveis por aproximadamente 8,86% da energia consumida, 1251 de origem hídrica responsáveiss por 61,34% da energia consumida, 42 de origem solar responsáveis por 0,01% da energia consumida, 2 de origem nuclear responsáveis por 1,24% da energia consumida, 418 de origem eólica responsáveis por 6,58% da energia consumida, 2412 de origem fóssivel responsáveis por 16,85% da energia consumida </p>
+				<p id="textoMatrizEnergetica" class="textoMatrizEnergetica"> Segundo dados da ANEEL (Agência Nacional de Energia Elétrica), cerca de 94,89% da energia elétrica consumida é produzida no Brasil, e o restante é importada dos países vizinhos (Paraguai, Argentina, Venezuela e Uruguai). Esta produção advém de usinas do tipo: hidrelétricas, solar, eólica, nuclear, fóssil e biomassa. Existem 534 usinas que produzem energia de origem biomassa, estas são responsáveis por aproximadamente 8,86% da energia consumida, 1251 de origem hídrica responsáveiss por 61,34% da energia consumida, 42 de origem solar responsáveis por 0,01% da energia consumida, 2 de origem nuclear responsáveis por 1,24% da energia consumida, 418 de origem eólica responsáveis por 6,58% da energia consumida, 2412 de origem fóssivel responsáveis por 16.86% da energia consumida </p>
 			</div>
 			<div class="col-xs-8">
 				<div class="col-xs-12">
@@ -416,7 +416,7 @@
 						      <tr>
 						        <th>Origem</th>
 						        <th>Nº de Usinas</th>
-						        <th>Consumo em kW</th>
+						        <th>Produção em kW</th>
 						        <th>% do consumo</th>
 						      </tr>
 						    </thead>
@@ -621,7 +621,7 @@
 			<div class="col-xs-offset-2 col-xs-7">
 				<img class="sceneIntroBandeirasBubble1" src="assets/img/bubble3.png"> 
 				<p id="sceneIntroBandeirasTitle1" class="sceneIntroBandeirasTitle1"> <b>•</b> O que é a <b>Tarifa de Energia</b>? </p>
-				<p id="sceneIntroBandeirasText1" class="sceneIntroBandeirasText1"> A <b>TARIFA DE ENERGIA</b> é o preço cobrado por unidade de energia (R$/kWh). Assim, espera-se que o repço da energia seja suficiente para arcar com os custos de operação e expansão de todos os elementos elétricos que compõe o sistema, desde a usina geradora até o ramal de ligação dos consumidores de baixa tensão. </p>
+				<p id="sceneIntroBandeirasText1" class="sceneIntroBandeirasText1"> A <b>TARIFA DE ENERGIA</b> é o preço cobrado por unidade de energia (R$/kWh). Assim, espera-se que o preço da energia seja suficiente para arcar com os custos de operação e expansão de todos os elementos elétricos que compõe o sistema, desde a usina geradora até o ramal de ligação dos consumidores de baixa tensão. </p>
 				<p id="sceneIntroBandeirasTitle2" class="sceneIntroBandeirasTitle2"> <b>•</b> Custos com a aquisição de <b>energia elétrica</b>: </p>
 				<p id="sceneIntroBandeirasText1" class="sceneIntroBandeirasText2"> Os principais custos referentes à aquisição da energia elétrica são: <br>
 						• Custos relativos ao uso do sistema de distribuição;<br>
@@ -729,9 +729,9 @@
 	</div>
 	<div id="sceneDistribuicaoTarifa">
 		<div class="row">
-			<div class="col-xs-offset-1 col-xs-5">
-				<p> De acordo com as informações apresentadas complete a tabela abaixo. Passe o mouse sobre cada um dos quadros para visualizar o conteúdo dos mesmos.</p>
-					<div class="col-xs-8">
+			<div class="col-xs-offset-1 col-xs-4">
+				<p class="textosCustos"> De acordo com as informações apresentadas complete a tabela abaixo. Passe o mouse sobre cada um dos quadros para visualizar o conteúdo dos mesmos.</p>
+					<div class="col-xs-10">
 						<table class="table table-responsive table-bordered">
 							    <thead>
 							      <tr>
@@ -761,22 +761,38 @@
 								        <td id="tableTransmissao" class="tdCentralizado">Transmissao</td>
 							        	<td><input id="inputTransmissao" type="number" class="form-control"></td>
 								     </tr>
-							    	<tr>
-								        <td id="tableGeracao" class="tdCentralizado">Geração</td>
-							        	<td><input id="inputGeracao" type="number" class="form-control"></td>
-							     	</tr>
 							      	<tr>
 								        <td id="tableTotal" class="tdCentralizado">Total</td>
 								        <td id="tableTotalValor" class="tdCentralizado">100%</td>
-
-
 				      				</tr>
 
 							    </tbody>
 							  	</table>
 							  	<button id="enviarRespostaTabelaImpostos" type="button" class="btn btn-block btn-info btn-enviar"> Enviar resposta </button>
+							 	 	<div id="alertConta" class="alert alert-danger" role="alert">
+								<center><strong>Oops!</strong> Algumas respostas estão incorretas.</center>
+									</div>
 
-						  	</div>
+					</div>
+			</div>
+			<div class="col-xs-offset-2 col-xs-5">
+				<div> 
+					<div class="col-xs-2 noPadding">
+						<img id="imagem1Conta" data-alt-src="assets/img/geracaoLongo.jpg" class="img-responsive imgsDistribuicao" src="assets/img/geracao.jpg">
+					</div>
+					<div class="col-xs-2 noPadding">
+						<img id="imagem2Conta" data-alt-src="assets/img/impostosLongo.jpg" class="img-responsive imgsDistribuicao" src="assets/img/impostos.jpg">
+					</div>
+					<div class="col-xs-2 noPadding">
+						<img id="imagem3Conta" data-alt-src="assets/img/encargosLongo.jpg" class="img-responsive imgsDistribuicao" src="assets/img/encargos.jpg">
+					</div>
+					<div class="col-xs-2 noPadding">
+						<img id="imagem4Conta" data-alt-src="assets/img/distribuicaoLongo.jpg" class="img-responsive imgsDistribuicao" src="assets/img/distribuicao.jpg">	
+					</div>
+					<div class="col-xs-2 noPadding">
+						<img id="imagem5Conta" data-alt-src="assets/img/transmissaoLongo.jpg" class="img-responsive imgsDistribuicao" src="assets/img/transmissao.jpg">
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -877,3 +877,9 @@ th, td { padding: 5px; }
 .bandeiraOpcao {
 	cursor: pointer;
 }
+
+.textosCustos {
+	font-size: calc((2vh + 1vw)/1.4);
+	font-family: 'Roboto Condensed', sans-serif;
+	text-align: justify;
+}

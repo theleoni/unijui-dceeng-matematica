@@ -15,6 +15,8 @@
   var respostaCorreta18 = 4.50;
   var respostasCorretasQuestion10 = [45, 14, 78];
   var inputRespostasQuestao10;
+  var inputRespostasConta;
+  var respostasConta = [37.5, 25.5, 21.1, 13.5, 2.4];
   var respostasMatrizEnergetica = [8.86, 1251, 0.01, 2, 2412, 5.11];
   var inputRespostasMatrizEnergetica;
   var clicouRecentemente = false;
@@ -141,7 +143,6 @@ function preloadVideo(arrayOfmp4){
 
 
 
-
 				switch (scene) {
 					case 1:
 					case 2:
@@ -152,10 +153,11 @@ function preloadVideo(arrayOfmp4){
 					case 10:
 					case 11:
 					case 12:
+					case 15:
 						nextScene();
 						break;
 					case 14:
-						questionNumber++;
+						nextScene();
 						break;
 
 					case 13:
@@ -233,6 +235,7 @@ function preloadVideo(arrayOfmp4){
 				case 10:
 				case 11:
 				case 12:
+				case 15:
 					previousScene();
 					break;
 				case 8:
@@ -1135,7 +1138,7 @@ function preloadVideo(arrayOfmp4){
 		});
 
 		$(document).on('click', '#enviarRespostaTabelaImpostos', function() {
-			checkAnswer();
+			checkTableConta();
 		});
 
 		$(document).on('click', '#enviarRespostaImposto', function () {
@@ -1446,6 +1449,19 @@ function preloadVideo(arrayOfmp4){
 	  	}
  		}
 
+
+    var sourceSwap = function () {
+        var $this = $(this);
+        var newSource = $this.data('alt-src');
+        $this.data('alt-src', $this.attr('src'));
+        $this.attr('src', newSource);
+    }
+
+    $(function() {
+        $('img[data-alt-src]').each(function() { 
+            new Image().src = $(this).data('alt-src'); 
+        }).hover(sourceSwap, sourceSwap); 
+    });
 
 	  	//Método utilizado para criar o gráfico utilizado nas questões 1 e 2
 		function grafico1() {
@@ -2097,6 +2113,42 @@ function preloadVideo(arrayOfmp4){
 
 		
 
+		function getInputValueConta() {
+			inputRespostasConta = 
+			[
+			$("#inputImpostos"),
+			$("#inputGeracao"),
+			$("#inputEncargos"),
+			$("#inputDistribuicao"),
+			$("#inputTransmissao"), 
+			$("#inputGeracao") 
+			      ];
+		}
+
+		
+		function checkTableConta() {
+			var verificacaoLocal = true;
+			getInputValueConta();
+			for (var i = 0; i < respostasConta.length; i++) {
+				if (!(inputRespostasConta[i].val().replace(/,/g, '.') == respostasConta[i])) {
+					inputRespostasConta[i].css('background-color', 'red');
+					verificacaoLocal = false;
+					$("#alertConta").show();
+				}
+				else {
+					inputRespostasConta[i].css('background-color', '');
+				}
+			}
+			if (verificacaoLocal == true) {
+				$("#alertConta").hide();
+
+				//Disable nos inputs
+				for (var i = 0; i < inputRespostasConta.length; i++) {
+					inputRespostasConta[i].prop('disabled', true);
+				}
+			}
+		}
+
 
 
 
@@ -2209,6 +2261,8 @@ function preloadVideo(arrayOfmp4){
 					break;
 				case 15:
 					$("#sceneDistribuicaoTarifa").fadeIn(fadeTime);
+					$("#alertConta").hide();
+
 					break;
 						}
 	  }

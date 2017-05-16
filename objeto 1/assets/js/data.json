@@ -25,11 +25,11 @@
 
 	"textosImpostos": {
 		"icms": "Poderá levar até 30% do valor consumido, este imposto é cobrado referente a circulação de mercadorias (eletrodomésticos, alimentos, cosméticos e outras mercadorias relacionadas ao segmentos) e prestação de serviços de transporte interestadual e intermunicipal e comunicação.",
-		"tusd": "Tarifa de Uso do Sistema de Distribuição, que remunera instalações, equipamentos e componentes da rede de distribuição para levar a energia até as casas (Imposto estabelecido pela ANEEL, dando poder para as concessionarias cobrarem de seus clientes sobre a conta de energia",
-		"cofins": "Contribuição Social para Financiamento da Seguridade Social, destinada a financiar as despesas das áreas de Saúde, Previdência, e Assistência social. COFINS leva 4.45% do valor de sua fatura",
-		"cip": "Contribuição de Iluminação Pública, é uma taxa cobrada baseada no custo total do serviço/manutenção do sistema de iluminação pública",
+		"tusd": "Tarifa de Uso do Sistema de Distribuição, que remunera instalações, equipamentos e componentes da rede de distribuição para levar a energia até as casas (Imposto estabelecido pela ANEEL, dando poder para as concessionárias cobrarem de seus clientes sobre a conta de energia.",
+		"cofins": "Contribuição Social para Financiamento da Seguridade Social, destinada a financiar as despesas das áreas de Saúde, Previdência, e Assistência social. COFINS leva 4.45% do valor de sua fatura.",
+		"cip": "Contribuição de Iluminação Pública, é uma taxa cobrada baseada no custo total do serviço/manutenção do sistema de iluminação pública.",
 		"pispasep": "Programas de Integração Social e de Formação do Patrimônio do Servidor Público, tem como finalidade o financiamento do programa do Seguro-Desemprego e o abono aos empregados que recebem até dois salários mínimos mensais. De forma geral, o contribuinte acaba pagando no PIS a alíquota de 0.95% do valor de consumo da energia elétrica.",
-		"tust": "Tarifa de Uso do Sistema de Transmissão, que remunera instalações, equipamentos e componentes da rede de transmissão. (Imposto estabelecido pela Agência Nacional de Energia Elétrica, dando poder para as concessionárias cobraram de seus clientes sobre a conta de energia)"
+		"tust": "Tarifa de Uso do Sistema de Transmissão, que remunera instalações, equipamentos e componentes da rede de transmissão. (Imposto estabelecido pela Agência Nacional de Energia Elétrica, dando poder para as concessionárias cobraram de seus clientes sobre a conta de energia)."
 	},
 	"mensagensQuestoes": {
 		"respostaCorreta": "Resposta correta! Prossiga para a próxima questão   <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>",
@@ -140,7 +140,7 @@
 	},
 	"questao19": {
 		"numeroQuestao": "1.",
-		"textoQuestao": "Considerando as informações da tabela e do gráfico, analise as afirmãções abaixo.<br>I - Os custos de energia referente à compra, transmissão e encargos setoriais representam atualmente o maior percentual do valor final da energia, seguido dos custos com tributos.<br>II - A parcela referente aos custos com distribuição representa 17% dos custos do valor final.<br>III - O maior percentual dos custos do valor final de energia elétrica são impostos.<br>IV - A parte dos custos de enregia refente à compra, transmissão e encargos setoriais representam atualmente menos da metade do valor final da energia.<br>V - A parcela refernente aos custos com distribuição representa 29,5% dos custos do valor final"
+		"textoQuestao": "Considerando as informações da tabela e do gráfico, analise as afirmações abaixo.<br>I - Os custos de energia referente à compra, transmissão e encargos setoriais representam atualmente o maior percentual do valor final da energia, seguido dos custos com tributos.<br>II - A parcela referente aos custos com distribuição representa 17% dos custos do valor final.<br>III - O maior percentual dos custos do valor final de energia elétrica são impostos.<br>IV - A parte dos custos de energia refente à compra, transmissão e encargos setoriais representam atualmente menos da metade do valor final da energia.<br>V - A parcela referente aos custos com distribuição representa 29,5% dos custos do valor final"
 	},
 	"mensagensCaminhoEnergia": {
 		"title1": "Geração",
