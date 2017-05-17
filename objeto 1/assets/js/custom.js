@@ -228,6 +228,7 @@ function preloadVideo(arrayOfmp4){
 				} else {
 					swal("","Espere para passar à próxima tela");
 				}
+				break;
 
 		});
 
