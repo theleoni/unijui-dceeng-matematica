@@ -22,7 +22,7 @@
   var clicouRecentemente = false;
   var graficoMatrizGerado = false;
   var bandeiraSelecionada;
-
+  var viuUsina;
 function preloadVideo(arrayOfmp4){
 
 	    $(arrayOfmp4).each(function () {
@@ -145,7 +145,6 @@ function preloadVideo(arrayOfmp4){
 
 				switch (scene) {
 					case 1:
-					case 2:
 					case 5:
 					case 6:
 					case 8:
@@ -217,9 +216,17 @@ function preloadVideo(arrayOfmp4){
 								break;
 
 						}
+
+				case 2:
+					if (viuUsina) {
+						nextScene();
+					} else {
+						alert("Clique nas usinas para ver o conteúdo");
+
+					}
 			}
 				} else {
-					alert("Espere para passar à próxima tela")
+					alert("Espere para passar à próxima tela");
 				}
 
 		});
@@ -304,6 +311,9 @@ function preloadVideo(arrayOfmp4){
 
 
 
+
+
+
 			}		});
 
 
@@ -366,6 +376,7 @@ function preloadVideo(arrayOfmp4){
 	 	$('#additionalSceneTiposUsinas').hide();
 		$('#mensagem').hide();
 		$('#imagemEngenheiroTiposUsinas').hide();
+		viuUsina = true;
 		hideFixedImages();
 		switch (usina) {
 			case 'hidreletrica': 
