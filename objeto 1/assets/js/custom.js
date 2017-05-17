@@ -139,7 +139,7 @@ function preloadVideo(arrayOfmp4){
 				clicouRecentemente = true;
 	     			  setTimeout(function(){ 
 	     			  	clicouRecentemente = false; 
-	     			  }, 1); 
+	     			  }, 1000); 
 
 
 
@@ -1899,7 +1899,7 @@ function preloadVideo(arrayOfmp4){
 
 							}
 
-				    }, 1);
+				    }, 3500);
 			}
 			else {
 				loadTransmissionData();
