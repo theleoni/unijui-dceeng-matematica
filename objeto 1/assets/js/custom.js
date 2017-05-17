@@ -214,21 +214,24 @@ function preloadVideo(arrayOfmp4){
 								questionNumber++;
 								nextScene();
 								break;
-
 						}
+						break;
 
 				case 2:
 					if (viuUsina) {
 						nextScene();
+						break;
 					} else {
 						swal("","Clique nas usinas para ver o conteúdo", "error");
-
+						break;
 					}
-			}
-				} else {
-					swal("","Espere para passar à próxima tela");
+					break;
+
 				}
-				break;
+
+			} else {
+				swal("","Espere para passar à próxima tela");
+			}
 
 		});
 
