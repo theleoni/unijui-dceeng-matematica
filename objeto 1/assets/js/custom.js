@@ -221,12 +221,12 @@ function preloadVideo(arrayOfmp4){
 					if (viuUsina) {
 						nextScene();
 					} else {
-						alert("Clique nas usinas para ver o conteúdo");
+						swal("","Clique nas usinas para ver o conteúdo", "error");
 
 					}
 			}
 				} else {
-					alert("Espere para passar à próxima tela");
+					swal("","Espere para passar à próxima tela");
 				}
 
 		});
