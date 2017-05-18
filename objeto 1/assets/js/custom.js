@@ -2160,6 +2160,8 @@ function preloadVideo(arrayOfmp4){
 				$("#alertConta").show();
 				$("#alertConta").removeClass("alert-danger");
 				$("#alertConta").addClass("alert-success");
+				distribuicaoTarifa = true;
+				$("#iconSetaDireita").show();
 				$("#alertConta").html("Resposta correta! Prossiga para a próxima questão   <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>");
 
 				//Disable nos inputs
