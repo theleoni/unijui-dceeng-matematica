@@ -1617,13 +1617,13 @@ function preloadVideo(arrayOfmp4){
 			    },
 			    xAxis: {
 			    			        categories: [
-						            'Set/15',
-						            'Out/15',
-						            'Nov/15',
-						            'Dez/15',
-						            'Jan/16',
-						            'Fev/16',
-						            'Mar/16',
+						            'set/15',
+						            'out/15',
+						            'nov/15',
+						            'dez/15',
+						            'jan/16',
+						            'fev/16',
+						            'mar/16',
 						        ],
 			        title: {
 			            text: 'Meses'
@@ -2171,7 +2171,7 @@ function preloadVideo(arrayOfmp4){
 
 
 
-		funciton checkTarifa() {
+		function checkTarifa() {
 			if (distribuicaoTarifa) {
 				$("#iconSetaDireita").show();
 			} else {
