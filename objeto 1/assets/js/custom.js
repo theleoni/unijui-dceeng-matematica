@@ -1490,9 +1490,15 @@ function preloadVideo(arrayOfmp4){
 				    chart: {
 				        type: 'pie',
 				    },
+				      credits: {
+      					enabled: false
+ 					 },
 					title: {
-						text: 'Utilização de energia elétrica por aparelhos eletrônicos'
+						text: 'Percentagem de uso de energia elétrica por eletrodoméstico'
 					},
+					 subtitle: {
+			       		 text: 'Fonte: Procel - 2005'
+			   		 },
 					tooltip: {
 						pointFormat: '{series.name}: <b>{point.y}</b>'
 					},
@@ -1548,6 +1554,9 @@ function preloadVideo(arrayOfmp4){
 			    chart: {
 			        type: 'column'
 			    },
+			 	credits: {
+      				enabled: false
+ 				},
 			    title: {
 			        text: 'Consumo de energia elétrica de uma residência'
 			    },
@@ -1601,7 +1610,9 @@ function preloadVideo(arrayOfmp4){
 	 	//Método utilizado parar criar o gráfico utilizado nas questões 5 e 6
 	 	function grafico3() {
 	 		Highcharts.chart('sceneQuestoesGraph', {
-
+				credits: {
+      					enabled: false
+ 				},
 			    title: {
 			        text: 'Consumo de energia elétrica em kWh na residência de alunos'
 			    },
@@ -1652,6 +1663,9 @@ function preloadVideo(arrayOfmp4){
 				    chart: {
 				        type: 'pie',
 				    },
+				    credits: {
+      					enabled: false
+ 					},
 					title: {
 						text: 'Oferta interna de energia elétrica por fonte - Brasil, 2015'
 					},
@@ -1716,6 +1730,9 @@ function preloadVideo(arrayOfmp4){
 				    chart: {
 				        type: 'bar'
 				    },
+				    credits: {
+      					enabled: false
+ 					 },
 				    title: {
 				        text: 'Consumo de energia elétrica por região geográfica em Janeiro de 2017 em GWh'
 				    },
@@ -1780,6 +1797,9 @@ function preloadVideo(arrayOfmp4){
 			    chart: {
 			        type: 'column'
 			    },
+				credits: {
+      					enabled: false
+ 				},
 			    title: {
 			        text: 'Potência média por aparelho (Watts)'
 			    },
@@ -1832,6 +1852,9 @@ function preloadVideo(arrayOfmp4){
 				    chart: {
 				        type: 'pie',
 				    },
+					credits: {
+      					enabled: false
+ 					},
 					title: {
 						text: 'Valor final da energia elétrica'
 					},
