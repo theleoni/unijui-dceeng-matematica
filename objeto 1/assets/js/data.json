@@ -68,7 +68,7 @@
 
 	"questao5": {
 	"numeroQuestao": "5.",
-	"textoQuestao": "De acordo com o gráfico, qual é a média de consumo de energia elétrica durante o ano?" ,
+	"textoQuestao": "De acordo com o gráfico, é possível verificar que a soma do consumo dos 12 meses é 3763kWh. Qual é a média de consumo de energia elétrica durante o ano?" ,
 	"alternativa1Questao": "<span class='containerLetra'>A</span>313,58",
 	"alternativa2Questao": "<span class='containerLetra'>B</span>323,47",
 	"alternativa3Questao": "<span class='containerLetra'>C</span>300",

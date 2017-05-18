@@ -788,13 +788,14 @@ th, td { padding: 5px; }
 	left: -15%;
 	right: 40%;
 	z-index:0;
-	width: 85vw;
+	width: 80vw;
+	height: 40vh;
 }
 
 .sceneIntroBandeirasTitle1 {
 	position: absolute;
-	margin-top: 22%;
-	left: 0%;
+	margin-top: 3%;
+	left: -10%;
 	right: 60%;
 	text-align: justify;
 	z-index: 1;
@@ -805,7 +806,7 @@ th, td { padding: 5px; }
 
 .sceneIntroBandeirasTitle2 {
 	position: absolute;
-	margin-top: 22%;
+	margin-top: 3%;
 	left: 58%;
 	right: -20%;
 	text-align: justify;
@@ -817,8 +818,8 @@ th, td { padding: 5px; }
 
 .sceneIntroBandeirasText1 {
 	position: absolute;
-	margin-top: 29%;
-	left: 2%;
+	margin-top: 8%;
+	left: -8%;
 	right: 47%;
 	text-align: justify;
 	z-index: 1;
@@ -829,7 +830,7 @@ th, td { padding: 5px; }
 
 .sceneIntroBandeirasText2 {
 	position: absolute;
-	margin-top: 29%;
+	margin-top: 8%;
 	left: 61%;
 	right: -20%;
 	text-align: justify;

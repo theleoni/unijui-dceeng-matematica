@@ -23,6 +23,8 @@
   var graficoMatrizGerado = false;
   var bandeiraSelecionada;
   var viuUsina;
+  var distribuicaoTarifa = false;
+
 function preloadVideo(arrayOfmp4){
 
 	    $(arrayOfmp4).each(function () {
@@ -1586,7 +1588,7 @@ function preloadVideo(arrayOfmp4){
 			        }
 			    },
 			    series: [{
-			        name: '',
+			        name: 'Consumo',
 			        data: [375, 300, 275, 280, 267, 254, 380, 310, 301, 312, 327, 382]
 			    }]
 			});
@@ -1615,13 +1617,13 @@ function preloadVideo(arrayOfmp4){
 			    },
 			    xAxis: {
 			    			        categories: [
-						            'Set',
-						            'Out',
-						            'Nov',
-						            'Dez',
-						            'Jan',
-						            'Fev',
-						            'Mar',
+						            'Set/15',
+						            'Out/15',
+						            'Nov/15',
+						            'Dez/15',
+						            'Jan/16',
+						            'Fev/16',
+						            'Mar/16',
 						        ],
 			        title: {
 			            text: 'Meses'
@@ -2155,7 +2157,10 @@ function preloadVideo(arrayOfmp4){
 				}
 			}
 			if (verificacaoLocal == true) {
-				$("#alertConta").hide();
+				$("#alertConta").show();
+				$("#alertConta").removeClass("alert-danger");
+				$("#alertConta").addClass("alert-success");
+				$("#alertConta").html("Resposta correta! Prossiga para a próxima questão   <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>");
 
 				//Disable nos inputs
 				for (var i = 0; i < inputRespostasConta.length; i++) {
@@ -2166,6 +2171,14 @@ function preloadVideo(arrayOfmp4){
 
 
 
+		funciton checkTarifa() {
+			if (distribuicaoTarifa) {
+				$("#iconSetaDireita").show();
+			} else {
+				$("#iconSetaDireita").hide();
+
+			}
+		}
 
 	  /* Funções Gerais */
 	  	//Função que realiza a troca de uma cena para a próxima, bem como adicionar um sleep igual ao tempo de fade
@@ -2277,7 +2290,7 @@ function preloadVideo(arrayOfmp4){
 				case 15:
 					$("#sceneDistribuicaoTarifa").fadeIn(fadeTime);
 					$("#alertConta").hide();
-
+					checkTarifa();
 					break;
 						}
 	  }
