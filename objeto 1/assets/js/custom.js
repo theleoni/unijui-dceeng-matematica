@@ -24,6 +24,7 @@
   var bandeiraSelecionada;
   var viuUsina;
   var distribuicaoTarifa = false;
+  var inputGrafico;
 
 function preloadVideo(arrayOfmp4){
 
@@ -1171,6 +1172,10 @@ function preloadVideo(arrayOfmp4){
 		}
 		});
 
+		$(document).on('click', '#botaoGraficoCustom', function () {
+			verificarGraficoCustom();
+		});
+
 
 		//Verifica se as teclas A, B, C, D ou ENTER foram pressionadas, e realiza a função respectiva (Selecionar alternativa / Enviar resposta)
  		$(document).bind('keydown', function(event) {
@@ -2087,6 +2092,69 @@ function preloadVideo(arrayOfmp4){
  	 chart.reflow();
 	}
 
+	function gerarGraficoCustom() {
+			$(document).ready(function () {
+
+
+				// Gera o gráfico
+				Highcharts.chart('containerGraficoCustom', {
+				    chart: {
+				        type: 'pie',
+				    },
+				      credits: {
+      					enabled: false
+ 					 },
+					title: {
+						text: inputGrafico[0].val()
+					},
+					 subtitle: {
+			       		 text: inputGrafico[1].val()
+			   		 },
+					tooltip: {
+						pointFormat: '{series.name}: <b>{point.y}</b>'
+					},
+					plotOptions: {
+						pie: {
+							allowPointSelect: true,
+							cursor: 'pointer',
+						 dataLabels: {
+              			 	enabled: true,
+                			format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+
+
+							},
+							showInLegend: true
+						}
+					},
+					series: [{
+						name: 'Aparelho',
+						colorByPoint: true,
+						data: [{
+							name: inputGrafico[2].val(),
+							y: inputGrafico[3].val()
+						}, {
+							name: inputGrafico[4].val(),
+							y: inputGrafico[5].val()
+		
+						}, {
+							name: inputGrafico[6].val(),
+							y: inputGrafico[7].val()
+						}, {
+							name: inputGrafico[8].val(),
+							y: inputGrafico[9].val()
+						}, {
+							name: inputGrafico[10].val(),
+							y: inputGrafico[11].val()
+						}, {
+							name: inputGrafico[12].val(),
+							y: inputGrafico[13].val()
+						}
+						]
+					}]
+				});
+			});
+			}
+
 
 		$(document).on('click', '#botaoMatrizVerificar', function () {
 			var verificacaoLocal = true;
@@ -2205,6 +2273,43 @@ function preloadVideo(arrayOfmp4){
 
 			}
 		}
+
+		function getInputValueGrafico() {
+			inputGrafico = [
+			$("#tituloGerarGrafico"),
+			$("#fonteGerarGrafico"),
+			$("#inputGerarGrafico1"),
+			$("#inputGerarGraficoValue1"),
+			$("#inputGerarGrafico2"),
+			$("#inputGerarGraficoValue2"),
+			$("#inputGerarGrafico3"), 
+			$("#inputGerarGraficoValue3"),
+			$("#inputGerarGrafico4"), 
+			$("#inputGerarGraficoValue4"),
+			$("#inputGerarGrafico5"), 
+			$("#inputGerarGraficoValue5"),
+			$("#inputGerarGrafico6"), 
+			$("#inputGerarGraficoValue6")
+			      ];
+		}
+
+		function verificarGraficoCustom() {
+		var verificacaoLocal = true;
+
+			getInputValueGrafico();
+			for (var i = 0; i < inputGrafico.length; i++) {
+				if (inputGrafico[i].val() != "") {
+
+				}
+				else {
+					inputGrafico[i].css('background-color', 'red');
+					verificacaoLocal = false;
+				}
+			} 
+			if (verificacaoLocal == true) {
+				gerarGraficoCustom();
+			}
+	}
 
 	  /* Funções Gerais */
 	  	//Função que realiza a troca de uma cena para a próxima, bem como adicionar um sleep igual ao tempo de fade
