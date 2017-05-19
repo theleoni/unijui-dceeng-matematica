@@ -77,6 +77,7 @@ function preloadVideo(arrayOfmp4){
 		$("#sceneQuestoesBandeiras").hide();
 		$("#imagensFixas").hide();
 		$("#sceneDistribuicaoTarifa").hide();
+		$("#sceneGerarGrafico").hide();
 		preloadVideo([
 			'assets/img/biomassa_animada.mp4',
 			'assets/img/eolica_animada.mp4',
@@ -2316,6 +2317,9 @@ function preloadVideo(arrayOfmp4){
 					$("#sceneDistribuicaoTarifa").fadeIn(fadeTime);
 					$("#alertConta").hide();
 					checkTarifa();
+					break;
+				case 16:
+					$("#sceneGerarGrafico").fadeIn(fadeTime);
 					break;
 						}
 	  }
