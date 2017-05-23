@@ -2494,6 +2494,13 @@ function preloadVideo(arrayOfmp4){
 
 
 
+	  function showHelp() {
+	  	switch (scene) {
+	  		case 1:
+	  			break;
+	  	}
+	  }
+
 function preload(arrayOfImages) {
     $(arrayOfImages).each(function () {
         $('<img />').attr('src',this).appendTo('body').css('display','none');
