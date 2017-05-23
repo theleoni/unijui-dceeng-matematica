@@ -25,6 +25,7 @@
   var viuUsina;
   var distribuicaoTarifa = false;
   var inputGrafico;
+  var tipoGrafico;
 
 function preloadVideo(arrayOfmp4){
 
@@ -2099,7 +2100,7 @@ function preloadVideo(arrayOfmp4){
 				// Gera o gráfico
 				Highcharts.chart('containerGraficoCustom', {
 				    chart: {
-				        type: 'pie',
+				        type: tipoGrafico,
 				    },
 				      credits: {
       					enabled: false
@@ -2127,7 +2128,7 @@ function preloadVideo(arrayOfmp4){
 						}
 					},
 					series: [{
-						name: 'Aparelho',
+						name: 'Gráfico 1',
 						colorByPoint: true,
 						data: [{
 							name: inputGrafico[2],
@@ -2307,6 +2308,8 @@ function preloadVideo(arrayOfmp4){
 				}
 			} 
 			if (verificacaoLocal == true) {
+			tipoGrafico = $("#selecaoGrafico input[type='radio']:checked").val();
+
 				gerarGraficoCustom();
 			}
 	}
