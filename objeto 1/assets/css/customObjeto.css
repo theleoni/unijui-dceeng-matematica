@@ -885,6 +885,12 @@ th, td { padding: 5px; }
 	text-align: justify;
 }
 
+.textoGeracaoGrafico {
+	font-size: calc((2vh + 1vw)/1.4);
+	font-family: 'Roboto Condensed', sans-serif;
+	text-align: justify;
+}
+
 .labelGerarGrafico {
 	text-align: justify;
     font-family: 'Roboto Condensed', sans-serif;

@@ -2105,10 +2105,10 @@ function preloadVideo(arrayOfmp4){
       					enabled: false
  					 },
 					title: {
-						text: inputGrafico[0].val()
+						text: inputGrafico[0]
 					},
 					 subtitle: {
-			       		 text: inputGrafico[1].val()
+			       		 text: inputGrafico[1]
 			   		 },
 					tooltip: {
 						pointFormat: '{series.name}: <b>{point.y}</b>'
@@ -2130,24 +2130,24 @@ function preloadVideo(arrayOfmp4){
 						name: 'Aparelho',
 						colorByPoint: true,
 						data: [{
-							name: inputGrafico[2].val(),
-							y: inputGrafico[3].val()
+							name: inputGrafico[2],
+							y: inputGrafico[3]
 						}, {
-							name: inputGrafico[4].val(),
-							y: inputGrafico[5].val()
+							name: inputGrafico[4],
+							y: inputGrafico[5]
 		
 						}, {
-							name: inputGrafico[6].val(),
-							y: inputGrafico[7].val()
+							name: inputGrafico[6],
+							y: inputGrafico[7]
 						}, {
-							name: inputGrafico[8].val(),
-							y: inputGrafico[9].val()
+							name: inputGrafico[8],
+							y: inputGrafico[9]
 						}, {
-							name: inputGrafico[10].val(),
-							y: inputGrafico[11].val()
+							name: inputGrafico[10],
+							y: inputGrafico[11]
 						}, {
-							name: inputGrafico[12].val(),
-							y: inputGrafico[13].val()
+							name: inputGrafico[12],
+							y: inputGrafico[13]
 						}
 						]
 					}]
@@ -2276,20 +2276,20 @@ function preloadVideo(arrayOfmp4){
 
 		function getInputValueGrafico() {
 			inputGrafico = [
-			$("#tituloGerarGrafico"),
-			$("#fonteGerarGrafico"),
-			$("#inputGerarGrafico1"),
-			$("#inputGerarGraficoValue1"),
-			$("#inputGerarGrafico2"),
-			$("#inputGerarGraficoValue2"),
-			$("#inputGerarGrafico3"), 
-			$("#inputGerarGraficoValue3"),
-			$("#inputGerarGrafico4"), 
-			$("#inputGerarGraficoValue4"),
-			$("#inputGerarGrafico5"), 
-			$("#inputGerarGraficoValue5"),
-			$("#inputGerarGrafico6"), 
-			$("#inputGerarGraficoValue6")
+			$("#tituloGerarGrafico").val(),
+			$("#fonteGerarGrafico").val(),
+			$("#inputGerarGrafico1").val(),
+			parseFloat($("#inputGerarGraficoValue1").val()),
+			$("#inputGerarGrafico2").val(),
+			parseFloat($("#inputGerarGraficoValue2").val()),
+			$("#inputGerarGrafico3").val(), 
+			parseFloat($("#inputGerarGraficoValue3").val()),
+			$("#inputGerarGrafico4").val(), 
+			parseFloat($("#inputGerarGraficoValue4").val()),
+			$("#inputGerarGrafico5").val(), 
+			parseFloat($("#inputGerarGraficoValue5").val()),
+			$("#inputGerarGrafico6").val(), 
+			parseFloat($("#inputGerarGraficoValue6").val())
 			      ];
 		}
 
@@ -2298,7 +2298,7 @@ function preloadVideo(arrayOfmp4){
 
 			getInputValueGrafico();
 			for (var i = 0; i < inputGrafico.length; i++) {
-				if (inputGrafico[i].val() != "") {
+				if (inputGrafico[i] != "") {
 
 				}
 				else {
