@@ -100,7 +100,7 @@ body {
 	
 .navbar {
 	background-color: #00458e;
-	z-index: 0;
+	z-index: 20;
 	height: auto;
 }
 
