@@ -23,6 +23,7 @@
   var graficoMatrizGerado = false;
   var bandeiraSelecionada;
   var viuUsina;
+  var viuImposto;
   var distribuicaoTarifa = false;
   var inputGrafico;
   var tipoGrafico;
@@ -152,18 +153,23 @@ function preloadVideo(arrayOfmp4){
 					case 1:
 					case 5:
 					case 6:
-					case 8:
 					case 9:
 					case 10:
 					case 11:
 					case 12:
+					case 14:
 					case 15:
 						nextScene();
 						break;
-					case 14:
-						nextScene();
-						break;
-
+					case 8:
+						if (viuImposto) {
+							nextScene();
+							break;
+						} else {
+							swal("","Clique nos impostos para ver o conteúdo", "error");
+							break;
+						}
+					break;
 					case 13:
 						switch(questionNumber) {
 							default: 
@@ -462,7 +468,7 @@ function preloadVideo(arrayOfmp4){
 	  //Atualiza os dados contidos no container do imposto, trocando o texto e a cor do background
 	  function showImposto(imposto) {
 		  $("#containerImposto").show();
-		  
+		  viuImposto = true;
 		  switch (imposto) {
 			case 'icms':
 				$("#containerImposto").css("background-color", "#654E44");
