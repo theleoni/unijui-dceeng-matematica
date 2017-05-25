@@ -2497,6 +2497,114 @@ function preloadVideo(arrayOfmp4){
 	  function showHelp() {
 	  	switch (scene) {
 	  		case 1:
+	  			swal("Alerta 1", "Cena 1");
+	  			break;
+	  		case 2:
+	  			swal("Alerta 2", "Cena 2");
+	  			break;
+	  		case 3:
+	  			swal("Alerta 3", "Cena 3");
+	  			break;
+	  		case 4:
+	  			switch (questionNumber) {
+	  				case 1:
+	  					swal("Alerta 4", "Cena 4 - Questão 1");
+	  					break;	  		
+	  				case 2:
+	  					swal("Alerta 4", "Cena 4 - Questão 2");
+	  					break;		
+	  				case 3:
+	  					swal("Alerta 4", "Cena 4 - Questão 3");
+	  					break;	  		
+	  				case 4:
+	  					swal("Alerta 4", "Cena 4 - Questão 4");
+	  					break;			
+	  				case 5:
+	  					swal("Alerta 4", "Cena 4 - Questão 5");
+	  					break;	  		
+	  				case 6:
+	  					swal("Alerta 4", "Cena 4 - Questão 6");
+	  					break;			
+	  				case 7:
+	  					swal("Alerta 4", "Cena 4 - Questão 7");
+	  					break;	  		
+	  				case 8:
+	  					swal("Alerta 4", "Cena 4 - Questão 8");
+	  					break;			
+	  				case 9:
+	  					swal("Alerta 4", "Cena 4 - Questão 9");
+	  					break;	  		
+	  				case 10:
+	  					swal("Alerta 4", "Cena 4 - Questão 10");
+	  					break;		
+	  			}
+	  			break;
+	  		case 5:
+	  			swal("Alerta 5", "Cena 5");
+	  			break;
+	  		case 6:
+	  			swal("Alerta 6", "Cena 6");
+	  			break;
+	  		case 7:
+	  			if (graficoMatrizGerado) {
+	  				switch (questionNumber) {
+	  					case 11:
+	  						swal("Alerta 7", "Cena 7 - Questão 1");
+	  						break;
+	  					case 12:
+	  						swal("Alerta 7", "Cena 7 - Questão 2");
+	  						break;
+	  					case 13:
+	  						swal("Alerta 7", "Cena 7 - Questão 3");
+	  						break;
+	  					case 14:
+	  						swal("Alerta 7", "Cena 7 - Questão 4");
+	  						break;
+	  					case 15:
+	  						swal("Alerta 7", "Cena 7 - Questão 5");
+	  						break;
+	  				}
+ 	  			} else {
+	  	 			swal("Alerta 7", "Cena 7 - Gráfico não gerado");
+
+	  			}
+	  			break;
+	  		case 8:
+				swal("Alerta 8", "Cena 8");
+	  			break;
+	  		case 9:
+				swal("Alerta 9", "Cena 9");
+	  			break;
+	  		case 10:
+				swal("Alerta 10", "Cena 10");
+	  			break;
+	  		case 11:
+				swal("Alerta 11", "Cena 11");		
+	  			break;
+	  		case 12:
+				swal("Alerta 12", "Cena 12");
+	  			break;
+	  		case 13:
+	  			switch (questionNumber) {
+	  				case 16:
+	  					swal("Alerta 13", "Cena 13 - Questão 1");
+	  					break;
+	  				case 17:
+	  					swal("Alerta 13", "Cena 13 - Questão 2");
+	  					break;
+	  				case 18:
+	  					swal("Alerta 13", "Cena 13 - Questão 3");
+	  					break;
+	  			}
+	  			break;
+	  		case 14:
+				swal("Alerta 14", "Cena 14 - Questão 1");
+	  			break;
+	  		case 15:
+				swal("Alerta 15", "Cena 15 - Questão 1");
+	  			break;
+	  		case 16:
+				swal("Alerta 16", "Cena 16");
 	  			break;
 	  	}
 	  }
