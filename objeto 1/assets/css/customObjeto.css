@@ -29,6 +29,17 @@ body {
 	color: black;
 }
 
+.iconFixoMais {
+	z-index: 5;
+	font-size: 40px;
+	color: gray;
+	cursor: pointer;
+}
+
+.iconFixoMais:hover {
+	color:green;
+}
+
 .iconFixoFechar {
 	cursor: pointer;
 	z-index: 1;

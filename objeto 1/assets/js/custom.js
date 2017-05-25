@@ -79,6 +79,7 @@ function preloadVideo(arrayOfmp4){
 		$("#sceneQuestaoImposto").hide();
 		$("#sceneQuestoesBandeiras").hide();
 		$("#imagensFixas").hide();
+
 		$("#sceneDistribuicaoTarifa").hide();
 		$("#sceneGerarGrafico").hide();
 		preloadVideo([
@@ -368,7 +369,8 @@ function preloadVideo(arrayOfmp4){
 		
 		//Exibe as imagens fixas (Setas, ajuda e fechar)
 		function showFixedImages() {
-		$("#imagensFixas").show();
+			$("#imagensFixas").show();
+			$("#iconMais").hide();
 		}
 	
 		//Ocultas as imagens fixas (Setas, ajuda e fechar)
@@ -455,7 +457,7 @@ function preloadVideo(arrayOfmp4){
 		$('#imagemEngenheiroTiposUsinas').show();
 		$('#mensagem').show(); 
 		$("body").css("background-color", "white");
-
+		$("#iconMais").show();
 	}
 	  
 	  
@@ -1145,6 +1147,81 @@ function preloadVideo(arrayOfmp4){
 			$("#inputPotenciaTelevisor")
 			      ];
 		}
+
+		function showExtraInfo() {
+			switch (scene) {
+				case 1:
+					swal({
+						title: "",
+						text: "Campo elétrico é o que chamamos também de campo eletrostático, é o espaço em torno de um corpo eletrizado, no qual se pode observar as ações que o corpo carregado de elétrons é capaz de exercer sobre outros corpos carregados ou não.<br> Referente aos componentes básicos na eletrônica e mesmo no campo da eletricidade temos o capacitor: Que são dois condutores separados por um isolante, geralmente os condutores são placas chamadas de armaduras do capacitor, e o isolante pode ser chamado de dielétrico. O capacito é utilizado em circuitos para armazenar cargas elétricas.",
+						html: true
+					});
+					break;
+				case 2:
+
+					swal({
+						title: "",
+						text: "Quando nos referimos ao consumo de energia elétrica estamos nos referindo a passagem de corrente no condutor de energia em que relacionado com a tensão temos a potência do aparelho. Pensamos como se fosse uma mangueira de água em que a água é a corrente e a pressão da água é a tensão da rede elétrica, assim quanto maior a quantidade de água passando na torneira, maior é o consumo, podemos aplicar a mesma lógica ao condutor elétrico.<br> Porque o fio aquece então? Porque temos uma passagem de corrente maior que o suportado pelo condutor, o que acarretará com o desarmamento do disjuntor termoelétrico consequentemente.",
+						html: true
+					});
+					break;
+				case 4:
+					switch (questionNumber) {
+						case 1:
+						case 2:
+							swal({
+								title: "O que significa KWh?",
+								text: " É uma unidade de medida elétrica, onde essa medida é determinada tempo de uso de um aparelho elétrico. O Watts-hora é o consumo de 1 Watts durante uma hora. Por exemplo em um chuveiro elétrico onde a potência marcada em sua embalagem é de 7500 Watts, significa que essa potência irá ser consumida em uma hora. Se esse chuveiro for ligado 7 horas temos então 7500 Watts X 7 horas = 52.500 Watts-hora, ou seja, 52,5 kWh.",
+								html: true
+							});
+							break;
+
+						case 3:
+						case 4:
+						case 5: 
+							swal({
+								title: "O que significa Joule?",
+								text: " 1 Wh equivale a 3.600 joules,<br>É uma unidade de medida, onde ocorre a passagem de corrente em uma resistência, e que essa passagem de correte é transformada em calor. <br>Entendemos como Joule, a quantidade de elétrons que passa por segundo em um condutor com uma tensão de 1Volt.",
+								html: true
+							});
+							break;
+						case 6:
+							swal({
+								title: "Multiplos da tensão",
+								text: "Megavolt (MV) = 1.000.000 V <br>, Quilovolt (kV) = 1.000 V <br> Volt (V) = 1 V <br> Milivolt (mV) = 0,001 V <br> Microvolt (µV) = 0,000.001 V",
+								html: true
+							});
+							break;
+						case 7:
+						case 8:
+						case 9:
+						case 10:
+							swal ({
+								title: "",
+								text: "Energia elétrica é a capacidade de produzir trabalho. <br> Queda de tensão é a diferença de potencial, ou seja, a diferença de tensão entre dois pontos distintos do circuito elétrico. <br> Potência elétrica é a rapidez com que se gasta energia, ou a rapidez com que se produz trabalho. <br><br> WATT-HORA (Wh) = 3.600 WATTS-SEGUNDOS = 3.600 JOULES <br><br> QUILOWATT-HORA (kWh) =1.000 Wh = 3.600.000 JOULES <br><br> HORSEPOWER (HP) = 746 Watts <br><br> CAVALO-VAPOR (cv) = 736 Watts",
+								html: true
+							});
+							break;
+
+					}
+					break;
+				case 6:
+					swal ({
+						title: "Tranformadores de energia elétrica",
+						text: "De acordo com a ABNT (Associação Brasileira de Normas Técnicas) este é definido como um equipamento elétrico estático. São os elementos da rede de energia que transformam a tensão em outras tensões sejam elas elevadas ou rebaixadas. <br>São peças muito caras na rede elétrica e muito importantes para fazer a interligação da rede de alta tensão para a baixa tensão que é geralmente encontrada nos postes de enrgia nas ruas de nossas cidades.",
+						html: true
+					});
+					break;
+
+				case 9:
+					swal ({
+						title: "Corrente Elétrica",
+						text: 'Para saber calcular a corrente elétrica em um condutor de eletrodoméstico, adotamos a lei de Ohm. George Simon Ohm estudou as relações entre a tensão (V), a corrente (A), e a resistência elétrica (R), e chegou a uma afirmação: "A intensidade da corrente elétrica de um condutor é diretamente proporcional à força eletromotriz e inversamente proporcional à sua resistência elétrica". Com a seguinte fórmula:<br> I = V/R',
+						html: true
+					});
+					break;
+			}
+		}
 	  //Realiza a troca da seleção e salva a seleção atual em uma variável
 	  function selectAnswer (elemento) {
 	  	$(elemento).toggleClass('btn-primary').siblings().removeClass('btn-primary');
@@ -1154,7 +1231,10 @@ function preloadVideo(arrayOfmp4){
 		$(document).on('click', '.btn-questoes', function () {
 			selectAnswer(this);
 		});
-	
+
+		$(document).on('click', '#iconMais', function () {
+			showExtraInfo();
+		});
 		$(document).on('click', '#iconFechar', function () {
 			closeObject();
 		});
@@ -2380,6 +2460,8 @@ function preloadVideo(arrayOfmp4){
 					$("#sceneIntroGeral").fadeIn(fadeTime);
 					$("#sceneIntroGeralText1").html("Olá " + nome + dataJSON.stringsGerais.sceneIntroGeralBalao01);
 					$("#tituloGeral").html("");
+					$("#iconMais").fadeIn(fadeTime);
+
 					break;
 					
 				case 2:
@@ -2387,6 +2469,7 @@ function preloadVideo(arrayOfmp4){
 					$('#detalhesUsinas').hide();
 					$('#additionalSceneTiposUsinas').show();
 					$("#tituloGeral").html(dataJSON.stringsGerais.title1);
+					$("#iconMais").fadeIn(fadeTime);
 					break;
 				
 				case 3:
@@ -2398,6 +2481,8 @@ function preloadVideo(arrayOfmp4){
 					$("#sceneQuestoesGraficos").fadeIn(fadeTime);
 					loadQuestion();
 					listeningToKeyPress = true;
+					$("#iconMais").fadeIn(fadeTime);
+
 					break;
 				case 5:
 					$("#sceneIntroCaminhos").fadeIn(fadeTime);
@@ -2407,6 +2492,8 @@ function preloadVideo(arrayOfmp4){
 					$("#sceneCaminhosEnergia").fadeIn(fadeTime);
 					$("#iconSetaDireita").show();
 					contentSwitcher();
+					$("#iconMais").fadeIn(fadeTime);
+
 					break;
 				case 7:
 					$("#sceneMatrizEnergetica").fadeIn(fadeTime);
@@ -2426,6 +2513,8 @@ function preloadVideo(arrayOfmp4){
 					break;
 				case 9:
 					$("#scenePotenciaEletrodomesticos").fadeIn(fadeTime);
+					$("#iconMais").fadeIn(fadeTime);
+
 					break;
 				case 10:
 					$("#sceneVideo").fadeIn(fadeTime);
@@ -2472,9 +2561,12 @@ function preloadVideo(arrayOfmp4){
 					break;
 				case 1:
 					$("#sceneIntroGeral").fadeOut(fadeTime);
+					$("#iconMais").fadeOut(fadeTime);
+
 					break;
 				case 2:
-					$("#sceneTiposUsinas").fadeOut(fadeTime);
+					$("#sceneTiposUsinas").fadeOut(fadeTime);	
+					$("#iconMais").fadeOut(fadeTime);
 					break;
 				case 3:
 					$("#sceneIntroGraficos").fadeOut(fadeTime);
@@ -2482,6 +2574,8 @@ function preloadVideo(arrayOfmp4){
 				case 4:
 					$("#sceneQuestoesGraficos").fadeOut(fadeTime);
 					listeningToKeyPress = false;
+					$("#iconMais").fadeOut(fadeTime);
+
 					break;
 				case 5:
 					$("#sceneIntroCaminhos").fadeOut(fadeTime);
@@ -2489,6 +2583,8 @@ function preloadVideo(arrayOfmp4){
 				case 6:
 					$("#sceneCaminhosEnergia").fadeOut(fadeTime);
 					transmissionBeingShown = 1;
+					$("#iconMais").fadeOut(fadeTime);
+
  					break;
  				case 7:
  					$("#sceneMatrizEnergetica").fadeOut(fadeTime);
@@ -2499,6 +2595,7 @@ function preloadVideo(arrayOfmp4){
 					break;
 				case 9:
 					$("#scenePotenciaEletrodomesticos").fadeOut(fadeTime);
+					$("#iconMais").fadeOut(fadeTime);
 					break;
 				case 10:
 					$("#sceneVideo").fadeOut(fadeTime);
