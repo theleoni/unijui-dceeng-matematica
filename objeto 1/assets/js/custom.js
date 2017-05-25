@@ -2524,19 +2524,19 @@ function preloadVideo(arrayOfmp4){
 	  					swal("Alerta 4", "Cena 4 - Questão 2");
 	  					break;		
 	  				case 3:
-	  					swal("Alerta 4", "Cena 4 - Questão 3");
+	  					swal("Ajuda!", "Arraste o mouse sobre as barras do gráfico para ver a porcentagem");
 	  					break;	  		
 	  				case 4:
 	  					swal("Alerta 4", "Cena 4 - Questão 4");
 	  					break;			
 	  				case 5:
-	  					swal("Alerta 4", "Cena 4 - Questão 5");
+	  					swal("Ajuda!", "Para saber a média, basta dividir o total do consumo de energia pela quantidade de meses correspondentes");
 	  					break;	  		
 	  				case 6:
 	  					swal("Alerta 4", "Cena 4 - Questão 6");
 	  					break;			
 	  				case 7:
-	  					swal("Alerta 4", "Cena 4 - Questão 7");
+	  					swal("Ajuda!", "Para saber a diferença basta subtrair a energia hidrelétrica pela energia solar");
 	  					break;	  		
 	  				case 8:
 	  					swal("Alerta 4", "Cena 4 - Questão 8");
@@ -2545,7 +2545,7 @@ function preloadVideo(arrayOfmp4){
 	  					swal("Alerta 4", "Cena 4 - Questão 9");
 	  					break;	  		
 	  				case 10:
-	  					swal("Alerta 4", "Cena 4 - Questão 10");
+	  					swal("Ajuda!", "Arraste o mouse sobre as barras do gráfico para ver a porcentagem");
 	  					break;		
 	  			}
 	  			break;
