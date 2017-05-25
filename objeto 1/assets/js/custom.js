@@ -1119,6 +1119,24 @@ function preloadVideo(arrayOfmp4){
 }
 
 
+	function closeObject() {
+				swal({
+		  title: "Você tem certeza?",
+		  text: "O objeto será fechado e o progresso perdido!",
+		  type: "warning",
+		  showCancelButton: true,
+		  confirmButtonColor: "#DD6B55",
+		  confirmButtonText: "Sim, sair!",
+		  closeOnConfirm: false,
+		  cancelButtonText: "Cancelar"
+
+		},
+		function(){
+		  window.location.href = "index.html";
+
+		});
+	}
+
 		function getInputValuesQuestion10() {
 			inputRespostasQuestao10 = 
 			[
@@ -1137,6 +1155,10 @@ function preloadVideo(arrayOfmp4){
 			selectAnswer(this);
 		});
 	
+		$(document).on('click', '#iconFechar', function () {
+			closeObject();
+		});
+
 		  //Binda o evento de clicar no botão à troca de seleção nas questões das matrizes
 		$(document).on('click', '.btnQuestoesMatriz', function () {
 			selectAnswer(this);
