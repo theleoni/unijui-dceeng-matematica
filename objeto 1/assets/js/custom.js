@@ -252,6 +252,7 @@ function preloadVideo(arrayOfmp4){
 				case 11:
 				case 12:
 				case 15:
+				case 16:
 					previousScene();
 					break;
 				case 8:
@@ -2317,8 +2318,8 @@ function preloadVideo(arrayOfmp4){
 	  /* Funções Gerais */
 	  	//Função que realiza a troca de uma cena para a próxima, bem como adicionar um sleep igual ao tempo de fade
 	function nextScene() {
-		if (scene == 332189123) {
-		
+		if (scene == 16) {
+			swal("","Você finalizou o objeto!", "error");
 		}
 		else {
 			unloadScene();
@@ -2333,7 +2334,7 @@ function preloadVideo(arrayOfmp4){
 		//Função que realiza a troca de uma cena para a anterior, bem como adicionar um sleep igual ao tempo de fade
 	function previousScene() {
 		if (scene == 1) {
-			
+			swal("","Não é possível voltar!", "error");
 		}
 		else {
 			unloadScene();
@@ -2488,6 +2489,9 @@ function preloadVideo(arrayOfmp4){
 					break;
 				case 15:
 					$("#sceneDistribuicaoTarifa").fadeOut(fadeTime);
+					break;
+				case 16:
+					$("#sceneGerarGrafico").fadeOut(fadeTime);
 					break;
 			}
 	  }
