@@ -2646,13 +2646,13 @@ function preloadVideo(arrayOfmp4){
 	  					swal("Ajuda!", "Arraste o mouse sobre as barras do gráfico para ver a porcentagem");
 	  					break;	  		
 	  				case 4:
-	  					swal("Alerta 4", "Cena 4 - Questão 4");
+	  					swal("Ajuda!", "Arraste o mouse sobre as barras gráfico para ver a porcentagem.");
 	  					break;			
 	  				case 5:
 	  					swal("Ajuda!", "Para saber a média, basta dividir o total do consumo de energia pela quantidade de meses correspondentes");
 	  					break;	  		
 	  				case 6:
-	  					swal("Alerta 4", "Cena 4 - Questão 6");
+	  					swal("Ajuda!", "Arraste o mouse sobre o gráfico para ver a porcentagem");
 	  					break;			
 	  				case 7:
 	  					swal("Ajuda!", "Para saber a diferença basta subtrair a energia hidrelétrica pela energia solar");
@@ -2678,23 +2678,23 @@ function preloadVideo(arrayOfmp4){
 	  			if (graficoMatrizGerado) {
 	  				switch (questionNumber) {
 	  					case 11:
-	  						swal("Alerta 7", "Cena 7 - Questão 1");
+	  						swal("Ajuda!", "Para facilitar sua resposta observe a tabela");
 	  						break;
 	  					case 12:
-	  						swal("Alerta 7", "Cena 7 - Questão 2");
+	  						swal("Ajuda!", "Para facilitar sua resposta observe a tabela");
 	  						break;
 	  					case 13:
-	  						swal("Alerta 7", "Cena 7 - Questão 3");
+	  						swal("Ajuda!", "Para facilitar sua resposta observe a tabela");
 	  						break;
 	  					case 14:
-	  						swal("Alerta 7", "Cena 7 - Questão 4");
+	  						swal("Ajuda!", "Observe no texto para responder essa questão");
 	  						break;
 	  					case 15:
-	  						swal("Alerta 7", "Cena 7 - Questão 5");
+	  						swal("Ajuda!", "Observe e analise atentamente a tabela e o gráfico");
 	  						break;
 	  				}
  	  			} else {
-	  	 			swal("Alerta 7", "Cena 7 - Gráfico não gerado");
+	  	 			swal("Ajuda!", "Preencha a tabela com os dados do texto");
 
 	  			}
 	  			break;
@@ -2702,7 +2702,7 @@ function preloadVideo(arrayOfmp4){
 				swal("Alerta 8", "Cena 8");
 	  			break;
 	  		case 9:
-				swal("Alerta 9", "Cena 9");
+				swal("Ajuda!", "Coloque o valor que sua companhia de energia cobra por 1 kw. Caso você não saiba use R$ 0,50");
 	  			break;
 	  		case 10:
 				swal("Alerta 10", "Cena 10");
@@ -2716,21 +2716,21 @@ function preloadVideo(arrayOfmp4){
 	  		case 13:
 	  			switch (questionNumber) {
 	  				case 16:
-	  					swal("Alerta 13", "Cena 13 - Questão 1");
+	  					swal("Ajuda!", "Em caso de dúvida, volte a tela anterior");
 	  					break;
 	  				case 17:
-	  					swal("Alerta 13", "Cena 13 - Questão 2");
+	  					swal("Ajuda!", "Em caso de dúvida volte 2 telas");
 	  					break;
 	  				case 18:
-	  					swal("Alerta 13", "Cena 13 - Questão 3");
+	  					swal("Ajuda!", "Em caso de dúvida volte 3 telas");
 	  					break;
 	  			}
 	  			break;
 	  		case 14:
-				swal("Alerta 14", "Cena 14 - Questão 1");
+				swal("Ajuda!", "Observe atentamente o gráfico e a pergunta da questão. Passe o mouse sobre o gráfico para ver a porcentagem");
 	  			break;
 	  		case 15:
-				swal("Alerta 15", "Cena 15 - Questão 1");
+				swal("Ajuda!", "Passe o mouse sobre os quadros na tela superior direita para observar a porcentagem.");
 	  			break;
 	  		case 16:
 				swal("Alerta 16", "Cena 16");
