@@ -1171,7 +1171,7 @@ function preloadVideo(arrayOfmp4){
 						case 2:
 							swal({
 								title: "O que significa KWh?",
-								text: " É uma unidade de medida elétrica, onde essa medida é determinada tempo de uso de um aparelho elétrico. O Watts-hora é o consumo de 1 Watts durante uma hora. Por exemplo em um chuveiro elétrico onde a potência marcada em sua embalagem é de 7500 Watts, significa que essa potência irá ser consumida em uma hora. Se esse chuveiro for ligado 7 horas temos então 7500 Watts X 7 horas = 52.500 Watts-hora, ou seja, 52,5 kWh.",
+								text: " É uma unidade de medida elétrica, onde essa medida é determinada tempo de uso de um aparelho elétrico. O Watt-hora é o consumo de 1 Watts durante uma hora. Por exemplo em um chuveiro elétrico onde a potência marcada em sua embalagem é de 7500 Watts, significa que essa potência irá ser consumida em uma hora. Se esse chuveiro for ligado 7 horas temos então 7500 Watts X 7 horas = 52.500 Watt-hora, ou seja, 52,5 kWh.",
 								html: true
 							});
 							break;
@@ -1207,8 +1207,8 @@ function preloadVideo(arrayOfmp4){
 					break;
 				case 6:
 					swal ({
-						title: "Tranformadores de energia elétrica",
-						text: "De acordo com a ABNT (Associação Brasileira de Normas Técnicas) este é definido como um equipamento elétrico estático. São os elementos da rede de energia que transformam a tensão em outras tensões sejam elas elevadas ou rebaixadas. <br>São peças muito caras na rede elétrica e muito importantes para fazer a interligação da rede de alta tensão para a baixa tensão que é geralmente encontrada nos postes de enrgia nas ruas de nossas cidades.",
+						title: "Transformadores de energia elétrica",
+						text: "De acordo com a ABNT (Associação Brasileira de Normas Técnicas) este é definido como um equipamento elétrico estático. São os elementos da rede de energia que transformam a tensão em outras tensões sejam elas elevadas ou rebaixadas. <br>São peças muito caras na rede elétrica e muito importantes para fazer a interligação da rede de alta tensão para a baixa tensão que é geralmente encontrada nos postes de energia nas ruas de nossas cidades.",
 						html: true
 					});
 					break;
