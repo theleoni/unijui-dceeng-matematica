@@ -40,7 +40,7 @@
 	},
 	"questao1": {
 	"numeroQuestao": "1.",
-	"textoQuestao": "De acordo com o gráfico, qual o aparelho que possuí o <b>maior</b> consumo de energia?",
+	"textoQuestao": "De acordo com o gráfico, qual o eletrodoméstico que possuí o <b>maior</b> consumo de energia?",
 	"alternativa1Questao": "<span class='containerLetra'>A</span>Iluminação",
 	"alternativa2Questao": "<span class='containerLetra'>B</span>Televisão",
 	"alternativa3Questao": "<span class='containerLetra'>C</span>Chuveiro elétrico",
@@ -49,7 +49,7 @@
 
 	"questao2": {
 	"numeroQuestao": "2.",
-	"textoQuestao": "De acordo com o gráfico, qual o aparelho que possuí o <b>menor</b> consumo de energia?",
+	"textoQuestao": "De acordo com o gráfico, qual o eletrodoméstico que possuí o <b>menor</b> consumo de energia?",
 	"alternativa1Questao": "<span class='containerLetra'>A</span>Ferro Elétrico",
 	"alternativa2Questao": "<span class='containerLetra'>B</span>Outros",
 	"alternativa3Questao": "<span class='containerLetra'>C</span>Televisão",
@@ -84,7 +84,7 @@
 	},
 	"questao7": {
 		"numeroQuestao": "7.",
-		"textoQuestao": "De acordo com o gráfico e a tabela apresentados, qual a diferença em <b>porcentagem</b> da produção entre <i>Energia Solar</i> e <i>Energia Hidrelétrica</i>?"
+		"textoQuestao": "De acordo com o gráfico apresentado, qual a diferença em <b>porcentagem</b> da produção entre <i>Energia Solar</i> e <i>Energia Hidrelétrica</i>?"
 	},
 	"questao8": {
 	"numeroQuestao": "8.",

@@ -12,7 +12,7 @@
   var ftTransmission = true;
   var dataJSON;
   var respostaCorreta7 = 63.99;
-  var respostaCorreta18 = 4.50;
+  var respostaCorreta18 = 3.50;
   var respostasCorretasQuestion10 = [45, 14, 78];
   var inputRespostasQuestao10;
   var inputRespostasConta;
@@ -79,7 +79,7 @@ function preloadVideo(arrayOfmp4){
 		$("#sceneQuestaoImposto").hide();
 		$("#sceneQuestoesBandeiras").hide();
 		$("#imagensFixas").hide();
-
+		$("#calculadora").hide();
 		$("#sceneDistribuicaoTarifa").hide();
 		$("#sceneGerarGrafico").hide();
 		preloadVideo([
@@ -371,6 +371,7 @@ function preloadVideo(arrayOfmp4){
 		function showFixedImages() {
 			$("#imagensFixas").show();
 			$("#iconMais").hide();
+			$("#iconCalculadora").hide();
 		}
 	
 		//Ocultas as imagens fixas (Setas, ajuda e fechar)
@@ -554,6 +555,7 @@ function preloadVideo(arrayOfmp4){
 	  			$("#questionGroup").hide();
 	  			$("#inputRespostasceneQuestoesGraficos").hide();
 	  			$("#tabelaQuestoesGraficos").hide();
+	  			$("#iconCalculadora").show();
 	  			grafico1();
 
 	  				if (corretas[0] == false) {
@@ -579,6 +581,7 @@ function preloadVideo(arrayOfmp4){
 	  			$("#questionGroup").hide();
 	  			$("#tabelaQuestoesGraficos").hide();
 	  			$("#inputRespostasceneQuestoesGraficos").hide();
+	  			$("#iconCalculadora").hide();
 
 	  			grafico1();
 
@@ -1286,6 +1289,10 @@ function preloadVideo(arrayOfmp4){
 			verificarGraficoCustom();
 		});
 
+		$(document).on('click', '#iconCalculadora', function () {
+			$("#geral").hide();
+			$("#calculadora").show();	
+		});
 
 		//Verifica se as teclas A, B, C, D ou ENTER foram pressionadas, e realiza a função respectiva (Selecionar alternativa / Enviar resposta)
  		$(document).bind('keydown', function(event) {
@@ -1734,7 +1741,7 @@ function preloadVideo(arrayOfmp4){
 			    },
 
 			    subtitle: {
-			        text: 'Fonte:'
+			        text: ''
 			    },
 
 			    yAxis: {
@@ -1853,7 +1860,7 @@ function preloadVideo(arrayOfmp4){
 				        text: 'Consumo de energia elétrica por região geográfica em Janeiro de 2017 em GWh'
 				    },
 				    subtitle: {
-				        text: 'Fonte: '
+				        text: ''
 				    },
 				    xAxis: {
 				        categories: ['Centro-Oeste', 'Sul', 'Sudeste', 'Nordeste', 'Norte'],
@@ -1940,6 +1947,7 @@ function preloadVideo(arrayOfmp4){
 			    },
 			    tooltip: {
 					pointFormat: 'Potência: {point.y}',
+					valueSuffix: 'W',
 			        shared: true
 			    },
 			    plotOptions: {
@@ -2044,7 +2052,7 @@ function preloadVideo(arrayOfmp4){
 
 							}
 
-				    }, 3500);
+				    }, 10000);
 			}
 			else {
 				loadTransmissionData();

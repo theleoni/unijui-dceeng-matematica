@@ -25,6 +25,13 @@ body {
 	color: gray;
 }
 
+.iconFixoCalculadora {
+	cursor: pointer;
+	z-index: 1;
+	font-size: 40px;
+	color: green;
+}
+
 .iconFixoHelp:hover {
 	color: black;
 }

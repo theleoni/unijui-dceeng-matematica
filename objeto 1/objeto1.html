@@ -2,6 +2,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <head>
+
+
 	<!-- jQuery -->
 	<script src="assets/js/jquery.js"></script>
 
@@ -17,6 +19,8 @@
 	<!-- SweetAlerts -->
 	<script src="assets/sweetalert/dist/sweetalert.min.js"></script>
 
+	<!--Custom CSS Calculadora -->
+	<link rel="stylesheet" type="text/css" href="assets/css/calculadoraObj1.css">
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
@@ -52,7 +56,10 @@
 			<div class="col-xs-offset-4 col-xs-4">
 				<div id="tituloGeral" class="textTitleContent"> </div>
 			</div>
-			<div class="col-xs-offset-1 col-xs-1 text-right" > 
+			<div class="col-xs-1 text-right">
+				<span id="iconCalculadora" title="Calculadora" class="iconFixoCalculadora glyphicon glyphicon-th"> </span>
+			</div>
+			<div class="col-xs-1 text-right" > 
 				<span id="iconMais" title="Mais informações" class="iconFixoMais glyphicon glyphicon-plus"> </span>
 			</div>
 			<div class="col-xs-1 text-right" id="iconHelp">
@@ -330,24 +337,24 @@
 							    <tbody>
 							      <tr>
 							        <td>Celular</td>
-							        <td>7</td>
+							        <td>7W</td>
 
 							      </tr>
 							      <tr>
 							        <td>Impressora</td>
-							        <td><input id="inputPotenciaImpressora" type="text" class="form-control" ></td>
+							        <td><input id="inputPotenciaImpressora" type="text"> W</td>
 							      </tr>
 							      <tr>
 							        <td>Lâmpada</td>
-							        <td><input id="inputPotenciaLampada" type="text" class="form-control"></td>
+							        <td><input id="inputPotenciaLampada" type="text">W</td>
 							      </tr>
 							      <tr>	
 							        <td>Televisor 21'</td>
-							        <td><input id="inputPotenciaTelevisor" type="text" class="form-control" ></td>
+							        <td><input id="inputPotenciaTelevisor" type="text">W</td>
 							      </tr>
 							      <tr>
 							        <td>Ventilador</td>
-							        <td>100</td>
+							        <td>100W</td>
 							      </tr>				      				      
 							    </tbody>
 						  	</table>
@@ -544,9 +551,6 @@
 							<button type="button" id="botaoAtualizarTabelaPotencia" class="btn btn-primary btn-block">Atualizar tabela</button>
 						</div>
 					</div>
-				<div class="col-xs-12" style="padding-left:0px">
-					<p class="textoPotenciaEletro"> Complete os gastos da primeira e última linha da tabela . Consulte a ajuda caso necessite.</p>
-				</div>
 			</div>
 
 			<div class="col-xs-offset-1 col-xs-6">
@@ -665,14 +669,14 @@
 				<img class="img-responsive" src="assets/img/bandeiraAmarelaComListra.png">
 				<p class="titulosBandeiras"> AMARELA </p>
 				<p class="textosBandeiras"> Usinas térmicas ativadas </p>
-				<p class="subBandeiras" style="color:#FFC100"> ♦ Acrescente R$1,50 para cada 100kWh </p>
+				<p class="subBandeiras" style="color:#FFC100"> ♦ Acrescente R$2,00 para cada 100kWh </p>
 			</div>
 			<div class="col-xs-2 noPadding">
 				<img class="img-responsive" src="assets/img/bandeiraVermelhaComListra.png">
 				<p class="titulosBandeiras"> VERMELHA </p>
 				<p id="textoBandeiraVermelha" class="textosBandeiras"> Usinas térmicas ativadas e alta demanda </p>
 				<p class="subBandeiras" style="color:#FF4132"> ♦ Patamar 1: Acrescente R$3,00 para cada 100kWh<br>
-				♦ Patamar 2: Acrescente R$4,50 para cada 100kWh</p>
+				♦ Patamar 2: Acrescente R$3,50 para cada 100kWh</p>
 			</div>
 		</div>
 	</div>
@@ -882,6 +886,36 @@
 		</div>
 	</div>
 </div>
+		<div id="calculadora">
+			<div class="top">
+				<span class="clear">C</span>
+				<div class="screen"></div>
+			</div>
+			
+			<div class="keys">
+				<!-- operators and other keys -->
+				<span>7</span>
+				<span>8</span>
+				<span>9</span>
+				<span class="operator">+</span>
+				<span>4</span>
+				<span>5</span>
+				<span>6</span>
+				<span class="operator">-</span>
+				<span>1</span>
+				<span>2</span>
+				<span>3</span>
+				<span class="operator">÷</span>
+				<span>0</span>
+				<span>.</span>
+				<span class="eval">=</span>
+				<span class="operator">x</span>
+			</div>
+		</div>
+
+
+			<!-- Calculadora -->
+	<script src="assets/js/calculadora.js"></script>
 
 </body>
 </html>
