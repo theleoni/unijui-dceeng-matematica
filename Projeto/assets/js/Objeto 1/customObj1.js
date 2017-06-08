@@ -52,7 +52,7 @@ function preloadVideo(arrayOfmp4){
 }
 
   	//Recupera as informações do arquivo data.json
-  	$.getJSON('assets/js/data.json', function(data) {
+  	$.getJSON('../assets/js/Objeto 1/dataObj1.json', function(data) {
   		dataJSON = data;
   	  });
 
@@ -83,48 +83,48 @@ function preloadVideo(arrayOfmp4){
 		$("#sceneDistribuicaoTarifa").hide();
 		$("#sceneGerarGrafico").hide();
 		preloadVideo([
-			'assets/img/biomassa_animada.mp4',
-			'assets/img/eolica_animada.mp4',
-			'assets/img/fossil_animada.mp4',
-			'assets/img/nuclear_animada.mp4',
-			'assets/img/hidreletrica_animada.mp4',
-			'assets/img/solar_animada.mp4'
+			'../assets/img/Objeto 1/biomassa_animada.mp4',
+			'../assets/img/Objeto 1/eolica_animada.mp4',
+			'../assets/img/Objeto 1/fossil_animada.mp4',
+			'../assets/img/Objeto 1/nuclear_animada.mp4',
+			'../assets/img/Objeto 1/hidreletrica_animada.mp4',
+			'../assets/img/Objeto 1/solar_animada.mp4'
 
 			])
 		preload([
-    'assets/img/detalhe_biomassa.png',
-    'assets/img/detalhe_hidreletrica.png',
-    'assets/img/detalhe_eolica.png',
-    'assets/img/detalhe_fossil.png',
-    'assets/img/detalhe_nuclear.png',
-    'assets/img/detalhe_solar.png',
-    'assets/img/biomassa.png',
-    'assets/img/eolica.png',
-    'assets/img/fossil.png',
-    'assets/img/hidreletrica.png',
-    'assets/img/nuclear.png',
-    'assets/img/solar.png',
-    'assets/img/bubble1.png',
-    'assets/img/bubble2.png',
-    'assets/img/imagem1CenaIntroGraficos.png',
-    'assets/img/imagem2CenaIntroGraficos.png',
-    'assets/img/imagem3CenaIntroGraficos.png',
-    'assets/img/imagem4CenaIntroGraficos.png',
-    'assets/img/imagem5CenaIntroGraficos.png',
-    'assets/img/imagem6CenaIntroGraficos.png',
-    'assets/img/imagem7CenaIntroGraficos.png',
-    'assets/img/CIP.png',
-    'assets/img/COFINS.png',
-    'assets/img/ICMS.png',
-    'assets/img/PISPASEP.png',
-    'assets/img/TUST.png',
-    'assets/img/engenheiro_esquerda.png',
-    'assets/img/circular1.gif',
-    'assets/img/circular2.gif',
-    'assets/img/circular3.gif',
-    'assets/img/circular4.gif',
-    'assets/img/circular5.gif',
-    'assets/img/circular6.gif'
+    '../assets/img/Objeto 1/detalhe_biomassa.png',
+    '../assets/img/Objeto 1/detalhe_hidreletrica.png',
+    '../assets/img/Objeto 1/detalhe_eolica.png',
+    '../assets/img/Objeto 1/detalhe_fossil.png',
+    '../assets/img/Objeto 1/detalhe_nuclear.png',
+    '../assets/img/Objeto 1/detalhe_solar.png',
+    '../assets/img/Objeto 1/biomassa.png',
+    '../assets/img/Objeto 1/eolica.png',
+    '../assets/img/Objeto 1/fossil.png',
+    '../assets/img/Objeto 1/hidreletrica.png',
+    '../assets/img/Objeto 1/nuclear.png',
+    '../assets/img/Objeto 1/solar.png',
+    '../assets/img/Objeto 1/bubble1.png',
+    '../assets/img/Objeto 1/bubble2.png',
+    '../assets/img/Objeto 1/imagem1CenaIntroGraficos.png',
+    '../assets/img/Objeto 1/imagem2CenaIntroGraficos.png',
+    '../assets/img/Objeto 1/imagem3CenaIntroGraficos.png',
+    '../assets/img/Objeto 1/imagem4CenaIntroGraficos.png',
+    '../assets/img/Objeto 1/imagem5CenaIntroGraficos.png',
+    '../assets/img/Objeto 1/imagem6CenaIntroGraficos.png',
+    '../assets/img/Objeto 1/imagem7CenaIntroGraficos.png',
+    '../assets/img/Objeto 1/CIP.png',
+    '../assets/img/Objeto 1/COFINS.png',
+    '../assets/img/Objeto 1/ICMS.png',
+    '../assets/img/Objeto 1/PISPASEP.png',
+    '../assets/img/Objeto 1/TUST.png',
+    '../assets/img/Objeto 1/engenheiro_esquerda.png',
+    '../assets/img/Objeto 1/circular1.gif',
+    '../assets/img/Objeto 1/circular2.gif',
+    '../assets/img/Objeto 1/circular3.gif',
+    '../assets/img/Objeto 1/circular4.gif',
+    '../assets/img/Objeto 1/circular5.gif',
+    '../assets/img/Objeto 1/circular6.gif'
 ]);
 
 		
@@ -399,52 +399,52 @@ function preloadVideo(arrayOfmp4){
 		hideFixedImages();
 		switch (usina) {
 			case 'hidreletrica': 
-				$('#imgUsina').attr("src", "assets/img/hidreletrica_animada.mp4");
+				$('#imgUsina').attr("src", "../assets/img/Objeto 1/hidreletrica_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaHidreletrica);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleHidreletrica);
 				$('#sceneTiposUsinasSub1').css("background-color", "#008CAF")
-				$('#imgDetalhesSceneTiposUsinas').attr('src', 'assets/img/detalhe_hidreletrica.png')
+				$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_hidreletrica.png')
 
 				break;
 			case 'eolica':
-				$('#imgUsina').attr("src", "assets/img/eolica_animada.mp4");
+				$('#imgUsina').attr("src", "../assets/img/Objeto 1/eolica_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaEolica);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleEolica);
 				$('#sceneTiposUsinasSub1').css("background-color", "#008CAF")
-				$('#imgDetalhesSceneTiposUsinas').attr('src', 'assets/img/detalhe_eolica.png')
+				$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_eolica.png')
 				break;
 			case 'fossil':
-				$('#imgUsina').attr("src", "assets/img/fossil_animada.mp4");
+				$('#imgUsina').attr("src", "../assets/img/Objeto 1/fossil_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaFossil);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleFossil);
 				$('#sceneTiposUsinasSub1').css("background-color", "#0C99AB")
-				$('#imgDetalhesSceneTiposUsinas').attr('src', 'assets/img/detalhe_fossil.png')
+				$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_fossil.png')
 
 
 				break;
 			case 'nuclear':
-				$('#imgUsina').attr("src", "assets/img/nuclear_animada.mp4");
+				$('#imgUsina').attr("src", "../assets/img/Objeto 1/nuclear_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaNuclear);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleNuclear);
 				$('#sceneTiposUsinasSub1').css("background-color", "#0C99AB")
-				$('#imgDetalhesSceneTiposUsinas').attr('src', 'assets/img/detalhe_nuclear.png')
+				$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_nuclear.png')
 
 
 				break;
 			case 'solar':
-				$('#imgUsina').attr("src", "assets/img/solar_animada.mp4");
+				$('#imgUsina').attr("src", "../assets/img/Objeto 1/solar_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaSolar);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleSolar);
 				$('#sceneTiposUsinasSub1').css("background-color", "#0C99AB")
-				$('#imgDetalhesSceneTiposUsinas').attr('src', 'assets/img/detalhe_solar.png')
+				$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_solar.png')
 
 				break;	
 			case 'biomassa':
-				$('#imgUsina').attr("src", "assets/img/biomassa_animada.mp4");
+				$('#imgUsina').attr("src", "../assets/img/Objeto 1/biomassa_animada.mp4");
 				$('#textoUsina').html(dataJSON.textosUsinas.usinaBiomassa);
 				$('#tituloUsina').html(dataJSON.textosUsinas.titleBiomassa);
 				$('#sceneTiposUsinasSub1').css("background-color", "#008CAF")
-				$('#imgDetalhesSceneTiposUsinas').attr('src', 'assets/img/detalhe_biomassa.png')
+				$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_biomassa.png')
 
 				break;	
 		}
@@ -512,24 +512,24 @@ function preloadVideo(arrayOfmp4){
 	  	/* Intro questões */
 	
 	function showConjuntoImagens1IntroQuestoesGraficos () {
-		$('#sceneIntroGraficosImg1').attr("src", "assets/img/imagem1CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg1').attr("src", "../assets/img/Objeto 1/imagem1CenaIntroGraficos.png").fadeIn(500);
 		$('#sceneIntroGraficosImg1').attr('title', 'Jornais');
-		$('#sceneIntroGraficosImg2').attr("src", "assets/img/imagem2CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg2').attr("src", "../assets/img/Objeto 1/imagem2CenaIntroGraficos.png").fadeIn(500);
 		$('#sceneIntroGraficosImg2').attr('title', 'Livros');
-		$('#sceneIntroGraficosImg3').attr("src", "assets/img/imagem3CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg3').attr("src", "../assets/img/Objeto 1/imagem3CenaIntroGraficos.png").fadeIn(500);
 		$('#sceneIntroGraficosImg3').attr('title', 'Computador');
-		$('#sceneIntroGraficosImg4').attr("src", "assets/img/imagem4CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg4').attr("src", "../assets/img/Objeto 1/imagem4CenaIntroGraficos.png").fadeIn(500);
 		$('#sceneIntroGraficosImg4').attr('title', 'Televisão');
 		$('#sceneIntroGraficosImg1').show().siblings().show();
 
 	}
 	
 	function showConjuntoImagens2IntroQuestoesGraficos() {
-		$('#sceneIntroGraficosImg2').attr("src", "assets/img/imagem5CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg2').attr("src", "../assets/img/Objeto 1/imagem5CenaIntroGraficos.png").fadeIn(500);
 		$('#sceneIntroGraficosImg2').attr('title', 'Coleta');
-		$('#sceneIntroGraficosImg3').attr("src", "assets/img/imagem6CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg3').attr("src", "../assets/img/Objeto 1/imagem6CenaIntroGraficos.png").fadeIn(500);
 		$('#sceneIntroGraficosImg3').attr('title', 'Descrição, Análise, e Interpretação');
-		$('#sceneIntroGraficosImg4').attr("src", "assets/img/imagem7CenaIntroGraficos.png").fadeIn(500);
+		$('#sceneIntroGraficosImg4').attr("src", "../assets/img/Objeto 1/imagem7CenaIntroGraficos.png").fadeIn(500);
 		$('#sceneIntroGraficosImg4').attr('title', 'Organização');
 		$('#sceneIntroGraficosImg1').show().siblings().show();
 		$('#sceneIntroGraficosImg1').hide();
@@ -1377,9 +1377,9 @@ function preloadVideo(arrayOfmp4){
 
 		 			case 16:
 		 			case 17:
-						$("#bandeiraVerdeOpcao").attr("src", "assets/img/bandeiraVerde.png")
-						$("#bandeiraAmarelaOpcao").attr("src", "assets/img/bandeiraAmarela.png")
-						$("#bandeiraVermelhaOpcao").attr("src", "assets/img/bandeiraVermelha.png")
+						$("#bandeiraVerdeOpcao").attr("src", "../assets/img/Objeto 1/bandeiraVerde.png")
+						$("#bandeiraAmarelaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraAmarela.png")
+						$("#bandeiraVermelhaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraVermelha.png")
 						$('.bandeiraOpcao').css('cursor','pointer');
 						$("#alertAnswerBandeiras").hide();
 
@@ -1493,16 +1493,16 @@ function preloadVideo(arrayOfmp4){
 						break;
 
 					case 16:
-						$("#bandeiraVerdeOpcao").attr("src", "assets/img/bandeiraVerde.png")
-						$("#bandeiraAmarelaOpcao").attr("src", "assets/img/bandeiraCinza.png")
-						$("#bandeiraVermelhaOpcao").attr("src", "assets/img/bandeiraCinza.png")
+						$("#bandeiraVerdeOpcao").attr("src", "../assets/img/Objeto 1/bandeiraVerde.png")
+						$("#bandeiraAmarelaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraCinza.png")
+						$("#bandeiraVermelhaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraCinza.png")
 						$('.bandeiraOpcao').css('cursor','not-allowed');
 						updateAlertOnQuestionChange();
 						break;
 					case 17:
-						$("#bandeiraVerdeOpcao").attr("src", "assets/img/bandeiraCinza.png")
-						$("#bandeiraAmarelaOpcao").attr("src", "assets/img/bandeiraCinza.png")
-						$("#bandeiraVermelhaOpcao").attr("src", "assets/img/bandeiraVermelha.png")
+						$("#bandeiraVerdeOpcao").attr("src", "../assets/img/Objeto 1/bandeiraCinza.png")
+						$("#bandeiraAmarelaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraCinza.png")
+						$("#bandeiraVermelhaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraVermelha.png")
 						$('.bandeiraOpcao').css('cursor','not-allowed');
 						updateAlertOnQuestionChange();
 
@@ -2067,7 +2067,7 @@ function preloadVideo(arrayOfmp4){
 								$('#imgCirculo').fadeOut(500);
 								$('#textosceneCaminhosEnergia').fadeOut(500);
 								sleep(500).then(() => {
-									$('#imgCirculo').attr("src", "assets/img/circular1.gif").fadeIn(1000);
+									$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular1.gif").fadeIn(1000);
 									$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg1).fadeIn(1000);
 								});
 								break;
@@ -2077,7 +2077,7 @@ function preloadVideo(arrayOfmp4){
 								$('#imgCirculo').fadeOut(500);
 								$('#textosceneCaminhosEnergia').fadeOut(500);
 								sleep(500).then(() => {
-									$('#imgCirculo').attr("src", "assets/img/circular2.gif").fadeIn(1000);
+									$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular2.gif").fadeIn(1000);
 									$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg2).fadeIn(1000);
 								});								
 								break;
@@ -2086,7 +2086,7 @@ function preloadVideo(arrayOfmp4){
 								$('#imgCirculo').fadeOut(500);
 								$('#textosceneCaminhosEnergia').fadeOut(500);
 								sleep(500).then(() => {
-								$('#imgCirculo').attr("src", "assets/img/circular3.gif").fadeIn(1000);
+								$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular3.gif").fadeIn(1000);
 								$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg3).fadeIn(1000);
 								});	
 
@@ -2096,7 +2096,7 @@ function preloadVideo(arrayOfmp4){
 								$('#imgCirculo').fadeOut(500);
 								$('#textosceneCaminhosEnergia').fadeOut(500);
 								sleep(500).then(() => {
-									$('#imgCirculo').attr("src", "assets/img/circular4.gif").fadeIn(1000);
+									$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular4.gif").fadeIn(1000);
 									$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg4).fadeIn(1000);
 								});									
 								break;
@@ -2105,7 +2105,7 @@ function preloadVideo(arrayOfmp4){
 								$('#imgCirculo').fadeOut(500);
 								$('#textosceneCaminhosEnergia').fadeOut(500);
 								sleep(500).then(() => {
-									$('#imgCirculo').attr("src", "assets/img/circular5.gif").fadeIn(1000);
+									$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular5.gif").fadeIn(1000);
 									$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
 								});									
 								break;
@@ -2114,7 +2114,7 @@ function preloadVideo(arrayOfmp4){
 								$('#imgCirculo').fadeOut(500);
 								$('#textosceneCaminhosEnergia').fadeOut(500);
 								sleep(500).then(() => {
-								$('#imgCirculo').attr("src", "assets/img/circular6.gif").fadeIn(1000);
+								$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular6.gif").fadeIn(1000);
 								$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
 								});	
 
