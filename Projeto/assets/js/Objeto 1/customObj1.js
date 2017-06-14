@@ -27,42 +27,43 @@
   var distribuicaoTarifa = false;
   var inputGrafico;
   var tipoGrafico;
+  var calculadoraAberta;
 
-function preloadVideo(arrayOfmp4){
+  function preloadVideo(arrayOfmp4){
 
-	    $(arrayOfmp4).each(function () {
-			var req = new XMLHttpRequest();
-			req.open('GET', this, true);
-			req.responseType = 'blob';
+  	$(arrayOfmp4).each(function () {
+  		var req = new XMLHttpRequest();
+  		req.open('GET', this, true);
+  		req.responseType = 'blob';
 
-			req.onload = function() {
-			   if (this.status === 200) {
-			      var videoBlob = this.response;
-			      var vid = URL.createObjectURL(videoBlob); 
-			      this.src = vid;
-			   }
-			}
-			req.onerror = function() {
+  		req.onload = function() {
+  			if (this.status === 200) {
+  				var videoBlob = this.response;
+  				var vid = URL.createObjectURL(videoBlob); 
+  				this.src = vid;
+  			}
+  		}
+  		req.onerror = function() {
 			   // Error
 			}
 
 			req.send();
-    });
-	
-}
+		});
+
+  }
 
   	//Recupera as informações do arquivo data.json
   	$.getJSON('../assets/js/Objeto 1/dataObj1.json', function(data) {
   		dataJSON = data;
-  	  });
+  	});
 
   	//Adiciona um sleep equivalente ao tempo passado como input
-	function sleep (time) {
-	return new Promise((resolve) => setTimeout(resolve, time));
-	}
+  	function sleep (time) {
+  		return new Promise((resolve) => setTimeout(resolve, time));
+  	}
 
 	//Oculta as cenas ao carregar a página
-  $( document ).ready(function() {
+	$( document ).ready(function() {
 		$("#alertNome").hide();
 		$("#sceneIntroGeral").hide();
 		$("#sceneTiposUsinas").hide();
@@ -92,61 +93,61 @@ function preloadVideo(arrayOfmp4){
 
 			])
 		preload([
-    '../assets/img/Objeto 1/detalhe_biomassa.png',
-    '../assets/img/Objeto 1/detalhe_hidreletrica.png',
-    '../assets/img/Objeto 1/detalhe_eolica.png',
-    '../assets/img/Objeto 1/detalhe_fossil.png',
-    '../assets/img/Objeto 1/detalhe_nuclear.png',
-    '../assets/img/Objeto 1/detalhe_solar.png',
-    '../assets/img/Objeto 1/biomassa.png',
-    '../assets/img/Objeto 1/eolica.png',
-    '../assets/img/Objeto 1/fossil.png',
-    '../assets/img/Objeto 1/hidreletrica.png',
-    '../assets/img/Objeto 1/nuclear.png',
-    '../assets/img/Objeto 1/solar.png',
-    '../assets/img/Objeto 1/bubble1.png',
-    '../assets/img/Objeto 1/bubble2.png',
-    '../assets/img/Objeto 1/imagem1CenaIntroGraficos.png',
-    '../assets/img/Objeto 1/imagem2CenaIntroGraficos.png',
-    '../assets/img/Objeto 1/imagem3CenaIntroGraficos.png',
-    '../assets/img/Objeto 1/imagem4CenaIntroGraficos.png',
-    '../assets/img/Objeto 1/imagem5CenaIntroGraficos.png',
-    '../assets/img/Objeto 1/imagem6CenaIntroGraficos.png',
-    '../assets/img/Objeto 1/imagem7CenaIntroGraficos.png',
-    '../assets/img/Objeto 1/CIP.png',
-    '../assets/img/Objeto 1/COFINS.png',
-    '../assets/img/Objeto 1/ICMS.png',
-    '../assets/img/Objeto 1/PISPASEP.png',
-    '../assets/img/Objeto 1/TUST.png',
-    '../assets/img/Objeto 1/engenheiro_esquerda.png',
-    '../assets/img/Objeto 1/circular1.gif',
-    '../assets/img/Objeto 1/circular2.gif',
-    '../assets/img/Objeto 1/circular3.gif',
-    '../assets/img/Objeto 1/circular4.gif',
-    '../assets/img/Objeto 1/circular5.gif',
-    '../assets/img/Objeto 1/circular6.gif'
-]);
+			'../assets/img/Objeto 1/detalhe_biomassa.png',
+			'../assets/img/Objeto 1/detalhe_hidreletrica.png',
+			'../assets/img/Objeto 1/detalhe_eolica.png',
+			'../assets/img/Objeto 1/detalhe_fossil.png',
+			'../assets/img/Objeto 1/detalhe_nuclear.png',
+			'../assets/img/Objeto 1/detalhe_solar.png',
+			'../assets/img/Objeto 1/biomassa.png',
+			'../assets/img/Objeto 1/eolica.png',
+			'../assets/img/Objeto 1/fossil.png',
+			'../assets/img/Objeto 1/hidreletrica.png',
+			'../assets/img/Objeto 1/nuclear.png',
+			'../assets/img/Objeto 1/solar.png',
+			'../assets/img/Objeto 1/bubble1.png',
+			'../assets/img/Objeto 1/bubble2.png',
+			'../assets/img/Objeto 1/imagem1CenaIntroGraficos.png',
+			'../assets/img/Objeto 1/imagem2CenaIntroGraficos.png',
+			'../assets/img/Objeto 1/imagem3CenaIntroGraficos.png',
+			'../assets/img/Objeto 1/imagem4CenaIntroGraficos.png',
+			'../assets/img/Objeto 1/imagem5CenaIntroGraficos.png',
+			'../assets/img/Objeto 1/imagem6CenaIntroGraficos.png',
+			'../assets/img/Objeto 1/imagem7CenaIntroGraficos.png',
+			'../assets/img/Objeto 1/CIP.png',
+			'../assets/img/Objeto 1/COFINS.png',
+			'../assets/img/Objeto 1/ICMS.png',
+			'../assets/img/Objeto 1/PISPASEP.png',
+			'../assets/img/Objeto 1/TUST.png',
+			'../assets/img/Objeto 1/engenheiro_esquerda.png',
+			'../assets/img/Objeto 1/circular1.gif',
+			'../assets/img/Objeto 1/circular2.gif',
+			'../assets/img/Objeto 1/circular3.gif',
+			'../assets/img/Objeto 1/circular4.gif',
+			'../assets/img/Objeto 1/circular5.gif',
+			'../assets/img/Objeto 1/circular6.gif'
+			]);
 
 		
 
 
-});
+	});
 
 
-  		$(document).on('click', '#botaoNome', function () {
-  			saveName();
-});
+	$(document).on('click', '#botaoNome', function () {
+		saveName();
+	});
 
   		//Realiza as ações necessárias ao se clicar na seta direita (Troca de cena ou troca de questão)
-		$(document).on('click', '#iconSetaDireita', function () {
-			if (!clicouRecentemente) {
+  		$(document).on('click', '#iconSetaDireita', function () {
+  			if (!clicouRecentemente) {
 
 
 				//Delay entre as trocas de tela
 				clicouRecentemente = true;
-	     			  setTimeout(function(){ 
-	     			  	clicouRecentemente = false; 
-	     			  }, 1000); 
+				setTimeout(function(){ 
+					clicouRecentemente = false; 
+				}, 1000); 
 
 
 
@@ -160,76 +161,76 @@ function preloadVideo(arrayOfmp4){
 					case 12:
 					case 14:
 					case 15:
+					nextScene();
+					break;
+					case 8:
+					if (viuImposto) {
 						nextScene();
 						break;
-					case 8:
-						if (viuImposto) {
-							nextScene();
-							break;
-						} else {
-							swal("","Clique nos impostos para ver o conteúdo", "error");
-							break;
-						}
+					} else {
+						swal("","Clique nos impostos para ver o conteúdo", "error");
+						break;
+					}
 					break;
 					case 13:
-						switch(questionNumber) {
-							default: 
-								questionNumber++;
-								loadQuestion();
-								break;
-							case 18:
-								questionNumber++;
-								nextScene();
-								break;
-						}
+					switch(questionNumber) {
+						default: 
+						questionNumber++;
+						loadQuestion();
 						break;
+						case 18:
+						questionNumber++;
+						nextScene();
+						break;
+					}
+					break;
 
 					case 7:
-						switch(questionNumber) {
-							default: 
-								questionNumber++;
-								loadQuestion();
-								break;
-							case 15:
-								questionNumber++;
-								nextScene();
-								break;
-						}
+					switch(questionNumber) {
+						default: 
+						questionNumber++;
+						loadQuestion();
 						break;
+						case 15:
+						questionNumber++;
+						nextScene();
+						break;
+					}
+					break;
 
 					case 3:
-						if (updateText[0] == false) {
-							$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
-							updateText[0] = true;
-							$("#imagensIntroGraficos").show();
-							showConjuntoImagens1IntroQuestoesGraficos();
-							break;
-						}
-						else if (updateText[1] == false) {
-							$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem3IntroQuestoesIniciais);
-							showConjuntoImagens2IntroQuestoesGraficos();
-
-							updateText[1] = true;
-							break;		
-						}
-						else {
-							nextScene();
-							break;	
-						}
-					case 4:
-						switch(questionNumber) {
-							default: 
-								questionNumber++;
-								loadQuestion();
-								break;
-							case 10:
-								questionNumber++;
-								nextScene();
-								break;
-						}
+					if (updateText[0] == false) {
+						$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
+						updateText[0] = true;
+						$("#imagensIntroGraficos").show();
+						showConjuntoImagens1IntroQuestoesGraficos();
 						break;
+					}
+					else if (updateText[1] == false) {
+						$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem3IntroQuestoesIniciais);
+						showConjuntoImagens2IntroQuestoesGraficos();
 
-				case 2:
+						updateText[1] = true;
+						break;		
+					}
+					else {
+						nextScene();
+						break;	
+					}
+					case 4:
+					switch(questionNumber) {
+						default: 
+						questionNumber++;
+						loadQuestion();
+						break;
+						case 10:
+						questionNumber++;
+						nextScene();
+						break;
+					}
+					break;
+
+					case 2:
 					if (viuUsina) {
 						nextScene();
 						break;
@@ -249,56 +250,56 @@ function preloadVideo(arrayOfmp4){
 
 
 		 //Realiza as ações necessárias ao se clicar na seta esquerda (Troca de cena ou troca de questão)
-		$(document).on('click', '#iconSetaEsquerda', function () {
-			switch (scene) {
-				case 1:
-				case 2:
-				case 6:
-				case 9:
-				case 10:
-				case 11:
-				case 12:
-				case 15:
-				case 16:
-					previousScene();
-					break;
-				case 8:
-				case 5:
-				case 14:
-					questionNumber--;
-					previousScene();
-					break;
-				case 13:
-				switch(questionNumber) {
-						case 16:
-							previousScene();
-							break;
-						default:
-							questionNumber--;
-							loadQuestion();
-							break;
-					}
-					break;
-				case 3:
-					if(updateText[0] == true && updateText[1] == true) {
-						$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
-						updateText[1] = false;
-						showConjuntoImagens1IntroQuestoesGraficos();
+		 $(document).on('click', '#iconSetaEsquerda', function () {
+		 	switch (scene) {
+		 		case 1:
+		 		case 2:
+		 		case 6:
+		 		case 9:
+		 		case 10:
+		 		case 11:
+		 		case 12:
+		 		case 15:
+		 		case 16:
+		 		previousScene();
+		 		break;
+		 		case 8:
+		 		case 5:
+		 		case 14:
+		 		questionNumber--;
+		 		previousScene();
+		 		break;
+		 		case 13:
+		 		switch(questionNumber) {
+		 			case 16:
+		 			previousScene();
+		 			break;
+		 			default:
+		 			questionNumber--;
+		 			loadQuestion();
+		 			break;
+		 		}
+		 		break;
+		 		case 3:
+		 		if(updateText[0] == true && updateText[1] == true) {
+		 			$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagem2IntroQuestoesIniciais);
+		 			updateText[1] = false;
+		 			showConjuntoImagens1IntroQuestoesGraficos();
 
-						break;
-					} else if (updateText[0] == true) {
-						$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagemIntroQuestoesIniciais);
-						updateText[0] = false;
-						$("#imagensIntroGraficos").fadeOut(300);
-						break;
-					} else {
-					previousScene();
-					break;
-				}
-				case 4:
-					switch(questionNumber) {
-						case 1:
-							previousScene();
+		 			break;
+		 		} else if (updateText[0] == true) {
+		 			$("#sceneIntroGraficosText1").html(dataJSON.mensagensQuestoes.mensagemIntroQuestoesIniciais);
+		 			updateText[0] = false;
+		 			$("#imagensIntroGraficos").fadeOut(300);
+		 			break;
+		 		} else {
+		 			previousScene();
+		 			break;
+		 		}
+		 		case 4:
+		 		switch(questionNumber) {
+		 			case 1:
+		 			previousScene();
 
 
 							//Tempo de espera até a cena carregar, ou as imagens não irão aparecer
@@ -307,65 +308,65 @@ function preloadVideo(arrayOfmp4){
 							});
 
 							break;
-						default:
+							default:
 							questionNumber--;
 							loadQuestion();
 							break;
-					}
-					break;
-				case 7:
-					switch(questionNumber) {
-						case 11:
+						}
+						break;
+						case 7:
+						switch(questionNumber) {
+							case 11:
 							questionNumber--;
 							previousScene();
 							break;
-						default:
+							default:
 							questionNumber--;
 							loadQuestion();
 							break;
-					}	
-					break;
+						}	
+						break;
 
 
 
 
 
 
-			}		});
+					}		});
 
 
 
 		//Verifica se a tecla pressionada foi enter (Utilizado na cena inicial, para confirmação do nome)
-	function pressedEnter(event) {
-		if (event.keyCode == 13 && scene == 0) {
-			saveName();
+		function pressedEnter(event) {
+			if (event.keyCode == 13 && scene == 0) {
+				saveName();
+			}
 		}
-	}
 
 
 
-	
-	
-	
-  /* Pega o nome inserido pelo usuário */
-	function saveName() {
-		
-		if (!$("#inputNome").val()) {
-			$("#alertNome").show();
-	    }
-		else {
-			nome = $("#inputNome").val(); 
-			$("#rowInputName").remove();
-			showFixedImages();
-			nextScene();
+
+
+
+		/* Pega o nome inserido pelo usuário */
+		function saveName() {
+
+			if (!$("#inputNome").val()) {
+				$("#alertNome").show();
+			}
+			else {
+				nome = $("#inputNome").val(); 
+				$("#rowInputName").remove();
+				showFixedImages();
+				nextScene();
+			}
 		}
-	}
-	
-	
 
 
 
-	/* SCENE 1 */
+
+
+		/* SCENE 1 */
 		
 		//Exibe as imagens fixas (Setas, ajuda e fechar)
 		function showFixedImages() {
@@ -373,93 +374,93 @@ function preloadVideo(arrayOfmp4){
 			$("#iconMais").hide();
 			$("#iconCalculadora").hide();
 		}
-	
+
 		//Ocultas as imagens fixas (Setas, ajuda e fechar)
 		function hideFixedImages() {
 			$("#imagensFixas").hide();
 		}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	/* SCENE 2 */
+
+
+
+
+
+
+
+
+
+		/* SCENE 2 */
 	//Exibe as informações especificas sobre cada usina, trocando a cor do background e ocultando o que for desnecessário
 	function showMoreInfo(usina) {
 		$("body").css("background-color", "gray");
 		$('#detalhesUsinas').show();
-	 	$('#additionalSceneTiposUsinas').hide();
+		$('#additionalSceneTiposUsinas').hide();
 		$('#mensagem').hide();
 		$('#imagemEngenheiroTiposUsinas').hide();
 		viuUsina = true;
 		hideFixedImages();
 		switch (usina) {
 			case 'hidreletrica': 
-				$('#imgUsina').attr("src", "../assets/img/Objeto 1/hidreletrica_animada.mp4");
-				$('#textoUsina').html(dataJSON.textosUsinas.usinaHidreletrica);
-				$('#tituloUsina').html(dataJSON.textosUsinas.titleHidreletrica);
-				$('#sceneTiposUsinasSub1').css("background-color", "#008CAF")
-				$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_hidreletrica.png')
+			$('#imgUsina').attr("src", "../assets/img/Objeto 1/hidreletrica_animada.mp4");
+			$('#textoUsina').html(dataJSON.textosUsinas.usinaHidreletrica);
+			$('#tituloUsina').html(dataJSON.textosUsinas.titleHidreletrica);
+			$('#sceneTiposUsinasSub1').css("background-color", "#008CAF")
+			$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_hidreletrica.png')
 
-				break;
+			break;
 			case 'eolica':
-				$('#imgUsina').attr("src", "../assets/img/Objeto 1/eolica_animada.mp4");
-				$('#textoUsina').html(dataJSON.textosUsinas.usinaEolica);
-				$('#tituloUsina').html(dataJSON.textosUsinas.titleEolica);
-				$('#sceneTiposUsinasSub1').css("background-color", "#008CAF")
-				$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_eolica.png')
-				break;
+			$('#imgUsina').attr("src", "../assets/img/Objeto 1/eolica_animada.mp4");
+			$('#textoUsina').html(dataJSON.textosUsinas.usinaEolica);
+			$('#tituloUsina').html(dataJSON.textosUsinas.titleEolica);
+			$('#sceneTiposUsinasSub1').css("background-color", "#008CAF")
+			$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_eolica.png')
+			break;
 			case 'fossil':
-				$('#imgUsina').attr("src", "../assets/img/Objeto 1/fossil_animada.mp4");
-				$('#textoUsina').html(dataJSON.textosUsinas.usinaFossil);
-				$('#tituloUsina').html(dataJSON.textosUsinas.titleFossil);
-				$('#sceneTiposUsinasSub1').css("background-color", "#0C99AB")
-				$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_fossil.png')
+			$('#imgUsina').attr("src", "../assets/img/Objeto 1/fossil_animada.mp4");
+			$('#textoUsina').html(dataJSON.textosUsinas.usinaFossil);
+			$('#tituloUsina').html(dataJSON.textosUsinas.titleFossil);
+			$('#sceneTiposUsinasSub1').css("background-color", "#0C99AB")
+			$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_fossil.png')
 
 
-				break;
+			break;
 			case 'nuclear':
-				$('#imgUsina').attr("src", "../assets/img/Objeto 1/nuclear_animada.mp4");
-				$('#textoUsina').html(dataJSON.textosUsinas.usinaNuclear);
-				$('#tituloUsina').html(dataJSON.textosUsinas.titleNuclear);
-				$('#sceneTiposUsinasSub1').css("background-color", "#0C99AB")
-				$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_nuclear.png')
+			$('#imgUsina').attr("src", "../assets/img/Objeto 1/nuclear_animada.mp4");
+			$('#textoUsina').html(dataJSON.textosUsinas.usinaNuclear);
+			$('#tituloUsina').html(dataJSON.textosUsinas.titleNuclear);
+			$('#sceneTiposUsinasSub1').css("background-color", "#0C99AB")
+			$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_nuclear.png')
 
 
-				break;
+			break;
 			case 'solar':
-				$('#imgUsina').attr("src", "../assets/img/Objeto 1/solar_animada.mp4");
-				$('#textoUsina').html(dataJSON.textosUsinas.usinaSolar);
-				$('#tituloUsina').html(dataJSON.textosUsinas.titleSolar);
-				$('#sceneTiposUsinasSub1').css("background-color", "#0C99AB")
-				$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_solar.png')
+			$('#imgUsina').attr("src", "../assets/img/Objeto 1/solar_animada.mp4");
+			$('#textoUsina').html(dataJSON.textosUsinas.usinaSolar);
+			$('#tituloUsina').html(dataJSON.textosUsinas.titleSolar);
+			$('#sceneTiposUsinasSub1').css("background-color", "#0C99AB")
+			$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_solar.png')
 
-				break;	
+			break;	
 			case 'biomassa':
-				$('#imgUsina').attr("src", "../assets/img/Objeto 1/biomassa_animada.mp4");
-				$('#textoUsina').html(dataJSON.textosUsinas.usinaBiomassa);
-				$('#tituloUsina').html(dataJSON.textosUsinas.titleBiomassa);
-				$('#sceneTiposUsinasSub1').css("background-color", "#008CAF")
-				$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_biomassa.png')
+			$('#imgUsina').attr("src", "../assets/img/Objeto 1/biomassa_animada.mp4");
+			$('#textoUsina').html(dataJSON.textosUsinas.usinaBiomassa);
+			$('#tituloUsina').html(dataJSON.textosUsinas.titleBiomassa);
+			$('#sceneTiposUsinasSub1').css("background-color", "#008CAF")
+			$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_biomassa.png')
 
-				break;	
+			break;	
 		}
 	}
 	
 
 	  //Restaura o estado da cena 2, após a visualização dos dados da usina
-	function restoresceneTiposUsinas() {
-		loadScene();
-		showFixedImages();
-		$('#imagemEngenheiroTiposUsinas').show();
-		$('#mensagem').show(); 
-		$("body").css("background-color", "white");
-		$("#iconMais").show();
-	}
+	  function restoresceneTiposUsinas() {
+	  	loadScene();
+	  	showFixedImages();
+	  	$('#imagemEngenheiroTiposUsinas').show();
+	  	$('#mensagem').show(); 
+	  	$("body").css("background-color", "white");
+	  	$("#iconMais").show();
+	  }
 	  
 	  
 	  
@@ -470,73 +471,73 @@ function preloadVideo(arrayOfmp4){
 	  
 	  //Atualiza os dados contidos no container do imposto, trocando o texto e a cor do background
 	  function showImposto(imposto) {
-		  $("#containerImposto").show();
-		  viuImposto = true;
-		  switch (imposto) {
-			case 'icms':
-				$("#containerImposto").css("background-color", "#654E44");
-				$("#containerImposto").html(dataJSON.textosImpostos.icms);
-				break;
-			
-			case 'tusd':
-				$("#containerImposto").css("background-color", "#5E35B1");
-				$("#containerImposto").html(dataJSON.textosImpostos.tusd);
-				break;	
-				
-			case 'cofins':
-				$("#containerImposto").css("background-color", "#D26F4C");
-				$("#containerImposto").html(dataJSON.textosImpostos.cofins);
-				break;
-			
-			case 'cip':
-				$("#containerImposto").css("background-color", "#7CB342");
-				$("#containerImposto").html(dataJSON.textosImpostos.cip);
-				break;
-				
-			case 'pispasep':
-				$("#containerImposto").css("background-color", "#09AFC3");
-				$("#containerImposto").html(dataJSON.textosImpostos.pispasep);
-				break;
-			
-			case 'tust':
-				$("#containerImposto").css("background-color", "#880E4F");
-				$("#containerImposto").html(dataJSON.textosImpostos.tust);
-				break;				
-				}
-	  
-	  
+	  	$("#containerImposto").show();
+	  	viuImposto = true;
+	  	switch (imposto) {
+	  		case 'icms':
+	  		$("#containerImposto").css("background-color", "#654E44");
+	  		$("#containerImposto").html(dataJSON.textosImpostos.icms);
+	  		break;
+
+	  		case 'tusd':
+	  		$("#containerImposto").css("background-color", "#5E35B1");
+	  		$("#containerImposto").html(dataJSON.textosImpostos.tusd);
+	  		break;	
+
+	  		case 'cofins':
+	  		$("#containerImposto").css("background-color", "#D26F4C");
+	  		$("#containerImposto").html(dataJSON.textosImpostos.cofins);
+	  		break;
+
+	  		case 'cip':
+	  		$("#containerImposto").css("background-color", "#7CB342");
+	  		$("#containerImposto").html(dataJSON.textosImpostos.cip);
+	  		break;
+
+	  		case 'pispasep':
+	  		$("#containerImposto").css("background-color", "#09AFC3");
+	  		$("#containerImposto").html(dataJSON.textosImpostos.pispasep);
+	  		break;
+
+	  		case 'tust':
+	  		$("#containerImposto").css("background-color", "#880E4F");
+	  		$("#containerImposto").html(dataJSON.textosImpostos.tust);
+	  		break;				
+	  	}
+
+
 	  }
 	  
 	  
 
-	  	/* Intro questões */
-	
-	function showConjuntoImagens1IntroQuestoesGraficos () {
-		$('#sceneIntroGraficosImg1').attr("src", "../assets/img/Objeto 1/imagem1CenaIntroGraficos.png").fadeIn(500);
-		$('#sceneIntroGraficosImg1').attr('title', 'Jornais');
-		$('#sceneIntroGraficosImg2').attr("src", "../assets/img/Objeto 1/imagem2CenaIntroGraficos.png").fadeIn(500);
-		$('#sceneIntroGraficosImg2').attr('title', 'Livros');
-		$('#sceneIntroGraficosImg3').attr("src", "../assets/img/Objeto 1/imagem3CenaIntroGraficos.png").fadeIn(500);
-		$('#sceneIntroGraficosImg3').attr('title', 'Computador');
-		$('#sceneIntroGraficosImg4').attr("src", "../assets/img/Objeto 1/imagem4CenaIntroGraficos.png").fadeIn(500);
-		$('#sceneIntroGraficosImg4').attr('title', 'Televisão');
-		$('#sceneIntroGraficosImg1').show().siblings().show();
+	  /* Intro questões */
 
-	}
-	
-	function showConjuntoImagens2IntroQuestoesGraficos() {
-		$('#sceneIntroGraficosImg2').attr("src", "../assets/img/Objeto 1/imagem5CenaIntroGraficos.png").fadeIn(500);
-		$('#sceneIntroGraficosImg2').attr('title', 'Coleta');
-		$('#sceneIntroGraficosImg3').attr("src", "../assets/img/Objeto 1/imagem6CenaIntroGraficos.png").fadeIn(500);
-		$('#sceneIntroGraficosImg3').attr('title', 'Descrição, Análise, e Interpretação');
-		$('#sceneIntroGraficosImg4').attr("src", "../assets/img/Objeto 1/imagem7CenaIntroGraficos.png").fadeIn(500);
-		$('#sceneIntroGraficosImg4').attr('title', 'Organização');
-		$('#sceneIntroGraficosImg1').show().siblings().show();
-		$('#sceneIntroGraficosImg1').hide();
+	  function showConjuntoImagens1IntroQuestoesGraficos () {
+	  	$('#sceneIntroGraficosImg1').attr("src", "../assets/img/Objeto 1/imagem1CenaIntroGraficos.png").fadeIn(500);
+	  	$('#sceneIntroGraficosImg1').attr('title', 'Jornais');
+	  	$('#sceneIntroGraficosImg2').attr("src", "../assets/img/Objeto 1/imagem2CenaIntroGraficos.png").fadeIn(500);
+	  	$('#sceneIntroGraficosImg2').attr('title', 'Livros');
+	  	$('#sceneIntroGraficosImg3').attr("src", "../assets/img/Objeto 1/imagem3CenaIntroGraficos.png").fadeIn(500);
+	  	$('#sceneIntroGraficosImg3').attr('title', 'Computador');
+	  	$('#sceneIntroGraficosImg4').attr("src", "../assets/img/Objeto 1/imagem4CenaIntroGraficos.png").fadeIn(500);
+	  	$('#sceneIntroGraficosImg4').attr('title', 'Televisão');
+	  	$('#sceneIntroGraficosImg1').show().siblings().show();
+
+	  }
+
+	  function showConjuntoImagens2IntroQuestoesGraficos() {
+	  	$('#sceneIntroGraficosImg2').attr("src", "../assets/img/Objeto 1/imagem5CenaIntroGraficos.png").fadeIn(500);
+	  	$('#sceneIntroGraficosImg2').attr('title', 'Coleta');
+	  	$('#sceneIntroGraficosImg3').attr("src", "../assets/img/Objeto 1/imagem6CenaIntroGraficos.png").fadeIn(500);
+	  	$('#sceneIntroGraficosImg3').attr('title', 'Descrição, Análise, e Interpretação');
+	  	$('#sceneIntroGraficosImg4').attr("src", "../assets/img/Objeto 1/imagem7CenaIntroGraficos.png").fadeIn(500);
+	  	$('#sceneIntroGraficosImg4').attr('title', 'Organização');
+	  	$('#sceneIntroGraficosImg1').show().siblings().show();
+	  	$('#sceneIntroGraficosImg1').hide();
 
 
 
-	}
+	  }
 
 	  /* Scene 4 */
 	  //Carrega a questão, tendo como base a variável questionNumber
@@ -545,404 +546,404 @@ function preloadVideo(arrayOfmp4){
 	  	switch (questionNumber) {
 	  		case 1:
 
-	  			$("#opcaoA").show().siblings().show();
-	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao1.numeroQuestao);
-	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao1.textoQuestao)
-	  			$("#opcaoA").html(dataJSON.questao1.alternativa1Questao);
-	  			$("#opcaoB").html(dataJSON.questao1.alternativa2Questao);
-	  			$("#opcaoC").html(dataJSON.questao1.alternativa3Questao);
-	  			$("#opcaoD").html(dataJSON.questao1.alternativa4Questao);
-	  			$("#questionGroup").hide();
-	  			$("#inputRespostasceneQuestoesGraficos").hide();
-	  			$("#tabelaQuestoesGraficos").hide();
-	  			$("#iconCalculadora").show();
-	  			grafico1();
+	  		$("#opcaoA").show().siblings().show();
+	  		$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao1.numeroQuestao);
+	  		$("#sceneIntroGraficosQuestion").html(dataJSON.questao1.textoQuestao)
+	  		$("#opcaoA").html(dataJSON.questao1.alternativa1Questao);
+	  		$("#opcaoB").html(dataJSON.questao1.alternativa2Questao);
+	  		$("#opcaoC").html(dataJSON.questao1.alternativa3Questao);
+	  		$("#opcaoD").html(dataJSON.questao1.alternativa4Questao);
+	  		$("#questionGroup").hide();
+	  		$("#inputRespostasceneQuestoesGraficos").hide();
+	  		$("#tabelaQuestoesGraficos").hide();
+	  		$("#iconCalculadora").show();
+	  		grafico1();
 
-	  				if (corretas[0] == false) {
-						$("#iconSetaDireita").hide();
-						resetQuestionButtons();
-					}
-					else {
-						disableQuestionButtons();
-						$("#iconSetaDireita").show();
+	  		if (corretas[0] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
 
-					}
+	  		}
 
-	  			break;
+	  		break;
 
 	  		case 2:
-	  			$("#opcaoA").show().siblings().show();
-	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao2.numeroQuestao);
-	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao2.textoQuestao)
-	  			$("#opcaoA").html(dataJSON.questao2.alternativa1Questao);
-	  			$("#opcaoB").html(dataJSON.questao2.alternativa2Questao);
-	  			$("#opcaoC").html(dataJSON.questao2.alternativa3Questao);
-	  			$("#opcaoD").html(dataJSON.questao2.alternativa4Questao);
-	  			$("#questionGroup").hide();
-	  			$("#tabelaQuestoesGraficos").hide();
-	  			$("#inputRespostasceneQuestoesGraficos").hide();
-	  			$("#iconCalculadora").hide();
+	  		$("#opcaoA").show().siblings().show();
+	  		$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao2.numeroQuestao);
+	  		$("#sceneIntroGraficosQuestion").html(dataJSON.questao2.textoQuestao)
+	  		$("#opcaoA").html(dataJSON.questao2.alternativa1Questao);
+	  		$("#opcaoB").html(dataJSON.questao2.alternativa2Questao);
+	  		$("#opcaoC").html(dataJSON.questao2.alternativa3Questao);
+	  		$("#opcaoD").html(dataJSON.questao2.alternativa4Questao);
+	  		$("#questionGroup").hide();
+	  		$("#tabelaQuestoesGraficos").hide();
+	  		$("#inputRespostasceneQuestoesGraficos").hide();
+	  		$("#iconCalculadora").hide();
 
-	  			grafico1();
+	  		grafico1();
 
 
-	  				if (corretas[1] == false) {
-						$("#iconSetaDireita").hide();
-						resetQuestionButtons();
-					}
-					else {
-						disableQuestionButtons();
-						$("#iconSetaDireita").show();
-					}
+	  		if (corretas[1] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
+	  		}
 
-	  			break;
+	  		break;
 
 	  		case 3:
-	  			$("#opcaoA").hide().siblings().hide();
-	  			$("#enviarResposta").show();
-	  			$("#enviarResposta").prop('disabled', false);
-	  			$("#questionGroup").show();
-	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao3.numeroQuestao);
-	  			$("#tabelaQuestoesGraficos").hide();
-	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao3.textoQuestao);
+	  		$("#opcaoA").hide().siblings().hide();
+	  		$("#enviarResposta").show();
+	  		$("#enviarResposta").prop('disabled', false);
+	  		$("#questionGroup").show();
+	  		$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao3.numeroQuestao);
+	  		$("#tabelaQuestoesGraficos").hide();
+	  		$("#sceneIntroGraficosQuestion").html(dataJSON.questao3.textoQuestao);
 
-	  			grafico2();
+	  		grafico2();
 
-	  				if (corretas[2] == false) {
-						$("#iconSetaDireita").hide();
-						resetQuestionButtons();
-					}
-					else {
-						disableQuestionButtons();
-						$("#iconSetaDireita").show();
-					}
-				break;
+	  		if (corretas[2] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
+	  		}
+	  		break;
 
 	  		case 4:
-	  			$("#opcaoA").hide().siblings().hide();
-	  			$("#enviarResposta").show();
-	  			$("#enviarResposta").prop('disabled', false);
-	  			$("#questionGroup").show();
-	  			$("#tabelaQuestoesGraficos").hide();
-	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao4.numeroQuestao);
-	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao4.textoQuestao);
-	  			$("#inputRespostasceneQuestoesGraficos").hide();
+	  		$("#opcaoA").hide().siblings().hide();
+	  		$("#enviarResposta").show();
+	  		$("#enviarResposta").prop('disabled', false);
+	  		$("#questionGroup").show();
+	  		$("#tabelaQuestoesGraficos").hide();
+	  		$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao4.numeroQuestao);
+	  		$("#sceneIntroGraficosQuestion").html(dataJSON.questao4.textoQuestao);
+	  		$("#inputRespostasceneQuestoesGraficos").hide();
 
-	  			grafico2();
+	  		grafico2();
 
-	  				if (corretas[3] == false) {
-						$("#iconSetaDireita").hide();
-						resetQuestionButtons();
-					}
-					else {
-						disableQuestionButtons();
-						$("#iconSetaDireita").show();
-					}
-				break;
+	  		if (corretas[3] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
+	  		}
+	  		break;
 
-			case 5:
-				$("#questionGroup").hide();
-				$("#opcaoA").show().siblings().show();
-	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao5.numeroQuestao);
-	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao5.textoQuestao )
-	  			$("#opcaoA").html(dataJSON.questao5.alternativa1Questao);
-	  			$("#opcaoB").html(dataJSON.questao5.alternativa2Questao);
-	  			$("#opcaoC").html(dataJSON.questao5.alternativa3Questao);
-	  			$("#opcaoD").html(dataJSON.questao5.alternativa4Questao);
-	  			$("#questionGroup").hide();
-	  			$("#tabelaQuestoesGraficos").hide();
-	  			$("#inputRespostasceneQuestoesGraficos").hide();
+	  		case 5:
+	  		$("#questionGroup").hide();
+	  		$("#opcaoA").show().siblings().show();
+	  		$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao5.numeroQuestao);
+	  		$("#sceneIntroGraficosQuestion").html(dataJSON.questao5.textoQuestao )
+	  		$("#opcaoA").html(dataJSON.questao5.alternativa1Questao);
+	  		$("#opcaoB").html(dataJSON.questao5.alternativa2Questao);
+	  		$("#opcaoC").html(dataJSON.questao5.alternativa3Questao);
+	  		$("#opcaoD").html(dataJSON.questao5.alternativa4Questao);
+	  		$("#questionGroup").hide();
+	  		$("#tabelaQuestoesGraficos").hide();
+	  		$("#inputRespostasceneQuestoesGraficos").hide();
 
-	  			grafico2();
+	  		grafico2();
 
-	  				if (corretas[4] == false) {
-						$("#iconSetaDireita").hide();
-						resetQuestionButtons();
-					}
-					else {
-						disableQuestionButtons();
-						$("#iconSetaDireita").show();
-					}
-	  			break;
+	  		if (corretas[4] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
+	  		}
+	  		break;
 	  		case 6:
-				$("#opcaoA").show().siblings().show();
-	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao6.numeroQuestao);
-	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao6.textoQuestao )
-	  			$("#opcaoA").html(dataJSON.questao6.alternativa1Questao);
-	  			$("#opcaoB").html(dataJSON.questao6.alternativa2Questao);
-	  			$("#opcaoC").html(dataJSON.questao6.alternativa3Questao);
-	  			$("#opcaoD").html(dataJSON.questao6.alternativa4Questao);
-	  			$("#tabelaQuestoesGraficos").hide();
-	  			$("#questionGroup").hide();
-	  			$("#inputRespostasceneQuestoesGraficos").hide();
-	  			grafico3();
+	  		$("#opcaoA").show().siblings().show();
+	  		$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao6.numeroQuestao);
+	  		$("#sceneIntroGraficosQuestion").html(dataJSON.questao6.textoQuestao )
+	  		$("#opcaoA").html(dataJSON.questao6.alternativa1Questao);
+	  		$("#opcaoB").html(dataJSON.questao6.alternativa2Questao);
+	  		$("#opcaoC").html(dataJSON.questao6.alternativa3Questao);
+	  		$("#opcaoD").html(dataJSON.questao6.alternativa4Questao);
+	  		$("#tabelaQuestoesGraficos").hide();
+	  		$("#questionGroup").hide();
+	  		$("#inputRespostasceneQuestoesGraficos").hide();
+	  		grafico3();
 
-	  				if (corretas[5] == false) {
-						$("#iconSetaDireita").hide();
-						resetQuestionButtons();
-					}
-					else {
-						disableQuestionButtons();
-						$("#iconSetaDireita").show();
-					}
-				break;
+	  		if (corretas[5] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
+	  		}
+	  		break;
 
 	  		case 7:
-	  			$("#opcaoA").hide().siblings().hide();
-	  			$("#enviarResposta").show();
-	  			$("#enviarResposta").prop('disabled', false);
-	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao7.numeroQuestao);
-	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao7.textoQuestao);
-	  			$("#tabelaQuestoesGraficos").hide();
-	  			$("#inputRespostasceneQuestoesGraficos").show();
-	  			grafico4();
+	  		$("#opcaoA").hide().siblings().hide();
+	  		$("#enviarResposta").show();
+	  		$("#enviarResposta").prop('disabled', false);
+	  		$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao7.numeroQuestao);
+	  		$("#sceneIntroGraficosQuestion").html(dataJSON.questao7.textoQuestao);
+	  		$("#tabelaQuestoesGraficos").hide();
+	  		$("#inputRespostasceneQuestoesGraficos").show();
+	  		grafico4();
 
-	  				if (corretas[6] == false) {
-						$("#iconSetaDireita").hide();
-						resetQuestionButtons();
-					}
-					else {
-						disableQuestionButtons();
-						$("#iconSetaDireita").show();
-					}
-				break;
+	  		if (corretas[6] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
+	  		}
+	  		break;
 
-			case 8:
-				$("#opcaoA").show().siblings().show();
-	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao8.numeroQuestao);
-	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao8.textoQuestao )
-	  			$("#opcaoA").html(dataJSON.questao8.alternativa1Questao);
-	  			$("#opcaoB").html(dataJSON.questao8.alternativa2Questao);
-	  			$("#opcaoC").html(dataJSON.questao8.alternativa3Questao);
-	  			$("#opcaoD").html(dataJSON.questao8.alternativa4Questao);
-	  			$("#tabelaQuestoesGraficos").hide();
-	  			$("#questionGroup").hide();
-	  			$("#inputRespostasceneQuestoesGraficos").hide();
-	  			grafico4();
+	  		case 8:
+	  		$("#opcaoA").show().siblings().show();
+	  		$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao8.numeroQuestao);
+	  		$("#sceneIntroGraficosQuestion").html(dataJSON.questao8.textoQuestao )
+	  		$("#opcaoA").html(dataJSON.questao8.alternativa1Questao);
+	  		$("#opcaoB").html(dataJSON.questao8.alternativa2Questao);
+	  		$("#opcaoC").html(dataJSON.questao8.alternativa3Questao);
+	  		$("#opcaoD").html(dataJSON.questao8.alternativa4Questao);
+	  		$("#tabelaQuestoesGraficos").hide();
+	  		$("#questionGroup").hide();
+	  		$("#inputRespostasceneQuestoesGraficos").hide();
+	  		grafico4();
 
-	  				if (corretas[7] == false) {
-						$("#iconSetaDireita").hide();
-						resetQuestionButtons();
-					}
-					else {
-						disableQuestionButtons();
-						$("#iconSetaDireita").show();
-					}
-				break;
+	  		if (corretas[7] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
+	  		}
+	  		break;
 
-			case 9:
-				$("#opcaoA").show().siblings().show();
-	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao9.numeroQuestao);
-	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao9.textoQuestao )
-	  			$("#opcaoA").html(dataJSON.questao9.alternativa1Questao);
-	  			$("#opcaoB").html(dataJSON.questao9.alternativa2Questao);
-	  			$("#opcaoC").html(dataJSON.questao9.alternativa3Questao);
-	  			$("#opcaoD").html(dataJSON.questao9.alternativa4Questao);
-	  			$("#tabelaQuestoesGraficos").hide();
-	  			$("#questionGroup").hide();
-	  			$("#inputRespostasceneQuestoesGraficos").hide();
-	  			grafico5();
+	  		case 9:
+	  		$("#opcaoA").show().siblings().show();
+	  		$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao9.numeroQuestao);
+	  		$("#sceneIntroGraficosQuestion").html(dataJSON.questao9.textoQuestao )
+	  		$("#opcaoA").html(dataJSON.questao9.alternativa1Questao);
+	  		$("#opcaoB").html(dataJSON.questao9.alternativa2Questao);
+	  		$("#opcaoC").html(dataJSON.questao9.alternativa3Questao);
+	  		$("#opcaoD").html(dataJSON.questao9.alternativa4Questao);
+	  		$("#tabelaQuestoesGraficos").hide();
+	  		$("#questionGroup").hide();
+	  		$("#inputRespostasceneQuestoesGraficos").hide();
+	  		grafico5();
 
-	  				if (corretas[8] == false) {
-						$("#iconSetaDireita").hide();
-						resetQuestionButtons();
-					}
-					else {
-						disableQuestionButtons();
-						$("#iconSetaDireita").show();
-					}
-				break;
-	  	
+	  		if (corretas[8] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
+	  		}
+	  		break;
+
 
 	  		case 10:
-				$("#opcaoA").hide().siblings().hide();
-	  			$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao10.numeroQuestao);
-	  			$("#sceneIntroGraficosQuestion").html(dataJSON.questao10.textoQuestao )
-	  			$("#questionGroup").hide();
-	  			$("#inputRespostasceneQuestoesGraficos").hide();
-	  			$("#enviarResposta").show();
-	  			$("#enviarResposta").prop('disabled', false);
-				$("#tabelaQuestoesGraficos").show();
+	  		$("#opcaoA").hide().siblings().hide();
+	  		$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao10.numeroQuestao);
+	  		$("#sceneIntroGraficosQuestion").html(dataJSON.questao10.textoQuestao )
+	  		$("#questionGroup").hide();
+	  		$("#inputRespostasceneQuestoesGraficos").hide();
+	  		$("#enviarResposta").show();
+	  		$("#enviarResposta").prop('disabled', false);
+	  		$("#tabelaQuestoesGraficos").show();
 
-	  			grafico6();
+	  		grafico6();
 
-	  				if (corretas[9] == false) {
-						$("#iconSetaDireita").hide();
-						resetQuestionButtons();
-					}
-					else {
-						disableQuestionButtons();
-						$("#iconSetaDireita").show();
-					}
-				break;
+	  		if (corretas[9] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
+	  		}
+	  		break;
 
-			case 11:
+	  		case 11:
 
-				$("#questionNumberMatrizEnergetica").html(dataJSON.questao11.numeroQuestao);
-				$("#questionMatrizEnergetica").html(dataJSON.questao11.textoQuestao);
-				$("#botaoMatrizQuestoesSim").hide();
-				$("#botaoMatrizQuestoesNao").hide();			
-				$("#inputRespostasMatrizEnergetica").show();
-				$("#enviarRespostaMatriz").show();
+	  		$("#questionNumberMatrizEnergetica").html(dataJSON.questao11.numeroQuestao);
+	  		$("#questionMatrizEnergetica").html(dataJSON.questao11.textoQuestao);
+	  		$("#botaoMatrizQuestoesSim").hide();
+	  		$("#botaoMatrizQuestoesNao").hide();			
+	  		$("#inputRespostasMatrizEnergetica").show();
+	  		$("#enviarRespostaMatriz").show();
 
-					if (corretas[10] == false) {
-						$("#iconSetaDireita").hide();
-						resetQuestionButtons();
-					}
-					else {
-						disableQuestionButtons();
-						$("#iconSetaDireita").show();
+	  		if (corretas[10] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
 
-					}
-				break;
-			case 12:
-				$("#questionNumberMatrizEnergetica").html(dataJSON.questao12.numeroQuestao);
-				$("#questionMatrizEnergetica").html(dataJSON.questao12.textoQuestao);
-				$("#botaoMatrizQuestoesSim").hide();
-				$("#botaoMatrizQuestoesNao").hide();
-				$("#inputRespostasMatrizEnergetica").show();
-				$("#enviarRespostaMatriz").show();
+	  		}
+	  		break;
+	  		case 12:
+	  		$("#questionNumberMatrizEnergetica").html(dataJSON.questao12.numeroQuestao);
+	  		$("#questionMatrizEnergetica").html(dataJSON.questao12.textoQuestao);
+	  		$("#botaoMatrizQuestoesSim").hide();
+	  		$("#botaoMatrizQuestoesNao").hide();
+	  		$("#inputRespostasMatrizEnergetica").show();
+	  		$("#enviarRespostaMatriz").show();
 
-					if (corretas[11] == false) {
-						$("#iconSetaDireita").hide();
-						resetQuestionButtons();
-					}
-					else {
-						disableQuestionButtons();
-						$("#iconSetaDireita").show();
+	  		if (corretas[11] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
 
-					}
-				break;
+	  		}
+	  		break;
 
-				case 13:
-					$("#questionNumberMatrizEnergetica").html(dataJSON.questao13.numeroQuestao);
-					$("#questionMatrizEnergetica").html(dataJSON.questao13.textoQuestao);
-					$("#botaoMatrizQuestoesSim").hide();
-					$("#botaoMatrizQuestoesNao").hide();
+	  		case 13:
+	  		$("#questionNumberMatrizEnergetica").html(dataJSON.questao13.numeroQuestao);
+	  		$("#questionMatrizEnergetica").html(dataJSON.questao13.textoQuestao);
+	  		$("#botaoMatrizQuestoesSim").hide();
+	  		$("#botaoMatrizQuestoesNao").hide();
 
-					$("#inputRespostasMatrizEnergetica").show();
-					$("#enviarRespostaMatriz").show();
-
-
-						if (corretas[12] == false) {
-							$("#iconSetaDireita").hide();
-							resetQuestionButtons();
-						}
-						else {
-							disableQuestionButtons();
-							$("#iconSetaDireita").show();
-
-						}
-				break;
-
-				case 14:
-					$("#questionNumberMatrizEnergetica").html(dataJSON.questao14.numeroQuestao);
-					$("#questionMatrizEnergetica").html(dataJSON.questao14.textoQuestao);
-					$("#botaoMatrizQuestoesSim").hide();
-					$("#botaoMatrizQuestoesNao").hide();
-
-					$("#inputRespostasMatrizEnergetica").show();
-					$("#enviarRespostaMatriz").show();
+	  		$("#inputRespostasMatrizEnergetica").show();
+	  		$("#enviarRespostaMatriz").show();
 
 
-						if (corretas[13] == false) {
-							$("#iconSetaDireita").hide();
-							resetQuestionButtons();
-						}
-						else {
-							disableQuestionButtons();
-							$("#iconSetaDireita").show();
+	  		if (corretas[12] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
 
-						}
-				break;
+	  		}
+	  		break;
 
-				case 15:
-					$("#questionNumberMatrizEnergetica").html(dataJSON.questao15.numeroQuestao);
-					$("#questionMatrizEnergetica").html(dataJSON.questao15.textoQuestao);
-					$("#botaoMatrizQuestoesSim").show();
-					$("#botaoMatrizQuestoesNao").show();
+	  		case 14:
+	  		$("#questionNumberMatrizEnergetica").html(dataJSON.questao14.numeroQuestao);
+	  		$("#questionMatrizEnergetica").html(dataJSON.questao14.textoQuestao);
+	  		$("#botaoMatrizQuestoesSim").hide();
+	  		$("#botaoMatrizQuestoesNao").hide();
 
-					$("#inputRespostasMatrizEnergetica").hide();
-					$("#enviarRespostaMatriz").hide();
-
-						if (corretas[14] == false) {
-							$("#iconSetaDireita").hide();
-							resetQuestionButtons();
-						}
-						else {
-							disableQuestionButtons();
-							$("#iconSetaDireita").show();
-
-						}
-				break;
-
-				case 16:
-					$("#questionNumberBandeiras").html(dataJSON.questao16.numeroQuestao)
-					$("#questaoBandeira").html(dataJSON.questao16.textoQuestao);
-					$("#bandeirasOpcoes").show();
-					$("#inputBandeiras").hide();
-
-						if (corretas[15] == false) {
-							$("#iconSetaDireita").hide();
-							resetQuestionButtons();
-						}
-						else {
-							disableQuestionButtons();
-							$("#iconSetaDireita").show();
-
-						}
-				break;
+	  		$("#inputRespostasMatrizEnergetica").show();
+	  		$("#enviarRespostaMatriz").show();
 
 
-				case 17:
-					$("#questionNumberBandeiras").html(dataJSON.questao17.numeroQuestao)
-					$("#questaoBandeira").html(dataJSON.questao17.textoQuestao);
-					$("#bandeirasOpcoes").show();
-					$("#inputBandeiras").hide();
+	  		if (corretas[13] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
 
-						if (corretas[16] == false) {
-							$("#iconSetaDireita").hide();
-							resetQuestionButtons();
-						}
-						else {
-							disableQuestionButtons();
-							$("#iconSetaDireita").show();
+	  		}
+	  		break;
 
-						}
-				break;
+	  		case 15:
+	  		$("#questionNumberMatrizEnergetica").html(dataJSON.questao15.numeroQuestao);
+	  		$("#questionMatrizEnergetica").html(dataJSON.questao15.textoQuestao);
+	  		$("#botaoMatrizQuestoesSim").show();
+	  		$("#botaoMatrizQuestoesNao").show();
+
+	  		$("#inputRespostasMatrizEnergetica").hide();
+	  		$("#enviarRespostaMatriz").hide();
+
+	  		if (corretas[14] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
+
+	  		}
+	  		break;
+
+	  		case 16:
+	  		$("#questionNumberBandeiras").html(dataJSON.questao16.numeroQuestao)
+	  		$("#questaoBandeira").html(dataJSON.questao16.textoQuestao);
+	  		$("#bandeirasOpcoes").show();
+	  		$("#inputBandeiras").hide();
+
+	  		if (corretas[15] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
+
+	  		}
+	  		break;
 
 
-				case 18:
-					$("#questionNumberBandeiras").html(dataJSON.questao18.numeroQuestao)
-					$("#questaoBandeira").html(dataJSON.questao18.textoQuestao);
-					$("#bandeirasOpcoes").hide();
-					$("#inputBandeiras").show();
+	  		case 17:
+	  		$("#questionNumberBandeiras").html(dataJSON.questao17.numeroQuestao)
+	  		$("#questaoBandeira").html(dataJSON.questao17.textoQuestao);
+	  		$("#bandeirasOpcoes").show();
+	  		$("#inputBandeiras").hide();
 
-						if (corretas[17] == false) {
-							$("#iconSetaDireita").hide();
-							resetQuestionButtons();
-						}
-						else {
-							disableQuestionButtons();
-							$("#iconSetaDireita").show();
+	  		if (corretas[16] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
 
-						}
-				break;
+	  		}
+	  		break;
 
-				case 19:
-					$("#questionNumberImposto").html(dataJSON.questao19.numeroQuestao);
-					$("#questionImposto").html(dataJSON.questao19.textoQuestao);
-					grafico7();
-						if (corretas[18] == false) {
-							$("#iconSetaDireita").hide();
-							resetQuestionButtons();
-						}
-						else {
-							disableQuestionButtons();
-							$("#iconSetaDireita").show();
 
-						}
-				break;
+	  		case 18:
+	  		$("#questionNumberBandeiras").html(dataJSON.questao18.numeroQuestao)
+	  		$("#questaoBandeira").html(dataJSON.questao18.textoQuestao);
+	  		$("#bandeirasOpcoes").hide();
+	  		$("#inputBandeiras").show();
+
+	  		if (corretas[17] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
+
+	  		}
+	  		break;
+
+	  		case 19:
+	  		$("#questionNumberImposto").html(dataJSON.questao19.numeroQuestao);
+	  		$("#questionImposto").html(dataJSON.questao19.textoQuestao);
+	  		grafico7();
+	  		if (corretas[18] == false) {
+	  			$("#iconSetaDireita").hide();
+	  			resetQuestionButtons();
+	  		}
+	  		else {
+	  			disableQuestionButtons();
+	  			$("#iconSetaDireita").show();
+
+	  		}
+	  		break;
 
 	  	}
 	  }
@@ -951,302 +952,302 @@ function preloadVideo(arrayOfmp4){
 	  //Verifica se a resposta selecionada está correta, e chama o método correto
 	  function checkAnswer() {
 
+	  	switch (questionNumber) {
+	  		case 1:
+	  		if($("#opcaoD").hasClass("btn-primary")) {
+	  			respostaCorreta();
+	  		}
+	  		else {
+	  			respostaErrada();
+
+	  		}
+	  		break;
+
+
+	  		case 2:
+	  		if($("#opcaoB").hasClass("btn-primary")) {
+	  			respostaCorreta();
+	  		}
+	  		else {
+	  			respostaErrada();
+	  		}
+	  		break;
+
+	  		case 3:
+	  		if($("#botaoDezembro").hasClass("btn-primary")) {
+	  			respostaCorreta();
+	  		}
+	  		else {
+	  			respostaErrada();
+	  		}
+	  		break;
+
+	  		case 4:
+	  		if($("#botaoJunho").hasClass("btn-primary")) {
+	  			respostaCorreta();
+	  		}
+	  		else {
+	  			respostaErrada();
+	  		}
+	  		break;
+
+
+	  		case 5:
+	  		if($("#opcaoA").hasClass("btn-primary")) {
+	  			respostaCorreta();
+	  		}
+	  		else {
+	  			respostaErrada();
+	  		}
+	  		break;
+
+	  		case 6:
+	  		if($("#opcaoD").hasClass("btn-primary")) {
+	  			respostaCorreta();
+	  		}
+	  		else {
+	  			respostaErrada();
+	  		}
+	  		break;
+
+	  		case 7:
+	  		if($("#inputNumbersceneQuestoesGraficos").val() == respostaCorreta7) {
+	  			respostaCorreta();
+	  		}
+	  		else {
+	  			respostaErrada();
+	  		}
+	  		break;
+
+	  		case 8:
+	  		if($("#opcaoA").hasClass("btn-primary")) {
+	  			respostaCorreta();
+	  		}
+	  		else {
+	  			respostaErrada();
+	  		}
+	  		break;
+	  		case 9:
+	  		if($("#opcaoD").hasClass("btn-primary")) {
+	  			respostaCorreta();
+	  		}
+	  		else {
+	  			respostaErrada();
+	  		}
+	  		break;
+	  		case 10:
+	  		var testeLocal = false;
+	  		getInputValuesQuestion10();
+	  		for (var i = 0; i < respostasCorretasQuestion10.length; i++) {
+	  			if (inputRespostasQuestao10[i].val() == respostasCorretasQuestion10[i]) {
+	  			} else {
+	  				respostaErrada();
+	  				testeLocal = true;
+	  			}
+	  		}
+	  		if (testeLocal == false) {
+	  			respostaCorreta();
+	  		}
+	  		break;
+
+	  		case 11:
+	  		if ($("#inputRespostasMatrizEnergetica").val().toLowerCase() == "fóssil" || $("#inputRespostasMatrizEnergetica").val().toLowerCase() == "fossil" ) {
+	  			respostaCorreta();	
+	  		} else {
+	  			respostaErrada();
+	  		}
+	  		break;
+	  		case 12:
+	  		if ($("#inputRespostasMatrizEnergetica").val().toLowerCase() == "nuclear") {
+	  			respostaCorreta();	
+	  		} else {
+	  			respostaErrada();
+	  		}
+	  		break;
+	  		case 13:
+	  		if ($("#inputRespostasMatrizEnergetica").val().toLowerCase() == "hidrelétrica" || $("#inputRespostasMatrizEnergetica").val().toLowerCase() == "hidreletrica")  {
+	  			respostaCorreta();	
+	  		} else {
+	  			respostaErrada();
+	  		}
+	  		break;
+	  		case 14:
+	  		if ($("#inputRespostasMatrizEnergetica").val().toLowerCase() == "aneel")  {
+	  			respostaCorreta();	
+	  		} else {
+	  			respostaErrada();
+	  		}
+	  		break;
+	  		case 15:
+	  		if($("#botaoMatrizQuestoesNao").hasClass("btn-primary")) {
+	  			respostaCorreta();
+	  		}
+	  		else {
+	  			respostaErrada();
+
+	  		}
+	  		break;
+	  		case 16:
+	  		if ($("#bandeiraVerdeOpcao").is(bandeiraSelecionada)) {
+	  			respostaCorreta();
+	  		}
+	  		else {
+	  			respostaErrada();
+	  		}
+	  		break;
+	  		case 17:
+	  		if ($("#bandeiraVermelhaOpcao").is(bandeiraSelecionada)) {
+	  			respostaCorreta();
+	  		}
+	  		else {
+	  			respostaErrada();
+	  		}
+	  		break;
+	  		case 18:
+	  		if ($("#inputValorBandeiras").val() == respostaCorreta18) {
+	  			respostaCorreta();
+	  		}
+	  		else {
+	  			respostaErrada();
+	  		}
+	  		break;
+	  		
+	  		case 19:
+	  		if ($("#radioImpostos input[type='radio']:checked").val() == "a") {
+	  			respostaCorreta();
+	  		}
+	  		else {
+	  			respostaErrada()
+	  		}
+	  		break;
+
+	  	}
+	  }
+
+
+	  function closeObject() {
+	  	swal({
+	  		title: "Você tem certeza?",
+	  		text: "O objeto será fechado e o progresso perdido!",
+	  		type: "warning",
+	  		showCancelButton: true,
+	  		confirmButtonColor: "#DD6B55",
+	  		confirmButtonText: "Sim, sair!",
+	  		closeOnConfirm: false,
+	  		cancelButtonText: "Cancelar"
+
+	  	},
+	  	function(){
+	  		window.location.href = "index.html";
+
+	  	});
+	  }
+
+	  function getInputValuesQuestion10() {
+	  	inputRespostasQuestao10 = 
+	  	[
+	  	$("#inputPotenciaImpressora"),
+	  	$("#inputPotenciaLampada"),
+	  	$("#inputPotenciaTelevisor")
+	  	];
+	  }
+
+	  function showExtraInfo() {
+	  	switch (scene) {
+	  		case 1:
+	  		swal({
+	  			title: "",
+	  			text: "Campo elétrico é o que chamamos também de campo eletrostático, é o espaço em torno de um corpo eletrizado, no qual se pode observar as ações que o corpo carregado de elétrons é capaz de exercer sobre outros corpos carregados ou não.<br> Referente aos componentes básicos na eletrônica e mesmo no campo da eletricidade temos o capacitor: Que são dois condutores separados por um isolante, geralmente os condutores são placas chamadas de armaduras do capacitor, e o isolante pode ser chamado de dielétrico. O capacito é utilizado em circuitos para armazenar cargas elétricas.",
+	  			html: true
+	  		});
+	  		break;
+	  		case 2:
+
+	  		swal({
+	  			title: "",
+	  			text: "Quando nos referimos ao consumo de energia elétrica estamos nos referindo a passagem de corrente no condutor de energia em que relacionado com a tensão temos a potência do aparelho. Pensamos como se fosse uma mangueira de água em que a água é a corrente e a pressão da água é a tensão da rede elétrica, assim quanto maior a quantidade de água passando na torneira, maior é o consumo, podemos aplicar a mesma lógica ao condutor elétrico.<br> Porque o fio aquece então? Porque temos uma passagem de corrente maior que o suportado pelo condutor, o que acarretará com o desarmamento do disjuntor termoelétrico consequentemente.",
+	  			html: true
+	  		});
+	  		break;
+	  		case 4:
 	  		switch (questionNumber) {
 	  			case 1:
-	  				if($("#opcaoD").hasClass("btn-primary")) {
-	  					respostaCorreta();
-	  				}
-	  				else {
-	  					respostaErrada();
-
-	  				}
-	  				break;
-
-
 	  			case 2:
-	  				if($("#opcaoB").hasClass("btn-primary")) {
-	  					respostaCorreta();
-	  				}
-	  				else {
-	  					respostaErrada();
-	  				}
-	  				break;
+	  			swal({
+	  				title: "O que significa KWh?",
+	  				text: " É uma unidade de medida elétrica, onde essa medida é determinada tempo de uso de um aparelho elétrico. O Watt-hora é o consumo de 1 Watts durante uma hora. Por exemplo em um chuveiro elétrico onde a potência marcada em sua embalagem é de 7500 Watts, significa que essa potência irá ser consumida em uma hora. Se esse chuveiro for ligado 7 horas temos então 7500 Watts X 7 horas = 52.500 Watt-hora, ou seja, 52,5 kWh.",
+	  				html: true
+	  			});
+	  			break;
 
 	  			case 3:
-	  				if($("#botaoDezembro").hasClass("btn-primary")) {
-	  					respostaCorreta();
-	  				}
-	  				else {
-	  					respostaErrada();
-	  				}
-	  				break;
-
 	  			case 4:
-	  				if($("#botaoJunho").hasClass("btn-primary")) {
-	  					respostaCorreta();
-	  				}
-	  				else {
-	  					respostaErrada();
-	  				}
-	  				break;
-
-
-	  			case 5:
-	  				if($("#opcaoA").hasClass("btn-primary")) {
-	  					respostaCorreta();
-	  				}
-	  				else {
-	  					respostaErrada();
-	  				}
-	  				break;
-
+	  			case 5: 
+	  			swal({
+	  				title: "O que significa Joule?",
+	  				text: " 1 Wh equivale a 3.600 joules,<br>É uma unidade de medida, onde ocorre a passagem de corrente em uma resistência, e que essa passagem de correte é transformada em calor. <br>Entendemos como Joule, a quantidade de elétrons que passa por segundo em um condutor com uma tensão de 1Volt.",
+	  				html: true
+	  			});
+	  			break;
 	  			case 6:
-	  				if($("#opcaoD").hasClass("btn-primary")) {
-	  					respostaCorreta();
-	  				}
-	  				else {
-	  					respostaErrada();
-	  				}
-	  				break;
-
+	  			swal({
+	  				title: "Multiplos da tensão",
+	  				text: "Megavolt (MV) = 1.000.000 V <br>, Quilovolt (kV) = 1.000 V <br> Volt (V) = 1 V <br> Milivolt (mV) = 0,001 V <br> Microvolt (µV) = 0,000.001 V",
+	  				html: true
+	  			});
+	  			break;
 	  			case 7:
-	  				if($("#inputNumbersceneQuestoesGraficos").val() == respostaCorreta7) {
-	  					respostaCorreta();
-	  				}
-	  				else {
-	  					respostaErrada();
-	  				}
-	  				break;
-
 	  			case 8:
-	  				if($("#opcaoA").hasClass("btn-primary")) {
-	  					respostaCorreta();
-	  				}
-	  				else {
-	  					respostaErrada();
-	  				}
-	  				break;
 	  			case 9:
-	  				if($("#opcaoD").hasClass("btn-primary")) {
-	  					respostaCorreta();
-	  				}
-	  				else {
-	  					respostaErrada();
-	  				}
-	  				break;
 	  			case 10:
-	  				var testeLocal = false;
-		  			getInputValuesQuestion10();
-		  			for (var i = 0; i < respostasCorretasQuestion10.length; i++) {
-		  				if (inputRespostasQuestao10[i].val() == respostasCorretasQuestion10[i]) {
-		  				} else {
-		  					respostaErrada();
-		  					testeLocal = true;
-		  				}
-		  			}
-		  			if (testeLocal == false) {
-		  				respostaCorreta();
-		  			}
-		  			break;
+	  			swal ({
+	  				title: "",
+	  				text: "Energia elétrica é a capacidade de produzir trabalho. <br> Queda de tensão é a diferença de potencial, ou seja, a diferença de tensão entre dois pontos distintos do circuito elétrico. <br> Potência elétrica é a rapidez com que se gasta energia, ou a rapidez com que se produz trabalho. <br><br> WATT-HORA (Wh) = 3.600 WATTS-SEGUNDOS = 3.600 JOULES <br><br> QUILOWATT-HORA (kWh) =1.000 Wh = 3.600.000 JOULES <br><br> HORSEPOWER (HP) = 746 Watts <br><br> CAVALO-VAPOR (cv) = 736 Watts",
+	  				html: true
+	  			});
+	  			break;
 
-		  		case 11:
-		  			if ($("#inputRespostasMatrizEnergetica").val().toLowerCase() == "fóssil" || $("#inputRespostasMatrizEnergetica").val().toLowerCase() == "fossil" ) {
-						respostaCorreta();	
-						} else {
-						respostaErrada();
-						}
-					break;
-		  		case 12:
-		  			if ($("#inputRespostasMatrizEnergetica").val().toLowerCase() == "nuclear") {
-						respostaCorreta();	
-						} else {
-						respostaErrada();
-						}
-					break;
-				case 13:
-		  			if ($("#inputRespostasMatrizEnergetica").val().toLowerCase() == "hidrelétrica" || $("#inputRespostasMatrizEnergetica").val().toLowerCase() == "hidreletrica")  {
-						respostaCorreta();	
-						} else {
-						respostaErrada();
-						}
-					break;
-				case 14:
-		  			if ($("#inputRespostasMatrizEnergetica").val().toLowerCase() == "aneel")  {
-						respostaCorreta();	
-						} else {
-						respostaErrada();
-						}
-					break;
-				case 15:
-	  				if($("#botaoMatrizQuestoesNao").hasClass("btn-primary")) {
-	  					respostaCorreta();
-	  				}
-	  				else {
-	  					respostaErrada();
+	  		}
+	  		break;
+	  		case 6:
+	  		swal ({
+	  			title: "Transformadores de energia elétrica",
+	  			text: "De acordo com a ABNT (Associação Brasileira de Normas Técnicas) este é definido como um equipamento elétrico estático. São os elementos da rede de energia que transformam a tensão em outras tensões sejam elas elevadas ou rebaixadas. <br>São peças muito caras na rede elétrica e muito importantes para fazer a interligação da rede de alta tensão para a baixa tensão que é geralmente encontrada nos postes de energia nas ruas de nossas cidades.",
+	  			html: true
+	  		});
+	  		break;
 
-	  				}
-	  				break;
-	  			case 16:
-	  				if ($("#bandeiraVerdeOpcao").is(bandeiraSelecionada)) {
-	  					respostaCorreta();
-	  				}
-	  				else {
-	  					respostaErrada();
-	  				}
-	  				break;
-	  			case 17:
-	  			if ($("#bandeiraVermelhaOpcao").is(bandeiraSelecionada)) {
-	  					respostaCorreta();
-	  				}
-	  				else {
-	  					respostaErrada();
-	  				}
-	  				break;
-	  			case 18:
-	  				if ($("#inputValorBandeiras").val() == respostaCorreta18) {
-	  					respostaCorreta();
-	  				}
-	  				else {
-	  					respostaErrada();
-	  				}
-	  				break;
-	  		
-	  			case 19:
-		  			if ($("#radioImpostos input[type='radio']:checked").val() == "a") {
-		  				respostaCorreta();
-		  			}
-		  			else {
-		  				respostaErrada()
-		  			}
-		  			break;
-
+	  		case 9:
+	  		swal ({
+	  			title: "Corrente Elétrica",
+	  			text: 'Para saber calcular a corrente elétrica em um condutor de eletrodoméstico, adotamos a lei de Ohm. George Simon Ohm estudou as relações entre a tensão (V), a corrente (A), e a resistência elétrica (R), e chegou a uma afirmação: "A intensidade da corrente elétrica de um condutor é diretamente proporcional à força eletromotriz e inversamente proporcional à sua resistência elétrica". Com a seguinte fórmula:<br> I = V/R',
+	  			html: true
+	  		});
+	  		break;
+	  	}
 	  }
-}
-
-
-	function closeObject() {
-				swal({
-		  title: "Você tem certeza?",
-		  text: "O objeto será fechado e o progresso perdido!",
-		  type: "warning",
-		  showCancelButton: true,
-		  confirmButtonColor: "#DD6B55",
-		  confirmButtonText: "Sim, sair!",
-		  closeOnConfirm: false,
-		  cancelButtonText: "Cancelar"
-
-		},
-		function(){
-		  window.location.href = "index.html";
-
-		});
-	}
-
-		function getInputValuesQuestion10() {
-			inputRespostasQuestao10 = 
-			[
-			$("#inputPotenciaImpressora"),
-			$("#inputPotenciaLampada"),
-			$("#inputPotenciaTelevisor")
-			      ];
-		}
-
-		function showExtraInfo() {
-			switch (scene) {
-				case 1:
-					swal({
-						title: "",
-						text: "Campo elétrico é o que chamamos também de campo eletrostático, é o espaço em torno de um corpo eletrizado, no qual se pode observar as ações que o corpo carregado de elétrons é capaz de exercer sobre outros corpos carregados ou não.<br> Referente aos componentes básicos na eletrônica e mesmo no campo da eletricidade temos o capacitor: Que são dois condutores separados por um isolante, geralmente os condutores são placas chamadas de armaduras do capacitor, e o isolante pode ser chamado de dielétrico. O capacito é utilizado em circuitos para armazenar cargas elétricas.",
-						html: true
-					});
-					break;
-				case 2:
-
-					swal({
-						title: "",
-						text: "Quando nos referimos ao consumo de energia elétrica estamos nos referindo a passagem de corrente no condutor de energia em que relacionado com a tensão temos a potência do aparelho. Pensamos como se fosse uma mangueira de água em que a água é a corrente e a pressão da água é a tensão da rede elétrica, assim quanto maior a quantidade de água passando na torneira, maior é o consumo, podemos aplicar a mesma lógica ao condutor elétrico.<br> Porque o fio aquece então? Porque temos uma passagem de corrente maior que o suportado pelo condutor, o que acarretará com o desarmamento do disjuntor termoelétrico consequentemente.",
-						html: true
-					});
-					break;
-				case 4:
-					switch (questionNumber) {
-						case 1:
-						case 2:
-							swal({
-								title: "O que significa KWh?",
-								text: " É uma unidade de medida elétrica, onde essa medida é determinada tempo de uso de um aparelho elétrico. O Watt-hora é o consumo de 1 Watts durante uma hora. Por exemplo em um chuveiro elétrico onde a potência marcada em sua embalagem é de 7500 Watts, significa que essa potência irá ser consumida em uma hora. Se esse chuveiro for ligado 7 horas temos então 7500 Watts X 7 horas = 52.500 Watt-hora, ou seja, 52,5 kWh.",
-								html: true
-							});
-							break;
-
-						case 3:
-						case 4:
-						case 5: 
-							swal({
-								title: "O que significa Joule?",
-								text: " 1 Wh equivale a 3.600 joules,<br>É uma unidade de medida, onde ocorre a passagem de corrente em uma resistência, e que essa passagem de correte é transformada em calor. <br>Entendemos como Joule, a quantidade de elétrons que passa por segundo em um condutor com uma tensão de 1Volt.",
-								html: true
-							});
-							break;
-						case 6:
-							swal({
-								title: "Multiplos da tensão",
-								text: "Megavolt (MV) = 1.000.000 V <br>, Quilovolt (kV) = 1.000 V <br> Volt (V) = 1 V <br> Milivolt (mV) = 0,001 V <br> Microvolt (µV) = 0,000.001 V",
-								html: true
-							});
-							break;
-						case 7:
-						case 8:
-						case 9:
-						case 10:
-							swal ({
-								title: "",
-								text: "Energia elétrica é a capacidade de produzir trabalho. <br> Queda de tensão é a diferença de potencial, ou seja, a diferença de tensão entre dois pontos distintos do circuito elétrico. <br> Potência elétrica é a rapidez com que se gasta energia, ou a rapidez com que se produz trabalho. <br><br> WATT-HORA (Wh) = 3.600 WATTS-SEGUNDOS = 3.600 JOULES <br><br> QUILOWATT-HORA (kWh) =1.000 Wh = 3.600.000 JOULES <br><br> HORSEPOWER (HP) = 746 Watts <br><br> CAVALO-VAPOR (cv) = 736 Watts",
-								html: true
-							});
-							break;
-
-					}
-					break;
-				case 6:
-					swal ({
-						title: "Transformadores de energia elétrica",
-						text: "De acordo com a ABNT (Associação Brasileira de Normas Técnicas) este é definido como um equipamento elétrico estático. São os elementos da rede de energia que transformam a tensão em outras tensões sejam elas elevadas ou rebaixadas. <br>São peças muito caras na rede elétrica e muito importantes para fazer a interligação da rede de alta tensão para a baixa tensão que é geralmente encontrada nos postes de energia nas ruas de nossas cidades.",
-						html: true
-					});
-					break;
-
-				case 9:
-					swal ({
-						title: "Corrente Elétrica",
-						text: 'Para saber calcular a corrente elétrica em um condutor de eletrodoméstico, adotamos a lei de Ohm. George Simon Ohm estudou as relações entre a tensão (V), a corrente (A), e a resistência elétrica (R), e chegou a uma afirmação: "A intensidade da corrente elétrica de um condutor é diretamente proporcional à força eletromotriz e inversamente proporcional à sua resistência elétrica". Com a seguinte fórmula:<br> I = V/R',
-						html: true
-					});
-					break;
-			}
-		}
 	  //Realiza a troca da seleção e salva a seleção atual em uma variável
 	  function selectAnswer (elemento) {
 	  	$(elemento).toggleClass('btn-primary').siblings().removeClass('btn-primary');
 	  }
 
 	  //Binda o evento de clicar no botão à troca de seleção
-		$(document).on('click', '.btn-questoes', function () {
-			selectAnswer(this);
-		});
+	  $(document).on('click', '.btn-questoes', function () {
+	  	selectAnswer(this);
+	  });
 
-		$(document).on('click', '#iconMais', function () {
-			showExtraInfo();
-		});
-		$(document).on('click', '#iconFechar', function () {
-			closeObject();
-		});
+	  $(document).on('click', '#iconMais', function () {
+	  	showExtraInfo();
+	  });
+	  $(document).on('click', '#iconFechar', function () {
+	  	closeObject();
+	  });
 
 		  //Binda o evento de clicar no botão à troca de seleção nas questões das matrizes
-		$(document).on('click', '.btnQuestoesMatriz', function () {
-			selectAnswer(this);
-		});
-	
+		  $(document).on('click', '.btnQuestoesMatriz', function () {
+		  	selectAnswer(this);
+		  });
+
 
 		//Binda o evento de clicar no botão de enviar ao método checkAnswer
 		$(document).on('click', '#enviarResposta', function () {
@@ -1280,9 +1281,9 @@ function preloadVideo(arrayOfmp4){
 
 		$(document).on('click', '.bandeiraOpcao', function () {
 			if (corretas[questionNumber-1] == false) {
-			bandeiraSelecionada = $(this);
-			checkAnswer();
-		}
+				bandeiraSelecionada = $(this);
+				checkAnswer();
+			}
 		});
 
 		$(document).on('click', '#botaoGraficoCustom', function () {
@@ -1290,39 +1291,60 @@ function preloadVideo(arrayOfmp4){
 		});
 
 		$(document).on('click', '#iconCalculadora', function () {
-			$("#geral").hide();
-			$("#calculadora").show();	
+			if (calculadoraAberta){
+				$("#geral").show();
+				$("#iconMais").show();
+				$("#iconHelp").show();
+				$("#iconFechar").show();
+				$("#iconSetaEsquerda").show();
+				$("#iconSetaDireita").show();
+				$("#calculadora").hide();	
+				$(".iconFixoCalculadora").css("color", "green");
+				calculadoraAberta = false;
+			}
+			else {
+				calculadoraAberta = true;
+				$("#geral").hide();
+				$("#iconMais").hide();
+				$("#iconHelp").hide();
+				$("#iconFechar").hide();
+				$("#iconSetaEsquerda").hide();
+				$("#iconSetaDireita").hide();
+				$("#calculadora").show();	
+				$(".iconFixoCalculadora").css("color", "red");
+
+			}
 		});
 
 		//Verifica se as teclas A, B, C, D ou ENTER foram pressionadas, e realiza a função respectiva (Selecionar alternativa / Enviar resposta)
- 		$(document).bind('keydown', function(event) {
-				if(listeningToKeyPress) {
-					var code = event.keyCode;
-					if (scene == 4) {
+		$(document).bind('keydown', function(event) {
+			if(listeningToKeyPress) {
+				var code = event.keyCode;
+				if (scene == 4) {
 					switch (code) {
 						case 13:
-							$('#enviarResposta').trigger('click');
-							break;
+						$('#enviarResposta').trigger('click');
+						break;
 						case 65:
-							if (!($("#opcaoA").prop("disabled"))) {
-								selectAnswer($("#opcaoA"));
-							}
-							break;
+						if (!($("#opcaoA").prop("disabled"))) {
+							selectAnswer($("#opcaoA"));
+						}
+						break;
 						case 66:
-							if (!($("#opcaoB").prop("disabled"))) {
-								selectAnswer($("#opcaoB"));
-							}						
-							break;
+						if (!($("#opcaoB").prop("disabled"))) {
+							selectAnswer($("#opcaoB"));
+						}						
+						break;
 						case 67:
-							if (!($("#opcaoC").prop("disabled"))) {
-								selectAnswer($("#opcaoC"));
-							}
-							break;
+						if (!($("#opcaoC").prop("disabled"))) {
+							selectAnswer($("#opcaoC"));
+						}
+						break;
 						case 68:
-							if (!($("#opcaoD").prop("disabled"))) {
-								selectAnswer($("#opcaoD"));
-							}
-							break;
+						if (!($("#opcaoD").prop("disabled"))) {
+							selectAnswer($("#opcaoD"));
+						}
+						break;
 					}
 				}
 				else if (scene == 7) {
@@ -1330,74 +1352,74 @@ function preloadVideo(arrayOfmp4){
 						$('#enviarRespostaMatriz').trigger('click');
 					}
 				}
-				}
-			});
+			}
+		});
 
  			//Coloca as alternativas no estado inicial, para que o aluno possa responder (Botões ativos, e nenhuma opção selecionada)
  			function resetQuestionButtons() {
- 			 	switch (questionNumber) {
- 			 		case 1:
- 			 		case 2:
- 			 		case 5:
- 			 		case 6:
- 			 		case 8:
- 			 		case 9:
-		  			 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', false);
-		 				$("#opcaoA").removeClass('btn-primary').siblings().removeClass('btn-primary');
-		 			 	$("#alertAnswer").hide();
-		 			 	break;
-		 			case 3:
-		 			case 4:
-		  			 	$("#botaoDezembro").prop('disabled', false).siblings().prop('disabled', false);
-		 				$("#botaoDezembro").removeClass('btn-primary').siblings().removeClass('btn-primary');
-						$("#alertAnswer").hide();
-		 				break;
-		 			case 7:
-		 				$("#enviarResposta").prop('disabled', false);
-		 				$("#inputNumbersceneQuestoesGraficos").prop('type', 'number');
-		 			 	$("#alertAnswer").hide();
-		 				break;
-		 			case 10:
-		 				$("#enviarResposta").prop('disabled', false);
-		 			 	$("#alertAnswer").hide();
-		 			 	break;
-		 			case 11: 
-		 			case 12:
-		 			case 13:
-		 			case 14:
-		 			 	$("#inputRespostasMatrizEnergetica").prop('disabled', false);
-		 			 	$("#inputRespostasMatrizEnergetica").val("");
-		 			 	$("#alertAnswerMatriz").hide();
-		 			 	break;
-		 			 case 15:
-		 			 	$("#botaoMatrizQuestoesNao").prop('disabled',false).siblings().prop('disabled',false);
-		 				$("#botaoMatrizQuestoesNao").removeClass('btn-primary').siblings().removeClass('btn-primary');
-						$("#alertAnswerMatriz").hide();
-		 				break;
+ 				switch (questionNumber) {
+ 					case 1:
+ 					case 2:
+ 					case 5:
+ 					case 6:
+ 					case 8:
+ 					case 9:
+ 					$("#opcaoA").prop('disabled', false).siblings().prop('disabled', false);
+ 					$("#opcaoA").removeClass('btn-primary').siblings().removeClass('btn-primary');
+ 					$("#alertAnswer").hide();
+ 					break;
+ 					case 3:
+ 					case 4:
+ 					$("#botaoDezembro").prop('disabled', false).siblings().prop('disabled', false);
+ 					$("#botaoDezembro").removeClass('btn-primary').siblings().removeClass('btn-primary');
+ 					$("#alertAnswer").hide();
+ 					break;
+ 					case 7:
+ 					$("#enviarResposta").prop('disabled', false);
+ 					$("#inputNumbersceneQuestoesGraficos").prop('type', 'number');
+ 					$("#alertAnswer").hide();
+ 					break;
+ 					case 10:
+ 					$("#enviarResposta").prop('disabled', false);
+ 					$("#alertAnswer").hide();
+ 					break;
+ 					case 11: 
+ 					case 12:
+ 					case 13:
+ 					case 14:
+ 					$("#inputRespostasMatrizEnergetica").prop('disabled', false);
+ 					$("#inputRespostasMatrizEnergetica").val("");
+ 					$("#alertAnswerMatriz").hide();
+ 					break;
+ 					case 15:
+ 					$("#botaoMatrizQuestoesNao").prop('disabled',false).siblings().prop('disabled',false);
+ 					$("#botaoMatrizQuestoesNao").removeClass('btn-primary').siblings().removeClass('btn-primary');
+ 					$("#alertAnswerMatriz").hide();
+ 					break;
 
-		 			case 16:
-		 			case 17:
-						$("#bandeiraVerdeOpcao").attr("src", "../assets/img/Objeto 1/bandeiraVerde.png")
-						$("#bandeiraAmarelaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraAmarela.png")
-						$("#bandeiraVermelhaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraVermelha.png")
-						$('.bandeiraOpcao').css('cursor','pointer');
-						$("#alertAnswerBandeiras").hide();
+ 					case 16:
+ 					case 17:
+ 					$("#bandeiraVerdeOpcao").attr("src", "../assets/img/Objeto 1/bandeiraVerde.png")
+ 					$("#bandeiraAmarelaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraAmarela.png")
+ 					$("#bandeiraVermelhaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraVermelha.png")
+ 					$('.bandeiraOpcao').css('cursor','pointer');
+ 					$("#alertAnswerBandeiras").hide();
 
-		 				break;
+ 					break;
 
 
-		 			case 18:
-		 				$("#enviarRespostaBandeiras").prop('disabled', false);
-		 			 	$("#inputValorBandeiras").val("");
-		 				$("#alertAnswerBandeiras").hide();
+ 					case 18:
+ 					$("#enviarRespostaBandeiras").prop('disabled', false);
+ 					$("#inputValorBandeiras").val("");
+ 					$("#alertAnswerBandeiras").hide();
 
-		 				break;
+ 					break;
 
-		 			case 19:
-		 				$("#enviarRespostaImposto").prop('disabled', false);
-		 			 	$("#alertAnswerImposto").hide();
-		 			 	break;
- 			 	}
+ 					case 19:
+ 					$("#enviarRespostaImposto").prop('disabled', false);
+ 					$("#alertAnswerImposto").hide();
+ 					break;
+ 				}
 
 
 
@@ -1407,221 +1429,221 @@ function preloadVideo(arrayOfmp4){
 
  				switch(questionNumber) {
  					case 1:
- 					 	$("#opcaoD").prop('disabled', false).siblings().prop('disabled', true);
- 						$("#opcaoD").toggleClass('btn-primary').siblings().removeClass('btn-primary');
-						updateAlertOnQuestionChange();
- 						break;
- 				
+ 					$("#opcaoD").prop('disabled', false).siblings().prop('disabled', true);
+ 					$("#opcaoD").toggleClass('btn-primary').siblings().removeClass('btn-primary');
+ 					updateAlertOnQuestionChange();
+ 					break;
+
  					case 2:
- 					 	$("#opcaoB").prop('disabled', false).siblings().prop('disabled', true);
- 						$("#opcaoB").toggleClass('btn-primary').siblings().removeClass('btn-primary');
-						updateAlertOnQuestionChange();
- 						break;
+ 					$("#opcaoB").prop('disabled', false).siblings().prop('disabled', true);
+ 					$("#opcaoB").toggleClass('btn-primary').siblings().removeClass('btn-primary');
+ 					updateAlertOnQuestionChange();
+ 					break;
  					case 3:
- 						$("#botaoDezembro").prop('disabled', false).siblings().prop('disabled', true);
- 						$("#botaoDezembro").toggleClass('btn-primary').siblings().removeClass('btn-primary');
- 						$("#enviarResposta").prop('disabled', true);
-						updateAlertOnQuestionChange();
- 						break;
+ 					$("#botaoDezembro").prop('disabled', false).siblings().prop('disabled', true);
+ 					$("#botaoDezembro").toggleClass('btn-primary').siblings().removeClass('btn-primary');
+ 					$("#enviarResposta").prop('disabled', true);
+ 					updateAlertOnQuestionChange();
+ 					break;
  					case 4:
- 						$("#botaoJunho").prop('disabled', false).siblings().prop('disabled', true);
- 						$("#botaoJunho").toggleClass('btn-primary').siblings().removeClass('btn-primary');
- 						$("#enviarResposta").prop('disabled', true);
-						updateAlertOnQuestionChange();
- 						break;
+ 					$("#botaoJunho").prop('disabled', false).siblings().prop('disabled', true);
+ 					$("#botaoJunho").toggleClass('btn-primary').siblings().removeClass('btn-primary');
+ 					$("#enviarResposta").prop('disabled', true);
+ 					updateAlertOnQuestionChange();
+ 					break;
  					case 5:
- 					 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', true);
- 						$("#opcaoA").toggleClass('btn-primary').siblings().removeClass('btn-primary');
-						updateAlertOnQuestionChange();
- 						break;
+ 					$("#opcaoA").prop('disabled', false).siblings().prop('disabled', true);
+ 					$("#opcaoA").toggleClass('btn-primary').siblings().removeClass('btn-primary');
+ 					updateAlertOnQuestionChange();
+ 					break;
  					case 6:
- 					 	$("#opcaoD").prop('disabled', false).siblings().prop('disabled', true);
- 						$("#opcaoD").toggleClass('btn-primary').siblings().removeClass('btn-primary');
-						updateAlertOnQuestionChange();
- 						break;
+ 					$("#opcaoD").prop('disabled', false).siblings().prop('disabled', true);
+ 					$("#opcaoD").toggleClass('btn-primary').siblings().removeClass('btn-primary');
+ 					updateAlertOnQuestionChange();
+ 					break;
  					case 7:
- 						$("#enviarResposta").prop('disabled', true);
- 						$("#inputNumbersceneQuestoesGraficos").prop('disabled', true);
- 						$("#inputNumbersceneQuestoesGraficos").prop('placeholder', '63.99');
- 						updateAlertOnQuestionChange();
- 						break;
+ 					$("#enviarResposta").prop('disabled', true);
+ 					$("#inputNumbersceneQuestoesGraficos").prop('disabled', true);
+ 					$("#inputNumbersceneQuestoesGraficos").prop('placeholder', '63.99');
+ 					updateAlertOnQuestionChange();
+ 					break;
  					case 8:
- 					 	$("#opcaoA").prop('disabled', false).siblings().prop('disabled', true);
- 						$("#opcaoA").toggleClass('btn-primary').siblings().removeClass('btn-primary');
-						updateAlertOnQuestionChange();
- 						break;
+ 					$("#opcaoA").prop('disabled', false).siblings().prop('disabled', true);
+ 					$("#opcaoA").toggleClass('btn-primary').siblings().removeClass('btn-primary');
+ 					updateAlertOnQuestionChange();
+ 					break;
  					case 9:			
- 					 	$("#opcaoD").prop('disabled', false).siblings().prop('disabled', true);
- 						$("#opcaoD").toggleClass('btn-primary').siblings().removeClass('btn-primary');
-						updateAlertOnQuestionChange();
-						break;
-					case 10: 
-						for (var i = 0; i < respostasCorretasQuestion10.length; i++) {
-							inputRespostasQuestao10[i].prop('disabled', true);
-						}
+ 					$("#opcaoD").prop('disabled', false).siblings().prop('disabled', true);
+ 					$("#opcaoD").toggleClass('btn-primary').siblings().removeClass('btn-primary');
+ 					updateAlertOnQuestionChange();
+ 					break;
+ 					case 10: 
+ 					for (var i = 0; i < respostasCorretasQuestion10.length; i++) {
+ 						inputRespostasQuestao10[i].prop('disabled', true);
+ 					}
 
-						updateAlertOnQuestionChange();
-						break;
-					case 11: 
-						$("#inputRespostasMatrizEnergetica").prop('disabled', true);
-						updateAlertOnQuestionChange();
-						$("#inputNumbersceneQuestoesGraficos").prop('placeholder', 'Fóssil');
+ 					updateAlertOnQuestionChange();
+ 					break;
+ 					case 11: 
+ 					$("#inputRespostasMatrizEnergetica").prop('disabled', true);
+ 					updateAlertOnQuestionChange();
+ 					$("#inputNumbersceneQuestoesGraficos").prop('placeholder', 'Fóssil');
 
-						break;
-					case 12:
-						$("#inputRespostasMatrizEnergetica").prop('disabled', true);
-						$("#inputNumbersceneQuestoesGraficos").prop('placeholder', 'Nuclear');
+ 					break;
+ 					case 12:
+ 					$("#inputRespostasMatrizEnergetica").prop('disabled', true);
+ 					$("#inputNumbersceneQuestoesGraficos").prop('placeholder', 'Nuclear');
 
-						updateAlertOnQuestionChange();
-						break;
-					case 13:
-						$("#inputRespostasMatrizEnergetica").prop('disabled', true);
-						$("#inputNumbersceneQuestoesGraficos").prop('placeholder', 'Hidrelétrica');
-						updateAlertOnQuestionChange();
-						break;
-					case 14:
-						$("#inputRespostasMatrizEnergetica").prop('disabled', true);
-						$("#inputNumbersceneQuestoesGraficos").prop('placeholder', 'ANEEL');
-						updateAlertOnQuestionChange();
-						break;
+ 					updateAlertOnQuestionChange();
+ 					break;
+ 					case 13:
+ 					$("#inputRespostasMatrizEnergetica").prop('disabled', true);
+ 					$("#inputNumbersceneQuestoesGraficos").prop('placeholder', 'Hidrelétrica');
+ 					updateAlertOnQuestionChange();
+ 					break;
+ 					case 14:
+ 					$("#inputRespostasMatrizEnergetica").prop('disabled', true);
+ 					$("#inputNumbersceneQuestoesGraficos").prop('placeholder', 'ANEEL');
+ 					updateAlertOnQuestionChange();
+ 					break;
  					case 15:			
- 					 	$("#botaoMatrizQuestoesNao").prop('disabled', false);
- 					 	$("#botaoMatrizQuestoesSim").prop('disabled', true);
- 						$("#botaoMatrizQuestoesNao").toggleClass('btn-primary');
-						$("#botaoMatrizQuestoesSim").removeClass('btn-primary');
-						updateAlertOnQuestionChange();
-						break;
+ 					$("#botaoMatrizQuestoesNao").prop('disabled', false);
+ 					$("#botaoMatrizQuestoesSim").prop('disabled', true);
+ 					$("#botaoMatrizQuestoesNao").toggleClass('btn-primary');
+ 					$("#botaoMatrizQuestoesSim").removeClass('btn-primary');
+ 					updateAlertOnQuestionChange();
+ 					break;
 
-					case 16:
-						$("#bandeiraVerdeOpcao").attr("src", "../assets/img/Objeto 1/bandeiraVerde.png")
-						$("#bandeiraAmarelaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraCinza.png")
-						$("#bandeiraVermelhaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraCinza.png")
-						$('.bandeiraOpcao').css('cursor','not-allowed');
-						updateAlertOnQuestionChange();
-						break;
-					case 17:
-						$("#bandeiraVerdeOpcao").attr("src", "../assets/img/Objeto 1/bandeiraCinza.png")
-						$("#bandeiraAmarelaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraCinza.png")
-						$("#bandeiraVermelhaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraVermelha.png")
-						$('.bandeiraOpcao').css('cursor','not-allowed');
-						updateAlertOnQuestionChange();
+ 					case 16:
+ 					$("#bandeiraVerdeOpcao").attr("src", "../assets/img/Objeto 1/bandeiraVerde.png")
+ 					$("#bandeiraAmarelaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraCinza.png")
+ 					$("#bandeiraVermelhaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraCinza.png")
+ 					$('.bandeiraOpcao').css('cursor','not-allowed');
+ 					updateAlertOnQuestionChange();
+ 					break;
+ 					case 17:
+ 					$("#bandeiraVerdeOpcao").attr("src", "../assets/img/Objeto 1/bandeiraCinza.png")
+ 					$("#bandeiraAmarelaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraCinza.png")
+ 					$("#bandeiraVermelhaOpcao").attr("src", "../assets/img/Objeto 1/bandeiraVermelha.png")
+ 					$('.bandeiraOpcao').css('cursor','not-allowed');
+ 					updateAlertOnQuestionChange();
 
-						break;
+ 					break;
 
-					case 18:
-		 				$("#enviarRespostaBandeiras").prop('disabled', true);
-		 				$("#inputValorBandeiras").prop('disabled', "true");
-		 			 	$("#inputValorBandeiras").prop('placeholder', "4,50");
-		 				$("#alertAnswerBandeiras").hide();
-						updateAlertOnQuestionChange();
+ 					case 18:
+ 					$("#enviarRespostaBandeiras").prop('disabled', true);
+ 					$("#inputValorBandeiras").prop('disabled', "true");
+ 					$("#inputValorBandeiras").prop('placeholder', "4,50");
+ 					$("#alertAnswerBandeiras").hide();
+ 					updateAlertOnQuestionChange();
 
-		 				break;
+ 					break;
 
-		 			case 19:
-		 				$("#radioButtonA").prop('checked', true);
-		 				$("#radioButtonA").prop('disabled', false).siblings().prop('disabled', true);
-		 				$("#alertAnswerImposto").hide();
-		 				updateAlertOnQuestionChange();
+ 					case 19:
+ 					$("#radioButtonA").prop('checked', true);
+ 					$("#radioButtonA").prop('disabled', false).siblings().prop('disabled', true);
+ 					$("#alertAnswerImposto").hide();
+ 					updateAlertOnQuestionChange();
 
-		 				break;
+ 					break;
 
+
+ 				}
 
  			}
 
- 		}
-
  		//Realiza as ações necessárias caso a resposta do aluno esteja correta (Adicionar "true" ao vetor de verificação, desabilitar os botõe e exibir o icone de seta para a direita)
  		function respostaCorreta() {
-	  		$("#iconSetaDireita").show();
+ 			$("#iconSetaDireita").show();
 
-    		disableQuestionButtons();
-    		corretas[questionNumber-1] = true;
+ 			disableQuestionButtons();
+ 			corretas[questionNumber-1] = true;
 
  		}
 
  		//Realiza as ações necessárias caso a resposta do aluno esteja errada (Exibe alerta de resposta incorreta)
  		function respostaErrada() {
  			if (questionNumber <= 10) {
-	 			$("#alertAnswer").addClass("alert-danger");
-		  		$("#alertAnswer").removeClass("alert-success");
-	  			$("#alertAnswer").html(dataJSON.mensagensQuestoes.respostaIncorreta);
-	  			$("#alertAnswer").show(); 
-  			} else if (questionNumber > 10 && questionNumber < 16) {
-	  			$("#alertAnswerMatriz").addClass("alert-danger");
-		  		$("#alertAnswerMatriz").removeClass("alert-success");
-	  			$("#alertAnswerMatriz").html(dataJSON.mensagensQuestoes.respostaIncorreta);
-	  			$("#alertAnswerMatriz").show(); 
-  			} else if (questionNumber >= 16 && questionNumber < 19) {
-	  			$("#alertAnswerBandeiras").addClass("alert-danger");
-		  		$("#alertAnswerBandeiras").removeClass("alert-success");
-	  			$("#alertAnswerBandeiras").html(dataJSON.mensagensQuestoes.respostaIncorreta);
-	  			$("#alertAnswerBandeiras").show();   			
-	  		} else if (questionNumber >= 19) {
-	  			$("#alertAnswerImposto").addClass("alert-danger");
-		  		$("#alertAnswerImposto").removeClass("alert-success");
-	  			$("#alertAnswerImposto").html(dataJSON.mensagensQuestoes.respostaIncorreta);
-	  			$("#alertAnswerImposto").show();  
-	  		}
+ 				$("#alertAnswer").addClass("alert-danger");
+ 				$("#alertAnswer").removeClass("alert-success");
+ 				$("#alertAnswer").html(dataJSON.mensagensQuestoes.respostaIncorreta);
+ 				$("#alertAnswer").show(); 
+ 			} else if (questionNumber > 10 && questionNumber < 16) {
+ 				$("#alertAnswerMatriz").addClass("alert-danger");
+ 				$("#alertAnswerMatriz").removeClass("alert-success");
+ 				$("#alertAnswerMatriz").html(dataJSON.mensagensQuestoes.respostaIncorreta);
+ 				$("#alertAnswerMatriz").show(); 
+ 			} else if (questionNumber >= 16 && questionNumber < 19) {
+ 				$("#alertAnswerBandeiras").addClass("alert-danger");
+ 				$("#alertAnswerBandeiras").removeClass("alert-success");
+ 				$("#alertAnswerBandeiras").html(dataJSON.mensagensQuestoes.respostaIncorreta);
+ 				$("#alertAnswerBandeiras").show();   			
+ 			} else if (questionNumber >= 19) {
+ 				$("#alertAnswerImposto").addClass("alert-danger");
+ 				$("#alertAnswerImposto").removeClass("alert-success");
+ 				$("#alertAnswerImposto").html(dataJSON.mensagensQuestoes.respostaIncorreta);
+ 				$("#alertAnswerImposto").show();  
+ 			}
  		}
 
  		//Exibe o alerta de respsota correta (Método chamado quando o aluno acerta a questão, e quando muda de tela para uma questão já respondida)
  		function updateAlertOnQuestionChange() {
  			if (questionNumber <= 10) {
- 		  	$("#alertAnswer").html(dataJSON.mensagensQuestoes.respostaCorreta);
-    		$("#alertAnswer").show();
-    		$("#alertAnswer").addClass("alert-success");
-	  		$("#alertAnswer").removeClass("alert-danger"); 
-	  	} else if (questionNumber > 10 && questionNumber < 16) {
-	  		$("#alertAnswerMatriz").html(dataJSON.mensagensQuestoes.respostaCorreta);
-    		$("#alertAnswerMatriz").show();
-    		$("#alertAnswerMatriz").addClass("alert-success");
-	  		$("#alertAnswerMatriz").removeClass("alert-danger"); 
-	  	} else if (questionNumber >= 16 && questionNumber < 19) {
-	  		$("#alertAnswerBandeiras").html(dataJSON.mensagensQuestoes.respostaCorreta);
-    		$("#alertAnswerBandeiras").show();
-    		$("#alertAnswerBandeiras").addClass("alert-success");
-	  		$("#alertAnswerBandeiras").removeClass("alert-danger"); 
-	  	} else if (questionNumber >= 19) {
-	  		$("#alertAnswerImposto").html(dataJSON.mensagensQuestoes.respostaCorreta);
-    		$("#alertAnswerImposto").show();
-    		$("#alertAnswerImposto").addClass("alert-success");
-	  		$("#alertAnswerImposto").removeClass("alert-danger"); 
-	  	}
+ 				$("#alertAnswer").html(dataJSON.mensagensQuestoes.respostaCorreta);
+ 				$("#alertAnswer").show();
+ 				$("#alertAnswer").addClass("alert-success");
+ 				$("#alertAnswer").removeClass("alert-danger"); 
+ 			} else if (questionNumber > 10 && questionNumber < 16) {
+ 				$("#alertAnswerMatriz").html(dataJSON.mensagensQuestoes.respostaCorreta);
+ 				$("#alertAnswerMatriz").show();
+ 				$("#alertAnswerMatriz").addClass("alert-success");
+ 				$("#alertAnswerMatriz").removeClass("alert-danger"); 
+ 			} else if (questionNumber >= 16 && questionNumber < 19) {
+ 				$("#alertAnswerBandeiras").html(dataJSON.mensagensQuestoes.respostaCorreta);
+ 				$("#alertAnswerBandeiras").show();
+ 				$("#alertAnswerBandeiras").addClass("alert-success");
+ 				$("#alertAnswerBandeiras").removeClass("alert-danger"); 
+ 			} else if (questionNumber >= 19) {
+ 				$("#alertAnswerImposto").html(dataJSON.mensagensQuestoes.respostaCorreta);
+ 				$("#alertAnswerImposto").show();
+ 				$("#alertAnswerImposto").addClass("alert-success");
+ 				$("#alertAnswerImposto").removeClass("alert-danger"); 
+ 			}
  		}
 
 
-    var sourceSwap = function () {
-        var $this = $(this);
-        var newSource = $this.data('alt-src');
-        $this.data('alt-src', $this.attr('src'));
-        $this.attr('src', newSource);
-    }
+ 		var sourceSwap = function () {
+ 			var $this = $(this);
+ 			var newSource = $this.data('alt-src');
+ 			$this.data('alt-src', $this.attr('src'));
+ 			$this.attr('src', newSource);
+ 		}
 
-    $(function() {
-        $('img[data-alt-src]').each(function() { 
-            new Image().src = $(this).data('alt-src'); 
-        }).hover(sourceSwap, sourceSwap); 
-    });
+ 		$(function() {
+ 			$('img[data-alt-src]').each(function() { 
+ 				new Image().src = $(this).data('alt-src'); 
+ 			}).hover(sourceSwap, sourceSwap); 
+ 		});
 
 	  	//Método utilizado para criar o gráfico utilizado nas questões 1 e 2
-		function grafico1() {
-			$(document).ready(function () {
+	  	function grafico1() {
+	  		$(document).ready(function () {
 
 
 				// Gera o gráfico
 				Highcharts.chart('sceneQuestoesGraph', {
-				    chart: {
-				        type: 'pie',
-				    },
-				      credits: {
-      					enabled: false
- 					 },
+					chart: {
+						type: 'pie',
+					},
+					credits: {
+						enabled: false
+					},
 					title: {
 						text: 'Percentagem de uso de energia elétrica por eletrodoméstico'
 					},
-					 subtitle: {
-			       		 text: 'Fonte: Procel - 2005'
-			   		 },
+					subtitle: {
+						text: 'Fonte: Procel - 2005'
+					},
 					tooltip: {
 						pointFormat: '{series.name}: <b>{point.y}</b>'
 					},
@@ -1629,9 +1651,9 @@ function preloadVideo(arrayOfmp4){
 						pie: {
 							allowPointSelect: true,
 							cursor: 'pointer',
-						 dataLabels: {
-              			 	enabled: true,
-                			format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+							dataLabels: {
+								enabled: true,
+								format: '<b>{point.name}</b>: {point.percentage:.1f} %',
 
 
 							},
@@ -1647,7 +1669,7 @@ function preloadVideo(arrayOfmp4){
 						}, {
 							name: 'Chuveiro elétrico',
 							y: 25
-		
+
 						}, {
 							name: 'Iluminação',
 							y: 20
@@ -1668,127 +1690,127 @@ function preloadVideo(arrayOfmp4){
 					}]
 				});
 			});
-			}
+	  	}
 	  	
 	  	//Método utilizado para criar o gráfico utilizado nas questões 3 e 4
-	 	function grafico2() {
-	 		
-			Highcharts.chart('sceneQuestoesGraph', {
-			    chart: {
-			        type: 'column'
-			    },
-			 	credits: {
-      				enabled: false
- 				},
-			    title: {
-			        text: 'Consumo de energia elétrica de uma residência'
-			    },
-			    subtitle: {
-			        text: 'Fonte: Professor Hugo Gomes'
-			    },
-			    xAxis: {
-			        categories: [
-			            'Jan',
-			            'Fev',
-			            'Mar',
-			            'Abr',
-			            'Mai',
-			            'Jun',
-			            'Jul',
-			            'Ago',
-			            'Set',
-			            'Out',
-			            'Nov',
-			            'Dez'
-			        ],
-			        crosshair: true
-			    },
-			    yAxis: {
-			        min: 0,
-			        title: {
-			            text: 'kWh'
-			        }
-			    },
-			    tooltip: {
-					pointFormat: 'Consumo: <b>{point.y}</b> kWh',
-			        shared: true
-			    },
-			    plotOptions: {
-			        column: {
-			            pointPadding: 0.2,
-			            borderWidth: 0
-			        }
-			    },
-			    series: [{
-			        name: 'Consumo',
-			        data: [375, 300, 275, 280, 267, 254, 380, 310, 301, 312, 327, 382]
-			    }]
-			});
+	  	function grafico2() {
+
+	  		Highcharts.chart('sceneQuestoesGraph', {
+	  			chart: {
+	  				type: 'column'
+	  			},
+	  			credits: {
+	  				enabled: false
+	  			},
+	  			title: {
+	  				text: 'Consumo de energia elétrica de uma residência'
+	  			},
+	  			subtitle: {
+	  				text: 'Fonte: Professor Hugo Gomes'
+	  			},
+	  			xAxis: {
+	  				categories: [
+	  				'Jan',
+	  				'Fev',
+	  				'Mar',
+	  				'Abr',
+	  				'Mai',
+	  				'Jun',
+	  				'Jul',
+	  				'Ago',
+	  				'Set',
+	  				'Out',
+	  				'Nov',
+	  				'Dez'
+	  				],
+	  				crosshair: true
+	  			},
+	  			yAxis: {
+	  				min: 0,
+	  				title: {
+	  					text: 'kWh'
+	  				}
+	  			},
+	  			tooltip: {
+	  				pointFormat: 'Consumo: <b>{point.y}</b> kWh',
+	  				shared: true
+	  			},
+	  			plotOptions: {
+	  				column: {
+	  					pointPadding: 0.2,
+	  					borderWidth: 0
+	  				}
+	  			},
+	  			series: [{
+	  				name: 'Consumo',
+	  				data: [375, 300, 275, 280, 267, 254, 380, 310, 301, 312, 327, 382]
+	  			}]
+	  		});
 
 
 
-	 	}
+	  	}
 
 
 	 	//Método utilizado parar criar o gráfico utilizado nas questões 5 e 6
 	 	function grafico3() {
 	 		Highcharts.chart('sceneQuestoesGraph', {
-				credits: {
-      					enabled: false
- 				},
-			    title: {
-			        text: 'Consumo de energia elétrica em kWh na residência de alunos'
-			    },
+	 			credits: {
+	 				enabled: false
+	 			},
+	 			title: {
+	 				text: 'Consumo de energia elétrica em kWh na residência de alunos'
+	 			},
 
-			    subtitle: {
-			        text: ''
-			    },
+	 			subtitle: {
+	 				text: ''
+	 			},
 
-			    yAxis: {
-			        title: {
-			            text: 'kWh'
-			        }
-			    },
-			    xAxis: {
-			    			        categories: [
-						            'set/15',
-						            'out/15',
-						            'nov/15',
-						            'dez/15',
-						            'jan/16',
-						            'fev/16',
-						            'mar/16',
-						        ],
-			        title: {
-			            text: 'Meses'
-			        }
-			    },
-			    legend: {
-			        layout: 'vertical',
-			        align: 'right',
-			        verticalAlign: 'middle'
-			    },
+	 			yAxis: {
+	 				title: {
+	 					text: 'kWh'
+	 				}
+	 			},
+	 			xAxis: {
+	 				categories: [
+	 				'set/15',
+	 				'out/15',
+	 				'nov/15',
+	 				'dez/15',
+	 				'jan/16',
+	 				'fev/16',
+	 				'mar/16',
+	 				],
+	 				title: {
+	 					text: 'Meses'
+	 				}
+	 			},
+	 			legend: {
+	 				layout: 'vertical',
+	 				align: 'right',
+	 				verticalAlign: 'middle'
+	 			},
 
-			    series: [{
-			        name: 'Consumo',
-			        data: [450, 550, 557, 723, 732, 752, 750]
-			    }]
+	 			series: [{
+	 				name: 'Consumo',
+	 				data: [450, 550, 557, 723, 732, 752, 750]
+	 			}]
 
-			});
+	 		});
 	 	}
 	 	//Método utilizado para criar o gráfico utilizado nas questões 7 e 8
 	 	function grafico4() {
-			$(document).ready(function () {
+	 		$(document).ready(function () {
 
 
 				// Gera o gráfico
 				Highcharts.chart('sceneQuestoesGraph', {
-				    chart: {
-				        type: 'pie',
-				    },
-				    credits: {
-      					enabled: false
- 					},
+					chart: {
+						type: 'pie',
+					},
+					credits: {
+						enabled: false
+					},
 					title: {
 						text: 'Oferta interna de energia elétrica por fonte - Brasil, 2015'
 					},
@@ -1802,9 +1824,9 @@ function preloadVideo(arrayOfmp4){
 						pie: {
 							allowPointSelect: true,
 							cursor: 'pointer',
-						 dataLabels: {
-              			 	enabled: true,
-                			format: '<b>{point.name}</b>: {point.percentage:.2f} %',
+							dataLabels: {
+								enabled: true,
+								format: '<b>{point.name}</b>: {point.percentage:.2f} %',
 
 
 							},
@@ -1820,7 +1842,7 @@ function preloadVideo(arrayOfmp4){
 						}, {
 							name: 'Gás Natural',
 							y: 12.79
-		
+
 						}, {
 							name: 'Biomassa',
 							y: 8
@@ -1844,141 +1866,141 @@ function preloadVideo(arrayOfmp4){
 					}]
 				});
 			});
-			}
+	 	}
 
 
 	 	//Método utilizado parar criar o gráfico utilizado na questão 9
-			function grafico5() {
-				Highcharts.chart('sceneQuestoesGraph', {
-				    chart: {
-				        type: 'bar'
-				    },
-				    credits: {
-      					enabled: false
- 					 },
-				    title: {
-				        text: 'Consumo de energia elétrica por região geográfica em Janeiro de 2017 em GWh'
-				    },
-				    subtitle: {
-				        text: ''
-				    },
-				    xAxis: {
-				        categories: ['Centro-Oeste', 'Sul', 'Sudeste', 'Nordeste', 'Norte'],
-				        title: {
-				            text: 'Região'
-				        }
-				    },
-				    yAxis: {
-				        min: 0,
-				        title: {
-				            text: 'Consumo (GWh)',
-				            align: 'high'
-				        },
-				        labels: {
-				            overflow: 'justify'
-				        }
-				    },
-				    tooltip: {
-				        valueSuffix: ' GWh'
-				    },
-				    plotOptions: {
-				        bar: {
-				            dataLabels: {
-				                enabled: true
-				            }
-				        }
-				    },
-				    legend: {
-				        layout: 'vertical',
-				        align: 'right',
-				        verticalAlign: 'top',
-				        x: -40,
-				        y: 80,
-				        floating: true,
-				        borderWidth: 1,
-				        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
-				        shadow: true
-				    },
-				    credits: {
-				        enabled: false
-				    },
-				    series: [{
-				        name: 'Consumo de energia',
-				        data: [2865, 7281, 19679, 6731, 2752]
-				    }]
-				});
-			}
+	 	function grafico5() {
+	 		Highcharts.chart('sceneQuestoesGraph', {
+	 			chart: {
+	 				type: 'bar'
+	 			},
+	 			credits: {
+	 				enabled: false
+	 			},
+	 			title: {
+	 				text: 'Consumo de energia elétrica por região geográfica em Janeiro de 2017 em GWh'
+	 			},
+	 			subtitle: {
+	 				text: ''
+	 			},
+	 			xAxis: {
+	 				categories: ['Centro-Oeste', 'Sul', 'Sudeste', 'Nordeste', 'Norte'],
+	 				title: {
+	 					text: 'Região'
+	 				}
+	 			},
+	 			yAxis: {
+	 				min: 0,
+	 				title: {
+	 					text: 'Consumo (GWh)',
+	 					align: 'high'
+	 				},
+	 				labels: {
+	 					overflow: 'justify'
+	 				}
+	 			},
+	 			tooltip: {
+	 				valueSuffix: ' GWh'
+	 			},
+	 			plotOptions: {
+	 				bar: {
+	 					dataLabels: {
+	 						enabled: true
+	 					}
+	 				}
+	 			},
+	 			legend: {
+	 				layout: 'vertical',
+	 				align: 'right',
+	 				verticalAlign: 'top',
+	 				x: -40,
+	 				y: 80,
+	 				floating: true,
+	 				borderWidth: 1,
+	 				backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+	 				shadow: true
+	 			},
+	 			credits: {
+	 				enabled: false
+	 			},
+	 			series: [{
+	 				name: 'Consumo de energia',
+	 				data: [2865, 7281, 19679, 6731, 2752]
+	 			}]
+	 		});
+	 	}
 
 
 
 
 
 	  	//Método utilizado para criar o gráfico utilizado na questão 10
-	 	function grafico6() {
-	 		
-			Highcharts.chart('sceneQuestoesGraph', {
-			    chart: {
-			        type: 'column'
-			    },
-				credits: {
-      					enabled: false
- 				},
-			    title: {
-			        text: 'Potência média por aparelho (Watts)'
-			    },
-			    subtitle: {
-			        text: 'Fonte: '
-			    },
-			    xAxis: {
-			        categories: [
-			            'Celular',
-			            'Lâmpada',
-			            'Impressora',
-			            'Televisor 21\'',
-			            'Ventilador'
-			        ],
-			        crosshair: true
-			    },
-			    yAxis: {
-			        min: 0,
-			        title: {
-			            text: 'Watts'
-			        }
-			    },
-			    tooltip: {
-					pointFormat: 'Potência: {point.y}',
-					valueSuffix: 'W',
-			        shared: true
-			    },
-			    plotOptions: {
-			        column: {
-			            pointPadding: 0.2,
-			            borderWidth: 0
-			        }
-			    },
-			    series: [{
-			        name: 'Potência em Watts',
-			        data: [7, 14, 45, 78, 100]
-			    }]
-			});
+	  	function grafico6() {
+
+	  		Highcharts.chart('sceneQuestoesGraph', {
+	  			chart: {
+	  				type: 'column'
+	  			},
+	  			credits: {
+	  				enabled: false
+	  			},
+	  			title: {
+	  				text: 'Potência média por aparelho (Watts)'
+	  			},
+	  			subtitle: {
+	  				text: 'Fonte: '
+	  			},
+	  			xAxis: {
+	  				categories: [
+	  				'Celular',
+	  				'Lâmpada',
+	  				'Impressora',
+	  				'Televisor 21\'',
+	  				'Ventilador'
+	  				],
+	  				crosshair: true
+	  			},
+	  			yAxis: {
+	  				min: 0,
+	  				title: {
+	  					text: 'Watts'
+	  				}
+	  			},
+	  			tooltip: {
+	  				pointFormat: 'Potência: {point.y}',
+	  				valueSuffix: 'W',
+	  				shared: true
+	  			},
+	  			plotOptions: {
+	  				column: {
+	  					pointPadding: 0.2,
+	  					borderWidth: 0
+	  				}
+	  			},
+	  			series: [{
+	  				name: 'Potência em Watts',
+	  				data: [7, 14, 45, 78, 100]
+	  			}]
+	  		});
 
 
 
-	 	}
+	  	}
 
 
- 		function grafico7() {
-			$(document).ready(function () {
+	  	function grafico7() {
+	  		$(document).ready(function () {
 
 
 				// Gera o gráfico
 				Highcharts.chart('graphImposto', {
-				    chart: {
-				        type: 'pie',
-				    },
+					chart: {
+						type: 'pie',
+					},
 					credits: {
-      					enabled: false
- 					},
+						enabled: false
+					},
 					title: {
 						text: 'Valor final da energia elétrica'
 					},
@@ -1992,9 +2014,9 @@ function preloadVideo(arrayOfmp4){
 						pie: {
 							allowPointSelect: true,
 							cursor: 'pointer',
-						 dataLabels: {
-              			 	enabled: true,
-                			format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+							dataLabels: {
+								enabled: true,
+								format: '<b>{point.name}</b>: {point.percentage:.1f} %',
 
 
 							},
@@ -2010,7 +2032,7 @@ function preloadVideo(arrayOfmp4){
 						}, {
 							name: 'Parcela A: Compra de energia, Transmissão de energia, e Encargos Setoriais',
 							y: 53.5
-		
+
 						}, {
 							name: 'Parcela B: Distribuição de Energia',
 							y: 17
@@ -2019,40 +2041,40 @@ function preloadVideo(arrayOfmp4){
 					}]
 				});
 			});
-			}
+	  	}
 
 
-		function contentSwitcher() {
+	  	function contentSwitcher() {
 			if (ftTransmission) { //Gambiarra para funcionar o ocultamento/disable nos botões
 				$("#iconSetaEsquerda").hide();
 				$("#iconSetaDireita").hide();
 				$('#setaTransmissaoDireita').toggleClass('disabledCursor');
-  				$('#setaTransmissaoEsquerda').toggleClass('disabledCursor');
-  				ftTransmission = false;
+				$('#setaTransmissaoEsquerda').toggleClass('disabledCursor');
+				ftTransmission = false;
 			}
 			if (firstTimeTransmission) {
-		  	  setTimeout(function () {
+				setTimeout(function () {
 					switch (transmissionBeingShown) {
-							case 1:
-							case 2:
-							case 3:
-							case 4:
-							case 5:
-								loadTransmissionData();
-								contentSwitcher(++transmissionBeingShown);
-								break;
-							case 6:
-								firstTimeTransmission = false;
-								loadTransmissionData();
-								$("#iconSetaEsquerda").show();
-								$("#iconSetaDireita").show();
-								$('#setaTransmissaoDireita').toggleClass('disabledCursor');
-								$('#setaTransmissaoEsquerda').toggleClass('disabledCursor');
-								break;
+						case 1:
+						case 2:
+						case 3:
+						case 4:
+						case 5:
+						loadTransmissionData();
+						contentSwitcher(++transmissionBeingShown);
+						break;
+						case 6:
+						firstTimeTransmission = false;
+						loadTransmissionData();
+						$("#iconSetaEsquerda").show();
+						$("#iconSetaDireita").show();
+						$('#setaTransmissaoDireita').toggleClass('disabledCursor');
+						$('#setaTransmissaoEsquerda').toggleClass('disabledCursor');
+						break;
 
-							}
+					}
 
-				    }, 10000);
+				}, 10000);
 			}
 			else {
 				loadTransmissionData();
@@ -2061,173 +2083,173 @@ function preloadVideo(arrayOfmp4){
 		}
 
 		function loadTransmissionData() {
-				switch (transmissionBeingShown) {
-							case 1:
-								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title1);
-								$('#imgCirculo').fadeOut(500);
-								$('#textosceneCaminhosEnergia').fadeOut(500);
-								sleep(500).then(() => {
-									$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular1.gif").fadeIn(1000);
-									$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg1).fadeIn(1000);
-								});
-								break;
+			switch (transmissionBeingShown) {
+				case 1:
+				$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title1);
+				$('#imgCirculo').fadeOut(500);
+				$('#textosceneCaminhosEnergia').fadeOut(500);
+				sleep(500).then(() => {
+					$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular1.gif").fadeIn(1000);
+					$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg1).fadeIn(1000);
+				});
+				break;
 
-							case 2:
-								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title2);
-								$('#imgCirculo').fadeOut(500);
-								$('#textosceneCaminhosEnergia').fadeOut(500);
-								sleep(500).then(() => {
-									$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular2.gif").fadeIn(1000);
-									$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg2).fadeIn(1000);
-								});								
-								break;
-							case 3:
-								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title3);
-								$('#imgCirculo').fadeOut(500);
-								$('#textosceneCaminhosEnergia').fadeOut(500);
-								sleep(500).then(() => {
-								$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular3.gif").fadeIn(1000);
-								$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg3).fadeIn(1000);
-								});	
+				case 2:
+				$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title2);
+				$('#imgCirculo').fadeOut(500);
+				$('#textosceneCaminhosEnergia').fadeOut(500);
+				sleep(500).then(() => {
+					$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular2.gif").fadeIn(1000);
+					$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg2).fadeIn(1000);
+				});								
+				break;
+				case 3:
+				$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title3);
+				$('#imgCirculo').fadeOut(500);
+				$('#textosceneCaminhosEnergia').fadeOut(500);
+				sleep(500).then(() => {
+					$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular3.gif").fadeIn(1000);
+					$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg3).fadeIn(1000);
+				});	
 
-								break;
-							case 4:
-								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title4);
-								$('#imgCirculo').fadeOut(500);
-								$('#textosceneCaminhosEnergia').fadeOut(500);
-								sleep(500).then(() => {
-									$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular4.gif").fadeIn(1000);
-									$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg4).fadeIn(1000);
-								});									
-								break;
-							case 5:
-								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title5);
-								$('#imgCirculo').fadeOut(500);
-								$('#textosceneCaminhosEnergia').fadeOut(500);
-								sleep(500).then(() => {
-									$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular5.gif").fadeIn(1000);
-									$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
-								});									
-								break;
-							case 6:
-								$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title6);
-								$('#imgCirculo').fadeOut(500);
-								$('#textosceneCaminhosEnergia').fadeOut(500);
-								sleep(500).then(() => {
-								$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular6.gif").fadeIn(1000);
-								$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
-								});	
+				break;
+				case 4:
+				$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title4);
+				$('#imgCirculo').fadeOut(500);
+				$('#textosceneCaminhosEnergia').fadeOut(500);
+				sleep(500).then(() => {
+					$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular4.gif").fadeIn(1000);
+					$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg4).fadeIn(1000);
+				});									
+				break;
+				case 5:
+				$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title5);
+				$('#imgCirculo').fadeOut(500);
+				$('#textosceneCaminhosEnergia').fadeOut(500);
+				sleep(500).then(() => {
+					$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular5.gif").fadeIn(1000);
+					$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
+				});									
+				break;
+				case 6:
+				$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title6);
+				$('#imgCirculo').fadeOut(500);
+				$('#textosceneCaminhosEnergia').fadeOut(500);
+				sleep(500).then(() => {
+					$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular6.gif").fadeIn(1000);
+					$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
+				});	
 
-								setaTransmissaoClicavel = true;
-								break;						
-							}
+				setaTransmissaoClicavel = true;
+				break;						
+			}
 			
 		}
 
 
-				$(document).on('click', '#setaTransmissaoDireita', function () {
-						if (!($("#setaTransmissaoDireita").hasClass('disabledCursor'))) {
-							if (transmissionBeingShown < 6) {
-								transmissionBeingShown++;
-								loadTransmissionData();
+		$(document).on('click', '#setaTransmissaoDireita', function () {
+			if (!($("#setaTransmissaoDireita").hasClass('disabledCursor'))) {
+				if (transmissionBeingShown < 6) {
+					transmissionBeingShown++;
+					loadTransmissionData();
+				}
+			}
+
+		});
+
+		$(document).on('click', '#setaTransmissaoEsquerda', function () {
+			if (!($("#setaTransmissaoEsquerda").hasClass('disabledCursor'))) {
+				if (transmissionBeingShown > 1) {
+					transmissionBeingShown--;
+					loadTransmissionData();
+				}
+			}
+
+		});
+
+
+
+
+
+
+
+
+
+
+		/* SCENE ? */
+
+		function graphMatrizEnergetica() {
+			var chart = Highcharts.chart('graphMatrizEnergetica', {
+				chart: {
+					backgroundColor: 'rgba(0,0,0,0)',
+					type: 'pie',
+
+				},
+				title: {
+					text: 'Dados da Matriz Energética Brasileira'
+				},
+				tooltip: {
+					pointFormat: '{series.name}: <b>{point.y}</b>'
+				},
+				plotOptions: {
+					pie: {
+						allowPointSelect: false,
+						cursor: 'pointer',
+						dataLabels: {
+							enabled: true,
+							format: '{point.name}: {point.y}',
+							style: {
+								textOutline: false, 
 							}
 						}
-
-					});
-
-				$(document).on('click', '#setaTransmissaoEsquerda', function () {
-					if (!($("#setaTransmissaoEsquerda").hasClass('disabledCursor'))) {
-						if (transmissionBeingShown > 1) {
-							transmissionBeingShown--;
-							loadTransmissionData();
-						}
 					}
-
-					});
-
-
-
-
-
-
-
-
-
-
-/* SCENE ? */
-
-	function graphMatrizEnergetica() {
-			var chart = Highcharts.chart('graphMatrizEnergetica', {
-		    	chart: {
-		        backgroundColor: 'rgba(0,0,0,0)',
-		        type: 'pie',
-
-			    },
-			    title: {
-			        text: 'Dados da Matriz Energética Brasileira'
-			    },
-			    tooltip: {
-			        pointFormat: '{series.name}: <b>{point.y}</b>'
-			    },
-			    plotOptions: {
-			        pie: {
-			            allowPointSelect: false,
-			            cursor: 'pointer',
-			            dataLabels: {
-			                enabled: true,
-			                format: '{point.name}: {point.y}',
-			                style: {
-                   				 textOutline: false, 
-              				  }
-			            }
-			        }
-			    },
-			    series: [{
-			        name: 'Usinas ',
-			        colorByPoint: true,
-			        data: [{
-			            name: 'Hidrelétrica',
-			            y: 1251
-			        }, {
-			            name: 'Biomassa',
-			            y: 534
-			        }, {
-			            name: 'Fóssil',
-			            y: 2412
-			        }, {
-			            name: 'Eólica',
-			            y: 418
-			        }, {
-			            name: 'Nuclear',
-			            y: 2
-			        }, {
-			            name: 'Solar',
-			            y: 42
-			        }]
-			    }]
+				},
+				series: [{
+					name: 'Usinas ',
+					colorByPoint: true,
+					data: [{
+						name: 'Hidrelétrica',
+						y: 1251
+					}, {
+						name: 'Biomassa',
+						y: 534
+					}, {
+						name: 'Fóssil',
+						y: 2412
+					}, {
+						name: 'Eólica',
+						y: 418
+					}, {
+						name: 'Nuclear',
+						y: 2
+					}, {
+						name: 'Solar',
+						y: 42
+					}]
+				}]
 			});
 
- 	 chart.reflow();
-	}
+			chart.reflow();
+		}
 
-	function gerarGraficoCustom() {
+		function gerarGraficoCustom() {
 			$(document).ready(function () {
 
 
 				// Gera o gráfico
 				Highcharts.chart('containerGraficoCustom', {
-				    chart: {
-				        type: tipoGrafico,
-				    },
-				      credits: {
-      					enabled: false
- 					 },
+					chart: {
+						type: tipoGrafico,
+					},
+					credits: {
+						enabled: false
+					},
 					title: {
 						text: inputGrafico[0]
 					},
-					 subtitle: {
-			       		 text: inputGrafico[1]
-			   		 },
+					subtitle: {
+						text: inputGrafico[1]
+					},
 					tooltip: {
 						pointFormat: '{series.name}: <b>{point.y}</b>'
 					},
@@ -2235,9 +2257,9 @@ function preloadVideo(arrayOfmp4){
 						pie: {
 							allowPointSelect: true,
 							cursor: 'pointer',
-						 dataLabels: {
-              			 	enabled: true,
-                			format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+							dataLabels: {
+								enabled: true,
+								format: '<b>{point.name}</b>: {point.percentage:.1f} %',
 
 
 							},
@@ -2253,7 +2275,7 @@ function preloadVideo(arrayOfmp4){
 						}, {
 							name: inputGrafico[4],
 							y: inputGrafico[5]
-		
+
 						}, {
 							name: inputGrafico[6],
 							y: inputGrafico[7]
@@ -2271,7 +2293,7 @@ function preloadVideo(arrayOfmp4){
 					}]
 				});
 			});
-			}
+		}
 
 
 		$(document).on('click', '#botaoMatrizVerificar', function () {
@@ -2314,7 +2336,7 @@ function preloadVideo(arrayOfmp4){
 			$("#inputNumeroUsinasNuclear"),
 			$("#inputNumeroUsinasFossil"), 
 			$("#inputConsumoImportacao") 
-			      ];
+			];
 		}
 
 		$(document).on('click', '#botaoAtualizarTabelaPotencia', function () {
@@ -2349,7 +2371,7 @@ function preloadVideo(arrayOfmp4){
 			$("#inputDistribuicao"),
 			$("#inputTransmissao"), 
 			$("#inputGeracao") 
-			      ];
+			];
 		}
 
 		
@@ -2408,11 +2430,11 @@ function preloadVideo(arrayOfmp4){
 			parseFloat($("#inputGerarGraficoValue5").val()),
 			$("#inputGerarGrafico6").val(), 
 			parseFloat($("#inputGerarGraficoValue6").val())
-			      ];
+			];
 		}
 
 		function verificarGraficoCustom() {
-		var verificacaoLocal = true;
+			var verificacaoLocal = true;
 
 			getInputValueGrafico();
 			for (var i = 0; i < inputGrafico.length; i++) {
@@ -2425,334 +2447,334 @@ function preloadVideo(arrayOfmp4){
 				}
 			} 
 			if (verificacaoLocal == true) {
-			tipoGrafico = $("#selecaoGrafico input[type='radio']:checked").val();
+				tipoGrafico = $("#selecaoGrafico input[type='radio']:checked").val();
 
 				gerarGraficoCustom();
 			}
-	}
+		}
 
-	  /* Funções Gerais */
+		/* Funções Gerais */
 	  	//Função que realiza a troca de uma cena para a próxima, bem como adicionar um sleep igual ao tempo de fade
-	function nextScene() {
-		if (scene == 16) {
-			swal("","Você finalizou o objeto!", "error");
-		}
-		else {
-			unloadScene();
-			scene++;
-			sleep(fadeTime).then(() => {
-				loadScene();
-			});			
+	  	function nextScene() {
+	  		if (scene == 16) {
+	  			swal("","Você finalizou o objeto!", "error");
+	  		}
+	  		else {
+	  			unloadScene();
+	  			scene++;
+	  			sleep(fadeTime).then(() => {
+	  				loadScene();
+	  			});			
 
-		}
-	}
-	
+	  		}
+	  	}
+
 		//Função que realiza a troca de uma cena para a anterior, bem como adicionar um sleep igual ao tempo de fade
-	function previousScene() {
-		if (scene == 1) {
-			swal("","Não é possível voltar!", "error");
-		}
-		else {
-			unloadScene();
-			scene--;
-			sleep(fadeTime).then(() => {
-				loadScene();
-			});				
-		}
-	}
-	
-	  	//Função que realiza o carregamento da cena de acordo com a variável "scene". Responsável por adicionar o fade à troca de cenas e realizar a alteração do título
-	  function loadScene() {
-			switch (scene) {
-				case 1:
-					$("#sceneIntroGeral").fadeIn(fadeTime);
-					$("#sceneIntroGeralText1").html("Olá " + nome + dataJSON.stringsGerais.sceneIntroGeralBalao01);
-					$("#tituloGeral").html("");
-					$("#iconMais").fadeIn(fadeTime);
-
-					break;
-					
-				case 2:
-					$("#sceneTiposUsinas").fadeIn(fadeTime);
-					$('#detalhesUsinas').hide();
-					$('#additionalSceneTiposUsinas').show();
-					$("#tituloGeral").html(dataJSON.stringsGerais.title1);
-					$("#iconMais").fadeIn(fadeTime);
-					break;
-				
-				case 3:
-					$("#sceneIntroGraficos").fadeIn(fadeTime);
-					$("#imagensIntroGraficos").hide();
-					$("#iconSetaDireita").show();
-					break;
-				case 4:
-					$("#sceneQuestoesGraficos").fadeIn(fadeTime);
-					loadQuestion();
-					listeningToKeyPress = true;
-					$("#iconMais").fadeIn(fadeTime);
-
-					break;
-				case 5:
-					$("#sceneIntroCaminhos").fadeIn(fadeTime);
-					$("#iconSetaDireita").show();
-					break;
-				case 6:
-					$("#sceneCaminhosEnergia").fadeIn(fadeTime);
-					$("#iconSetaDireita").show();
-					contentSwitcher();
-					$("#iconMais").fadeIn(fadeTime);
-
-					break;
-				case 7:
-					$("#sceneMatrizEnergetica").fadeIn(fadeTime);
-					$("#alertMatriz").hide();
-					$("#containerQuestoesMatrizEnergetica").hide();
-					$("#iconSetaDireita").hide();
-					if (graficoMatrizGerado == true) {
-						$("#containerQuestoesMatrizEnergetica").show();
-						loadQuestion();
-						listeningToKeyPress = true;
-					}
-					break;
-				case 8:
-					$("#sceneImpostos").fadeIn(fadeTime);
-					$("#tituloGeral").html(dataJSON.stringsGerais.title2);
-					$("#containerImposto").hide();
-					break;
-				case 9:
-					$("#scenePotenciaEletrodomesticos").fadeIn(fadeTime);
-					$("#iconMais").fadeIn(fadeTime);
-
-					break;
-				case 10:
-					$("#sceneVideo").fadeIn(fadeTime);
-					break;
-				case 11:
-					$("#sceneIntroBandeirasEnergia").fadeIn(fadeTime);
-					$("#tituloGeral").html(dataJSON.stringsGerais.title3);
-					$("#iconSetaDireita").show();
-
-					break;
-				case 12:
-					$("#sceneBandeirasEnergia").fadeIn(fadeTime);
-					$("#tituloGeral").html(dataJSON.stringsGerais.title4);
-					$("#iconSetaDireita").show();
-					break;		
-				case 13:
-					$("#sceneQuestoesBandeiras").fadeIn(fadeTime);
-					$("#tituloGeral").html(dataJSON.stringsGerais.title4);
-					loadQuestion();
-					break;
-				case 14:
-					$("#sceneQuestaoImposto").fadeIn(fadeTime);
-					loadQuestion();
-					break;
-				case 15:
-					$("#sceneDistribuicaoTarifa").fadeIn(fadeTime);
-					$("#alertConta").hide();
-					checkTarifa();
-					break;
-				case 16:
-					$("#sceneGerarGrafico").fadeIn(fadeTime);
-					break;
-						}
-	  }
-	  
-	  
-	  
-	  	//Função que realiza a remoção da cena atual, inserindo um fade para que ela seja removida
-	  function unloadScene() {
-		  	$("#tituloGeral").html("");
-			switch (scene) {
-				case 0:
-					$("#sceneIntroNome").fadeOut(fadeTime);
-					break;
-				case 1:
-					$("#sceneIntroGeral").fadeOut(fadeTime);
-					$("#iconMais").fadeOut(fadeTime);
-
-					break;
-				case 2:
-					$("#sceneTiposUsinas").fadeOut(fadeTime);	
-					$("#iconMais").fadeOut(fadeTime);
-					break;
-				case 3:
-					$("#sceneIntroGraficos").fadeOut(fadeTime);
- 					break;
-				case 4:
-					$("#sceneQuestoesGraficos").fadeOut(fadeTime);
-					listeningToKeyPress = false;
-					$("#iconMais").fadeOut(fadeTime);
-
-					break;
-				case 5:
-					$("#sceneIntroCaminhos").fadeOut(fadeTime);
- 					break;
-				case 6:
-					$("#sceneCaminhosEnergia").fadeOut(fadeTime);
-					transmissionBeingShown = 1;
-					$("#iconMais").fadeOut(fadeTime);
-
- 					break;
- 				case 7:
- 					$("#sceneMatrizEnergetica").fadeOut(fadeTime);
- 					listeningToKeyPress = false;
- 					break;
-				case 8:
-					$("#sceneImpostos").fadeOut(fadeTime);
-					break;
-				case 9:
-					$("#scenePotenciaEletrodomesticos").fadeOut(fadeTime);
-					$("#iconMais").fadeOut(fadeTime);
-					break;
-				case 10:
-					$("#sceneVideo").fadeOut(fadeTime);
-					break;
-				case 11:
-					$("#sceneIntroBandeirasEnergia").fadeOut(fadeTime);
-					break;
-				case 12:
-					$("#sceneBandeirasEnergia").fadeOut(fadeTime);
-					break;
-				case 13:
-					$("#sceneQuestoesBandeiras").fadeOut(fadeTime);
-					break;
-				case 14:
-					$("#sceneQuestaoImposto").fadeOut(fadeTime);
-					break;
-				case 15:
-					$("#sceneDistribuicaoTarifa").fadeOut(fadeTime);
-					break;
-				case 16:
-					$("#sceneGerarGrafico").fadeOut(fadeTime);
-					break;
+		function previousScene() {
+			if (scene == 1) {
+				swal("","Não é possível voltar!", "error");
 			}
-	  }
+			else {
+				unloadScene();
+				scene--;
+				sleep(fadeTime).then(() => {
+					loadScene();
+				});				
+			}
+		}
 
+	  	//Função que realiza o carregamento da cena de acordo com a variável "scene". Responsável por adicionar o fade à troca de cenas e realizar a alteração do título
+	  	function loadScene() {
+	  		switch (scene) {
+	  			case 1:
+	  			$("#sceneIntroGeral").fadeIn(fadeTime);
+	  			$("#sceneIntroGeralText1").html("Olá " + nome + dataJSON.stringsGerais.sceneIntroGeralBalao01);
+	  			$("#tituloGeral").html("");
+	  			$("#iconMais").fadeIn(fadeTime);
 
+	  			break;
 
-	  function showHelp() {
-	  	switch (scene) {
-	  		case 1:
-	  			swal("Alerta 1", "Cena 1");
+	  			case 2:
+	  			$("#sceneTiposUsinas").fadeIn(fadeTime);
+	  			$('#detalhesUsinas').hide();
+	  			$('#additionalSceneTiposUsinas').show();
+	  			$("#tituloGeral").html(dataJSON.stringsGerais.title1);
+	  			$("#iconMais").fadeIn(fadeTime);
 	  			break;
-	  		case 2:
-	  			swal("Alerta 2", "Cena 2");
+
+	  			case 3:
+	  			$("#sceneIntroGraficos").fadeIn(fadeTime);
+	  			$("#imagensIntroGraficos").hide();
+	  			$("#iconSetaDireita").show();
 	  			break;
-	  		case 3:
-	  			swal("Alerta 3", "Cena 3");
+	  			case 4:
+	  			$("#sceneQuestoesGraficos").fadeIn(fadeTime);
+	  			loadQuestion();
+	  			listeningToKeyPress = true;
+	  			$("#iconMais").fadeIn(fadeTime);
+
 	  			break;
-	  		case 4:
-	  			switch (questionNumber) {
-	  				case 1:
-	  					swal("Alerta 4", "Cena 4 - Questão 1");
-	  					break;	  		
-	  				case 2:
-	  					swal("Alerta 4", "Cena 4 - Questão 2");
-	  					break;		
-	  				case 3:
-	  					swal("Ajuda!", "Arraste o mouse sobre as barras do gráfico para ver a porcentagem");
-	  					break;	  		
-	  				case 4:
-	  					swal("Ajuda!", "Arraste o mouse sobre as barras gráfico para ver a porcentagem.");
-	  					break;			
-	  				case 5:
-	  					swal("Ajuda!", "Para saber a média, basta dividir o total do consumo de energia pela quantidade de meses correspondentes");
-	  					break;	  		
-	  				case 6:
-	  					swal("Ajuda!", "Arraste o mouse sobre o gráfico para ver a porcentagem");
-	  					break;			
-	  				case 7:
-	  					swal("Ajuda!", "Para saber a diferença basta subtrair a energia hidrelétrica pela energia solar");
-	  					break;	  		
-	  				case 8:
-	  					swal("Alerta 4", "Cena 4 - Questão 8");
-	  					break;			
-	  				case 9:
-	  					swal("Alerta 4", "Cena 4 - Questão 9");
-	  					break;	  		
-	  				case 10:
-	  					swal("Ajuda!", "Arraste o mouse sobre as barras do gráfico para ver a porcentagem");
-	  					break;		
+	  			case 5:
+	  			$("#sceneIntroCaminhos").fadeIn(fadeTime);
+	  			$("#iconSetaDireita").show();
+	  			break;
+	  			case 6:
+	  			$("#sceneCaminhosEnergia").fadeIn(fadeTime);
+	  			$("#iconSetaDireita").show();
+	  			contentSwitcher();
+	  			$("#iconMais").fadeIn(fadeTime);
+
+	  			break;
+	  			case 7:
+	  			$("#sceneMatrizEnergetica").fadeIn(fadeTime);
+	  			$("#alertMatriz").hide();
+	  			$("#containerQuestoesMatrizEnergetica").hide();
+	  			$("#iconSetaDireita").hide();
+	  			if (graficoMatrizGerado == true) {
+	  				$("#containerQuestoesMatrizEnergetica").show();
+	  				loadQuestion();
+	  				listeningToKeyPress = true;
 	  			}
 	  			break;
-	  		case 5:
+	  			case 8:
+	  			$("#sceneImpostos").fadeIn(fadeTime);
+	  			$("#tituloGeral").html(dataJSON.stringsGerais.title2);
+	  			$("#containerImposto").hide();
+	  			break;
+	  			case 9:
+	  			$("#scenePotenciaEletrodomesticos").fadeIn(fadeTime);
+	  			$("#iconMais").fadeIn(fadeTime);
+
+	  			break;
+	  			case 10:
+	  			$("#sceneVideo").fadeIn(fadeTime);
+	  			break;
+	  			case 11:
+	  			$("#sceneIntroBandeirasEnergia").fadeIn(fadeTime);
+	  			$("#tituloGeral").html(dataJSON.stringsGerais.title3);
+	  			$("#iconSetaDireita").show();
+
+	  			break;
+	  			case 12:
+	  			$("#sceneBandeirasEnergia").fadeIn(fadeTime);
+	  			$("#tituloGeral").html(dataJSON.stringsGerais.title4);
+	  			$("#iconSetaDireita").show();
+	  			break;		
+	  			case 13:
+	  			$("#sceneQuestoesBandeiras").fadeIn(fadeTime);
+	  			$("#tituloGeral").html(dataJSON.stringsGerais.title4);
+	  			loadQuestion();
+	  			break;
+	  			case 14:
+	  			$("#sceneQuestaoImposto").fadeIn(fadeTime);
+	  			loadQuestion();
+	  			break;
+	  			case 15:
+	  			$("#sceneDistribuicaoTarifa").fadeIn(fadeTime);
+	  			$("#alertConta").hide();
+	  			checkTarifa();
+	  			break;
+	  			case 16:
+	  			$("#sceneGerarGrafico").fadeIn(fadeTime);
+	  			break;
+	  		}
+	  	}
+
+
+
+	  	//Função que realiza a remoção da cena atual, inserindo um fade para que ela seja removida
+	  	function unloadScene() {
+	  		$("#tituloGeral").html("");
+	  		switch (scene) {
+	  			case 0:
+	  			$("#sceneIntroNome").fadeOut(fadeTime);
+	  			break;
+	  			case 1:
+	  			$("#sceneIntroGeral").fadeOut(fadeTime);
+	  			$("#iconMais").fadeOut(fadeTime);
+
+	  			break;
+	  			case 2:
+	  			$("#sceneTiposUsinas").fadeOut(fadeTime);	
+	  			$("#iconMais").fadeOut(fadeTime);
+	  			break;
+	  			case 3:
+	  			$("#sceneIntroGraficos").fadeOut(fadeTime);
+	  			break;
+	  			case 4:
+	  			$("#sceneQuestoesGraficos").fadeOut(fadeTime);
+	  			listeningToKeyPress = false;
+	  			$("#iconMais").fadeOut(fadeTime);
+
+	  			break;
+	  			case 5:
+	  			$("#sceneIntroCaminhos").fadeOut(fadeTime);
+	  			break;
+	  			case 6:
+	  			$("#sceneCaminhosEnergia").fadeOut(fadeTime);
+	  			transmissionBeingShown = 1;
+	  			$("#iconMais").fadeOut(fadeTime);
+
+	  			break;
+	  			case 7:
+	  			$("#sceneMatrizEnergetica").fadeOut(fadeTime);
+	  			listeningToKeyPress = false;
+	  			break;
+	  			case 8:
+	  			$("#sceneImpostos").fadeOut(fadeTime);
+	  			break;
+	  			case 9:
+	  			$("#scenePotenciaEletrodomesticos").fadeOut(fadeTime);
+	  			$("#iconMais").fadeOut(fadeTime);
+	  			break;
+	  			case 10:
+	  			$("#sceneVideo").fadeOut(fadeTime);
+	  			break;
+	  			case 11:
+	  			$("#sceneIntroBandeirasEnergia").fadeOut(fadeTime);
+	  			break;
+	  			case 12:
+	  			$("#sceneBandeirasEnergia").fadeOut(fadeTime);
+	  			break;
+	  			case 13:
+	  			$("#sceneQuestoesBandeiras").fadeOut(fadeTime);
+	  			break;
+	  			case 14:
+	  			$("#sceneQuestaoImposto").fadeOut(fadeTime);
+	  			break;
+	  			case 15:
+	  			$("#sceneDistribuicaoTarifa").fadeOut(fadeTime);
+	  			break;
+	  			case 16:
+	  			$("#sceneGerarGrafico").fadeOut(fadeTime);
+	  			break;
+	  		}
+	  	}
+
+
+
+	  	function showHelp() {
+	  		switch (scene) {
+	  			case 1:
+	  			swal("Alerta 1", "Cena 1");
+	  			break;
+	  			case 2:
+	  			swal("Alerta 2", "Cena 2");
+	  			break;
+	  			case 3:
+	  			swal("Alerta 3", "Cena 3");
+	  			break;
+	  			case 4:
+	  			switch (questionNumber) {
+	  				case 1:
+	  				swal("Alerta 4", "Cena 4 - Questão 1");
+	  				break;	  		
+	  				case 2:
+	  				swal("Alerta 4", "Cena 4 - Questão 2");
+	  				break;		
+	  				case 3:
+	  				swal("Ajuda!", "Arraste o mouse sobre as barras do gráfico para ver a porcentagem");
+	  				break;	  		
+	  				case 4:
+	  				swal("Ajuda!", "Arraste o mouse sobre as barras gráfico para ver a porcentagem.");
+	  				break;			
+	  				case 5:
+	  				swal("Ajuda!", "Para saber a média, basta dividir o total do consumo de energia pela quantidade de meses correspondentes");
+	  				break;	  		
+	  				case 6:
+	  				swal("Ajuda!", "Arraste o mouse sobre o gráfico para ver a porcentagem");
+	  				break;			
+	  				case 7:
+	  				swal("Ajuda!", "Para saber a diferença basta subtrair a energia hidrelétrica pela energia solar");
+	  				break;	  		
+	  				case 8:
+	  				swal("Alerta 4", "Cena 4 - Questão 8");
+	  				break;			
+	  				case 9:
+	  				swal("Alerta 4", "Cena 4 - Questão 9");
+	  				break;	  		
+	  				case 10:
+	  				swal("Ajuda!", "Arraste o mouse sobre as barras do gráfico para ver a porcentagem");
+	  				break;		
+	  			}
+	  			break;
+	  			case 5:
 	  			swal("Alerta 5", "Cena 5");
 	  			break;
-	  		case 6:
+	  			case 6:
 	  			swal("Alerta 6", "Cena 6");
 	  			break;
-	  		case 7:
+	  			case 7:
 	  			if (graficoMatrizGerado) {
 	  				switch (questionNumber) {
 	  					case 11:
-	  						swal("Ajuda!", "Para facilitar sua resposta observe a tabela");
-	  						break;
+	  					swal("Ajuda!", "Para facilitar sua resposta observe a tabela");
+	  					break;
 	  					case 12:
-	  						swal("Ajuda!", "Para facilitar sua resposta observe a tabela");
-	  						break;
+	  					swal("Ajuda!", "Para facilitar sua resposta observe a tabela");
+	  					break;
 	  					case 13:
-	  						swal("Ajuda!", "Para facilitar sua resposta observe a tabela");
-	  						break;
+	  					swal("Ajuda!", "Para facilitar sua resposta observe a tabela");
+	  					break;
 	  					case 14:
-	  						swal("Ajuda!", "Observe no texto para responder essa questão");
-	  						break;
+	  					swal("Ajuda!", "Observe no texto para responder essa questão");
+	  					break;
 	  					case 15:
-	  						swal("Ajuda!", "Observe e analise atentamente a tabela e o gráfico");
-	  						break;
+	  					swal("Ajuda!", "Observe e analise atentamente a tabela e o gráfico");
+	  					break;
 	  				}
- 	  			} else {
-	  	 			swal("Ajuda!", "Preencha a tabela com os dados do texto");
+	  			} else {
+	  				swal("Ajuda!", "Preencha a tabela com os dados do texto");
 
 	  			}
 	  			break;
-	  		case 8:
-				swal("Alerta 8", "Cena 8");
+	  			case 8:
+	  			swal("Alerta 8", "Cena 8");
 	  			break;
-	  		case 9:
-				swal("Ajuda!", "Coloque o valor que sua companhia de energia cobra por 1 kw. Caso você não saiba use R$ 0,50");
+	  			case 9:
+	  			swal("Ajuda!", "Coloque o valor que sua companhia de energia cobra por 1 kw. Caso você não saiba use R$ 0,50");
 	  			break;
-	  		case 10:
-				swal("Alerta 10", "Cena 10");
+	  			case 10:
+	  			swal("Alerta 10", "Cena 10");
 	  			break;
-	  		case 11:
-				swal("Alerta 11", "Cena 11");		
+	  			case 11:
+	  			swal("Alerta 11", "Cena 11");		
 	  			break;
-	  		case 12:
-				swal("Alerta 12", "Cena 12");
+	  			case 12:
+	  			swal("Alerta 12", "Cena 12");
 	  			break;
-	  		case 13:
+	  			case 13:
 	  			switch (questionNumber) {
 	  				case 16:
-	  					swal("Ajuda!", "Em caso de dúvida, volte a tela anterior");
-	  					break;
+	  				swal("Ajuda!", "Em caso de dúvida, volte a tela anterior");
+	  				break;
 	  				case 17:
-	  					swal("Ajuda!", "Em caso de dúvida volte 2 telas");
-	  					break;
+	  				swal("Ajuda!", "Em caso de dúvida volte 2 telas");
+	  				break;
 	  				case 18:
-	  					swal("Ajuda!", "Em caso de dúvida volte 3 telas");
-	  					break;
+	  				swal("Ajuda!", "Em caso de dúvida volte 3 telas");
+	  				break;
 	  			}
 	  			break;
-	  		case 14:
-				swal("Ajuda!", "Observe atentamente o gráfico e a pergunta da questão. Passe o mouse sobre o gráfico para ver a porcentagem");
+	  			case 14:
+	  			swal("Ajuda!", "Observe atentamente o gráfico e a pergunta da questão. Passe o mouse sobre o gráfico para ver a porcentagem");
 	  			break;
-	  		case 15:
-				swal("Ajuda!", "Passe o mouse sobre os quadros na tela superior direita para observar a porcentagem.");
+	  			case 15:
+	  			swal("Ajuda!", "Passe o mouse sobre os quadros na tela superior direita para observar a porcentagem.");
 	  			break;
-	  		case 16:
-				swal("Alerta 16", "Cena 16");
+	  			case 16:
+	  			swal("Alerta 16", "Cena 16");
 	  			break;
+	  		}
 	  	}
-	  }
 
 
 	  	$(document).on('click', '.iconFixoHelp', function () {
-			showHelp();
-		});
+	  		showHelp();
+	  	});
 
-function preload(arrayOfImages) {
-    $(arrayOfImages).each(function () {
-        $('<img />').attr('src',this).appendTo('body').css('display','none');
-    });
-}
+	  	function preload(arrayOfImages) {
+	  		$(arrayOfImages).each(function () {
+	  			$('<img />').attr('src',this).appendTo('body').css('display','none');
+	  		});
+	  	}
