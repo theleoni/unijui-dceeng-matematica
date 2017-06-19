@@ -1217,7 +1217,7 @@
 	  			case 7:
 	  			swal({
 	  				title: "Resistência",
-	  				text: "A resistência estabelecida pelo condutor, pode estabelecer uma resistência elétrica de forma que possa dificultar ap assagem de corrente elétrica, ou de modo que facilite a passagem de corrente. O cálculo para acharmos a reistência é definido pela primeira lei de Ohm <br>R = U/I <br><i>U = Tensão <br><i> I = Corrente",
+	  				text: "A resistência estabelecida pelo condutor, pode estabelecer uma resistência elétrica de forma que possa dificultar ap assagem de corrente elétrica, ou de modo que facilite a passagem de corrente. O cálculo para acharmos a reistência é definido pela primeira lei de Ohm <br><b>R = U/I</b> <br><i>U = Tensão <br><i> I = Corrente",
 	  				html: true
 	  			});
 	  			break;
