@@ -1172,32 +1172,62 @@
 	  		case 4:
 	  		switch (questionNumber) {
 	  			case 1:
-	  			case 2:
 	  			swal({
 	  				title: "O que significa KWh?",
 	  				text: " É uma unidade de medida elétrica, onde essa medida é determinada tempo de uso de um aparelho elétrico. O Watt-hora é o consumo de 1 Watts durante uma hora. Por exemplo em um chuveiro elétrico onde a potência marcada em sua embalagem é de 7500 Watts, significa que essa potência irá ser consumida em uma hora. Se esse chuveiro for ligado 7 horas temos então 7500 Watts X 7 horas = 52.500 Watt-hora, ou seja, 52,5 kWh.",
 	  				html: true
 	  			});
 	  			break;
+	  			case 2:
+	  			swal({
+	  				title: "Energia Elétrica",
+	  				text: "E a capacidade de gerar, de alguma forma, trabalho, ou seja, o movimento de um motor ou a produção de calor em uma resistência. A energia elétrica, por ser gerada através de fontes renováveis como visto neste projeto, como das águas, do sol, dos ventos e através da biomassa, também pode ser gerada através de fontes não renováveis como a nuclear.",
+	  				html: true
+	  			});
+	  			break;
 
 	  			case 3:
+	  			swal({
+	  				title: "Usina de Itaipu",
+	  				text: "Temos como a principal fonte de energia elétrica no Brasil a Usina de Itaipu, localizada no Rio Paraná na fronteira entre o Brasil e Paraguai, em que sua geração de energia elétrica se da através da diferença de potencial elétrico em dois condutores diferentes. Pois assim, quem descobriu a energia elétrica, foi Tales de Mileto (624 a.C.-558 a.C.) , grego, com a descoberta das cargas elétricas.",
+	  				html: true
+	  			});
+	  			break;
 	  			case 4:
+	  			swal({
+	  				title: "Calculo de Energia Elétrica",
+	  				text: "Para calcular a energia elétrica temos a seguinte fórmula <br> <b> E  = P . ∆t </b> <br> Onde: <br> <b>E </b>: energia elétrica <br> <b>P</b>: Potência <br> <b>∆t</b>: Variação do tempo",
+	  				html: true
+	  			});
+	  			break;
 	  			case 5: 
+	  			swal({
+	  				title: "Corrente elétrica",
+	  				text: "A corrente elétrica é o movimento de partículas eletrizadas, o que é chamado de íons, em um condutor. Essa forma de movimentação de partículas é caracterizada pela diferença de potencial elétrico, ou seja, tensão elétrica.",
+	  				html: true
+	  			});
+	  			break;
+	  			case 6:
 	  			swal({
 	  				title: "O que significa Joule?",
 	  				text: " 1 Wh equivale a 3.600 joules,<br>É uma unidade de medida, onde ocorre a passagem de corrente em uma resistência, e que essa passagem de correte é transformada em calor. <br>Entendemos como Joule, a quantidade de elétrons que passa por segundo em um condutor com uma tensão de 1Volt.",
 	  				html: true
 	  			});
 	  			break;
-	  			case 6:
+	  			case 7:
 	  			swal({
-	  				title: "Multiplos da tensão",
-	  				text: "Megavolt (MV) = 1.000.000 V <br>, Quilovolt (kV) = 1.000 V <br> Volt (V) = 1 V <br> Milivolt (mV) = 0,001 V <br> Microvolt (µV) = 0,000.001 V",
+	  				title: "Resistência",
+	  				text: "A resistência estabelecida pelo condutor, pode estabelecer uma resistência elétrica de forma que possa dificultar ap assagem de corrente elétrica, ou de modo que facilite a passagem de corrente. O cálculo para acharmos a reistência é definido pela primeira lei de Ohm <br>R = U/I <br><i>U = Tensão <br><i> I = Corrente",
 	  				html: true
 	  			});
 	  			break;
-	  			case 7:
 	  			case 8:
+	  			swal({
+	  				title: "Multiplos da tensão",
+	  				text: "Megavolt (MV) = 1.000.000 V <br> Quilovolt (kV) = 1.000 V <br> Volt (V) = 1 V <br> Milivolt (mV) = 0,001 V <br> Microvolt (µV) = 0,000.001 V",
+	  				html: true
+	  			});
+	  			break;
 	  			case 9:
 	  			case 10:
 	  			swal ({
