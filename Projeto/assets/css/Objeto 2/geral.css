@@ -10,3 +10,7 @@ html{
 body {
   min-height: 100%;
 }
+
+#verificacaoNome {
+	margin-top: 15vh;
+}
