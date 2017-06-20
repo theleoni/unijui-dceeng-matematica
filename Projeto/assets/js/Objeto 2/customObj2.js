@@ -8,7 +8,6 @@ var nomeDoUsuario;
 
 $(document).ready(function() {
 	hideDivsOnObjectStart();
-	playVideosOnAndroid();
 });
 
 
@@ -51,12 +50,6 @@ function unloadScene() {
 	}
 }
 
-
-function playVideosOnAndroid() {
-	var video = document.getElementById('video1TelaNome');
-	video.play();
-
-}
 $(document).on('keyup', '#inputNome', function (e) {
 	if(e.which == 13) {
 		$('#botaoNome').click();	}
