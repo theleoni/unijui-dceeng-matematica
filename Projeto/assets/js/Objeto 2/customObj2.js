@@ -1,5 +1,10 @@
 var scene;
 
+var defaultFadeTime = 500;
+var extendedFadeTime = 3000;
+
+var nomeDoUsuario;
+
 
 $(document).ready(function() {
 	hideDivsOnObjectStart();
@@ -9,6 +14,7 @@ $(document).ready(function() {
 function hideDivsOnObjectStart() {
 	$("#calculadora").hide();
 	$("#iconesFixos").hide();
+	$("#containerPersonagemExtraTelaNome").hide();
 	hideIconsNome();
 }
 
@@ -44,10 +50,19 @@ function unloadScene() {
 	}
 }
 
-$( "#verificacaoNome" ).keypress(function( event ) {
-	alert("oi");
+$(document).on('keyup', '#inputNome', function (e) {
+	if(e.which == 13) {
+		$('#botaoNome').click();	}
+	});
 
-	if ( event.which == 13 ) {
-		alert("oi");
+$(document).on('click', '#botaoNome', function() {
+	nomeDoUsuario = $("#inputNome").val();
+	if (nomeDoUsuario != "") {
+		nomeDoUsuario = $("#inputNome").val();
+		$("#inputNomeContainer").fadeOut(defaultFadeTime);
+		$("#containerPersonagemExtraTelaNome").fadeIn(extendedFadeTime);
+	} else {
+		$("#alertNome").show();
 	}
 });
+
