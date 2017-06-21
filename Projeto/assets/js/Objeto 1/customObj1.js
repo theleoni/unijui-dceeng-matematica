@@ -372,7 +372,6 @@
 		function showFixedImages() {
 			$("#imagensFixas").show();
 			$("#iconMais").hide();
-			$("#iconCalculadora").hide();
 		}
 
 		//Ocultas as imagens fixas (Setas, ajuda e fechar)
@@ -556,7 +555,6 @@
 	  		$("#questionGroup").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
 	  		$("#tabelaQuestoesGraficos").hide();
-	  		$("#iconCalculadora").show();
 	  		grafico1();
 
 	  		if (corretas[0] == false) {
@@ -582,7 +580,6 @@
 	  		$("#questionGroup").hide();
 	  		$("#tabelaQuestoesGraficos").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
-	  		$("#iconCalculadora").hide();
 
 	  		grafico1();
 
