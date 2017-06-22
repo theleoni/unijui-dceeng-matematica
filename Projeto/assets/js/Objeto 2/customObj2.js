@@ -11,10 +11,17 @@ $(document).ready(function() {
 });
 
 
+$.getJSON('../assets/js/Objeto 2/dataObj2.json', function(data) {
+	dataJSON = data;
+});
+
 function hideDivsOnObjectStart() {
 	$("#calculadora").hide();
 	$("#iconesFixos").hide();
 	$("#containerPersonagemExtraTelaNome").hide();
+	$("#balao1TelaNome").hide();
+	$("#balao2TelaNome").hide();
+	$("#fala2TelaNome").hide();
 	hideIconsNome();
 }
 
@@ -61,6 +68,9 @@ $(document).on('click', '#botaoNome', function() {
 		nomeDoUsuario = $("#inputNome").val();
 		$("#inputNomeContainer").fadeOut(defaultFadeTime);
 		$("#containerPersonagemExtraTelaNome").fadeIn(extendedFadeTime);
+		$("#balao2TelaNome").fadeIn(extendedFadeTime*1.5);
+		$("#fala2TelaNome").html(dataJSON.teste.teste1);
+		$("#fala2TelaNome").fadeIn(extendedFadeTime*1.5);
 	} else {
 		$("#alertNome").show();
 	}
