@@ -68,6 +68,8 @@ $(document).on('keyup', '#inputNome', function (e) {
 $(document).on('click', '#botaoNome', function() {
 	nomeDoUsuario = $("#inputNome").val();
 	if (nomeDoUsuario != "") {
+		$("#iconesFixos").show();
+
 		nomeDoUsuario = $("#inputNome").val();
 		$("#inputNomeContainer").fadeOut(defaultFadeTime);
 		$("#containerPersonagemExtraTelaNome").fadeIn(extendedFadeTime);
