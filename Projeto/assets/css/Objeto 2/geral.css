@@ -38,28 +38,21 @@ body {
 }
 
 #balao1TelaNome {
-	position: absolute;
-	bottom: 10vh;
-	left: -5vw;
-	z-index:2;
+
 }
 
 #balao2TelaNome {
-	position: absolute;
-	left:10vw;
-	bottom: 47vh;
+
 }
 
 #fala2TelaNome {
-	position: absolute;
-	left: 16vw;
-	top: 2vh;
-	right: -4vw;
-	text-align: justify;
-	color: white;
+
 }
 
 
+#seuChicoTelaNome {
+	max-width: 150%;
+}
 
 
 @media (max-device-aspect-ratio: 8/8) {

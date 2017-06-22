@@ -69,7 +69,7 @@ $(document).on('click', '#botaoNome', function() {
 		$("#inputNomeContainer").fadeOut(defaultFadeTime);
 		$("#containerPersonagemExtraTelaNome").fadeIn(extendedFadeTime);
 		$("#balao2TelaNome").fadeIn(extendedFadeTime*1.5);
-		$("#fala2TelaNome").html(dataJSON.teste.teste1);
+		$("#fala2TelaNome").html(dataJSON.telaNome.falaChico1);
 		$("#fala2TelaNome").fadeIn(extendedFadeTime*1.5);
 	} else {
 		$("#alertNome").show();
