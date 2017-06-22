@@ -23,7 +23,7 @@ body {
 	position: absolute;
 	max-width: 65%;
 	margin-left: 3vw;
-	z-index: 3;
+	z-index: 2;
 }
 
 #video2TelaNome {
@@ -42,14 +42,37 @@ body {
 }
 
 #balao2TelaNome {
-
+	position: absolute;
+	width: 20vw;
+	height: 20vh;
+	top: 22%;
+	left: 8%;
+	right: 100%;
 }
 
 #fala2TelaNome {
 
+	position: absolute;
+	top: 4000%;
+	left: 44%;
+	right: -125%;
+	color: white;
+
 }
 
+#setaEsquerdaNome {	
+	position: absolute;
+	font-size: 40;
+	top: 22vh;
+}
 
+#setaDireitaNome {
+	position: absolute;
+	font-size: 40;
+	top: 22vh;
+	left: 22vw;
+	z-index: 5;
+}
 #seuChicoTelaNome {
 	max-width: 150%;
 }

@@ -22,6 +22,9 @@ function hideDivsOnObjectStart() {
 	$("#balao1TelaNome").hide();
 	$("#balao2TelaNome").hide();
 	$("#fala2TelaNome").hide();
+	$("#setaEsquerdaNome").hide();
+	$("#setaDireitaNome").hide();
+
 	hideIconsNome();
 }
 
@@ -71,7 +74,8 @@ $(document).on('click', '#botaoNome', function() {
 		$("#balao2TelaNome").fadeIn(extendedFadeTime*1.5);
 		$("#fala2TelaNome").html(dataJSON.telaNome.falaChico1);
 		$("#fala2TelaNome").fadeIn(extendedFadeTime*1.5);
-	} else {
+		$("#setaEsquerdaNome").fadeIn(defaultFadeTime);
+		$("#setaDireitaNome").fadeIn(defaultFadeTime)
 		$("#alertNome").show();
 	}
 });
