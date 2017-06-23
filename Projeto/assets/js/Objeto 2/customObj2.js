@@ -1,4 +1,4 @@
-var scene;
+var scene = 1;
 
 var defaultFadeTime = 500;
 var extendedFadeTime = 1250;
@@ -26,7 +26,7 @@ function hideDivsOnObjectStart() {
 	$("#fala2TelaNome").hide();
 	$("#setaEsquerdaNome").hide();
 	$("#setaDireitaNome").hide();
-
+	$("#telaVideoHidreletrica").hide();
 	hideIconsNome();
 }
 
@@ -51,6 +51,14 @@ function loadScene() {
 
 	switch (scene) {
 		case 1:
+		$("#telaNome").show();
+		break;
+		case 2:
+		$("#telaVideoHidreletrica").show();
+		$("#iconCalculadora").hide();
+		$("#iconMais").hide();
+		$("#iconHelp").hide();
+
 		break;
 	}
 }
@@ -58,7 +66,12 @@ function loadScene() {
 function unloadScene() {
 	switch (scene) {
 		case 1:
+		$("#telaNome").hide();
 		break;
+		case 2:
+		$("#telaVideoHidreletrica").hide();
+		break;
+
 	}
 }
 
@@ -267,7 +280,8 @@ $(document).on('click', '#iconSetaDireita', function() {
 	switch (scene) {
 		case 1:
 		stuckOnScene1 = false;
-		iconSetaEsquerda.show();
+		$("#tituloGeral").html(" ");
+		$("#iconSetaEsquerda").show();
 		nextScene();
 		break;
 	}

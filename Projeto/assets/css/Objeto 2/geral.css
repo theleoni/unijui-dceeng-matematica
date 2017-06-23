@@ -108,6 +108,32 @@ body {
 	max-width: 180%;
 }
 
+#videoHidreletrica {
+	min-width: 100%; 
+	min-height: 100%; 
+
+	/* Setting width & height to auto prevents the browser from stretching or squishing the video */
+	width: auto;
+	height: auto;
+
+	/* Center the video */
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.video-container {
+	position: absolute;
+	top: 2%;
+	bottom: 0;
+	width: 86%;
+	height: 100%; 
+	overflow: hidden;
+	left: 6%;
+}
+
+
 
 @media (max-device-aspect-ratio: 8/8) {
 	#containerVideo1TelaNome {
