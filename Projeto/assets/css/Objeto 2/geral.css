@@ -38,6 +38,13 @@ body {
 }
 
 #balao1TelaNome {
+	position: absolute;
+	z-index: 3;
+	width: 20vw;
+	height: 20vh;
+	left: 90%;
+	right: 40%;
+	z-index: 3;
 
 }
 
@@ -48,16 +55,25 @@ body {
 	top: 22%;
 	left: 8%;
 	right: 100%;
+	z-index: 3;
+}
+
+#fala1TelaNome {
+	color: white;
+	position: absolute;
+	z-index: 4;
+	left: 110%;
+	top: 4500%;
+	right: -192%;
 }
 
 #fala2TelaNome {
-
 	position: absolute;
 	top: 4000%;
 	left: 44%;
 	right: -125%;
 	color: white;
-
+	z-index: 4;
 }
 
 #setaEsquerdaNome {	
@@ -65,6 +81,12 @@ body {
 	font-size: 40;
 	top: 22vh;
 	cursor: pointer;
+	color: gray;
+}
+
+#setaEsquerdaNome:hover {
+	font-size: 50;
+	color: black;
 }
 
 #setaDireitaNome {
@@ -74,6 +96,12 @@ body {
 	left: 22vw;
 	z-index: 5;
 	cursor: pointer;
+	color: gray;
+}
+
+#setaDireitaNome:hover {
+	font-size: 50;
+	color: black;
 }
 #seuChicoTelaNome {
 	max-width: 150%;

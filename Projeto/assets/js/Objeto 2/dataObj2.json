@@ -1,6 +1,14 @@
 {
 	"telaNome": {
-		"falaChico1": "Esses adolescentes de hoje em dia só querem saber de tecnologia, esquecem até de comer. "
+		"falaChico1": "Esses adolescentes de hoje em dia só querem saber de tecnologia, esquecem até de comer.",
+		"falaChico2": "Ei, vocês sabem o que esses aparelhos eletrônicos tem em comum?",
+		"falaCrianças1": "Não, o que senhor Chico?",
+		"falaChico3": "Joana! Todos funcionam através de uma energia.",
+		"falaCrianças2": "Mas como é gerada a energia?",
+		"falaChico4": "Mateus! Existem várias formas de gerar energia, como por exemplo eólica, solar, biomassa, hidreletrica, entre outras.",
+		"falaCrianças3": "Pai! Como a água pode gerar energia?",
+		"falaChico5": "Arthur! Veja se encontra a resposta usando o seu notebook!",
+		"falaCrianças4": "Encontrei um vídeo, vamos assistir?"
 	}
 
 }
