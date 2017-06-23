@@ -43,7 +43,7 @@ function nextScene() {
 
 function previousScene() {
 	unloadScene();
-	scene();
+	scene--;
 	loadScene();
 }
 
@@ -283,6 +283,15 @@ $(document).on('click', '#iconSetaDireita', function() {
 		$("#tituloGeral").html(" ");
 		$("#iconSetaEsquerda").show();
 		nextScene();
+		break;
+	}
+});
+
+
+$(document).on('click', '#iconSetaEsquerda', function() {
+	switch(scene) {
+		case 2:
+		previousScene();
 		break;
 	}
 });
