@@ -65,6 +65,8 @@ body {
 	left: 110%;
 	top: 4500%;
 	right: -192%;
+	font-size: calc((2vh + 1vw)/2);
+
 }
 
 #fala2TelaNome {
@@ -74,7 +76,10 @@ body {
 	right: -125%;
 	color: white;
 	z-index: 4;
+	font-size: calc((2vh + 1vw)/2);
+
 }
+
 
 #setaEsquerdaNome {	
 	position: absolute;
@@ -144,6 +149,12 @@ body {
 @media (max-device-aspect-ratio: 4/8) {
 	#containerVideo1TelaNome {
 		margin-top: 6vh;	
+	}
+}
+
+@media (max-width: 500) {
+	#balao1TelaNome {
+		height: 10vh;
 	}
 }
 

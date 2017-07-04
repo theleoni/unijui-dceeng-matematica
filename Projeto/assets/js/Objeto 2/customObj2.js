@@ -4,13 +4,19 @@ var defaultFadeTime = 500;
 var extendedFadeTime = 1250;
 var shortFadeTime = 250;
 var nomeDoUsuario;
-
+var video2Assistido = false;
 var scene1DialogControl = 0;
 var stuckOnScene1 = true;
+var videoHidreletrica;
 
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 });
+
+
+function sleep (time) {
+	return new Promise((resolve) => setTimeout(resolve, time));
+}
 
 
 $.getJSON('../assets/js/Objeto 2/dataObj2.json', function(data) {
@@ -53,11 +59,17 @@ function loadScene() {
 		case 1:
 		$("#telaNome").show();
 		break;
+
 		case 2:
 		$("#telaVideoHidreletrica").show();
 		$("#iconCalculadora").hide();
 		$("#iconMais").hide();
 		$("#iconHelp").hide();
+		$("#videoHidreletrica").prop('currentTime', "0");
+		break;
+
+		case 3:
+		$("#telaVideoHidreletrica").hide();
 
 		break;
 	}
@@ -70,6 +82,9 @@ function unloadScene() {
 		break;
 		case 2:
 		$("#telaVideoHidreletrica").hide();
+		$("#iconCalculadora").show();
+		$("#iconMais").show();
+		$("#iconHelp").show();
 		break;
 
 	}
@@ -276,12 +291,64 @@ $(document).on('click', '#setaEsquerdaNome', function() {
 });
 
 
+function waitVideoSceneVideo1ToEnd() {
+	video2Assistido = true;
+	requestVideoFullScreen(videoHidreletrica);
+	sleep(50000).then(() => {
+		videoHidreletrica.webkitExitFullscreen()
+		nextScene();
+	});
+
+}
+
+function requestVideoFullScreen(video) {
+	if (video.requestFullscreen) {
+		video.requestFullscreen();
+	}
+	else if (video.msRequestFullscreen) {
+		video.msRequestFullscreen();
+	}
+	else if (video.mozRequestFullScreen) {
+		video.mozRequestFullScreen();
+	}
+	else if (video.webkitRequestFullScreen) {
+		video.webkitRequestFullScreen();
+	}
+}
+
+function exitFullScreen(video) {
+	if (video.ExitFullScreen) {
+		video.ExitFullScreen();
+	}
+	else if (video.msExitFullscreen) {
+		video.msExitFullscreen();
+	}
+	else if (video.mozExitFullScreen) {
+		video.mozExitFullScreen();
+	}
+	else if (video.webkitExitFullScreen) {
+		video.webkitExitFullScreen();
+	}
+}
+
 $(document).on('click', '#iconSetaDireita', function() {
 	switch (scene) {
 		case 1:
 		stuckOnScene1 = false;
 		$("#tituloGeral").html(" ");
 		$("#iconSetaEsquerda").show();
+		if (!video2Assistido) {
+			videoHidreletrica = document.getElementById('videoHidreletrica');
+			disallowNextScene();
+			waitVideoSceneVideo1ToEnd();
+		} else {
+			allowNextScene();
+		}
+
+		nextScene();
+		break;
+
+		case 2: 
 		nextScene();
 		break;
 	}
@@ -291,8 +358,11 @@ $(document).on('click', '#iconSetaDireita', function() {
 $(document).on('click', '#iconSetaEsquerda', function() {
 	switch(scene) {
 		case 2:
+		case 3:
+		allowNextScene();
 		previousScene();
 		break;
+
 	}
 });
 
