@@ -8,7 +8,7 @@ var video2Assistido = false;
 var scene1DialogControl = 0;
 var stuckOnScene1 = true;
 var videoHidreletrica;
-
+var calculadoraAberta;
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 });
@@ -109,9 +109,13 @@ $(document).on('click', '#botaoNome', function() {
 		$("#fala2TelaNome").html(dataJSON.telaNome.falaChico1);
 		$("#fala2TelaNome").fadeIn(extendedFadeTime*1.5);
 		$("#setaDireitaNome").fadeIn(defaultFadeTime)
-		$("#alertNome").show();
+		$("#alertNome").hide();
+
 		disallowNextScene();
 		$("#iconSetaEsquerda").hide();
+	} else {
+		$("#alertNome").show();
+
 	}
 });
 
@@ -373,3 +377,62 @@ function allowNextScene() {
 function disallowNextScene() {
 	$("#iconSetaDireita").hide();
 }
+
+$(document).on('click', '#iconCalculadora', function () {
+	if (calculadoraAberta){
+		hideCalc();
+	}
+	else {
+		showCalc();
+	}
+});
+
+$(document).on('click', '#iconFechar', function () {
+	closeObject();
+});
+
+
+function showCalc() {
+	calculadoraAberta = true;
+	$("#geral").hide();
+	$("#iconMais").hide();
+	$("#iconHelp").hide();
+	$("#iconFechar").hide();
+	$("#iconSetaEsquerda").hide();
+	$("#iconSetaDireita").hide();
+	$("#calculadora").show();	
+	$("#iconCalculadora").css("color", "red");
+}
+
+function hideCalc() {
+	$("#geral").show();
+	$("#iconMais").show();
+	$("#iconHelp").show();
+	$("#iconFechar").show();
+	$("#iconSetaEsquerda").show();
+	$("#iconSetaDireita").show();
+	$("#calculadora").hide();	
+	$("#iconCalculadora").css("color", "green");
+	calculadoraAberta = false;
+}
+
+
+function closeObject() {
+	swal({
+		title: "Você tem certeza?",
+		text: "O objeto será fechado e o progresso perdido!",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: "#DD6B55",
+		confirmButtonText: "Sim, sair!",
+		closeOnConfirm: false,
+		cancelButtonText: "Cancelar"
+
+	},
+	function(){
+		window.location.href = "../index.html";
+
+	});
+}
+
+
