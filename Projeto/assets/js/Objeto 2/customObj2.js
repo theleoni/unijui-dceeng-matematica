@@ -6,6 +6,8 @@ var shortFadeTime = 250;
 var nomeDoUsuario;
 var video2Assistido = false;
 var scene1DialogControl = 0;
+var sceneConversa2DialogControl = 0;
+var jaLeuConversa2 = false;
 var stuckOnScene1 = true;
 var videoHidreletrica;
 var calculadoraAberta;
@@ -33,6 +35,7 @@ function hideDivsOnObjectStart() {
 	$("#setaEsquerdaNome").hide();
 	$("#setaDireitaNome").hide();
 	$("#telaVideoHidreletrica").hide();
+	$("#telaConversa2").hide();
 	hideIconsNome();
 }
 
@@ -70,7 +73,14 @@ function loadScene() {
 
 		case 3:
 		$("#telaVideoHidreletrica").hide();
-
+		$("#telaConversa2").show();
+		changeTitle("Teste de titulo 2. É nóis clan");
+		if (!jaLeuConversa2) {
+			disallowNextScene();
+		} else {
+			allowNextScene();
+		}
+		loadChatConversa2();
 		break;
 	}
 }
@@ -85,6 +95,8 @@ function unloadScene() {
 		$("#iconCalculadora").show();
 		$("#iconMais").show();
 		$("#iconHelp").show();
+		case 3:
+		$("#telaConversa2").hide();
 		break;
 
 	}
@@ -202,7 +214,15 @@ $(document).on('click', '#setaDireitaNome', function() {
 		setTimeout(function() {
 			if(stuckOnScene1) {
 				swal("Preso aqui?", "Clique na seta no canto inferior direito para prosseguir");
+				$("#iconSetaDireita").css("color", "red");
+				$("#iconSetaDireita").css("font-size", "60px");
 				stuckOnScene1 = false;
+
+				setTimeout(function() {
+					$("#iconSetaDireita").css("color", "gray");
+					$("#iconSetaDireita").css("font-size", "40px");
+					
+				}, 5000) 
 			}
 		}, 5000) 
 
@@ -289,6 +309,7 @@ $(document).on('click', '#setaEsquerdaNome', function() {
 		$("#fala1TelaNome").fadeOut(shortFadeTime);
 		scene1DialogControl--;
 		$("#setaDireitaNome").show();
+		allowNextScene();
 		break;
 
 	}
@@ -299,7 +320,7 @@ function waitVideoSceneVideo1ToEnd() {
 	video2Assistido = true;
 	requestVideoFullScreen(videoHidreletrica);
 	sleep(50000).then(() => {
-		videoHidreletrica.webkitExitFullscreen()
+		exitFullScreen(videoHidreletrica);
 		nextScene();
 	});
 
@@ -321,7 +342,7 @@ function requestVideoFullScreen(video) {
 }
 
 function exitFullScreen(video) {
-	if (video.ExitFullScreen) {
+	if (video.exitFullScreen) {
 		video.ExitFullScreen();
 	}
 	else if (video.msExitFullscreen) {
@@ -363,6 +384,7 @@ $(document).on('click', '#iconSetaEsquerda', function() {
 	switch(scene) {
 		case 2:
 		case 3:
+		case 4:
 		allowNextScene();
 		previousScene();
 		break;
@@ -435,4 +457,137 @@ function closeObject() {
 	});
 }
 
+
+$(document).on('click', '#setaEsquerdaConversa2', function() {
+	sceneConversa2DialogControl--;
+	loadChatConversa2();
+});
+
+$(document).on('click', '#setaDireitaConversa2', function() {
+	sceneConversa2DialogControl++;
+	loadChatConversa2();
+});
+
+
+function changeTitle(titulo) {
+
+	$("#tituloGeral").html(titulo);
+
+}
+function loadChatConversa2() {
+	switch (sceneConversa2DialogControl) {
+		case 0: 
+		$("#setaEsquerdaConversa2").hide();
+		$("#balao1TelaConversa2").css("opacity", "1");
+		$("#fala1TelaConversa2").html(dataJSON.telaConversa2.falaCrianças1);
+		$("#fala1TelaConversa2").fadeIn(shortFadeTime);
+		$("#balao2TelaConversa2").css("opacity", "0");
+		$("#fala2TelaConversa2").html("");
+		$("#fala2TelaConversa2").fadeOut(shortFadeTime);
+		break;
+
+		case 1:
+		$("#setaEsquerdaConversa2").show();
+		$("#balao2TelaConversa2").css("opacity", "1");
+		$("#fala2TelaConversa2").html(dataJSON.telaConversa2.falaChico1);
+		$("#fala2TelaConversa2").fadeIn(shortFadeTime);
+		$("#balao1TelaConversa2").css("opacity", "0");
+		$("#fala1TelaConversa2").html("");
+		$("#fala1TelaConversa2").fadeOut(shortFadeTime);
+		break;
+
+		case 2: 
+		$("#balao1TelaConversa2").css("opacity", "1");
+		$("#fala1TelaConversa2").html(dataJSON.telaConversa2.falaCrianças2);
+		$("#fala1TelaConversa2").fadeIn(shortFadeTime);
+		$("#balao2TelaConversa2").css("opacity", "0");
+		$("#fala2TelaConversa2").html("");
+		$("#fala2TelaConversa2").fadeOut(shortFadeTime);
+		break;
+
+		case 3:
+		$("#balao2TelaConversa2").css("opacity", "1");
+		$("#fala2TelaConversa2").html(dataJSON.telaConversa2.falaChico2);
+		$("#fala2TelaConversa2").fadeIn(shortFadeTime);
+		$("#balao1TelaConversa2").css("opacity", "0");
+		$("#fala1TelaConversa2").html("");
+		$("#fala1TelaConversa2").fadeOut(shortFadeTime);
+		break;
+
+		case 4: 
+		$("#balao1TelaConversa2").css("opacity", "1");
+		$("#fala1TelaConversa2").html(dataJSON.telaConversa2.falaCrianças3);
+		$("#fala1TelaConversa2").fadeIn(shortFadeTime);
+		$("#balao2TelaConversa2").css("opacity", "0");
+		$("#fala2TelaConversa2").html("");
+		$("#fala2TelaConversa2").fadeOut(shortFadeTime);
+		break;
+
+		case 5:
+		$("#balao2TelaConversa2").css("opacity", "1");
+		$("#fala2TelaConversa2").html(dataJSON.telaConversa2.falaChico3);
+		$("#fala2TelaConversa2").fadeIn(shortFadeTime);
+		$("#balao1TelaConversa2").css("opacity", "0");
+		$("#fala1TelaConversa2").html("");
+		$("#fala1TelaConversa2").fadeOut(shortFadeTime);
+		break;
+
+		case 6:
+		$("#balao2TelaConversa2").css("opacity", "1");
+		$("#fala2TelaConversa2").html(dataJSON.telaConversa2.falaChico4);
+		$("#fala2TelaConversa2").fadeIn(shortFadeTime);
+		$("#balao1TelaConversa2").css("opacity", "0");
+		$("#fala1TelaConversa2").html("");
+		$("#fala1TelaConversa2").fadeOut(shortFadeTime);
+		break;
+
+		case 7:
+		$("#balao2TelaConversa2").css("opacity", "1");
+		$("#fala2TelaConversa2").html(dataJSON.telaConversa2.falaChico5);
+		$("#fala2TelaConversa2").fadeIn(shortFadeTime);
+		$("#balao1TelaConversa2").css("opacity", "0");
+		$("#fala1TelaConversa2").html("");
+		$("#fala1TelaConversa2").fadeOut(shortFadeTime);
+		break;
+
+		case 8: 
+		$("#balao1TelaConversa2").css("opacity", "1");
+		$("#fala1TelaConversa2").html(dataJSON.telaConversa2.falaCrianças4);
+		$("#fala1TelaConversa2").fadeIn(shortFadeTime);
+		$("#balao2TelaConversa2").css("opacity", "0");
+		$("#fala2TelaConversa2").html("");
+		$("#fala2TelaConversa2").fadeOut(shortFadeTime);
+		break;
+
+		case 9:
+		$("#balao2TelaConversa2").css("opacity", "1");
+		$("#fala2TelaConversa2").html(dataJSON.telaConversa2.falaChico6);
+		$("#fala2TelaConversa2").fadeIn(shortFadeTime);
+		$("#balao1TelaConversa2").css("opacity", "0");
+		$("#fala1TelaConversa2").html("");
+		$("#fala1TelaConversa2").fadeOut(shortFadeTime);
+		break;
+
+		case 10: 
+		$("#setaDireitaConversa2").show();
+
+		$("#balao1TelaConversa2").css("opacity", "1");
+		$("#fala1TelaConversa2").html(dataJSON.telaConversa2.falaCrianças5);
+		$("#fala1TelaConversa2").fadeIn(shortFadeTime);
+		$("#balao2TelaConversa2").css("opacity", "0");
+		$("#fala2TelaConversa2").html("");
+		$("#fala2TelaConversa2").fadeOut(shortFadeTime);
+		break;
+
+		case 11: 
+		$("#setaDireitaConversa2").hide();
+		$("#balao1TelaConversa2").css("opacity", "1");
+		$("#fala1TelaConversa2").html(dataJSON.telaConversa2.falaCrianças6);
+		$("#fala1TelaConversa2").fadeIn(shortFadeTime);
+		$("#balao2TelaConversa2").css("opacity", "0");
+		$("#fala2TelaConversa2").html("");
+		$("#fala2TelaConversa2").fadeOut(shortFadeTime);
+		break;
+	}
+}
 

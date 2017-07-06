@@ -117,11 +117,10 @@ body {
 	min-width: 100%; 
 	min-height: 100%; 
 
-	/* Setting width & height to auto prevents the browser from stretching or squishing the video */
+
 	width: auto;
 	height: auto;
 
-	/* Center the video */
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -139,9 +138,110 @@ body {
 }
 
 
+#containerVideo1TelaConversa2 {
+	margin-top: 27vh;
+}
+
+#video1telaConversa2 {
+	position: absolute;
+	max-width: 65%;
+	margin-left: 3vw;
+	z-index: 2;
+}
+
+#video2telaConversa2 {
+	position: absolute;
+	z-index: 1;
+	margin-left: -4.5vw;
+}
+
+
+#containerPersonagemExtratelaConversa2{
+	max-width: 75%;
+}
+
+#balao1telaConversa2 {
+	position: absolute;
+	z-index: 3;
+	width: 20vw;
+	height: 20vh;
+	left: 90%;
+	right: 40%;
+	z-index: 3;
+
+}
+
+#balao2telaConversa2 {
+	position: absolute;
+	width: 20vw;
+	height: 20vh;
+	top: 22%;
+	left: 8%;
+	right: 100%;
+	z-index: 3;
+}
+
+#fala1telaConversa2 {
+	color: white;
+	position: absolute;
+	z-index: 4;
+	left: 110%;
+	top: 4500%;
+	right: -192%;
+	font-size: calc((2vh + 1vw)/2);
+
+}
+
+#fala2telaConversa2 {
+	position: absolute;
+	top: 4000%;
+	left: 44%;
+	right: -125%;
+	color: white;
+	z-index: 4;
+	font-size: calc((2vh + 1vw)/2);
+
+}
+
+
+#setaEsquerdaConversa2 {	
+	position: absolute;
+	font-size: 40;
+	top: 22vh;
+	cursor: pointer;
+	color: gray;
+}
+
+#setaEsquerdaConversa2:hover {
+	font-size: 50;
+	color: black;
+}
+
+#setaDireitaConversa2 {
+	position: absolute;
+	font-size: 40;
+	top: 22vh;
+	left: 22vw;
+	z-index: 5;
+	cursor: pointer;
+	color: gray;
+}
+
+#setaDireitaConversa2:hover {
+	font-size: 50;
+	color: black;
+}
+#seuChicotelaConversa2 {
+	margin-left: -20%;
+	max-width: 110%;
+}
+
 
 @media (max-device-aspect-ratio: 8/8) {
 	#containerVideo1TelaNome {
+		margin-top: 15vh;	
+	}
+	#containerVideo1TelaConversa2 {
 		margin-top: 15vh;	
 	}
 }
@@ -150,10 +250,16 @@ body {
 	#containerVideo1TelaNome {
 		margin-top: 6vh;	
 	}
+	#containerVideo1TelaConversa2 {
+		margin-top: 6vh;	
+	}
 }
 
 @media (max-width: 500) {
 	#balao1TelaNome {
+		height: 10vh;
+	}
+	#balao1TelaConversa2 {
 		height: 10vh;
 	}
 }

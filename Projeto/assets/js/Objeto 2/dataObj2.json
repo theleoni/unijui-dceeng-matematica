@@ -9,6 +9,20 @@
 		"falaCrianças3": "Pai! Como a água pode gerar energia?",
 		"falaChico5": "Arthur! Veja se encontra a resposta usando o seu notebook!",
 		"falaCrianças4": "Encontrei um vídeo, vamos assistir?"
-	}
+	},
 
+	"telaConversa2": {
+		"falaCrianças1": "Como essa energia chega até as nossas casas?",
+		"falaChico1": "Joana, a energia vem através de linhas de transmissões diretamente após ser gerada., pois não pode ser armazenada",
+		"falaCrianças2": "Para onde vai a água utilizada nesse processo?",
+		"falaChico2": "Arthur, a água passa pelas turbinas e entra no percurso do rio novamente, sem nenhuma poluição",
+		"falaCrianças3": "O brasil produz muita energia em hidrelétricas?", 
+		"falaChico3": "Mateus, cerca de 70% da energia produzida no brasil vem de usinas hidrelétricas.",
+		"falaChico4": "O Brasil é o terceiro maior produtor dessa forma de energia",
+		"falaChico5": "Bom, agora que já conversamos bastante, o que acham de fazer o trabalho de Estatística da escola?",
+		"falaCrianças4": "Mas seu Chico, primeiro precisamos de um tema para tirar os dados utilizados nos cálculos",
+		"falaChico6": "Que tal usarem o assunto que acabamos de conversar? No site da ANEEL vocês podem encontrar informações de todo o Brasil",
+		"falaCrianças5": "É uma ótima ideia pai, vou ver o que encontro lá",
+		"falaCrianças6": "Vamos estudar o conteúdo de estatística, vou começar pela média aritmética"
+	}
 }
