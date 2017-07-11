@@ -186,7 +186,7 @@ body {
 	position: absolute;
 	z-index: 4;
 	left: 110%;
-	top: 4500%;
+	margin-top: 28%;
 	right: -192%;
 	font-size: calc((2vh + 1vw)/2);
 
@@ -194,7 +194,7 @@ body {
 
 #fala2telaConversa2 {
 	position: absolute;
-	top: 4000%;
+	margin-top: 24%;
 	left: 44%;
 	right: -125%;
 	color: white;
