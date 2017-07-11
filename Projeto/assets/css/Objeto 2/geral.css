@@ -41,7 +41,7 @@ body {
 	position: absolute;
 	z-index: 3;
 	width: 20vw;
-	height: 20vh;
+	height: 24vh;
 	left: 90%;
 	right: 40%;
 	z-index: 3;
@@ -63,7 +63,7 @@ body {
 	position: absolute;
 	z-index: 4;
 	left: 110%;
-	top: 4500%;
+	margin-top: 33%;
 	right: -192%;
 	font-size: calc((2vh + 1vw)/2);
 
@@ -71,7 +71,7 @@ body {
 
 #fala2TelaNome {
 	position: absolute;
-	top: 4000%;
+	margin-top: 24%;
 	left: 44%;
 	right: -125%;
 	color: white;
