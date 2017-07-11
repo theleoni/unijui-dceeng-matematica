@@ -10,7 +10,6 @@ var scene1DialogControl = 0;
 var sceneConversa2DialogControl = 0;
 var jaLeuConversa2 = false;
 var stuckOnScene1 = true;
-var videoHidreletrica;
 var calculadoraAberta;
 $(document).ready(function() {
 	hideDivsOnObjectStart();
@@ -71,7 +70,16 @@ function loadScene() {
 		$("#iconCalculadora").hide();
 		$("#iconMais").hide();
 		$("#iconHelp").hide();
-		$("#videoHidreletrica").prop('currentTime', "0");
+		if (!video2Assistido) {
+			videoHidreletrica.currentTime = 0;
+			disallowNextScene();
+			waitVideoSceneVideo1ToEnd();
+		} else {
+			videoHidreletrica.play();
+			videoHidreletrica.currentTime = 0;
+			allowNextScene();
+		}
+
 		break;
 
 		case 3:
@@ -331,23 +339,31 @@ $(document).on('click', '#setaEsquerdaNome', function() {
 
 
 function waitVideoSceneVideo1ToEnd() {
-	video2Assistido = true;
 	requestVideoFullScreen(videoHidreletrica);
-	sleep(50000).then(() => {
+	video2Assistido = true;
+
+	$(videoHidreletrica).on('ended',function(){
 		exitFullScreen(videoHidreletrica);
-		nextScene();
+		if (scene == 2) {
+			nextScene();
+
+		}
+
 	});
 }
 
 
 function waitVideoMediaAritmeticaToEnd() {
 	videoMediaAritmeticaAssitido = true;
+	videoMediaAritmetica.currentTime = 0;
 	requestVideoFullScreen(videoMediaAritmetica);
-	sleep(35000).then(() => {
+
+	$(videoMediaAritmetica).on('ended',function(){
 		exitFullScreen(videoMediaAritmetica);
 		allowNextScene();
 		videoMediaAritmetica.pause();
 	});
+
 }
 function requestVideoFullScreen(video) {
 	if (video.requestFullscreen) {
@@ -385,19 +401,10 @@ $(document).on('click', '#iconSetaDireita', function() {
 		stuckOnScene1 = false;
 		$("#tituloGeral").html(" ");
 		$("#iconSetaEsquerda").show();
-		if (!video2Assistido) {
-			videoHidreletrica = document.getElementById('videoHidreletrica');
-			disallowNextScene();
-			waitVideoSceneVideo1ToEnd();
-		} else {
-			allowNextScene();
-		}
-
 		nextScene();
 		break;
 		case 4:
 		if (!videoMediaAritmeticaAssitido) {
-			videoMediaAritmetica = document.getElementById('videoMediaAritmetica');
 			disallowNextScene();
 		} else {
 			allowNextScene();
@@ -627,6 +634,7 @@ function loadChatConversa2() {
 		$("#balao2TelaConversa2").css("opacity", "0");
 		$("#fala2TelaConversa2").html("");
 		$("#fala2TelaConversa2").fadeOut(shortFadeTime);
+		jaLeuConversa2 = true;
 		allowNextScene();
 		break;
 	}
