@@ -345,7 +345,8 @@ function waitVideoMediaAritmeticaToEnd() {
 	requestVideoFullScreen(videoMediaAritmetica);
 	sleep(35000).then(() => {
 		exitFullScreen(videoMediaAritmetica);
-		nextScene();
+		allowNextScene();
+		videoMediaAritmetica.pause();
 	});
 }
 function requestVideoFullScreen(video) {
@@ -417,6 +418,7 @@ $(document).on('click', '#iconSetaEsquerda', function() {
 		case 2:
 		case 3:
 		case 4:
+		case 5:
 		allowNextScene();
 		previousScene();
 		break;
