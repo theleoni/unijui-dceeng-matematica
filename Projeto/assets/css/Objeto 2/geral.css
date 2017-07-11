@@ -236,6 +236,14 @@ body {
 	max-width: 110%;
 }
 
+#iconePlayMediaAritmetica {
+	font-size: 40px;
+	color: gray;
+}
+
+#iconePlayMediaAritmetica:hover {
+	color: green;
+}
 
 @media (max-device-aspect-ratio: 8/8) {
 	#containerVideo1TelaNome {

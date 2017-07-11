@@ -5,6 +5,7 @@ var extendedFadeTime = 1250;
 var shortFadeTime = 250;
 var nomeDoUsuario;
 var video2Assistido = false;
+var videoMediaAritmeticaAssitido = false;
 var scene1DialogControl = 0;
 var sceneConversa2DialogControl = 0;
 var jaLeuConversa2 = false;
@@ -36,6 +37,8 @@ function hideDivsOnObjectStart() {
 	$("#setaDireitaNome").hide();
 	$("#telaVideoHidreletrica").hide();
 	$("#telaConversa2").hide();
+	$("#telaMediaAritmetica").hide();
+
 	hideIconsNome();
 }
 
@@ -72,7 +75,6 @@ function loadScene() {
 		break;
 
 		case 3:
-		$("#telaVideoHidreletrica").hide();
 		$("#telaConversa2").show();
 		changeTitle("Teste de titulo 2. É nóis clan");
 		if (!jaLeuConversa2) {
@@ -82,6 +84,13 @@ function loadScene() {
 		}
 		loadChatConversa2();
 		break;
+
+
+		case 4: {
+			$("#telaMediaAritmetica").show();
+			$('body').css("background-color", "#CEFDFD")
+			break;
+		}
 	}
 }
 
@@ -97,6 +106,11 @@ function unloadScene() {
 		$("#iconHelp").show();
 		case 3:
 		$("#telaConversa2").hide();
+		break;
+		case 4:
+		$("#telaMediaAritmetica").hide();
+		$('body').css("background-color", "#FFFFFF")
+
 		break;
 
 	}
@@ -323,9 +337,17 @@ function waitVideoSceneVideo1ToEnd() {
 		exitFullScreen(videoHidreletrica);
 		nextScene();
 	});
-
 }
 
+
+function waitVideoMediaAritmeticaToEnd() {
+	videoMediaAritmeticaAssitido = true;
+	requestVideoFullScreen(videoMediaAritmetica);
+	sleep(35000).then(() => {
+		exitFullScreen(videoMediaAritmetica);
+		nextScene();
+	});
+}
 function requestVideoFullScreen(video) {
 	if (video.requestFullscreen) {
 		video.requestFullscreen();
@@ -372,10 +394,20 @@ $(document).on('click', '#iconSetaDireita', function() {
 
 		nextScene();
 		break;
-
+		case 4:
+		if (!videoMediaAritmeticaAssitido) {
+			videoMediaAritmetica = document.getElementById('videoMediaAritmetica');
+			disallowNextScene();
+		} else {
+			allowNextScene();
+			videoMediaAritmetica.currentTime = 35;
+		}
+		break;
 		case 2: 
+		case 3:
 		nextScene();
 		break;
+
 	}
 });
 
@@ -466,6 +498,12 @@ $(document).on('click', '#setaEsquerdaConversa2', function() {
 $(document).on('click', '#setaDireitaConversa2', function() {
 	sceneConversa2DialogControl++;
 	loadChatConversa2();
+});
+
+
+$(document).on('click', '#iconePlayMediaAritmetica', function() {
+	waitVideoMediaAritmeticaToEnd();
+	videoMediaAritmetica.play();
 });
 
 
@@ -587,7 +625,9 @@ function loadChatConversa2() {
 		$("#balao2TelaConversa2").css("opacity", "0");
 		$("#fala2TelaConversa2").html("");
 		$("#fala2TelaConversa2").fadeOut(shortFadeTime);
+		allowNextScene();
 		break;
 	}
 }
+
 
