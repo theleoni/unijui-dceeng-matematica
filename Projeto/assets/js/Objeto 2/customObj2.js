@@ -11,6 +11,9 @@ var sceneConversa2DialogControl = 0;
 var jaLeuConversa2 = false;
 var stuckOnScene1 = true;
 var calculadoraAberta;
+var questionNumber = 1;
+var alternativasQuestao1;
+var alreadyPopulated = [false];
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 });
@@ -20,6 +23,18 @@ function sleep (time) {
 	return new Promise((resolve) => setTimeout(resolve, time));
 }
 
+function nextScene() {
+	unloadScene();
+	scene++;
+	loadScene();
+
+}
+
+function previousScene() {
+	unloadScene();
+	scene--;
+	loadScene();
+}
 
 $.getJSON('../assets/js/Objeto 2/dataObj2.json', function(data) {
 	dataJSON = data;
@@ -37,6 +52,7 @@ function hideDivsOnObjectStart() {
 	$("#telaVideoHidreletrica").hide();
 	$("#telaConversa2").hide();
 	$("#telaMediaAritmetica").hide();
+	$("#telaPrimeirasQuestoes").hide();
 
 	hideIconsNome();
 }
@@ -45,18 +61,7 @@ function hideIconsNome() {
 	$("#alertNome").hide();
 }
 
-function nextScene() {
-	unloadScene();
-	scene++;
-	loadScene();
 
-}
-
-function previousScene() {
-	unloadScene();
-	scene--;
-	loadScene();
-}
 
 function loadScene() {
 
@@ -99,6 +104,12 @@ function loadScene() {
 			$('body').css("background-color", "#CEFDFD")
 			break;
 		}
+
+		case 5: {
+			$("#telaPrimeirasQuestoes").show();
+			loadQuestion();
+			break;
+		}
 	}
 }
 
@@ -118,9 +129,10 @@ function unloadScene() {
 		case 4:
 		$("#telaMediaAritmetica").hide();
 		$('body').css("background-color", "#FFFFFF")
-
 		break;
-
+		case 5:
+		$("#telaPrimeirasQuestoes").hide();
+		break;
 	}
 }
 
@@ -360,7 +372,9 @@ function waitVideoMediaAritmeticaToEnd() {
 
 	$(videoMediaAritmetica).on('ended',function(){
 		exitFullScreen(videoMediaAritmetica);
-		allowNextScene();
+		if (scene == 4) {
+			allowNextScene();
+		}
 		videoMediaAritmetica.pause();
 	});
 
@@ -403,16 +417,17 @@ $(document).on('click', '#iconSetaDireita', function() {
 		$("#iconSetaEsquerda").show();
 		nextScene();
 		break;
-		case 4:
+		case 3:
 		if (!videoMediaAritmeticaAssitido) {
 			disallowNextScene();
 		} else {
 			allowNextScene();
 			videoMediaAritmetica.currentTime = 35;
 		}
+		nextScene();
 		break;
 		case 2: 
-		case 3:
+		case 4:
 		nextScene();
 		break;
 
@@ -640,4 +655,20 @@ function loadChatConversa2() {
 	}
 }
 
+function populateQuestionArray(vetor) {
+	vetor = [dataJSON.telaPrimeirasQuestoes.afirmacao1Questao1, dataJSON.telaPrimeirasQuestoes.afirmacao2Questao1, dataJSON.telaPrimeirasQuestoes.afirmacao3Questao1, dataJSON.telaPrimeirasQuestoes.afirmacao4Questao1];
+	vetor.sort(function(a,b){return 0.5 - Math.random()});
+	return vetor;
+}
+function loadQuestion() {
+	switch (questionNumber) {
+		case 1: 
+		alternativasQuestao1 = populateQuestionArray(alternativasQuestao1);
+		$("#afirmacao1").html(alternativasQuestao1[0].replace("%numeroAlternativa%", "I"));
+		$("#afirmacao2").html(alternativasQuestao1[1].replace("%numeroAlternativa%", "II"));
+		$("#afirmacao3").html(alternativasQuestao1[2].replace("%numeroAlternativa%", "III"));
+		$("#afirmacao4").html(alternativasQuestao1[3].replace("%numeroAlternativa%", "IV"));
 
+		break;
+	}
+}
