@@ -14,6 +14,8 @@ var calculadoraAberta;
 var questionNumber = 1;
 var alternativasQuestao1;
 var alreadyPopulated = [false];
+var corretasQuestao1 = [];
+var marcadasQuestao1 = [];
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 });
@@ -530,6 +532,15 @@ $(document).on('click', '#iconePlayMediaAritmetica', function() {
 	videoMediaAritmetica.play();
 });
 
+$(document).on('click', '.whiteSpaceButton', function() {
+	$(this).toggleClass("btn-primary");
+	$(this).toggleClass("btn-default");
+})
+
+
+$(document).on('click', '#botaoEnviarRespostaQ1', function() {
+	checkQuestion1();
+});
 
 function changeTitle(titulo) {
 
@@ -656,18 +667,75 @@ function loadChatConversa2() {
 }
 
 function populateQuestionArray(vetor) {
-	vetor = [dataJSON.telaPrimeirasQuestoes.afirmacao1Questao1, dataJSON.telaPrimeirasQuestoes.afirmacao2Questao1, dataJSON.telaPrimeirasQuestoes.afirmacao3Questao1, dataJSON.telaPrimeirasQuestoes.afirmacao4Questao1];
+	vetor = [dataJSON.telaPrimeirasQuestoes.afirmacao1Questao1, dataJSON.telaPrimeirasQuestoes.afirmacao2Questao1, dataJSON.telaPrimeirasQuestoes.afirmacao3Questao1, dataJSON.telaPrimeirasQuestoes.afirmacao4Questao1, dataJSON.telaPrimeirasQuestoes.afirmacao5Questao1];
 	vetor.sort(function(a,b){return 0.5 - Math.random()});
 	return vetor;
+}
+
+function checkIfTrue() {
+	if (alternativasQuestao1[0].includes("%verdadeiro%")) {
+		alternativasQuestao1[0] = alternativasQuestao1[0].replace("%verdadeiro%", "");
+		corretasQuestao1.push(1);
+	}
+	if (alternativasQuestao1[1].includes("%verdadeiro%")) {
+		alternativasQuestao1[1] = alternativasQuestao1[1].replace("%verdadeiro%", "");
+		corretasQuestao1.push(2);
+
+	}
+	if (alternativasQuestao1[2].includes("%verdadeiro%")) {
+		alternativasQuestao1[2] = alternativasQuestao1[2].replace("%verdadeiro%", "");
+		corretasQuestao1.push(3);
+
+	}
+	if (alternativasQuestao1[3].includes("%verdadeiro%")) {
+		alternativasQuestao1[3] = alternativasQuestao1[3].replace("%verdadeiro%", "");
+		corretasQuestao1.push(4);
+	}
+	if (alternativasQuestao1[4].includes("%verdadeiro%")) {
+		alternativasQuestao1[4] = alternativasQuestao1[4].replace("%verdadeiro%", "");
+		corretasQuestao1.push(5);
+	}
+}
+
+
+function checkQuestion1() {
+	if ($("#buttonAf1").hasClass("btn-primary")) {
+		marcadasQuestao1.push(1);
+	}
+	if ($("#buttonAf2").hasClass("btn-primary")) {
+		marcadasQuestao1.push(2);
+	}
+	if ($("#buttonAf3").hasClass("btn-primary")) {
+		marcadasQuestao1.push(3);
+	}
+	if ($("#buttonAf4").hasClass("btn-primary")) {
+		marcadasQuestao1.push(4);
+	}
+	if ($("#buttonAf5").hasClass("btn-primary")) {
+		marcadasQuestao1.push(5);
+	}
+
+	var stringArrayCorretas = corretasQuestao1.toString();
+	var stringArraymarcadas = marcadasQuestao1.toString();
+	if (stringArraymarcadas == stringArrayCorretas) {
+		window.location = "https://www.youtube.com/watch?v=zXl7kmfIlxk";
+	} else {
+		$('body').css("background-color", "red");
+	}
+	marcadasQuestao1 = [];
+
 }
 function loadQuestion() {
 	switch (questionNumber) {
 		case 1: 
 		alternativasQuestao1 = populateQuestionArray(alternativasQuestao1);
-		$("#afirmacao1").html(alternativasQuestao1[0].replace("%numeroAlternativa%", "I"));
-		$("#afirmacao2").html(alternativasQuestao1[1].replace("%numeroAlternativa%", "II"));
-		$("#afirmacao3").html(alternativasQuestao1[2].replace("%numeroAlternativa%", "III"));
-		$("#afirmacao4").html(alternativasQuestao1[3].replace("%numeroAlternativa%", "IV"));
+
+		checkIfTrue();
+		$("#buttonAf1").html(alternativasQuestao1[0].replace("%numeroAlternativa%", "I"));
+		$("#buttonAf2").html(alternativasQuestao1[1].replace("%numeroAlternativa%", "II"));
+		$("#buttonAf3").html(alternativasQuestao1[2].replace("%numeroAlternativa%", "III"));
+		$("#buttonAf4").html(alternativasQuestao1[3].replace("%numeroAlternativa%", "IV"));
+		$("#buttonAf5").html(alternativasQuestao1[4].replace("%numeroAlternativa%", "V"));
 
 		break;
 	}
