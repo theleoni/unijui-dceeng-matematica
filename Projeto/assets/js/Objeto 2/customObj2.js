@@ -17,6 +17,8 @@ var alreadyPopulated = [false];
 var corretasQuestao1 = [];
 var marcadasQuestao1 = [];
 var firstTimeQuestion1 = true;
+
+var correctAnswers = [false];
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 });
@@ -724,6 +726,8 @@ function checkQuestion1() {
 		$("#alertQ1").html(dataJSON.telaPrimeirasQuestoes.alertaCerto);
 		$("#alertQ1").addClass("alert-success");
 		$("#alertQ1").removeClass("alert-danger");
+		correctAnswers[questionNumber-1] = true;
+		blockQuestionButtons();
 
 	} else {
 		$("#alertQ1").show();
@@ -735,21 +739,92 @@ function checkQuestion1() {
 	marcadasQuestao1 = [];
 
 }
+
+function answerIsCorrect() {
+	return correctAnswers[questionNumber-1];
+}
+
+function blockQuestionButtons() {
+	switch (questionNumber) {
+		case 1:
+		$("#buttonAf1").prop("disabled", "disabled");	
+		$("#buttonAf2").prop("disabled", "disabled");	
+		$("#buttonAf3").prop("disabled", "disabled");	
+		$("#buttonAf4").prop("disabled", "disabled");	
+		$("#buttonAf5").prop("disabled", "disabled");	
+		$("#botaoEnviarRespostaQ1").prop("disabled", "disabled");	
+
+		if (corretasQuestao1.includes(1)) {
+			$("#buttonAf1").addClass("btn-primary");		
+			$("#buttonAf1").removeClass("btn-default");		
+		}
+		if (corretasQuestao1.includes(2)) {
+			$("#buttonAf2").removeClass("btn-primary");		
+			$("#buttonAf2").removeClass("btn-default");		
+		}
+		if (corretasQuestao1.includes(3)) {
+			$("#buttonAf3").addClass("btn-primary");		
+			$("#buttonAf3").removeClass("btn-default");		
+		}
+		if (corretasQuestao1.includes(4)) {
+			$("#buttonAf4").addClass("btn-primary");		
+			$("#buttonAf4").removeClass("btn-default");		
+		}
+		if (corretasQuestao1.includes(5)) {
+			$("#buttonAf5").addClass("btn-primary");		
+			$("#buttonAf5").removeClass("btn-default");		
+		}
+		$("#alertQ1").show();
+		$("#alertQ1").html(dataJSON.telaPrimeirasQuestoes.alertaCerto);
+		$("#alertQ1").addClass("alert-success");
+		$("#alertQ1").removeClass("alert-danger");
+		break
+
+	}
+}
+
+
+function resetQuestionButtons() {
+	switch(questionNumber) {
+		case 1:
+		$("#buttonAf1").prop("disabled", "");	
+		$("#buttonAf2").prop("disabled", "");	
+		$("#buttonAf3").prop("disabled", "");	
+		$("#buttonAf4").prop("disabled", "");	
+		$("#buttonAf5").prop("disabled", "");	
+		$("#botaoEnviarRespostaQ1").prop("disabled", "");
+		$("#buttonAf1").removeClass("btn-primary");		
+		$("#buttonAf2").removeClass("btn-primary");		
+		$("#buttonAf3").removeClass("btn-primary");		
+		$("#buttonAf4").removeClass("btn-primary");		
+		$("#buttonAf5").removeClass("btn-primary");		
+		$("#alertQ1").hide();
+
+
+		break;
+	}
+
+}
 function loadQuestion() {
 	switch (questionNumber) {
 		case 1: 
 		if (firstTimeQuestion1) {
-		alternativasQuestao1 = populateQuestionArray(alternativasQuestao1);
-		firstTimeQuestion1 = false;
-	}
+			alternativasQuestao1 = populateQuestionArray(alternativasQuestao1);
+			firstTimeQuestion1 = false;
+			checkIfTrue();
 
-
-		checkIfTrue();
+		}
 		$("#buttonAf1").html(alternativasQuestao1[0].replace("%numeroAlternativa%", "I"));
 		$("#buttonAf2").html(alternativasQuestao1[1].replace("%numeroAlternativa%", "II"));
 		$("#buttonAf3").html(alternativasQuestao1[2].replace("%numeroAlternativa%", "III"));
 		$("#buttonAf4").html(alternativasQuestao1[3].replace("%numeroAlternativa%", "IV"));
 		$("#buttonAf5").html(alternativasQuestao1[4].replace("%numeroAlternativa%", "V"));
+
+		if (answerIsCorrect()) {
+			blockQuestionButtons();
+		} else {
+			resetQuestionButtons();
+		}
 
 		break;
 	}
