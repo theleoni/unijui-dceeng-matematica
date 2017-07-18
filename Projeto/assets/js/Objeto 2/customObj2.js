@@ -16,6 +16,7 @@ var alternativasQuestao1;
 var alreadyPopulated = [false];
 var corretasQuestao1 = [];
 var marcadasQuestao1 = [];
+var firstTimeQuestion1 = true;
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 });
@@ -737,7 +738,11 @@ function checkQuestion1() {
 function loadQuestion() {
 	switch (questionNumber) {
 		case 1: 
+		if (firstTimeQuestion1) {
 		alternativasQuestao1 = populateQuestionArray(alternativasQuestao1);
+		firstTimeQuestion1 = false;
+	}
+
 
 		checkIfTrue();
 		$("#buttonAf1").html(alternativasQuestao1[0].replace("%numeroAlternativa%", "I"));
