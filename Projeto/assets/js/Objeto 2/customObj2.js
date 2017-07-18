@@ -109,6 +109,7 @@ function loadScene() {
 
 		case 5: {
 			$("#telaPrimeirasQuestoes").show();
+			$("#alertQ1").hide();
 			loadQuestion();
 			break;
 		}
@@ -718,9 +719,17 @@ function checkQuestion1() {
 	var stringArrayCorretas = corretasQuestao1.toString();
 	var stringArraymarcadas = marcadasQuestao1.toString();
 	if (stringArraymarcadas == stringArrayCorretas) {
-		window.location = "https://www.youtube.com/watch?v=zXl7kmfIlxk";
+		$("#alertQ1").show();
+		$("#alertQ1").html(dataJSON.telaPrimeirasQuestoes.alertaCerto);
+		$("#alertQ1").addClass("alert-success");
+		$("#alertQ1").removeClass("alert-danger");
+
 	} else {
-		$('body').css("background-color", "red");
+		$("#alertQ1").show();
+		$("#alertQ1").html(dataJSON.telaPrimeirasQuestoes.alertaErrado);
+		$("#alertQ1").addClass("alert-danger");
+		$("#alertQ1").removeClass("alert-success");
+
 	}
 	marcadasQuestao1 = [];
 
