@@ -6,6 +6,8 @@ var shortFadeTime = 250;
 var nomeDoUsuario;
 var video2Assistido = false;
 var videoMediaAritmeticaAssitido = false;
+var videoQuestaoMediaAritmeticaAssitido = false;
+
 var scene1DialogControl = 0;
 var sceneConversa2DialogControl = 0;
 var jaLeuConversa2 = false;
@@ -58,6 +60,7 @@ function hideDivsOnObjectStart() {
 	$("#telaConversa2").hide();
 	$("#telaMediaAritmetica").hide();
 	$("#telaPrimeirasQuestoes").hide();
+	$("#telaVideoQuestaoMediaAritmetica").hide();
 
 	hideIconsNome();
 }
@@ -104,18 +107,23 @@ function loadScene() {
 		break;
 
 
-		case 4: {
-			$("#telaMediaAritmetica").show();
-			$('body').css("background-color", "#CEFDFD")
-			break;
-		}
+		case 4: 
+		$("#telaMediaAritmetica").show();
+		$('body').css("background-color", "#CEFDFD")
+		break;
+		
 
-		case 5: {
-			$("#telaPrimeirasQuestoes").show();
-			$("#alertQ1").hide();
-			loadQuestion();
-			break;
-		}
+		case 5: 
+		$("#telaPrimeirasQuestoes").show();
+		$("#alertQ1").hide();
+		loadQuestion();
+		break;
+		
+		case 6:
+		$("#telaVideoQuestaoMediaAritmetica").show();
+		$('body').css("background-color", "#CEFDFD")
+		break;
+
 	}
 }
 
@@ -139,6 +147,9 @@ function unloadScene() {
 		case 5:
 		$("#telaPrimeirasQuestoes").hide();
 		break;
+		case 6:
+		$("#telaVideoQuestaoMediaAritmetica").hide();
+		$('body').css("background-color", "#FFFFFF")
 	}
 }
 
@@ -436,7 +447,15 @@ $(document).on('click', '#iconSetaDireita', function() {
 		case 4:
 		nextScene();
 		break;
-
+		case 5:
+		if (!videoQuestaoMediaAritmeticaAssitido) {
+			disallowNextScene();
+		} else {
+			allowNextScene();
+			videoQuestaoMediaAritmetica.currentTime = 35;
+		}
+		nextScene();
+		break;
 	}
 });
 
@@ -447,6 +466,7 @@ $(document).on('click', '#iconSetaEsquerda', function() {
 		case 3:
 		case 4:
 		case 5:
+		case 6:
 		allowNextScene();
 		previousScene();
 		break;
@@ -538,13 +558,18 @@ $(document).on('click', '#iconePlayMediaAritmetica', function() {
 
 $(document).on('click', '.whiteSpaceButton', function() {
 	$(this).toggleClass("btn-primary");
-	$(this).toggleClass("btn-default");
 })
 
 
 $(document).on('click', '#botaoEnviarRespostaQ1', function() {
 	checkQuestion1();
 });
+
+$(document).on('click', '#iconePlayQuestaoMediaAritmetica', function() {
+	waitVideoQuestaoMediaAritmeticaToEnd();
+	videoQuestaoMediaAritmetica.play();
+});
+
 
 function changeTitle(titulo) {
 
@@ -727,6 +752,7 @@ function checkQuestion1() {
 		$("#alertQ1").addClass("alert-success");
 		$("#alertQ1").removeClass("alert-danger");
 		correctAnswers[questionNumber-1] = true;
+		allowNextScene();
 		blockQuestionButtons();
 
 	} else {
@@ -739,6 +765,24 @@ function checkQuestion1() {
 	marcadasQuestao1 = [];
 
 }
+
+
+
+function waitVideoQuestaoMediaAritmeticaToEnd() {
+	videoQuestaoMediaAritmeticaAssitido = true;
+	videoQuestaoMediaAritmetica.currentTime = 0;
+	requestVideoFullScreen(videoQuestaoMediaAritmetica);
+
+	$(videoQuestaoMediaAritmetica).on('ended',function(){
+		exitFullScreen(videoQuestaoMediaAritmetica);
+		if (scene == 6) {
+			allowNextScene();
+		}
+		videoQuestaoMediaAritmetica.pause();
+	});
+
+}
+
 
 function answerIsCorrect() {
 	return correctAnswers[questionNumber-1];
@@ -756,23 +800,18 @@ function blockQuestionButtons() {
 
 		if (corretasQuestao1.includes(1)) {
 			$("#buttonAf1").addClass("btn-primary");		
-			$("#buttonAf1").removeClass("btn-default");		
 		}
 		if (corretasQuestao1.includes(2)) {
-			$("#buttonAf2").removeClass("btn-primary");		
-			$("#buttonAf2").removeClass("btn-default");		
+			$("#buttonAf2").addClass("btn-primary");		
 		}
 		if (corretasQuestao1.includes(3)) {
 			$("#buttonAf3").addClass("btn-primary");		
-			$("#buttonAf3").removeClass("btn-default");		
 		}
 		if (corretasQuestao1.includes(4)) {
 			$("#buttonAf4").addClass("btn-primary");		
-			$("#buttonAf4").removeClass("btn-default");		
 		}
 		if (corretasQuestao1.includes(5)) {
 			$("#buttonAf5").addClass("btn-primary");		
-			$("#buttonAf5").removeClass("btn-default");		
 		}
 		$("#alertQ1").show();
 		$("#alertQ1").html(dataJSON.telaPrimeirasQuestoes.alertaCerto);
@@ -822,7 +861,9 @@ function loadQuestion() {
 
 		if (answerIsCorrect()) {
 			blockQuestionButtons();
+			allowNextScene();
 		} else {
+			disallowNextScene();
 			resetQuestionButtons();
 		}
 

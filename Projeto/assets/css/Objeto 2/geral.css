@@ -245,9 +245,30 @@ body {
 	color: green;
 }
 
+#botaoEnviarRespostaQ1 {
+	margin-top: 1.5%;
+}
+
 .whiteSpaceButton {
 	white-space: normal;
 	text-align: left;
+}
+
+.noLeftBorder {
+	border-left-color: #FFFFFF !important;
+}
+
+.noRightBorder {
+	border-right-color: #FFFFFF !important;
+}
+
+#iconePlayQuestaoMediaAritmetica {
+	font-size: 40px;
+	color: gray;
+}
+
+#iconePlayQuestaoMediaAritmetica:hover {
+	color: green;
 }
 @media (max-device-aspect-ratio: 8/8) {
 	#containerVideo1TelaNome {
