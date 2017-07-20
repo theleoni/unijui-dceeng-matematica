@@ -427,6 +427,7 @@ function requestVideoFullScreen(video) {
 	else if (video.webkitRequestFullScreen) {
 		video.webkitRequestFullScreen();
 	}
+	video.play();
 }
 
 function exitFullScreen(video) {
