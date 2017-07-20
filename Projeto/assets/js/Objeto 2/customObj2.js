@@ -61,7 +61,7 @@ function hideDivsOnObjectStart() {
 	$("#telaMediaAritmetica").hide();
 	$("#telaPrimeirasQuestoes").hide();
 	$("#telaVideoQuestaoMediaAritmetica").hide();
-
+	$("#telaConsumoSeuChico").hide();
 	hideIconsNome();
 }
 
@@ -124,6 +124,10 @@ function loadScene() {
 		$('body').css("background-color", "#CEFDFD")
 		break;
 
+		case 7: 
+		$("#telaConsumoSeuChico").show();
+		break;
+
 	}
 }
 
@@ -132,24 +136,35 @@ function unloadScene() {
 		case 1:
 		$("#telaNome").hide();
 		break;
+
 		case 2:
 		$("#telaVideoHidreletrica").hide();
 		$("#iconCalculadora").show();
 		$("#iconMais").show();
 		$("#iconHelp").show();
+		break;
+
 		case 3:
 		$("#telaConversa2").hide();
 		break;
+
 		case 4:
 		$("#telaMediaAritmetica").hide();
 		$('body').css("background-color", "#FFFFFF")
 		break;
+
 		case 5:
 		$("#telaPrimeirasQuestoes").hide();
 		break;
+
 		case 6:
 		$("#telaVideoQuestaoMediaAritmetica").hide();
 		$('body').css("background-color", "#FFFFFF")
+		break;
+
+		case 7:
+		$("#telaConsumoSeuChico").hide();
+		break;
 	}
 }
 
@@ -445,6 +460,7 @@ $(document).on('click', '#iconSetaDireita', function() {
 		break;
 		case 2: 
 		case 4:
+		case 6:
 		nextScene();
 		break;
 		case 5:
@@ -467,6 +483,7 @@ $(document).on('click', '#iconSetaEsquerda', function() {
 		case 4:
 		case 5:
 		case 6:
+		case 7:
 		allowNextScene();
 		previousScene();
 		break;

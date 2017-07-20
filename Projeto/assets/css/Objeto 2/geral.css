@@ -270,6 +270,11 @@ body {
 #iconePlayQuestaoMediaAritmetica:hover {
 	color: green;
 }
+
+#imgConsumoSeuChico {
+	width:100%;
+	height: 87.6%;
+}
 @media (max-device-aspect-ratio: 8/8) {
 	#containerVideo1TelaNome {
 		margin-top: 15vh;	
