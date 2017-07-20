@@ -1,8 +1,6 @@
 html,
 body {
 	padding-top: 72px;
-	overflow-x: hidden;
-	overflow-y: hidden;
 }
 
 html{
@@ -10,8 +8,13 @@ html{
 }
 body {
 	min-height: 100%;
+	overflow: hidden;
 }
 
+
+#geral {
+	overflow: hidden;
+}
 #verificacaoNome {
 	margin-top: 15vh;
 }
@@ -52,8 +55,8 @@ body {
 #balao2TelaNome {
 	position: absolute;
 	width: 20vw;
-	height: 20vh;
-	top: 22%;
+	height: 24vh;
+	top: 29%;
 	left: 8%;
 	right: 100%;
 	z-index: 3;
@@ -64,7 +67,7 @@ body {
 	position: absolute;
 	z-index: 4;
 	left: 110%;
-	margin-top: 33%;
+	margin-top: 39%;
 	right: -192%;
 	font-size: calc((2vh + 1vw)/2);
 
@@ -72,7 +75,7 @@ body {
 
 #fala2TelaNome {
 	position: absolute;
-	margin-top: 24%;
+	margin-top: 29%;
 	left: 44%;
 	right: -125%;
 	color: white;
@@ -187,7 +190,7 @@ body {
 	position: absolute;
 	z-index: 4;
 	left: 110%;
-	margin-top: 28%;
+	margin-top: 35%;
 	right: -192%;
 	font-size: calc((2vh + 1vw)/2);
 
@@ -195,7 +198,7 @@ body {
 
 #fala2telaConversa2 {
 	position: absolute;
-	margin-top: 24%;
+	margin-top: 29%;
 	left: 44%;
 	right: -125%;
 	color: white;

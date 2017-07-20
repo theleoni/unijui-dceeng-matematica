@@ -116,6 +116,7 @@ function loadScene() {
 		case 5: 
 		$("#telaPrimeirasQuestoes").show();
 		$("#alertQ1").hide();
+		$("body").css("overflow", "auto");
 		loadQuestion();
 		break;
 		
@@ -155,6 +156,8 @@ function unloadScene() {
 
 		case 5:
 		$("#telaPrimeirasQuestoes").hide();
+		$("body").css("overflow", "hidden");
+
 		break;
 
 		case 6:
