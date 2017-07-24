@@ -7,6 +7,7 @@ var nomeDoUsuario;
 var video2Assistido = false;
 var videoMediaAritmeticaAssitido = false;
 var videoQuestaoMediaAritmeticaAssitido = false;
+var videoMedianaAssitido = false;
 
 var scene1DialogControl = 0;
 var sceneConversa2DialogControl = 0;
@@ -64,6 +65,7 @@ function hideDivsOnObjectStart() {
 	$("#telaVideoQuestaoMediaAritmetica").hide();
 	$("#telaConsumoSeuChico").hide();
 	$("#telaQuestao2").hide();
+	$("#telaMediana").hide();
 	hideIconsNome();
 }
 
@@ -135,6 +137,11 @@ function loadScene() {
 		$("#telaQuestao2").show();
 		loadQuestion();
 		break;
+
+		case 9:
+		$("#telaMediana").show();
+		$('body').css("background-color", "#CEFDFD")
+		break;
 	}
 }
 
@@ -177,6 +184,11 @@ function unloadScene() {
 
 		case 8:
 		$("#telaQuestao2").hide();
+		break;
+
+		case 9:
+		$("#telaMediana").hide();
+		$('body').css("background-color", "#FFFFFF")
 		break;
 	}
 }
@@ -424,6 +436,21 @@ function waitVideoMediaAritmeticaToEnd() {
 	});
 
 }
+
+function waitVideoMedianaToEnd() {
+	videoMedianaAssistido = true;
+	videoMediana.currentTime = 0;
+	requestVideoFullScreen(videoMediana);
+
+	$(videoMediana).on('ended',function(){
+		exitFullScreen(videoMediana);
+		if (scene == 9) {
+			allowNextScene();
+		}
+		videoMediana.pause();
+	});
+
+}
 function requestVideoFullScreen(video) {
 	if (video.requestFullscreen) {
 		video.requestFullscreen();
@@ -469,6 +496,16 @@ $(document).on('click', '#iconSetaDireita', function() {
 		} else {
 			allowNextScene();
 			videoMediaAritmetica.currentTime = 35;
+		}
+		nextScene();
+		break;
+
+		case 8:
+		if (!videoMedianaAssitido) {
+			disallowNextScene();
+		} else {
+			allowNextScene();
+			videoMediana.currentTime = 35;
 		}
 		nextScene();
 		break;
@@ -620,6 +657,11 @@ $(document).on('click', '.alternativasQ2', function() {
 	$(this).siblings().removeClass("btn-primary");
 	marcadaQ2 = $(this);
 })
+
+$(document).on('click', '#iconePlayMediana', function() {
+	waitVideoMedianaToEnd();
+	videoMediana.play();
+});
 
 
 

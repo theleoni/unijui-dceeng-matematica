@@ -283,6 +283,15 @@ body {
 #tabelaAgrupadaConsumoMensal {
 	margin-top: 5%;
 }
+
+#iconePlayMediana {
+	font-size: 40px;
+	color: gray;
+}
+
+#iconePlayMediana:hover {
+	color: green;
+}
 @media (max-device-aspect-ratio: 8/8) {
 	#containerVideo1TelaNome {
 		margin-top: 15vh;	
