@@ -213,7 +213,8 @@ $(document).on('click', '#botaoNome', function() {
 		$("#fala2TelaNome").fadeIn(extendedFadeTime*1.5);
 		$("#setaDireitaNome").fadeIn(defaultFadeTime)
 		$("#alertNome").hide();
-
+		video1TelaNome.play();
+		video2TelaNome.play();
 		disallowNextScene();
 		$("#iconSetaEsquerda").hide();
 	} else {
