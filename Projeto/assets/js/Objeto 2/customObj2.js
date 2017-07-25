@@ -215,6 +215,8 @@ $(document).on('click', '#botaoNome', function() {
 		$("#alertNome").hide();
 		video1TelaNome.play();
 		video2TelaNome.play();
+		video1TelaConversa2.play();
+		video2TelaConversa2.play();
 		disallowNextScene();
 		$("#iconSetaEsquerda").hide();
 	} else {
