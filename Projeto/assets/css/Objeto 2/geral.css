@@ -292,6 +292,15 @@ body {
 #iconePlayMediana:hover {
 	color: green;
 }
+
+#iconePlayMediana2 {
+	font-size: 40px;
+	color: gray;
+}
+
+#iconePlayMediana2:hover {
+	color: green;
+}
 @media (max-device-aspect-ratio: 8/8) {
 	#containerVideo1TelaNome {
 		margin-top: 15vh;	

@@ -8,6 +8,7 @@ var video2Assistido = false;
 var videoMediaAritmeticaAssitido = false;
 var videoQuestaoMediaAritmeticaAssitido = false;
 var videoMedianaAssitido = false;
+var videoMediana2Assitido = false;
 
 var scene1DialogControl = 0;
 var sceneConversa2DialogControl = 0;
@@ -66,6 +67,7 @@ function hideDivsOnObjectStart() {
 	$("#telaConsumoSeuChico").hide();
 	$("#telaQuestao2").hide();
 	$("#telaMediana").hide();
+	$("#telaMediana2").hide();
 	hideIconsNome();
 }
 
@@ -142,6 +144,11 @@ function loadScene() {
 		$("#telaMediana").show();
 		$('body').css("background-color", "#CEFDFD")
 		break;
+
+		case 10:
+		$("#telaMediana2").show();
+		$('body').css("background-color", "#CEFDFD")
+		break;
 	}
 }
 
@@ -188,6 +195,11 @@ function unloadScene() {
 
 		case 9:
 		$("#telaMediana").hide();
+		$('body').css("background-color", "#FFFFFF")
+		break;
+
+		case 10:
+		$("#telaMediana2").hide();
 		$('body').css("background-color", "#FFFFFF")
 		break;
 	}
@@ -454,6 +466,21 @@ function waitVideoMedianaToEnd() {
 	});
 
 }
+
+function waitVideoMediana2ToEnd() {
+	videoMediana2Assistido = true;
+	videoMediana2.currentTime = 0;
+	requestVideoFullScreen(videoMediana2);
+
+	$(videoMediana2).on('ended',function(){
+		exitFullScreen(videoMediana2);
+		if (scene == 10) {
+			allowNextScene();
+		}
+		videoMediana2.pause();
+	});
+
+}
 function requestVideoFullScreen(video) {
 	if (video.requestFullscreen) {
 		video.requestFullscreen();
@@ -512,6 +539,17 @@ $(document).on('click', '#iconSetaDireita', function() {
 		}
 		nextScene();
 		break;
+
+		case 9:
+		if (!videoMediana2Assitido) {
+			disallowNextScene();
+		} else {
+			allowNextScene();
+			videoMediana2.currentTime = 35;
+		}
+		nextScene();
+		break;
+
 		case 2: 
 		case 4:
 		case 7:
@@ -664,6 +702,11 @@ $(document).on('click', '.alternativasQ2', function() {
 $(document).on('click', '#iconePlayMediana', function() {
 	waitVideoMedianaToEnd();
 	videoMediana.play();
+});
+
+$(document).on('click', '#iconePlayMediana2', function() {
+	waitVideoMediana2ToEnd();
+	videoMediana2.play();
 });
 
 
