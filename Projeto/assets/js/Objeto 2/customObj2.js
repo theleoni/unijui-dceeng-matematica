@@ -26,6 +26,7 @@ var marcadaQ2;
 var correctAnswers = [false];
 $(document).ready(function() {
 	hideDivsOnObjectStart();
+	
 });
 
 
