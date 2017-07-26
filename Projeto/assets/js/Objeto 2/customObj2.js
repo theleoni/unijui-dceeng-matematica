@@ -239,6 +239,7 @@ $(document).on('click', '#botaoNome', function() {
 		$("#iconesFixos").show();
 
 		nomeDoUsuario = $("#inputNome").val();
+		$("#nomeUsuarioTabelaModa").html($("#nomeUsuarioTabelaModa").html().replace("%fulano%", nomeDoUsuario));
 		$("#inputNomeContainer").fadeOut(defaultFadeTime);
 		$("#containerPersonagemExtraTelaNome").fadeIn(extendedFadeTime);
 		$("#balao1TelaNome").show();
