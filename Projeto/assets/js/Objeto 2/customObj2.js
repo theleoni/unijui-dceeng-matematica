@@ -26,7 +26,8 @@ var marcadaQ2;
 var correctAnswers = [false];
 $(document).ready(function() {
 	hideDivsOnObjectStart();
-	
+	screen.orientation.lock('landscape');
+
 });
 
 
