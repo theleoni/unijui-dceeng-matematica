@@ -344,6 +344,8 @@ $(document).on('click', '#setaDireitaNome', function() {
 
 		break;
 
+
+
 	}
 });
 
@@ -435,7 +437,6 @@ $(document).on('click', '#setaEsquerdaNome', function() {
 function waitVideoSceneVideo1ToEnd() {
 	requestVideoFullScreen(videoHidreletrica);
 	video2Assistido = true;
-
 	$(videoHidreletrica).on('ended',function(){
 		exitFullScreen(videoHidreletrica);
 		if (scene == 2) {

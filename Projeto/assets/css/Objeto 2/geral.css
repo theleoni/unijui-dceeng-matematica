@@ -23,6 +23,9 @@ body {
 	margin-top: 27vh;
 }
 
+#telaNome {
+	margin-top: -5%;
+}
 #video1TelaNome {
 	position: absolute;
 	max-width: 65%;
