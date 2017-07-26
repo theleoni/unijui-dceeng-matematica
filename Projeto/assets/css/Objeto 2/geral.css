@@ -301,6 +301,20 @@ body {
 #iconePlayMediana2:hover {
 	color: green;
 }
+
+#balaoTelaModa {
+	width:200%;
+	height:50%;
+}
+
+#falaModa {
+	position: absolute;
+	margin-top: -70%;
+	color: #FFFFFF;
+	margin-left: 30%;
+	right: -80%;
+	font-size: calc((2.6vh+1.3vw));
+}
 @media (max-device-aspect-ratio: 8/8) {
 	#containerVideo1TelaNome {
 		margin-top: 15vh;	

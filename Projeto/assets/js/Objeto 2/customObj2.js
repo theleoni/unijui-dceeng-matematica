@@ -68,6 +68,8 @@ function hideDivsOnObjectStart() {
 	$("#telaQuestao2").hide();
 	$("#telaMediana").hide();
 	$("#telaMediana2").hide();
+	$("#introducaoModa").hide();
+	$("#tabelasModa").hide();
 	hideIconsNome();
 }
 
@@ -149,6 +151,10 @@ function loadScene() {
 		$("#telaMediana2").show();
 		$('body').css("background-color", "#CEFDFD")
 		break;
+
+		case 11:
+		$("#introducaoModa").show();
+		break;
 	}
 }
 
@@ -201,6 +207,10 @@ function unloadScene() {
 		case 10:
 		$("#telaMediana2").hide();
 		$('body').css("background-color", "#FFFFFF")
+		break;
+
+		case 11:
+		$("#introducaoModa").hide();
 		break;
 	}
 }
@@ -520,6 +530,16 @@ $(document).on('click', '#iconSetaDireita', function() {
 		$("#iconSetaEsquerda").show();
 		nextScene();
 		break;
+		
+		case 2: 
+		case 4:
+		case 7:
+		case 10:
+		nextScene();
+		break;
+
+
+
 		case 3:
 		if (!videoMediaAritmeticaAssitido) {
 			disallowNextScene();
@@ -527,6 +547,21 @@ $(document).on('click', '#iconSetaDireita', function() {
 			allowNextScene();
 			videoMediaAritmetica.currentTime = 35;
 		}
+		nextScene();
+		break;
+
+		case 5:
+		if (!videoQuestaoMediaAritmeticaAssitido) {
+			disallowNextScene();
+		} else {
+			allowNextScene();
+			videoQuestaoMediaAritmetica.currentTime = 35;
+		}
+		nextScene();
+		break;
+
+		case 6:
+		questionNumber++;
 		nextScene();
 		break;
 
@@ -550,25 +585,6 @@ $(document).on('click', '#iconSetaDireita', function() {
 		nextScene();
 		break;
 
-		case 2: 
-		case 4:
-		case 7:
-		nextScene();
-		break;
-		case 5:
-		if (!videoQuestaoMediaAritmeticaAssitido) {
-			disallowNextScene();
-		} else {
-			allowNextScene();
-			videoQuestaoMediaAritmetica.currentTime = 35;
-		}
-		nextScene();
-		break;
-
-		case 6:
-		questionNumber++;
-		nextScene();
-		break;
 	}
 });
 
@@ -581,6 +597,9 @@ $(document).on('click', '#iconSetaEsquerda', function() {
 		case 5:
 		case 6:
 		case 8:
+		case 9:
+		case 10:
+		case 11:
 		allowNextScene();
 		previousScene();
 		break;
@@ -995,19 +1014,19 @@ function blockQuestionButtons() {
 		$("#opcao5Q2").prop("disabled", "disabled");	
 		$("#botaoEnviarRespostaQ2").prop("disabled", "disabled");	
 
-		if ($("#opcao1Q2".html().search("3,821"))!= -1) {
+		if ($("#opcao1Q2").html().search("3,821")!= -1) {
 			$("#opcao1Q2").addClass("btn-primary");		
 		}
-		if ($("#opcao2Q2".html().search("3,821"))!= -1) {
+		if ($("#opcao2Q2").html().search("3,821")!= -1) {
 			$("#opcao2Q2").addClass("btn-primary");		
 		}
-		if ($("#opcao3Q2".html().search("3,821"))!= -1) {
+		if ($("#opcao3Q2").html().search("3,821")!= -1) {
 			$("#opcao3Q2").addClass("btn-primary");		
 		}
-		if ($("#opcao4Q2".html().search("3,821"))!= -1) {
+		if ($("#opcao4Q2").html().search("3,821")!= -1) {
 			$("#opcao4Q2").addClass("btn-primary");		
 		}
-		if ($("#opcao5Q2".html().search("3,821"))!= -1) {
+		if ($("#opcao5Q2").html().search("3,821")!= -1) {
 			$("#opcao5Q2").addClass("btn-primary");		
 		}
 		$("#alertQ2").show();
