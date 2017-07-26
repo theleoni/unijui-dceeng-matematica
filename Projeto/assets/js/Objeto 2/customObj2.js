@@ -155,6 +155,10 @@ function loadScene() {
 		case 11:
 		$("#introducaoModa").show();
 		break;
+
+		case 12:
+		$("#tabelasModa").show();
+		break;
 	}
 }
 
@@ -211,6 +215,10 @@ function unloadScene() {
 
 		case 11:
 		$("#introducaoModa").hide();
+		break;
+
+		case 12:
+		$("#tabelasModa").hide();
 		break;
 	}
 }
@@ -536,6 +544,7 @@ $(document).on('click', '#iconSetaDireita', function() {
 		case 4:
 		case 7:
 		case 10:
+		case 11:
 		nextScene();
 		break;
 
