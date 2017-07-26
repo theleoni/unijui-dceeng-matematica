@@ -158,6 +158,8 @@ function loadScene() {
 
 		case 12:
 		$("#tabelasModa").show();
+		$("body").css("overflow", "auto");
+
 		break;
 	}
 }
@@ -219,6 +221,8 @@ function unloadScene() {
 
 		case 12:
 		$("#tabelasModa").hide();
+		$("body").css("overflow", "hidden");
+
 		break;
 	}
 }

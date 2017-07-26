@@ -11,7 +11,9 @@ body {
 	overflow: hidden;
 }
 
-
+.col-xs-offset-05 {
+    margin-left: 4.166%;
+}
 #geral {
 	overflow: hidden;
 }
