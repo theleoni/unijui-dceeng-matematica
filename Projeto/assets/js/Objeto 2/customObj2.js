@@ -85,6 +85,7 @@ function loadScene() {
 	switch (scene) {
 		case 1:
 		$("#telaNome").show();
+		changeTitle("");
 		break;
 
 		case 2:
@@ -92,6 +93,7 @@ function loadScene() {
 		$("#iconCalculadora").hide();
 		$("#iconMais").hide();
 		$("#iconHelp").hide();
+		changeTitle("");
 		if (!video2Assistido) {
 			videoHidreletrica.currentTime = 0;
 			disallowNextScene();
@@ -106,7 +108,7 @@ function loadScene() {
 
 		case 3:
 		$("#telaConversa2").show();
-		changeTitle("Teste de titulo 2. É nóis clan");
+		changeTitle("");
 		if (!jaLeuConversa2) {
 			disallowNextScene();
 		} else {
@@ -119,6 +121,7 @@ function loadScene() {
 		case 4: 
 		$("#telaMediaAritmetica").show();
 		$('body').css("background-color", "#CEFDFD")
+		changeTitle("");
 		break;
 		
 
@@ -126,39 +129,49 @@ function loadScene() {
 		$("#telaPrimeirasQuestoes").show();
 		$("#alertQ1").hide();
 		$("body").css("overflow", "auto");
+		changeTitle("");
 		loadQuestion();
 		break;
 		
 		case 6:
 		$("#telaVideoQuestaoMediaAritmetica").show();
 		$('body').css("background-color", "#CEFDFD")
+		changeTitle("");
 		break;
 
 		case 7: 
 		$("#telaConsumoSeuChico").show();
+		changeTitle("");
 		break;
 
 		case 8:
 		$("#telaQuestao2").show();
 		loadQuestion();
+		changeTitle("");
 		break;
 
 		case 9:
 		$("#telaMediana").show();
 		$('body').css("background-color", "#CEFDFD")
+		changeTitle("");
+
 		break;
 
 		case 10:
 		$("#telaMediana2").show();
 		$('body').css("background-color", "#CEFDFD")
+		changeTitle("");
+
 		break;
 
 		case 11:
 		$("#introducaoModa").show();
+		changeTitle("");
 		break;
 
 		case 12:
 		$("#tabelasModa").show();
+		changeTitle("Vamos observar os pagamentos da conta de luz de Joana, Arthur e Mateus");
 		$("body").css("overflow", "auto");
 
 		break;
