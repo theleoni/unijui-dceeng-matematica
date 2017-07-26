@@ -85,7 +85,7 @@ function loadScene() {
 	switch (scene) {
 		case 1:
 		$("#telaNome").show();
-		changeTitle("");
+		changeTitle(" ");
 		break;
 
 		case 2:
@@ -93,7 +93,7 @@ function loadScene() {
 		$("#iconCalculadora").hide();
 		$("#iconMais").hide();
 		$("#iconHelp").hide();
-		changeTitle("");
+		changeTitle(" ");
 		if (!video2Assistido) {
 			videoHidreletrica.currentTime = 0;
 			disallowNextScene();
@@ -108,7 +108,7 @@ function loadScene() {
 
 		case 3:
 		$("#telaConversa2").show();
-		changeTitle("");
+		changeTitle(" ");
 		if (!jaLeuConversa2) {
 			disallowNextScene();
 		} else {
@@ -121,7 +121,7 @@ function loadScene() {
 		case 4: 
 		$("#telaMediaAritmetica").show();
 		$('body').css("background-color", "#CEFDFD")
-		changeTitle("");
+		changeTitle(" ");
 		break;
 		
 
@@ -129,44 +129,44 @@ function loadScene() {
 		$("#telaPrimeirasQuestoes").show();
 		$("#alertQ1").hide();
 		$("body").css("overflow", "auto");
-		changeTitle("");
+		changeTitle(" ");
 		loadQuestion();
 		break;
 		
 		case 6:
 		$("#telaVideoQuestaoMediaAritmetica").show();
 		$('body').css("background-color", "#CEFDFD")
-		changeTitle("");
+		changeTitle(" ");
 		break;
 
 		case 7: 
 		$("#telaConsumoSeuChico").show();
-		changeTitle("");
+		changeTitle(" ");
 		break;
 
 		case 8:
 		$("#telaQuestao2").show();
 		loadQuestion();
-		changeTitle("");
+		changeTitle(" ");
 		break;
 
 		case 9:
 		$("#telaMediana").show();
 		$('body').css("background-color", "#CEFDFD")
-		changeTitle("");
+		changeTitle(" ");
 
 		break;
 
 		case 10:
 		$("#telaMediana2").show();
 		$('body').css("background-color", "#CEFDFD")
-		changeTitle("");
+		changeTitle(" ");
 
 		break;
 
 		case 11:
 		$("#introducaoModa").show();
-		changeTitle("");
+		changeTitle(" ");
 		break;
 
 		case 12:
