@@ -216,6 +216,7 @@ function unloadScene() {
 		case 5:
 		$("#telaPrimeirasQuestoes").hide();
 		$("body").css("overflow", "hidden");
+		window.scrollTo(0,0); 
 
 		break;
 
@@ -249,6 +250,8 @@ function unloadScene() {
 		case 12:
 		$("#tabelasModa").hide();
 		$("body").css("overflow", "hidden");
+		window.scrollTo(0,0); 
+
 		break;
 
 		case 13:
