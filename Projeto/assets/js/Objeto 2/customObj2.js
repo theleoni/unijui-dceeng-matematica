@@ -5,14 +5,16 @@ var extendedFadeTime = 1250;
 var shortFadeTime = 250;
 var nomeDoUsuario;
 var video2Assistido = false;
-var videoMediaAritmeticaAssitido = false;
-var videoQuestaoMediaAritmeticaAssitido = false;
-var videoMedianaAssitido = false;
-var videoMediana2Assitido = false;
+var videoMediaAritmeticaAssistido = false;
+var videoQuestaoMediaAritmeticaAssistido = false;
+var videoMedianaAssistido = false;
+var videoMediana2Assistido = false;
 
 var scene1DialogControl = 0;
 var sceneConversa2DialogControl = 0;
+var sceneConversa3DialogControl = 0;
 var jaLeuConversa2 = false;
+var jaLeuConversa3 = false;
 var stuckOnScene1 = true;
 var calculadoraAberta;
 var questionNumber = 1;
@@ -71,6 +73,7 @@ function hideDivsOnObjectStart() {
 	$("#telaMediana2").hide();
 	$("#introducaoModa").hide();
 	$("#tabelasModa").hide();
+	$("#telaConversa3").hide();
 	hideIconsNome();
 }
 
@@ -173,7 +176,17 @@ function loadScene() {
 		$("#tabelasModa").show();
 		changeTitle("Vamos observar os pagamentos da conta de luz de Joana, Arthur e Mateus");
 		$("body").css("overflow", "auto");
+		break;
 
+		case 13:
+		$("#telaConversa3").show();
+		changeTitle(" ");
+		if (!jaLeuConversa3) {
+			disallowNextScene();
+		} else {
+			allowNextScene();
+		}
+		loadChatConversa3();
 		break;
 	}
 }
@@ -236,7 +249,10 @@ function unloadScene() {
 		case 12:
 		$("#tabelasModa").hide();
 		$("body").css("overflow", "hidden");
+		break;
 
+		case 13:
+		$("#telaConversa3").hide();
 		break;
 	}
 }
@@ -476,7 +492,7 @@ function waitVideoSceneVideo1ToEnd() {
 
 
 function waitVideoMediaAritmeticaToEnd() {
-	videoMediaAritmeticaAssitido = true;
+	videoMediaAritmeticaAssistido = true;
 	videoMediaAritmetica.currentTime = 0;
 	requestVideoFullScreen(videoMediaAritmetica);
 
@@ -492,6 +508,7 @@ function waitVideoMediaAritmeticaToEnd() {
 
 function waitVideoMedianaToEnd() {
 	videoMedianaAssistido = true;
+
 	videoMediana.currentTime = 0;
 	requestVideoFullScreen(videoMediana);
 
@@ -564,14 +581,15 @@ $(document).on('click', '#iconSetaDireita', function() {
 		case 7:
 		case 10:
 		case 11:
+		case 12:
 		nextScene();
 		break;
 
 
 
 		case 3:
-		if (!videoMediaAritmeticaAssitido) {
-			disallowNextScene();
+		if (!videoMediaAritmeticaAssistido) {
+			disallowNextScene();;
 		} else {
 			allowNextScene();
 			videoMediaAritmetica.currentTime = 35;
@@ -580,7 +598,7 @@ $(document).on('click', '#iconSetaDireita', function() {
 		break;
 
 		case 5:
-		if (!videoQuestaoMediaAritmeticaAssitido) {
+		if (!videoQuestaoMediaAritmeticaAssistido) {
 			disallowNextScene();
 		} else {
 			allowNextScene();
@@ -595,17 +613,19 @@ $(document).on('click', '#iconSetaDireita', function() {
 		break;
 
 		case 8:
-		if (!videoMedianaAssitido) {
+		if (!videoMedianaAssistido) {
 			disallowNextScene();
+
 		} else {
 			allowNextScene();
 			videoMediana.currentTime = 35;
+
 		}
 		nextScene();
 		break;
 
 		case 9:
-		if (!videoMediana2Assitido) {
+		if (!videoMediana2Assistido) {
 			disallowNextScene();
 		} else {
 			allowNextScene();
@@ -629,6 +649,8 @@ $(document).on('click', '#iconSetaEsquerda', function() {
 		case 9:
 		case 10:
 		case 11:
+		case 12:
+		case 13:
 		allowNextScene();
 		previousScene();
 		break;
@@ -716,6 +738,16 @@ $(document).on('click', '#setaEsquerdaConversa2', function() {
 $(document).on('click', '#setaDireitaConversa2', function() {
 	sceneConversa2DialogControl++;
 	loadChatConversa2();
+});
+
+$(document).on('click', '#setaEsquerdaConversa3', function() {
+	sceneConversa3DialogControl--;
+	loadChatConversa3();
+});
+
+$(document).on('click', '#setaDireitaConversa3', function() {
+	sceneConversa3DialogControl++;
+	loadChatConversa3();
 });
 
 
@@ -883,6 +915,53 @@ function loadChatConversa2() {
 	}
 }
 
+function loadChatConversa3() {
+	switch (sceneConversa3DialogControl) {
+		case 0: 
+		$("#setaEsquerdaConversa3").hide();
+		$("#balao1TelaConversa3").css("opacity", "1");
+		$("#fala1TelaConversa3").html(dataJSON.telaConversa3.falaJoana1);
+		$("#fala1TelaConversa3").fadeIn(shortFadeTime);
+		$("#balao2TelaConversa3").css("opacity", "0");
+		$("#fala2TelaConversa3").html("");
+		$("#fala2TelaConversa3").fadeOut(shortFadeTime);
+		$("#balao3TelaConversa3").css("opacity", "0");
+		$("#fala3TelaConversa3").html("");
+		$("#fala3TelaConversa3").fadeOut(shortFadeTime);
+		break;
+
+		case 1:
+		$("#setaEsquerdaConversa3").show();
+		$("#setaDireitaConversa3").show();
+
+		$("#balao1TelaConversa3").css("opacity", "0");
+		$("#fala1TelaConversa3").html("");
+		$("#fala1TelaConversa3").fadeOut(shortFadeTime);
+		$("#balao2TelaConversa3").css("opacity", "1");
+		$("#fala2TelaConversa3").html(dataJSON.telaConversa3.falaMateus1);
+		$("#fala2TelaConversa3").fadeIn(shortFadeTime);
+		$("#balao3TelaConversa3").css("opacity", "0");
+		$("#fala3TelaConversa3").html("");
+		$("#fala3TelaConversa3").fadeOut(shortFadeTime);
+		break;
+
+		case 2: 
+		$("#setaDireitaConversa3").hide();
+		$("#balao1TelaConversa3").css("opacity", "0");
+		$("#fala1TelaConversa3").html("");
+		$("#fala1TelaConversa3").fadeOut(shortFadeTime);
+		$("#balao2TelaConversa3").css("opacity", "0");
+		$("#fala2TelaConversa3").html("");
+		$("#fala2TelaConversa3").fadeOut(shortFadeTime);
+		$("#balao3TelaConversa3").css("opacity", "1");
+		$("#fala3TelaConversa3").html(dataJSON.telaConversa3.falaArthur1.replace("%fulano%", nomeDoUsuario));
+		$("#fala3TelaConversa3").fadeIn(shortFadeTime);
+
+		jaLeuConversa3 = true;
+		allowNextScene();
+		break;
+	}
+}
 function populateQuestionArray(vetor) {
 	switch (questionNumber) {
 		case 1:
@@ -985,7 +1064,7 @@ function checkQuestionAnswer() {
 }
 
 function waitVideoQuestaoMediaAritmeticaToEnd() {
-	videoQuestaoMediaAritmeticaAssitido = true;
+	videoQuestaoMediaAritmeticaAssistido = true;
 	videoQuestaoMediaAritmetica.currentTime = 0;
 	requestVideoFullScreen(videoQuestaoMediaAritmetica);
 

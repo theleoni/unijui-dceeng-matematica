@@ -38,9 +38,15 @@
 	},
 	"questao2": {
 		"alternativa1": "A média de consumo no mês foi de 3,821kWh",
-		"alternativa2": "A média de consumo no mês foi de  14,3kWh",
-		"alternativa3": "A média de consumo no mês foi de  3,575kWh",
-		"alternativa4": "A média de consumo no mês foi de  0,511kWh",
-		"alternativa5": "A média de consumo no mês foi de  7,483kWh"
+		"alternativa2": "A média de consumo no mês foi de 14,3kWh",
+		"alternativa3": "A média de consumo no mês foi de 3,575kWh",
+		"alternativa4": "A média de consumo no mês foi de 0,511kWh",
+		"alternativa5": "A média de consumo no mês foi de 7,483kWh"
+	},
+
+	"telaConversa3": {
+		"falaJoana1": "Já aprendemos a média, a mediana, e a moda. Percebemos também que é possível desenvolver esses cálculos de estatística usando dados de energia.",
+		"falaMateus1": "Chegou a hora de fazermos o nosso trabalho!",
+		"falaArthur1": "Contamos con a sua ajuda %fulano%"
 	}
 }
