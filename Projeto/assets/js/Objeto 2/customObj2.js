@@ -25,7 +25,10 @@ var corretasQuestao1 = [];
 var marcadasQuestao1 = [];
 var firstTimeQuestion = [true, true];
 var marcadaQ2;
-var correctAnswers = [false];
+var correctAnswers = [false, false];
+
+var atividadesCompletas = [false, false, false, false];
+var verificacaoAtividade1 = [false, false, false];
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 
@@ -75,6 +78,7 @@ function hideDivsOnObjectStart() {
 	$("#tabelasModa").hide();
 	$("#telaConversa3").hide();
 	$("#telaSelecaoQuestoes").hide();
+	$("#atividade1").hide();
 	hideIconsNome();
 }
 
@@ -687,6 +691,15 @@ function disallowNextScene() {
 	$("#iconSetaDireita").hide();
 }
 
+function hideArrows() {
+	$("#iconSetaDireita").hide();
+	$("#iconSetaEsquerda").hide();
+}
+function showArrows() {
+	$("#iconSetaDireita").show();
+	$("#iconSetaEsquerda").show();
+}
+
 $(document).on('click', '#iconCalculadora', function () {
 	if (calculadoraAberta){
 		hideCalc();
@@ -805,12 +818,14 @@ $(document).on('click', '#iconePlayMediana2', function() {
 });
 
 
+$(document).on('click', '#papelSelecaoQuestao1', function() {
+	loadQuestionAtividade(1);
+})
 
 function changeTitle(titulo) {
-
 	$("#tituloGeral").html(titulo);
-
 }
+
 function loadChatConversa2() {
 	switch (sceneConversa2DialogControl) {
 		case 0: 
@@ -1242,5 +1257,30 @@ function loadQuestion() {
 				resetQuestionButtons();
 			}
 			break;
+		}
+	}
+	function updateQuestionAtividadeText(question) {
+		switch (question) {
+			case 1:
+			if (verificacaoAtividade1[0] == false) {
+				$("#instrucoesAtividade1").html("dataJSON.telaAtividade1.atv1");
+			} else if (verificacaoAtividade1[1] == false) {
+				$("#instrucoesAtividade1").html("dataJSON.telaAtividade1.atv2");
+			} else if (verificacaoAtividade1[2] == false) {
+				$("#instrucoesAtividade1").html("dataJSON.telaAtividade1.atv3");
+			} else {
+				$("#instrucoesAtividade1").html("");
+			}
+		}
+	}
+
+
+	function loadQuestionAtividade(numero) {
+		$("#telaSelecaoQuestoes").hide();
+		switch (numero) {
+			case 1:
+			$("#atividade1").show();
+			hideArrows();
+			updateQuestionAtividadeText(numero);
 		}
 	}
