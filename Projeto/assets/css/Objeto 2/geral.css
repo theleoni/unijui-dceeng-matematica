@@ -14,6 +14,10 @@ body {
 .col-xs-offset-05 {
 	margin-left: 4.166%;
 }
+
+.mLeft23 {
+	margin-left: 23%;
+}
 #geral {
 	overflow: hidden;
 }
@@ -390,7 +394,7 @@ body {
 	left: 11%;
 	right: 71%;
 	color: white;
-	font-size: 2vh
+	font-size: 2vh;
 	top: 18%;
 }
 
@@ -410,13 +414,67 @@ body {
 	top: 21%;
 	z-index: 2;
 	color: white;
-	font-size: 2vh
+	font-size: 2vh;
 }
 
 #setaDireitaConversa3:hover {
 	font-size: 50;
 	color: black;
 }
+
+#videoSelecaoQuestoes {
+	margin-top: 5%;
+}
+
+#papelSelecaoQuestao1 {
+	position: absolute;
+	top: 10%;
+	max-width: 8%;
+	left: 20%;
+	cursor: pointer;
+}
+
+#papelSelecaoQuestao2 {
+	position: absolute;
+	top: 10%;
+	max-width: 10%;
+	left: 28%;
+	cursor: pointer;
+}
+
+#papelSelecaoQuestao3 {
+	position: absolute;
+	top: 33%;
+	max-width: 25%;
+	left: 82%;
+	cursor: pointer;
+}
+
+#papelSelecaoQuestao4 {
+	position: absolute;
+	top: 10%;
+	max-width: 25%;
+	left: 58%;
+	cursor: pointer;
+}
+
+#papelSelecaoQuestao1:hover {
+	max-width: 12%;
+	z-index: 4;
+}
+
+#papelSelecaoQuestao2:hover {
+	max-width: 15%;
+}
+
+#papelSelecaoQuestao3:hover {
+	max-width: 36%;
+}
+
+#papelSelecaoQuestao4:hover {
+	max-width: 36%;
+}
+
 @media (max-device-aspect-ratio: 8/8) {
 	#containerVideo1TelaNome {
 		margin-top: 15vh;	

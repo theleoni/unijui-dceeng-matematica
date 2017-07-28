@@ -74,6 +74,7 @@ function hideDivsOnObjectStart() {
 	$("#introducaoModa").hide();
 	$("#tabelasModa").hide();
 	$("#telaConversa3").hide();
+	$("#telaSelecaoQuestoes").hide();
 	hideIconsNome();
 }
 
@@ -188,6 +189,11 @@ function loadScene() {
 		}
 		loadChatConversa3();
 		break;
+
+		case 14:
+		$("#telaSelecaoQuestoes").show();
+		changeTitle(" ");
+		break;
 	}
 }
 
@@ -256,6 +262,10 @@ function unloadScene() {
 
 		case 13:
 		$("#telaConversa3").hide();
+		break;
+
+		case 14:
+		$("#telaSelecaoQuestoes").hide();
 		break;
 	}
 }
@@ -585,6 +595,7 @@ $(document).on('click', '#iconSetaDireita', function() {
 		case 10:
 		case 11:
 		case 12:
+		case 13:
 		nextScene();
 		break;
 
@@ -654,6 +665,7 @@ $(document).on('click', '#iconSetaEsquerda', function() {
 		case 11:
 		case 12:
 		case 13:
+		case 14:
 		allowNextScene();
 		previousScene();
 		break;
