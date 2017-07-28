@@ -29,6 +29,8 @@ var correctAnswers = [false, false];
 
 var atividadesCompletas = [false, false, false, false];
 var verificacaoAtividade1 = [false, false, false];
+var corretasAtividade1Moda = ["Amodal", "Amodal", "Amodal", "Unimodal", "Amodal", "Amodal", "Amodal", "Amodal", "Bimodal", "Amodal", "Unimodal", "Amodal"];
+var selecionadasModa = [];
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 
@@ -822,6 +824,10 @@ $(document).on('click', '#papelSelecaoQuestao1', function() {
 	loadQuestionAtividade(1);
 })
 
+$(document).on('click', '#botaoEnviarRespostaAtv1', function() {
+	verificarRespostaAtividade(1);
+})
+
 function changeTitle(titulo) {
 	$("#tituloGeral").html(titulo);
 }
@@ -1259,15 +1265,16 @@ function loadQuestion() {
 			break;
 		}
 	}
+
 	function updateQuestionAtividadeText(question) {
 		switch (question) {
 			case 1:
 			if (verificacaoAtividade1[0] == false) {
-				$("#instrucoesAtividade1").html("dataJSON.telaAtividade1.atv1");
+				$("#instrucoesAtividade1").html(dataJSON.telaAtividade1.atv1);
 			} else if (verificacaoAtividade1[1] == false) {
-				$("#instrucoesAtividade1").html("dataJSON.telaAtividade1.atv2");
+				$("#instrucoesAtividade1").html(dataJSON.telaAtividade1.atv2);
 			} else if (verificacaoAtividade1[2] == false) {
-				$("#instrucoesAtividade1").html("dataJSON.telaAtividade1.atv3");
+				$("#instrucoesAtividade1").html(dataJSON.telaAtividade1.atv3);
 			} else {
 				$("#instrucoesAtividade1").html("");
 			}
@@ -1284,3 +1291,58 @@ function loadQuestion() {
 			updateQuestionAtividadeText(numero);
 		}
 	}
+
+
+	function verificarRespostaAtividade(numero) {
+		switch(numero) {
+			case 1:
+			if (verificacaoAtividade1[0] == false) {
+				getSelectionModa();
+				var stringSelecionadasModa = selecionadasModa.toString();
+				var stringCorretasModa = corretasAtividade1Moda.toString();
+				if (stringSelecionadasModa == stringCorretasModa) {
+					$(".hideColumn1Ativ1").css("display", "table-cell");
+					fixarValoresModa();
+				}
+
+			} else if (verificacaoAtividade1[1] == false) {
+
+			} else if (verificacaoAtividade1[2] == false) {
+
+			} else {
+				$("#instrucoesAtividade1").html("");
+			}
+		}
+	}
+
+
+	function getSelectionModa() {
+		selecionadasModa = [$("#modaJaneiro").find(":selected").text(),
+		$("#modaFevereiro").find(":selected").text(),
+		$("#modaMarco").find(":selected").text(),
+		$("#modaAbril").find(":selected").text(),
+		$("#modaMaio").find(":selected").text(),
+		$("#modaJunho").find(":selected").text(),
+		$("#modaJulho").find(":selected").text(),
+		$("#modaAgosto").find(":selected").text(),
+		$("#modaSetembro").find(":selected").text(),
+		$("#modaOutubro").find(":selected").text(),
+		$("#modaNovembro").find(":selected").text(),
+		$("#modaDezembro").find(":selected").text() ]
+	}
+
+
+function fixarValoresModa() {
+	$("#tableModaJaneiro").html(corretasAtividade1Moda[0]);
+	$("#tableModaFevereiro").html(corretasAtividade1Moda[1]);
+	$("#tableModaMarco").html(corretasAtividade1Moda[2]);
+	$("#tableModaAbril").html(corretasAtividade1Moda[3]);
+	$("#tableModaMaio").html(corretasAtividade1Moda[4]);
+	$("#tableModaJunho").html(corretasAtividade1Moda[5]);
+	$("#tableModaJulho").html(corretasAtividade1Moda[6]);
+	$("#tableModaAgosto").html(corretasAtividade1Moda[7]);
+	$("#tableModaSetembro").html(corretasAtividade1Moda[8]);
+	$("#tableModaOutubro").html(corretasAtividade1Moda[9]);
+	$("#tableModaNovembro").html(corretasAtividade1Moda[10]);
+	$("#tableModaDezembro").html(corretasAtividade1Moda[11]);
+}

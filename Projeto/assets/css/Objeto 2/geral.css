@@ -479,6 +479,11 @@ body {
 	width: 100%;
 }
 
+.hideColumn1Ativ1 {
+	display: none;
+}
+
+
 @media (max-device-aspect-ratio: 8/8) {
 	#containerVideo1TelaNome {
 		margin-top: 15vh;	
