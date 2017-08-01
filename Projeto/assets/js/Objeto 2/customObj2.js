@@ -32,7 +32,10 @@ var verificacaoAtividade1 = [false, false, false];
 var corretasAtividade1Moda = ["Amodal", "Amodal", "Amodal", "Unimodal", "Amodal", "Amodal", "Amodal", "Amodal", "Bimodal", "Amodal", "Unimodal", "Amodal"];
 var selecionadasModa = [];
 var numeroErradasModa = 0;
-var mesesErradosModa;
+var corretasAtividade1Mediana = [37804, 34059, 36011, 35723, 32679, 30768.5, 32734, 32600, 32398.5, 34256, 31738, 34210.5]
+var numeroErradasMediana = 0;
+var inputAtividade1Mediana = [];
+var mesesErradosAtividade1;
 
 $(document).ready(function() {
 	hideDivsOnObjectStart();
@@ -1294,22 +1297,32 @@ function loadQuestion() {
 			case 1:
 			$("#atividade1").show()
 			$("#alertAtividade1").hide();
+			$("body").css("overflow", "auto");
 			hideArrows();
 			updateQuestionAtividadeText(numero);
+			break;
 		}
 	}
 
 
+	function unloadQuestionAtividade(numero) {
+		switch (numero) {
+			case 1:
+			$("#atividade1").hide()
+			$("body").css("overflow", "hidden");
+			window.scrollTo(0,0);
+			break;
+		}
+	}
 	function verificarRespostaAtividade(numero) {
 		switch(numero) {
 			case 1:
 			if (verificacaoAtividade1[0] == false) {
 				numeroErradasModa = 0;
-				mesesErradosModa = null;
+				mesesErradosAtividade1 = null;
 				getSelectionModa();
 				for (var i = 0; i <= selecionadasModa.length - 1; i++){
 					if (selecionadasModa[i] == corretasAtividade1Moda[i]) {
-						
 					} else {
 						numeroErradasModa++;
 						replaceMesValorErradoAtv1(i+1);
@@ -1323,15 +1336,42 @@ function loadQuestion() {
 					$(".hideColumn1Ativ1").css("display", "table-cell");
 					fixarValoresModa();
 					verificacaoAtividade1[0] = true;
+					updateQuestionAtividadeText(1);
 				} else {
 					$("#alertAtividade1").show();
-					$("#alertAtividade1").html(dataJSON.atividadeLivro1.msgErrada.replace("%mesesErrados%", mesesErradosModa));
+					$("#alertAtividade1").html(dataJSON.atividadeLivro1.msgErrada.replace("%mesesErrados%", mesesErradosAtividade1));
 					$("#alertAtividade1").addClass("alert-danger");
 					$("#alertAtividade1").removeClass("alert-success");
 				}
 
 			} else if (verificacaoAtividade1[1] == false) {
+				numeroErradasMediana = 0;
+				mesesErradosAtividade1 = null;
+				getValuesMediana();
+				for (var i = 0; i <= corretasAtividade1Mediana.length -1; i++) {
+					if (inputAtividade1Mediana[i] == corretasAtividade1Mediana[i]) {
+					} else {
 
+						numeroErradasMediana++;
+						replaceMesValorErradoAtv1(i+1);
+					}
+				}
+				if (numeroErradasMediana == 0) {
+					$("#alertAtividade1").html(dataJSON.atividadeLivro1.msgCorreta);
+					$("#alertAtividade1").show();
+					$("#alertAtividade1").addClass("alert-success");
+					$("#alertAtividade1").removeClass("alert-danger");
+					$(".hideColumn1Ativ1").css("display", "table-cell");
+					verificacaoAtividade1[1] = true;
+					fixarValoresMediana();
+
+					updateQuestionAtividadeText(1);
+				} else {
+					$("#alertAtividade1").show();
+					$("#alertAtividade1").html(dataJSON.atividadeLivro1.msgErrada.replace("%mesesErrados%", mesesErradosAtividade1));
+					$("#alertAtividade1").addClass("alert-danger");
+					$("#alertAtividade1").removeClass("alert-success");
+				}
 			} else if (verificacaoAtividade1[2] == false) {
 
 			} else {
@@ -1345,98 +1385,98 @@ function loadQuestion() {
 		switch (mesErrado) {
 
 			case 1:
-			if(mesesErradosModa == null) {
-				mesesErradosModa = "Janeiro";
+			if(mesesErradosAtividade1 == null) {
+				mesesErradosAtividade1 = "Janeiro";
 			} else {
-				mesesErradosModa = mesesErradosModa.concat(", Janeiro");
+				mesesErradosAtividade1 = mesesErradosAtividade1.concat(", Janeiro");
 			}
 			break;
 
 			case 2:
-			if(mesesErradosModa == null) {
-				mesesErradosModa = "Fevereiro";
+			if(mesesErradosAtividade1 == null) {
+				mesesErradosAtividade1 = "Fevereiro";
 			} else {
-				mesesErradosModa = mesesErradosModa.concat(", Fevereiro");
+				mesesErradosAtividade1 = mesesErradosAtividade1.concat(", Fevereiro");
 			}
 			break;
 
 			case 3:
-			if(mesesErradosModa == null) {
-				mesesErradosModa = "Março";
+			if(mesesErradosAtividade1 == null) {
+				mesesErradosAtividade1 = "Março";
 			} else {
-				mesesErradosModa = mesesErradosModa.concat(", Março");
+				mesesErradosAtividade1 = mesesErradosAtividade1.concat(", Março");
 			}
 			break;
 
 			case 4:
-			if(mesesErradosModa == null) {
-				mesesErradosModa = "Abril";
+			if(mesesErradosAtividade1 == null) {
+				mesesErradosAtividade1 = "Abril";
 			} else {
-				mesesErradosModa = mesesErradosModa.concat(", Abril");
+				mesesErradosAtividade1 = mesesErradosAtividade1.concat(", Abril");
 			}
 			break;		
 
 			case 5:
-			if(mesesErradosModa == null) {
-				mesesErradosModa = "Maio";
+			if(mesesErradosAtividade1 == null) {
+				mesesErradosAtividade1 = "Maio";
 			} else {
-				mesesErradosModa = mesesErradosModa.concat(", Maio");
+				mesesErradosAtividade1 = mesesErradosAtividade1.concat(", Maio");
 			}
 			break;
 
 			case 6:
-			if(mesesErradosModa == null) {
-				mesesErradosModa = "Junho";
+			if(mesesErradosAtividade1 == null) {
+				mesesErradosAtividade1 = "Junho";
 			} else {
-				mesesErradosModa = mesesErradosModa.concat(", Junho");
+				mesesErradosAtividade1 = mesesErradosAtividade1.concat(", Junho");
 			}
 			break;		
 
 			case 7:
-			if(mesesErradosModa == null) {
-				mesesErradosModa = "Julho";
+			if(mesesErradosAtividade1 == null) {
+				mesesErradosAtividade1 = "Julho";
 			} else {
-				mesesErradosModa = mesesErradosModa.concat(", Julho");
+				mesesErradosAtividade1 = mesesErradosAtividade1.concat(", Julho");
 			}
 			break;
 
 			case 8:
-			if(mesesErradosModa == null) {
-				mesesErradosModa = "Agosto";
+			if(mesesErradosAtividade1 == null) {
+				mesesErradosAtividade1 = "Agosto";
 			} else {
-				mesesErradosModa = mesesErradosModa.concat(", Agosto");
+				mesesErradosAtividade1 = mesesErradosAtividade1.concat(", Agosto");
 			}
 			break;		
 
 			case 9:
-			if(mesesErradosModa == null) {
-				mesesErradosModa = "Setembro";
+			if(mesesErradosAtividade1 == null) {
+				mesesErradosAtividade1 = "Setembro";
 			} else {
-				mesesErradosModa = mesesErradosModa.concat(", Setembro");
+				mesesErradosAtividade1 = mesesErradosAtividade1.concat(", Setembro");
 			}
 			break;
 
 			case 10:
-			if(mesesErradosModa == null) {
-				mesesErradosModa = "Outubro";
+			if(mesesErradosAtividade1 == null) {
+				mesesErradosAtividade1 = "Outubro";
 			} else {
-				mesesErradosModa = mesesErradosModa.concat(", Outubro");
+				mesesErradosAtividade1 = mesesErradosAtividade1.concat(", Outubro");
 			}
 			break;		
 
 			case 11:
-			if(mesesErradosModa == null) {
-				mesesErradosModa = "Novembro";
+			if(mesesErradosAtividade1 == null) {
+				mesesErradosAtividade1 = "Novembro";
 			} else {
-				mesesErradosModa = mesesErradosModa.concat(", Novembro");
+				mesesErradosAtividade1 = mesesErradosAtividade1.concat(", Novembro");
 			}
 			break;
 
 			case 12:
-			if(mesesErradosModa == null) {
-				mesesErradosModa = "Dezembro";
+			if(mesesErradosAtividade1 == null) {
+				mesesErradosAtividade1 = "Dezembro";
 			} else {
-				mesesErradosModa = mesesErradosModa.concat(", Dezembro");
+				mesesErradosAtividade1 = mesesErradosAtividade1.concat(", Dezembro");
 			}
 			break;
 		}
@@ -1470,4 +1510,35 @@ function loadQuestion() {
 		$("#tableModaOutubro").html(corretasAtividade1Moda[9]);
 		$("#tableModaNovembro").html(corretasAtividade1Moda[10]);
 		$("#tableModaDezembro").html(corretasAtividade1Moda[11]);
+	}
+
+	function getValuesMediana() {
+		inputAtividade1Mediana = [parseFloat($("#atv1MedianaJaneiro").val().replace(',', '.')),
+		parseFloat($("#atv1MedianaFevereiro").val().replace(',', '.')),
+		parseFloat($("#atv1MedianaMarco").val().replace(',', '.')),
+		parseFloat($("#atv1MedianaAbril").val().replace(',', '.')),
+		parseFloat($("#atv1MedianaMaio").val().replace(',', '.')),
+		parseFloat($("#atv1MedianaJunho").val().replace(',', '.')),
+		parseFloat($("#atv1MedianaJulho").val().replace(',', '.')),
+		parseFloat($("#atv1MedianaAgosto").val().replace(',', '.')),
+		parseFloat($("#atv1MedianaSetembro").val().replace(',', '.')),
+		parseFloat($("#atv1MedianaOutubro").val().replace(',', '.')),
+		parseFloat($("#atv1MedianaNovembro").val().replace(',', '.')),
+		parseFloat($("#atv1MedianaDezembro").val().replace(',', '.')),
+		]
+	}
+
+		function fixarValoresMediana() {
+		$("#tableMedianaJaneiro").html(corretasAtividade1Mediana[0]);
+		$("#tableMedianaFevereiro").html(corretasAtividade1Mediana[1]);
+		$("#tableMedianaMarco").html(corretasAtividade1Mediana[2]);
+		$("#tableMedianaAbril").html(corretasAtividade1Mediana[3]);
+		$("#tableMedianaMaio").html(corretasAtividade1Mediana[4]);
+		$("#tableMedianaJunho").html(corretasAtividade1Mediana[5]);
+		$("#tableMedianaJulho").html(corretasAtividade1Mediana[6]);
+		$("#tableMedianaAgosto").html(corretasAtividade1Mediana[7]);
+		$("#tableMedianaSetembro").html(corretasAtividade1Mediana[8]);
+		$("#tableMedianaOutubro").html(corretasAtividade1Mediana[9]);
+		$("#tableMedianaNovembro").html(corretasAtividade1Mediana[10]);
+		$("#tableMedianaDezembro").html(corretasAtividade1Mediana[11]);
 	}
