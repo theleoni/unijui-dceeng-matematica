@@ -1,14 +1,14 @@
 html,
 body {
 	padding-top: 59px;
-    overflow-x: hidden;
+	overflow-x: hidden;
 }
 
 html{
-  height: 100%;
+	height: 100%;
 }
 body {
-  min-height: 100%;
+	min-height: 100%;
 }
 
 
@@ -16,7 +16,7 @@ body {
 	margin-top: 50px;
 }
 
-	/* Imagens Fixas */
+/* Imagens Fixas */
 
 .iconFixoHelp {
 	cursor: help;
@@ -89,7 +89,7 @@ body {
 
 
 
-	/*IMAGENS GERAIS */
+/*IMAGENS GERAIS */
 
 .imagemPlaneta {
 	position: absolute;
@@ -113,7 +113,7 @@ body {
 
 
 
-	/* NAVBAR */
+/* NAVBAR */
 
 
 .navbar {
@@ -123,19 +123,19 @@ body {
 }
 
 
-	@media (max-width: 500px) {
-		.navbar {
-			max-height: 75px !important;
-		}
+@media (max-width: 500px) {
+	.navbar {
+		max-height: 75px !important;
+	}
+}
+
+
+@media (min-width: 500px) {
+	.navbar {
+		height: 108px !important;
 	}
 
-
-		@media (min-width: 500px) {
-			.navbar {
-				height: 108px !important;
-			}
-
-		}
+}
 
 .positionRight {
 	right: 3%;
@@ -173,91 +173,91 @@ body {
 }
 
 
-	@media (max-width: 300px) {
-		.textTitle {
-			font-size: 6px;
-		}
-		.textTitleContent {
-			font-size: 5px;
-		}
+@media (max-width: 300px) {
+	.textTitle {
+		font-size: 6px;
 	}
-	@media (min-width: 300px) and (max-width: 500px) {
-		.textTitle {
-			font-size: 8px;
-		}
-		.textTitleContent {
-			font-size: 6px;
-		}
+	.textTitleContent {
+		font-size: 5px;
 	}
+}
+@media (min-width: 300px) and (max-width: 500px) {
+	.textTitle {
+		font-size: 8px;
+	}
+	.textTitleContent {
+		font-size: 6px;
+	}
+}
 
-		@media (min-width: 500px) and (max-width: 700px) {
-		.textTitle {
-			font-size: 14px;
-		}
-		.textTitleContent {
-			font-size: 12px;
-		}
+@media (min-width: 500px) and (max-width: 700px) {
+	.textTitle {
+		font-size: 14px;
 	}
+	.textTitleContent {
+		font-size: 12px;
+	}
+}
 
-	@media (min-width: 700px) and (max-width: 950px) {
-		.textTitle {
-			font-size: 19px;
-		}
-		.textTitleContent {
-			font-size: 16px;
-		}
+@media (min-width: 700px) and (max-width: 950px) {
+	.textTitle {
+		font-size: 19px;
 	}
+	.textTitleContent {
+		font-size: 16px;
+	}
+}
 
-	@media (min-width: 1200px) {
-		.textTitle {
-			font-size: 25px;
-		}
-		.textTitleContent {
-			font-size: 20px;
-		}
+@media (min-width: 1200px) {
+	.textTitle {
+		font-size: 25px;
 	}
+	.textTitleContent {
+		font-size: 20px;
+	}
+}
 
 .navbar-nav {
-    float:none;
-    margin:0 auto;
-    display: block;
-    text-align: center;
+	float:none;
+	margin:0 auto;
+	display: block;
+	text-align: center;
 }
 
 
 @media (max-width:768px) {
 	.imagemLogoResponsivaNavbar {
-	max-width: 12%;
-}
+		max-width: 12%;
+	}
 	.imagemUnijuiResponsivaNavbar {
-	max-width: 20%;
-}
+		max-width: 20%;
+	}
 }
 
 @media (min-width: 769px) and (max-width: 1600px) {
 	.imagemLogoResponsivaNavbar {
-	max-width: 19%;
-}
+		max-width: 24%;
+	}
 	.imagemUnijuiResponsivaNavbar {
-	max-width: 14%;
-}
+		max-width: 14%;
+	}
 }
 
 @media (min-width: 1600px) and (max-width:1920px) {
 	.imagemLogoResponsivaNavbar {
-	max-width: 4%;
-}
+		max-width: 17%;
+	}
 	.imagemUnijuiResponsivaNavbar {
-	max-width: 12%;
-}
+		max-width: 12%;
+	}
 }
 @media (min-width: 1920px) {
 	.imagemLogoResponsivaNavbar {
-	max-width: 3.5%;
-}
+		max-width: 12%;
+	}
 	.imagemUnijuiResponsivaNavbar {
-	max-width: 10%;
-}
+		max-width: 10%;
+	}
 }
 
 
@@ -280,7 +280,7 @@ body {
 
 
 
-	/* SCENE 1 */
+/* SCENE 1 */
 
 
 .sceneIntroGeralText1 {
@@ -344,7 +344,7 @@ body {
 
 
 
-	/* SCENE 2 */
+/* SCENE 2 */
 
 .imagemUsinasGeral {
 	cursor: pointer;
@@ -461,7 +461,7 @@ body {
 }
 
 
-	/* SCENE 3 */
+/* SCENE 3 */
 
 
 .imagensImpostos {
@@ -680,16 +680,16 @@ body {
 	display: block;
 }
 .titleCaminho {
-    font-weight: bold;
-    font-size: calc((4vh + 2vw)/1.9);
+	font-weight: bold;
+	font-size: calc((4vh + 2vw)/1.9);
 	font-family: 'Roboto Condensed', sans-serif;
 }
 
 .textosceneCaminhosEnergia {
-    text-align: justify;
-    font-family: 'Roboto Condensed', sans-serif;
-    margin-top: 3%;
-    font-size: calc((2vh + 1vw)/1.5);
+	text-align: justify;
+	font-family: 'Roboto Condensed', sans-serif;
+	margin-top: 3%;
+	font-size: calc((2vh + 1vw)/1.5);
 }
 
 .setaTransmissao {
@@ -723,15 +723,15 @@ body {
 
 .titleMatrizEnergetica {
 	font-weight: bold;
-    font-size: calc((4vh + 2vw)/1.9);
+	font-size: calc((4vh + 2vw)/1.9);
 	font-family: 'Roboto Condensed', sans-serif;
 }
 
 .textoMatrizEnergetica {
 	text-align: justify;
-    font-family: 'Roboto Condensed', sans-serif;
-    margin-top: 3%;
-    font-size: calc((2vh + 1vw)/1.5);
+	font-family: 'Roboto Condensed', sans-serif;
+	margin-top: 3%;
+	font-size: calc((2vh + 1vw)/1.5);
 }
 
 .fundoMatrizEnergetica {
@@ -782,9 +782,9 @@ th, td { padding: 5px; }
 
 .textoPotenciaEletro {
 	text-align: justify;
-    font-family: 'Roboto Condensed', sans-serif;
-    margin-top: 3%;
-    font-size: calc((2vh + 1vw)/1.5);
+	font-family: 'Roboto Condensed', sans-serif;
+	margin-top: 3%;
+	font-size: calc((2vh + 1vw)/1.5);
 }
 
 .equation {
@@ -911,8 +911,8 @@ th, td { padding: 5px; }
 
 .labelGerarGrafico {
 	text-align: justify;
-    font-family: 'Roboto Condensed', sans-serif;
-    margin-top: 3%;
-    font-size: calc((2vh + 1vw)/1.5);
-    display: inline-block;
+	font-family: 'Roboto Condensed', sans-serif;
+	margin-top: 3%;
+	font-size: calc((2vh + 1vw)/1.5);
+	display: inline-block;
 }
