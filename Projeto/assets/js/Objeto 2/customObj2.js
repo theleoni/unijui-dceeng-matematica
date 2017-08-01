@@ -1318,15 +1318,15 @@ function loadQuestion() {
 				if (numeroErradasModa == 0) {
 					$("#alertAtividade1").html(dataJSON.atividadeLivro1.msgCorreta);
 					$("#alertAtividade1").show();
-					$("#alertQ1").addClass("alert-success");
-					$("#alertQ1").removeClass("alert-danger");
+					$("#alertAtividade1").addClass("alert-success");
+					$("#alertAtividade1").removeClass("alert-danger");
 					$(".hideColumn1Ativ1").css("display", "table-cell");
 					fixarValoresModa();
 				} else {
 					$("#alertAtividade1").show();
 					$("#alertAtividade1").html(dataJSON.atividadeLivro1.msgErrada.replace("%mesesErrados%", mesesErradosModa));
-					$("#alertQ1").addClass("alert-danger");
-					$("#alertQ1").removeClass("alert-success");
+					$("#alertAtividade1").addClass("alert-danger");
+					$("#alertAtividade1").removeClass("alert-success");
 				}
 
 			} else if (verificacaoAtividade1[1] == false) {
