@@ -1055,9 +1055,6 @@ function checkQuestion1() {
 		marcadasQuestao1.push(5);
 	}
 
-console.log("Abacate");
-	console.log(corretasQuestao1);
-
 	var stringArrayCorretas = corretasQuestao1.toString();
 	var stringArraymarcadas = marcadasQuestao1.toString();
 	if (stringArraymarcadas == stringArrayCorretas) {
