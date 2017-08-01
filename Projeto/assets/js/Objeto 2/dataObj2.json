@@ -16,7 +16,7 @@
 		"falaChico1": "Joana, a energia vem através de linhas de transmissões diretamente após ser gerada, pois não pode ser armazenada.",
 		"falaCrianças2": "Para onde vai a água utilizada nesse processo?",
 		"falaChico2": "Arthur, a água passa pelas turbinas e entra no percurso do rio novamente, sem nenhuma poluição.",
-		"falaCrianças3": "O Brasil produz muita energia em hidrelétricas?", 
+		"falaCrianças3": "O Brasil produz muita energia em hidrelétricas?",
 		"falaChico3": "Mateus, cerca de 70% da energia produzida no Brasil vem de usinas hidrelétricas.",
 		"falaChico4": "O Brasil é o terceiro maior produtor dessa forma de energia.",
 		"falaChico5": "Bom, agora que já conversamos bastante, o que acham de fazer o trabalho de Estatística da escola?",
@@ -28,11 +28,11 @@
 
 	"telaPrimeirasQuestoes": {
 		"tituloQuestao1": "Analise as alternativas à seguir, considerando as informações apresentadas na tabela assinale a alternativa correta",
-		"afirmacao1Questao1": "%verdadeiro%<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residêncial no mês de Janeiro de 2017 é obtida pela divisão do consumo total mensal pelo número de consumidores residênciais do mês",
+		"afirmacao1Questao1": "%verdadeiro%<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residencial no mês de Janeiro de 2017 é obtida pela divisão do consumo total mensal pelo número de consumidores residenciais do mês",
 		"afirmacao2Questao1": "%verdadeiro%<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residencial no mês de Janeiro de 2017 é 172,468KWh",
-		"afirmacao3Questao1": "<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residêncial no mês de Janeiro de 2017, na região Sudeste foi de 172,468KWh, visto que, esta é a média nacional.",
-		"afirmacao4Questao1": "%verdadeiro%<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residêncial no mês de Janeiro de 2017, na região nordeste foi de 122,798KWh, visto que este valor é obtido pelo total de energia gasta nesta reigão, dividido pelo número de consumidores residênciais",
-		"afirmacao5Questao1": "<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residêncial no mês de Janeiro de 2017, na região Sul foi de 204,954KWh, visto que este é o valor da média nacional.",
+		"afirmacao3Questao1": "<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residencial no mês de Janeiro de 2017, na região Sudeste foi de 172,468KWh, visto que, esta é a média nacional.",
+		"afirmacao4Questao1": "%verdadeiro%<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residencial no mês de Janeiro de 2017, na região nordeste foi de 122,798KWh, visto que este valor é obtido pelo total de energia gasta nesta reigão, dividido pelo número de consumidores residenciais",
+		"afirmacao5Questao1": "<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residencial no mês de Janeiro de 2017, na região Sul foi de 204,954KWh, visto que este é o valor da média nacional.",
 		"alertaErrado": "<center><strong>Oops!</strong> Resposta incorreta.</center>",
 		"alertaCerto": "<center><strong>Parabéns!</strong> Resposta correta.</center>"
 	},
