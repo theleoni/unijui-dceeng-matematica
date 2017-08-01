@@ -31,6 +31,9 @@ var atividadesCompletas = [false, false, false, false];
 var verificacaoAtividade1 = [false, false, false];
 var corretasAtividade1Moda = ["Amodal", "Amodal", "Amodal", "Unimodal", "Amodal", "Amodal", "Amodal", "Amodal", "Bimodal", "Amodal", "Unimodal", "Amodal"];
 var selecionadasModa = [];
+var numeroErradasModa = 0;
+var mesesErradosModa;
+
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 
@@ -1055,6 +1058,9 @@ function checkQuestion1() {
 		marcadasQuestao1.push(5);
 	}
 
+	console.log("Abacate");
+	console.log(corretasQuestao1);
+
 	var stringArrayCorretas = corretasQuestao1.toString();
 	var stringArraymarcadas = marcadasQuestao1.toString();
 	if (stringArraymarcadas == stringArrayCorretas) {
@@ -1286,7 +1292,8 @@ function loadQuestion() {
 		$("#telaSelecaoQuestoes").hide();
 		switch (numero) {
 			case 1:
-			$("#atividade1").show();
+			$("#atividade1").show()
+			$("#alertAtividade1").hide();
 			hideArrows();
 			updateQuestionAtividadeText(numero);
 		}
@@ -1297,12 +1304,25 @@ function loadQuestion() {
 		switch(numero) {
 			case 1:
 			if (verificacaoAtividade1[0] == false) {
+				numeroErradasModa = 0;
+				mesesErradosModa = null;
 				getSelectionModa();
-				var stringSelecionadasModa = selecionadasModa.toString();
-				var stringCorretasModa = corretasAtividade1Moda.toString();
-				if (stringSelecionadasModa == stringCorretasModa) {
+				for (var i = 0; i <= selecionadasModa.length - 1; i++){
+					if (selecionadasModa[i] == corretasAtividade1Moda[i]) {
+						
+					} else {
+						numeroErradasModa++;
+						replaceMesValorErradoAtv1(i+1);
+					}
+				}
+				if (numeroErradasModa == 0) {
+					$("#alertAtividade1").html(dataJSON.atividadeLivro1.msgCorreta);
+					$("#alertAtividade1").show();
 					$(".hideColumn1Ativ1").css("display", "table-cell");
 					fixarValoresModa();
+				} else {
+					$("#alertAtividade1").show();
+					$("#alertAtividade1").html(dataJSON.atividadeLivro1.msgErrada.replace("%mesesErrados%", mesesErradosModa));
 				}
 
 			} else if (verificacaoAtividade1[1] == false) {
@@ -1315,6 +1335,107 @@ function loadQuestion() {
 		}
 	}
 
+	function replaceMesValorErradoAtv1(mesErrado) {
+
+		switch (mesErrado) {
+
+			case 1:
+			if(mesesErradosModa == null) {
+				mesesErradosModa = "Janeiro";
+			} else {
+				mesesErradosModa = mesesErradosModa.concat(", Janeiro");
+			}
+			break;
+
+			case 2:
+			if(mesesErradosModa == null) {
+				mesesErradosModa = "Fevereiro";
+			} else {
+				mesesErradosModa = mesesErradosModa.concat(", Fevereiro");
+			}
+			break;
+
+			case 3:
+			if(mesesErradosModa == null) {
+				mesesErradosModa = "Março";
+			} else {
+				mesesErradosModa = mesesErradosModa.concat(", Março");
+			}
+			break;
+
+			case 4:
+			if(mesesErradosModa == null) {
+				mesesErradosModa = "Abril";
+			} else {
+				mesesErradosModa = mesesErradosModa.concat(", Abril");
+			}
+			break;		
+
+			case 5:
+			if(mesesErradosModa == null) {
+				mesesErradosModa = "Maio";
+			} else {
+				mesesErradosModa = mesesErradosModa.concat(", Maio");
+			}
+			break;
+
+			case 6:
+			if(mesesErradosModa == null) {
+				mesesErradosModa = "Junho";
+			} else {
+				mesesErradosModa = mesesErradosModa.concat(", Junho");
+			}
+			break;		
+
+			case 7:
+			if(mesesErradosModa == null) {
+				mesesErradosModa = "Julho";
+			} else {
+				mesesErradosModa = mesesErradosModa.concat(", Julho");
+			}
+			break;
+
+			case 8:
+			if(mesesErradosModa == null) {
+				mesesErradosModa = "Agosto";
+			} else {
+				mesesErradosModa = mesesErradosModa.concat(", Agosto");
+			}
+			break;		
+
+			case 9:
+			if(mesesErradosModa == null) {
+				mesesErradosModa = "Setembro";
+			} else {
+				mesesErradosModa = mesesErradosModa.concat(", Setembro");
+			}
+			break;
+
+			case 10:
+			if(mesesErradosModa == null) {
+				mesesErradosModa = "Outubro";
+			} else {
+				mesesErradosModa = mesesErradosModa.concat(", Outubro");
+			}
+			break;		
+
+			case 11:
+			if(mesesErradosModa == null) {
+				mesesErradosModa = "Novembro";
+			} else {
+				mesesErradosModa = mesesErradosModa.concat(", Novembro");
+			}
+			break;
+
+			case 12:
+			if(mesesErradosModa == null) {
+				mesesErradosModa = "Dezembro";
+			} else {
+				mesesErradosModa = mesesErradosModa.concat(", Dezembro");
+			}
+			break;
+		}
+	}
 
 	function getSelectionModa() {
 		selecionadasModa = [$("#modaJaneiro").find(":selected").text(),
@@ -1331,18 +1452,17 @@ function loadQuestion() {
 		$("#modaDezembro").find(":selected").text() ]
 	}
 
-
-function fixarValoresModa() {
-	$("#tableModaJaneiro").html(corretasAtividade1Moda[0]);
-	$("#tableModaFevereiro").html(corretasAtividade1Moda[1]);
-	$("#tableModaMarco").html(corretasAtividade1Moda[2]);
-	$("#tableModaAbril").html(corretasAtividade1Moda[3]);
-	$("#tableModaMaio").html(corretasAtividade1Moda[4]);
-	$("#tableModaJunho").html(corretasAtividade1Moda[5]);
-	$("#tableModaJulho").html(corretasAtividade1Moda[6]);
-	$("#tableModaAgosto").html(corretasAtividade1Moda[7]);
-	$("#tableModaSetembro").html(corretasAtividade1Moda[8]);
-	$("#tableModaOutubro").html(corretasAtividade1Moda[9]);
-	$("#tableModaNovembro").html(corretasAtividade1Moda[10]);
-	$("#tableModaDezembro").html(corretasAtividade1Moda[11]);
-}
+	function fixarValoresModa() {
+		$("#tableModaJaneiro").html(corretasAtividade1Moda[0]);
+		$("#tableModaFevereiro").html(corretasAtividade1Moda[1]);
+		$("#tableModaMarco").html(corretasAtividade1Moda[2]);
+		$("#tableModaAbril").html(corretasAtividade1Moda[3]);
+		$("#tableModaMaio").html(corretasAtividade1Moda[4]);
+		$("#tableModaJunho").html(corretasAtividade1Moda[5]);
+		$("#tableModaJulho").html(corretasAtividade1Moda[6]);
+		$("#tableModaAgosto").html(corretasAtividade1Moda[7]);
+		$("#tableModaSetembro").html(corretasAtividade1Moda[8]);
+		$("#tableModaOutubro").html(corretasAtividade1Moda[9]);
+		$("#tableModaNovembro").html(corretasAtividade1Moda[10]);
+		$("#tableModaDezembro").html(corretasAtividade1Moda[11]);
+	}
