@@ -128,28 +128,28 @@ function loadScene() {
 		break;
 
 
-		case 4: 
+		case 4:
 		$("#telaMediaAritmetica").show();
 		$('body').css("background-color", "#CEFDFD")
 		changeTitle(" ");
 		break;
-		
 
-		case 5: 
+
+		case 5:
 		$("#telaPrimeirasQuestoes").show();
 		$("#alertQ1").hide();
 		$("body").css("overflow", "auto");
 		changeTitle(" ");
 		loadQuestion();
 		break;
-		
+
 		case 6:
 		$("#telaVideoQuestaoMediaAritmetica").show();
 		$('body').css("background-color", "#CEFDFD")
 		changeTitle(" ");
 		break;
 
-		case 7: 
+		case 7:
 		$("#telaConsumoSeuChico").show();
 		changeTitle(" ");
 		break;
@@ -228,7 +228,7 @@ function unloadScene() {
 		case 5:
 		$("#telaPrimeirasQuestoes").hide();
 		$("body").css("overflow", "hidden");
-		window.scrollTo(0,0); 
+		window.scrollTo(0,0);
 
 		break;
 
@@ -262,7 +262,7 @@ function unloadScene() {
 		case 12:
 		$("#tabelasModa").hide();
 		$("body").css("overflow", "hidden");
-		window.scrollTo(0,0); 
+		window.scrollTo(0,0);
 
 		break;
 
@@ -312,7 +312,7 @@ $(document).on('click', '#botaoNome', function() {
 
 $(document).on('click', '#setaDireitaNome', function() {
 	switch (scene1DialogControl) {
-		case 0: 
+		case 0:
 		$("#setaEsquerdaNome").show();
 		$("#fala2TelaNome").html(dataJSON.telaNome.falaChico2);
 		scene1DialogControl++;
@@ -328,7 +328,7 @@ $(document).on('click', '#setaDireitaNome', function() {
 		scene1DialogControl++;
 		break;
 
-		case 2: 
+		case 2:
 		$("#balao2TelaNome").css("opacity", "1");
 		$("#fala2TelaNome").html(dataJSON.telaNome.falaChico3);
 		$("#fala2TelaNome").fadeIn(shortFadeTime);
@@ -399,10 +399,10 @@ $(document).on('click', '#setaDireitaNome', function() {
 				setTimeout(function() {
 					$("#iconSetaDireita").css("color", "gray");
 					$("#iconSetaDireita").css("font-size", "40px");
-					
-				}, 5000) 
+
+				}, 5000)
 			}
-		}, 5000) 
+		}, 5000)
 
 		break;
 
@@ -420,7 +420,7 @@ $(document).on('click', '#setaEsquerdaNome', function() {
 		$("#setaEsquerdaNome").hide();
 		break;
 
-		case 2: 
+		case 2:
 		$("#balao2TelaNome").css("opacity", "1");
 		$("#fala2TelaNome").html(dataJSON.telaNome.falaChico2);
 		$("#fala2TelaNome").fadeIn(shortFadeTime);
@@ -594,8 +594,8 @@ $(document).on('click', '#iconSetaDireita', function() {
 		$("#iconSetaEsquerda").show();
 		nextScene();
 		break;
-		
-		case 2: 
+
+		case 2:
 		case 4:
 		case 7:
 		case 10:
@@ -724,7 +724,7 @@ function showCalc() {
 	$("#iconFechar").hide();
 	$("#iconSetaEsquerda").hide();
 	$("#iconSetaDireita").hide();
-	$("#calculadora").show();	
+	$("#calculadora").show();
 	$("#iconCalculadora").css("color", "red");
 }
 
@@ -735,7 +735,7 @@ function hideCalc() {
 	$("#iconFechar").show();
 	$("#iconSetaEsquerda").show();
 	$("#iconSetaDireita").show();
-	$("#calculadora").hide();	
+	$("#calculadora").hide();
 	$("#iconCalculadora").css("color", "green");
 	calculadoraAberta = false;
 }
@@ -834,7 +834,7 @@ function changeTitle(titulo) {
 
 function loadChatConversa2() {
 	switch (sceneConversa2DialogControl) {
-		case 0: 
+		case 0:
 		$("#setaEsquerdaConversa2").hide();
 		$("#balao1TelaConversa2").css("opacity", "1");
 		$("#fala1TelaConversa2").html(dataJSON.telaConversa2.falaCrianças1);
@@ -854,7 +854,7 @@ function loadChatConversa2() {
 		$("#fala1TelaConversa2").fadeOut(shortFadeTime);
 		break;
 
-		case 2: 
+		case 2:
 		$("#balao1TelaConversa2").css("opacity", "1");
 		$("#fala1TelaConversa2").html(dataJSON.telaConversa2.falaCrianças2);
 		$("#fala1TelaConversa2").fadeIn(shortFadeTime);
@@ -872,7 +872,7 @@ function loadChatConversa2() {
 		$("#fala1TelaConversa2").fadeOut(shortFadeTime);
 		break;
 
-		case 4: 
+		case 4:
 		$("#balao1TelaConversa2").css("opacity", "1");
 		$("#fala1TelaConversa2").html(dataJSON.telaConversa2.falaCrianças3);
 		$("#fala1TelaConversa2").fadeIn(shortFadeTime);
@@ -908,7 +908,7 @@ function loadChatConversa2() {
 		$("#fala1TelaConversa2").fadeOut(shortFadeTime);
 		break;
 
-		case 8: 
+		case 8:
 		$("#balao1TelaConversa2").css("opacity", "1");
 		$("#fala1TelaConversa2").html(dataJSON.telaConversa2.falaCrianças4);
 		$("#fala1TelaConversa2").fadeIn(shortFadeTime);
@@ -926,7 +926,7 @@ function loadChatConversa2() {
 		$("#fala1TelaConversa2").fadeOut(shortFadeTime);
 		break;
 
-		case 10: 
+		case 10:
 		$("#setaDireitaConversa2").show();
 
 		$("#balao1TelaConversa2").css("opacity", "1");
@@ -937,7 +937,7 @@ function loadChatConversa2() {
 		$("#fala2TelaConversa2").fadeOut(shortFadeTime);
 		break;
 
-		case 11: 
+		case 11:
 		$("#setaDireitaConversa2").hide();
 		$("#balao1TelaConversa2").css("opacity", "1");
 		$("#fala1TelaConversa2").html(dataJSON.telaConversa2.falaCrianças6);
@@ -953,7 +953,7 @@ function loadChatConversa2() {
 
 function loadChatConversa3() {
 	switch (sceneConversa3DialogControl) {
-		case 0: 
+		case 0:
 		$("#setaEsquerdaConversa3").hide();
 		$("#balao1TelaConversa3").css("opacity", "1");
 		$("#fala1TelaConversa3").html(dataJSON.telaConversa3.falaJoana1);
@@ -981,7 +981,7 @@ function loadChatConversa3() {
 		$("#fala3TelaConversa3").fadeOut(shortFadeTime);
 		break;
 
-		case 2: 
+		case 2:
 		$("#setaDireitaConversa3").hide();
 		$("#balao1TelaConversa3").css("opacity", "0");
 		$("#fala1TelaConversa3").html("");
@@ -1055,6 +1055,9 @@ function checkQuestion1() {
 		marcadasQuestao1.push(5);
 	}
 
+console.log("Abacate");
+	console.log(corretasQuestao1);
+
 	var stringArrayCorretas = corretasQuestao1.toString();
 	var stringArraymarcadas = marcadasQuestao1.toString();
 	if (stringArraymarcadas == stringArrayCorretas) {
@@ -1122,27 +1125,27 @@ function answerIsCorrect() {
 function blockQuestionButtons() {
 	switch (questionNumber) {
 		case 1:
-		$("#buttonAf1").prop("disabled", "disabled");	
-		$("#buttonAf2").prop("disabled", "disabled");	
-		$("#buttonAf3").prop("disabled", "disabled");	
-		$("#buttonAf4").prop("disabled", "disabled");	
-		$("#buttonAf5").prop("disabled", "disabled");	
-		$("#botaoEnviarRespostaQ1").prop("disabled", "disabled");	
+		$("#buttonAf1").prop("disabled", "disabled");
+		$("#buttonAf2").prop("disabled", "disabled");
+		$("#buttonAf3").prop("disabled", "disabled");
+		$("#buttonAf4").prop("disabled", "disabled");
+		$("#buttonAf5").prop("disabled", "disabled");
+		$("#botaoEnviarRespostaQ1").prop("disabled", "disabled");
 
 		if (corretasQuestao1.includes(1)) {
-			$("#buttonAf1").addClass("btn-primary");		
+			$("#buttonAf1").addClass("btn-primary");
 		}
 		if (corretasQuestao1.includes(2)) {
-			$("#buttonAf2").addClass("btn-primary");		
+			$("#buttonAf2").addClass("btn-primary");
 		}
 		if (corretasQuestao1.includes(3)) {
-			$("#buttonAf3").addClass("btn-primary");		
+			$("#buttonAf3").addClass("btn-primary");
 		}
 		if (corretasQuestao1.includes(4)) {
-			$("#buttonAf4").addClass("btn-primary");		
+			$("#buttonAf4").addClass("btn-primary");
 		}
 		if (corretasQuestao1.includes(5)) {
-			$("#buttonAf5").addClass("btn-primary");		
+			$("#buttonAf5").addClass("btn-primary");
 		}
 		$("#alertQ1").show();
 		$("#alertQ1").html(dataJSON.telaPrimeirasQuestoes.alertaCerto);
@@ -1151,27 +1154,27 @@ function blockQuestionButtons() {
 		break
 
 		case 2:
-		$("#opcao1Q2").prop("disabled", "disabled");	
-		$("#opcao2Q2").prop("disabled", "disabled");	
-		$("#opcao3Q2").prop("disabled", "disabled");	
-		$("#opcao4Q2").prop("disabled", "disabled");	
-		$("#opcao5Q2").prop("disabled", "disabled");	
-		$("#botaoEnviarRespostaQ2").prop("disabled", "disabled");	
+		$("#opcao1Q2").prop("disabled", "disabled");
+		$("#opcao2Q2").prop("disabled", "disabled");
+		$("#opcao3Q2").prop("disabled", "disabled");
+		$("#opcao4Q2").prop("disabled", "disabled");
+		$("#opcao5Q2").prop("disabled", "disabled");
+		$("#botaoEnviarRespostaQ2").prop("disabled", "disabled");
 
 		if ($("#opcao1Q2").html().search("3,821")!= -1) {
-			$("#opcao1Q2").addClass("btn-primary");		
+			$("#opcao1Q2").addClass("btn-primary");
 		}
 		if ($("#opcao2Q2").html().search("3,821")!= -1) {
-			$("#opcao2Q2").addClass("btn-primary");		
+			$("#opcao2Q2").addClass("btn-primary");
 		}
 		if ($("#opcao3Q2").html().search("3,821")!= -1) {
-			$("#opcao3Q2").addClass("btn-primary");		
+			$("#opcao3Q2").addClass("btn-primary");
 		}
 		if ($("#opcao4Q2").html().search("3,821")!= -1) {
-			$("#opcao4Q2").addClass("btn-primary");		
+			$("#opcao4Q2").addClass("btn-primary");
 		}
 		if ($("#opcao5Q2").html().search("3,821")!= -1) {
-			$("#opcao5Q2").addClass("btn-primary");		
+			$("#opcao5Q2").addClass("btn-primary");
 		}
 		$("#alertQ2").show();
 		$("#alertQ2").html(dataJSON.telaPrimeirasQuestoes.alertaCerto);
@@ -1185,32 +1188,32 @@ function blockQuestionButtons() {
 function resetQuestionButtons() {
 	switch(questionNumber) {
 		case 1:
-		$("#buttonAf1").prop("disabled", "");	
-		$("#buttonAf2").prop("disabled", "");	
-		$("#buttonAf3").prop("disabled", "");	
-		$("#buttonAf4").prop("disabled", "");	
-		$("#buttonAf5").prop("disabled", "");	
+		$("#buttonAf1").prop("disabled", "");
+		$("#buttonAf2").prop("disabled", "");
+		$("#buttonAf3").prop("disabled", "");
+		$("#buttonAf4").prop("disabled", "");
+		$("#buttonAf5").prop("disabled", "");
 		$("#botaoEnviarRespostaQ1").prop("disabled", "");
-		$("#buttonAf1").removeClass("btn-primary");		
-		$("#buttonAf2").removeClass("btn-primary");		
-		$("#buttonAf3").removeClass("btn-primary");		
-		$("#buttonAf4").removeClass("btn-primary");		
-		$("#buttonAf5").removeClass("btn-primary");		
+		$("#buttonAf1").removeClass("btn-primary");
+		$("#buttonAf2").removeClass("btn-primary");
+		$("#buttonAf3").removeClass("btn-primary");
+		$("#buttonAf4").removeClass("btn-primary");
+		$("#buttonAf5").removeClass("btn-primary");
 		$("#alertQ1").hide();
 		break;
 
 		case 2:
-		$("#opcao1Q2").prop("disabled", "");	
-		$("#opcao2Q2").prop("disabled", "");	
-		$("#opcao3Q2").prop("disabled", "");	
-		$("#opcao4Q2").prop("disabled", "");	
-		$("#opcao5Q2").prop("disabled", "");	
+		$("#opcao1Q2").prop("disabled", "");
+		$("#opcao2Q2").prop("disabled", "");
+		$("#opcao3Q2").prop("disabled", "");
+		$("#opcao4Q2").prop("disabled", "");
+		$("#opcao5Q2").prop("disabled", "");
 		$("#botaoEnviarRespostaQ2").prop("disabled", "");
-		$("#opcao1Q2").removeClass("btn-primary");		
-		$("#opcao2Q2").removeClass("btn-primary");		
-		$("#opcao3Q2").removeClass("btn-primary");		
-		$("#opcao4Q2").removeClass("btn-primary");		
-		$("#opcao5Q2").removeClass("btn-primary");		
+		$("#opcao1Q2").removeClass("btn-primary");
+		$("#opcao2Q2").removeClass("btn-primary");
+		$("#opcao3Q2").removeClass("btn-primary");
+		$("#opcao4Q2").removeClass("btn-primary");
+		$("#opcao5Q2").removeClass("btn-primary");
 		$("#alertQ2").hide();
 		break;
 	}
@@ -1218,7 +1221,7 @@ function resetQuestionButtons() {
 }
 function loadQuestion() {
 	switch (questionNumber) {
-		case 1: 
+		case 1:
 		if (firstTimeQuestion[questionNumber-1]) {
 			alternativasQuestao1 = populateQuestionArray(alternativasQuestao1);
 			firstTimeQuestion[questionNumber-1] = false;

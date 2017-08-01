@@ -115,7 +115,7 @@ body {
 
 	/* NAVBAR */
 
-	
+
 .navbar {
 	background-color: #00458e;
 	z-index: 20;
@@ -128,15 +128,15 @@ body {
 			max-height: 75px !important;
 		}
 	}
-	
-	
+
+
 		@media (min-width: 500px) {
 			.navbar {
 				height: 108px !important;
 			}
 
 		}
-		
+
 .positionRight {
 	right: 3%;
 	top: 2%;
@@ -189,7 +189,7 @@ body {
 			font-size: 6px;
 		}
 	}
-	
+
 		@media (min-width: 500px) and (max-width: 700px) {
 		.textTitle {
 			font-size: 14px;
@@ -198,8 +198,8 @@ body {
 			font-size: 12px;
 		}
 	}
-	
-	@media (min-width: 700px) and (max-width: 950px) {	
+
+	@media (min-width: 700px) and (max-width: 950px) {
 		.textTitle {
 			font-size: 19px;
 		}
@@ -207,7 +207,7 @@ body {
 			font-size: 16px;
 		}
 	}
-	
+
 	@media (min-width: 1200px) {
 		.textTitle {
 			font-size: 25px;
@@ -236,10 +236,10 @@ body {
 
 @media (min-width: 769px) and (max-width: 1600px) {
 	.imagemLogoResponsivaNavbar {
-	max-width: 6%;
+	max-width: 19%;
 }
 	.imagemUnijuiResponsivaNavbar {
-	max-width: 17%;
+	max-width: 14%;
 }
 }
 
@@ -394,7 +394,7 @@ body {
 	z-index: 2;
 	border-radius: 5%;
 	background-color: #FFFFFF;
-	
+
 }
 
 .animacaoUsina {
@@ -409,7 +409,7 @@ body {
 	margin-top: 12%;
 	margin-left: 22%;
 	z-index: 3;
-	
+
 	font-size: calc((3vh + 1.5vw)/2);
 	font-family: 'Roboto Condensed', sans-serif;
 	color: #000000;
@@ -420,7 +420,7 @@ body {
 	margin-left: 22%;
 	margin-top: 4%;
 	z-index: 3;
-	
+
 	font-size: calc((5vh + 2.5vw)/2);
 	font-family: 'Roboto Condensed', sans-serif;
 	color: #000000;
@@ -462,8 +462,8 @@ body {
 
 
 	/* SCENE 3 */
-	
-	
+
+
 .imagensImpostos {
 	cursor: pointer;
 	max-width: 22vw;
@@ -483,7 +483,7 @@ body {
 	margin-top: 50px;
 }
 
-	
+
 .containerImposto {
 	height: 20%;
 }
@@ -861,9 +861,9 @@ th, td { padding: 5px; }
 
 .titulosBandeiras {
 	position:absolute;
-	width:100%; 
+	width:100%;
 	top:2%;
-	left:12%; 
+	left:12%;
 	color: #FFFFFF;
 	font-size: calc((2vh + 1vw)/0.8);
 	font-family: 'Roboto Condensed', sans-serif;
@@ -872,9 +872,9 @@ th, td { padding: 5px; }
 
 .textosBandeiras {
 	position:absolute;
-	width:100%; 
+	width:100%;
 	bottom:45%;
-	left:3%; 
+	left:3%;
 	top:19%;
 	color: #FFFFFF;
 	font-size: calc((2vh + 1vw)/1.4);

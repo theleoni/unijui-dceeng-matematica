@@ -70,7 +70,7 @@
 
 }
 
-@media (min-width: 700px) and (max-width: 950px) {	
+@media (min-width: 700px) and (max-width: 950px) {
 	.textTitle {
 		font-size: 19px;
 	}
@@ -100,10 +100,10 @@
 
 @media (min-width: 769px) and (max-width: 1600px) {
 	.imagemLogoResponsivaNavbar {
-		max-width: 6%;
+		max-width: 19%;
 	}
 	.imagemUnijuiResponsivaNavbar {
-		max-width: 17%;
+		max-width: 14%;
 	}
 }
 
