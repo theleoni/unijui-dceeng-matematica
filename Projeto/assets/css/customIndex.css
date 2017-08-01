@@ -1,4 +1,6 @@
-
+.navbar-test{
+	background-color: #00458e !important;
+}
 nav a {
   padding-top: 20px !important;
   padding-bottom: 20px !important;
@@ -97,7 +99,7 @@ body {
 }
 
 .custom-drop-content {
-	
+
     display: none;
     position: absolute;
     background-color: #f9f9f9;

@@ -91,7 +91,7 @@
 }
 @media (max-width:768px) {
 	.imagemLogoResponsivaNavbar {
-		max-width: 12%;
+		max-width: 24%;
 	}
 	.imagemUnijuiResponsivaNavbar {
 		max-width: 20%;
@@ -100,7 +100,7 @@
 
 @media (min-width: 769px) and (max-width: 1600px) {
 	.imagemLogoResponsivaNavbar {
-		max-width: 19%;
+		max-width: 24%;
 	}
 	.imagemUnijuiResponsivaNavbar {
 		max-width: 14%;
@@ -109,7 +109,7 @@
 
 @media (min-width: 1600px) and (max-width:1920px) {
 	.imagemLogoResponsivaNavbar {
-		max-width: 4%;
+		max-width: 17%;
 	}
 	.imagemUnijuiResponsivaNavbar {
 		max-width: 12%;
@@ -117,10 +117,10 @@
 }
 @media (min-width: 1920px) {
 	.imagemLogoResponsivaNavbar {
-		max-width: 3.5%;
+		max-width: 12%;
 	}
 	.imagemUnijuiResponsivaNavbar {
-		max-width: 10%;
+		max-width: 8%;
 	}
 }
 
