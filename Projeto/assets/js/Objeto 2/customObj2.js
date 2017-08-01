@@ -1322,6 +1322,7 @@ function loadQuestion() {
 					$("#alertAtividade1").removeClass("alert-danger");
 					$(".hideColumn1Ativ1").css("display", "table-cell");
 					fixarValoresModa();
+					verificacaoAtividade1[0] = true;
 				} else {
 					$("#alertAtividade1").show();
 					$("#alertAtividade1").html(dataJSON.atividadeLivro1.msgErrada.replace("%mesesErrados%", mesesErradosModa));
