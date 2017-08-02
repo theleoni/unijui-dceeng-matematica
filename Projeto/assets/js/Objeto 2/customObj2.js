@@ -723,25 +723,37 @@ $(document).on('click', '#iconFechar', function () {
 
 
 function showCalc() {
-	calculadoraAberta = true;
+	/*
 	$("#geral").hide();
 	$("#iconMais").hide();
 	$("#iconHelp").hide();
 	$("#iconFechar").hide();
 	$("#iconSetaEsquerda").hide();
 	$("#iconSetaDireita").hide();
-	$("#calculadora").show();
+	$("#calculadora").show(); */
+	$("#calculadora").dialog({
+		closeOnEscape: false,
+		open: function(event, ui) {
+			$(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+		},
+		height: 600,
+		width: 336
+	});
 	$("#iconCalculadora").css("color", "red");
+	calculadoraAberta = true;
+
 }
 
 function hideCalc() {
+	/*
 	$("#geral").show();
 	$("#iconMais").show();
 	$("#iconHelp").show();
 	$("#iconFechar").show();
 	$("#iconSetaEsquerda").show();
 	$("#iconSetaDireita").show();
-	$("#calculadora").hide();
+	$("#calculadora").hide();*/
+	$("#calculadora").dialog('close');
 	$("#iconCalculadora").css("color", "green");
 	calculadoraAberta = false;
 }
@@ -1546,7 +1558,7 @@ function loadQuestion() {
 
 
 
-	function verificarOrdenacaoTabelaAtv1 {
+	function verificarOrdenacaoTabelaAtv1() {
 
 
 	}

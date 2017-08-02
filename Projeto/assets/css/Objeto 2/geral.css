@@ -275,6 +275,10 @@ body {
 	border-right-color: #FFFFFF !important;
 }
 
+.tabelaTotal {
+	background-color: blanchedalmond;
+}
+
 #iconePlayQuestaoMediaAritmetica {
 	font-size: 40px;
 	color: gray;
