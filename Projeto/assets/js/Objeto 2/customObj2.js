@@ -35,7 +35,9 @@ var numeroErradasModa = 0;
 var corretasAtividade1Mediana = [37804, 34059, 36011, 35723, 32679, 30768.5, 32734, 32600, 32398.5, 34256, 31738, 34210.5]
 var numeroErradasMediana = 0;
 var inputAtividade1Mediana = [];
-var corretasAtividade1Ordenacao = ["Junho", "Novembro", "Setembro", "Agosto", "Maio", "Julho", "Fevereiro", "Dezembro", "Outubro", "Abril", "Marco", "Janeiro"];
+var corretasAtividade1Ordenacao = [12, 7, 11, 10, 5, 1, 6, 4, 3, 9, 2, 8];
+var ordenacaoAtualAtividade1 = [];
+var numeroErradasOrdenacao;
 var mesesErradosAtividade1;
 
 $(document).ready(function() {
@@ -1354,6 +1356,8 @@ function loadQuestion() {
 					$("#alertAtividade1").removeClass("alert-success");
 				}
 
+
+
 			} else if (verificacaoAtividade1[1] == false) {
 				numeroErradasMediana = 0;
 				mesesErradosAtividade1 = null;
@@ -1371,7 +1375,6 @@ function loadQuestion() {
 					$("#alertAtividade1").show();
 					$("#alertAtividade1").addClass("alert-success");
 					$("#alertAtividade1").removeClass("alert-danger");
-					$(".hideColumn1Ativ1").css("display", "table-cell");
 					verificacaoAtividade1[1] = true;
 					fixarValoresMediana();
 					enableSortableAtv1();
@@ -1382,14 +1385,44 @@ function loadQuestion() {
 					$("#alertAtividade1").addClass("alert-danger");
 					$("#alertAtividade1").removeClass("alert-success");
 				}
-			} else if (verificacaoAtividade1[2] == false) {
-				mesesErradosAtividade1 = null;
-				if (verificarOrdenacaoTabelaAtv1) {
 
+
+
+			} else if (verificacaoAtividade1[2] == false) {
+				numeroErradasOrdenacao = 0;
+				mesesErradosAtividade1 = null;
+				getCurrentOrdenationAtv1();
+				for (var i = 0; i <= corretasAtividade1Ordenacao.length - 1; i++) {
+					if (ordenacaoAtualAtividade1[i] == corretasAtividade1Ordenacao[i]) {
+
+					} else {
+						numeroErradasOrdenacao++;
+						replaceMesValorErradoAtv1(i+1);
+					}
 				}
+				if (numeroErradasOrdenacao == 0) {
+					$("#alertAtividade1").html(dataJSON.atividadeLivro1.msgCorreta);
+					$("#alertAtividade1").show();
+					$("#alertAtividade1").addClass("alert-success");
+					$("#alertAtividade1").removeClass("alert-danger");
+					atividadesCompletas[0] = true;
+				} else {
+					$("#alertAtividade1").show();
+					$("#alertAtividade1").html(dataJSON.atividadeLivro1.msgErradaOrdenacao.replace("%mesesErrados%", mesesErradosAtividade1));
+					$("#alertAtividade1").addClass("alert-danger");
+					$("#alertAtividade1").removeClass("alert-success");
+				}
+
+
+
+
 			} else {
 				$("#instrucoesAtividade1").html("");
 			}
+			break;
+
+			case 2:
+			break;
 		}
 	}
 
@@ -1556,14 +1589,22 @@ function loadQuestion() {
 		$("#tableMedianaDezembro").html(corretasAtividade1Mediana[11]);
 	}
 
-
-
-	function verificarOrdenacaoTabelaAtv1() {
-
+	function getCurrentOrdenationAtv1() {
+		ordenacaoAtualAtividade1 = [$("#indexJaneiro").html(),
+		$("#indexFevereiro").html(),
+		$("#indexMarco").html(),
+		$("#indexAbril").html(),
+		$("#indexMaio").html(),
+		$("#indexJunho").html(),
+		$("#indexJulho").html(),
+		$("#indexAgosto").html(),
+		$("#indexSetembro").html(),
+		$("#indexOutubro").html(),
+		$("#indexNovembro").html(),
+		$("#indexDezembro").html()
+		];
 
 	}
-
-
 
 
 	function enableSortableAtv1() {

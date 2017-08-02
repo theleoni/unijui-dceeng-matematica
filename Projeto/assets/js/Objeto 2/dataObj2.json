@@ -58,6 +58,7 @@
 
 	"atividadeLivro1": {
 		"msgCorreta": "<center>Resposta correta!</center>",
-		"msgErrada": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente o(s) seguinte(s) mês(meses): %mesesErrados%</center>"
+		"msgErrada": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente o(s) seguinte(s) mês(meses): %mesesErrados%</center>",
+		"msgErradaOrdenacao": "<center><strong>Oops!</strong> Resposta errada! O(s) seguinte(s) mês(meses): %mesesErrados% estão em posição incorreta!</center>"
 	}
 }
