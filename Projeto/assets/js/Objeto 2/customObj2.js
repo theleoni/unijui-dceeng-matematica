@@ -35,6 +35,7 @@ var numeroErradasModa = 0;
 var corretasAtividade1Mediana = [37804, 34059, 36011, 35723, 32679, 30768.5, 32734, 32600, 32398.5, 34256, 31738, 34210.5]
 var numeroErradasMediana = 0;
 var inputAtividade1Mediana = [];
+var corretasAtividade1Ordenacao = ["Junho", "Novembro", "Setembro", "Agosto", "Maio", "Julho", "Fevereiro", "Dezembro", "Outubro", "Abril", "Marco", "Janeiro"];
 var mesesErradosAtividade1;
 
 $(document).ready(function() {
@@ -1370,7 +1371,10 @@ function loadQuestion() {
 					$("#alertAtividade1").removeClass("alert-success");
 				}
 			} else if (verificacaoAtividade1[2] == false) {
+				mesesErradosAtividade1 = null;
+				if (verificarOrdenacaoTabelaAtv1) {
 
+				}
 			} else {
 				$("#instrucoesAtividade1").html("");
 			}
@@ -1542,6 +1546,10 @@ function loadQuestion() {
 
 
 
+	function verificarOrdenacaoTabelaAtv1 {
+
+
+	}
 
 
 

@@ -53,7 +53,7 @@
 	"telaAtividade1": {
 		"atv1": "Classifique a moda dos dados apresentados na tabela",
 		"atv2": "Calcule e preencha a tabela com os valores da mediana",
-		"atv3": "Organize a tabela em ordem crescente, de acordo com a mediana"
+		"atv3": "Organize a tabela em ordem crescente, de acordo com a mediana<br><h5>Para organizar a tabela clique a arraste a mesma</h5>"
 	},
 
 	"atividadeLivro1": {

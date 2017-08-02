@@ -483,6 +483,9 @@ body {
 	display: none;
 }
 
+.index {
+	display: none;
+}
 
 @media (max-device-aspect-ratio: 8/8) {
 	#containerVideo1TelaNome {
