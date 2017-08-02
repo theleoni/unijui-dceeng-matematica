@@ -39,7 +39,6 @@ var mesesErradosAtividade1;
 
 $(document).ready(function() {
 	hideDivsOnObjectStart();
-
 });
 
 
@@ -1362,7 +1361,7 @@ function loadQuestion() {
 					$(".hideColumn1Ativ1").css("display", "table-cell");
 					verificacaoAtividade1[1] = true;
 					fixarValoresMediana();
-
+					enableSortableAtv1();
 					updateQuestionAtividadeText(1);
 				} else {
 					$("#alertAtividade1").show();
@@ -1540,4 +1539,32 @@ function loadQuestion() {
 		$("#tableMedianaNovembro").html(corretasAtividade1Mediana[10]);
 		$("#tableMedianaDezembro").html(corretasAtividade1Mediana[11]);
 	}
+
+
+
+
+
+
+
+	function enableSortableAtv1() {
+		$("#tabelaAgrupadaConsumoMensal tbody").sortable({
+			helper: fixHelperModified,
+			stop: updateIndex
+		}).disableSelection();
+	}
+
+	//Auxiliares para fazer a table da atividade 1 ser sortable
+	var fixHelperModified = function(e, tr) {
+		var $originals = tr.children();
+		var $helper = tr.clone();
+		$helper.children().each(function(index) {
+			$(this).width($originals.eq(index).width())
+		});
+		return $helper;
+	},
+	updateIndex = function(e, ui) {
+		$('td.index', ui.item.parent()).each(function (i) {
+			$(this).html(i + 1);
+		});
+	};
 
