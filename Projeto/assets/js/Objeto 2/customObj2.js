@@ -1061,8 +1061,6 @@ function checkQuestion1() {
 		marcadasQuestao1.push(5);
 	}
 
-	console.log("Abacate");
-	console.log(corretasQuestao1);
 
 	var stringArrayCorretas = corretasQuestao1.toString();
 	var stringArraymarcadas = marcadasQuestao1.toString();
@@ -1528,7 +1526,7 @@ function loadQuestion() {
 		]
 	}
 
-		function fixarValoresMediana() {
+	function fixarValoresMediana() {
 		$("#tableMedianaJaneiro").html(corretasAtividade1Mediana[0]);
 		$("#tableMedianaFevereiro").html(corretasAtividade1Mediana[1]);
 		$("#tableMedianaMarco").html(corretasAtividade1Mediana[2]);
@@ -1542,3 +1540,4 @@ function loadQuestion() {
 		$("#tableMedianaNovembro").html(corretasAtividade1Mediana[10]);
 		$("#tableMedianaDezembro").html(corretasAtividade1Mediana[11]);
 	}
+
