@@ -1405,6 +1405,8 @@ function loadQuestion() {
 					$("#alertAtividade1").show();
 					$("#alertAtividade1").addClass("alert-success");
 					$("#alertAtividade1").removeClass("alert-danger");
+					$("#tabelaAgrupadaConsumoMensal tbody").sortable('disable')
+					verificacaoAtividade1[2] = true;
 					atividadesCompletas[0] = true;
 				} else {
 					$("#alertAtividade1").show();
