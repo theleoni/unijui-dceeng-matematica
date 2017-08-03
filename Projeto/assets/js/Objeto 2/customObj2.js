@@ -71,6 +71,7 @@ $.getJSON('../assets/js/Objeto 2/dataObj2.json', function(data) {
 
 function hideDivsOnObjectStart() {
 	$("#calculadora").hide();
+	$("#containerGeralGraficos").hide();
 	$("#iconesFixos").hide();
 	$("#containerPersonagemExtraTelaNome").hide();
 	$("#balao1TelaNome").hide();
@@ -737,14 +738,6 @@ $(document).on('click', '#iconFechar', function () {
 
 
 function showCalc() {
-	/*
-	$("#geral").hide();
-	$("#iconMais").hide();
-	$("#iconHelp").hide();
-	$("#iconFechar").hide();
-	$("#iconSetaEsquerda").hide();
-	$("#iconSetaDireita").hide();
-	$("#calculadora").show(); */
 	$("#calculadora").dialog({
 		closeOnEscape: false,
 		open: function(event, ui) {
@@ -759,14 +752,6 @@ function showCalc() {
 }
 
 function hideCalc() {
-	/*
-	$("#geral").show();
-	$("#iconMais").show();
-	$("#iconHelp").show();
-	$("#iconFechar").show();
-	$("#iconSetaEsquerda").show();
-	$("#iconSetaDireita").show();
-	$("#calculadora").hide();*/
 	$("#calculadora").dialog('close');
 	$("#iconCalculadora").css("color", "green");
 	calculadoraAberta = false;
@@ -866,7 +851,11 @@ $(document).on('click', '#botaoEnviarRespostaAtv1', function() {
 	verificarRespostaAtividade(1);
 })
 
-
+$(document).on('click', '#imgGasNatural', function() {
+	graficoGasNatural();
+	$("#textoGraficos").html(dataJSON.graficos.gasNatural);
+	popOutGraph();
+})
 
 $(document).on('click', '.iconSetaVoltarAtividades', function() {
 	unloadQuestionAtividade();
@@ -1700,3 +1689,11 @@ function loadQuestion() {
 		});
 	};
 
+
+	function popOutGraph() {
+		$("#containerGeralGraficos").dialog({
+		closeOnEscape: false,
+		height: 600,
+		width: 800
+	});;
+	}
