@@ -1437,6 +1437,7 @@ function loadQuestion() {
 					verificacaoAtividade1[2] = true;
 					atividadesCompletas[0] = true;
 					$("#botaoEnviarRespostaAtv1").hide();
+					swal("Parabéns!", "Você finalizou esta atividade!", "success")
 					updateQuestionAtividadeText();
 				} else {
 					$("#alertAtividade1").show();
