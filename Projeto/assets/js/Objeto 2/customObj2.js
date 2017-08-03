@@ -1303,8 +1303,8 @@ function loadQuestion() {
 		}
 	}
 
-	function updateQuestionAtividadeText(question) {
-		switch (question) {
+	function updateQuestionAtividadeText() {
+		switch (atividadeAtual) {
 			case 1:
 			if (verificacaoAtividade1[0] == false) {
 				$("#instrucoesAtividade1").html(dataJSON.telaAtividade1.atv1);
@@ -1313,7 +1313,7 @@ function loadQuestion() {
 			} else if (verificacaoAtividade1[2] == false) {
 				$("#instrucoesAtividade1").html(dataJSON.telaAtividade1.atv3);
 			} else {
-				$("#instrucoesAtividade1").html("");
+				$("#instrucoesAtividade1").html("Parabéns! Você finalizou esta atividade. Retorne para a tela de seleção para realizar as demais atividades");
 			}
 		}
 	}
@@ -1376,7 +1376,7 @@ function loadQuestion() {
 					$(".hideColumn1Ativ1").css("display", "table-cell");
 					fixarValoresModa();
 					verificacaoAtividade1[0] = true;
-					updateQuestionAtividadeText(1);
+					updateQuestionAtividadeText();
 				} else {
 					$("#alertAtividade1").show();
 					$("#alertAtividade1").html(dataJSON.atividadeLivro1.msgErrada.replace("%mesesErrados%", mesesErradosAtividade1));
@@ -1406,7 +1406,7 @@ function loadQuestion() {
 					verificacaoAtividade1[1] = true;
 					fixarValoresMediana();
 					enableSortableAtv1();
-					updateQuestionAtividadeText(1);
+					updateQuestionAtividadeText();
 				} else {
 					$("#alertAtividade1").show();
 					$("#alertAtividade1").html(dataJSON.atividadeLivro1.msgErrada.replace("%mesesErrados%", mesesErradosAtividade1));
@@ -1436,6 +1436,8 @@ function loadQuestion() {
 					$("#tabelaAgrupadaConsumoMensal tbody").sortable('disable')
 					verificacaoAtividade1[2] = true;
 					atividadesCompletas[0] = true;
+					$("#botaoEnviarRespostaAtv1").hide();
+					updateQuestionAtividadeText();
 				} else {
 					$("#alertAtividade1").show();
 					$("#alertAtividade1").html(dataJSON.atividadeLivro1.msgErradaOrdenacao.replace("%mesesErrados%", mesesErradosAtividade1));
