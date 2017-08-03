@@ -41,6 +41,8 @@ var ordenacaoAtualAtividade1 = [];
 var numeroErradasOrdenacao;
 var mesesErradosAtividade1;
 
+var verificacaoAtividade2 = [false, false];
+
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 });
@@ -90,6 +92,7 @@ function hideDivsOnObjectStart() {
 	$("#telaConversa3").hide();
 	$("#telaSelecaoQuestoes").hide();
 	$("#atividade1").hide();
+	$("#atividade2").hide();
 	hideIconsNome();
 }
 
@@ -854,6 +857,11 @@ $(document).on('click', '#papelSelecaoQuestao1', function() {
 	loadQuestionAtividade();
 })
 
+$(document).on('click', '#papelSelecaoQuestao2', function() {
+	atividadeAtual = 2;
+	loadQuestionAtividade();
+})
+
 $(document).on('click', '#botaoEnviarRespostaAtv1', function() {
 	verificarRespostaAtividade(1);
 })
@@ -1313,8 +1321,21 @@ function loadQuestion() {
 			} else if (verificacaoAtividade1[2] == false) {
 				$("#instrucoesAtividade1").html(dataJSON.telaAtividade1.atv3);
 			} else {
-				$("#instrucoesAtividade1").html("Parabéns! Você finalizou esta atividade. Retorne para a tela de seleção para realizar as demais atividades");
+				$("#instrucoesAtividade1").html(dataJSON.telaAtividade1.finalizada);
 			}
+			break;
+
+			case 2:
+			if (verificacaoAtividade2[0] == false && verificacaoAtividade2[1] == false) {
+				$("#instrucoesAtividade2").html(dataJSON.telaAtividade2.ambas);
+			} else if (verificacaoAtividade2[0] == false) {
+				$("#instrucoesAtividade2").html(dataJSON.telaAtividade2.tabela);
+			} else if (verificacaoAtividade2[1] == false) {
+				$("#instrucoesAtividade2").html(dataJSON.telaAtividade2.grafico);
+			} else {
+				$("#instrucoesAtividade2").html(dataJSON.telaAtividade2.finalizada);
+			}
+			break
 		}
 	}
 
@@ -1325,6 +1346,14 @@ function loadQuestion() {
 			case 1:
 			$("#atividade1").show()
 			$("#alertAtividade1").hide();
+			$("body").css("overflow", "auto");
+			hideArrows();
+			updateQuestionAtividadeText();
+			break;
+
+			case 2:
+			$("#atividade2").show()
+			$("#alertAtividade2").hide();
 			$("body").css("overflow", "auto");
 			hideArrows();
 			updateQuestionAtividadeText();
@@ -1352,7 +1381,16 @@ function loadQuestion() {
 			window.scrollTo(0,0);
 			$("#telaSelecaoQuestoes").show();
 			break;
+
+			case 2:
+			$("#atividade2").hide()
+			$("body").css("overflow", "hidden");
+			window.scrollTo(0,0);
+			$("#telaSelecaoQuestoes").show();
+			break;
 		}
+
+
 	}
 	function verificarRespostaAtividade() {
 		switch(atividadeAtual) {

@@ -729,7 +729,7 @@
 		<div id="atividade1">
 			<div class="row">
 				<div class="col-xs-offset-1 col-xs-1">
-						<span id="iconSeta1VoltarAtividades" title="Voltar" class="glyphicon glyphicon glyphicon-arrow-left iconSetaVoltarAtividades"> </span>
+					<span id="iconSeta1VoltarAtividades" title="Voltar" class="glyphicon glyphicon glyphicon-arrow-left iconSetaVoltarAtividades"> </span>
 				</div>
 				<div class="col-xs-offset-1 col-xs-6">
 					<h4 id="instrucoesAtividade1"></h4>
@@ -1005,37 +1005,224 @@
 					</div>
 				</div>
 			</div>
-		</div> <!--Div geral -->
-		<!--##################### CALCULADORA ##################### -->
 
-		<div id="calculadora">
-			<div class="top">
-				<span class="clear">C</span>
-				<div class="screen"></div>
+
+
+			<div id="atividade2">
+				<div class="row">
+					<div class="col-xs-offset-1 col-xs-1">
+						<span id="iconSeta2VoltarAtividades" title="Voltar" class="glyphicon glyphicon glyphicon-arrow-left iconSetaVoltarAtividades"> </span>
+					</div>
+					<div class="col-xs-offset-1 col-xs-6">
+						<h4 id="instrucoesAtividade2"></h4>
+						<table id="tabelaGeracaoPorFonte" class="table table-responsive table-bordered">
+							<thead>
+								<tr>
+									<td></td>
+									<td>2011</td>
+									<td>2012</td>
+									<td>2013</td>
+									<td>2014</td>
+									<td>2015</td>
+									<td>Média</td>
+									<td>Mediana</td>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Gás Natural</td>
+										<td>25095</td>
+										<td>46760</td>
+										<td>69003</td>
+										<td>81073</td>
+										<td>79490</td>
+										<td>
+											<input type="text" class="form-control" id="inputMediaGeracaoGasNatural" placeholder="60284,2">
+										</td>
+										<td>
+											<input type="text" class="form-control" id="inputMedianaGeracaoGasNatural" placeholder="69003">
+										</td>
+									</tr>
+
+									<tr>
+										<td>Hidrelétrica</td>
+										<td>428333</td>
+										<td>415342</td>
+										<td>390992</td>
+										<td>373439</td>
+										<td>359743</td>
+										<td>
+											<input type="text" class="form-control" id="inputMediaGeracaoHidreletrica" placeholder="393629,8">
+										</td>
+										<td>
+											<input type="text" class="form-control" id="inputMedianaGeracaoHidreletrica" placeholder="390992">
+										</td>
+									</tr>
+
+									<tr>
+										<td>Derivados de Petróleo</td>
+										<td>12239</td>
+										<td>16214</td>
+										<td>22090</td>
+										<td>31529</td>
+										<td>25662</td>
+										<td>
+											<input type="text" class="form-control" id="inputMediaGeracaoDerivadosPetroleo" placeholder="21546,8">
+										</td>
+										<td>
+											<input type="text" class="form-control" id="inputMedianaGeracaoGasNatural" placeholder="22090">
+										</td>
+									</tr>
+
+									<tr>
+										<td>Carvão</td>
+										<td>6485</td>
+										<td>8422</td>
+										<td>14801</td>
+										<td>18385</td>
+										<td>19096</td>
+										<td>
+											<input type="text" class="form-control" id="inputMediaGeracaoCarvao" placeholder="13437,8">
+										</td>
+										<td>
+											<input type="text" class="form-control" id="inputMedianaGeracaoCarvao" placeholder="14801">
+										</td>
+									</tr>
+
+									<tr>
+										<td>Nuclear</td>
+										<td>15659</td>
+										<td>16038</td>
+										<td>15659</td>
+										<td>15378</td>
+										<td>14734</td>
+										<td>
+											<input type="text" class="form-control" id="inputMediaGeracaoNuclear" placeholder="15493,6">
+										</td>
+										<td>
+											<input type="text" class="form-control" id="inputMedianaGeracaoNuclear" placeholder="15659">
+										</td>
+									</tr>
+
+									<tr>
+										<td>Biomassa</td>
+										<td>31633</td>
+										<td>34662</td>
+										<td>39679</td>
+										<td>44987</td>
+										<td>47394</td>
+										<td>
+											<input type="text" class="form-control" id="inputMediaGeracaoBiomassa" placeholder="39671">
+										</td>
+										<td>
+											<input type="text" class="form-control" id="inputMedianaGeracaoBiomassa" placeholder="39479">
+										</td>
+									</tr>
+
+									<tr>
+										<td>Eólica</td>
+										<td>2705</td>
+										<td>5050</td>
+										<td>6578</td>
+										<td>12210</td>
+										<td>21626</td>
+										<td>
+											<input type="text" class="form-control" id="inputMediaGeracaoGasNatural" placeholder="9633,8">
+										</td>
+										<td>
+											<input type="text" class="form-control" id="inputMedianaGeracaoGasNatural" placeholder="12241">
+										</td>
+									</tr>
+
+
+									<tr>
+										<td>Outras</td>
+										<td>9609</td>
+										<td>10010</td>
+										<td>12241</td>
+										<td>13590</td>
+										<td>13741</td>
+										<td>
+											<input type="text" class="form-control" id="inputMediaGeracaoGasNatural" placeholder="11838,2">
+										</td>
+										<td>
+											<input type="text" class="form-control" id="inputMedianaGeracaoGasNatural" placeholder="12241">
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-offset-3 col-xs-075">
+							<img class= "img-responsive" src="../assets/img/Objeto 2/biomassa.png">
+						</div>
+						<div class="col-xs-075">
+							<img class= "img-responsive" src="../assets/img/Objeto 2/biomassa.png">
+						</div>
+						<div class="col-xs-075">
+							<img class= "img-responsive" src="../assets/img/Objeto 2/biomassa.png">
+						</div>
+						<div class="col-xs-075">
+							<img class= "img-responsive" src="../assets/img/Objeto 2/biomassa.png">
+						</div>
+						<div class="col-xs-075">
+							<img class= "img-responsive" src="../assets/img/Objeto 2/biomassa.png">
+						</div>
+						<div class="col-xs-075">
+							<img class= "img-responsive" src="../assets/img/Objeto 2/biomassa.png">
+						</div>
+						<div class="col-xs-075">
+							<img class= "img-responsive" src="../assets/img/Objeto 2/biomassa.png">
+						</div>
+						<div class="col-xs-075">
+							<img class= "img-responsive" src="../assets/img/Objeto 2/biomassa.png">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-offset-5 col-xs-2">
+							<button id="botaoEnviarRespostaAtv2" type="button" class="btn btn-success btn-block">Enviar resposta</button>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-offset-4 col-xs-4">
+							<div id="alertAtividade2" class="alert alert-danger" role="alert">
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div> <!--Div geral -->
+			<!--##################### CALCULADORA ##################### -->
+
+			<div id="calculadora">
+				<div class="top">
+					<span class="clear">C</span>
+					<div class="screen"></div>
+				</div>
+
+				<div class="keys">
+					<!-- operators and other keys -->
+					<span>7</span>
+					<span>8</span>
+					<span>9</span>
+					<span class="operator">+</span>
+					<span>4</span>
+					<span>5</span>
+					<span>6</span>
+					<span class="operator">-</span>
+					<span>1</span>
+					<span>2</span>
+					<span>3</span>
+					<span class="operator">÷</span>
+					<span>0</span>
+					<span>.</span>
+					<span class="eval">=</span>
+					<span class="operator">x</span>
+				</div>
 			</div>
+			<!-- Calculadora -->
+			<script src="../assets/js/Misc/calculadora.js"></script>
 
-			<div class="keys">
-				<!-- operators and other keys -->
-				<span>7</span>
-				<span>8</span>
-				<span>9</span>
-				<span class="operator">+</span>
-				<span>4</span>
-				<span>5</span>
-				<span>6</span>
-				<span class="operator">-</span>
-				<span>1</span>
-				<span>2</span>
-				<span>3</span>
-				<span class="operator">÷</span>
-				<span>0</span>
-				<span>.</span>
-				<span class="eval">=</span>
-				<span class="operator">x</span>
-			</div>
-		</div>
-		<!-- Calculadora -->
-		<script src="../assets/js/Misc/calculadora.js"></script>
-
-	</body>
-	</html>
+		</body>
+		</html>

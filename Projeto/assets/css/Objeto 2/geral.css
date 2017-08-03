@@ -15,6 +15,11 @@ body {
 	margin-left: 4.166%;
 }
 
+.col-xs-075 {
+	width: 6.25%;
+	float: left;
+}
+
 .mLeft23 {
 	margin-left: 23%;
 }
