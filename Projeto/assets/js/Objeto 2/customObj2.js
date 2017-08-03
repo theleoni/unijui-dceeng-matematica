@@ -27,6 +27,7 @@ var firstTimeQuestion = [true, true];
 var marcadaQ2;
 var correctAnswers = [false, false];
 
+var atividadeAtual = 0;
 var atividadesCompletas = [false, false, false, false];
 var verificacaoAtividade1 = [false, false, false];
 var corretasAtividade1Moda = ["Amodal", "Amodal", "Amodal", "Unimodal", "Amodal", "Amodal", "Amodal", "Amodal", "Bimodal", "Amodal", "Unimodal", "Amodal"];
@@ -701,6 +702,14 @@ function disallowNextScene() {
 	$("#iconSetaDireita").hide();
 }
 
+function allowPreviousScene() {
+	$("#iconSetaEsquerda").show();
+}
+
+function disallowPreviousScene() {
+	$("#iconSetaEsuerda").hide();
+}
+
 function hideArrows() {
 	$("#iconSetaDireita").hide();
 	$("#iconSetaEsquerda").hide();
@@ -841,11 +850,18 @@ $(document).on('click', '#iconePlayMediana2', function() {
 
 
 $(document).on('click', '#papelSelecaoQuestao1', function() {
-	loadQuestionAtividade(1);
+	atividadeAtual = 1;
+	loadQuestionAtividade();
 })
 
 $(document).on('click', '#botaoEnviarRespostaAtv1', function() {
 	verificarRespostaAtividade(1);
+})
+
+
+
+$(document).on('click', '.iconSetaVoltarAtividades', function() {
+	unloadQuestionAtividade();
 })
 
 function changeTitle(titulo) {
@@ -1303,31 +1319,43 @@ function loadQuestion() {
 	}
 
 
-	function loadQuestionAtividade(numero) {
+	function loadQuestionAtividade() {
 		$("#telaSelecaoQuestoes").hide();
-		switch (numero) {
+		switch (atividadeAtual) {
 			case 1:
 			$("#atividade1").show()
 			$("#alertAtividade1").hide();
 			$("body").css("overflow", "auto");
 			hideArrows();
-			updateQuestionAtividadeText(numero);
+			updateQuestionAtividadeText();
 			break;
 		}
 	}
 
 
-	function unloadQuestionAtividade(numero) {
-		switch (numero) {
+	function unloadQuestionAtividade() {
+		//Verifica se todas as atividades já foram realizadas
+		if (atividadesCompletas.every(function(item, index, array){
+			return item;
+		})) {
+			showArrows();
+		} else {
+			allowPreviousScene();
+		}
+
+
+
+		switch (atividadeAtual) {
 			case 1:
 			$("#atividade1").hide()
 			$("body").css("overflow", "hidden");
 			window.scrollTo(0,0);
+			$("#telaSelecaoQuestoes").show();
 			break;
 		}
 	}
-	function verificarRespostaAtividade(numero) {
-		switch(numero) {
+	function verificarRespostaAtividade() {
+		switch(atividadeAtual) {
 			case 1:
 			if (verificacaoAtividade1[0] == false) {
 				numeroErradasModa = 0;

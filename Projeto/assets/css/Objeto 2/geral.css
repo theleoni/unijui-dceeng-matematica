@@ -491,6 +491,19 @@ body {
 	display: none;
 }
 
+.iconSetaVoltarAtividades {
+	color: #79858c;
+	font-size: 60px;
+	position: absolute;
+	top: 24vh;
+	cursor: pointer;
+}
+
+.iconSetaVoltarAtividades:hover {
+	color: #52626b;
+	font-size: 65px;
+}
+
 @media (max-device-aspect-ratio: 8/8) {
 	#containerVideo1TelaNome {
 		margin-top: 15vh;	
