@@ -509,6 +509,9 @@ body {
 	font-size: 65px;
 }
 
+.imgUsinas {
+	cursor:pointer;
+}
 @media (max-device-aspect-ratio: 8/8) {
 	#containerVideo1TelaNome {
 		margin-top: 15vh;	
