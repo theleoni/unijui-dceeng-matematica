@@ -853,48 +853,64 @@ $(document).on('click', '#botaoEnviarRespostaAtv1', function() {
 
 $(document).on('click', '#imgGasNatural', function() {
 	graficoGasNatural();
+	verificacaoAtividade2[1] = true;
+	updateQuestionAtividadeText();
 	$("#textoGraficos").html(dataJSON.graficos.gasNatural);
 	popOutGraph();
 })
 
 $(document).on('click', '#imgHidreletrica', function() {
 	graficoHidreletrica();
+	verificacaoAtividade2[1] = true;
+	updateQuestionAtividadeText();
 	$("#textoGraficos").html(dataJSON.graficos.hidreletrica);
 	popOutGraph();
 })
 
 $(document).on('click', '#imgPetroleo', function() {
 	graficoPetroleo();
+	verificacaoAtividade2[1] = true;
+	updateQuestionAtividadeText();
 	$("#textoGraficos").html(dataJSON.graficos.petroleo);
 	popOutGraph();
 })
 
 $(document).on('click', '#imgCarvao', function() {
 	graficoCarvao();
+	verificacaoAtividade2[1] = true;
+	updateQuestionAtividadeText();
 	$("#textoGraficos").html(dataJSON.graficos.carvao);
 	popOutGraph();
 })
 
 $(document).on('click', '#imgNuclear', function() {
 	graficoNuclear();
+	verificacaoAtividade2[1] = true;
+	updateQuestionAtividadeText();
 	$("#textoGraficos").html(dataJSON.graficos.nuclear);
 	popOutGraph();
 })
 
 $(document).on('click', '#imgBiomassa', function() {
 	graficoBiomassa();
+	verificacaoAtividade2[1] = true;
+	updateQuestionAtividadeText();
 	$("#textoGraficos").html(dataJSON.graficos.biomassa);
 	popOutGraph();
 })
 
 $(document).on('click', '#imgEolica', function() {
 	graficoEolica();
+	verificacaoAtividade2[1] = true;
+	updateQuestionAtividadeText();
 	$("#textoGraficos").html(dataJSON.graficos.eolica);
 	popOutGraph();
 })
 
 $(document).on('click', '#imgOutras', function() {
 	graficoOutras();
+	verificacaoAtividade2[1] = true;
+	updateQuestionAtividadeText();
 	$("#textoGraficos").html(dataJSON.graficos.outras);
 	popOutGraph();
 })
@@ -1733,9 +1749,10 @@ function loadQuestion() {
 
 
 	function popOutGraph() {
+
 		$("#containerGeralGraficos").dialog({
-		closeOnEscape: false,
-		height: 600,
-		width: 800
-	});;
+			closeOnEscape: false,
+			height: 600,
+			width: 800
+		});;
 	}
