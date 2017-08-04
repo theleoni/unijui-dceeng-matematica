@@ -857,6 +857,48 @@ $(document).on('click', '#imgGasNatural', function() {
 	popOutGraph();
 })
 
+$(document).on('click', '#imgHidreletrica', function() {
+	graficoHidreletrica();
+	$("#textoGraficos").html(dataJSON.graficos.hidreletrica);
+	popOutGraph();
+})
+
+$(document).on('click', '#imgPetroleo', function() {
+	graficoPetroleo();
+	$("#textoGraficos").html(dataJSON.graficos.petroleo);
+	popOutGraph();
+})
+
+$(document).on('click', '#imgCarvao', function() {
+	graficoCarvao();
+	$("#textoGraficos").html(dataJSON.graficos.carvao);
+	popOutGraph();
+})
+
+$(document).on('click', '#imgNuclear', function() {
+	graficoNuclear();
+	$("#textoGraficos").html(dataJSON.graficos.nuclear);
+	popOutGraph();
+})
+
+$(document).on('click', '#imgBiomassa', function() {
+	graficoBiomassa();
+	$("#textoGraficos").html(dataJSON.graficos.biomassa);
+	popOutGraph();
+})
+
+$(document).on('click', '#imgEolica', function() {
+	graficoEolica();
+	$("#textoGraficos").html(dataJSON.graficos.eolica);
+	popOutGraph();
+})
+
+$(document).on('click', '#imgOutras', function() {
+	graficoOutras();
+	$("#textoGraficos").html(dataJSON.graficos.outras);
+	popOutGraph();
+})
+
 $(document).on('click', '.iconSetaVoltarAtividades', function() {
 	unloadQuestionAtividade();
 })
