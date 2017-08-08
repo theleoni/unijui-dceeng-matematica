@@ -1434,6 +1434,21 @@ function loadQuestion() {
 			allowPreviousScene();
 		}
 
+		//Altera as imagens quando a atividade está completa
+		if (atividadesCompletas[0] == true) {
+			$("#papelSelecaoQuestao1").prop("src", "../assets/img/Objeto 2/imgAtividade1Completa.png")
+		}
+		if (atividadesCompletas[1] == true) {
+			$("#papelSelecaoQuestao2").prop("src", "../assets/img/Objeto 2/imgAtividade2Completa.png")
+		}
+
+		if (atividadesCompletas[2] == true) {
+			$("#papelSelecaoQuestao3").prop("src", "../assets/img/Objeto 2/imgAtividade3Completa.png")
+		}
+
+		if (atividadesCompletas[3] == true) {
+			$("#papelSelecaoQuestao4").prop("src", "../assets/img/Objeto 2/imgAtividade4Completa.png")
+		}
 
 
 		switch (atividadeAtual) {
