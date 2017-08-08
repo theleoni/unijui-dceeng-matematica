@@ -69,6 +69,13 @@
 		"grafico": "Veja os gráficos referentes à cada tipo de geração de energia clicando nos seus respectivos ícones",
 		"tabela": "Preencha os valores da média e mediana de acordo com os dados apresentados na tabela."
 	},
+	"atividadeLivro2": {
+		"msgCorreta": "<center>Resposta correta!</center>",
+		"msgErradaMedia": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente a(s) seguinte(s) resposta(s) da Media: %tiposErrados%</center>",
+		"msgErradaMediana": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente a(s) seguinte(s) resposta(s) da Mediana: %tiposErrados%</center>",
+		"msgErradaAmbas": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente a(s) seguinte(s) resposta(s): <br>Media: %tiposErradosMedia%</center><br>Mediana: %tiposErradosMediana%"
+
+	},
 	"graficos": {
 		"gasNatural": "A linha verde indica a média no valor de 60284,2GWh (Gigawatt-hora), ou seja, se todos os valores fossem iguais seriam esse mesmo valor da média. A linha laranja indica a mediana, sendo assim o valor central dos dados, ou seja, 50% dos dados são iguais ou maiores que 69003GWh e 50% dos dados são iguais ou menores que 69003GWh.",
 		"hidreletrica": "A linha verde indica a média no vlaor de 393629,8GWh (Gigawatt-hora), ou seja, se todos os valores fossem iguais teriam esse mesmo valor da média. A linha laranja indica a mediana, sendo assim o valor central dos dados, ou seja, 50% dos dados são iguais ou maiores que 390992GWh e 50% dos dados são iguais ou menores que 390992GWh.",

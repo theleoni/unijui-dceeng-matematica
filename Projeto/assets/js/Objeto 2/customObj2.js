@@ -41,7 +41,17 @@ var ordenacaoAtualAtividade1 = [];
 var numeroErradasOrdenacao;
 var mesesErradosAtividade1;
 
+var tiposErradosAtividade2Media;
+var tiposErradosAtividade2Mediana;
+
+var numeroErradasMediaAtv2 = 0;
+var numeroErradasMedianaAtv2 = 0;
+
 var verificacaoAtividade2 = [false, false];
+var valoresAtividade2Media = [];
+var valoresAtividade2Mediana = [];
+var corretasAtividade2Media = [60284.2, 393629.8, 21546.8, 13437.8, 15493.6, 39671, 9633.8, 11838.2];
+var corretasAtividade2Mediana = [69003, 390992, 22090, 14801, 15659, 39679, 6578, 12241];
 
 $(document).ready(function() {
 	hideDivsOnObjectStart();
@@ -848,7 +858,12 @@ $(document).on('click', '#papelSelecaoQuestao2', function() {
 })
 
 $(document).on('click', '#botaoEnviarRespostaAtv1', function() {
-	verificarRespostaAtividade(1);
+	verificarRespostaAtividade();
+})
+
+
+$(document).on('click', '#botaoEnviarRespostaAtv2', function() {
+	verificarRespostaAtividade();
 })
 
 $(document).on('click', '#imgGasNatural', function() {
@@ -1531,15 +1546,65 @@ function loadQuestion() {
 					$("#alertAtividade1").removeClass("alert-success");
 				}
 
-
-
-
 			} else {
 				$("#instrucoesAtividade1").html("");
 			}
 			break;
 
 			case 2:
+
+			if (verificacaoAtividade2[0] == false) {
+				numeroErradasMediaAtv2 = 0;
+				numeroErradasMedianaAtv2 = 0;
+				tiposErradosAtividade2Media = null;
+				tiposErradosAtividade2Mediana = null;
+				getValoresAtv2();
+
+				for (var i = 0; i <= corretasAtividade2Media.length - 1; i++) {
+					if (valoresAtividade2Media[i] == corretasAtividade2Media[i]) {
+					} else {
+						numeroErradasMediaAtv2++;
+						replaceTipoValorErradoMediaAtv2(i+1);
+					}
+				}
+				for (var i = 0; i <= corretasAtividade2Mediana.length - 1; i++) {
+					if (valoresAtividade2Mediana[i] == corretasAtividade2Mediana[i]) {
+					} else {
+						numeroErradasMedianaAtv2++;
+						replaceTipoValorErradoMedianaAtv2(i+1);
+					}
+				}
+
+				if (numeroErradasMediaAtv2 == 0 && numeroErradasMedianaAtv2 == 0) {
+					$("#alertAtividade2").html(dataJSON.atividadeLivro2.msgCorreta);
+					$("#alertAtividade2").show();
+					$("#alertAtividade2").addClass("alert-success");
+					$("#alertAtividade2").removeClass("alert-danger");
+					verificacaoAtividade2[0] = true;
+					atividadesCompletas[1] = true;
+					$("#botaoEnviarRespostaAtv2").hide();
+					updateQuestionAtividadeText();
+					
+					if (verificacaoAtividade2[1] == true) {
+						swal("Parabéns!", "Você finalizou esta atividade!", "success");
+					}
+				} else if (numeroErradasMedianaAtv2 == 0) {
+					$("#alertAtividade2").show();
+					$("#alertAtividade2").html(dataJSON.atividadeLivro2.msgErradaMedia.replace("%tiposErrados%", tiposErradosAtividade2Media));
+					$("#alertAtividade2").addClass("alert-danger");
+					$("#alertAtividade2").removeClass("alert-success");
+				} else if (numeroErradasMediaAtv2 == 0) {
+					$("#alertAtividade2").show();
+					$("#alertAtividade2").html(dataJSON.atividadeLivro2.msgErradaMediana.replace("%tiposErrados%", tiposErradosAtividade2Mediana));
+					$("#alertAtividade2").addClass("alert-danger");
+					$("#alertAtividade2").removeClass("alert-success");
+				} else {
+					$("#alertAtividade2").show();
+					$("#alertAtividade2").html(dataJSON.atividadeLivro2.msgErradaAmbas.replace("%tiposErradosMedia%", tiposErradosAtividade2Media).replace("%tiposErradosMediana%", tiposErradosAtividade2Mediana));
+					$("#alertAtividade2").addClass("alert-danger");
+					$("#alertAtividade2").removeClass("alert-success");
+				}
+			}
 			break;
 		}
 	}
@@ -1746,6 +1811,172 @@ function loadQuestion() {
 			$(this).html(i + 1);
 		});
 	};
+
+
+
+	function getValoresAtv2() {
+		valoresAtividade2Media = [parseFloat($("#inputMediaGeracaoGasNatural").val().replace(',', '.')), 
+		parseFloat($("#inputMediaGeracaoHidreletrica").val().replace(',', '.')), 
+		parseFloat($("#inputMediaGeracaoDerivadosPetroleo").val().replace(',', '.')), 
+		parseFloat($("#inputMediaGeracaoCarvao").val().replace(',', '.')), 
+		parseFloat($("#inputMediaGeracaoNuclear").val().replace(',', '.')), 
+		parseFloat($("#inputMediaGeracaoBiomassa").val().replace(',', '.')), 
+		parseFloat($("#inputMediaGeracaoEolica").val().replace(',', '.')), 
+		parseFloat($("#inputMediaGeracaoOutras").val().replace(',', '.'))]
+
+
+		valoresAtividade2Mediana = [parseFloat($("#inputMedianaGeracaoGasNatural").val().replace(',', '.')), 
+		parseFloat($("#inputMedianaGeracaoHidreletrica").val().replace(',', '.')), 
+		parseFloat($("#inputMedianaGeracaoDerivadosPetroleo").val().replace(',', '.')), 
+		parseFloat($("#inputMedianaGeracaoCarvao").val().replace(',', '.')), 
+		parseFloat($("#inputMedianaGeracaoNuclear").val().replace(',', '.')), 
+		parseFloat($("#inputMedianaGeracaoBiomassa").val().replace(',', '.')), 
+		parseFloat($("#inputMedianaGeracaoEolica").val().replace(',', '.')), 
+		parseFloat($("#inputMedianaGeracaoOutras").val().replace(',', '.'))]
+	}
+
+
+
+	function replaceTipoValorErradoMediaAtv2(tipoErrado) {
+
+		switch (tipoErrado) {
+
+			case 1:
+			if(tiposErradosAtividade2Media == null) {
+				tiposErradosAtividade2Media = "Gás Natural";
+			} else {
+				tiposErradosAtividade2Media = tiposErradosAtividade2Media.concat(", Gás Natural");
+			}
+			break;
+
+			case 2:
+			if(tiposErradosAtividade2Media == null) {
+				tiposErradosAtividade2Media = "Hidrelétrica";
+			} else {
+				tiposErradosAtividade2Media = tiposErradosAtividade2Media.concat(", Hidrelétrica");
+			}
+			break;
+
+			case 3:
+			if(tiposErradosAtividade2Media == null) {
+				tiposErradosAtividade2Media = "Derivados de Petróleo";
+			} else {
+				tiposErradosAtividade2Media = tiposErradosAtividade2Media.concat(", Derivados de Petróleo");
+			}
+			break;
+
+			case 4:
+			if(tiposErradosAtividade2Media == null) {
+				tiposErradosAtividade2Media = "Carvão";
+			} else {
+				tiposErradosAtividade2Media = tiposErradosAtividade2Media.concat(", Carvão");
+			}
+			break;		
+
+			case 5:
+			if(tiposErradosAtividade2Media == null) {
+				tiposErradosAtividade2Media = "Nuclear";
+			} else {
+				tiposErradosAtividade2Media = tiposErradosAtividade2Media.concat(", Nuclear");
+			}
+			break;
+
+			case 6:
+			if(tiposErradosAtividade2Media == null) {
+				tiposErradosAtividade2Media = "Biomassa";
+			} else {
+				tiposErradosAtividade2Media = tiposErradosAtividade2Media.concat(", Biomassa");
+			}
+			break;		
+
+			case 7:
+			if(tiposErradosAtividade2Media == null) {
+				tiposErradosAtividade2Media = "Eólica";
+			} else {
+				tiposErradosAtividade2Media = tiposErradosAtividade2Media.concat(", Eólica");
+			}
+			break;	
+
+			case 8:
+			if(tiposErradosAtividade2Media == null) {
+				tiposErradosAtividade2Media = "Outras";
+			} else {
+				tiposErradosAtividade2Media = tiposErradosAtividade2Media.concat(", Outras");
+			}
+			break;	
+		}
+	}
+
+
+	function replaceTipoValorErradoMedianaAtv2(tipoErrado) {
+
+		switch (tipoErrado) {
+
+			case 1:
+			if(tiposErradosAtividade2Mediana == null) {
+				tiposErradosAtividade2Mediana = "Gás Natural";
+			} else {
+				tiposErradosAtividade2Mediana = tiposErradosAtividade2Mediana.concat(", Gás Natural");
+			}
+			break;
+
+			case 2:
+			if(tiposErradosAtividade2Mediana == null) {
+				tiposErradosAtividade2Mediana = "Hidrelétrica";
+			} else {
+				tiposErradosAtividade2Mediana = tiposErradosAtividade2Mediana.concat(", Hidrelétrica");
+			}
+			break;
+
+			case 3:
+			if(tiposErradosAtividade2Mediana == null) {
+				tiposErradosAtividade2Mediana = "Derivados de Petróleo";
+			} else {
+				tiposErradosAtividade2Mediana = tiposErradosAtividade2Mediana.concat(", Derivados de Petróleo");
+			}
+			break;
+
+			case 4:
+			if(tiposErradosAtividade2Mediana == null) {
+				tiposErradosAtividade2Mediana = "Carvão";
+			} else {
+				tiposErradosAtividade2Mediana = tiposErradosAtividade2Mediana.concat(", Carvão");
+			}
+			break;		
+
+			case 5:
+			if(tiposErradosAtividade2Mediana == null) {
+				tiposErradosAtividade2Mediana = "Nuclear";
+			} else {
+				tiposErradosAtividade2Mediana = tiposErradosAtividade2Mediana.concat(", Nuclear");
+			}
+			break;
+
+			case 6:
+			if(tiposErradosAtividade2Mediana == null) {
+				tiposErradosAtividade2Mediana = "Biomassa";
+			} else {
+				tiposErradosAtividade2Mediana = tiposErradosAtividade2Mediana.concat(", Biomassa");
+			}
+			break;		
+
+			case 7:
+			if(tiposErradosAtividade2Mediana == null) {
+				tiposErradosAtividade2Mediana = "Eólica";
+			} else {
+				tiposErradosAtividade2Mediana = tiposErradosAtividade2Mediana.concat(", Eólica");
+			}
+			break;	
+
+			case 8:
+			if(tiposErradosAtividade2Mediana == null) {
+				tiposErradosAtividade2Mediana = "Outras";
+			} else {
+				tiposErradosAtividade2Mediana = tiposErradosAtividade2Mediana.concat(", Outras");
+			}
+			break;	
+		}
+	}
 
 
 	function popOutGraph() {
