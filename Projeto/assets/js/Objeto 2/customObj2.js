@@ -53,7 +53,10 @@ var valoresAtividade2Mediana = [];
 var corretasAtividade2Media = [60284.2, 393629.8, 21546.8, 13437.8, 15493.6, 39671, 9633.8, 11838.2];
 var corretasAtividade2Mediana = [69003, 390992, 22090, 14801, 15659, 39679, 6578, 12241];
 
-
+var numeroErradasMediaAtv3 = 0;
+var numeroErradasMedianaAtv3 = 0;
+var mesesErradosAtividade3Media;
+var mesesErradosAtividade3Mediana;
 var verificacaoAtividade3 = [false, false, false, false];
 
 $(document).ready(function() {
@@ -1651,6 +1654,16 @@ function loadQuestion() {
 				}
 			}
 			break;
+
+
+			case 3:
+			if (verificacaoAtividade3[0] == false) {
+				numeroErradasMediaAtv3 = 0;
+				numeroErradasMedianaAtv3 = 0;
+				mesesErradosAtividade3Media = null;
+				mesesErradosAtividade3Mediana = null;
+				getValoresAtv3;
+			}
 		}
 	}
 
@@ -1860,6 +1873,23 @@ function loadQuestion() {
 
 
 	function getValoresAtv2() {
+		valoresAtividade3Media = [accounting.unformat(parseFloat($("#inputMediaNorte").val().replace(',', '.').replace(/ /g, ""))), 
+		accounting.unformat(parseFloat($("#inputMediaNordeste").val().replace(',', '.').replace(/ /g, ""))), 
+		accounting.unformat(parseFloat($("#inputMediaSudeste").val().replace(',', '.').replace(/ /g, ""))), 
+		accounting.unformat(parseFloat($("#inputMediaSul").val().replace(',', '.').replace(/ /g, ""))), 
+		accounting.unformat(parseFloat($("#inputMediaCentroOeste").val().replace(',', '.').replace(/ /g, "")))
+		]
+
+
+		valoresAtividade3Mediana = [accounting.unformat(parseFloat($("#inputMedianaNorte").val().replace(',', '.').replace(/ /g, ""))), 
+		accounting.unformat(parseFloat($("#inputMedianaNordeste").val().replace(',', '.').replace(/ /g, ""))), 
+		accounting.unformat(parseFloat($("#inputMedianaSudeste").val().replace(',', '.').replace(/ /g, ""))), 
+		accounting.unformat(parseFloat($("#inputMedianaSul").val().replace(',', '.').replace(/ /g, ""))), 
+		accounting.unformat(parseFloat($("#inputMedianaCentroOeste").val().replace(',', '.').replace(/ /g, "")))
+		]
+	}
+
+	function getValoresAtv3() {
 		valoresAtividade2Media = [parseFloat($("#inputMediaGeracaoGasNatural").val().replace(',', '.')), 
 		parseFloat($("#inputMediaGeracaoHidreletrica").val().replace(',', '.')), 
 		parseFloat($("#inputMediaGeracaoDerivadosPetroleo").val().replace(',', '.')), 
@@ -1879,7 +1909,6 @@ function loadQuestion() {
 		parseFloat($("#inputMedianaGeracaoEolica").val().replace(',', '.')), 
 		parseFloat($("#inputMedianaGeracaoOutras").val().replace(',', '.'))]
 	}
-
 
 
 	function replaceTipoValorErradoMediaAtv2(tipoErrado) {
