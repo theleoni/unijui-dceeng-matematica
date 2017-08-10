@@ -55,8 +55,10 @@ var corretasAtividade2Mediana = [69003, 390992, 22090, 14801, 15659, 39679, 6578
 
 var numeroErradasMediaAtv3 = 0;
 var numeroErradasMedianaAtv3 = 0;
-var mesesErradosAtividade3Media;
-var mesesErradosAtividade3Mediana;
+var regioesErradasAtividade3Media;
+var regioesErradasAtividade3Mediana;
+var corretasAtividade3Media = [29846297.25, 76991052.75, 237258952.50, 79292897.50, 31514657];
+var corretasAtividade3Mediana = [29622217, 77652145.50, 237671021.50, 78941649.50, 31736588.50];
 var verificacaoAtividade3 = [false, false, false, false];
 
 $(document).ready(function() {
@@ -111,7 +113,7 @@ function hideDivsOnObjectStart() {
 	$("#atividade1").hide();
 	$("#atividade2").hide();
 	$("#atividade3").hide();
-
+	$("#perguntasAtividade3").hide();
 	hideIconsNome();
 }
 
@@ -876,6 +878,10 @@ $(document).on('click', '#botaoEnviarRespostaAtv1', function() {
 
 
 $(document).on('click', '#botaoEnviarRespostaAtv2', function() {
+	verificarRespostaAtividade();
+})
+
+$(document).on('click', '#botaoEnviarRespostaAtv3', function() {
 	verificarRespostaAtividade();
 })
 
@@ -1660,12 +1666,56 @@ function loadQuestion() {
 			if (verificacaoAtividade3[0] == false) {
 				numeroErradasMediaAtv3 = 0;
 				numeroErradasMedianaAtv3 = 0;
-				mesesErradosAtividade3Media = null;
-				mesesErradosAtividade3Mediana = null;
-				getValoresAtv3;
+				regioesErradasAtividade3Media = null;
+				regioesErradasAtividade3Mediana = null;
+				getValoresAtv3();
+
+				for (var i = 0; i <= corretasAtividade3Media.length - 1; i++) {
+					if (valoresAtividade3Media[i] == corretasAtividade3Media[i]) {
+					} else {
+						numeroErradasMediaAtv3++;
+						replaceRegiaoValorErradoMediaAtv3(i+1);
+					}
+				}
+
+				for (var i = 0; i <= corretasAtividade3Mediana.length - 1; i++){
+					if (valoresAtividade3Mediana[i] == corretasAtividade3Mediana[i]) {
+					} else {
+						numeroErradasMedianaAtv3++;
+						replaceRegiaoValorErradoMedianaAtv3(i+1);
+					}
+				}
+
+				if (numeroErradasMediaAtv3 == 0 && numeroErradasMedianaAtv3 == 0) {
+					$("#alertAtividade3").html(dataJSON.atividadeLivro2.msgCorreta);
+					$("#alertAtividade3").show();
+					$("#alertAtividade3").addClass("alert-success");
+					$("#alertAtividade3").removeClass("alert-danger");
+					verificacaoAtividade3[0] = true;
+					updateQuestionAtividadeText();
+					fixarValoresAtv3();
+				} else if (numeroErradasMedianaAtv3 == 0) {
+					$("#alertAtividade3").show();
+					$("#alertAtividade3").html(dataJSON.atividadeLivro3.msgErradaMedia.replace("%tiposErrados%", regioesErradasAtividade3Media));
+					$("#alertAtividade3").addClass("alert-danger");
+					$("#alertAtividade3").removeClass("alert-success");
+				} else if (numeroErradasMediaAtv3 == 0) {
+					$("#alertAtividade3").show();
+					$("#alertAtividade3").html(dataJSON.atividadeLivro3.msgErradaMediana.replace("%tiposErrados%", regioesErradasAtividade3Mediana));
+					$("#alertAtividade3").addClass("alert-danger");
+					$("#alertAtividade3").removeClass("alert-success");
+				} else {
+					$("#alertAtividade3").show();
+					$("#alertAtividade3").html(dataJSON.atividadeLivro3.msgErradaAmbas.replace("%tiposErradosMedia%", regioesErradasAtividade3Media).replace("%tiposErradosMediana%", regioesErradasAtividade3Mediana));
+					$("#alertAtividade3").addClass("alert-danger");
+					
+				}
+			} else if (verificacaoAtividade3[1] == false) {
+
 			}
 		}
 	}
+
 
 	function replaceMesValorErradoAtv1(mesErrado) {
 
@@ -1830,6 +1880,7 @@ function loadQuestion() {
 		$("#tableMedianaDezembro").html(corretasAtividade1Mediana[11]);
 	}
 
+
 	function getCurrentOrdenationAtv1() {
 		ordenacaoAtualAtividade1 = [$("#indexJaneiro").html(),
 		$("#indexFevereiro").html(),
@@ -1870,26 +1921,7 @@ function loadQuestion() {
 		});
 	};
 
-
-
 	function getValoresAtv2() {
-		valoresAtividade3Media = [accounting.unformat(parseFloat($("#inputMediaNorte").val().replace(',', '.').replace(/ /g, ""))), 
-		accounting.unformat(parseFloat($("#inputMediaNordeste").val().replace(',', '.').replace(/ /g, ""))), 
-		accounting.unformat(parseFloat($("#inputMediaSudeste").val().replace(',', '.').replace(/ /g, ""))), 
-		accounting.unformat(parseFloat($("#inputMediaSul").val().replace(',', '.').replace(/ /g, ""))), 
-		accounting.unformat(parseFloat($("#inputMediaCentroOeste").val().replace(',', '.').replace(/ /g, "")))
-		]
-
-
-		valoresAtividade3Mediana = [accounting.unformat(parseFloat($("#inputMedianaNorte").val().replace(',', '.').replace(/ /g, ""))), 
-		accounting.unformat(parseFloat($("#inputMedianaNordeste").val().replace(',', '.').replace(/ /g, ""))), 
-		accounting.unformat(parseFloat($("#inputMedianaSudeste").val().replace(',', '.').replace(/ /g, ""))), 
-		accounting.unformat(parseFloat($("#inputMedianaSul").val().replace(',', '.').replace(/ /g, ""))), 
-		accounting.unformat(parseFloat($("#inputMedianaCentroOeste").val().replace(',', '.').replace(/ /g, "")))
-		]
-	}
-
-	function getValoresAtv3() {
 		valoresAtividade2Media = [parseFloat($("#inputMediaGeracaoGasNatural").val().replace(',', '.')), 
 		parseFloat($("#inputMediaGeracaoHidreletrica").val().replace(',', '.')), 
 		parseFloat($("#inputMediaGeracaoDerivadosPetroleo").val().replace(',', '.')), 
@@ -1909,6 +1941,26 @@ function loadQuestion() {
 		parseFloat($("#inputMedianaGeracaoEolica").val().replace(',', '.')), 
 		parseFloat($("#inputMedianaGeracaoOutras").val().replace(',', '.'))]
 	}
+
+
+	function getValoresAtv3() {
+		valoresAtividade3Media = [accounting.unformat(parseFloat($("#inputMediaNorte").val().replace(',', '.').replace(/ /g, ""))), 
+		accounting.unformat(parseFloat($("#inputMediaNordeste").val().replace(',', '.').replace(/ /g, ""))), 
+		accounting.unformat(parseFloat($("#inputMediaSudeste").val().replace(',', '.').replace(/ /g, ""))), 
+		accounting.unformat(parseFloat($("#inputMediaSul").val().replace(',', '.').replace(/ /g, ""))), 
+		accounting.unformat(parseFloat($("#inputMediaCentroOeste").val().replace(',', '.').replace(/ /g, "")))
+		]
+
+
+		valoresAtividade3Mediana = [accounting.unformat(parseFloat($("#inputMedianaNorte").val().replace(',', '.').replace(/ /g, ""))), 
+		accounting.unformat(parseFloat($("#inputMedianaNordeste").val().replace(',', '.').replace(/ /g, ""))), 
+		accounting.unformat(parseFloat($("#inputMedianaSudeste").val().replace(',', '.').replace(/ /g, ""))), 
+		accounting.unformat(parseFloat($("#inputMedianaSul").val().replace(',', '.').replace(/ /g, ""))), 
+		accounting.unformat(parseFloat($("#inputMedianaCentroOeste").val().replace(',', '.').replace(/ /g, "")))
+		]
+	}
+
+
 
 
 	function replaceTipoValorErradoMediaAtv2(tipoErrado) {
@@ -2050,6 +2102,114 @@ function loadQuestion() {
 			}
 			break;	
 		}
+	}
+
+
+	function replaceRegiaoValorErradoMediaAtv3(tipoErrado) {
+
+		switch (tipoErrado) {
+
+			case 1:
+			if(regioesErradasAtividade3Media == null) {
+				regioesErradasAtividade3Media = "Norte";
+			} else {
+				regioesErradasAtividade3Media = regioesErradasAtividade3Media.concat(", Norte");
+			}
+			break;
+
+			case 2:
+			if(regioesErradasAtividade3Media == null) {
+				regioesErradasAtividade3Media = "Nordeste";
+			} else {
+				regioesErradasAtividade3Media = regioesErradasAtividade3Media.concat(", Nordeste");
+			}
+			break;
+
+			case 3:
+			if(regioesErradasAtividade3Media == null) {
+				regioesErradasAtividade3Media = "Sudeste";
+			} else {
+				regioesErradasAtividade3Media = regioesErradasAtividade3Media.concat(", Sudeste");
+			}
+			break;
+
+			case 4:
+			if(regioesErradasAtividade3Media == null) {
+				regioesErradasAtividade3Media = "Sul";
+			} else {
+				regioesErradasAtividade3Media = regioesErradasAtividade3Media.concat(", Sul");
+			}
+			break;		
+
+			case 5:
+			if(regioesErradasAtividade3Media == null) {
+				regioesErradasAtividade3Media = "Centro-Oeste";
+			} else {
+				regioesErradasAtividade3Media = regioesErradasAtividade3Media.concat(", Centro-Oeste");
+			}
+			break;
+		}
+	}
+
+
+	function replaceRegiaoValorErradoMedianaAtv3(tipoErrado) {
+
+		switch (tipoErrado) {
+
+			case 1:
+			if(regioesErradasAtividade3Mediana == null) {
+				regioesErradasAtividade3Mediana = "Norte";
+			} else {
+				regioesErradasAtividade3Mediana = regioesErradasAtividade3Mediana.concat(", Norte");
+			}
+			break;
+
+			case 2:
+			if(regioesErradasAtividade3Mediana == null) {
+				regioesErradasAtividade3Mediana = "Nordeste";
+			} else {
+				regioesErradasAtividade3Mediana = regioesErradasAtividade3Mediana.concat(", Nordeste");
+			}
+			break;
+
+			case 3:
+			if(regioesErradasAtividade3Mediana == null) {
+				regioesErradasAtividade3Mediana = "Sudeste";
+			} else {
+				regioesErradasAtividade3Mediana = regioesErradasAtividade3Mediana.concat(", Sudeste");
+			}
+			break;
+
+			case 4:
+			if(regioesErradasAtividade3Mediana == null) {
+				regioesErradasAtividade3Mediana = "Sul";
+			} else {
+				regioesErradasAtividade3Mediana = regioesErradasAtividade3Mediana.concat(", Sul");
+			}
+			break;		
+
+			case 5:
+			if(regioesErradasAtividade3Mediana == null) {
+				regioesErradasAtividade3Mediana = "Centro-Oeste";
+			} else {
+				regioesErradasAtividade3Mediana = regioesErradasAtividade3Mediana.concat(", Centro-Oeste");
+			}
+			break;
+		}
+	}
+
+
+	function fixarValoresAtv3() {
+		$("#inputMediaNorte").html(corretasAtividade3Media[0]);
+		$("#inputMediaNordeste").html(corretasAtividade3Media[1]);
+		$("#inputMediaSudeste").html(corretasAtividade3Media[2]);
+		$("#inputMediaSul").html(corretasAtividade3Media[3]);
+		$("#inputMediaCentroOeste").html(corretasAtividade3Media[4]);
+		$("#inputMedianaNorte").html(corretasAtividade3Mediana[0]);
+		$("#inputMedianaNordeste").html(corretasAtividade3Mediana[1]);
+		$("#inputMedianaSudeste").html(corretasAtividade3Mediana[2]);
+		$("#inputMedianaSul").html(corretasAtividade3Mediana[3]);
+		$("#inputMedianaCentroOeste").html(corretasAtividade3Mediana[4]);
 	}
 
 

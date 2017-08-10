@@ -73,7 +73,7 @@
 		"msgCorreta": "<center>Resposta correta!</center>",
 		"msgErradaMedia": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente a(s) seguinte(s) resposta(s) da Media: %tiposErrados%</center>",
 		"msgErradaMediana": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente a(s) seguinte(s) resposta(s) da Mediana: %tiposErrados%</center>",
-		"msgErradaAmbas": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente a(s) seguinte(s) resposta(s): <br>Media: %tiposErradosMedia%</center><br>Mediana: %tiposErradosMediana%"
+		"msgErradaAmbas": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente a(s) seguinte(s) resposta(s): <br>Media: %tiposErradosMedia%<br>Mediana: %tiposErradosMediana%</center>"
 
 	},
 	"graficos": {
@@ -89,5 +89,11 @@
 
 	"telaAtividade3": {
 		"atv1": "Preencha os valores da média e mediana de acordo com os dados apresentados na tabela."
+	},
+	"atividadeLivro3": {
+		"msgCorreta": "<center>Resposta correta!</center>",
+		"msgErradaMedia": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente a(s) seguinte(s) resposta(s) da Media: %tiposErrados%</center>",
+		"msgErradaMediana": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente a(s) seguinte(s) resposta(s) da Mediana: %tiposErrados%</center>",
+		"msgErradaAmbas": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente a(s) seguinte(s) resposta(s): <br>Media: %tiposErradosMedia%<br>Mediana: %tiposErradosMediana%</center>"
 	}
 }
