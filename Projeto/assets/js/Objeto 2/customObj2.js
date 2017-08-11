@@ -765,7 +765,7 @@ function showCalc() {
 		},
 		focus: function(event, ui) {
 			$(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
-		}
+		},
 		height: 600,
 		width: 336
 	});
