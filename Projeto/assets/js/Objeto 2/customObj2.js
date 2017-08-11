@@ -763,6 +763,9 @@ function showCalc() {
 		open: function(event, ui) {
 			$(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
 		},
+		focus: function(event, ui) {
+			$(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+		}
 		height: 600,
 		width: 336
 	});
@@ -2218,7 +2221,13 @@ function loadQuestion() {
 		$("#containerGeralGraficos").dialog({
 			closeOnEscape: false,
 			height: 600,
-			width: 800
+			width: 800,
+			open: function(event, ui) {
+				$(".ui-dialog-titlebar-close", ui.dialog | ui).show();
+			},
+			focus: function(event, ui) {
+				$(".ui-dialog-titlebar-close", ui.dialog | ui).show();
+			}
 		});;
 	}
 
