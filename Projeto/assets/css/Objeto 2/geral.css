@@ -20,8 +20,21 @@ body {
 	float: left;
 }
 
+.col-xs-15 {
+	width: 12%;
+	float: left;
+}
+
 .mLeft23 {
 	margin-left: 23%;
+}
+
+.mLeft29 {
+	margin-left: 29%;
+}
+
+.mLeft025 {
+	margin-left: 0.25%;
 }
 #geral {
 	overflow: hidden;

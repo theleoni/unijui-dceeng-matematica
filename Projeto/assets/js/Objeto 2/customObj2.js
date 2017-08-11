@@ -60,7 +60,9 @@ var regioesErradasAtividade3Mediana;
 var corretasAtividade3Media = [29846297.25, 76991052.75, 237258952.50, 79292897.50, 31514657];
 var corretasAtividade3Mediana = [29622217, 77652145.50, 237671021.50, 78941649.50, 31736588.50];
 var verificacaoAtividade3 = [false, false, false, false];
-
+var corretasAtividade3Questao1 = [];
+var marcadasAtividade3Questao1 = ["buttonAlternativa2Atv3", "buttonAlternativa3Atv3", "buttonAlternativa5Atv3"];
+var erradoAtividade3Questao1 = false;
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 });
@@ -952,6 +954,17 @@ $(document).on('click', '#imgOutras', function() {
 	popOutGraph();
 })
 
+$(document).on('click', '.botaoAlternativasAtv3', function() {
+	$(this).toggleClass("btn-primary");
+	if (marcadasAtividade3Questao1.includes($(this).attr("id"))) {
+		marcadasAtividade3Questao1 = marcadasAtividade3Questao1.filter(item => item !== $(this).attr("id"));
+	} else {
+		marcadasAtividade3Questao1.push($(this).attr("id"));
+	}
+
+})
+
+
 $(document).on('click', '.iconSetaVoltarAtividades', function() {
 	unloadQuestionAtividade();
 })
@@ -1424,6 +1437,9 @@ function loadQuestion() {
 			case 3:
 			if (verificacaoAtividade3[0] == false) {
 				$("#instrucoesAtividade3").html(dataJSON.telaAtividade3.atv1);
+			} else if (verificacaoAtividade3[1] == false) {
+				$("#instrucoesAtividade3").html(dataJSON.telaAtividade3.atv2);
+
 			}
 		}
 	}
@@ -1697,6 +1713,7 @@ function loadQuestion() {
 					verificacaoAtividade3[0] = true;
 					updateQuestionAtividadeText();
 					fixarValoresAtv3();
+					$("#perguntasAtividade3").show();
 				} else if (numeroErradasMedianaAtv3 == 0) {
 					$("#alertAtividade3").show();
 					$("#alertAtividade3").html(dataJSON.atividadeLivro3.msgErradaMedia.replace("%tiposErrados%", regioesErradasAtividade3Media));
@@ -1714,8 +1731,29 @@ function loadQuestion() {
 					
 				}
 			} else if (verificacaoAtividade3[1] == false) {
+				erradoAtividade3Questao1 = false;
 
+				for(var i = 0; i >= corretasAtividade3Questao1.length; i++) {
+					if (marcadasAtividade3Questao1.includes(corretasAtividade3Questao1[i])) {
+						console.log(1);
+					} else {
+						erradoAtividade3Questao1 = true;
+						console.log(2);
+					}
+				}
+				for(var i = 0; i >= marcadasAtividade3Questao1.length; i++) {
+					if (corretasAtividade3Questao1.includes(marcadasAtividade3Questao1[i])) {
+						console.log(3);
+					} else {
+						erradoAtividade3Questao1 = true;
+						console.log(4);
+					}
+				}
+				if (erradoAtividade3Questao1 == false) {
+					console.log("Correto");
+				}
 			}
+			break;
 		}
 	}
 
@@ -2203,16 +2241,16 @@ function loadQuestion() {
 
 
 	function fixarValoresAtv3() {
-		$("#inputMediaNorte").html(corretasAtividade3Media[0]);
-		$("#inputMediaNordeste").html(corretasAtividade3Media[1]);
-		$("#inputMediaSudeste").html(corretasAtividade3Media[2]);
-		$("#inputMediaSul").html(corretasAtividade3Media[3]);
-		$("#inputMediaCentroOeste").html(corretasAtividade3Media[4]);
-		$("#inputMedianaNorte").html(corretasAtividade3Mediana[0]);
-		$("#inputMedianaNordeste").html(corretasAtividade3Mediana[1]);
-		$("#inputMedianaSudeste").html(corretasAtividade3Mediana[2]);
-		$("#inputMedianaSul").html(corretasAtividade3Mediana[3]);
-		$("#inputMedianaCentroOeste").html(corretasAtividade3Mediana[4]);
+		$("#tdInputMediaNorte").html(corretasAtividade3Media[0]);
+		$("#tdInputMediaNordeste").html(corretasAtividade3Media[1]);
+		$("#tdInputMediaSudeste").html(corretasAtividade3Media[2]);
+		$("#tdInputMediaSul").html(corretasAtividade3Media[3]);
+		$("#tdInputMediaCentroOeste").html(corretasAtividade3Media[4]);
+		$("#tdInputMedianaNorte").html(corretasAtividade3Mediana[0]);
+		$("#tdInputMedianaNordeste").html(corretasAtividade3Mediana[1]);
+		$("#tdInputMedianaSudeste").html(corretasAtividade3Mediana[2]);
+		$("#tdInputMedianaSul").html(corretasAtividade3Mediana[3]);
+		$("#tdInputMedianaCentroOeste").html(corretasAtividade3Mediana[4]);
 	}
 
 
