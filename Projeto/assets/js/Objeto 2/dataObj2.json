@@ -88,12 +88,18 @@
 	},
 
 	"telaAtividade3": {
-		"atv1": "Preencha os valores da média e mediana de acordo com os dados apresentados na tabela."
+		"atv1": "Preencha os valores da média e mediana de acordo com os dados apresentados na tabela.",
+		"atv2": "Em quais regiões a mediana é superior à média?",
+		"atv3": "Em quais regiões a média é superior à mediana?",
+		"atv4": "Calcule a diferença entre a média e mediana para cada uma das regiões (Média - Mediana)",
+		"finalizada": "Parabéns! Você finalizou esta atividade. Retorne para a tela de seleção para realizar as demais atividades"
+
 	},
 	"atividadeLivro3": {
 		"msgCorreta": "<center>Resposta correta!</center>",
 		"msgErradaMedia": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente a(s) seguinte(s) resposta(s) da Media: %tiposErrados%</center>",
 		"msgErradaMediana": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente a(s) seguinte(s) resposta(s) da Mediana: %tiposErrados%</center>",
-		"msgErradaAmbas": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente a(s) seguinte(s) resposta(s): <br>Media: %tiposErradosMedia%<br>Mediana: %tiposErradosMediana%</center>"
+		"msgErradaAmbas": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente a(s) seguinte(s) resposta(s): <br>Media: %tiposErradosMedia%<br>Mediana: %tiposErradosMediana%</center>",
+		"msgErradaGeral": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente as alternativas selecionadas</center>"
 	}
 }
