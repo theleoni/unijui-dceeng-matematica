@@ -1911,7 +1911,7 @@ function loadQuestion() {
 				$("#alertAtividade4").removeClass("alert-danger");
 				$("#alertAtividade4").fadeOut(5000);
 				updateQuestionAtividadeText();
-				$("#botaoEnviarRespostaAtv3").hide();
+				$("#botaoEnviarRespostaAtv4").hide();
 				atividadesCompletas[3] = true;
 				swal("Parabéns!", "Você finalizou esta atividade!", "success");
 				$("#atv4InputModa").prop('disabled','true');
