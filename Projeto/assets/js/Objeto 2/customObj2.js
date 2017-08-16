@@ -2049,19 +2049,19 @@ function loadQuestion() {
 
 
 	function getValoresAtv3() {
-		valoresAtividade3Media = [accounting.unformat(parseFloat($("#inputMediaNorte").val().replace(",","."))), 
-		accounting.unformat(parseFloat($("#inputMediaNordeste").val().replace(',', '.'))), 
-		accounting.unformat(parseFloat($("#inputMediaSudeste").val().replace(',', '.'))), 
-		accounting.unformat(parseFloat($("#inputMediaSul").val().replace(',', '.'))), 
-		accounting.unformat(parseFloat($("#inputMediaCentroOeste").val().replace(',', '.')))
+		valoresAtividade3Media = [parseFloat($("#inputMediaNorte").val().replace(",",".")), 
+		parseFloat($("#inputMediaNordeste").val().replace(',', '.')), 
+		parseFloat($("#inputMediaSudeste").val().replace(',', '.')), 
+		parseFloat($("#inputMediaSul").val().replace(',', '.')), 
+		parseFloat($("#inputMediaCentroOeste").val().replace(',', '.'))
 		]
 
 
-		valoresAtividade3Mediana = [accounting.unformat(parseFloat($("#inputMedianaNorte").val().replace(',', '.'))), 
-		accounting.unformat(parseFloat($("#inputMedianaNordeste").val().replace(',', '.'))), 
-		accounting.unformat(parseFloat($("#inputMedianaSudeste").val().replace(',', '.'))), 
-		accounting.unformat(parseFloat($("#inputMedianaSul").val().replace(',', '.'))), 
-		accounting.unformat(parseFloat($("#inputMedianaCentroOeste").val().replace(',', '.')))
+		valoresAtividade3Mediana = [parseFloat($("#inputMedianaNorte").val().replace(',', '.')), 
+		parseFloat($("#inputMedianaNordeste").val().replace(',', '.')), 
+		parseFloat($("#inputMedianaSudeste").val().replace(',', '.')), 
+		parseFloat($("#inputMedianaSul").val().replace(',', '.')), 
+		parseFloat($("#inputMedianaCentroOeste").val().replace(',', '.'))
 		]
 	}
 
