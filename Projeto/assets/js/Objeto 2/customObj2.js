@@ -67,6 +67,7 @@ var marcadasAtividade3Questao1 = [];
 var marcadasAtividade3Questao2 = [];
 var erradoAtividade3Questao1 = false;
 var erradoAtividade3Questao2 = false;
+var erradoAtividade3Questao3 = false;
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 });
@@ -1819,7 +1820,65 @@ function loadQuestion() {
 					$("#alertAtividade3").removeClass("alert-success");
 				}
 			} else if (verificacaoAtividade3[3] == false) {
-				var i = 0;
+				erradoAtividade3Questao3 = false;
+
+				if (parseFloat($("#atv3DiferencaNorte").val().replace(",",".")) == corretasAtividade3Questao3[0]) {
+					$("#atv3DiferencaNorte").css('background-color', '');
+				} else {
+					erradoAtividade3Questao3 = true;
+					$("#atv3DiferencaNorte").css('background-color', 'red');
+				}
+
+
+				if (parseFloat($("#atv3DiferencaNordeste").val().replace(",", ".")) == corretasAtividade3Questao3[1]) {
+					$("#atv3DiferencaNordeste").css('background-color', '');
+				} else {
+					erradoAtividade3Questao3 = true;
+					$("#atv3DiferencaNordeste").css('background-color', 'red');
+				}
+
+
+				if (parseFloat($("#atv3DiferencaSudeste").val().replace(",", ".")) == corretasAtividade3Questao3[2]) {
+					$("#atv3DiferencaSudeste").css('background-color', '');
+				} else {
+					erradoAtividade3Questao3 = true;
+					$("#atv3DiferencaSudeste").css('background-color', 'red');
+				}
+
+
+
+				if (parseFloat($("#atv3DiferencaSul").val().replace(",", ".")) == corretasAtividade3Questao3[3]) {
+					$("#atv3DiferencaSul").css('background-color', '');
+				} else {
+					erradoAtividade3Questao3 = true;
+					$("#atv3DiferencaSul").css('background-color', 'red');
+				}
+
+
+
+				if (parseFloat($("#atv3DiferencaCentroOeste").val().replace(",", ".")) == corretasAtividade3Questao3[4]) {
+					$("#atv3DiferencaCentroOeste").css('background-color', '');
+				} else {
+					erradoAtividade3Questao3 = true;
+					$("#atv3DiferencaCentroOeste").css('background-color', 'red');
+				}
+
+				if (erradoAtividade3Questao3 == false) {
+					$("#alertAtividade3").html(dataJSON.atividadeLivro3.msgCorreta);
+					$("#alertAtividade3").show();
+					$("#alertAtividade3").addClass("alert-success");
+					$("#alertAtividade3").removeClass("alert-danger");
+					$("#alertAtividade3").fadeOut(5000);
+					verificacaoAtividade3[3] = true;
+					updateQuestionAtividadeText();
+					$("#formAtividade3").children().children().children().each(function() {
+						$(this).prop('disabled', 'true'); 
+					});
+					$("#botaoEnviarRespostaAtv3").hide();
+					atividadesCompletas[2] = true;
+					swal("Parabéns!", "Você finalizou esta atividade!", "success");
+					
+				}
 				
 			}
 			break;
