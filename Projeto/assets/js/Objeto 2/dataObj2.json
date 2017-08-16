@@ -101,5 +101,14 @@
 		"msgErradaMediana": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente a(s) seguinte(s) resposta(s) da Mediana: %tiposErrados%</center>",
 		"msgErradaAmbas": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente a(s) seguinte(s) resposta(s): <br>Media: %tiposErradosMedia%<br>Mediana: %tiposErradosMediana%</center>",
 		"msgErradaGeral": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente as alternativas selecionadas</center>"
+	},
+	"telaAtividade4": {
+		"atv1": "Calcule a média e a mediana dos seguintes dados",
+		"finalizada": "Parabéns! Você finalizou esta atividade. Retorne para a tela de seleção para realizar as demais atividades"
+
+	},
+	"atividadeLivro4": {
+		"msgCorreta": "<center>Resposta correta!</center>",
+		"msgErradaGeral": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente as alternativas selecionadas</center>"
 	}
 }

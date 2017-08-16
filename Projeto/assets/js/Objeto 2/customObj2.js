@@ -65,6 +65,11 @@ var marcadasAtividade3Questao2 = [];
 var erradoAtividade3Questao1 = false;
 var erradoAtividade3Questao2 = false;
 var erradoAtividade3Questao3 = false;
+
+var errouAtividade4 = false;
+var corretasAtividade4 = [12,12];
+var verificacaoAtividade4 = false;
+
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 });
@@ -117,6 +122,8 @@ function hideDivsOnObjectStart() {
 	$("#atividade1").hide();
 	$("#atividade2").hide();
 	$("#atividade3").hide();
+	$("#atividade4").hide();
+
 	$("#perguntasAtividade3").hide();
 	$("#formAtividade3").hide();		
 	$("#divQuestaoAtividade3").hide();
@@ -884,6 +891,11 @@ $(document).on('click', '#papelSelecaoQuestao3', function() {
 	loadQuestionAtividade();
 })
 
+$(document).on('click', '#papelSelecaoQuestao4', function() {
+	atividadeAtual = 4;
+	loadQuestionAtividade();
+})
+
 $(document).on('click', '#botaoEnviarRespostaAtv1', function() {
 	verificarRespostaAtividade();
 })
@@ -894,6 +906,10 @@ $(document).on('click', '#botaoEnviarRespostaAtv2', function() {
 })
 
 $(document).on('click', '#botaoEnviarRespostaAtv3', function() {
+	verificarRespostaAtividade();
+})
+
+$(document).on('click', '#botaoEnviarRespostaAtv4', function() {
 	verificarRespostaAtividade();
 })
 
@@ -1444,7 +1460,7 @@ function loadQuestion() {
 			} else {
 				$("#instrucoesAtividade2").html(dataJSON.telaAtividade2.finalizada);
 			}
-			break
+			break;
 
 			case 3:
 			if (verificacaoAtividade3[0] == false) {
@@ -1460,8 +1476,16 @@ function loadQuestion() {
 			} else {
 				$("#instrucoesAtividade3").html(dataJSON.telaAtividade3.finalizada);
 				$("#questaoAtividade3").html();
+			}
+			break;
+			case 4: 
+			if (verificacaoAtividade4 == false) {
+				$("#instrucoesAtividade4").html(dataJSON.telaAtividade4.atv1);
+			} else {
+				$("#instrucoesAtividade4").html(dataJSON.telaAtividade4.finalizada);
 
 			}
+			break;
 		}
 	}
 
@@ -1488,6 +1512,14 @@ function loadQuestion() {
 			case 3:
 			$("#atividade3").show()
 			$("#alertAtividade3").hide();
+			$("body").css("overflow", "auto");
+			hideArrows();
+			updateQuestionAtividadeText();
+			break;
+
+			case 4:
+			$("#atividade4").show()
+			$("#alertAtividade4").hide();
 			$("body").css("overflow", "auto");
 			hideArrows();
 			updateQuestionAtividadeText();
@@ -1540,6 +1572,13 @@ function loadQuestion() {
 
 			case 3:
 			$("#atividade3").hide()
+			$("body").css("overflow", "hidden");
+			window.scrollTo(0,0);
+			$("#telaSelecaoQuestoes").show();
+			break;
+
+			case 4:
+			$("#atividade4").hide()
 			$("body").css("overflow", "hidden");
 			window.scrollTo(0,0);
 			$("#telaSelecaoQuestoes").show();
@@ -1844,9 +1883,45 @@ function loadQuestion() {
 					$("#botaoEnviarRespostaAtv3").hide();
 					atividadesCompletas[2] = true;
 					swal("Parabéns!", "Você finalizou esta atividade!", "success");
-					
 				}
 				
+			}
+			break;
+
+			case 4:
+			errouAtividade4 = false;
+			if ($("#atv4InputModa").val() == corretasAtividade4[0]) {
+				$("#atv4InputModa").css('background-color', '');
+			} else {
+				errouAtividade4 = true;
+				$("#atv4InputModa").css('background-color', 'red');
+			}
+
+			if ($("#atv4InputMediana").val() == corretasAtividade4[0]) {
+				$("#atv4InputMediana").css('background-color', '');
+			} else {
+				errouAtividade4 = true;
+				$("#atv4InputMediana").css('background-color', 'red');
+			}
+
+			if (errouAtividade4 == false) {
+				$("#alertAtividade4").html(dataJSON.atividadeLivro4.msgCorreta);
+				$("#alertAtividade4").show();
+				$("#alertAtividade4").addClass("alert-success");
+				$("#alertAtividade4").removeClass("alert-danger");
+				$("#alertAtividade4").fadeOut(5000);
+				updateQuestionAtividadeText();
+				$("#botaoEnviarRespostaAtv3").hide();
+				atividadesCompletas[3] = true;
+				swal("Parabéns!", "Você finalizou esta atividade!", "success");
+				$("#atv4InputModa").prop('disabled','true');
+				$("#atv4InputMediana").prop('disabled','true');
+
+			} else {
+				$("#alertAtividade4").show();
+				$("#alertAtividade4").html(dataJSON.atividadeLivro4.msgErradaGeral);
+				$("#alertAtividade4").addClass("alert-danger");
+				$("#alertAtividade4").removeClass("alert-success");
 			}
 			break;
 		}
