@@ -29,16 +29,13 @@ var correctAnswers = [false, false];
 
 var atividadeAtual = 0;
 var atividadesCompletas = [false, false, false, false];
-var verificacaoAtividade1 = [false, false, false];
+var verificacaoAtividade1 = [false, false];
 var corretasAtividade1Moda = ["Amodal", "Amodal", "Amodal", "Unimodal", "Amodal", "Amodal", "Amodal", "Amodal", "Bimodal", "Amodal", "Unimodal", "Amodal"];
 var selecionadasModa = [];
 var numeroErradasModa = 0;
 var corretasAtividade1Mediana = [37804, 34059, 36011, 35723, 32679, 30768.5, 32734, 32600, 32398.5, 34256, 31738, 34210.5]
 var numeroErradasMediana = 0;
 var inputAtividade1Mediana = [];
-var corretasAtividade1Ordenacao = [12, 7, 11, 10, 5, 1, 6, 4, 3, 9, 2, 8];
-var ordenacaoAtualAtividade1 = [];
-var numeroErradasOrdenacao;
 var mesesErradosAtividade1;
 
 var tiposErradosAtividade2Media;
@@ -57,12 +54,12 @@ var numeroErradasMediaAtv3 = 0;
 var numeroErradasMedianaAtv3 = 0;
 var regioesErradasAtividade3Media;
 var regioesErradasAtividade3Mediana;
-var corretasAtividade3Media = [29846297.25, 76991052.75, 237258952.50, 79292897.50, 31514657];
-var corretasAtividade3Mediana = [29622217, 77652145.50, 237671021.50, 78941649.50, 31736588.50];
+var corretasAtividade3Media = [29.84, 76.98, 237.25, 79.28, 31.51];
+var corretasAtividade3Mediana = [29.61, 77.65, 237.66, 78.94, 31.73];
 var verificacaoAtividade3 = [false, false, false, false];
 var corretasAtividade3Questao1 = ["buttonAlternativa2Atv3", "buttonAlternativa3Atv3", "buttonAlternativa5Atv3"];
 var corretasAtividade3Questao2 = ["buttonAlternativa1Atv3", "buttonAlternativa4Atv3"];
-var corretasAtividade3Questao3 = [224080.25, -661092.75, -412069, 351248, -221931.5];
+var corretasAtividade3Questao3 = [0.23, -0.67, -0.69, 0.34, -0.22];
 var marcadasAtividade3Questao1 = [];
 var marcadasAtividade3Questao2 = [];
 var erradoAtividade3Questao1 = false;
@@ -1432,8 +1429,6 @@ function loadQuestion() {
 				$("#instrucoesAtividade1").html(dataJSON.telaAtividade1.atv1);
 			} else if (verificacaoAtividade1[1] == false) {
 				$("#instrucoesAtividade1").html(dataJSON.telaAtividade1.atv2);
-			} else if (verificacaoAtividade1[2] == false) {
-				$("#instrucoesAtividade1").html(dataJSON.telaAtividade1.atv3);
 			} else {
 				$("#instrucoesAtividade1").html(dataJSON.telaAtividade1.finalizada);
 			}
@@ -1603,8 +1598,10 @@ function loadQuestion() {
 					$("#alertAtividade1").addClass("alert-success");
 					$("#alertAtividade1").removeClass("alert-danger");
 					verificacaoAtividade1[1] = true;
+					atividadesCompletas[0] = true;
+					$("#botaoEnviarRespostaAtv1").hide();
+					swal("Parabéns!", "Você finalizou esta atividade!", "success")
 					fixarValoresMediana();
-					enableSortableAtv1();
 					updateQuestionAtividadeText();
 				} else {
 					$("#alertAtividade1").show();
@@ -1614,36 +1611,6 @@ function loadQuestion() {
 				}
 
 
-
-			} else if (verificacaoAtividade1[2] == false) {
-				numeroErradasOrdenacao = 0;
-				mesesErradosAtividade1 = null;
-				getCurrentOrdenationAtv1();
-				for (var i = 0; i <= corretasAtividade1Ordenacao.length - 1; i++) {
-					if (ordenacaoAtualAtividade1[i] == corretasAtividade1Ordenacao[i]) {
-
-					} else {
-						numeroErradasOrdenacao++;
-						replaceMesValorErradoAtv1(i+1);
-					}
-				}
-				if (numeroErradasOrdenacao == 0) {
-					$("#alertAtividade1").html(dataJSON.atividadeLivro1.msgCorreta);
-					$("#alertAtividade1").show();
-					$("#alertAtividade1").addClass("alert-success");
-					$("#alertAtividade1").removeClass("alert-danger");
-					$("#tabelaAgrupadaConsumoMensal tbody").sortable('disable')
-					verificacaoAtividade1[2] = true;
-					atividadesCompletas[0] = true;
-					$("#botaoEnviarRespostaAtv1").hide();
-					swal("Parabéns!", "Você finalizou esta atividade!", "success")
-					updateQuestionAtividadeText();
-				} else {
-					$("#alertAtividade1").show();
-					$("#alertAtividade1").html(dataJSON.atividadeLivro1.msgErradaOrdenacao.replace("%mesesErrados%", mesesErradosAtividade1));
-					$("#alertAtividade1").addClass("alert-danger");
-					$("#alertAtividade1").removeClass("alert-success");
-				}
 
 			} else {
 				$("#instrucoesAtividade1").html("");
@@ -2059,46 +2026,6 @@ function loadQuestion() {
 	}
 
 
-	function getCurrentOrdenationAtv1() {
-		ordenacaoAtualAtividade1 = [$("#indexJaneiro").html(),
-		$("#indexFevereiro").html(),
-		$("#indexMarco").html(),
-		$("#indexAbril").html(),
-		$("#indexMaio").html(),
-		$("#indexJunho").html(),
-		$("#indexJulho").html(),
-		$("#indexAgosto").html(),
-		$("#indexSetembro").html(),
-		$("#indexOutubro").html(),
-		$("#indexNovembro").html(),
-		$("#indexDezembro").html()
-		];
-
-	}
-
-
-	function enableSortableAtv1() {
-		$("#tabelaAgrupadaConsumoMensal tbody").sortable({
-			helper: fixHelperModified,
-			stop: updateIndex
-		}).disableSelection();
-	}
-
-	//Auxiliares para fazer a table da atividade 1 ser sortable
-	var fixHelperModified = function(e, tr) {
-		var $originals = tr.children();
-		var $helper = tr.clone();
-		$helper.children().each(function(index) {
-			$(this).width($originals.eq(index).width())
-		});
-		return $helper;
-	},
-	updateIndex = function(e, ui) {
-		$('td.index', ui.item.parent()).each(function (i) {
-			$(this).html(i + 1);
-		});
-	};
-
 	function getValoresAtv2() {
 		valoresAtividade2Media = [parseFloat($("#inputMediaGeracaoGasNatural").val().replace(',', '.')), 
 		parseFloat($("#inputMediaGeracaoHidreletrica").val().replace(',', '.')), 
@@ -2122,19 +2049,19 @@ function loadQuestion() {
 
 
 	function getValoresAtv3() {
-		valoresAtividade3Media = [accounting.unformat(parseFloat($("#inputMediaNorte").val().replace(',', '.').replace(/ /g, ""))), 
-		accounting.unformat(parseFloat($("#inputMediaNordeste").val().replace(',', '.').replace(/ /g, ""))), 
-		accounting.unformat(parseFloat($("#inputMediaSudeste").val().replace(',', '.').replace(/ /g, ""))), 
-		accounting.unformat(parseFloat($("#inputMediaSul").val().replace(',', '.').replace(/ /g, ""))), 
-		accounting.unformat(parseFloat($("#inputMediaCentroOeste").val().replace(',', '.').replace(/ /g, "")))
+		valoresAtividade3Media = [accounting.unformat(parseFloat($("#inputMediaNorte").val().replace(",","."))), 
+		accounting.unformat(parseFloat($("#inputMediaNordeste").val().replace(',', '.'))), 
+		accounting.unformat(parseFloat($("#inputMediaSudeste").val().replace(',', '.'))), 
+		accounting.unformat(parseFloat($("#inputMediaSul").val().replace(',', '.'))), 
+		accounting.unformat(parseFloat($("#inputMediaCentroOeste").val().replace(',', '.')))
 		]
 
 
-		valoresAtividade3Mediana = [accounting.unformat(parseFloat($("#inputMedianaNorte").val().replace(',', '.').replace(/ /g, ""))), 
-		accounting.unformat(parseFloat($("#inputMedianaNordeste").val().replace(',', '.').replace(/ /g, ""))), 
-		accounting.unformat(parseFloat($("#inputMedianaSudeste").val().replace(',', '.').replace(/ /g, ""))), 
-		accounting.unformat(parseFloat($("#inputMedianaSul").val().replace(',', '.').replace(/ /g, ""))), 
-		accounting.unformat(parseFloat($("#inputMedianaCentroOeste").val().replace(',', '.').replace(/ /g, "")))
+		valoresAtividade3Mediana = [accounting.unformat(parseFloat($("#inputMedianaNorte").val().replace(',', '.'))), 
+		accounting.unformat(parseFloat($("#inputMedianaNordeste").val().replace(',', '.'))), 
+		accounting.unformat(parseFloat($("#inputMedianaSudeste").val().replace(',', '.'))), 
+		accounting.unformat(parseFloat($("#inputMedianaSul").val().replace(',', '.'))), 
+		accounting.unformat(parseFloat($("#inputMedianaCentroOeste").val().replace(',', '.')))
 		]
 	}
 
@@ -2378,17 +2305,16 @@ function loadQuestion() {
 
 
 	function fixarValoresAtv3() {
-		//Gambiarra para exibir os números de forma bonitinha, se houver tempo trocar no futuro para algo menos confuso
-		$("#tdInputMediaNorte").html(accounting.formatMoney(corretasAtividade3Media[0]).replace("$", "").replace(",", " ").replace(",", " ").replace(",", " "));
-		$("#tdInputMediaNordeste").html(accounting.formatMoney(corretasAtividade3Media[1]).replace("$", "").replace(",", " ").replace(",", " ").replace(",", " "));
-		$("#tdInputMediaSudeste").html(accounting.formatMoney(corretasAtividade3Media[2]).replace("$", "").replace(",", " ").replace(",", " ").replace(",", " "));
-		$("#tdInputMediaSul").html(accounting.formatMoney(corretasAtividade3Media[3]).replace("$", "").replace(",", " ").replace(",", " ").replace(",", " "));
-		$("#tdInputMediaCentroOeste").html(accounting.formatMoney(corretasAtividade3Media[4]).replace("$", "").replace(",", " ").replace(",", " ").replace(",", " "));
-		$("#tdInputMedianaNorte").html(accounting.formatMoney(corretasAtividade3Mediana[0]).replace("$", "").replace(",", " ").replace(",", " ").replace(",", " "));
-		$("#tdInputMedianaNordeste").html(accounting.formatMoney(corretasAtividade3Mediana[1]).replace("$", "").replace(",", " ").replace(",", " ").replace(",", " "));
-		$("#tdInputMedianaSudeste").html(accounting.formatMoney(corretasAtividade3Mediana[2]).replace("$", "").replace(",", " ").replace(",", " ").replace(",", " "));
-		$("#tdInputMedianaSul").html(accounting.formatMoney(corretasAtividade3Mediana[3]).replace("$", "").replace(",", " ").replace(",", " ").replace(",", " "));
-		$("#tdInputMedianaCentroOeste").html(accounting.formatMoney(corretasAtividade3Mediana[4]).replace("$", "").replace(",", " ").replace(",", " ").replace(",", " "));
+		$("#tdInputMediaNorte").html(String(corretasAtividade3Media[0]).replace(".", ","));
+		$("#tdInputMediaNordeste").html(String(corretasAtividade3Media[1]).replace(".", ","));
+		$("#tdInputMediaSudeste").html(String(corretasAtividade3Media[2]).replace(".", ","));
+		$("#tdInputMediaSul").html(String(corretasAtividade3Media[3]).replace(".", ","));
+		$("#tdInputMediaCentroOeste").html(String(corretasAtividade3Media[4]).replace(".", ","));
+		$("#tdInputMedianaNorte").html(String(corretasAtividade3Mediana[0]).replace(".", ","));
+		$("#tdInputMedianaNordeste").html(String(corretasAtividade3Mediana[1]).replace(".", ","));
+		$("#tdInputMedianaSudeste").html(String(corretasAtividade3Mediana[2]).replace(".", ","));
+		$("#tdInputMedianaSul").html(String(corretasAtividade3Mediana[3]).replace(".", ","));
+		$("#tdInputMedianaCentroOeste").html(String(corretasAtividade3Mediana[4]).replace(".", ","));
 	}
 
 
@@ -2404,6 +2330,7 @@ function loadQuestion() {
 			focus: function(event, ui) {
 				$(".ui-dialog-titlebar-close", ui.dialog | ui).show();
 			}
+
 		});;
 	}
 
