@@ -11,6 +11,10 @@ body {
 	overflow: hidden;
 }
 
+
+.noMargin {
+	margin: 0px;
+}
 .col-xs-offset-05 {
 	margin-left: 4.166%;
 }
