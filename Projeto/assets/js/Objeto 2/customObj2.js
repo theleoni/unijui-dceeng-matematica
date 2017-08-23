@@ -70,8 +70,10 @@ var errouAtividade4 = false;
 var corretasAtividade4 = [12,12];
 var verificacaoAtividade4 = false;
 
+
 $(document).ready(function() {
 	hideDivsOnObjectStart();
+	setSwalDefaults();
 });
 
 
@@ -96,6 +98,14 @@ $.getJSON('../assets/js/Objeto 2/dataObj2.json', function(data) {
 	dataJSON = data;
 });
 
+function setSwalDefaults() {
+	swal.setDefaults({
+		confirmButtonText: 'Próxima &rarr;',
+		showCancelButton: true,
+		animation: false,
+		progressSteps: ['1', '2', '3']
+	})
+}
 function hideDivsOnObjectStart() {
 	$("#calculadora").hide();
 	$("#containerGeralGraficos").hide();
@@ -996,6 +1006,11 @@ $(document).on('click', '.botaoAlternativasAtv3', function() {
 $(document).on('click', '.iconSetaVoltarAtividades', function() {
 	unloadQuestionAtividade();
 })
+
+$(document).on('click', '#iconHelp', function() {
+	showHelp(scene);
+})
+
 
 function changeTitle(titulo) {
 	$("#tituloGeral").html(titulo);
