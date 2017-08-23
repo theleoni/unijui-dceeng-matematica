@@ -1,3 +1,11 @@
+var ajudaTela1e3 = [
+{
+  progressSteps: [],
+  title: 'Ajuda!',
+  html: 'Ao ler cada fala, clique na seta direita para ver a próxima'
+}]
+
+
 var ajudaTela8 = [
 {
   title: 'Ajuda!',
@@ -14,6 +22,46 @@ var ajudaTela8 = [
 ]
 
 
+var ajudaTela14NenhumaAtiv = [
+{
+  progressSteps: [],
+  title: 'Ajuda!',
+  html: 'Realize todas as atividades em qualquer ordem. Após finalizar cada atividade, retorne para esta tela e escolha outra para ser realizada'
+}
+]
+
+var ajudaTela14Ativ1 = [
+{
+   progressSteps: [],
+  title: 'Ajuda!',
+  html: 'Instruções da atividade 1'
+}
+]
+
+var ajudaTela14Ativ2 = [
+{
+   progressSteps: [],
+  title: 'Ajuda!',
+  html: 'Instruções da atividade 2'
+}
+]
+
+var ajudaTela14Ativ3 = [
+{
+   progressSteps: [],
+  title: 'Ajuda!',
+  html: 'Instruções da atividade 3'
+}
+]
+
+
+var ajudaTela14Ativ4 = [
+{
+   progressSteps: [],
+  title: 'Ajuda!',
+  html: 'Instruções da atividade 41'
+}
+]
 
 
 function getHelpScene(numeroDaTela) {
@@ -21,21 +69,28 @@ function getHelpScene(numeroDaTela) {
     default:
     return null;
     break;
+    case 1:
+    case 3:
+    return ajudaTela1e3;
     case 8:
     return ajudaTela8;
-    break;
-
+    case '140':
+    return ajudaTela14NenhumaAtiv;
+    case '141':
+    return ajudaTela14Ativ1;
+    case '142':
+    return ajudaTela14Ativ2;
+    case '143':
+    return ajudaTela14Ativ3;
+    case '144':
+    return ajudaTela14Ativ4;
   }
 }
 
 function showHelp(scene) {
   if (getHelpScene(scene)) {
     swal.queue(getHelpScene(scene)).then(function () {
-      swal({
-        title: 'E ai, consegue agora?',
-        html: 'Agora que você já entendeu como realizar os cálculos, tente fazer a atividade',
-        confirmButtonText: 'Vamos lá!'
-      })
+
     })
   }
 }

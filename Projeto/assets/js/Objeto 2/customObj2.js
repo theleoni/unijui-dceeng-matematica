@@ -1008,7 +1008,11 @@ $(document).on('click', '.iconSetaVoltarAtividades', function() {
 })
 
 $(document).on('click', '#iconHelp', function() {
-	showHelp(scene);
+	if (scene != 14) {
+		showHelp(scene);
+	} else {
+		showHelp(scene + atividadeAtual.toString());
+	}
 })
 
 
@@ -1574,6 +1578,7 @@ function loadQuestion() {
 			$("body").css("overflow", "hidden");
 			window.scrollTo(0,0);
 			$("#telaSelecaoQuestoes").show();
+			atividadeAtual = 0;
 			break;
 
 			case 2:
@@ -1581,6 +1586,7 @@ function loadQuestion() {
 			$("body").css("overflow", "hidden");
 			window.scrollTo(0,0);
 			$("#telaSelecaoQuestoes").show();
+			atividadeAtual = 0;
 			break;
 
 			case 3:
@@ -1588,6 +1594,7 @@ function loadQuestion() {
 			$("body").css("overflow", "hidden");
 			window.scrollTo(0,0);
 			$("#telaSelecaoQuestoes").show();
+			atividadeAtual = 0;
 			break;
 
 			case 4:
@@ -1595,6 +1602,7 @@ function loadQuestion() {
 			$("body").css("overflow", "hidden");
 			window.scrollTo(0,0);
 			$("#telaSelecaoQuestoes").show();
+			atividadeAtual = 0;
 			break;
 		}
 
