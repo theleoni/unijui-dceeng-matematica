@@ -2668,22 +2668,22 @@
 	  			case 4:
 	  			switch (questionNumber) {
 	  				case 3:
-	  				swal("Ajuda!", "Arraste o mouse sobre as barras do gráfico para ver a porcentagem");
+	  				swal("Ajuda!", "Arraste o mouse sobre as barras do gráfico para ver o consumo");
 	  				break;	  		
 	  				case 4:
-	  				swal("Ajuda!", "Arraste o mouse sobre as barras gráfico para ver a porcentagem.");
+	  				swal("Ajuda!", "Arraste o mouse sobre as barras gráfico para ver o consumo");
 	  				break;			
 	  				case 5:
 	  				swal("Ajuda!", "Para saber a média, basta dividir o total do consumo de energia pela quantidade de meses correspondentes");
 	  				break;	  		
 	  				case 6:
-	  				swal("Ajuda!", "Arraste o mouse sobre o gráfico para ver a porcentagem");
+	  				swal("Ajuda!", "Arraste o mouse sobre o gráfico para ver os valores");
 	  				break;			
 	  				case 7:
 	  				swal("Ajuda!", "Para saber a diferença basta subtrair a energia hidrelétrica pela energia solar");
 	  				break;	  		
 	  				case 10:
-	  				swal("Ajuda!", "Arraste o mouse sobre as barras do gráfico para ver a porcentagem");
+	  				swal("Ajuda!", "Arraste o mouse sobre as barras do gráfico para ver a potência");
 	  				break;		
 	  			}
 	  			break;
