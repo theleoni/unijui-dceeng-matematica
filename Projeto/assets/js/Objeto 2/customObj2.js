@@ -808,11 +808,9 @@ function closeObject() {
 		closeOnConfirm: false,
 		cancelButtonText: "Cancelar"
 
-	},
-	function(){
+	}).then(function() {
 		window.location.href = "../index.html";
-
-	});
+	})
 }
 
 
