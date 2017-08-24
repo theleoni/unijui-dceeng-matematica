@@ -70,8 +70,10 @@ var errouAtividade4 = false;
 var corretasAtividade4 = [12,12];
 var verificacaoAtividade4 = false;
 
+
 $(document).ready(function() {
 	hideDivsOnObjectStart();
+	setSwalDefaults();
 });
 
 
@@ -96,6 +98,14 @@ $.getJSON('../assets/js/Objeto 2/dataObj2.json', function(data) {
 	dataJSON = data;
 });
 
+function setSwalDefaults() {
+	swal.setDefaults({
+		confirmButtonText: 'Próxima &rarr;',
+		showCancelButton: true,
+		animation: false,
+		progressSteps: ['1', '2', '3']
+	})
+}
 function hideDivsOnObjectStart() {
 	$("#calculadora").hide();
 	$("#containerGeralGraficos").hide();
@@ -808,11 +818,9 @@ function closeObject() {
 		closeOnConfirm: false,
 		cancelButtonText: "Cancelar"
 
-	},
-	function(){
+	}).then(function() {
 		window.location.href = "../index.html";
-
-	});
+	})
 }
 
 
@@ -998,6 +1006,15 @@ $(document).on('click', '.botaoAlternativasAtv3', function() {
 $(document).on('click', '.iconSetaVoltarAtividades', function() {
 	unloadQuestionAtividade();
 })
+
+$(document).on('click', '#iconHelp', function() {
+	if (scene != 14) {
+		showHelp(scene);
+	} else {
+		showHelp(scene + atividadeAtual.toString());
+	}
+})
+
 
 function changeTitle(titulo) {
 	$("#tituloGeral").html(titulo);
@@ -1561,6 +1578,7 @@ function loadQuestion() {
 			$("body").css("overflow", "hidden");
 			window.scrollTo(0,0);
 			$("#telaSelecaoQuestoes").show();
+			atividadeAtual = 0;
 			break;
 
 			case 2:
@@ -1568,6 +1586,7 @@ function loadQuestion() {
 			$("body").css("overflow", "hidden");
 			window.scrollTo(0,0);
 			$("#telaSelecaoQuestoes").show();
+			atividadeAtual = 0;
 			break;
 
 			case 3:
@@ -1575,6 +1594,7 @@ function loadQuestion() {
 			$("body").css("overflow", "hidden");
 			window.scrollTo(0,0);
 			$("#telaSelecaoQuestoes").show();
+			atividadeAtual = 0;
 			break;
 
 			case 4:
@@ -1582,6 +1602,7 @@ function loadQuestion() {
 			$("body").css("overflow", "hidden");
 			window.scrollTo(0,0);
 			$("#telaSelecaoQuestoes").show();
+			atividadeAtual = 0;
 			break;
 		}
 
@@ -1689,7 +1710,7 @@ function loadQuestion() {
 					atividadesCompletas[1] = true;
 					$("#botaoEnviarRespostaAtv2").hide();
 					updateQuestionAtividadeText();
-					
+					fixarValoresAtv2();
 					if (verificacaoAtividade2[1] == true) {
 						swal("Parabéns!", "Você finalizou esta atividade!", "success");
 					}
@@ -2378,6 +2399,27 @@ function loadQuestion() {
 		}
 	}
 
+
+
+	function fixarValoresAtv2() {
+		$("#tdInputMediaGeracaoGasNatural").html(String(corretasAtividade2Media[0]).replace(".", ","));
+		$("#tdInputMediaGeracaoHidreletrica").html(String(corretasAtividade2Media[1]).replace(".", ","));
+		$("#tdInputMediaGeracaoDerivadosPetroleo").html(String(corretasAtividade2Media[2]).replace(".", ","));
+		$("#tdInputMediaGeracaoCarvao").html(String(corretasAtividade2Media[3]).replace(".", ","));
+		$("#tdInputMediaGeracaoNuclear").html(String(corretasAtividade2Media[4]).replace(".", ","));
+		$("#tdInputMediaGeracaoBiomassa").html(String(corretasAtividade2Media[5]).replace(".", ","));
+		$("#tdInputMediaGeracaoEolica").html(String(corretasAtividade2Media[6]).replace(".", ","));
+		$("#tdInputMediaGeracaoOutras").html(String(corretasAtividade2Media[7]).replace(".", ","));
+		$("#tdInputMedianaGeracaoGasNatural").html(String(corretasAtividade2Mediana[0]).replace(".", ","));
+		$("#tdInputMedianaGeracaoHidreletrica").html(String(corretasAtividade2Mediana[1]).replace(".", ","));
+		$("#tdInputMedianaGeracaoDerivadosPetroleo").html(String(corretasAtividade2Mediana[2]).replace(".", ","));
+		$("#tdInputMedianaGeracaoCarvao").html(String(corretasAtividade2Mediana[3]).replace(".", ","));
+		$("#tdInputMedianaGeracaoNuclear").html(String(corretasAtividade2Mediana[4]).replace(".", ","));
+		$("#tdInputMedianaGeracaoBiomassa").html(String(corretasAtividade2Mediana[5]).replace(".", ","));
+		$("#tdInputMedianaGeracaoEolica").html(String(corretasAtividade2Mediana[6]).replace(".", ","));
+		$("#tdInputMedianaGeracaoOutras").html(String(corretasAtividade2Mediana[7]).replace(".", ","));
+
+	}
 
 	function fixarValoresAtv3() {
 		$("#tdInputMediaNorte").html(String(corretasAtividade3Media[0]).replace(".", ","));
