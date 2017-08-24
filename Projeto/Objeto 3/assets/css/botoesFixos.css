@@ -1,0 +1,76 @@
+.textTitleContent {
+	font-family: 'Roboto Condensed', sans-serif;
+	text-align: center;
+	font-size: 32px;
+}
+
+#iconesFixos {
+}
+#iconCalculadora {
+	cursor: pointer;
+	position: absolute;
+	left: 15vw;
+	z-index: 1;
+	font-size: 40px;
+	color: green;
+}
+
+#iconMais {
+	z-index: 5;
+	position: absolute;
+	left: 10vw;
+	font-size: 40px;
+	color: gray;
+	cursor: pointer;
+}
+
+#iconMais:hover {
+	color:green;
+}
+
+#iconHelp {
+	cursor: help;
+	position: absolute;
+	left: 5vw;
+	z-index: 1;
+	font-size: 40px;
+	color: gray;
+}
+
+#iconFechar {
+	cursor: pointer;
+	position:absolute;
+	left: 0vw;
+	z-index: 1;
+	font-size: 40px;
+	color: black;
+}
+#iconFechar:hover {
+	color: red;
+}
+
+#iconSetaEsquerda {
+	cursor: pointer;
+	position: absolute;
+	top:72vh;
+	right: 70vw;
+	z-index: 5;
+	font-size: 40px;
+	color: gray;
+}
+#iconSetaEsquerda:hover {
+	color: black;
+}
+
+#iconSetaDireita {
+	cursor: pointer;
+	position: absolute;
+	top: 72vh;
+	z-index: 5;
+	font-size: 40px;
+	color: gray;
+}
+
+#iconSetaDireita:hover {
+	color: black;
+}

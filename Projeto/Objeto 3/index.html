@@ -1,0 +1,130 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<!-- <script src="assets/js/customObj3.js"> </script> -->
+	<script src="assets/js/graficos.js"></script>
+	<script src="assets/bib/highcharts/code/highcharts.js"> </script>
+	<script src="assets/bib/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="assets/bib/jquery-ui/jquery-ui.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/calculadora.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/botoesFixos.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/geral.css">
+	<link rel="stylesheet" type="text/css" href="assets/bib/sweetalert/dist/sweetalert.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/bib/jquery-ui/jquery-ui.min.css">
+
+	<!-- Fontes -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+</head>
+
+<body>
+	<!--##################### NAVBAR ##################### -->
+	<div class="navbar">
+		<!-- <div class="container-fluid"> -->
+		<!-- <div class="navbar-header"> -->
+		<!-- <a href= "#" > <img class="positionLeft imagemLogoResponsivaNavbar" src="../assets/img/logo_ministerio_educacao.png" height="80%"></a> -->
+		<!-- <div id="title" class="positionCenter textTitle"> -->
+		<div class="row">
+			<div class="col-xs-3">
+			</div>
+			<div class="col-xs-6">
+				<h1 class="titulo text-center">
+					DESVIO PADRÃO! O QUE É ISTO?
+				</h1>
+			</div>
+			<div class="col-xs-3">
+			</div>
+		</div>
+		<!-- </div> -->
+		<!-- <ul class="nav navbar-nav"><a href="#"><img class="positionRight imagemUnijuiResponsivaNavbar" src="../assets/img/novo_logo_unijui.png" height="25%"></a></ul> -->
+		<!-- </div> -->
+		<!-- </div> -->
+	</div>
+
+	<div id="iconesFixos">
+		<div class="row">
+			<div class="col-xs-offset-4 col-xs-4">
+				<div id="tituloGeral" class="textTitleContent"> </div>
+			</div>
+			<div class="col-xs-1">
+				<span id="iconCalculadora" title="Calculadora" class="glyphicon glyphicon-th"> </span>
+			</div>
+			<div class="col-xs-1" >
+				<span id="iconMais" title="Mais informações" class="glyphicon glyphicon-plus"> </span>
+			</div>
+			<div class="col-xs-1" >
+				<span id="iconHelp" title= "Ajuda" class="glyphicon glyphicon-question-sign"> </span>
+			</div>
+			<div class="col-xs-1">
+				<span id="iconFechar" title="Sair" class="glyphicon glyphicon glyphicon-remove-circle"> </span>
+			</div>
+			<div class="col-xs-1">
+				<span id="iconSetaEsquerda" title="Voltar" class="glyphicon glyphicon glyphicon-arrow-left"> </span>
+			</div>
+			<div class="col-xs-offset-2 col-xs-1">
+				<span id="iconSetaDireita" title="Avançar" class="glyphicon glyphicon glyphicon-arrow-right"> </span>
+			</div>
+		</div>
+	</div>
+
+	<div class="geral">
+		<div class="scr-login">
+			<div class="row">
+				<div class="col-xs-12">
+					<video autoplay muted loop id="login-video"></video>
+				</div>
+
+				<div class="login col-xs-3 col-xs-offset-2">
+					<input type="text" class="form-control" id="login-button-confirmacao" maxlength="55" placeholder="Insira o seu nome"> </input>
+					<button type="button" class="btn btn-primary btn-block">Confirmar</button>
+				</div>
+			</div>
+		</div>
+	</div> <!--Div geral -->
+	<!--##################### CALCULADORA ##################### -->
+
+	<div id="containerGeralGraficos">
+		<div id="containerGraficos"></div>
+		<div id="textoGraficos"></div>
+	</div>
+
+	<div id="calculadora">
+		<div class="top">
+			<span class="clear">C</span>
+			<div class="screen"></div>
+		</div>
+
+		<div class="keys">
+			<!-- operators and other keys -->
+			<span>7</span>
+			<span>8</span>
+			<span>9</span>
+			<span class="operator">+</span>
+			<span>4</span>
+			<span>5</span>
+			<span>6</span>
+			<span class="operator">-</span>
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<span class="operator">÷</span>
+			<span>0</span>
+			<span>.</span>
+			<span class="eval">=</span>
+			<span class="operator">x</span>
+		</div>
+	</div>
+	<!-- Calculadora -->
+	<script src="assets/js/calculadora.js"></script>
+
+	<script src="assets/js/principal.js"></script>
+
+</body>
+</html>
