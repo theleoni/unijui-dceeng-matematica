@@ -1,4 +1,4 @@
-var ajudaTela1e3 = [
+var ajudaTela1_3_13 = [
 {
   progressSteps: [],
   title: 'Ajuda!',
@@ -8,15 +8,21 @@ var ajudaTela1e3 = [
 
 var ajudaTela8 = [
 {
+  progressSteps: ['1', '2', '3'],
   title: 'Ajuda!',
+  confirmButtonText: 'Próxima &rarr;',
   html: 'Na <strong>Média Aritmética Ponderada</strong> existem casos onde as ocorrências têm importância relativa diferentes. Nestes, o cálculo da média deve levar em conta esta importância relativa ou peso relativo.<br>Ponderar é sinônimo de pesar. No cálculo da média ponderada, multiplicamos cada valor do conjunto por seu "peso", isto é, sua importância relativa.'
 },
 {
+  progressSteps: ['1', '2', '3'],
   title: 'Ajuda',
+  confirmButtonText: 'Próxima &rarr;',
   html: '<table id="tabelaAgrupadaConsumoMensal" class="table table-responsive table-bordered"><thead><tr><td><strong>Consumo diário em kWh</strong></td><td><strong>Nº de dias de consumo</strong></td> </tr> </thead><tr><td class="noLeftBorder">3,0</td><td class="noRightBorder">2</td></tr><tr><td class="noLeftBorder">3,5</td><td class="noRightBorder">4</td></tr> <tr><td class="noLeftBorder">3,8</td><td class="noRightBorder"> 5</td></tr><tr> <td class="noLeftBorder">4,0</td><td class="noRightBorder">17</td> </tr><tr> <td class="noLeftBorder tabelaTotal">Soma</td> <td class="noRightBorder tabelaTotal">28</td></tr> </table> <br> Para encontrar a média aritmética do consumo diário, podemos utilizar o conceito da média ponderada utilizando o número de dias como peso, pois cada valor se repetiu durante certo número de dias.'
 },
 {
+  progressSteps: ['1', '2', '3'],
   title: 'Ajuda',
+  confirmButtonText: 'Próxima &rarr;',
   html: 'Veja como calcular a média do consumo diário. Use uma calculadora para obter o resultado <br><img src="../assets/img/Objeto 2/equacaoTela8.png">'
 }
 ]
@@ -32,34 +38,35 @@ var ajudaTela14NenhumaAtiv = [
 
 var ajudaTela14Ativ1 = [
 {
-   progressSteps: [],
-  title: 'Ajuda!',
-  html: 'Instruções da atividade 1'
+ progressSteps: [],
+ title: 'Ajuda!',
+ html: 'Instruções da atividade 1'
 }
 ]
 
 var ajudaTela14Ativ2 = [
 {
-   progressSteps: [],
-  title: 'Ajuda!',
-  html: 'Instruções da atividade 2'
+ progressSteps: [],
+ title: 'Ajuda!',
+ html: 'Instruções da atividade 2'
 }
 ]
 
 var ajudaTela14Ativ3 = [
 {
-   progressSteps: [],
-  title: 'Ajuda!',
-  html: 'Instruções da atividade 3'
+ progressSteps: [],
+ title: 'Ajuda!',
+ html: 'Instruções da atividade 3'
 }
 ]
 
 
 var ajudaTela14Ativ4 = [
 {
-   progressSteps: [],
-  title: 'Ajuda!',
-  html: 'Instruções da atividade 41'
+ progressSteps: [],
+ title: 'Ajuda!',
+ confirmButtonText: 'Próxima &rarr;',
+ html: 'Instruções da atividade 4'
 }
 ]
 
@@ -71,7 +78,8 @@ function getHelpScene(numeroDaTela) {
     break;
     case 1:
     case 3:
-    return ajudaTela1e3;
+    case 13:
+    return ajudaTela1_3_13;
     case 8:
     return ajudaTela8;
     case '140':
