@@ -100,10 +100,10 @@ $.getJSON('../assets/js/Objeto 2/dataObj2.json', function(data) {
 
 function setSwalDefaults() {
 	swal.setDefaults({
-		confirmButtonText: 'Próxima &rarr;',
+		confirmButtonText: 'Continuar',
+		cancelButtonText: 'Fechar',
 		showCancelButton: true,
-		animation: false,
-		progressSteps: ['1', '2', '3']
+		animation: false
 	})
 }
 function hideDivsOnObjectStart() {
