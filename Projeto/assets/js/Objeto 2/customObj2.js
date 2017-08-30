@@ -1015,6 +1015,10 @@ $(document).on('click', '#iconHelp', function() {
 	}
 })
 
+$(document).on('click', '#iconMais', function() {
+	showInfo(scene);
+
+})
 
 function changeTitle(titulo) {
 	$("#tituloGeral").html(titulo);
