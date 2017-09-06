@@ -529,6 +529,10 @@ body {
 .imgUsinas {
 	cursor:pointer;
 }
+
+.inputRegioes {
+	color: #377ff2;
+}
 @media (max-device-aspect-ratio: 8/8) {
 	#containerVideo1TelaNome {
 		margin-top: 15vh;	
