@@ -93,7 +93,7 @@ var ajudaTela14Ativ2 = [
 {
  progressSteps: ['1', '2'],
  title: 'Ajuda!',
- html: '<div style="text-align:left;">Média<br>É calculada somando-se todos os elementos do conjunto, e em seguida, dividindo o resultado pela quantidade de elementos que compões o conjunto. Fórmula:<br><img src="../assets/img/Objeto 2/ajuda1Atividade2.png"><br>Exemplo:<br><img src="../assets/img/Objeto 2/ajuda2Atividade2.png"></div>'
+ html: '<div style="text-align:left;">Média<br>É calculada somando-se todos os elementos do conjunto, e em seguida, dividindo o resultado pela quantidade de elementos que compões o conjunto. Fórmula:<br><img src="../assets/img/Objeto 2/ajuda1Atividade2.PNG"><br>Exemplo:<br><img src="../assets/img/Objeto 2/ajuda2Atividade2.PNG"></div>'
 }, 
 {
  progressSteps: ['1', '2'],
