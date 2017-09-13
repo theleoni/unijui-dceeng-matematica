@@ -1,0 +1,31 @@
+html,
+body {
+	padding-top: 72px;
+}
+
+html{
+	height: 100%;
+}
+body {
+	min-height: 100%;
+	overflow: hidden;
+}
+
+#verificacaoNome {
+	margin-top: 15vh;
+}
+
+#inputNomeContainer {
+	position: relative;
+	z-index: 1;
+	top: -80vh;
+	left: 20vh;
+}
+
+#videoIntroducao {
+	display: block;
+	max-width: 100%;
+	margin-top: -10%;
+	z-index: 0;
+	height: auto;
+}

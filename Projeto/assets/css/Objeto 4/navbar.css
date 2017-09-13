@@ -1,0 +1,137 @@
+
+/* ########### NAVBAR ########### */
+
+.navbar {
+	background-color: #00458e;
+	z-index: 20;
+	height: auto;
+}
+
+
+@media (max-width: 500px) {
+	.navbar {
+		max-height: 75px !important;
+	}
+}
+
+
+@media (min-width: 500px) {
+	.navbar {
+		height: 108px !important;
+	}
+}
+
+.positionRight {
+	right: 3%;
+	top: 2%;
+	position: absolute;
+	transform: translateY(10%);
+}
+
+
+.positionLeft {
+	left: 3%;
+	top: 2%;
+	position: absolute;
+	transform: translateY(10%);
+}
+
+.positionCenter {
+	left: 36%;
+	right:41%;
+	position:absolute;
+	transform: translateY(5%);
+}
+
+.textTitle {
+	color: #FFFFFF;
+	font-family: 'Roboto Condensed', sans-serif;
+	text-align: center;
+	margin-top: 15px;
+}
+
+@media (max-width: 300px) {
+	.textTitle {
+		font-size: 6px;
+	}
+
+}
+@media (min-width: 300px) and (max-width: 500px) {
+	.textTitle {
+		font-size: 8px;
+	}
+
+}
+
+@media (min-width: 500px) and (max-width: 700px) {
+	.textTitle {
+		font-size: 14px;
+	}
+
+}
+
+@media (min-width: 700px) and (max-width: 950px) {
+	.textTitle {
+		font-size: 19px;
+	}
+
+}
+
+@media (min-width: 1200px) {
+	.textTitle {
+		font-size: 25px;
+	}
+}
+
+.navbar-nav {
+	float:none;
+	margin:0 auto;
+	display: block;
+	text-align: center;
+}
+@media (max-width:768px) {
+	.imagemLogoResponsivaNavbar {
+		max-width: 24%;
+	}
+	.imagemUnijuiResponsivaNavbar {
+		max-width: 20%;
+	}
+}
+
+@media (min-width: 769px) and (max-width: 1600px) {
+	.imagemLogoResponsivaNavbar {
+		max-width: 24%;
+	}
+	.imagemUnijuiResponsivaNavbar {
+		max-width: 14%;
+	}
+}
+
+@media (min-width: 1600px) and (max-width:1920px) {
+	.imagemLogoResponsivaNavbar {
+		max-width: 17%;
+	}
+	.imagemUnijuiResponsivaNavbar {
+		max-width: 12%;
+	}
+}
+@media (min-width: 1920px) {
+	.imagemLogoResponsivaNavbar {
+		max-width: 12%;
+	}
+	.imagemUnijuiResponsivaNavbar {
+		max-width: 8%;
+	}
+}
+
+
+.imagemLogoResponsivaNavbar {
+	display: block;
+	height: auto;
+}
+
+
+.imagemUnijuiResponsivaNavbar {
+	display: block;
+	height: auto;
+}

@@ -1,0 +1,163 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<head>
+
+
+	<!-- jQuery -->
+	<script src="../assets/js/Geral/jquery.js"></script>
+
+	<!-- Bootstrap -->
+	<script src="../assets/js/Geral/bootstrap.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="../assets/js/Objeto 4/customObj4.js"> </script>
+
+	<!-- HighCharts -->
+	<script src="../assets/highcharts/code/highcharts.js"> </script>
+
+	<!-- SweetAlerts -->
+	<script src="../assets/js/Misc/sweetalert2.min.js"></script>
+
+	<!-- jQuery UI -->
+	<script src="../assets/jquery-ui/jquery-ui.min.js"></script>
+
+	<!--Custom CSS Calculadora -->
+	<link rel="stylesheet" type="text/css" href="../assets/css/calculadora.css">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+
+	<!--Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="../assets/css/Objeto 4/navbar.css">
+
+	<link rel="stylesheet" type="text/css" href="../assets/css/Objeto 4/botoesFixos.css">
+
+	<link rel="stylesheet" type="text/css" href="../assets/css/Objeto 4/geral.css">
+
+
+	<!-- Fontes -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+	<!-- SweetAlerts CSS -->
+	<link href="../assets/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
+
+	<!-- jQuery UI CSS -->
+	<link href="../assets/jquery-ui/jquery-ui.min.css" rel="stylesheet" type="text/css">
+
+
+
+</head>
+
+<body>
+	<!--##################### NAVBAR ##################### -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href= "#" > <img class="positionLeft imagemLogoResponsivaNavbar" src="../assets/img/logo_ministerio_educacao.png" height="80%"></a>
+				<div id="title" class="positionCenter textTitle">
+					OBJETO DO PATRIK E DO VAGNER
+				</div>
+				<ul class="nav navbar-nav"><a href="#"><img class="positionRight imagemUnijuiResponsivaNavbar" src="../assets/img/novo_logo_unijui.png" height="25%"></a></ul>
+			</div>
+		</div>
+	</nav>
+
+
+
+
+
+	<div id="iconesFixos">
+		<div class="row">
+			<div class="col-xs-offset-4 col-xs-4">
+				<div id="tituloGeral" class="textTitleContent"> </div>
+			</div>
+			<div class="col-xs-1">
+				<span id="iconCalculadora" title="Calculadora" class="glyphicon glyphicon-th"> </span>
+			</div>
+			<div class="col-xs-1" >
+				<span id="iconMais" title="Mais informações" class="glyphicon glyphicon-plus"> </span>
+			</div>
+			<div class="col-xs-1" >
+				<span id="iconHelp" title= "Ajuda" class="glyphicon glyphicon-question-sign"> </span>
+			</div>
+			<div class="col-xs-1">
+				<span id="iconFechar" title="Sair" class="glyphicon glyphicon glyphicon-remove-circle"> </span>
+			</div>
+			<div class="col-xs-1">
+				<span id="iconSetaEsquerda" title="Voltar" class="glyphicon glyphicon glyphicon-arrow-left"> </span>
+			</div>
+			<div class="col-xs-offset-2 col-xs-1">
+				<span id="iconSetaDireita" title="Avançar" class="glyphicon glyphicon glyphicon-arrow-right"> </span>
+			</div>
+		</div>
+	</div>
+	<div id="geral">
+
+		<div id="telaNome">
+			<div id="verificacaoNome">
+				<div class="row" style="height:200%">
+				<video autoplay muted loop class="img-responsive" id="videoIntroducao" src="../assets/img/Objeto 4/videoIntroducao.mp4"></video>
+					<div class="col-xs-offset-8 col-xs-2">
+
+						<div id="inputNomeContainer">
+							<input type="text" class="form-control" id="inputNome" maxlength="55"" placeholder="Insira o seu nome"> </input>
+							<div class="row">
+								<div class="col-md-12">
+									<center>
+										<button type="button" id="botaoNome" class="btn btn-primary btn-block">Confirmar</button>
+									</center>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-xs-12">
+									<div id="alertNome" class="alert alert-danger" role="alert">
+										<center><strong>Oops!</strong> Você precisa colocar o seu nome.</center>
+									</div>
+								</div>
+							</div>
+						</div> 
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+	</div> <!--Div geral -->
+
+	<!--##################### CALCULADORA ##################### -->
+
+	<div id="calculadora">
+		<div class="top">
+			<span class="clear">C</span>
+			<div class="screen"></div>
+		</div>
+
+		<div class="keys">
+			<!-- operators and other keys -->
+			<span>7</span>
+			<span>8</span>
+			<span>9</span>
+			<span class="operator">+</span>
+			<span>4</span>
+			<span>5</span>
+			<span>6</span>
+			<span class="operator">-</span>
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<span class="operator">÷</span>
+			<span>0</span>
+			<span>.</span>
+			<span class="eval">=</span>
+			<span class="operator">x</span>
+		</div>
+	</div>
+
+	<!-- Calculadora -->
+	<script src="../assets/js/Misc/calculadora.js"></script>
+
+</body>
+</html>
