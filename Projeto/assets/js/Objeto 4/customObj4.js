@@ -1,11 +1,15 @@
 
 var nomeDoUsuario;
-var scene = 0;
+var scene = 1;
 
 var defaultFadeTime = 500;
 var extendedFadeTime = 1250;
 var shortFadeTime = 250;
 
+
+
+//Variáveis especificas
+var videoOnibus1Assistido = false;
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 	videoIntroducao.pause();
@@ -19,6 +23,7 @@ function hideDivsOnObjectStart() {
 	$("#calculadora").hide();
 	$("#iconesFixos").hide();
 	$("#alertNome").hide();
+	$("#telaVideoOnibus1").hide();
 }
 
 
@@ -78,8 +83,76 @@ function waitVideoIntroToEnd() {
 }
 
 
+//Função para colocar um vídeo em fullscreen
+function requestVideoFullScreen(video) {
+	if (video.requestFullscreen) {
+		video.requestFullscreen();
+	}
+	else if (video.msRequestFullscreen) {
+		video.msRequestFullscreen();
+	}
+	else if (video.mozRequestFullScreen) {
+		video.mozRequestFullScreen();
+	}
+	else if (video.webkitRequestFullScreen) {
+		video.webkitRequestFullScreen();
+	}
+	video.play();
+}
+
+//Função para tirar o vídeo de fullscreen
+function exitFullScreen(video) {
+	if (video.exitFullScreen) {
+		video.ExitFullScreen();
+	}
+	else if (video.msExitFullscreen) {
+		video.msExitFullscreen();
+	}
+	else if (video.mozExitFullScreen) {
+		video.mozExitFullScreen();
+	}
+	else if (video.webkitExitFullScreen) {
+		video.webkitExitFullScreen();
+	}
+}
 
 
+//Função para assistir o primeiro vídeo do ônibus
+function watchVideoOnibus1() {
+	videoOnibus1Assistido = true;
+	$(videoOnibus1).on('ended',function(){
+		if (scene == 2) {
+			nextScene();
+		}
+
+	});
+}
+
+//Funções de controle das setas nas telas
+function allowNextScene() {
+	$("#iconSetaDireita").show();
+}
+
+function disallowNextScene() {
+	$("#iconSetaDireita").hide();
+}
+
+function allowPreviousScene() {
+	$("#iconSetaEsquerda").show();
+}
+
+function disallowPreviousScene() {
+	$("#iconSetaEsuerda").hide();
+}
+
+function hideArrows() {
+	$("#iconSetaDireita").hide();
+	$("#iconSetaEsquerda").hide();
+}
+function showArrows() {
+	$("#iconSetaDireita").show();
+	$("#iconSetaEsquerda").show();
+}
 
 //Função para alterar os títulos das cenas
 function changeTitle(titulo) {
@@ -89,9 +162,28 @@ function changeTitle(titulo) {
 //Função para carregar a cena
 function loadScene() {
 	switch(scene) {
+
 		case 1:
+		$("#telaNome").show();
 		changeTitle(" ");
-		$("#proximaTela").show();
+		break;
+
+		case 2:
+		$("#telaVideoOnibus1").show();
+		$("#iconCalculadora").hide();
+		$("#iconMais").hide();
+		$("#iconHelp").hide();
+		changeTitle(" ");
+		if (!videoOnibus1Assistido) {
+			videoOnibus1.currentTime = 0;
+			disallowNextScene();
+			watchVideoOnibus1();
+
+		} else {
+			videoOnibus1.play();
+			videoOnibus1.currentTime = 0;
+			allowNextScene();
+		}
 		break;
 	}
 }
@@ -100,7 +192,12 @@ function loadScene() {
 function unloadScene() {
 	switch(scene) {
 		case 1:
-		$("#proximaTela").hide();
+		$("#telaNome").hide();
 		break;
+
+		case 2:
+		$("#telaVideoOnibus1").hide();
+		break;
+
 	}
 }
