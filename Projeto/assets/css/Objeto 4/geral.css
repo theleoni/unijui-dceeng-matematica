@@ -23,13 +23,16 @@ body {
 }
 
 .videosGrandes {
-	display: block;
-	max-width: 100%;
 	margin-top: -10%;
-	z-index: 0;
-	height: auto;
 }
 
-#videoOnibus1 {
-	margin-top: -5% !important;
+.videosOnibus {
+	margin-top: -12% !important;
+	height: 72% !important;
+}
+
+.imgsFull {
+	width:100%;	
+	height: 96%;
+	margin-top: -4%;
 }
