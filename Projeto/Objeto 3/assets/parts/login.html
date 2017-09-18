@@ -1,0 +1,64 @@
+<div class="scr-login">
+	<div class="row">
+		<div class="col-xs-12">
+			<video autoplay muted id="login-video"></video>
+		</div>
+
+		<div class="login col-xs-3 col-xs-offset-2">
+			<input type="text" class="form-control" id="login-confirmacao" maxlength="55" placeholder="Insira o seu nome"> </input>
+			<button type="button" class="btn btn-primary btn-block" id="button-confirmacao">Confirmar</button>
+		</div>
+	</div>
+</div>
+
+<style media="screen">
+</style>
+
+<script type="text/javascript">
+
+let loginVideo = document.querySelector('#login-video');
+let loginConfirmacao = document.querySelector('#login-confirmacao');
+let buttonConfirmacao = document.querySelector("#button-confirmacao");
+
+let source = document.createElement('source');
+source.setAttribute('src', 'assets/video/login-1.mp4');
+loginVideo.appendChild(source);
+loginVideo.play();
+
+let buttonClickado = false;
+let finalizadoZoom = false;
+let finalizado = false;
+
+buttonConfirmacao.addEventListener("click", function() {
+	if (!(loginConfirmacao.value === '')) {
+		buttonClickado = true;
+
+		$("#login-confirmacao").fadeOut();
+		$("#button-confirmacao").fadeOut();
+
+		nomePessoa = loginConfirmacao.value;
+	}
+});
+
+loginVideo.addEventListener("ended", function() {
+	if (finalizado) {
+		// $(".scr-login").hide();
+		// $(".scr-primeiro").show();
+		$('.geral').load('assets/parts/lixeiras.html');
+	} else {
+
+		if (buttonClickado) {
+			if (!finalizadoZoom) {
+				finalizadoZoom = true;
+				source.setAttribute('src', 'assets/video/login-2.mp4');
+			} else {
+				finalizado = true;
+				source.setAttribute('src', 'assets/video/login-3.mp4');
+			}
+			loginVideo.load();
+		}
+
+		loginVideo.play();
+	}
+});
+</script>
