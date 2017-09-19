@@ -32,6 +32,7 @@ function hideDivsOnObjectStart() {
 	$("#telaInfografico1").hide();
 	$("#telaVideoOnibus2").hide();
 	$("#telaChegadaCorsan").hide();
+	$("#telaTratamentoAgua").hide();
 }
 
 
@@ -316,6 +317,10 @@ function loadScene() {
 		$("#telaChegadaCorsan").show();
 		showArrows();
 		break;
+
+		case 6:
+		$("#telaTratamentoAgua").show();
+		break;
 	}
 }
 
@@ -342,5 +347,8 @@ function unloadScene() {
 		$("#telaChegadaCorsan").hide();
 		break;
 
+		case 6:
+		$("#telaTratamentoAgua").hide();
+		break;
 	}
 }
