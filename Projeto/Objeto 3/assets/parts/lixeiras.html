@@ -1,6 +1,85 @@
-<img src="assets/img/" />
+
+<!-- <img class="fundo" src="assets/img/lixeiras.png" /> -->
+<!-- <img class="fundo" src="assets/img/lixeira_fundo.jpg" /> -->
+
+<div class="">
+	<img class="fundo" src="assets/img/lixeiras.png"/>
+
+	<div class="lixeiras text-center">
+
+		<img class="lixeira" src="assets/img/lixeira_1_papel.png" onclick="popUp('papel')"/>
+		<img class="lixeira" src="assets/img/lixeira_2_plastico.png" onclick="popUp('plastico')"/>
+		<img class="lixeira" src="assets/img/lixeira_3_vidro.png" onclick="popUp('vidro')"/>
+		<img class="lixeira" src="assets/img/lixeira_4_metal.png" onclick="popUp('metal')"/>
+		<img class="lixeira" src="assets/img/lixeira_5_organico.png" onclick="popUp('organico')"/>
+	</div>
+</div>
 
 <style media="screen">
+
+.fundo {
+	width: 100%;
+	display: block;
+}
+
+.fundo-div {
+	background-image: url('assets/img/lixeiras.png');
+	/*background-attachment: fixed;*/
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 100%;
+}
+
+.lixeiras {
+	top: 28%;
+	position: absolute;
+}
+
+.lixeira {
+	width: 15%;
+	margin: 0.4%;
+	vertical-align: top;
+	transition: .3s ease;
+}
+
+.lixeira:hover {
+	width: 17%;
+	cursor: pointer;
+	transition: .3s ease;
+}
+
 </style>
 <script type="text/javascript">
+
+function popUp(tipo) {
+	// alert(tipo);
+	switch (tipo) {
+		case 'papel':
+
+		break;
+
+		case 'plastico':
+
+		break;
+
+		case 'vidro':
+
+		break;
+
+		case 'metal':
+
+		break;
+
+		case 'organico':
+
+		break;
+
+		default:
+		break;
+
+	}
+}
+
 </script>
+</html>
