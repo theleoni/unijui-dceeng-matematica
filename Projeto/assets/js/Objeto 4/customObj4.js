@@ -320,6 +320,8 @@ function loadScene() {
 
 		case 6:
 		$("#telaTratamentoAgua").show();
+		$("#textoTratamento").html(dataJSON.telaTratamento.fala1Guia);
+
 		break;
 	}
 }

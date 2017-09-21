@@ -11,6 +11,10 @@ body {
 	overflow: hidden;
 }
 
+.mLeft80 {
+	margin-left: 80%;
+}
+
 #verificacaoNome {
 	margin-top: 15vh;
 }
@@ -37,22 +41,42 @@ body {
 	margin-top: -4%;
 }
 
+
+
 #guiaDaCorsanTelaTratamentoAgua {
 	position: absolute;
-	top: -14vh;
+	max-width: 40%;
+	z-index: 1;
+	top: 50%;
+	margin-top: -4%;
 }
 
-#row1TelaTratamentoAgua {
+
+.imagemTratamentoGeral {
+	cursor: pointer;
 	position: absolute;
-	top: 32vh;
-}
-#row2TelaTratamentoAgua {
-	position: absolute;
-	top: 60vh;
+	width: 20vw;
+	height: auto;
 }
 
-#balaoTelaTratamento {
+#textoTratamento {
 	position: absolute;
-	top: -50vh;
-	left: -30vw;
+	left: 43%;
+	right: -40%;
+	text-align: justify;
+	z-index: 2;
+	color: #FFFFFF;
+	font-size: calc((2vh + 1vw)/2);
+	font-family: 'Roboto Condensed', sans-serif;
+	top: 0.5vh;
+}
+
+
+#balaoDeFalaTratamento {
+	position: absolute;
+	left: 40%;
+	right: 28%;
+	z-index:1;
+	width: 20vw;
+	height: 10vh;
 }
