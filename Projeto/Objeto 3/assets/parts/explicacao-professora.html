@@ -9,8 +9,8 @@ video {
 	position: fixed;
 	/*top: 50%;
 	left: 50%;*/
-	min-width: 100%;
-	min-height: 100%;
+	/*min-width: 100%;
+	min-height: 100%;*/
 	width: 100%;
 	height: auto;
 	/*z-index: -100;
@@ -37,7 +37,7 @@ try {
 }
 
 function anterior() {
-	$('.geral').load('assets/parts/explicacao-professora.html');
+	$('.geral').load('assets/parts/lixeiras.html');
 }
 
 function proxima() {
@@ -46,9 +46,9 @@ function proxima() {
 
 let video = document.querySelector("video");
 
-let source = document.createElement('source');
-source.setAttribute('src', 'assets/video/sala-aula.mp4');
-video.appendChild(source);
+let sourceVideo = document.createElement('source');
+sourceVideo.setAttribute('src', 'assets/video/explicacao-professora.mp4');
+video.appendChild(sourceVideo);
 video.play();
 
 video.addEventListener("ended", function() {

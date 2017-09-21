@@ -1,0 +1,98 @@
+<div class="geral">
+	<img class="fundo" src="assets/img/sala-aula.png">
+
+	<div class="botoes col-xs-offset-5">
+		<div>
+			<button type="button" class="botao btn" onclick="popUp('media')">Média</button>
+		</div>
+		<div>
+			<button type="button" class="botao btn" onclick="popUp('mediana')">Mediana</button>
+		</div>
+		<div>
+			<button type="button" class="botao btn" onclick="popUp('moda')">Moda</button>
+		</div>
+	</div>
+
+</div>
+
+<style media="screen">
+.geral {
+	position: relative;
+}
+
+.fundo {
+	width: 100%;
+}
+
+.botoes {
+	text-align: center;
+	top: 13%;
+	position: absolute;
+}
+
+.botao {
+	font-size: 18px;
+	background-color: transparent;
+	border-color: #FFFFFF;
+	color: #fff;
+	transition: .3s ease;
+	width: 160px;
+	height: 60px;
+	margin: 6px;
+}
+
+.botao:hover {
+	background-color: #fff;
+	border-color: #FFFFFF;
+	color: #338a34;
+	transition: .3s ease;
+}
+
+</style>
+
+<script type="text/javascript">
+
+try {
+	$("#iconSetaEsquerda").show();
+	$("#iconSetaDireita").show();
+
+	iconSetaEsquerda.addEventListener("click", function() {
+		anterior();
+	});
+
+	iconSetaDireita.addEventListener("click", function() {
+		proxima();
+	});
+} catch (e) {
+}
+
+function anterior() {
+	$('.geral').load('assets/parts/sala-aula.html');
+}
+
+function proxima() {
+	// $('.geral').load('assets/parts/media-mediana-moda.html');
+}
+
+function popUp(tipo) {
+console.log(tipo);
+	switch (tipo) {
+		default:
+		case 'media':
+
+		break;
+
+		case 'mediana':
+
+		break;
+
+		case 'moda':
+
+		break;
+	}
+
+
+}
+
+
+</script>

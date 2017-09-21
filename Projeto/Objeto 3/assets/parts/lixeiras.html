@@ -36,6 +36,7 @@
 	width: 17%;
 	cursor: pointer;
 	transition: .3s ease;
+
 }
 
 .lixeira-explicacao .imagem img {
@@ -101,18 +102,26 @@
 
 <script type="text/javascript">
 
-let iconSetaEsquerda = document.querySelector("#iconSetaEsquerda");
-let iconSetaDireita = document.querySelector("#iconSetaDireita");
-$("#iconSetaEsquerda").hide();
-$("#iconSetaDireita").show();
+try {
+	$("#iconSetaEsquerda").hide();
+	$("#iconSetaDireita").show();
 
-iconSetaEsquerda.addEventListener("click", function() {
+	iconSetaEsquerda.addEventListener("click", function() {
+		anterior();
+	});
 
-});
+	iconSetaDireita.addEventListener("click", function() {
+		proxima();
+	});
+} catch (e) {
+}
 
-iconSetaDireita.addEventListener("click", function() {
-	$('.geral').load('assets/parts/eplicacao-sala.html');
-});
+function anterior() {
+}
+
+function proxima() {
+	$('.geral').load('assets/parts/explicacao-professora.html');
+}
 
 function popUp(tipo) {
 
