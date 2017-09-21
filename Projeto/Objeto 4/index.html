@@ -171,79 +171,84 @@
 
 
 
+
 		<!-- Tela 6 -->
 		<div id="telaTratamentoAgua">
 
-			<div class="row" id="row1TelaTratamentoAgua">
-				<div class="col-xs-2">
-					<img id="imgCoagulacao" class="img-responsive" src="../assets/img/Objeto 4/coagulacao.png">
-				</div>
-				<div class="col-xs-2">
-					<img id="imgFloculacao" class="img-responsive" src="../assets/img/Objeto 4/floculacao.png">
-				</div>
-				<div class="col-xs-2">
-					<img id="imgDecantacao" class="img-responsive" src="../assets/img/Objeto 4/decantacao.png">
-				</div>
-				<div class="col-xs-2">
-					<img id="imgFiltracao" class="img-responsive" src="../assets/img/Objeto 4/filtracao.png">
-				</div>
-				<div class="col-xs-offset-1 col-xs-2 ">
-					<img id="guiaDaCorsanTelaTratamentoAgua" class="img-responsive" src="../assets/img/Objeto 4/guiaDaCorsan.png">
+			<div class="row">
+				<div class="mLeft80 col-xs-3">
+					<img id="guiaDaCorsanTelaTratamentoAgua"   src="../assets/img/Objeto 4/guiaDaCorsan.png">
 				</div>
 			</div>
-			<div class="row" id="row2TelaTratamentoAgua">
-				<div class="col-xs-2">
-					<img id="imgFluoretacao" class="img-responsive" src="../assets/img/Objeto 4/fluoretacao.png">
-				</div>
-				<div class="col-xs-2">
-					<img id="imgCloracao" class="img-responsive" src="../assets/img/Objeto 4/cloracao.png">
-				</div>
-				<div class="col-xs-2">
-					<img id="imgCorrecaoPH" class="img-responsive" src="../assets/img/Objeto 4/correcaoPH.png">
-				</div>
-				<div class="col-xs-2">
-					<img id="imgReservatorio" class="img-responsive" src="../assets/img/Objeto 4/reservatorio.png">
-				</div>
-				<div class="col-xs-3">
-					<img id="balaoTelaTratamento" src="../assets/img/Objeto 2/balaoDeFala1.png">
 
+			
+			<div class="row" style="height:40%">
 
+				<div class="col-xs-2">
+					<img id="imgCoagulacao" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/coagulacao.png">
+				</div>
+				<div class="col-xs-2">
+					<img id="imgFloculacao" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/floculacao.png">
+				</div>
+				<div class="col-xs-2">
+					<img id="imgDecantacao" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/decantacao.png">
+				</div>
+
+				<div class="col-xs-2" style="margin-top: 5vh;">
+					<p id="textoTratamento"></p>
+					<div> <img id="balaoDeFalaTratamento" src="../assets/img/Objeto 1/bubble1.png"> </div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-xs-2">
+					<img id="imgFiltracao" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/filtracao.png">
+				</div>
+				<div class="col-xs-2">
+					<img id="imgFluoretacao" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/fluoretacao.png">
+				</div>
+				<div class="col-xs-2">
+					<img id="imgCloracao" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/cloracao.png">
+				</div>
+				<div class="col-xs-2">
+					<img id="imgCorrecaoPH" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/correcaoPH.png">
+				</div>
+				<div class="col-xs-2">
+					<img id="imgReservatorio" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/reservatorio.png">
+				</div>
+			</div>
+		</div> <!--Div geral -->
+
+		<!--##################### CALCULADORA ##################### -->
+
+		<div id="calculadora">
+			<div class="top">
+				<span class="clear">C</span>
+				<div class="screen"></div>
+			</div>
+
+			<div class="keys">
+				<!-- operators and other keys -->
+				<span>7</span>
+				<span>8</span>
+				<span>9</span>
+				<span class="operator">+</span>
+				<span>4</span>
+				<span>5</span>
+				<span>6</span>
+				<span class="operator">-</span>
+				<span>1</span>
+				<span>2</span>
+				<span>3</span>
+				<span class="operator">÷</span>
+				<span>0</span>
+				<span>.</span>
+				<span class="eval">=</span>
+				<span class="operator">x</span>
+			</div>
 		</div>
-	</div> <!--Div geral -->
 
-	<!--##################### CALCULADORA ##################### -->
+		<!-- Calculadora -->
+		<script src="../assets/js/Misc/calculadora.js"></script>
 
-	<div id="calculadora">
-		<div class="top">
-			<span class="clear">C</span>
-			<div class="screen"></div>
-		</div>
-
-		<div class="keys">
-			<!-- operators and other keys -->
-			<span>7</span>
-			<span>8</span>
-			<span>9</span>
-			<span class="operator">+</span>
-			<span>4</span>
-			<span>5</span>
-			<span>6</span>
-			<span class="operator">-</span>
-			<span>1</span>
-			<span>2</span>
-			<span>3</span>
-			<span class="operator">÷</span>
-			<span>0</span>
-			<span>.</span>
-			<span class="eval">=</span>
-			<span class="operator">x</span>
-		</div>
-	</div>
-
-	<!-- Calculadora -->
-	<script src="../assets/js/Misc/calculadora.js"></script>
-
-</body>
-</html>
+	</body>
+	</html>
