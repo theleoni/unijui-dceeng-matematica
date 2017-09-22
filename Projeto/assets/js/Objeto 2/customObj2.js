@@ -149,7 +149,6 @@ function hideIconsNome() {
 
 
 function loadScene() {
-
 	switch (scene) {
 		case 1:
 		$("#telaNome").show();
@@ -260,6 +259,8 @@ function loadScene() {
 		changeTitle(" ");
 		break;
 	}
+	$("#iconMais").hide();
+
 }
 
 function unloadScene() {
@@ -344,6 +345,7 @@ $(document).on('click', '#botaoNome', function() {
 	nomeDoUsuario = $("#inputNome").val();
 	if (nomeDoUsuario != "") {
 		$("#iconesFixos").show();
+		$("#iconMais").hide();
 
 		nomeDoUsuario = $("#inputNome").val();
 		$("#nomeUsuarioTabelaModa").html($("#nomeUsuarioTabelaModa").html().replace("%fulano%", nomeDoUsuario));
@@ -1015,10 +1017,6 @@ $(document).on('click', '#iconHelp', function() {
 	}
 })
 
-$(document).on('click', '#iconMais', function() {
-	showInfo(scene);
-
-})
 
 function changeTitle(titulo) {
 	$("#tituloGeral").html(titulo);
