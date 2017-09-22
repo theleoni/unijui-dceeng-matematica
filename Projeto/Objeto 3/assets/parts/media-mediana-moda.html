@@ -1,21 +1,29 @@
+
+
+
+
+
+
+
+
 <div class="geral">
-	<img class="fundo" src="assets/img/sala-aula.png">
+	<img class="fundo" src="assets/img/sala-aula.png"/>
 
-	<div class="botoes col-xs-offset-5">
-		<div>
-			<button type="button" class="botao btn" onclick="popUp('media')">Média</button>
-		</div>
-		<div>
-			<button type="button" class="botao btn" onclick="popUp('mediana')">Mediana</button>
-		</div>
-		<div>
-			<button type="button" class="botao btn" onclick="popUp('moda')">Moda</button>
-		</div>
+	<div class="botoes text-center">
+		<!-- <img class="botao" src="assets/img/lixeira_1_papel.png" onclick="popUp('papel')"/>
+		<img class="botao" src="assets/img/lixeira_2_plastico.png" onclick="popUp('plastico')"/>
+		<img class="botao" src="assets/img/lixeira_3_vidro.png" onclick="popUp('vidro')"/>
+		<img class="botao" src="assets/img/lixeira_4_metal.png" onclick="popUp('metal')"/>
+		<img class="botao" src="assets/img/lixeira_5_organico.png" onclick="popUp('organico')"/> -->
+
+		<div class="botao" onclick="popUp('media')"><h2>Média</h2></div>
+		<div class="botao" onclick="popUp('mediana')"><h2>Mediana</h2></div>
+		<div class="botao" onclick="popUp('moda')"><h2>Moda</h2></div>
 	</div>
-
 </div>
 
 <style media="screen">
+
 .geral {
 	position: relative;
 }
@@ -25,26 +33,23 @@
 }
 
 .botoes {
-	text-align: center;
-	top: 13%;
+	top: 28%;
 	position: absolute;
 }
 
 .botao {
-	font-size: 18px;
-	background-color: transparent;
-	border-color: #FFFFFF;
-	color: #fff;
+	width: 15%;
+	margin: 0.4%;
+	vertical-align: top;
 	transition: .3s ease;
-	width: 160px;
-	height: 60px;
-	margin: 6px;
+
+	border: 1px solid #FFFFFF;
+	border-radius: 4px;
 }
 
 .botao:hover {
-	background-color: #fff;
-	border-color: #FFFFFF;
-	color: #338a34;
+	/*width: 17%;*/
+	cursor: pointer;
 	transition: .3s ease;
 }
 
@@ -71,28 +76,81 @@ function anterior() {
 }
 
 function proxima() {
-	// $('.geral').load('assets/parts/media-mediana-moda.html');
+	// $('.geral').load('assets/parts/explicacao-professora.html');
 }
 
 function popUp(tipo) {
-console.log(tipo);
-	switch (tipo) {
-		default:
-		case 'media':
 
-		break;
-
-		case 'mediana':
-
-		break;
-
-		case 'moda':
-
-		break;
+	if (document.querySelector('#dialog-form') == null) {
+		let inner = document.querySelector(".geral").innerHTML;
+		// inner += `
+		// <div id="dialog-form">
+		// 	<div class="lixeira-explicacao row">
+		// 		<div class="imagem col-xs-12 col-sm-12 col-md-6 col-lg-6">
+		// 			<img id="lixeira-explicacao-img" src="" />
+		// 		</div>
+		//
+		// 		<div class="texto col-xs-12 col-sm-12 col-md-6 col-lg-6">
+		// 			<h1 id="lixeira-explicacao-titulo" class="text-center">texto</h1>
+		// 			<p id="lixeira-explicacao-secundario">texto</p>
+		// 		</div>
+		// 	</div>
+		// </div>`
+		document.querySelector(".geral").innerHTML = inner;
 	}
 
+	// let caminhoImg = 'assets/img/';
+	// let titulo = '';
+	// let secundario = '';
 
+	switch (tipo) {
+
+		default:
+		case 'media':
+			// caminhoImg += 'lixeira_explicacao_1_papel.png';
+			// titulo = 'Papel';
+			// secundario = `
+			// <div class="lixeira-explicacao-papel">
+			// 	<h2>Principais aplicações do papel reciclado:</h2>
+			//
+			// 	<ul>
+			// 		<li><h4>Embalagens (papel craft e papelão);</h4></li>
+			// 		<li><h4>Fins sanitários (papel toalha, guardanapo);</h4></li>
+			// 		<li><h4>Imprimir-escrever;</h4></li>
+			// 		<li><h4>Artesanato;</h4></li>
+			// 		<li><h4>Blocos de anotações e cadernos;</h4></li>
+			// 		<li><h4>Sacolas de papel.</h4></li>
+			// 	</ul>
+			//
+			// 	<h4>
+			// 	<span class="tab"/>O mesmo papel pode ser reciclado entre 7 a 10 vezes. O papel é formado essencialmente por fibras celulósicas e estas vão se degradando a cada processo de reciclagem.
+			// 	</h4>
+			// </div>
+			// `
+			break;
+
+			case 'mediana':
+
+			break;
+
+			case 'moda':
+
+			break;
+
+	}
+
+	// document.querySelector('#lixeira-explicacao-img').src = caminhoImg;
+	// document.querySelector('#lixeira-explicacao-titulo').innerHTML = titulo;
+	// document.querySelector('#lixeira-explicacao-secundario').innerHTML = secundario;
+
+	let dialog = $("#dialog-form").dialog({
+		autoOpen: false,
+		height: 500,
+		width: 850,
+		modal: true,
+		buttons: {}
+	});
+	dialog.dialog("open");
 }
-
 
 </script>

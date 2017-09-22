@@ -300,41 +300,18 @@ function popUp(tipo) {
 
 	}
 
-	// let aux = `
-	// <div class="lixeira-explicacao row">
-	// 	<div class="imagem col-xs-12 col-sm-12 col-md-6 col-lg-6">
-	// 		<img src=${caminhoImg} />
-	// 	</div>
-	//
-	// 	<div class="texto text-center col-xs-12 col-sm-12 col-md-6 col-lg-6">
-	// 		<p class="titulo">${titulo}</p>
-	// 		<p class="secundario">${secundario}</p>
-	// 	</div>
-	// </div>
-	// `;
-
 	document.querySelector('#lixeira-explicacao-img').src = caminhoImg;
 	document.querySelector('#lixeira-explicacao-titulo').innerHTML = titulo;
 	document.querySelector('#lixeira-explicacao-secundario').innerHTML = secundario;
 
-	let dialog = $( "#dialog-form" ).dialog({
+	let dialog = $("#dialog-form").dialog({
 		autoOpen: false,
 		height: 500,
 		width: 850,
 		modal: true,
-		buttons: {
-		// 	"Create an account": addUser,
-		// 	Cancel: function() {
-		// 		dialog.dialog( "close" );
-		// 	}
-		// },
-		// close: function() {
-		// 	form[ 0 ].reset();
-		// 	allFields.removeClass( "ui-state-error" );
-		}
+		buttons: {}
 	});
-	dialog.dialog( "open" );
-	// swal(aux);
+	dialog.dialog("open");
 }
 
 </script>
