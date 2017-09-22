@@ -1,17 +1,38 @@
-<div class="scr-login">
-	<div class="row">
-		<div class="col-xs-12">
-			<video autoplay muted id="login-video"></video>
-		</div>
+<div class="row">
+	<div class="col-xs-12">
+		<video autoplay muted id="login-video"></video>
+	</div>
 
-		<div class="login col-xs-3 col-xs-offset-2">
-			<input type="text" class="form-control" id="login-confirmacao" maxlength="55" placeholder="Insira o seu nome"> </input>
-			<button type="button" class="btn btn-primary btn-block" id="button-confirmacao">Confirmar</button>
-		</div>
+	<div class="login col-xs-3 col-xs-offset-2">
+		<input type="text" class="form-control" id="login-confirmacao" maxlength="55" placeholder="Insira o seu nome"> </input>
+		<button type="button" class="btn btn-primary btn-block" id="button-confirmacao">Confirmar</button>
 	</div>
 </div>
 
+
 <style media="screen">
+video {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: 100%;
+	height: auto;
+	z-index: -100;
+	transform: translateX(-50%) translateY(-50%);
+	background-size: cover;
+	transition: 1s opacity;
+}
+
+.login {
+	position: relative;
+	/*margin-top: -300;*/
+	z-index: 100;
+	background-size: cover;
+	height: 100%
+	/*transform: translateY(50%);*/
+}
 </style>
 
 <script type="text/javascript">

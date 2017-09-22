@@ -36,6 +36,7 @@
 	width: 17%;
 	cursor: pointer;
 	transition: .3s ease;
+
 }
 
 .lixeira-explicacao .imagem img {
@@ -100,6 +101,27 @@
 </style>
 
 <script type="text/javascript">
+
+try {
+	$("#iconSetaEsquerda").hide();
+	$("#iconSetaDireita").show();
+
+	iconSetaEsquerda.addEventListener("click", function() {
+		anterior();
+	});
+
+	iconSetaDireita.addEventListener("click", function() {
+		proxima();
+	});
+} catch (e) {
+}
+
+function anterior() {
+}
+
+function proxima() {
+	$('.geral').load('assets/parts/explicacao-professora.html');
+}
 
 function popUp(tipo) {
 
@@ -271,7 +293,7 @@ function popUp(tipo) {
 			titulo = 'Orgânico';
 			secundario = `
 			<div class="lixeira-explicacao-organico">
-
+				<h4>O lixo orgânico é oriundo de seres vivos (animais e vegetais), resíduos produzidos nas residências, escolas, empresas, entre outras, são alguns exemplos restos de alimentos, cascas de ovos, sementes, folhas, madeiras (cinzas), dejetos humanos, etc. A coleta desse tipo de lixo é realizada nos aterros sanitários, locais apropriados para o tratamento desses resíduos.</h4>
 			</div>
 			`;
 		break;

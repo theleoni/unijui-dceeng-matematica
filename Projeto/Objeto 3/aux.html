@@ -21,11 +21,15 @@
 
 	<div class="geral">
 
-		<div class="row">
+		<center>
 
-			<div class="col-sm-1"><button type="button" class="btn" onclick="$('.geral').load('assets/parts/lixeiras.html');">Lixeiras</button></div>
+			<button type="button" style"margin:10dp;" class="btn" onclick="$('.geral').load('assets/parts/login.html');">Login</button>
+			<button type="button" class="btn" onclick="$('.geral').load('assets/parts/lixeiras.html');">Lixeiras</button>
+			<button type="button" class="btn" onclick="$('.geral').load('assets/parts/explicacao-professora.html');">Explicação prof.</button>
+			<button type="button" class="btn" onclick="$('.geral').load('assets/parts/sala-aula.html');">Sala de aula</button>
+			<button type="button" class="btn" onclick="$('.geral').load('assets/parts/media-mediana-moda.html');">Média/Mediana/Moda</button>
 
-		</div>
+		</center>
 
 	</div>
 
@@ -38,7 +42,13 @@
 	<script src="assets/js/sweetalert.min.js"></script>
 
 	<script type="text/javascript">
-	$('.geral').load('assets/parts/lixeiras.html');
+	var iconSetaEsquerda = document.querySelector("#iconSetaEsquerda");
+	var iconSetaDireita = document.querySelector("#iconSetaDireita");
+
+	$("#iconSetaEsquerda").hide();
+	$("#iconSetaDireita").hide();
+
+	// $('.geral').load('assets/parts/lixeiras.html');
 	</script>
 
 </body>

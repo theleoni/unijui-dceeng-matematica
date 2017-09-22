@@ -1,0 +1,57 @@
+<div class="row">
+	<div class="col-xs-12">
+		<video autoplay muted></video>
+	</div>
+</div>
+
+<style media="screen">
+video {
+	position: fixed;
+	/*top: 50%;
+	left: 50%;*/
+	/*min-width: 100%;
+	min-height: 100%;*/
+	width: 100%;
+	height: auto;
+	/*z-index: -100;
+	transform: translateX(-50%) translateY(-50%);
+	background-size: cover;
+	transition: 1s opacity;*/
+}
+</style>
+
+<script type="text/javascript">
+
+try {
+	$("#iconSetaEsquerda").show();
+	$("#iconSetaDireita").show();
+
+	iconSetaEsquerda.addEventListener("click", function() {
+		anterior();
+	});
+
+	iconSetaDireita.addEventListener("click", function() {
+		proxima();
+	});
+} catch (e) {
+}
+
+function anterior() {
+	$('.geral').load('assets/parts/lixeiras.html');
+}
+
+function proxima() {
+	$('.geral').load('assets/parts/media-mediana-moda.html');
+}
+
+let video = document.querySelector("video");
+
+let sourceVideo = document.createElement('source');
+sourceVideo.setAttribute('src', 'assets/video/explicacao-professora.mp4');
+video.appendChild(sourceVideo);
+video.play();
+
+video.addEventListener("ended", function() {
+	proxima();
+});
+</script>

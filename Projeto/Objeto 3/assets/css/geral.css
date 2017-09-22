@@ -14,8 +14,6 @@ body {
 
 .navbar .row {
 	background-color: #00458e;
-	/*z-index: 20;*/
-	/*height: 100px;*/
 }
 
 .geral {
@@ -40,47 +38,3 @@ body {
 .scr-login {
 	display: block;
 }
-
-/*.scr-login video {
-width: 100%;
-height: auto;
-position: relative;
-z-index: -100;
-}*/
-
-.scr-login video {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	min-width: 100%;
-	min-height: 100%;
-	width: 100%;
-	height: auto;
-	z-index: -100;
-	transform: translateX(-50%) translateY(-50%);
-	background-size: cover;
-	transition: 1s opacity;
-}
-
-.scr-login .login {
-	position: relative;
-	/*margin-top: -300;*/
-	z-index: 100;
-	background-size: cover;
-	height: 100%
-	/*transform: translateY(50%);*/
-}
-
-/*@media screen and (orientation: portrait) {
-.scr-login video {
-width: auto;
-height: 100%;
-}
-}
-
-@media screen and (orientation: landscape) {
-.scr-login video {
-width: 100%;
-height: auto;
-}
-}*/
