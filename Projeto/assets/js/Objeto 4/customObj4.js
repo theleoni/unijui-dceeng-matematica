@@ -10,6 +10,7 @@ var shortFadeTime = 250;
 //Variáveis especificas
 var videoOnibus1Assistido = false;
 var videoOnibus2Assistido = false;
+var videoOnibusVoltandoAssistido = false;
 
 var stuckOnFirstImage = true;
 var viuTratamento = false;
@@ -36,6 +37,14 @@ function hideDivsOnObjectStart() {
 	$("#telaChegadaCorsan").hide();
 	$("#telaTratamentoAgua").hide();
 	$("#telaLaboratorio").hide();
+	$("#telaTabela1").hide();
+	$("#telaTabela2").hide();
+	$("#telaTabela3").hide();
+	$("#telaLaboratorio2").hide();
+	$("#telaVideoOnibusVolta").hide();
+	$("#telaEscola").hide();
+	$("#telaSalaDeAula").hide();
+	$("#telaSalaDeAula2").hide();
 }
 
 
@@ -146,16 +155,29 @@ function watchVideoOnibus1() {
 function watchVideoOnibus2() {
 	$(videoOnibus2).on('ended',function(){
 		if (scene == 4 && videoOnibus2Assistido == false) {
-			nextScene();
+			allowPreviousScene();
 			videoOnibus2Assistido = true;
+			nextScene();
 		} else if (videoOnibus2Assistido == true) {
+			allowPreviousScene();
 			videoOnibus2.currentTime = 0;
 		}
 
 	});
 }
 
-
+//Função para assistir o vídeo do ônibus voltando
+function watchVideoOnibusVoltando() {
+	$(videoOnibusVoltando).on('ended',function(){
+		if (scene == 12 && videoOnibusVoltandoAssistido == false) {
+			nextScene();
+			videoOnibusVoltandoAssistido = true;
+		} else if (videoOnibusVoltandoAssistido == true) {
+			videoOnibusVoltando.currentTime = 0;
+		}
+		allowNextScene();
+	});
+}
 //Função para verificar se a pessoa localizou a seta para passar de tela
 function checkIfStuck() {
 	setTimeout(function() {
@@ -326,6 +348,14 @@ function checkIfStuck() {
 			case 2:
 			case 4:
 			case 5:
+			case 7:
+			case 8:
+			case 9:
+			case 10:
+			case 11:
+			case 12:
+			case 13:
+			case 14:
 			nextScene();
 			break
 			case 3:
@@ -352,6 +382,14 @@ function checkIfStuck() {
 			case 5:
 			case 6:
 			case 7:
+			case 8:
+			case 9:
+			case 10:
+			case 11:
+			case 12:
+			case 13:
+			case 14:
+			case 15:
 			previousScene();
 			break;
 
@@ -395,13 +433,12 @@ function checkIfStuck() {
 
 			case 3:
 			$("#telaInfografico1").show();
+			changeTitle(" ");
 			showArrows();
-
 			checkIfStuck();
 			break;
 
 			case 4:
-			disallowPreviousScene();
 			$("#telaVideoOnibus2").show();
 			$("#iconCalculadora").hide();
 			$("#iconMais").hide();
@@ -423,6 +460,7 @@ function checkIfStuck() {
 			case 5:
 			$("#telaChegadaCorsan").show();
 			showArrows();
+			changeTitle(" ");
 			break;
 
 			case 6:
@@ -432,12 +470,68 @@ function checkIfStuck() {
 
 			case 7:
 			$("#telaLaboratorio").show();
+			changeTitle(" ");
 			updateConversaLaboratorio();
 			if (conversaLaboratorioCompleta == true) {
 				allowNextScene();
 			} else {
 				disallowNextScene();
 			}
+			break;
+
+			case 8:
+			$("#telaTabela1").show();
+			changeTitle(" ");
+			break;
+
+			case 9:
+			$("#telaTabela2").show();
+			changeTitle(" ");
+			break;
+
+			case 10:
+			$("#telaTabela3").show();
+			changeTitle(" ");
+			break;
+
+			case 11:
+			$("#telaLaboratorio2").show();
+			changeTitle(" ");
+
+			break;
+
+			case 12:
+			$("#telaVideoOnibusVolta").show();
+			changeTitle(" ");
+			$("#iconCalculadora").hide();
+			$("#iconMais").hide();
+			$("#iconHelp").hide();
+			if (!videoOnibusVoltandoAssistido) {
+				videoOnibusVoltando.currentTime = 0;
+				videoOnibusVoltando.play()
+				disallowNextScene();
+				watchVideoOnibusVoltando();
+
+			} else {
+				videoOnibusVoltando.play();
+				videoOnibusVoltando.currentTime = 0;
+				allowNextScene();
+			}
+			break;
+
+			case 13:
+			$("#telaEscola").show();
+			changeTitle(" ");
+			break;
+
+			case 14:
+			$("#telaSalaDeAula").show();
+			changeTitle(" ");
+			break;
+
+			case 15:
+			$("#telaSalaDeAula2").show();
+			changeTitle(" ");
 			break;
 		}
 	}
@@ -471,6 +565,38 @@ function checkIfStuck() {
 
 			case 7:
 			$("#telaLaboratorio").hide();
+			break;
+
+			case 8:
+			$("#telaTabela1").hide();
+			break;
+
+			case 9:
+			$("#telaTabela2").hide();
+			break;
+
+			case 10:
+			$("#telaTabela3").hide();
+			break;
+
+			case 11:
+			$("#telaLaboratorio2").hide();
+			break;
+
+			case 12:
+			$("#telaVideoOnibusVolta").hide();
+			break;
+
+			case 13:
+			$("#telaEscola").hide();
+			break;
+
+			case 14:
+			$("#telaSalaDeAula").hide();
+			break;
+
+			case 15:
+			$("#telaSalaDeAula2").hide();
 			break;
 		}
 	}
