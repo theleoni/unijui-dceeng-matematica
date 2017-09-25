@@ -10,7 +10,9 @@ body {
 	min-height: 100%;
 	overflow: hidden;
 }
-
+.mLeft225 {
+	margin-left: 22.5%;
+}
 .mLeft80 {
 	margin-left: 80%;
 }
@@ -82,27 +84,27 @@ body {
 }
 
 #textoLaboratorio {
-    position: absolute;
-    left: -40%;
-    right: 0%;
-    text-align: justify;
-    z-index: 2;
-    color: #FFFFFF;
-    font-size: calc((2vh + 1vw)/2);
-    font-family: 'Roboto Condensed', sans-serif;
-    top: -77vh;
-    word-wrap: break-word;
+	position: absolute;
+	left: -40%;
+	right: 0%;
+	text-align: justify;
+	z-index: 2;
+	color: #FFFFFF;
+	font-size: calc((2vh + 1vw)/2);
+	font-family: 'Roboto Condensed', sans-serif;
+	top: -77vh;
+	word-wrap: break-word;
 }
 
 
 #balaoDeFalaLaboratorio {
-    position: absolute;
-    left: -50%;
-    top: -82vh;
-    right: 28%;
-    z-index: 1;
-    width: 30vw;
-    height: 22vh;
+	position: absolute;
+	left: -50%;
+	top: -82vh;
+	right: 28%;
+	z-index: 1;
+	width: 30vw;
+	height: 22vh;
 }
 
 
@@ -133,4 +135,51 @@ body {
 #setaDireitaLaboratorio:hover {
 	font-size: 50;
 	color: black;
+}
+
+.multiTables {
+
+	color: #FFFFFF;
+}
+
+.testeContainer {
+	position: absolute;
+	margin-top: -80vh;
+	max-height: 30vh;
+	max-width: 30vw;
+	overflow: auto;
+}
+
+.tabelaTotal {
+	background-color: #6d6b67;
+}
+.noTopBorder {
+	border-top-color: transparent !important;
+}
+
+.noBottomBoder {
+	border-bottom-color: transparent !important;
+}
+
+#balaoDeFalaSalaDeAula {
+	position: absolute;
+	left: -65%;
+	top: -82vh;
+	right: 28%;
+	z-index: 1;
+	width: 30vw;
+	height: 22vh;
+}
+
+#textoSalaDeAula {
+	position: absolute;
+	left: -40%;
+	right: 0%;
+	text-align: justify;
+	z-index: 2;
+	color: #FFFFFF;
+	font-size: calc((2vh + 1vw)/2);
+	font-family: 'Roboto Condensed', sans-serif;
+	top: -77vh;
+	word-wrap: break-word;
 }
