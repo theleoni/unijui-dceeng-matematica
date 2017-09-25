@@ -7,6 +7,12 @@ var ajudaTela1_3_13 = [
 }]
 
 
+var ajudaTela4_6_9 = [
+{ 
+ title: 'Ajuda',
+ html: '<div style="text-align:left;">Clique no botão de play para assistir ao vídeo'
+}]
+
 var ajudaTela8 = [
 {
   progressSteps: ['1', '2', '3'],
@@ -139,16 +145,25 @@ var ajudaTela14Ativ4 = [
 },
 ]
 
+var ajudaPadrao = [
+{
+  title: 'Ajuda',
+  html: '<div style="text-align:left;">Clique na seta para a direita no canto inferior da tela para prosseguir'
+}]
 
 function getHelpScene(numeroDaTela) {
   switch(numeroDaTela){
     default:
-    return null;
+    return ajudaPadrao;
     break;
     case 1:
     case 3:
     case 13:
     return ajudaTela1_3_13;
+    case 4:
+    case 6:
+    case 9:
+    return ajudaTela4_6_9;
     case 8:
     return ajudaTela8;
     case 10:
