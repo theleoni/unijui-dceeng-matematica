@@ -27,11 +27,9 @@ video {
 
 .login {
 	position: relative;
-	/*margin-top: -300;*/
 	z-index: 100;
 	background-size: cover;
 	height: 100%
-	/*transform: translateY(50%);*/
 }
 </style>
 
@@ -63,8 +61,6 @@ buttonConfirmacao.addEventListener("click", function() {
 
 loginVideo.addEventListener("ended", function() {
 	if (finalizado) {
-		// $(".scr-login").hide();
-		// $(".scr-primeiro").show();
 		$('.geral').load('assets/parts/lixeiras.html');
 	} else {
 

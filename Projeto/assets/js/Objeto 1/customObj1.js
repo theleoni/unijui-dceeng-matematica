@@ -39,7 +39,7 @@
   		req.onload = function() {
   			if (this.status === 200) {
   				var videoBlob = this.response;
-  				var vid = URL.createObjectURL(videoBlob); 
+  				var vid = URL.createObjectURL(videoBlob);
   				this.src = vid;
   			}
   		}
@@ -128,7 +128,7 @@
 			'../assets/img/Objeto 1/circular6.gif'
 			]);
 
-		
+
 
 
 	});
@@ -145,9 +145,9 @@
 
 				//Delay entre as trocas de tela
 				clicouRecentemente = true;
-				setTimeout(function(){ 
-					clicouRecentemente = false; 
-				}, 1000); 
+				setTimeout(function(){
+					clicouRecentemente = false;
+				}, 1000);
 
 
 
@@ -174,7 +174,7 @@
 					break;
 					case 13:
 					switch(questionNumber) {
-						default: 
+						default:
 						questionNumber++;
 						loadQuestion();
 						break;
@@ -187,7 +187,7 @@
 
 					case 7:
 					switch(questionNumber) {
-						default: 
+						default:
 						questionNumber++;
 						loadQuestion();
 						break;
@@ -211,15 +211,15 @@
 						showConjuntoImagens2IntroQuestoesGraficos();
 
 						updateText[1] = true;
-						break;		
+						break;
 					}
 					else {
 						nextScene();
-						break;	
+						break;
 					}
 					case 4:
 					switch(questionNumber) {
-						default: 
+						default:
 						questionNumber++;
 						loadQuestion();
 						break;
@@ -324,7 +324,7 @@
 							questionNumber--;
 							loadQuestion();
 							break;
-						}	
+						}
 						break;
 
 
@@ -355,7 +355,7 @@
 				$("#alertNome").show();
 			}
 			else {
-				nome = $("#inputNome").val(); 
+				nome = $("#inputNome").val();
 				$("#rowInputName").remove();
 				showFixedImages();
 				nextScene();
@@ -367,7 +367,7 @@
 
 
 		/* SCENE 1 */
-		
+
 		//Exibe as imagens fixas (Setas, ajuda e fechar)
 		function showFixedImages() {
 			$("#imagensFixas").show();
@@ -398,7 +398,7 @@
 		viuUsina = true;
 		hideFixedImages();
 		switch (usina) {
-			case 'hidreletrica': 
+			case 'hidreletrica':
 			$('#imgUsina').attr("src", "../assets/img/Objeto 1/hidreletrica_animada.mp4");
 			$('#textoUsina').html(dataJSON.textosUsinas.usinaHidreletrica);
 			$('#tituloUsina').html(dataJSON.textosUsinas.titleHidreletrica);
@@ -438,7 +438,7 @@
 			$('#sceneTiposUsinasSub1').css("background-color", "#0C99AB")
 			$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_solar.png')
 
-			break;	
+			break;
 			case 'biomassa':
 			$('#imgUsina').attr("src", "../assets/img/Objeto 1/biomassa_animada.mp4");
 			$('#textoUsina').html(dataJSON.textosUsinas.usinaBiomassa);
@@ -446,28 +446,28 @@
 			$('#sceneTiposUsinasSub1').css("background-color", "#008CAF")
 			$('#imgDetalhesSceneTiposUsinas').attr('src', '../assets/img/Objeto 1/detalhe_biomassa.png')
 
-			break;	
+			break;
 		}
 	}
-	
+
 
 	  //Restaura o estado da cena 2, após a visualização dos dados da usina
 	  function restoresceneTiposUsinas() {
 	  	loadScene();
 	  	showFixedImages();
 	  	$('#imagemEngenheiroTiposUsinas').show();
-	  	$('#mensagem').show(); 
+	  	$('#mensagem').show();
 	  	$("body").css("background-color", "white");
 	  	$("#iconMais").show();
 	  }
-	  
-	  
-	  
-	  
-	  
-	  
+
+
+
+
+
+
 	  /*Scene 3 */
-	  
+
 	  //Atualiza os dados contidos no container do imposto, trocando o texto e a cor do background
 	  function showImposto(imposto) {
 	  	$("#containerImposto").show();
@@ -481,7 +481,7 @@
 	  		case 'tusd':
 	  		$("#containerImposto").css("background-color", "#5E35B1");
 	  		$("#containerImposto").html(dataJSON.textosImpostos.tusd);
-	  		break;	
+	  		break;
 
 	  		case 'cofins':
 	  		$("#containerImposto").css("background-color", "#D26F4C");
@@ -501,13 +501,13 @@
 	  		case 'tust':
 	  		$("#containerImposto").css("background-color", "#880E4F");
 	  		$("#containerImposto").html(dataJSON.textosImpostos.tust);
-	  		break;				
+	  		break;
 	  	}
 
 
 	  }
-	  
-	  
+
+
 
 	  /* Intro questões */
 
@@ -779,7 +779,7 @@
 	  		$("#questionNumberMatrizEnergetica").html(dataJSON.questao11.numeroQuestao);
 	  		$("#questionMatrizEnergetica").html(dataJSON.questao11.textoQuestao);
 	  		$("#botaoMatrizQuestoesSim").hide();
-	  		$("#botaoMatrizQuestoesNao").hide();			
+	  		$("#botaoMatrizQuestoesNao").hide();
 	  		$("#inputRespostasMatrizEnergetica").show();
 	  		$("#enviarRespostaMatriz").show();
 
@@ -944,7 +944,7 @@
 
 	  	}
 	  }
-	  
+
 
 	  //Verifica se a resposta selecionada está correta, e chama o método correto
 	  function checkAnswer() {
@@ -1049,28 +1049,28 @@
 
 	  		case 11:
 	  		if ($("#inputRespostasMatrizEnergetica").val().toLowerCase() == "fóssil" || $("#inputRespostasMatrizEnergetica").val().toLowerCase() == "fossil" ) {
-	  			respostaCorreta();	
+	  			respostaCorreta();
 	  		} else {
 	  			respostaErrada();
 	  		}
 	  		break;
 	  		case 12:
 	  		if ($("#inputRespostasMatrizEnergetica").val().toLowerCase() == "nuclear") {
-	  			respostaCorreta();	
+	  			respostaCorreta();
 	  		} else {
 	  			respostaErrada();
 	  		}
 	  		break;
 	  		case 13:
 	  		if ($("#inputRespostasMatrizEnergetica").val().toLowerCase() == "hidrelétrica" || $("#inputRespostasMatrizEnergetica").val().toLowerCase() == "hidreletrica")  {
-	  			respostaCorreta();	
+	  			respostaCorreta();
 	  		} else {
 	  			respostaErrada();
 	  		}
 	  		break;
 	  		case 14:
 	  		if ($("#inputRespostasMatrizEnergetica").val().toLowerCase() == "aneel")  {
-	  			respostaCorreta();	
+	  			respostaCorreta();
 	  		} else {
 	  			respostaErrada();
 	  		}
@@ -1108,7 +1108,7 @@
 	  			respostaErrada();
 	  		}
 	  		break;
-	  		
+
 	  		case 19:
 	  		if ($("#radioImpostos input[type='radio']:checked").val() == "a") {
 	  			respostaCorreta();
@@ -1137,7 +1137,7 @@
 	  	})
 	  }
 	  function getInputValuesQuestion10() {
-	  	inputRespostasQuestao10 = 
+	  	inputRespostasQuestao10 =
 	  	[
 	  	$("#inputPotenciaImpressora"),
 	  	$("#inputPotenciaLampada"),
@@ -1187,7 +1187,7 @@
 	  				html: "Para calcular a energia elétrica temos a seguinte fórmula <br> <b> E  = P . ∆t </b> <br> Onde: <br> <b>E </b>: energia elétrica <br> <b>P</b>: Potência <br> <b>∆t</b>: Variação do tempo",
 	  			});
 	  			break;
-	  			case 5: 
+	  			case 5:
 	  			swal({
 	  				title: "Corrente elétrica",
 	  				html: "A corrente elétrica é o movimento de partículas eletrizadas, o que é chamado de íons, em um condutor. Essa forma de movimentação de partículas é caracterizada pela diferença de potencial elétrico, ou seja, tensão elétrica.",
@@ -1261,7 +1261,7 @@
 
 		//Binda o evento de clicar no botão de enviar ao método checkAnswer
 		$(document).on('click', '#enviarResposta', function () {
-			checkAnswer();				
+			checkAnswer();
 		});
 
 		$(document).on('click', '#enviarRespostaMatriz', function () {
@@ -1308,7 +1308,7 @@
 				$("#iconFechar").show();
 				$("#iconSetaEsquerda").show();
 				$("#iconSetaDireita").show();
-				$("#calculadora").hide();	
+				$("#calculadora").hide();
 				$(".iconFixoCalculadora").css("color", "green");
 				calculadoraAberta = false;
 			}
@@ -1320,7 +1320,7 @@
 				$("#iconFechar").hide();
 				$("#iconSetaEsquerda").hide();
 				$("#iconSetaDireita").hide();
-				$("#calculadora").show();	
+				$("#calculadora").show();
 				$(".iconFixoCalculadora").css("color", "red");
 
 			}
@@ -1343,7 +1343,7 @@
 						case 66:
 						if (!($("#opcaoB").prop("disabled"))) {
 							selectAnswer($("#opcaoB"));
-						}						
+						}
 						break;
 						case 67:
 						if (!($("#opcaoC").prop("disabled"))) {
@@ -1393,7 +1393,7 @@
  					$("#enviarResposta").prop('disabled', false);
  					$("#alertAnswer").hide();
  					break;
- 					case 11: 
+ 					case 11:
  					case 12:
  					case 13:
  					case 14:
@@ -1482,19 +1482,19 @@
  					$("#opcaoA").toggleClass('btn-primary').siblings().removeClass('btn-primary');
  					updateAlertOnQuestionChange();
  					break;
- 					case 9:			
+ 					case 9:
  					$("#opcaoD").prop('disabled', false).siblings().prop('disabled', true);
  					$("#opcaoD").toggleClass('btn-primary').siblings().removeClass('btn-primary');
  					updateAlertOnQuestionChange();
  					break;
- 					case 10: 
+ 					case 10:
  					for (var i = 0; i < respostasCorretasQuestion10.length; i++) {
  						inputRespostasQuestao10[i].prop('disabled', true);
  					}
 
  					updateAlertOnQuestionChange();
  					break;
- 					case 11: 
+ 					case 11:
  					$("#inputRespostasMatrizEnergetica").prop('disabled', true);
  					updateAlertOnQuestionChange();
  					$("#inputNumbersceneQuestoesGraficos").prop('placeholder', 'Fóssil');
@@ -1516,7 +1516,7 @@
  					$("#inputNumbersceneQuestoesGraficos").prop('placeholder', 'ANEEL');
  					updateAlertOnQuestionChange();
  					break;
- 					case 15:			
+ 					case 15:
  					$("#botaoMatrizQuestoesNao").prop('disabled', false);
  					$("#botaoMatrizQuestoesSim").prop('disabled', true);
  					$("#botaoMatrizQuestoesNao").toggleClass('btn-primary');
@@ -1577,22 +1577,22 @@
  				$("#alertAnswer").addClass("alert-danger");
  				$("#alertAnswer").removeClass("alert-success");
  				$("#alertAnswer").html(dataJSON.mensagensQuestoes.respostaIncorreta);
- 				$("#alertAnswer").show(); 
+ 				$("#alertAnswer").show();
  			} else if (questionNumber > 10 && questionNumber < 16) {
  				$("#alertAnswerMatriz").addClass("alert-danger");
  				$("#alertAnswerMatriz").removeClass("alert-success");
  				$("#alertAnswerMatriz").html(dataJSON.mensagensQuestoes.respostaIncorreta);
- 				$("#alertAnswerMatriz").show(); 
+ 				$("#alertAnswerMatriz").show();
  			} else if (questionNumber >= 16 && questionNumber < 19) {
  				$("#alertAnswerBandeiras").addClass("alert-danger");
  				$("#alertAnswerBandeiras").removeClass("alert-success");
  				$("#alertAnswerBandeiras").html(dataJSON.mensagensQuestoes.respostaIncorreta);
- 				$("#alertAnswerBandeiras").show();   			
+ 				$("#alertAnswerBandeiras").show();
  			} else if (questionNumber >= 19) {
  				$("#alertAnswerImposto").addClass("alert-danger");
  				$("#alertAnswerImposto").removeClass("alert-success");
  				$("#alertAnswerImposto").html(dataJSON.mensagensQuestoes.respostaIncorreta);
- 				$("#alertAnswerImposto").show();  
+ 				$("#alertAnswerImposto").show();
  			}
  		}
 
@@ -1602,22 +1602,22 @@
  				$("#alertAnswer").html(dataJSON.mensagensQuestoes.respostaCorreta);
  				$("#alertAnswer").show();
  				$("#alertAnswer").addClass("alert-success");
- 				$("#alertAnswer").removeClass("alert-danger"); 
+ 				$("#alertAnswer").removeClass("alert-danger");
  			} else if (questionNumber > 10 && questionNumber < 16) {
  				$("#alertAnswerMatriz").html(dataJSON.mensagensQuestoes.respostaCorreta);
  				$("#alertAnswerMatriz").show();
  				$("#alertAnswerMatriz").addClass("alert-success");
- 				$("#alertAnswerMatriz").removeClass("alert-danger"); 
+ 				$("#alertAnswerMatriz").removeClass("alert-danger");
  			} else if (questionNumber >= 16 && questionNumber < 19) {
  				$("#alertAnswerBandeiras").html(dataJSON.mensagensQuestoes.respostaCorreta);
  				$("#alertAnswerBandeiras").show();
  				$("#alertAnswerBandeiras").addClass("alert-success");
- 				$("#alertAnswerBandeiras").removeClass("alert-danger"); 
+ 				$("#alertAnswerBandeiras").removeClass("alert-danger");
  			} else if (questionNumber >= 19) {
  				$("#alertAnswerImposto").html(dataJSON.mensagensQuestoes.respostaCorreta);
  				$("#alertAnswerImposto").show();
  				$("#alertAnswerImposto").addClass("alert-success");
- 				$("#alertAnswerImposto").removeClass("alert-danger"); 
+ 				$("#alertAnswerImposto").removeClass("alert-danger");
  			}
  		}
 
@@ -1630,9 +1630,9 @@
  		}
 
  		$(function() {
- 			$('img[data-alt-src]').each(function() { 
- 				new Image().src = $(this).data('alt-src'); 
- 			}).hover(sourceSwap, sourceSwap); 
+ 			$('img[data-alt-src]').each(function() {
+ 				new Image().src = $(this).data('alt-src');
+ 			}).hover(sourceSwap, sourceSwap);
  		});
 
 	  	//Método utilizado para criar o gráfico utilizado nas questões 1 e 2
@@ -1701,7 +1701,7 @@
 				});
 			});
 	  	}
-	  	
+
 	  	//Método utilizado para criar o gráfico utilizado nas questões 3 e 4
 	  	function grafico2() {
 
@@ -2111,7 +2111,7 @@
 				sleep(500).then(() => {
 					$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular2.gif").fadeIn(1000);
 					$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg2).fadeIn(1000);
-				});								
+				});
 				break;
 				case 3:
 				$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title3);
@@ -2120,7 +2120,7 @@
 				sleep(500).then(() => {
 					$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular3.gif").fadeIn(1000);
 					$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg3).fadeIn(1000);
-				});	
+				});
 
 				break;
 				case 4:
@@ -2130,7 +2130,7 @@
 				sleep(500).then(() => {
 					$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular4.gif").fadeIn(1000);
 					$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg4).fadeIn(1000);
-				});									
+				});
 				break;
 				case 5:
 				$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title5);
@@ -2139,7 +2139,7 @@
 				sleep(500).then(() => {
 					$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular5.gif").fadeIn(1000);
 					$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
-				});									
+				});
 				break;
 				case 6:
 				$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title6);
@@ -2148,12 +2148,12 @@
 				sleep(500).then(() => {
 					$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular6.gif").fadeIn(1000);
 					$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
-				});	
+				});
 
 				setaTransmissaoClicavel = true;
-				break;						
+				break;
 			}
-			
+
 		}
 
 
@@ -2209,7 +2209,7 @@
 							enabled: true,
 							format: '{point.name}: {point.y}',
 							style: {
-								textOutline: false, 
+								textOutline: false,
 							}
 						}
 					}
@@ -2244,7 +2244,6 @@
 
 		function gerarGraficoCustom() {
 			$(document).ready(function () {
-
 
 				// Gera o gráfico
 				Highcharts.chart('containerGraficoCustom', {
@@ -2338,14 +2337,14 @@
 
 
 		function getInputValues() {
-			inputRespostasMatrizEnergetica = 
+			inputRespostasMatrizEnergetica =
 			[
 			$("#inputConsumoUsinasBiomassa"),
 			$("#inputNumeroUsinasHidrica"),
 			$("#inputConsumoUsinasSolar"),
 			$("#inputNumeroUsinasNuclear"),
-			$("#inputNumeroUsinasFossil"), 
-			$("#inputConsumoImportacao") 
+			$("#inputNumeroUsinasFossil"),
+			$("#inputConsumoImportacao")
 			];
 		}
 
@@ -2358,33 +2357,33 @@
 			$("#gastoMensalLampada").html(parseFloat(($("#quantidadeLampada").html() * ($("#potenciaLampada").html()/1000) * $("#tempoLampada").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
 			$("#gastoMensalFerro").html(parseFloat(($("#quantidadeFerro").html() * ($("#potenciaFerro").html()/1000) * $("#tempoFerro").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
 			$("#gastoMensalCelular").html(parseFloat(($("#quantidadeCelular").html() * ($("#potenciaCelular").html()/1000) * $("#tempoCelular").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-			
+
 			$("#valorTotalTabelaPotencia").html((
-				parseFloat($("#gastoMensalTelevisao").html()) + 
-				parseFloat($("#gastoMensalMaquinaDeLavar").html()) + 
-				parseFloat($("#gastoMensalChuveiro").html()) + 
-				parseFloat($("#gastoMensalGeladeira").html()) + 
-				parseFloat($("#gastoMensalComputador").html()) + 
-				parseFloat($("#gastoMensalLampada").html()) + 
-				parseFloat($("#gastoMensalFerro").html()) + 
+				parseFloat($("#gastoMensalTelevisao").html()) +
+				parseFloat($("#gastoMensalMaquinaDeLavar").html()) +
+				parseFloat($("#gastoMensalChuveiro").html()) +
+				parseFloat($("#gastoMensalGeladeira").html()) +
+				parseFloat($("#gastoMensalComputador").html()) +
+				parseFloat($("#gastoMensalLampada").html()) +
+				parseFloat($("#gastoMensalFerro").html()) +
 				parseFloat($("#gastoMensalCelular").html())).toFixed(2));
 		});
 
-		
+
 
 		function getInputValueConta() {
-			inputRespostasConta = 
+			inputRespostasConta =
 			[
 			$("#inputImpostos"),
 			$("#inputGeracao"),
 			$("#inputEncargos"),
 			$("#inputDistribuicao"),
-			$("#inputTransmissao"), 
-			$("#inputGeracao") 
+			$("#inputTransmissao"),
+			$("#inputGeracao")
 			];
 		}
 
-		
+
 		function checkTableConta() {
 			var verificacaoLocal = true;
 			getInputValueConta();
@@ -2432,13 +2431,13 @@
 			parseFloat($("#inputGerarGraficoValue1").val()),
 			$("#inputGerarGrafico2").val(),
 			parseFloat($("#inputGerarGraficoValue2").val()),
-			$("#inputGerarGrafico3").val(), 
+			$("#inputGerarGrafico3").val(),
 			parseFloat($("#inputGerarGraficoValue3").val()),
-			$("#inputGerarGrafico4").val(), 
+			$("#inputGerarGrafico4").val(),
 			parseFloat($("#inputGerarGraficoValue4").val()),
-			$("#inputGerarGrafico5").val(), 
+			$("#inputGerarGrafico5").val(),
 			parseFloat($("#inputGerarGraficoValue5").val()),
-			$("#inputGerarGrafico6").val(), 
+			$("#inputGerarGrafico6").val(),
 			parseFloat($("#inputGerarGraficoValue6").val())
 			];
 		}
@@ -2455,7 +2454,7 @@
 					inputGrafico[i].css('background-color', 'red');
 					verificacaoLocal = false;
 				}
-			} 
+			}
 			if (verificacaoLocal == true) {
 				tipoGrafico = $("#selecaoGrafico input[type='radio']:checked").val();
 
@@ -2474,7 +2473,7 @@
 	  			scene++;
 	  			sleep(fadeTime).then(() => {
 	  				loadScene();
-	  			});			
+	  			});
 
 	  		}
 	  	}
@@ -2489,7 +2488,7 @@
 				scene--;
 				sleep(fadeTime).then(() => {
 					loadScene();
-				});				
+				});
 			}
 		}
 
@@ -2569,7 +2568,7 @@
 	  			$("#sceneBandeirasEnergia").fadeIn(fadeTime);
 	  			$("#tituloGeral").html(dataJSON.stringsGerais.title4);
 	  			$("#iconSetaDireita").show();
-	  			break;		
+	  			break;
 	  			case 13:
 	  			$("#sceneQuestoesBandeiras").fadeIn(fadeTime);
 	  			$("#tituloGeral").html(dataJSON.stringsGerais.title4);
@@ -2605,7 +2604,7 @@
 
 	  			break;
 	  			case 2:
-	  			$("#sceneTiposUsinas").fadeOut(fadeTime);	
+	  			$("#sceneTiposUsinas").fadeOut(fadeTime);
 	  			$("#iconMais").fadeOut(fadeTime);
 	  			break;
 	  			case 3:
@@ -2669,22 +2668,22 @@
 	  			switch (questionNumber) {
 	  				case 3:
 	  				swal("Ajuda!", "Arraste o mouse sobre as barras do gráfico para ver o consumo");
-	  				break;	  		
+	  				break;
 	  				case 4:
 	  				swal("Ajuda!", "Arraste o mouse sobre as barras gráfico para ver o consumo");
-	  				break;			
+	  				break;
 	  				case 5:
 	  				swal("Ajuda!", "Para saber a média, basta dividir o total do consumo de energia pela quantidade de meses correspondentes");
-	  				break;	  		
+	  				break;
 	  				case 6:
 	  				swal("Ajuda!", "Arraste o mouse sobre o gráfico para ver os valores");
-	  				break;			
+	  				break;
 	  				case 7:
 	  				swal("Ajuda!", "Para saber a diferença basta subtrair a energia hidrelétrica pela energia solar");
-	  				break;	  		
+	  				break;
 	  				case 10:
 	  				swal("Ajuda!", "Arraste o mouse sobre as barras do gráfico para ver a potência");
-	  				break;		
+	  				break;
 	  			}
 	  			break;
 	  			case 7:
