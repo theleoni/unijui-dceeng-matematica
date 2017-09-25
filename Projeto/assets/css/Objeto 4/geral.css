@@ -68,15 +68,69 @@ body {
 	color: #FFFFFF;
 	font-size: calc((2vh + 1vw)/2);
 	font-family: 'Roboto Condensed', sans-serif;
-	top: 0.5vh;
+	top: 5vh;
 }
 
 
 #balaoDeFalaTratamento {
 	position: absolute;
-	left: 40%;
+	left: 30%;
 	right: 28%;
 	z-index:1;
-	width: 20vw;
-	height: 10vh;
+	width: 22vw;
+	height: 20vh;
+}
+
+#textoLaboratorio {
+    position: absolute;
+    left: -40%;
+    right: 0%;
+    text-align: justify;
+    z-index: 2;
+    color: #FFFFFF;
+    font-size: calc((2vh + 1vw)/2);
+    font-family: 'Roboto Condensed', sans-serif;
+    top: -77vh;
+    word-wrap: break-word;
+}
+
+
+#balaoDeFalaLaboratorio {
+    position: absolute;
+    left: -50%;
+    top: -82vh;
+    right: 28%;
+    z-index: 1;
+    width: 30vw;
+    height: 22vh;
+}
+
+
+#setaEsquerdaLaboratorio {	
+	position: absolute;
+	font-size: 40;
+	top: -60vh;
+	left: -4vw;
+	cursor: pointer;
+	color: gray;
+}
+
+#setaEsquerdaLaboratorio:hover {
+	font-size: 50;
+	color: black;
+}
+
+#setaDireitaLaboratorio {
+	position: absolute;
+	font-size: 40;
+	top: -60vh;
+	left: 13vw;
+	z-index: 5;
+	cursor: pointer;
+	color: gray;
+}
+
+#setaDireitaLaboratorio:hover {
+	font-size: 50;
+	color: black;
 }

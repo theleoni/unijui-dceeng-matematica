@@ -12,8 +12,10 @@ var videoOnibus1Assistido = false;
 var videoOnibus2Assistido = false;
 
 var stuckOnFirstImage = true;
+var viuTratamento = false;
 
-
+var conversaLaboratorio = 1;
+var conversaLaboratorioCompleta = false;
 
 $(document).ready(function() {
 	hideDivsOnObjectStart();
@@ -33,6 +35,7 @@ function hideDivsOnObjectStart() {
 	$("#telaVideoOnibus2").hide();
 	$("#telaChegadaCorsan").hide();
 	$("#telaTratamentoAgua").hide();
+	$("#telaLaboratorio").hide();
 }
 
 
@@ -170,187 +173,304 @@ function checkIfStuck() {
 		}
 	}, 17500)
 }
-//Funções de controle dos icones fixos nas telas
-function allowNextScene() {
-	$("#iconesFixos").show();
-	$("#iconSetaDireita").show();
-}
-
-function disallowNextScene() {
-	$("#iconesFixos").show();
-	$("#iconSetaDireita").hide();
-}
-
-function allowPreviousScene() {
-	$("#iconesFixos").show();
-	$("#iconSetaEsquerda").show();
-}
-
-function disallowPreviousScene() {
-	$("#iconesFixos").show();
-	$("#iconSetaEsuerda").hide();
-}
-
-function hideArrows() {
-	$("#iconesFixos").show();
-	$("#iconSetaDireita").hide();
-	$("#iconSetaEsquerda").hide();
-}
-function showArrows() {
-	$("#iconesFixos").show();
-	$("#iconSetaDireita").show();
-	$("#iconSetaEsquerda").show();
-}
-
-function showUpperIcons() {
-	$("#iconesFixos").show();
-	$("#iconCalculadora").show();
-	$("#iconMais").show();
-	$("#iconHelp").show();
-	$("#iconFechar").show();
-}
-
-function hideUpperIcons() {
-	$("#iconesFixos").show();
-	$("#iconCalculadora").hide();
-	$("#iconMais").hide();
-	$("#iconHelp").hide();
-	$("#iconFechar").hide();
-}
-//Função para alterar os títulos das cenas
-function changeTitle(titulo) {
-	$("#tituloGeral").html(titulo);
-}
 
 
-//Função chamada ao clicar na seta direita
-$(document).on('click', '#iconSetaDireita', function() {
-	switch (scene) {
 
-		case 2:
-		case 4:
-		case 5:
-		nextScene();
-		break
-		case 3:
-		stuckOnFirstImage = false;
-		nextScene();
-		break;
+	//Função para exibir informações do tratamento
+
+	function showInfoTratamento(tipo) {
+		viuTratamento = true;
+		switch (tipo) {
+			case 'coagulacao':
+			swal("Coagulação", "<img class='img-responsive'src='../assets/img/Objeto 4/coagulacao.png' <br>A água que está armazenada no tanque recebe a adição de um sal chamado de sulfato de alumínio ou sulfato férrico. Esses compostos formam uma substância gelatinosa que favorece a formação de flocos (junção das impurezas na substância gelatinosa).");
+			break;
+
+			case 'floculacao':
+			swal("Floculação", "<img class='img-responsive'src='../assets/img/Objeto 4/floculacao.png' <br>Nessa etapa, a água é direcionada para outro tanque, onde será adicionado um polímero que favorecerá que os flocos formados na etapa de coagulação juntem-se e formem flocos ainda maiores e mais pesados.");
+			break;
+
+			case 'decantacao':
+			swal("Decantação", "<img class='img-responsive'src='../assets/img/Objeto 4/decantacao.png' <br>Após a floculação, a água é direcionada para um novo tanque, onde ela permanecerá em repouso para que os flocos formados sejam decantados para o fundo do tanque, haja vista que eles são mais densos que a água.");
+			break;
+
+			case 'filtracao':
+			swal("Filtração", "<img class='img-responsive'src='../assets/img/Objeto 4/filtracao.png' <br>Após a decantação, a água atravessa um grande filtro formado por areia, carvão ativado e cascalho. Nessa etapa, as impurezas que não aderiram aos flocos ficam retidas no filtro, além de a água sofrer uma desodorização pela presença do carvão ativado.");
+			break;
+
+
+			case 'fluoretacao':
+			swal("Fluoretação", "<img class='img-responsive'src='../assets/img/Objeto 4/fluoretacao.png' <br>Nessa etapa, é adicionada à água uma quantidade de ácido com flúor, o Ácido Fluossilícico (H2SiF6), para auxiliar na redução de cáries na população.");
+			break;
+
+
+			case 'cloracao':
+			swal("Cloração", "<img class='img-responsive'src='../assets/img/Objeto 4/cloracao.png' <br>Além da adicção de Flúor, o Cloro também é adicionado à água, na forma de sal, com o objetivo de eliminar os micro-organismos presentes.");
+			break;
+
+
+			case 'correcaoPH':
+			swal("Correção do PH (Ácidez da água)", "<img class='img-responsive'src='../assets/img/Objeto 4/correcaoPH.png' <br>Nessa etapa, é adicionada à água hidróxido de cálcio para diminuir a acidez do meio.");
+			break;
+
+			case 'reservatorio':
+			swal("Água própria para consumo", "<img class='img-responsive'src='../assets/img/Objeto 4/reservatorio.png' <br>E por fim, a água é conduzida dos reservatórios e distribuída na cidade por tubulações subterrâneas. ");
+			break;
+		}
 	}
-});
 
-//Função chamada ao clicar na seta esquerda
-$(document).on('click', '#iconSetaEsquerda', function() {
-	switch (scene) {
+	//Função para atualizar os textos do diálogo da tela do laboratório
+	function updateConversaLaboratorio() {
+		switch (conversaLaboratorio) {
 
-		case 3:
-		case 4:
-		case 5:
-		previousScene();
-		break;
+			case 1:
+			$("#textoLaboratorio").html(dataJSON.telaLaboratorio.fala1);
+			$("#setaEsquerdaLaboratorio").hide();
+			break;
+			case 2:
+			$("#textoLaboratorio").html(dataJSON.telaLaboratorio.fala2);
+			$("#setaEsquerdaLaboratorio").show();
+			break;
+			case 3:
+			$("#textoLaboratorio").html(dataJSON.telaLaboratorio.fala3);
+			break;
 
+			case 4:
+			$("#textoLaboratorio").html(dataJSON.telaLaboratorio.fala4);
+			break;
+			case 5:
+			$("#textoLaboratorio").html(dataJSON.telaLaboratorio.fala5);
+			break;
+
+			case 6:
+			$("#textoLaboratorio").html(dataJSON.telaLaboratorio.fala6);
+			$("#setaDireitaLaboratorio").show();
+			break;
+			case 7:
+			$("#textoLaboratorio").html(dataJSON.telaLaboratorio.fala7);
+			conversaLaboratorioCompleta = true;
+			allowNextScene();
+			$("#setaDireitaLaboratorio").hide();
+			break;
+		}
 	}
-});
+
+	//Funções para chamar a atualização do diálogo na tela do laboratório
+	$(document).on('click', '#setaDireitaLaboratorio', function () {
+		conversaLaboratorio++;
+		updateConversaLaboratorio();
+	});
+
+	$(document).on('click', '#setaEsquerdaLaboratorio', function () {
+		conversaLaboratorio--;
+		updateConversaLaboratorio();
+	});
 
 
+	//Funções de controle dos icones fixos nas telas
+	function allowNextScene() {
+		$("#iconesFixos").show();
+		$("#iconSetaDireita").show();
+	}
 
+	function disallowNextScene() {
+		$("#iconesFixos").show();
+		$("#iconSetaDireita").hide();
+	}
 
+	function allowPreviousScene() {
+		$("#iconesFixos").show();
+		$("#iconSetaEsquerda").show();
+	}
 
+	function disallowPreviousScene() {
+		$("#iconesFixos").show();
+		$("#iconSetaEsquerda").hide();
+	}
 
-//Função para carregar a cena
-function loadScene() {
-	switch(scene) {
+	function hideArrows() {
+		$("#iconesFixos").show();
+		$("#iconSetaDireita").hide();
+		$("#iconSetaEsquerda").hide();
+	}
+	function showArrows() {
+		$("#iconesFixos").show();
+		$("#iconSetaDireita").show();
+		$("#iconSetaEsquerda").show();
+	}
 
-		case 1:
-		$("#telaNome").show();
-		changeTitle(" ");
-		break;
+	function showUpperIcons() {
+		$("#iconesFixos").show();
+		$("#iconCalculadora").show();
+		$("#iconMais").show();
+		$("#iconHelp").show();
+		$("#iconFechar").show();
+	}
 
-		case 2:
-		disallowPreviousScene();
-		$("#telaVideoOnibus1").show();
+	function hideUpperIcons() {
+		$("#iconesFixos").show();
 		$("#iconCalculadora").hide();
 		$("#iconMais").hide();
 		$("#iconHelp").hide();
-		changeTitle(" ");
-		if (!videoOnibus1Assistido) {
-			videoOnibus1.currentTime = 0;
-			videoOnibus1.play()
-			disallowNextScene();
-			watchVideoOnibus1();
-
-		} else {
-			videoOnibus1.play();
-			videoOnibus1.currentTime = 0;
-			allowNextScene();
-		}
-		break;
-
-		case 3:
-		$("#telaInfografico1").show();
-		showArrows();
-
-		checkIfStuck();
-		break;
-
-		case 4:
-		disallowPreviousScene();
-		$("#telaVideoOnibus2").show();
-		$("#iconCalculadora").hide();
-		$("#iconMais").hide();
-		$("#iconHelp").hide();
-		changeTitle(" ");
-		if (!videoOnibus2Assistido) {
-			videoOnibus2.currentTime = 0;
-			videoOnibus2.play()
-			disallowNextScene();
-			watchVideoOnibus2();
-
-		} else {
-			videoOnibus2.play();
-			videoOnibus2.currentTime = 0;
-			allowNextScene();
-		}
-		break;
-
-		case 5:
-		$("#telaChegadaCorsan").show();
-		showArrows();
-		break;
-
-		case 6:
-		$("#telaTratamentoAgua").show();
-		$("#textoTratamento").html(dataJSON.telaTratamento.fala1Guia);
-
-		break;
+		$("#iconFechar").hide();
 	}
-}
-
-//Função para remover a cena
-function unloadScene() {
-	switch(scene) {
-		case 1:
-		$("#telaNome").hide();
-		break;
-
-		case 2:
-		$("#telaVideoOnibus1").hide();
-		break;
-
-		case 3:
-		$("#telaInfografico1").hide();
-		break;
-
-		case 4:
-		$("#telaVideoOnibus2").hide();
-		break;
-
-		case 5:
-		$("#telaChegadaCorsan").hide();
-		break;
-
-		case 6:
-		$("#telaTratamentoAgua").hide();
-		break;
+	//Função para alterar os títulos das cenas
+	function changeTitle(titulo) {
+		$("#tituloGeral").html(titulo);
 	}
-}
+
+
+	//Função chamada ao clicar na seta direita
+	$(document).on('click', '#iconSetaDireita', function() {
+		switch (scene) {
+
+			case 2:
+			case 4:
+			case 5:
+			nextScene();
+			break
+			case 3:
+			stuckOnFirstImage = false;
+			nextScene();
+			break;
+
+			case 6:
+			if (viuTratamento == false ) {
+				swal("","Veja ao menos uma das etapas de tratamento da água!", "error");
+			} else {
+				nextScene();
+			}
+			break;
+		}
+	});
+
+	//Função chamada ao clicar na seta esquerda
+	$(document).on('click', '#iconSetaEsquerda', function() {
+		switch (scene) {
+
+			case 3:
+			case 4:
+			case 5:
+			case 6:
+			case 7:
+			previousScene();
+			break;
+
+
+		}
+	});
+
+
+
+
+
+
+	//Função para carregar a cena
+	function loadScene() {
+		switch(scene) {
+
+			case 1:
+			$("#telaNome").show();
+			changeTitle(" ");
+			break;
+
+			case 2:
+			disallowPreviousScene();
+			$("#telaVideoOnibus1").show();
+			$("#iconCalculadora").hide();
+			$("#iconMais").hide();
+			$("#iconHelp").hide();
+			changeTitle(" ");
+			if (!videoOnibus1Assistido) {
+				videoOnibus1.currentTime = 0;
+				videoOnibus1.play()
+				disallowNextScene();
+				watchVideoOnibus1();
+
+			} else {
+				videoOnibus1.play();
+				videoOnibus1.currentTime = 0;
+				allowNextScene();
+			}
+			break;
+
+			case 3:
+			$("#telaInfografico1").show();
+			showArrows();
+
+			checkIfStuck();
+			break;
+
+			case 4:
+			disallowPreviousScene();
+			$("#telaVideoOnibus2").show();
+			$("#iconCalculadora").hide();
+			$("#iconMais").hide();
+			$("#iconHelp").hide();
+			changeTitle(" ");
+			if (!videoOnibus2Assistido) {
+				videoOnibus2.currentTime = 0;
+				videoOnibus2.play()
+				disallowNextScene();
+				watchVideoOnibus2();
+
+			} else {
+				videoOnibus2.play();
+				videoOnibus2.currentTime = 0;
+				allowNextScene();
+			}
+			break;
+
+			case 5:
+			$("#telaChegadaCorsan").show();
+			showArrows();
+			break;
+
+			case 6:
+			$("#telaTratamentoAgua").show();
+			$("#textoTratamento").html(dataJSON.telaTratamento.fala1Guia);
+			break;
+
+			case 7:
+			$("#telaLaboratorio").show();
+			updateConversaLaboratorio();
+			if (conversaLaboratorioCompleta == true) {
+				allowNextScene();
+			} else {
+				disallowNextScene();
+			}
+			break;
+		}
+	}
+
+	//Função para remover a cena
+	function unloadScene() {
+		switch(scene) {
+			case 1:
+			$("#telaNome").hide();
+			break;
+
+			case 2:
+			$("#telaVideoOnibus1").hide();
+			break;
+
+			case 3:
+			$("#telaInfografico1").hide();
+			break;
+
+			case 4:
+			$("#telaVideoOnibus2").hide();
+			break;
+
+			case 5:
+			$("#telaChegadaCorsan").hide();
+			break;
+
+			case 6:
+			$("#telaTratamentoAgua").hide();
+			break;
+
+			case 7:
+			$("#telaLaboratorio").hide();
+			break;
+		}
+	}

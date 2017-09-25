@@ -1,5 +1,15 @@
 {
 	"telaTratamento": {
-		"fala1Guia": "Fala de teste nº 1"
-		}
+		"fala1Guia": "Olá, eu sou o guia da Corsan e vou lhe apresentar as etapas do tratamento da água. Clique nas imagens para obter mais informações"
+	},
+
+	"telaLaboratorio": {
+		"fala1": "Aqui no laboratório são realizadas as análises da qualidade da água que chega na sua residência.",
+		"fala2": "Seguimos as normatizações sobre análise da água potável para consumo humano.",
+		"fala3": "O que nós analisamos são amostras coletadas em diversos pontos da cidade.",
+		"fala4": "Seguimos normas específicas sobre o modo de coletar as análises.",
+		"fala5": "A legislação exige relatórios mensais das medidas amostrais de água coletada na rede de distribuição.",
+		"fala6": "Nesses relatórios deve constar: A turbidez, a cor, o cloro livre residual, os coliformes totais e Escherichia Coli.",
+		"fala7": "Vamos ver os relatórios da qualidade da água distribuida em 2013 e em 2017"
+	}
 }

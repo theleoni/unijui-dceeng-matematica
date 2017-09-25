@@ -185,70 +185,87 @@
 			<div class="row" style="height:40%">
 
 				<div class="col-xs-2">
-					<img id="imgCoagulacao" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/coagulacao.png">
+					<img id="imgCoagulacao" onclick="showInfoTratamento('coagulacao')" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/coagulacao.png">
 				</div>
 				<div class="col-xs-2">
-					<img id="imgFloculacao" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/floculacao.png">
+					<img id="imgFloculacao" onclick="showInfoTratamento('floculacao')" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/floculacao.png">
 				</div>
 				<div class="col-xs-2">
-					<img id="imgDecantacao" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/decantacao.png">
+					<img id="imgDecantacao" onclick="showInfoTratamento('decantacao')" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/decantacao.png">
 				</div>
 
 				<div class="col-xs-2" style="margin-top: 5vh;">
 					<p id="textoTratamento"></p>
-					<div> <img id="balaoDeFalaTratamento" src="../assets/img/Objeto 1/bubble1.png"> </div>
+					<div> <img id="balaoDeFalaTratamento" src="../assets/img/Objeto 4/balaoDeFala1.png"> </div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-xs-2">
-					<img id="imgFiltracao" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/filtracao.png">
+					<img id="imgFiltracao" onclick="showInfoTratamento('filtracao')" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/filtracao.png">
 				</div>
 				<div class="col-xs-2">
-					<img id="imgFluoretacao" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/fluoretacao.png">
+					<img id="imgFluoretacao" onclick="showInfoTratamento('fluoretacao')" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/fluoretacao.png">
 				</div>
 				<div class="col-xs-2">
-					<img id="imgCloracao" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/cloracao.png">
+					<img id="imgCloracao" onclick="showInfoTratamento('cloracao')" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/cloracao.png">
 				</div>
 				<div class="col-xs-2">
-					<img id="imgCorrecaoPH" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/correcaoPH.png">
+					<img id="imgCorrecaoPH" onclick="showInfoTratamento('correcaoPH')" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/correcaoPH.png">
 				</div>
 				<div class="col-xs-2">
-					<img id="imgReservatorio" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/reservatorio.png">
+					<img id="imgReservatorio" onclick="showInfoTratamento('reservatorio')" class="imagemTratamentoGeral img-responsive" src="../assets/img/Objeto 4/reservatorio.png">
 				</div>
 			</div>
-		</div> <!--Div geral -->
 
-		<!--##################### CALCULADORA ##################### -->
-
-		<div id="calculadora">
-			<div class="top">
-				<span class="clear">C</span>
-				<div class="screen"></div>
-			</div>
-
-			<div class="keys">
-				<!-- operators and other keys -->
-				<span>7</span>
-				<span>8</span>
-				<span>9</span>
-				<span class="operator">+</span>
-				<span>4</span>
-				<span>5</span>
-				<span>6</span>
-				<span class="operator">-</span>
-				<span>1</span>
-				<span>2</span>
-				<span>3</span>
-				<span class="operator">÷</span>
-				<span>0</span>
-				<span>.</span>
-				<span class="eval">=</span>
-				<span class="operator">x</span>
+		</div>
+		<!-- Tela 7 -->
+		<div id="telaLaboratorio">
+			<div class="row">
+				<div class="col-xs-12">
+					<img id="laboratorio" class="imgsFull" src="../assets/img/Objeto 4/laboratorioCorsan.jpg">
+				</div>
+				<div class="col-xs-offset-7 col-xs-2">
+					<p id="textoLaboratorio"></p>
+					<div> <img id="balaoDeFalaLaboratorio" src="../assets/img/Objeto 4/balaoDeFala1.png"> </div>
+					<span id="setaEsquerdaLaboratorio" class="glyphicon glyphicon-triangle-left"> </span>
+					<span id="setaDireitaLaboratorio" class="glyphicon glyphicon-triangle-right"> </span>
+				</div>
 			</div>
 		</div>
 
-		<!-- Calculadora -->
-		<script src="../assets/js/Misc/calculadora.js"></script>
+	</div> <!--Div geral -->
 
-	</body>
-	</html>
+	<!--##################### CALCULADORA ##################### -->
+
+	<div id="calculadora">
+		<div class="top">
+			<span class="clear">C</span>
+			<div class="screen"></div>
+		</div>
+
+		<div class="keys">
+			<!-- operators and other keys -->
+			<span>7</span>
+			<span>8</span>
+			<span>9</span>
+			<span class="operator">+</span>
+			<span>4</span>
+			<span>5</span>
+			<span>6</span>
+			<span class="operator">-</span>
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<span class="operator">÷</span>
+			<span>0</span>
+			<span>.</span>
+			<span class="eval">=</span>
+			<span class="operator">x</span>
+		</div>
+	</div>
+
+	<!-- Calculadora -->
+	<script src="../assets/js/Misc/calculadora.js"></script>
+
+</body>
+</html>
