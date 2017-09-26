@@ -202,3 +202,21 @@ body {
 	right: 40vw;
 	font-size: calc((2vh + 1vw)/2);
 }
+
+#textoSalaDeAula2 {
+	position: absolute;
+	left: -40%;
+	right: 0%;
+	text-align: justify;
+	z-index: 2;
+	color: #FFFFFF;
+	font-size: calc((2vh + 1vw)/2);
+	font-family: 'Roboto Condensed', sans-serif;
+	top: -77vh;
+	word-wrap: break-word;
+}
+
+.whiteSpaceButton {
+	white-space: normal;
+	text-align: left;
+}
