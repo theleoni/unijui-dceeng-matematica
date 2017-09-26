@@ -8,6 +8,10 @@
 		<img class="lixeira" src="assets/img/lixeira_4_metal.png" onclick="popUp('metal')"/>
 		<img class="lixeira" src="assets/img/lixeira_5_organico.png" onclick="popUp('organico')"/>
 	</div>
+
+	<div class="lixeiras-texto text-center">
+		<h4>Clique nas lixeias para saber mais sobre separação do lixo</h4>
+	</div>
 </div>
 
 <style media="screen">
@@ -21,8 +25,16 @@
 }
 
 .lixeiras {
-top: 28%;
-position: absolute;
+	top: 28%;
+	position: absolute;
+}
+
+.lixeiras-texto {
+	top: 10%;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	font-size: 12%;
 }
 
 .lixeira {
@@ -131,6 +143,7 @@ function proxima() {
 
 function popUp(tipo) {
 
+	let dialog;
 	if (document.querySelector('#dialog-form') == null) {
 		let inner = document.querySelector(".geral").innerHTML;
 		inner += `
@@ -147,6 +160,14 @@ function popUp(tipo) {
 			</div>
 		</div>`
 		document.querySelector(".geral").innerHTML = inner;
+
+		dialog = $("#dialog-form").dialog({
+			autoOpen: false,
+			height: 500,
+			width: 850,
+			modal: true,
+			buttons: {}
+		});
 	}
 
 	let caminhoImg = 'assets/img/';
@@ -310,13 +331,6 @@ function popUp(tipo) {
 	document.querySelector('#lixeira-explicacao-titulo').innerHTML = titulo;
 	document.querySelector('#lixeira-explicacao-secundario').innerHTML = secundario;
 
-	let dialog = $("#dialog-form").dialog({
-		autoOpen: false,
-		height: 500,
-		width: 850,
-		modal: true,
-		buttons: {}
-	});
 	dialog.dialog("open");
 }
 
