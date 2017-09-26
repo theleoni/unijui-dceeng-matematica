@@ -1,25 +1,24 @@
-
-
-
-
-
-
-
-
 <div class="geral">
 	<img class="fundo" src="assets/img/sala-aula.png"/>
 
 	<div class="botoes text-center">
-		<!-- <img class="botao" src="assets/img/lixeira_1_papel.png" onclick="popUp('papel')"/>
-		<img class="botao" src="assets/img/lixeira_2_plastico.png" onclick="popUp('plastico')"/>
-		<img class="botao" src="assets/img/lixeira_3_vidro.png" onclick="popUp('vidro')"/>
-		<img class="botao" src="assets/img/lixeira_4_metal.png" onclick="popUp('metal')"/>
-		<img class="botao" src="assets/img/lixeira_5_organico.png" onclick="popUp('organico')"/> -->
-
-		<div class="botao" onclick="popUp('media')"><h2>Média</h2></div>
-		<div class="botao" onclick="popUp('mediana')"><h2>Mediana</h2></div>
-		<div class="botao" onclick="popUp('moda')"><h2>Moda</h2></div>
+		<img class="botao" src="assets/img/sala-aula-btn-media.png" onclick="popUp('media')"/>
+		<img class="botao" src="assets/img/sala-aula-btn-mediana.png" onclick="popUp('mediana')"/>
+		<img class="botao" src="assets/img/sala-aula-btn-moda.png" onclick="popUp('moda')"/>
 	</div>
+
+	<!-- <div class="botoes text-center">
+		<a class="botao" onclick="popUp('media')">Média</div>
+		<a class="botao" onclick="popUp('mediana')">Mediana</a>
+		<a class="botao" onclick="popUp('moda')">Moda</a>
+	</div> -->
+
+	<!-- <table>
+		<tr class="abacate">
+			<th width>ISBN</th>
+		</tr>
+	</table> -->
+
 </div>
 
 <style media="screen">
@@ -33,7 +32,7 @@
 }
 
 .botoes {
-	top: 28%;
+	top: 22%;
 	position: absolute;
 }
 
@@ -42,15 +41,94 @@
 	margin: 0.4%;
 	vertical-align: top;
 	transition: .3s ease;
-
-	border: 1px solid #FFFFFF;
-	border-radius: 4px;
 }
 
 .botao:hover {
-	/*width: 17%;*/
+	width: 17%;
 	cursor: pointer;
 	transition: .3s ease;
+}
+
+.formula {
+	text-align: center;
+	/*vertical-align: baseline;*/
+	margin: 25px;
+}
+
+.dia-semana {
+	display: inline-flex;
+	/*position: fixed;*/
+}
+
+.dia-semana h4 {
+	margin-left: 12px;
+	margin-right: 12px;
+}
+
+.formula .segunda {
+	font-weight: bold;
+	color: #135bac;
+}
+
+.formula .terca {
+	font-weight: bold;
+	color: #ce3330;
+}
+
+.formula .quarta {
+	font-weight: bold;
+	color: #29702d;
+}
+
+.formula .quinta {
+	font-weight: bold;
+	color: #e1ac28;
+}
+
+.formula .sexta {
+	font-weight: bold;
+	color: #6A534C;
+}
+
+.formula .dias-semana-qtd {
+	font-weight: bold;
+}
+
+.formula .total {
+	font-weight: bold;
+}
+
+.formula-descrita {
+	font-style: italic;
+	display: inline-flex;
+	/*position: fixed;*/
+}
+
+.formula-descrita h4 {
+	margin: 10px;
+}
+
+.cima-baixo {
+    display: grid;
+	text-align: center;
+}
+
+.cima-baixo hr {
+	margin: 0px;
+    border-top: 1px solid #000;
+}
+
+.cima {
+	display: inline-flex;
+}
+
+.baixo {
+	/*display: inline-flex;*/
+}
+
+.botao-explicacao-media .grafico-media {
+	margin-top: 30px;
+	margin-bottom: 20px;
 }
 
 </style>
@@ -60,6 +138,7 @@
 try {
 	$("#iconSetaEsquerda").show();
 	$("#iconSetaDireita").show();
+	$("#iconAjuda").show();
 
 	iconSetaEsquerda.addEventListener("click", function() {
 		anterior();
@@ -68,6 +147,11 @@ try {
 	iconSetaDireita.addEventListener("click", function() {
 		proxima();
 	});
+
+	iconAjuda.addEventListener("click", function() {
+
+	});
+
 } catch (e) {
 }
 
@@ -83,50 +167,98 @@ function popUp(tipo) {
 
 	if (document.querySelector('#dialog-form') == null) {
 		let inner = document.querySelector(".geral").innerHTML;
-		// inner += `
-		// <div id="dialog-form">
-		// 	<div class="lixeira-explicacao row">
-		// 		<div class="imagem col-xs-12 col-sm-12 col-md-6 col-lg-6">
-		// 			<img id="lixeira-explicacao-img" src="" />
-		// 		</div>
-		//
-		// 		<div class="texto col-xs-12 col-sm-12 col-md-6 col-lg-6">
-		// 			<h1 id="lixeira-explicacao-titulo" class="text-center">texto</h1>
-		// 			<p id="lixeira-explicacao-secundario">texto</p>
-		// 		</div>
-		// 	</div>
-		// </div>`
+		inner += `
+		<div id="dialog-form">
+			<div class="botao-explicacao row">
+				<div class="texto col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<h1 id="botao-explicacao-titulo" class="text-center">texto</h1>
+					<p id="botao-explicacao-secundario">texto</p>
+				</div>
+			</div>
+		</div>`
 		document.querySelector(".geral").innerHTML = inner;
 	}
 
 	// let caminhoImg = 'assets/img/';
-	// let titulo = '';
-	// let secundario = '';
+	let titulo = '';
+	let secundario = '';
 
 	switch (tipo) {
 
 		default:
 		case 'media':
-			// caminhoImg += 'lixeira_explicacao_1_papel.png';
-			// titulo = 'Papel';
-			// secundario = `
-			// <div class="lixeira-explicacao-papel">
-			// 	<h2>Principais aplicações do papel reciclado:</h2>
-			//
-			// 	<ul>
-			// 		<li><h4>Embalagens (papel craft e papelão);</h4></li>
-			// 		<li><h4>Fins sanitários (papel toalha, guardanapo);</h4></li>
-			// 		<li><h4>Imprimir-escrever;</h4></li>
-			// 		<li><h4>Artesanato;</h4></li>
-			// 		<li><h4>Blocos de anotações e cadernos;</h4></li>
-			// 		<li><h4>Sacolas de papel.</h4></li>
-			// 	</ul>
-			//
-			// 	<h4>
-			// 	<span class="tab"/>O mesmo papel pode ser reciclado entre 7 a 10 vezes. O papel é formado essencialmente por fibras celulósicas e estas vão se degradando a cada processo de reciclagem.
-			// 	</h4>
-			// </div>
-			// `
+			titulo = 'MÉDIA ARITMÉTICA';
+			secundario = `
+			<div class="botao-explicacao-media">
+				<ul>
+					<li><h4>Na <b>média aritmética simples</b>, somamos todos os elementos do conjunto e, em seguida, dividimos o resultado obtido pela quantidade de elementos que compõe o conjunto.</h4></li>
+				</ul>
+
+				<h4>Exemplo: Um determinado catador recolheu 52 latinhas de refrigerante na segunda-feira, 44 na terça-feira, 69 na quarta-feira, 57 na quinta-feira e 73 na sexta-feira. Calcule a média de latinhas recolhidas por dia, pelo catador, nesse período:</h4>
+
+				<div class="formula">
+					<div class="dia-semana">
+						<h4 class="segunda">Segunda</h4>
+						<h4 class="terca">Terça</h4>
+						<h4 class="quarta">Quarta</h4>
+						<h4 class="quinta">Quinta</h4>
+						<h4 class="sexta">Sexta</h4>
+					</div>
+					<br/>
+					<div class="formula-descrita">
+						<h4>Média</h4>
+						<h4 class="operador">=</h4>
+
+						<div class="cima-baixo">
+							<div class="cima">
+								<h4 class="segunda">54</h4>
+								<h4 class="operador">+</h4>
+								<h4 class="terca">44</h4>
+								<h4 class="operador">+</h4>
+								<h4 class="quarta">69</h4>
+								<h4 class="operador">+</h4>
+								<h4 class="quinta">57</h4>
+								<h4 class="operador">+</h4>
+								<h4 class="sexta">73</h4>
+							</div>
+							<div>
+								<hr>
+							</div>
+							<div class="baixo">
+								<h4 class="dias-semana-qtd">5</h4>
+							</div>
+						</div>
+
+						<h4 class="operador">=</h4>
+
+						<div class="cima-baixo">
+							<div class="cima">
+								<h4 class="total">295</h4>
+							</div>
+							<div>
+								<hr>
+							</div>
+							<div class="baixo">
+								<h4 class="dias-semana-qtd">5</h4>
+							</div>
+						</div>
+
+						<h4 class="operador">=</h4>
+						<h4 class="total">59 latinhas</h4>
+
+					</div>
+				</div>
+
+				<h4>Na semana analisada, o catador recolheu, <b>em média</b>, 59 latinhas por dia.</h4>
+
+				<div id="media-grafico-1" class="grafico-media"></div>
+
+				<div id="media-grafico-2" class="grafico-media"></div>
+
+				<h4> A média aritmética está representada pela linha. Os valores abaixo desta, são menores que a média e os valores acima da linha são maiores que a média.</h4>
+
+			</div>
+			`
 			break;
 
 			case 'mediana':
@@ -139,9 +271,10 @@ function popUp(tipo) {
 
 	}
 
-	// document.querySelector('#lixeira-explicacao-img').src = caminhoImg;
-	// document.querySelector('#lixeira-explicacao-titulo').innerHTML = titulo;
-	// document.querySelector('#lixeira-explicacao-secundario').innerHTML = secundario;
+	document.querySelector('#botao-explicacao-titulo').innerHTML = titulo;
+	document.querySelector('#botao-explicacao-secundario').innerHTML = secundario;
+	graficoMedia1();
+	graficoMedia2();
 
 	let dialog = $("#dialog-form").dialog({
 		autoOpen: false,
@@ -151,6 +284,102 @@ function popUp(tipo) {
 		buttons: {}
 	});
 	dialog.dialog("open");
+
+	function graficoMedia1() {
+		Highcharts.chart('media-grafico-1', {
+			chart: {
+				zoomType: 'xy',
+				width: 800
+			},
+			title: {
+				text: 'Gráfico 1 - Ordem das latinhas recolhidas'
+			},
+			xAxis: {
+				categories: [
+					'Segunda',
+					'Terça',
+					'Quarta',
+					'Quinta',
+					'Sexta'
+				],
+			},
+			yAxis: {
+				title: '',
+				subtitle: ''
+			},
+			plotOptions: {
+				column: {
+					pointPadding: 0.2,
+					borderWidth: 0
+				}
+			},
+			series: [{
+				type: 'column',
+				name: 'Valores',
+				data: [52, 44, 69, 57, 73]
+
+			},{
+				type: 'spline',
+				name: 'Média',
+				data: [59, 59, 59, 59, 59],
+				marker: {
+					lineWidth: 2,
+					lineColor: '#000',
+					fillColor: '#000',
+				}
+			},],
+			colors: ['#135bac', '#ce3330', '#135bac']
+		});
+	}
+
+	function graficoMedia2() {
+		Highcharts.chart('media-grafico-2', {
+			chart: {
+				zoomType: 'xy',
+				width: 800
+			},
+			title: {
+				text: 'Gráfico 2 - Ordem crescente dos dados'
+			},
+			xAxis: {
+				categories: [
+					'Terça',
+					'Segunda',
+					'Quinta',
+					'Quarta',
+					'Sexta'
+				],
+			},
+			yAxis: {
+				title: '',
+				subtitle: ''
+			},
+			plotOptions: {
+				column: {
+					pointPadding: 0.2,
+					borderWidth: 0
+				}
+			},
+			series: [{
+				type: 'column',
+				name: 'Valores',
+				data: [44, 52, 57, 69, 73]
+
+			},{
+				type: 'spline',
+				name: 'Média',
+				data: [59, 59, 59, 59, 59],
+				marker: {
+					lineWidth: 2,
+					lineColor: '#000',
+					fillColor: '#000',
+				}
+			},],
+			colors: ['#29702d', '#e1ac28', '#135bac']
+		});
+	}
+
 }
+
 
 </script>
