@@ -126,7 +126,28 @@
 	/*display: inline-flex;*/
 }
 
+.muito-mais-top {
+	margin-top: 36px !important;
+}
+
+.muito-mais-bottom {
+	margin-bottom: 36px !important;
+}
+
+.mais-top {
+	margin-top: 16px !important;
+}
+
+.mais-bottom {
+	margin-bottom: 16px !important;
+}
+
 .botao-explicacao-media .grafico-media {
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+.botao-explicacao-mediana .grafico-mediana {
 	margin-top: 30px;
 	margin-bottom: 20px;
 }
@@ -138,7 +159,7 @@
 try {
 	$("#iconSetaEsquerda").show();
 	$("#iconSetaDireita").show();
-	$("#iconAjuda").show();
+	$("#iconAjuda").hide();
 
 	iconSetaEsquerda.addEventListener("click", function() {
 		anterior();
@@ -149,7 +170,7 @@ try {
 	});
 
 	iconAjuda.addEventListener("click", function() {
-
+		ajuda();
 	});
 
 } catch (e) {
@@ -163,7 +184,19 @@ function proxima() {
 	// $('.geral').load('assets/parts/explicacao-professora.html');
 }
 
+let msgAjuda = '';
+function ajuda() {
+	if (msgAjuda) {
+		swal(msgAjuda);
+	}
+}
+
 function popUp(tipo) {
+
+	try {
+		$("#iconAjuda").show();
+	} catch(e) {
+	}
 
 	if (document.querySelector('#dialog-form') == null) {
 		let inner = document.querySelector(".geral").innerHTML;
@@ -179,7 +212,6 @@ function popUp(tipo) {
 		document.querySelector(".geral").innerHTML = inner;
 	}
 
-	// let caminhoImg = 'assets/img/';
 	let titulo = '';
 	let secundario = '';
 
@@ -188,6 +220,7 @@ function popUp(tipo) {
 		default:
 		case 'media':
 			titulo = 'MÉDIA ARITMÉTICA';
+			msgAjuda = 'Faça uma análise detalhada sobre como os valores se comportam em relação a média, para facilitar seu entendimento';
 			secundario = `
 			<div class="botao-explicacao-media">
 				<ul>
@@ -256,14 +289,59 @@ function popUp(tipo) {
 				<div id="media-grafico-2" class="grafico-media"></div>
 
 				<h4> A média aritmética está representada pela linha. Os valores abaixo desta, são menores que a média e os valores acima da linha são maiores que a média.</h4>
-
 			</div>
-			`
+			`;
 			break;
 
 			case 'mediana':
+				titulo = 'MEDIANA';
+				msgAjuda = '';
+				secundario = `
+				<div class="botao-explicacao-mediana">
 
-			break;
+					<h4>Representa o valor que fica exatamente no meio do conjunto.</h4>
+					<h4>Primeiro devemos organizar todos os valores do conjunto em ordem crescente ou decrescente. Em seguida, identificamos o(s) valor(es) central(ais) deste intervalo de dados.</h4>
+
+					<ul class='muito-mais-top'><li><h4><b>Quando o número de dados for ímpar, teremos apenas uma mediana.</b></h4></li></ul>
+					<h4 class='muito-mais-top'>Exemplo: Vamos calcular a mediana dos valores dados na seguinte tabela:</h4>
+					<div class='tabela mais-bottom'>
+						<table class='table'>
+							<tr>
+								<th>Regiões Brasileiras</th>
+								<th>Lixo gerado em ton/dia</th>
+							</tr>
+							<tr>
+		    					<td>Região Norte</td>
+								<td>13.750</td>
+							</tr>
+							<tr>
+		    					<td>Região Nordeste</td>
+								<td>51.689</td>
+							</tr>
+							<tr>
+		    					<td>Região Centro-oeste</td>
+								<td>16.055</td>
+							</tr>
+							<tr>
+		    					<td>Região Sudeste</td>
+								<td>98.215</td>
+							</tr>
+							<tr>
+		    					<td>Região Sul</td>
+								<td>21.345</td>
+							</tr>
+						</table>
+					</div>
+					<div id="mediana-grafico-1" class="grafico-mediana"></div>
+
+					<ul class='muito-mais-top'><li><h4><b>Quando o número de dados for par, existem dois valores centrais e a mediana será a média aritmética destes dois valores.</b></h4></li></ul>
+					<h4 class='muito-mais-top'>Exemplo: Um determinado catador recolheu 52 latinhas de refrigerante na segunda-feira, 44 na terça-feira, 69 na quarta-feira, 57 na quinta-feira, 73 na sexta-feira e 60 no sábado. Identifique a mediana das latinhas recolhidas pelo catador, nesse período:</h4>
+					<div id="mediana-grafico-2" class="grafico-mediana"></div>
+
+				</div>
+				`;
+
+				break;
 
 			case 'moda':
 
@@ -273,15 +351,38 @@ function popUp(tipo) {
 
 	document.querySelector('#botao-explicacao-titulo').innerHTML = titulo;
 	document.querySelector('#botao-explicacao-secundario').innerHTML = secundario;
-	graficoMedia1();
-	graficoMedia2();
+
+	switch (tipo) {
+		default:
+		break;
+
+		case 'media':
+			graficoMedia1();
+			graficoMedia2();
+			break;
+
+		case 'mediana':
+			graficoMediana1();
+			graficoMediana2();
+			break;
+
+		case 'moda':
+			break;
+
+	}
 
 	let dialog = $("#dialog-form").dialog({
 		autoOpen: false,
 		height: 500,
 		width: 850,
 		modal: true,
-		buttons: {}
+		buttons: {},
+		close: function() {
+			try {
+				$("#iconAjuda").hide();
+			} catch (e) {
+			}
+		}
 	});
 	dialog.dialog("open");
 
@@ -376,6 +477,83 @@ function popUp(tipo) {
 				}
 			},],
 			colors: ['#29702d', '#e1ac28', '#135bac']
+		});
+	}
+
+	function graficoMediana1() {
+		Highcharts.chart('mediana-grafico-1', {
+			chart: {
+				type: 'column',
+				width: 800
+			},
+			title: {
+				text: 'Lixo gerado em ton/dia nas regiões Brasileiras'
+			},
+			xAxis: {
+				categories: [
+					'Região Norte',
+					'Região Centro-oeste',
+					'Região Sul',
+					'Região Nordeste',
+					'Região Sudeste'
+				]
+			},
+			yAxis: {
+				min: 0,
+				title: {
+					text: ''
+				}
+			},
+			plotOptions: {
+				column: {
+					pointPadding: 0.2,
+					borderWidth: 0
+				}
+			},
+			series: [{
+				name: 'Regiões',
+				data: [13.750, 16.055, 21.345, 51.689, 98.215]
+
+			}]
+		});
+	}
+
+	function graficoMediana1() {
+		Highcharts.chart('mediana-grafico-2', {
+			chart: {
+				type: 'column',
+				width: 800
+			},
+			title: {
+				text: ''
+			},
+			xAxis: {
+				categories: [
+					'Terça',
+					'Segunda',
+					'Quinta',
+					'Sábado',
+					'Quarta',
+					'Sexta'
+				]
+			},
+			yAxis: {
+				min: 0,
+				title: {
+					text: ''
+				}
+			},
+			plotOptions: {
+				column: {
+					pointPadding: 0.2,
+					borderWidth: 0
+				}
+			},
+			series: [{
+				name: 'Valores',
+				data: [44, 52, 57, 60, 69, 73]
+
+			}]
 		});
 	}
 
