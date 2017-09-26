@@ -621,43 +621,187 @@
 				</div>
 
 				<div class="col-xs-offset-2">
-					<img class="img-responsive" src="../assets/img/Objeto 4/imagemDados.png">
+					<p id="textoDados"> Probabilidade de ocorrer um resultado futuro, conhecendo-se os possíveis resultados.<br>
+					No lançamento de um dado para se obter um número 4, a probabilidade é uma chance entre um total de 6 possibilidades, portanto a probabilidade é de P(4) = 1/6</p>
+					<img id="imagemDados" class="img-responsive" src="../assets/img/Objeto 4/imagemDados.png">
 				</div>
 			</div>
 		</div>
-	</div> <!--Div geral -->
 
-	<!--##################### CALCULADORA ##################### -->
+		<!-- Tela 16 -->
 
-	<div id="calculadora">
-		<div class="top">
-			<span class="clear">C</span>
-			<div class="screen"></div>
+		<div id="telaExemplos">
+			<div class="row">
+				<div class="col-xs-offset-1 col-xs-4">
+					<p><b>Considerando os valores da tabela ao lado contendo as informações dos 7 primeiros meses de 2017, podemos calcular a probabilidade de encontrar 1 mês entre os que constam nesse quadro que atenda as questões abaixo.</b><br><br><br>
+						<span style="color:#f48c42;">1)</span> Cor = 0 UH (Cor com indíce zero)<br>
+						<b>Desenvolvimento:</b>
+						<span style="color:#246d0c">O cálculo da probabilidade de encontrar cor = 0 quando escolhemos um mês de forma aleatória, por acaso é:
+						P(Cor=0 UH) = 5/7 = 0,71 OU (0,71x100%) = 71%</span><br>
+						<b>Resposta: </b>
+						<span style="color:#0f278e">Probabilidade de encontrar um mês na tabela acima em que o índice da cor seja zero UH é de 71%</span><br><br><br>
+
+						<span style="color:#f48c42;">2)</span> Cor != 0 UH (Cor com índice diferente de zero)<br>
+						<b>Desenvolvimento:</b>
+						<span style="color:#246d0c">A questão é equivalente da probabilidade complementar do índice da cor ser zero, ou seja, a probabilidade do índice da cor não ser zero. 
+						O cálculo pode ser feito a partir do anterior onde o resultado da probabilidade é o que falta da probabilidade anterior para que a probabilidade seja 1 ou 100%</span><br>
+						<b>Resposta:</b>
+						<span style="color:#0f278e">Probabilidade de encontrar um mês na tabela acima em que o índice da cor seja diferente de zero UH é 29%.</span><br>
+						Observação: Os valores dos exemplos acima foram arredondados para mostrar 2 algarismos significativos <br><br><br>
+
+						<span style="color:#f48c42;">3)</span> Cloro livre residual < 1
+						<b>Desenvolvimento:</b> 
+						<span style="color:#246d0c">O cálculo da probabilidade de encontrar Cloro livre residual < 1 quando escolhemos um mês de forma aleatória, por acaso é: 
+						0/7 = 0 OU (0,00x100%) = 0%</span><br> 
+						<b>Resposta:</b>
+						<span style="color:#0f278e">Probabilidade de ecnontrar um mÊs na tabela acima em que o índice do cloro residual livre seja menor que 1mg/L é zero, ou seja, impossível.</span></p>
+					</div>
+
+					<div class="col-xs-offset-1 col-xs-4">
+						Relatório da qualidade da água distribuída em Brasília na estação de tratamento Torto/Santa Maria, mês de Julho de 2017.
+						<table class="table table-responsive table-bordered">
+							<thead>
+								<tr>
+									<td>Parâmetro</td>
+									<td><strong>Cor (uH)</strong></td>
+									<td><strong>Tur (uT)</strong></td>
+									<td><strong>Crl (mg/L)</strong></td>
+									<td><strong>Coli Totais (AUS)</strong></td>
+									<td ><strong>E. Coli (AUS)</strong></td>
+									<td><strong>C.B.H (UFC/mL)</strong></td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Limites Estabelecidos(*)</td>
+									<td>≤ 15</td>
+									<td>≤ 5</td>
+									<td>0,2 a 0,5</td>
+									<td> > 95%</td>
+									<td> 100% (Ideal)</td>
+									<td> < 500 </td>
+								</tr>
+
+								<tr>
+									<td>Nº minimo de amostras exigidas</td>
+									<td>70</td>
+									<td>253</td>
+									<td>253</td>
+									<td>253</td>
+									<td>253</td>
+									<td></td>
+								</tr>
+
+								<tr>
+									<td>Nº de amostras coletadas</td>
+									<td>199</td>
+									<td>306</td>
+									<td>306</td>
+									<td>306</td>
+									<td>306</td>
+									<td>61</td>
+								</tr>
+
+								<tr>
+									<td>Nº de amostras que atenderam</td>
+									<td>194</td>
+									<td>302</td>
+									<td>298</td>
+									<td>302</td>
+									<td>306</td>
+									<td>61</td>
+								</tr>
+							</tbody>
+						</table>
+						Fonte: CAESB - Companhia de Sanemaneto Ambiental do Distrito Federal<br><br><br>
+						Legenda:<br> Tur -> Turbidez <br> CrL -> Cloro Residual Livre <br> uT -> Unidades de Turbidez <br> Coli -> Coliformes <br> E. Coli -> Escherichia Coli <br> C.B.H -> Contagem de bactérias heterotróficas <br> AUS -> Ausentes
+					</div>
+				</div>
+			</div>
+
+
+			<!-- Tela 17 -->
+			<div id="telaSalaDeAula3">
+				<div class="row">
+					<div class="col-xs-12">
+						<img id="escola" class="imgsFull" src="../assets/img/Objeto 4/salaDeAula.jpg">
+					</div>
+					<div class="col-xs-offset-7 col-xs-2">
+						<p id="textoSalaDeAula2">Agora que já vimos alguns exemplos referentes à probabilidade, ajude-nos a resolver alguns exercícios %fulano%.</p>
+						<div> <img id="balaoDeFalaSalaDeAula" src="../assets/img/Objeto 4/balaoDeFala2.png"> </div>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- Tela 18 -->
+			<div id="telaQuestoes">
+				<div class="col-xs-offset-1 col-xs-4">
+					<p id="tituloQuestao"> </p>
+					<div id="containerQuestao">
+						<button class="btn btn-block whiteSpaceButton"  id='buttonAf1' ></button>
+
+						<button class="btn btn-block whiteSpaceButton"  id='buttonAf2'></button>
+
+						<button class="btn btn-block whiteSpaceButton"  id='buttonAf3'></button>
+
+						<button class="btn btn-block whiteSpaceButton"  id='buttonAf4'></button>
+
+						<button class="btn btn-block whiteSpaceButton"  id='buttonAf5'></button>
+
+						<div class="row">
+							<div class="col-xs-offset-3 col-xs-6">
+								<button id="botaoEnviarResposta" type="button" class="btn btn-success btn-block">Enviar resposta</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-offset-3 col-xs-6">
+								<div id="alertQuestao" class="alert alert-danger" role="alert">
+									<center><strong>Oops!</strong> Resposta incorreta.</center>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-xs-offset-1 col-xs-4">
+
+				</div>
+			</div>
+		</div> <!--Div geral -->
+
+		<!--##################### CALCULADORA ##################### -->
+
+		<div id="calculadora">
+			<div class="top">
+				<span class="clear">C</span>
+				<div class="screen"></div>
+			</div>
+
+			<div class="keys">
+				<!-- operators and other keys -->
+				<span>7</span>
+				<span>8</span>
+				<span>9</span>
+				<span class="operator">+</span>
+				<span>4</span>
+				<span>5</span>
+				<span>6</span>
+				<span class="operator">-</span>
+				<span>1</span>
+				<span>2</span>
+				<span>3</span>
+				<span class="operator">÷</span>
+				<span>0</span>
+				<span>.</span>
+				<span class="eval">=</span>
+				<span class="operator">x</span>
+			</div>
 		</div>
 
-		<div class="keys">
-			<!-- operators and other keys -->
-			<span>7</span>
-			<span>8</span>
-			<span>9</span>
-			<span class="operator">+</span>
-			<span>4</span>
-			<span>5</span>
-			<span>6</span>
-			<span class="operator">-</span>
-			<span>1</span>
-			<span>2</span>
-			<span>3</span>
-			<span class="operator">÷</span>
-			<span>0</span>
-			<span>.</span>
-			<span class="eval">=</span>
-			<span class="operator">x</span>
-		</div>
-	</div>
+		<!-- Calculadora -->
+		<script src="../assets/js/Misc/calculadora.js"></script>
 
-	<!-- Calculadora -->
-	<script src="../assets/js/Misc/calculadora.js"></script>
-
-</body>
-</html>
+	</body>
+	</html>

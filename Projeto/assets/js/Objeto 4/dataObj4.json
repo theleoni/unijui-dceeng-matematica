@@ -11,5 +11,155 @@
 		"fala5": "A legislação exige relatórios mensais das medidas amostrais de água coletada na rede de distribuição.",
 		"fala6": "Nesses relatórios deve constar: A turbidez, a cor, o cloro livre residual, os coliformes totais e Escherichia Coli.",
 		"fala7": "Vamos ver os relatórios da qualidade da água distribuida em 2013 e em 2017"
+	},
+
+	"1": {
+		"tituloQuestao": "Qual a probabilidade da cor ser 3 ao sortearmos um mês de forma aleatória?",
+		"op1": "30%",
+		"op2": "20",
+		"op3": "27%",
+		"op4": "25%",
+		"op5": "0,25%"
+	},
+	"2": {
+		"tituloQuestao": "Qual a probabilidade da turbidez ser 0,7 se escolhermos um mês de forma aleatória?",
+		"op1": "0,33",
+		"op2": "0,66",
+		"op3": "0,44",
+		"op4": "0,55",
+		"op5": "0,20"
+	},
+	"3": {
+		"tituloQuestao": "Qual a probabilidade da turbidez ser 0,7 ou 0,8 se escolhermos um mês de forma aleatória?",
+		"op1": "0,33",
+		"op2": "0,66",
+		"op3": "0,44",
+		"op4": "0,5",
+		"op5": "0,2"
+	},
+	"4": {
+		"tituloQuestao": "Qual a probabilidade do cloro residual livre ser maior que 1mg/L e menor que 1,1mg/L, se sortearmos um mês do ano da tabela acima?",
+		"op1": "5",
+		"op2": "0,05",
+		"op3": "0,5",
+		"op4": "0,2",
+		"op5": "0,1"
+	},
+	"5": {
+		"tituloQuestao": "Aproximadamente, qual a probabilidade entres os meses de abr/13 e set/13, da cor da água estar em 3 e o cloro residual acima de 1?",
+		"op1": "10%",
+		"op2": "16%",
+		"op3": "25%",
+		"op4": "33%",
+		"op5": "41%"
+	},
+	"6": {
+		"tituloQuestao": "Qual a probabilidade de uma amostra ser da Turbidez 0,9UT?",
+		"op1": "0,14",
+		"op2": "0,15",
+		"op3": "0,16",
+		"op4": "0,17",
+		"op5": "0,30"
+	},
+	"7": {
+		"tituloQuestao": "Qual a probabilidade de uma amostra ser da Turbidez maior ou igual a 1UT",
+		"op1": "0,15",
+		"op2": "0,16",
+		"op3": "0,20",
+		"op4": "0,17",
+		"op5": "0,30"
+	},
+	"8": {
+		"tituloQuestao": "Qual a probabilidade de se obter um ponto em que o índice de cloretos está abaixo de 1mg/L e, ao mesmo tempo, com índice de turbidez maior que 1UT, se sortearmos uma amostra do manancial Rio Potiribú entre os 6 da tabela?",
+		"op1": "0, ou seja, impossível",
+		"op2": "0,5",
+		"op3": "1, ou seja, evento garantido",
+		"op4": "0,167",
+		"op5": "0,14"
+	},
+	"9": {
+		"tituloQuestao": "Qual a probabilidade de se obter um ponto em que o índice de cloretos está acima de 1mg/L Cl e, ao mesmo tempo, com índice de turbídez menor que 5UT, se sortearmos uma amostra do manancial Rio Potiribú entre os 6 da tabela?",
+		"op1": "0, ou seja, impossível",
+		"op2": "0,5",
+		"op3": "1, ou seja, evento garantido",
+		"op4": "0,167",
+		"op5": "0,14"
+	},
+	"10": {
+		"tituloQuestao": "Titulo da questão 1",
+		"op1": "Opção 1 da questão 1",
+		"op2": "Opção 2 da questão 1",
+		"op3": "Opção 3 da questão 1",
+		"op4": "Opção 4 da questão 1",
+		"op5": "Opção 5 da questão 1"
+	},
+	"11": {
+		"tituloQuestao": "Titulo da questão 1",
+		"op1": "Opção 1 da questão 1",
+		"op2": "Opção 2 da questão 1",
+		"op3": "Opção 3 da questão 1",
+		"op4": "Opção 4 da questão 1",
+		"op5": "Opção 5 da questão 1"
+	},
+	"12": {
+		"tituloQuestao": "Titulo da questão 1",
+		"op1": "Opção 1 da questão 1",
+		"op2": "Opção 2 da questão 1",
+		"op3": "Opção 3 da questão 1",
+		"op4": "Opção 4 da questão 1",
+		"op5": "Opção 5 da questão 1"
+	},
+	"13": {
+		"tituloQuestao": "Titulo da questão 1",
+		"op1": "Opção 1 da questão 1",
+		"op2": "Opção 2 da questão 1",
+		"op3": "Opção 3 da questão 1",
+		"op4": "Opção 4 da questão 1",
+		"op5": "Opção 5 da questão 1"
+	},
+	"14": {
+		"tituloQuestao": "Titulo da questão 1",
+		"op1": "Opção 1 da questão 1",
+		"op2": "Opção 2 da questão 1",
+		"op3": "Opção 3 da questão 1",
+		"op4": "Opção 4 da questão 1",
+		"op5": "Opção 5 da questão 1"
+	},
+	"15": {
+		"tituloQuestao": "Titulo da questão 1",
+		"op1": "Opção 1 da questão 1",
+		"op2": "Opção 2 da questão 1",
+		"op3": "Opção 3 da questão 1",
+		"op4": "Opção 4 da questão 1",
+		"op5": "Opção 5 da questão 1"
+	},
+	"16": {
+		"tituloQuestao": "Titulo da questão 1",
+		"op1": "Opção 1 da questão 1",
+		"op2": "Opção 2 da questão 1",
+		"op3": "Opção 3 da questão 1",
+		"op4": "Opção 4 da questão 1",
+		"op5": "Opção 5 da questão 1"
+	},
+	"17": {
+		"tituloQuestao": "Titulo da questão 1",
+		"op1": "Opção 1 da questão 1",
+		"op2": "Opção 2 da questão 1",
+		"op3": "Opção 3 da questão 1",
+		"op4": "Opção 4 da questão 1",
+		"op5": "Opção 5 da questão 1"
+	},
+	"18": {
+		"tituloQuestao": "Titulo da questão 1",
+		"op1": "Opção 1 da questão 1",
+		"op2": "Opção 2 da questão 1",
+		"op3": "Opção 3 da questão 1",
+		"op4": "Opção 4 da questão 1",
+		"op5": "Opção 5 da questão 1"
+	},
+	"questoes": {
+		"alertaErrado": "<center><strong>Oops!</strong> Resposta incorreta.</center>",
+		"alertaCerto": "<center><strong>Parabéns!</strong> Resposta correta.</center>"
 	}
+
 }

@@ -183,3 +183,40 @@ body {
 	top: -77vh;
 	word-wrap: break-word;
 }
+
+#imagemDados {
+	position: absolute;
+	max-height: 20vh;
+	left: 65%;
+	bottom: 50%;
+	top: 30%;
+	right: 20%;
+	max-width: 15vw;
+}
+
+#textoDados {
+	position: absolute;
+	color: #FFFFFF;
+	top: 30vh;
+	left: 20vw;
+	right: 40vw;
+	font-size: calc((2vh + 1vw)/2);
+}
+
+#textoSalaDeAula2 {
+	position: absolute;
+	left: -40%;
+	right: 0%;
+	text-align: justify;
+	z-index: 2;
+	color: #FFFFFF;
+	font-size: calc((2vh + 1vw)/2);
+	font-family: 'Roboto Condensed', sans-serif;
+	top: -77vh;
+	word-wrap: break-word;
+}
+
+.whiteSpaceButton {
+	white-space: normal;
+	text-align: left;
+}

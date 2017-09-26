@@ -18,6 +18,10 @@ var viuTratamento = false;
 var conversaLaboratorio = 1;
 var conversaLaboratorioCompleta = false;
 
+var questionNumber = 1;
+var questoesCorretas = [false,false,false,false,false,false,false,false,false,false,false,false,false, false, false, false, false, false]
+var respostasCorretas = ['#buttonAf4', '#buttonAf1', '#buttonAf4', '#buttonAf3', '#buttonAf2', '#buttonAf2', '#buttonAf3', '#buttonAf1', '#buttonAf4', '#buttonAf3', '#buttonAf3', '#buttonAf1', '#buttonAf2', '#buttonAf5', '#buttonAf1', '#buttonAf3', '#buttonAf4', '#buttonAf2'];
+
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 	videoIntroducao.pause();
@@ -45,6 +49,11 @@ function hideDivsOnObjectStart() {
 	$("#telaEscola").hide();
 	$("#telaSalaDeAula").hide();
 	$("#telaSalaDeAula2").hide();
+	$("#telaExemplos").hide();
+	$("#telaSalaDeAula3").hide();
+	$("#telaQuestoes").hide();
+
+
 }
 
 
@@ -79,6 +88,7 @@ $(document).on('click', '#botaoNome', function() {
 		$("#alertNome").hide();
 		videoIntroducao.play();
 		waitVideoIntroToEnd();
+		$("#textoSalaDeAula2").html($("#textoSalaDeAula2").html().replace("%fulano%", nomeDoUsuario));
 	} else {
 		$("#alertNome").show();
 	}
@@ -287,6 +297,106 @@ function checkIfStuck() {
 		updateConversaLaboratorio();
 	});
 
+	$(document).on('click', '.whiteSpaceButton', function() {
+		$(this).toggleClass("btn-primary");
+		$(this).siblings().removeClass("btn-primary");
+	})
+
+
+	//Função utilizada para carregar a questão correta
+	function loadQuestion() {
+		let i = 1;
+		for (var conteudo in dataJSON[questionNumber]) {
+			switch (i) {
+				case 1:
+				$("#tituloQuestao").html(dataJSON[questionNumber][conteudo]);
+				i++;
+				break;
+
+				case 2:
+				$("#buttonAf1").html(dataJSON[questionNumber][conteudo]);
+				i++;
+				break;
+
+				case 3:
+				$("#buttonAf2").html(dataJSON[questionNumber][conteudo]);
+				i++;
+				break;
+				
+				case 4:
+				$("#buttonAf3").html(dataJSON[questionNumber][conteudo]);
+				i++;
+				break;
+				
+				case 5:
+				$("#buttonAf4").html(dataJSON[questionNumber][conteudo]);
+				i++;
+				break;
+				
+				case 6:
+				$("#buttonAf5").html(dataJSON[questionNumber][conteudo]);
+				i++;
+				break;
+			}
+		}
+
+		if (questoesCorretas[questionNumber-1] == true) {
+			blockQuestionButtons();
+			allowNextScene();
+		} else {
+			disallowNextScene();
+			resetQuestionButtons();
+		}
+	}
+
+
+	//Função que chama o método de verificação da resposta
+	$(document).on('click', '#botaoEnviarResposta', function() {
+		checkAnswer();
+	});
+
+	//Função que verifica a resposta
+	function checkAnswer() {
+		if ($(respostasCorretas[questionNumber-1]).hasClass('btn-primary')) {
+			$("#alertQuestao").show();
+			$("#alertQuestao").html(dataJSON.questoes.alertaCerto);
+			$("#alertQuestao").addClass("alert-success");
+			$("#alertQuestao").removeClass("alert-danger");
+			questoesCorretas[questionNumber-1] = true;
+			allowNextScene();
+			blockQuestionButtons();
+		} else {
+			$("#alertQuestao").show();
+			$("#alertQuestao").html(dataJSON.questoes.alertaErrado);
+			$("#alertQuestao").addClass("alert-danger");
+			$("#alertQuestao").removeClass("alert-success");
+		}
+	}
+
+	//Função para desabilitar os botões das questões
+	function blockQuestionButtons() {
+		$("#buttonAf1").prop("disabled", "disabled");
+		$("#buttonAf2").prop("disabled", "disabled");
+		$("#buttonAf3").prop("disabled", "disabled");
+		$("#buttonAf4").prop("disabled", "disabled");
+		$("#buttonAf5").prop("disabled", "disabled");
+		$("#botaoEnviarResposta").prop("disabled", "disabled");
+	}
+
+	function resetQuestionButtons() {
+		$("#buttonAf1").prop("disabled", "");
+		$("#buttonAf2").prop("disabled", "");
+		$("#buttonAf3").prop("disabled", "");
+		$("#buttonAf4").prop("disabled", "");
+		$("#buttonAf5").prop("disabled", "");
+		$("#botaoEnviarResposta").prop("disabled", "");
+		$("#buttonAf1").removeClass("btn-primary");
+		$("#buttonAf2").removeClass("btn-primary");
+		$("#buttonAf3").removeClass("btn-primary");
+		$("#buttonAf4").removeClass("btn-primary");
+		$("#buttonAf5").removeClass("btn-primary");
+		$("#alertQuestao").hide();
+	}
 
 	//Funções de controle dos icones fixos nas telas
 	function allowNextScene() {
@@ -356,6 +466,9 @@ function checkIfStuck() {
 			case 12:
 			case 13:
 			case 14:
+			case 15:
+			case 16:
+			case 17:
 			nextScene();
 			break
 			case 3:
@@ -366,6 +479,15 @@ function checkIfStuck() {
 			case 6:
 			if (viuTratamento == false ) {
 				swal("","Veja ao menos uma das etapas de tratamento da água!", "error");
+			} else {
+				nextScene();
+			}
+			break;
+
+			case 18:
+			if (questionNumber < 18 ) {
+				questionNumber++;
+				loadQuestion();
 			} else {
 				nextScene();
 			}
@@ -390,9 +512,18 @@ function checkIfStuck() {
 			case 13:
 			case 14:
 			case 15:
+			case 16:
+			case 17:
 			previousScene();
 			break;
-
+			case 18:
+			if (questionNumber > 1) {
+				questionNumber--;
+				loadQuestion();
+			} else {
+				previousScene();
+			}
+			break;
 
 		}
 	});
@@ -533,6 +664,23 @@ function checkIfStuck() {
 			$("#telaSalaDeAula2").show();
 			changeTitle(" ");
 			break;
+
+			case 16:
+			$("#telaExemplos").show();
+			changeTitle(" ");
+			break;
+
+			case 17:
+			$("#telaSalaDeAula3").show();
+			changeTitle(" ");
+			break;
+
+			case 18:
+			$("#telaQuestoes").show();
+			loadQuestion();
+			changeTitle(" ");
+
+			break;
 		}
 	}
 
@@ -597,6 +745,18 @@ function checkIfStuck() {
 
 			case 15:
 			$("#telaSalaDeAula2").hide();
+			break;
+
+			case 16:
+			$("#telaExemplos").hide();
+			break;
+
+			case 17:
+			$("#telaSalaDeAula3").hide();
+			break;
+
+			case 18:
+			$("#telaQuestoes").hide();
 			break;
 		}
 	}
