@@ -45,6 +45,8 @@ function hideDivsOnObjectStart() {
 	$("#telaEscola").hide();
 	$("#telaSalaDeAula").hide();
 	$("#telaSalaDeAula2").hide();
+	$("#telaExemplos").hide();
+
 }
 
 
@@ -356,6 +358,7 @@ function checkIfStuck() {
 			case 12:
 			case 13:
 			case 14:
+			case 15:
 			nextScene();
 			break
 			case 3:
@@ -390,6 +393,7 @@ function checkIfStuck() {
 			case 13:
 			case 14:
 			case 15:
+			case 16:
 			previousScene();
 			break;
 
@@ -533,6 +537,11 @@ function checkIfStuck() {
 			$("#telaSalaDeAula2").show();
 			changeTitle(" ");
 			break;
+
+			case 16:
+			$("#telaExemplos").show();
+			changeTitle(" ");
+			break;
 		}
 	}
 
@@ -597,6 +606,10 @@ function checkIfStuck() {
 
 			case 15:
 			$("#telaSalaDeAula2").hide();
+			break;
+
+			case 16:
+			$("#telaExemplos").hide();
 			break;
 		}
 	}
