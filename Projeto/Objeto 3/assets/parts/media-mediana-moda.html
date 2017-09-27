@@ -293,58 +293,113 @@ function popUp(tipo) {
 			`;
 			break;
 
-			case 'mediana':
-				titulo = 'MEDIANA';
-				msgAjuda = '';
-				secundario = `
-				<div class="botao-explicacao-mediana">
+		case 'mediana':
+			titulo = 'MEDIANA';
+			msgAjuda = '';
+			secundario = `
+			<div class="botao-explicacao-mediana">
 
-					<h4>Representa o valor que fica exatamente no meio do conjunto.</h4>
-					<h4>Primeiro devemos organizar todos os valores do conjunto em ordem crescente ou decrescente. Em seguida, identificamos o(s) valor(es) central(ais) deste intervalo de dados.</h4>
+				<h4>Representa o valor que fica exatamente no meio do conjunto.</h4>
+				<h4>Primeiro devemos organizar todos os valores do conjunto em ordem crescente ou decrescente. Em seguida, identificamos o(s) valor(es) central(ais) deste intervalo de dados.</h4>
 
-					<ul class='muito-mais-top'><li><h4><b>Quando o número de dados for ímpar, teremos apenas uma mediana.</b></h4></li></ul>
-					<h4 class='muito-mais-top'>Exemplo: Vamos calcular a mediana dos valores dados na seguinte tabela:</h4>
-					<div class='tabela mais-bottom'>
-						<table class='table'>
-							<tr>
-								<th>Regiões Brasileiras</th>
-								<th>Lixo gerado em ton/dia</th>
-							</tr>
-							<tr>
-		    					<td>Região Norte</td>
-								<td>13.750</td>
-							</tr>
-							<tr>
-		    					<td>Região Nordeste</td>
-								<td>51.689</td>
-							</tr>
-							<tr>
-		    					<td>Região Centro-oeste</td>
-								<td>16.055</td>
-							</tr>
-							<tr>
-		    					<td>Região Sudeste</td>
-								<td>98.215</td>
-							</tr>
-							<tr>
-		    					<td>Região Sul</td>
-								<td>21.345</td>
-							</tr>
-						</table>
-					</div>
-					<div id="mediana-grafico-1" class="grafico-mediana"></div>
-
-					<ul class='muito-mais-top'><li><h4><b>Quando o número de dados for par, existem dois valores centrais e a mediana será a média aritmética destes dois valores.</b></h4></li></ul>
-					<h4 class='muito-mais-top'>Exemplo: Um determinado catador recolheu 52 latinhas de refrigerante na segunda-feira, 44 na terça-feira, 69 na quarta-feira, 57 na quinta-feira, 73 na sexta-feira e 60 no sábado. Identifique a mediana das latinhas recolhidas pelo catador, nesse período:</h4>
-					<div id="mediana-grafico-2" class="grafico-mediana"></div>
-
+				<ul class='muito-mais-top'><li><h4><b>Quando o número de dados for ímpar, teremos apenas uma mediana.</b></h4></li></ul>
+				<h4 class='muito-mais-top'>Exemplo: Vamos calcular a mediana dos valores dados na seguinte tabela:</h4>
+				<div class='tabela mais-bottom'>
+					<table class='table'>
+						<tr>
+							<th>Regiões Brasileiras</th>
+							<th>Lixo gerado em ton/dia</th>
+						</tr>
+						<tr>
+	    					<td>Região Norte</td>
+							<td>13.750</td>
+						</tr>
+						<tr>
+	    					<td>Região Nordeste</td>
+							<td>51.689</td>
+						</tr>
+						<tr>
+	    					<td>Região Centro-oeste</td>
+							<td>16.055</td>
+						</tr>
+						<tr>
+	    					<td>Região Sudeste</td>
+							<td>98.215</td>
+						</tr>
+						<tr>
+	    					<td>Região Sul</td>
+							<td>21.345</td>
+						</tr>
+					</table>
 				</div>
-				`;
+				<div id="mediana-grafico-1" class="grafico-mediana"></div>
 
-				break;
+				<ul class='muito-mais-top'><li><h4><b>Quando o número de dados for par, existem dois valores centrais e a mediana será a média aritmética destes dois valores.</b></h4></li></ul>
+				<h4 class='muito-mais-top'>Exemplo: Um determinado catador recolheu 52 latinhas de refrigerante na segunda-feira, 44 na terça-feira, 69 na quarta-feira, 57 na quinta-feira, 73 na sexta-feira e 60 no sábado. Identifique a mediana das latinhas recolhidas pelo catador, nesse período:</h4>
+				<div id="mediana-grafico-2" class="grafico-mediana"></div>
+				<h4 class='mais-top'>Como podemos observar, existem dois valores centrais, e nesse caso, a mediana será o valor da média aritmética dos dois valores centrais:</h4>
 
-			case 'moda':
+				<div class="formula">
+					<div class="formula-descrita">
+						<h4>Média</h4>
+						<h4 class="operador">=</h4>
 
+						<div class="cima-baixo">
+							<div class="cima">
+								<h4>57</h4>
+								<h4>+</h4>
+								<h4>60</h4>
+							</div>
+							<div>
+								<hr>
+							</div>
+							<div class="baixo">
+								<h4>2</h4>
+							</div>
+						</div>
+
+						<h4 class="operador">=</h4>
+
+						<div class="cima-baixo">
+							<div class="cima">
+								<h4>117</h4>
+							</div>
+							<div>
+								<hr>
+							</div>
+							<div class="baixo">
+								<h4>2</h4>
+							</div>
+						</div>
+
+						<h4>=</h4>
+						<h4>58,5</h4>
+					</div>
+				</div>
+			</div>
+			`;
+
+			break;
+
+		case 'moda':
+			titulo = 'MODA';
+			msgAjuda = '';
+			secundario = `
+			<div class="botao-explicacao-mediana">
+				<h4>A moda corresponde ao valor que aparece com mais frequência, ou seja, que detém o maior número de observações no conjunto em estudo. O nome é influenciado pela maneira de falar das pessoas, ao afirmarem que tal objeto está na moda porque a maioria das pessoas estava utilizando</h4>
+				<h4>Pode existir mais de uma moda para um mesmo grupo de dados. </h4>
+
+				<h3>Exemplos:</h3>
+				<ol>
+					<li><h4>Na região sudeste temos os seguintes dados de coleta de lixo per capita (kg/hab/dia):</h4></li>
+					<table>
+					</table>
+
+
+				</ol>
+
+			</div>
+			`;
 			break;
 
 	}
@@ -518,7 +573,7 @@ function popUp(tipo) {
 		});
 	}
 
-	function graficoMediana1() {
+	function graficoMediana2() {
 		Highcharts.chart('mediana-grafico-2', {
 			chart: {
 				type: 'column',
