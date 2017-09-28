@@ -1,0 +1,89 @@
+<div class="row geral-interno">
+	<img class="fundo" src="assets/img/pre-login.jpg"/>
+
+	<div class="login col-xs-3 col-xs-offset-2">
+		<input type="text" class="form-control" id="login-confirmacao" maxlength="55" placeholder="Insira o seu nome"> </input>
+		<button type="button" class="btn btn-primary btn-block" id="button-confirmacao">Confirmar</button>
+	</div>
+</div>
+
+
+<style media="screen">
+.geral-interno {
+	position: relative;
+}
+
+.fundo {
+	width: 100%;
+}
+
+.login {
+	top: 22%;
+	position: absolute;
+}
+
+</style>
+
+<script type="text/javascript">
+$("#iconSetaEsquerda").hide();
+$("#iconSetaDireita").hide();
+$("#iconAjuda").hide();
+
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
+
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
+
+iconAjuda.addEventListener("click", function() {
+	ajuda();
+});
+
+function anterior() {
+}
+
+function proxima() {
+	carregarParte('login.html');
+}
+
+function ajuda() {
+}
+
+let msgAjuda = '';
+function ajuda() {
+	if (msgAjuda) {
+		swal(msgAjuda);
+	}
+}
+
+let loginConfirmacao = document.querySelector('#login-confirmacao');
+let buttonConfirmacao = document.querySelector("#button-confirmacao");
+
+function realizarLogin() {
+	if (!(loginConfirmacao.value === '')) {
+
+		$("#login-confirmacao").fadeOut();
+		$("#button-confirmacao").fadeOut();
+
+		nomePessoa = loginConfirmacao.value;
+
+		setTimeout(function() {
+			proxima();
+		}, 500);
+
+	}
+}
+
+buttonConfirmacao.addEventListener("click", function() {
+	realizarLogin();
+});
+
+loginConfirmacao.addEventListener("keypress", function(event) {
+	if (event.keyCode == 13) {
+        realizarLogin();
+    }
+});
+
+</script>

@@ -1,91 +1,66 @@
-<div class="row">
-	<div class="col-xs-12">
-		<video autoplay muted id="login-video"></video>
-	</div>
-
-	<div class="login col-xs-3 col-xs-offset-2">
-		<input type="text" class="form-control" id="login-confirmacao" maxlength="55" placeholder="Insira o seu nome"> </input>
-		<button type="button" class="btn btn-primary btn-block" id="button-confirmacao">Confirmar</button>
-	</div>
+<div class="geral-interno">
+	<video id='login-video' class="fundo"/>
 </div>
 
-
 <style media="screen">
-video {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	min-width: 100%;
-	min-height: 100%;
-	width: 100%;
-	height: auto;
-	z-index: -100;
-	transform: translateX(-50%) translateY(-50%);
-	background-size: cover;
-	transition: 1s opacity;
+
+.geral-interno {
+	position: relative;
 }
 
-.login {
-	position: relative;
-	z-index: 100;
-	background-size: cover;
-	height: 100%
+.fundo {
+	width: 100%;
 }
+
 </style>
 
 <script type="text/javascript">
 
-let loginVideo = document.querySelector('#login-video');
-let loginConfirmacao = document.querySelector('#login-confirmacao');
-let buttonConfirmacao = document.querySelector("#button-confirmacao");
+$("#iconSetaEsquerda").hide();
+$("#iconSetaDireita").show();
+$("#iconAjuda").hide();
 
-let source = document.createElement('source');
-source.setAttribute('src', 'assets/video/login-1.mp4');
-loginVideo.appendChild(source);
-loginVideo.play();
+iconSetaEsquerda.addEventListener("click", function() {
 
-let buttonClickado = false;
-let finalizadoZoom = false;
-let finalizado = false;
+	anterior();
+});
 
-function realizarLogin() {
-	if (!(loginConfirmacao.value === '')) {
-		buttonClickado = true;
+iconSetaDireita.addEventListener("click", function() {
 
-		$("#login-confirmacao").fadeOut();
-		$("#button-confirmacao").fadeOut();
+	proxima();
+});
 
-		nomePessoa = loginConfirmacao.value;
+iconAjuda.addEventListener("click", function() {
+	ajuda();
+});
+
+let posIndex = 0;
+function anterior() {
+}
+
+function proxima() {
+
+	carregarParte('lixeiras.html');
+}
+
+function ajuda() {
+}
+
+let msgAjuda = '';
+function ajuda() {
+
+	if (msgAjuda) {
+
+		swal(msgAjuda);
 	}
 }
 
-buttonConfirmacao.addEventListener("click", function() {
-	realizarLogin();
-});
-
-loginConfirmacao.addEventListener("keypress", function(event) {
-	if (event.keyCode == 13) {
-        realizarLogin();
-    }
-});
-
+let loginVideo = document.querySelector('#login-video');
+loginVideo.src = 'assets/video/login-3.mp4'
+loginVideo.play();
 loginVideo.addEventListener("ended", function() {
-	if (finalizado) {
-		carregarParte('lixeiras.html');
-	} else {
 
-		if (buttonClickado) {
-			if (!finalizadoZoom) {
-				finalizadoZoom = true;
-				source.setAttribute('src', 'assets/video/login-2.mp4');
-			} else {
-				finalizado = true;
-				source.setAttribute('src', 'assets/video/login-3.mp4');
-			}
-			loginVideo.load();
-		}
-
-		loginVideo.play();
-	}
+	proxima();
 });
+
 </script>
