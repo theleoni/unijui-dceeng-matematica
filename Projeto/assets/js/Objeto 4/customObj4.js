@@ -10,6 +10,7 @@ var shortFadeTime = 250;
 //Variáveis especificas
 var videoOnibus1Assistido = false;
 var videoOnibus2Assistido = false;
+var videoOnibus1ponto1Assistido = false;
 var videoOnibusVoltandoAssistido = false;
 
 var stuckOnFirstImage = true;
@@ -52,6 +53,9 @@ function hideDivsOnObjectStart() {
 	$("#telaExemplos").hide();
 	$("#telaSalaDeAula3").hide();
 	$("#telaQuestoes").hide();
+	$("#telaPrevisaoDoTempo").hide();
+	$("#telaVideoOnibus1ponto1").hide();
+	$("#telaRioSujo").hide();
 
 
 }
@@ -161,10 +165,25 @@ function watchVideoOnibus1() {
 	});
 }
 
+//Função para assistir o primeiro (segundo) vídeo do ônibus
+function watchVideoOnibus1ponto1() {
+	$(videoOnibus1ponto1).on('ended',function(){
+		if (scene == 4 && videoOnibus1ponto1Assistido == false) {
+			allowPreviousScene();
+			nextScene();
+			videoOnibus1ponto1Assistido = true;
+		} else if (videoOnibus1ponto1Assistido == true) {
+			allowPreviousScene();
+			videoOnibus1ponto1.currentTime = 0;
+		}
+
+	});
+}
+
 //Função para assistir o segundo vídeo do ônibus
 function watchVideoOnibus2() {
 	$(videoOnibus2).on('ended',function(){
-		if (scene == 4 && videoOnibus2Assistido == false) {
+		if (scene == 6 && videoOnibus2Assistido == false) {
 			allowPreviousScene();
 			videoOnibus2Assistido = true;
 			nextScene();
@@ -179,7 +198,7 @@ function watchVideoOnibus2() {
 //Função para assistir o vídeo do ônibus voltando
 function watchVideoOnibusVoltando() {
 	$(videoOnibusVoltando).on('ended',function(){
-		if (scene == 12 && videoOnibusVoltandoAssistido == false) {
+		if (scene == 15 && videoOnibusVoltandoAssistido == false) {
 			nextScene();
 			videoOnibusVoltandoAssistido = true;
 		} else if (videoOnibusVoltandoAssistido == true) {
@@ -203,7 +222,7 @@ function checkIfStuck() {
 
 			}, 5000)
 		}
-	}, 17500)
+	}, 7000)
 }
 
 
@@ -309,7 +328,7 @@ function checkIfStuck() {
 		for (var conteudo in dataJSON[questionNumber]) {
 			switch (i) {
 				case 1:
-				$("#tituloQuestao").html(dataJSON[questionNumber][conteudo]);
+				$("#tituloQuestao").html("<span style='color:#d88d1c;'>" + questionNumber + ".</span> " + dataJSON[questionNumber][conteudo]);
 				i++;
 				break;
 
@@ -335,6 +354,11 @@ function checkIfStuck() {
 				
 				case 6:
 				$("#buttonAf5").html(dataJSON[questionNumber][conteudo]);
+				i++;
+				break;
+
+				case 7:
+				$("#containerTabelaQuestao").html(dataJSON[dataJSON[questionNumber][conteudo]]);
 				i++;
 				break;
 			}
@@ -381,6 +405,9 @@ function checkIfStuck() {
 		$("#buttonAf4").prop("disabled", "disabled");
 		$("#buttonAf5").prop("disabled", "disabled");
 		$("#botaoEnviarResposta").prop("disabled", "disabled");
+		$(respostasCorretas[questionNumber-1]).addClass("btn-primary");
+		$(respostasCorretas[questionNumber-1]).siblings().removeClass("btn-primary");
+
 	}
 
 	function resetQuestionButtons() {
@@ -469,6 +496,9 @@ function checkIfStuck() {
 			case 15:
 			case 16:
 			case 17:
+			case 18:
+			case 19:
+			case 20:
 			nextScene();
 			break
 			case 3:
@@ -476,7 +506,7 @@ function checkIfStuck() {
 			nextScene();
 			break;
 
-			case 6:
+			case 9:
 			if (viuTratamento == false ) {
 				swal("","Veja ao menos uma das etapas de tratamento da água!", "error");
 			} else {
@@ -484,7 +514,7 @@ function checkIfStuck() {
 			}
 			break;
 
-			case 18:
+			case 21:
 			if (questionNumber < 18 ) {
 				questionNumber++;
 				loadQuestion();
@@ -514,9 +544,12 @@ function checkIfStuck() {
 			case 15:
 			case 16:
 			case 17:
+			case 18:
+			case 19:
+			case 20:
 			previousScene();
 			break;
-			case 18:
+			case 21:
 			if (questionNumber > 1) {
 				questionNumber--;
 				loadQuestion();
@@ -558,18 +591,46 @@ function checkIfStuck() {
 			} else {
 				videoOnibus1.play();
 				videoOnibus1.currentTime = 0;
-				allowNextScene();
+				showArrows();
 			}
 			break;
 
 			case 3:
-			$("#telaInfografico1").show();
+			$("#telaPrevisaoDoTempo").show();
 			changeTitle(" ");
 			showArrows();
 			checkIfStuck();
 			break;
 
+
 			case 4:
+			disallowPreviousScene();
+			$("#telaVideoOnibus1ponto1").show();
+			$("#iconCalculadora").hide();
+			$("#iconMais").hide();
+			$("#iconHelp").hide();
+			changeTitle(" ");
+			if (!videoOnibus1ponto1Assistido) {
+				videoOnibus1ponto1.currentTime = 0;
+				videoOnibus1ponto1.play()
+				disallowNextScene();
+				watchVideoOnibus1ponto1();
+
+			} else {
+				videoOnibus1ponto1.play();
+				videoOnibus1ponto1.currentTime = 0;
+				showArrows();
+			}
+			break;
+
+
+			case 5:
+			$("#telaInfografico1").show();
+			changeTitle(" ");
+			showArrows();
+			break;
+
+			case 6:
 			$("#telaVideoOnibus2").show();
 			$("#iconCalculadora").hide();
 			$("#iconMais").hide();
@@ -584,22 +645,29 @@ function checkIfStuck() {
 			} else {
 				videoOnibus2.play();
 				videoOnibus2.currentTime = 0;
-				allowNextScene();
+				showArrows();
 			}
 			break;
 
-			case 5:
+
+			case 7:
+			$("#telaRioSujo").show();
+			showArrows();
+			changeTitle(" ");
+			break;
+
+			case 8:
 			$("#telaChegadaCorsan").show();
 			showArrows();
 			changeTitle(" ");
 			break;
 
-			case 6:
+			case 9:
 			$("#telaTratamentoAgua").show();
 			$("#textoTratamento").html(dataJSON.telaTratamento.fala1Guia);
 			break;
 
-			case 7:
+			case 10:
 			$("#telaLaboratorio").show();
 			changeTitle(" ");
 			updateConversaLaboratorio();
@@ -610,28 +678,28 @@ function checkIfStuck() {
 			}
 			break;
 
-			case 8:
+			case 11:
 			$("#telaTabela1").show();
 			changeTitle(" ");
 			break;
 
-			case 9:
+			case 12:
 			$("#telaTabela2").show();
 			changeTitle(" ");
 			break;
 
-			case 10:
+			case 13:
 			$("#telaTabela3").show();
 			changeTitle(" ");
 			break;
 
-			case 11:
+			case 14:
 			$("#telaLaboratorio2").show();
 			changeTitle(" ");
 
 			break;
 
-			case 12:
+			case 15:
 			$("#telaVideoOnibusVolta").show();
 			changeTitle(" ");
 			$("#iconCalculadora").hide();
@@ -650,33 +718,35 @@ function checkIfStuck() {
 			}
 			break;
 
-			case 13:
+			case 16:
 			$("#telaEscola").show();
 			changeTitle(" ");
 			break;
 
-			case 14:
+			case 17:
 			$("#telaSalaDeAula").show();
 			changeTitle(" ");
 			break;
 
-			case 15:
+			case 18:
 			$("#telaSalaDeAula2").show();
 			changeTitle(" ");
 			break;
 
-			case 16:
+			case 19:
 			$("#telaExemplos").show();
+			$("body").css("overflow", "auto");
 			changeTitle(" ");
 			break;
 
-			case 17:
+			case 20:
 			$("#telaSalaDeAula3").show();
 			changeTitle(" ");
 			break;
 
-			case 18:
+			case 21:
 			$("#telaQuestoes").show();
+			$("body").css("overflow", "auto");
 			loadQuestion();
 			changeTitle(" ");
 
@@ -696,67 +766,83 @@ function checkIfStuck() {
 			break;
 
 			case 3:
-			$("#telaInfografico1").hide();
+			$("#telaPrevisaoDoTempo").hide();
 			break;
 
 			case 4:
-			$("#telaVideoOnibus2").hide();
+			$("#telaVideoOnibus1ponto1").hide();
 			break;
 
 			case 5:
-			$("#telaChegadaCorsan").hide();
+			$("#telaInfografico1").hide();
 			break;
 
 			case 6:
-			$("#telaTratamentoAgua").hide();
+			$("#telaVideoOnibus2").hide();
 			break;
 
 			case 7:
-			$("#telaLaboratorio").hide();
+			$("#telaRioSujo").hide();
 			break;
 
 			case 8:
-			$("#telaTabela1").hide();
+			$("#telaChegadaCorsan").hide();
 			break;
 
 			case 9:
-			$("#telaTabela2").hide();
+			$("#telaTratamentoAgua").hide();
 			break;
 
 			case 10:
-			$("#telaTabela3").hide();
+			$("#telaLaboratorio").hide();
 			break;
 
 			case 11:
-			$("#telaLaboratorio2").hide();
+			$("#telaTabela1").hide();
 			break;
 
 			case 12:
-			$("#telaVideoOnibusVolta").hide();
+			$("#telaTabela2").hide();
 			break;
 
 			case 13:
-			$("#telaEscola").hide();
+			$("#telaTabela3").hide();
 			break;
 
 			case 14:
-			$("#telaSalaDeAula").hide();
+			$("#telaLaboratorio2").hide();
 			break;
 
 			case 15:
-			$("#telaSalaDeAula2").hide();
+			$("#telaVideoOnibusVolta").hide();
 			break;
 
 			case 16:
-			$("#telaExemplos").hide();
+			$("#telaEscola").hide();
 			break;
 
 			case 17:
-			$("#telaSalaDeAula3").hide();
+			$("#telaSalaDeAula").hide();
 			break;
 
 			case 18:
+			$("#telaSalaDeAula2").hide();
+			break;
+
+			case 19:
+			$("#telaExemplos").hide();
+			$("body").css("overflow", "hidden");
+			window.scrollTo(0,0);
+			break;
+
+			case 20:
+			$("#telaSalaDeAula3").hide();
+			break;
+
+			case 21:
 			$("#telaQuestoes").hide();
+			$("body").css("overflow", "hidden");
+			window.scrollTo(0,0);
 			break;
 		}
 	}

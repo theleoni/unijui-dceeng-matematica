@@ -2084,7 +2084,7 @@
 
 					}
 
-				}, 10000);
+				}, 15000);
 			}
 			else {
 				loadTransmissionData();

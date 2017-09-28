@@ -153,6 +153,10 @@ body {
 .tabelaTotal {
 	background-color: #6d6b67;
 }
+
+.tabelaTotal2 {
+	background-color: blanchedalmond;
+}
 .noTopBorder {
 	border-top-color: transparent !important;
 }
