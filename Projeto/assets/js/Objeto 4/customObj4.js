@@ -26,7 +26,6 @@ var respostasCorretas = ['#buttonAf4', '#buttonAf1', '#buttonAf4', '#buttonAf3',
 var firstTimeScene20 = true;
 
 $(document).ready(function() {
-	loadScene();
 	hideDivsOnObjectStart();
 	videoIntroducao.pause();
 
@@ -109,6 +108,7 @@ $.getJSON('../assets/js/Objeto 4/dataObj4.json', function(data) {
 
 $.getJSON('../assets/js/Objeto 4/telas.json', function(data) {
 	telasJSON = data;
+	loadScene();
 });
 
 
