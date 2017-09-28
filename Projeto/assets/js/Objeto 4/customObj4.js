@@ -23,8 +23,6 @@ var questionNumber = 1;
 var questoesCorretas = [false,false,false,false,false,false,false,false,false,false,false,false,false, false, false, false, false, false]
 var respostasCorretas = ['#buttonAf4', '#buttonAf1', '#buttonAf4', '#buttonAf3', '#buttonAf2', '#buttonAf2', '#buttonAf3', '#buttonAf1', '#buttonAf4', '#buttonAf3', '#buttonAf3', '#buttonAf1', '#buttonAf2', '#buttonAf5', '#buttonAf1', '#buttonAf3', '#buttonAf4', '#buttonAf2'];
 
-var firstTimeScene20 = true;
-
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 	videoIntroducao.pause();
@@ -63,11 +61,9 @@ function hideDivsOnObjectStart() {
 }
 
 
-
-
 //Função para avançar para a próxima cena
 function nextScene() {
-	//unloadScene();
+	unloadScene();
 	scene++;
 	loadScene();
 
@@ -75,7 +71,7 @@ function nextScene() {
 
 //Função para retornar à cena anterior
 function previousScene() {
-	//unloadScene();
+	unloadScene();
 	scene--;
 	loadScene();
 }
@@ -90,6 +86,7 @@ $(document).on('click', '#botaoNome', function() {
 		$("#alertNome").hide();
 		videoIntroducao.play();
 		waitVideoIntroToEnd();
+		$("#textoSalaDeAula2").html($("#textoSalaDeAula2").html().replace("%fulano%", nomeDoUsuario));
 	} else {
 		$("#alertNome").show();
 	}
@@ -104,11 +101,6 @@ $(document).on('keyup', '#inputNome', function (e) {
 //Importando informações do json
 $.getJSON('../assets/js/Objeto 4/dataObj4.json', function(data) {
 	dataJSON = data;
-});
-
-$.getJSON('../assets/js/Objeto 4/telas.json', function(data) {
-	telasJSON = data;
-	loadScene();
 });
 
 
@@ -573,19 +565,17 @@ function checkIfStuck() {
 		switch(scene) {
 
 			case 1:
-			//$("#telaNome").show();
-			$("#geral").html(telasJSON.tela1);
+			$("#telaNome").show();
 			changeTitle(" ");
 			break;
 
 			case 2:
 			disallowPreviousScene();
-			//$("#telaVideoOnibus1").show();
-			$("#geral").html(telasJSON.tela2);
-			changeTitle(" ");
+			$("#telaVideoOnibus1").show();
 			$("#iconCalculadora").hide();
 			$("#iconMais").hide();
 			$("#iconHelp").hide();
+			changeTitle(" ");
 			if (!videoOnibus1Assistido) {
 				videoOnibus1.currentTime = 0;
 				videoOnibus1.play()
@@ -600,8 +590,7 @@ function checkIfStuck() {
 			break;
 
 			case 3:
-			//$("#telaPrevisaoDoTempo").show();
-			$("#geral").html(telasJSON.tela3);
+			$("#telaPrevisaoDoTempo").show();
 			changeTitle(" ");
 			showArrows();
 			checkIfStuck();
@@ -610,9 +599,7 @@ function checkIfStuck() {
 
 			case 4:
 			disallowPreviousScene();
-			//$("#telaVideoOnibus1ponto1").show();
-			$("#geral").html(telasJSON.tela4);
-
+			$("#telaVideoOnibus1ponto1").show();
 			$("#iconCalculadora").hide();
 			$("#iconMais").hide();
 			$("#iconHelp").hide();
@@ -632,16 +619,13 @@ function checkIfStuck() {
 
 
 			case 5:
-			//$("#telaInfografico1").show();
-			$("#geral").html(telasJSON.tela5);
-
+			$("#telaInfografico1").show();
 			changeTitle(" ");
 			showArrows();
 			break;
 
 			case 6:
-			//$("#telaVideoOnibus2").show();
-			$("#geral").html(telasJSON.tela6);
+			$("#telaVideoOnibus2").show();
 			$("#iconCalculadora").hide();
 			$("#iconMais").hide();
 			$("#iconHelp").hide();
@@ -661,32 +645,24 @@ function checkIfStuck() {
 
 
 			case 7:
-			//$("#telaRioSujo").show();
-			$("#geral").html(telasJSON.tela7);
-
+			$("#telaRioSujo").show();
 			showArrows();
 			changeTitle(" ");
 			break;
 
 			case 8:
-			//$("#telaChegadaCorsan").show();
-			$("#geral").html(telasJSON.tela8);
-
+			$("#telaChegadaCorsan").show();
 			showArrows();
 			changeTitle(" ");
 			break;
 
 			case 9:
-			//$("#telaTratamentoAgua").show();
-			$("#geral").html(telasJSON.tela9);
-
+			$("#telaTratamentoAgua").show();
 			$("#textoTratamento").html(dataJSON.telaTratamento.fala1Guia);
 			break;
 
 			case 10:
-			//$("#telaLaboratorio").show();
-			$("#geral").html(telasJSON.tela10);
-
+			$("#telaLaboratorio").show();
 			changeTitle(" ");
 			updateConversaLaboratorio();
 			if (conversaLaboratorioCompleta == true) {
@@ -697,37 +673,28 @@ function checkIfStuck() {
 			break;
 
 			case 11:
-			//$("#telaTabela1").show();
-			$("#geral").html(telasJSON.tela11);
+			$("#telaTabela1").show();
 			changeTitle(" ");
 			break;
 
 			case 12:
-			//$("#telaTabela2").show();
-			$("#geral").html(telasJSON.tela12);
-
+			$("#telaTabela2").show();
 			changeTitle(" ");
 			break;
 
 			case 13:
-			//$("#telaTabela3").show();
-			$("#geral").html(telasJSON.tela13);
-
+			$("#telaTabela3").show();
 			changeTitle(" ");
 			break;
 
 			case 14:
-			//$("#telaLaboratorio2").show();
-			$("#geral").html(telasJSON.tela14);
-
+			$("#telaLaboratorio2").show();
 			changeTitle(" ");
 
 			break;
 
 			case 15:
-			//$("#telaVideoOnibusVolta").show();
-			$("#geral").html(telasJSON.tela15);
-
+			$("#telaVideoOnibusVolta").show();
 			changeTitle(" ");
 			$("#iconCalculadora").hide();
 			$("#iconMais").hide();
@@ -746,48 +713,33 @@ function checkIfStuck() {
 			break;
 
 			case 16:
-			//$("#telaEscola").show();
-			$("#geral").html(telasJSON.tela16);
-
+			$("#telaEscola").show();
 			changeTitle(" ");
 			break;
 
 			case 17:
-			//$("#telaSalaDeAula").show();
-			$("#geral").html(telasJSON.tela17);
-
+			$("#telaSalaDeAula").show();
 			changeTitle(" ");
 			break;
 
 			case 18:
-			//$("#telaSalaDeAula2").show();
-			$("#geral").html(telasJSON.tela18);
-
+			$("#telaSalaDeAula2").show();
 			changeTitle(" ");
 			break;
 
 			case 19:
-			//$("#telaExemplos").show();
-			$("#geral").html(telasJSON.tela19);
-
+			$("#telaExemplos").show();
 			$("body").css("overflow", "auto");
 			changeTitle(" ");
 			break;
 
 			case 20:
-			//$("#telaSalaDeAula3").show();
-			$("#geral").html(telasJSON.tela20);
-			if (firstTimeScene20) {
-				$("#textoSalaDeAula2").html($("#textoSalaDeAula2").html().replace("%fulano%", nomeDoUsuario));
-				firstTimeScene20 = false;
-			}
+			$("#telaSalaDeAula3").show();
 			changeTitle(" ");
 			break;
 
 			case 21:
-			//$("#telaQuestoes").show();
-			$("#geral").html(telasJSON.tela21);
-
+			$("#telaQuestoes").show();
 			$("body").css("overflow", "auto");
 			loadQuestion();
 			changeTitle(" ");
@@ -797,7 +749,7 @@ function checkIfStuck() {
 	}
 
 	//Função para remover a cena
-	/*function unloadScene() {
+	function unloadScene() {
 		switch(scene) {
 			case 1:
 			$("#telaNome").hide();
@@ -887,4 +839,4 @@ function checkIfStuck() {
 			window.scrollTo(0,0);
 			break;
 		}
-	}*/
+	}
