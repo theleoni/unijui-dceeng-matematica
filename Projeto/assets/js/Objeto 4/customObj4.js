@@ -735,6 +735,7 @@ function checkIfStuck() {
 
 			case 19:
 			$("#telaExemplos").show();
+			$("body").css("overflow", "auto");
 			changeTitle(" ");
 			break;
 
@@ -745,6 +746,7 @@ function checkIfStuck() {
 
 			case 21:
 			$("#telaQuestoes").show();
+			$("body").css("overflow", "auto");
 			loadQuestion();
 			changeTitle(" ");
 
@@ -829,6 +831,8 @@ function checkIfStuck() {
 
 			case 19:
 			$("#telaExemplos").hide();
+			$("body").css("overflow", "hidden");
+			window.scrollTo(0,0);
 			break;
 
 			case 20:
@@ -837,6 +841,8 @@ function checkIfStuck() {
 
 			case 21:
 			$("#telaQuestoes").hide();
+			$("body").css("overflow", "hidden");
+			window.scrollTo(0,0);
 			break;
 		}
 	}
