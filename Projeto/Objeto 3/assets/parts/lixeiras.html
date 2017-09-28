@@ -1,4 +1,4 @@
-<div class="geral">
+<div class="geral-interno">
 	<img class="fundo" src="assets/img/lixeira_fundo.jpg"/>
 
 	<div class="lixeiras text-center">
@@ -10,13 +10,13 @@
 	</div>
 
 	<div class="lixeiras-texto text-center">
-		<h4>Clique nas lixeias para saber mais sobre separação do lixo</h4>
+		<h4>Clique nas lixeiras para saber mais sobre separação do lixo</h4>
 	</div>
 </div>
 
 <style media="screen">
 
-.geral {
+.geral-interno {
 	position: relative;
 }
 
@@ -114,38 +114,33 @@
 
 <script type="text/javascript">
 
-try {
-	$("#iconSetaEsquerda").hide();
-	$("#iconSetaDireita").show();
-	$("#iconAjuda").hide();
+$("#iconSetaEsquerda").show();
+$("#iconSetaDireita").show();
+$("#iconAjuda").hide();
 
-	iconSetaEsquerda.addEventListener("click", function() {
-		anterior();
-	});
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
 
-	iconSetaDireita.addEventListener("click", function() {
-		proxima();
-	});
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
 
-	iconAjuda.addEventListener("click", function() {
-
-	});
-
-} catch (e) {
-}
+iconAjuda.addEventListener("click", function() {
+});
 
 function anterior() {
+	carregarParte('login.html');
 }
 
 function proxima() {
-	$('.geral').load('assets/parts/explicacao-professora.html');
+	carregarParte('explicacao-professora.html');
 }
 
 function popUp(tipo) {
 
-	let dialog;
 	if (document.querySelector('#dialog-form') == null) {
-		let inner = document.querySelector(".geral").innerHTML;
+		let inner = document.querySelector(".geral-interno").innerHTML;
 		inner += `
 		<div id="dialog-form">
 			<div class="lixeira-explicacao row">
@@ -159,15 +154,8 @@ function popUp(tipo) {
 				</div>
 			</div>
 		</div>`
-		document.querySelector(".geral").innerHTML = inner;
+		document.querySelector(".geral-interno").innerHTML = inner;
 
-		dialog = $("#dialog-form").dialog({
-			autoOpen: false,
-			height: 500,
-			width: 850,
-			modal: true,
-			buttons: {}
-		});
 	}
 
 	let caminhoImg = 'assets/img/';
@@ -330,6 +318,14 @@ function popUp(tipo) {
 	document.querySelector('#lixeira-explicacao-img').src = caminhoImg;
 	document.querySelector('#lixeira-explicacao-titulo').innerHTML = titulo;
 	document.querySelector('#lixeira-explicacao-secundario').innerHTML = secundario;
+
+	let dialog = $("#dialog-form").dialog({
+		autoOpen: false,
+		height: 500,
+		width: 850,
+		modal: true,
+		buttons: {}
+	});
 
 	dialog.dialog("open");
 }

@@ -14,32 +14,28 @@ video {
 
 <script type="text/javascript">
 
-try {
-	$("#iconSetaEsquerda").show();
-	$("#iconSetaDireita").show();
-	$("#iconAjuda").hide();
+$("#iconSetaEsquerda").show();
+$("#iconSetaDireita").show();
+$("#iconAjuda").hide();
 
-	iconSetaEsquerda.addEventListener("click", function() {
-		anterior();
-	});
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
 
-	iconSetaDireita.addEventListener("click", function() {
-		proxima();
-	});
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
 
-	iconAjuda.addEventListener("click", function() {
+iconAjuda.addEventListener("click", function() {
 
-	});
-	
-} catch (e) {
-}
+});
 
 function anterior() {
-	$('.geral').load('assets/parts/lixeiras.html');
+	carregarParte('lixeiras.html');
 }
 
 function proxima() {
-	$('.geral').load('assets/parts/media-mediana-moda.html');
+	carregarParte('sala-aula.html');
 }
 
 let video = document.querySelector("video");

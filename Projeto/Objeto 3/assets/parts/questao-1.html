@@ -1,32 +1,30 @@
-<div class="geral-interno">
-	<video id='login-video' class="fundo"/>
-</div>
+<!-- <div class="geral-interno">
+	<img class="fundo" src="assets/img/inicio-questoes.png"/>
+</div> -->
 
 <style media="screen">
 
-.geral-interno {
+/*.geral-interno {
 	position: relative;
 }
 
 .fundo {
 	width: 100%;
-}
+}*/
 
 </style>
 
 <script type="text/javascript">
 
-$("#iconSetaEsquerda").hide();
+$("#iconSetaEsquerda").show();
 $("#iconSetaDireita").show();
 $("#iconAjuda").hide();
 
 iconSetaEsquerda.addEventListener("click", function() {
-
 	anterior();
 });
 
 iconSetaDireita.addEventListener("click", function() {
-
 	proxima();
 });
 
@@ -34,33 +32,19 @@ iconAjuda.addEventListener("click", function() {
 	ajuda();
 });
 
-let posIndex = 0;
 function anterior() {
+	carregarParte('inicio-questoes.html');
 }
 
 function proxima() {
-
-	carregarParte('lixeiras.html');
-}
-
-function ajuda() {
+	// carregarParte('questao-1.html');
 }
 
 let msgAjuda = '';
 function ajuda() {
-
 	if (msgAjuda) {
-
 		swal(msgAjuda);
 	}
 }
-
-let loginVideo = document.querySelector('#login-video');
-loginVideo.src = 'assets/video/login-3.mp4'
-loginVideo.play();
-loginVideo.addEventListener("ended", function() {
-
-	proxima();
-});
 
 </script>

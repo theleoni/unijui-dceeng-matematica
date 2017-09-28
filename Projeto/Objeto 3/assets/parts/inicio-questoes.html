@@ -1,0 +1,91 @@
+<div class="geral-interno">
+	<img id='img-fundo' class="fundo" src="assets/img/inicio-questoes-1.jpg"/>
+</div>
+
+<style media="screen">
+
+.geral-interno {
+	position: relative;
+}
+
+.fundo {
+	width: 100%;
+}
+
+</style>
+
+<script type="text/javascript">
+$("#iconSetaEsquerda").show();
+$("#iconSetaDireita").show();
+$("#iconAjuda").hide();
+
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
+
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
+
+iconAjuda.addEventListener("click", function() {
+	ajuda();
+});
+
+let posIndex = 0;
+function anterior() {
+
+	switch (posIndex) {
+
+		default:
+		case 0:
+
+			carregarParte('media-mediana-moda.html');
+			break;
+
+		case 1:
+			let imgFundo = document.querySelector('#img-fundo');
+			imgFundo.src = 'assets/img/inicio-questoes-1.jpg';
+			
+			posIndex--;
+			break;
+
+	}
+}
+
+function proxima() {
+	switch (posIndex) {
+
+		case 0:
+			let imgFundo = document.querySelector('#img-fundo');
+			imgFundo.src = 'assets/img/inicio-questoes-2.jpg';
+
+			posIndex++;
+			break;
+
+		default:
+		case 1:
+			swal({
+				title: `Olá ${nomePessoa}, por favor ajude-nos a encontrar as respostas desta atividade!`,
+				closeOnClickOutside: false,
+				closeOnEsc: false,
+				button: {
+					text: 'Vamos lá!',
+					closeModal: true,
+					className: 'btn',
+				},
+			})
+			.then((value) => {
+				carregarParte('questao-1.html');
+			});
+			break;
+	}
+}
+
+let msgAjuda = '';
+function ajuda() {
+	if (msgAjuda) {
+		swal(msgAjuda);
+	}
+}
+
+</script>
