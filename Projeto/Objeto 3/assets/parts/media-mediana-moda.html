@@ -1,5 +1,5 @@
-<div class="geral">
-	<img class="fundo" src="assets/img/sala-aula.png"/>
+<div class="geral-interno">
+	<img class="fundo" src="assets/img/media-mediana-moda.png"/>
 
 	<div class="botoes text-center">
 		<img class="botao" src="assets/img/sala-aula-btn-media.png" onclick="popUp('media')"/>
@@ -7,23 +7,11 @@
 		<img class="botao" src="assets/img/sala-aula-btn-moda.png" onclick="popUp('moda')"/>
 	</div>
 
-	<!-- <div class="botoes text-center">
-		<a class="botao" onclick="popUp('media')">Média</div>
-		<a class="botao" onclick="popUp('mediana')">Mediana</a>
-		<a class="botao" onclick="popUp('moda')">Moda</a>
-	</div> -->
-
-	<!-- <table>
-		<tr class="abacate">
-			<th width>ISBN</th>
-		</tr>
-	</table> -->
-
 </div>
 
 <style media="screen">
 
-.geral {
+.geral-interno {
 	position: relative;
 }
 
@@ -51,13 +39,11 @@
 
 .formula {
 	text-align: center;
-	/*vertical-align: baseline;*/
 	margin: 25px;
 }
 
 .dia-semana {
 	display: inline-flex;
-	/*position: fixed;*/
 }
 
 .dia-semana h4 {
@@ -101,7 +87,6 @@
 .formula-descrita {
 	font-style: italic;
 	display: inline-flex;
-	/*position: fixed;*/
 }
 
 .formula-descrita h4 {
@@ -123,7 +108,14 @@
 }
 
 .baixo {
-	/*display: inline-flex;*/
+}
+
+.muitissimo-mais-top {
+	margin-top: 48px !important;
+}
+
+.muito-mais-bottom {
+	margin-bottom: 48px !important;
 }
 
 .muito-mais-top {
@@ -142,6 +134,10 @@
 	margin-bottom: 16px !important;
 }
 
+.tab {
+	display:inline-block; width: 30px;
+}
+
 .botao-explicacao-media .grafico-media {
 	margin-top: 30px;
 	margin-bottom: 20px;
@@ -151,6 +147,26 @@
 	margin-top: 30px;
 	margin-bottom: 20px;
 }
+
+.texto-vermelho {
+	color: #FC5555;
+	font-weight: normal;
+}
+
+.texto-verde {
+	color: #45C876;
+	font-weight: normal;
+}
+
+.texto-amarelo {
+	color: #D0AC2C;
+	font-weight: normal;
+}
+
+.texto-vermelho:hover, .texto-verde:hover, .texto-amarelo:hover {
+	font-weight: bold;
+}
+
 
 </style>
 
@@ -177,11 +193,11 @@ try {
 }
 
 function anterior() {
-	$('.geral').load('assets/parts/sala-aula.html');
+	carregarParte('sala-aula.html');
 }
 
 function proxima() {
-	// $('.geral').load('assets/parts/explicacao-professora.html');
+	carregarParte('inicio-questoes.html');
 }
 
 let msgAjuda = '';
@@ -199,7 +215,7 @@ function popUp(tipo) {
 	}
 
 	if (document.querySelector('#dialog-form') == null) {
-		let inner = document.querySelector(".geral").innerHTML;
+		let inner = document.querySelector(".geral-interno").innerHTML;
 		inner += `
 		<div id="dialog-form">
 			<div class="botao-explicacao row">
@@ -209,7 +225,7 @@ function popUp(tipo) {
 				</div>
 			</div>
 		</div>`
-		document.querySelector(".geral").innerHTML = inner;
+		document.querySelector(".geral-interno").innerHTML = inner;
 	}
 
 	let titulo = '';
@@ -387,17 +403,144 @@ function popUp(tipo) {
 			secundario = `
 			<div class="botao-explicacao-mediana">
 				<h4>A moda corresponde ao valor que aparece com mais frequência, ou seja, que detém o maior número de observações no conjunto em estudo. O nome é influenciado pela maneira de falar das pessoas, ao afirmarem que tal objeto está na moda porque a maioria das pessoas estava utilizando</h4>
-				<h4>Pode existir mais de uma moda para um mesmo grupo de dados. </h4>
+				<h4 class='mais-top'><span class="tab"/>Pode existir mais de uma moda para um mesmo grupo de dados. </h4>
 
-				<h3>Exemplos:</h3>
-				<ol>
-					<li><h4>Na região sudeste temos os seguintes dados de coleta de lixo per capita (kg/hab/dia):</h4></li>
-					<table>
+				<h2 class='muitissimo-mais-top'>Exemplos:</h2>
+				<h3>1. Na região sudeste temos os seguintes dados de coleta de lixo per capita (kg/hab/dia):</h3>
+				<div class='tabela mais-top mais-bottom'>
+					<table class='table'>
+						<tr>
+							<th>Estados</th>
+							<th>Coleta per capita (Kg/hab/dia)</th>
+						</tr>
+						<tr>
+	    					<td>Espírito Santo (ES)</td>
+							<td class='texto-vermelho'>0,9</td>
+						</tr>
+						<tr>
+	    					<td>Minas Gerais (MG)</td>
+							<td class='texto-vermelho'>0,9</td>
+						</tr>
+						<tr>
+	    					<td>Rio de Janeiro (RJ)</td>
+							<td>1,3</td>
+						</tr>
+						<tr>
+	    					<td>São Paulo (SP)</td>
+							<td>1,4</td>
+						</tr>
 					</table>
+				</div>
+				<h4>Apenas dois valores são iguais, ou seja, apresenta uma moda definida como <span class='texto-vermelho'>0,9</span>. A classificação para uma moda é <b>unimodal</b>. </h4>
 
+				<h3 class='muitissimo-mais-top'>2. Na região norte temos os seguintes dados de coleta de lixo per capita (kg/hab/dia):</h3>
+				<div class='tabela mais-bottom'>
+					<table class='table'>
+						<tr>
+							<th>Estados</th>
+							<th>Coleta per capita (Kg/hab/dia)</th>
+						</tr>
+						<tr>
+	    					<td>Amazonas (AM)</td>
+							<td>1,6</td>
+						</tr>
+						<tr>
+	    					<td>Amapá (AP)</td>
+							<td class='texto-vermelho'>0,86</td>
+						</tr>
+						<tr>
+	    					<td>Acre (AC)</td>
+							<td class='texto-verde'>0,85</td>
+						</tr>
+						<tr>
+	    					<td>Pará (PR)</td>
+							<td>0,94</td>
+						</tr>
+						<tr>
+	    					<td>Rondônia (RO)</td>
+							<td class='texto-verde'>0,85</td>
+						</tr>
+						<tr>
+	    					<td>Roraima (RR)</td>
+							<td class='texto-vermelho'>0,86</td>
+						</tr>
+						<tr>
+	    					<td>Tocantins (TO)</td>
+							<td>0,82</td>
+						</tr>
+					</table>
+				</div>
+				<h4>Existem dois valores diferentes que se repetiram, <span class='texto-verde'>0,85</span> e <span class='texto-vermelho'>0,86</span>. Sendo assim, apresenta duas modas, sua classificação é <b>bimodal</b>.</h4>
 
-				</ol>
+				<h3 class='muitissimo-mais-top'>3. Na região nordeste temos os seguintes dados de coleta de lixo per capita (kg/hab/dia):</h3>
+				<div class='tabela mais-bottom'>
+					<table class='table'>
+						<tr>
+							<th>Estados</th>
+							<th>Coleta per capita (Kg/hab/dia)</th>
+						</tr>
+						<tr>
+	    					<td>Alagoas (AL)</td>
+							<td>0,98</td>
+						</tr>
+						<tr>
+	    					<td>Bahia (BA)</td>
+							<td class='texto-verde'>1,0</td>
+						</tr>
+						<tr>
+	    					<td>Ceará (CE)</td>
+							<td class='texto-verde'>1,0</td>
+						</tr>
+						<tr>
+	    					<td>Maranhão (MA)</td>
+							<td class='texto-vermelho'>0,96</td>
+						</tr>
+						<tr>
+	    					<td>Paraíba (PB)</td>
+							<td class='texto-amarelo'>0,95</td>
+						</tr>
+						<tr>
+	    					<td>Pernambuco (PE)</td>
+							<td>0,99</td>
+						</tr>
+						<tr>
+	    					<td>Piauí (PI)</td>
+							<td class='texto-vermelho'>0,96</td>
+						</tr>
+						<tr>
+	    					<td>Rio Grande do Norte (RN)</td>
+							<td class='texto-amarelo'>0,95</td>
+						</tr>
+						<tr>
+	    					<td>Sergipe (SE)</td>
+							<td>0,94</td>
+						</tr>
+					</table>
+				</div>
+				<h4>Existem três valores diferentes que se repetiram, <span class='texto-verde'>1,0</span>; <span class='texto-amarelo'>0,95</span> e <span class='texto-vermelho'>0,96</span>. Sendo assim, apresenta mais que duas modas, sua classificação é <b>plurimodal</b>.</h4>
 
+				<h3 class='muitissimo-mais-top'>4. Na região sul temos os seguintes dados de coleta de lixo per capita (kg/hab/dia):</h3>
+				<div class='tabela mais-bottom'>
+					<table class='table'>
+						<tr>
+							<th>Estados</th>
+							<th>Coleta per capita (Kg/hab/dia)</th>
+						</tr>
+						<tr>
+	    					<td>Paraná (PR)</td>
+							<td>0,9</td>
+						</tr>
+						<tr>
+	    					<td>Rio Grande do Sul (RS)</td>
+							<td>0,8</td>
+						</tr>
+						<tr>
+	    					<td>Santa Catarina (SC)</td>
+							<td>0,7</td>
+						</tr>
+					</table>
+				</div>
+				<h4>Não existem valores iguais, sendo assim não apresenta moda. Sua classificação é <b>amodal</b>.</h4>
 			</div>
 			`;
 			break;

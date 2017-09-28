@@ -12,25 +12,37 @@
 
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/jquery-ui.css">
-	<!-- <link rel="stylesheet" type="text/css" href="assets/css/sweetalert.min.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/botoesFixos.css"> -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 </head>
-<body>
 
-	<h1>Tela Aux</h1>
+<body>
+	<div class="body-header">
+		<h1>Tela Aux</h1>
+
+		<div id='botoes-fixos'>
+
+		</div>
+	</div>
 
 	<div class="geral">
 
 		<center>
+			<div>
+				<button type="button" class="btn" onclick="carregarParte('pre-login.html');">Pré-Login</button>
+				<button type="button" class="btn" onclick="carregarParte('login.html');">Login</button>
+				<button type="button" class="btn" onclick="carregarParte('lixeiras.html');">Lixeiras</button>
+				<button type="button" class="btn" onclick="carregarParte('explicacao-professora.html');">Explicação prof.</button>
+				<button type="button" class="btn" onclick="carregarParte('sala-aula.html');">Sala de aula</button>
+				<button type="button" class="btn" onclick="carregarParte('media-mediana-moda.html');">Média/Mediana/Moda</button>
+			</div>
 
-			<button type="button" style"margin:10dp;" class="btn" onclick="$('.geral').load('assets/parts/login.html');">Login</button>
-			<button type="button" class="btn" onclick="$('.geral').load('assets/parts/lixeiras.html');">Lixeiras</button>
-			<button type="button" class="btn" onclick="$('.geral').load('assets/parts/explicacao-professora.html');">Explicação prof.</button>
-			<button type="button" class="btn" onclick="$('.geral').load('assets/parts/sala-aula.html');">Sala de aula</button>
-			<button type="button" class="btn" onclick="$('.geral').load('assets/parts/media-mediana-moda.html');">Média/Mediana/Moda</button>
-
+			<div class="margin-yolo">
+				<button type="button" class="btn" onclick="carregarParte('inicio-questoes.html');">Início Questões</button>
+				<button type="button" class="btn" onclick="carregarParte('questao-1.html');">Questão 1</button>
+			</div>
 		</center>
 
 	</div>
@@ -39,18 +51,48 @@
 	.geral {
 		height: 100%
 	}
+
+	.body-header {
+		width: 100%;
+		display: inline-flex;
+	}
+
+	.margin-yolo {
+		margin: 40px;
+	}
 	</style>
 
 	<script type="text/javascript">
-	var iconSetaEsquerda = document.querySelector("#iconSetaEsquerda");
-	var iconSetaDireita = document.querySelector("#iconSetaDireita");
-	var iconAjuda = document.querySelector("#iconHelp");
+	var iconSetaEsquerda;
+	var iconSetaDireita;
+	var iconAjuda;
+
+	let divBotoesFixos = document.getElementById('botoes-fixos');
+	recarregarBotoes();
 
 	$("#iconSetaEsquerda").hide();
 	$("#iconSetaDireita").hide();
 	$("#iconAjuda").hide();
 
+	var nomePessoa = 'Jureg';
 	// $('.geral').load('assets/parts/lixeiras.html');
+
+	function carregarParte(link) {
+		recarregarBotoes();
+		$('.geral').load(`assets/parts/${link}`);
+	}
+
+	function recarregarBotoes() {
+		divBotoesFixos.innerHTML =
+		`<button type="button" class="btn" id='iconSetaEsquerda'>Voltar</button>
+		<button type="button" class="btn" id='iconSetaDireita'>Avançar</button>
+		<button type="button" class="btn" id='iconAjuda'>Ajuda</button>`;
+
+		iconSetaEsquerda = divBotoesFixos.querySelector('#iconSetaEsquerda');
+		iconSetaDireita = divBotoesFixos.querySelector('#iconSetaDireita');
+		iconAjuda = divBotoesFixos.querySelector('#iconAjuda');
+	}
+
 	</script>
 
 </body>

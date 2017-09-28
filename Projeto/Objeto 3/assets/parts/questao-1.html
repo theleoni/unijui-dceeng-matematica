@@ -1,0 +1,50 @@
+<!-- <div class="geral-interno">
+	<img class="fundo" src="assets/img/inicio-questoes.png"/>
+</div> -->
+
+<style media="screen">
+
+/*.geral-interno {
+	position: relative;
+}
+
+.fundo {
+	width: 100%;
+}*/
+
+</style>
+
+<script type="text/javascript">
+
+$("#iconSetaEsquerda").show();
+$("#iconSetaDireita").show();
+$("#iconAjuda").hide();
+
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
+
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
+
+iconAjuda.addEventListener("click", function() {
+	ajuda();
+});
+
+function anterior() {
+	carregarParte('inicio-questoes.html');
+}
+
+function proxima() {
+	// carregarParte('questao-1.html');
+}
+
+let msgAjuda = '';
+function ajuda() {
+	if (msgAjuda) {
+		swal(msgAjuda);
+	}
+}
+
+</script>

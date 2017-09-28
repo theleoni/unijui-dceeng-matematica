@@ -114,27 +114,23 @@
 
 <script type="text/javascript">
 
-try {
-	$("#iconSetaEsquerda").hide();
-	$("#iconSetaDireita").show();
-	$("#iconAjuda").hide();
+$("#iconSetaEsquerda").show();
+$("#iconSetaDireita").show();
+$("#iconAjuda").hide();
 
-	iconSetaEsquerda.addEventListener("click", function() {
-		anterior();
-	});
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
 
-	iconSetaDireita.addEventListener("click", function() {
-		proxima();
-	});
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
 
-	iconAjuda.addEventListener("click", function() {
-
-	});
-
-} catch (e) {
-}
+iconAjuda.addEventListener("click", function() {
+});
 
 function anterior() {
+	carregarParte('login.html');
 }
 
 function proxima() {
