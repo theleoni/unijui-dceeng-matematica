@@ -47,15 +47,15 @@ var numeroErradasMedianaAtv2 = 0;
 var verificacaoAtividade2 = [false, false];
 var valoresAtividade2Media = [];
 var valoresAtividade2Mediana = [];
-var corretasAtividade2Media = [60284.2, 393629.8, 21546.8, 13437.8, 15493.6, 39671, 9633.8, 11838.2];
+var corretasAtividade2Media = [60284.2, 393569.8, 21546.8, 13437.8, 15493.6, 39671, 9633.8, 11838.2];
 var corretasAtividade2Mediana = [69003, 390992, 22090, 14801, 15659, 39679, 6578, 12241];
 
 var numeroErradasMediaAtv3 = 0;
 var numeroErradasMedianaAtv3 = 0;
 var regioesErradasAtividade3Media;
 var regioesErradasAtividade3Mediana;
-var corretasAtividade3Media = [29.84, 76.98, 237.25, 79.28, 31.51];
-var corretasAtividade3Mediana = [29.61, 77.65, 237.66, 78.94, 31.73];
+var corretasAtividade3Media = [29.84, 76.87, 237.25, 79.28, 31.51];
+var corretasAtividade3Mediana = [29.61, 77.42, 237.66, 78.94, 31.73];
 var verificacaoAtividade3 = [false, false, false, false];
 var corretasAtividade3Questao1 = ["buttonAlternativa2Atv3", "buttonAlternativa3Atv3", "buttonAlternativa5Atv3"];
 var corretasAtividade3Questao2 = ["buttonAlternativa1Atv3", "buttonAlternativa4Atv3"];

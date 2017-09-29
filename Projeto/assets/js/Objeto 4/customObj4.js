@@ -61,12 +61,6 @@ function hideDivsOnObjectStart() {
 }
 
 
-//Implementação do recurso sleep
-function sleep (time) {
-	return new Promise((resolve) => setTimeout(resolve, time));
-}
-
-
 //Função para avançar para a próxima cena
 function nextScene() {
 	unloadScene();
@@ -324,7 +318,7 @@ function checkIfStuck() {
 
 	//Função utilizada para carregar a questão correta
 	function loadQuestion() {
-		let i = 1;
+		var i = 1;
 		for (var conteudo in dataJSON[questionNumber]) {
 			switch (i) {
 				case 1:
@@ -478,6 +472,15 @@ function checkIfStuck() {
 	}
 
 
+	//Função para exibir ajudas
+	$(document).on('click', '#iconHelp', function() {
+		if (scene != 21) {
+			showHelp(scene);
+		} else {
+			showHelp(scene + questionNumber.toString());
+		}
+	})
+
 	//Função chamada ao clicar na seta direita
 	$(document).on('click', '#iconSetaDireita', function() {
 		switch (scene) {
@@ -487,7 +490,6 @@ function checkIfStuck() {
 			case 5:
 			case 7:
 			case 8:
-			case 9:
 			case 10:
 			case 11:
 			case 12:
@@ -592,6 +594,7 @@ function checkIfStuck() {
 				videoOnibus1.play();
 				videoOnibus1.currentTime = 0;
 				showArrows();
+				showUpperIcons();
 			}
 			break;
 
@@ -599,6 +602,7 @@ function checkIfStuck() {
 			$("#telaPrevisaoDoTempo").show();
 			changeTitle(" ");
 			showArrows();
+			showUpperIcons();
 			checkIfStuck();
 			break;
 
@@ -620,6 +624,8 @@ function checkIfStuck() {
 				videoOnibus1ponto1.play();
 				videoOnibus1ponto1.currentTime = 0;
 				showArrows();
+				showUpperIcons();
+
 			}
 			break;
 
@@ -628,6 +634,8 @@ function checkIfStuck() {
 			$("#telaInfografico1").show();
 			changeTitle(" ");
 			showArrows();
+			showUpperIcons();
+
 			break;
 
 			case 6:
@@ -646,6 +654,8 @@ function checkIfStuck() {
 				videoOnibus2.play();
 				videoOnibus2.currentTime = 0;
 				showArrows();
+				showUpperIcons();
+
 			}
 			break;
 
@@ -653,23 +663,28 @@ function checkIfStuck() {
 			case 7:
 			$("#telaRioSujo").show();
 			showArrows();
+			showUpperIcons();
 			changeTitle(" ");
 			break;
 
 			case 8:
 			$("#telaChegadaCorsan").show();
 			showArrows();
+			showUpperIcons();
 			changeTitle(" ");
 			break;
 
 			case 9:
 			$("#telaTratamentoAgua").show();
 			$("#textoTratamento").html(dataJSON.telaTratamento.fala1Guia);
+			showArrows();
+			showUpperIcons();
 			break;
 
 			case 10:
 			$("#telaLaboratorio").show();
 			changeTitle(" ");
+			showUpperIcons();
 			updateConversaLaboratorio();
 			if (conversaLaboratorioCompleta == true) {
 				allowNextScene();
@@ -681,22 +696,25 @@ function checkIfStuck() {
 			case 11:
 			$("#telaTabela1").show();
 			changeTitle(" ");
+			showUpperIcons();
 			break;
 
 			case 12:
 			$("#telaTabela2").show();
 			changeTitle(" ");
+			showUpperIcons();
 			break;
 
 			case 13:
 			$("#telaTabela3").show();
 			changeTitle(" ");
+			showUpperIcons();
 			break;
 
 			case 14:
 			$("#telaLaboratorio2").show();
 			changeTitle(" ");
-
+			showUpperIcons();
 			break;
 
 			case 15:
@@ -715,33 +733,39 @@ function checkIfStuck() {
 				videoOnibusVoltando.play();
 				videoOnibusVoltando.currentTime = 0;
 				allowNextScene();
+				showUpperIcons();
 			}
 			break;
 
 			case 16:
 			$("#telaEscola").show();
 			changeTitle(" ");
+			showUpperIcons();
 			break;
 
 			case 17:
 			$("#telaSalaDeAula").show();
 			changeTitle(" ");
+			showUpperIcons();
 			break;
 
 			case 18:
 			$("#telaSalaDeAula2").show();
 			changeTitle(" ");
+			showUpperIcons();
 			break;
 
 			case 19:
 			$("#telaExemplos").show();
 			$("body").css("overflow", "auto");
 			changeTitle(" ");
+			showUpperIcons();
 			break;
 
 			case 20:
 			$("#telaSalaDeAula3").show();
 			changeTitle(" ");
+			showUpperIcons();
 			break;
 
 			case 21:
@@ -749,6 +773,7 @@ function checkIfStuck() {
 			$("body").css("overflow", "auto");
 			loadQuestion();
 			changeTitle(" ");
+			showUpperIcons();
 
 			break;
 		}
