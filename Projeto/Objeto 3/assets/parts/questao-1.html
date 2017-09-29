@@ -1,23 +1,265 @@
-<!-- <div class="geral-interno">
-	<img class="fundo" src="assets/img/inicio-questoes.png"/>
-</div> -->
+<div class="geral-interno">
+	<div class="container">
+		<h4 class="mais-top"><b>ATIVIDADE 1</b> Complete a tabela preenchendo as células amarelas com a média e a mediana da quantidade diária de lixo coletado, em toneladas, por região brasileira:</h4>
+
+		<h5 class="texto-auxiliar muito-mais-top mais-bottom">Clique/encoste nos campos em <span class="texto-formula"><b>AZUL</b></span> para visualizar o desenvolvimento.</h5>
+		<h5 class="texto-auxiliar muito-mais-bottom">Clique/encoste nos campos em <span class="texto-editavel"><b>LARANJA</b></span> para editar o valor.</h5>
+
+		<div class="tabela">
+			<table class='table'>
+				<tr class="cabecalho">
+					<th rowspan="4">Grandes Regiões</th>
+				</tr>
+				<tr class="cabecalho">
+					<th colspan="5">Quantidade diária de lixo coletado (toneladas/dia)</th>
+				</tr>
+				<tr class="cabecalho">
+					<th colspan="5">Unidade de destino final do lixo coletado</th>
+				</tr>
+				<tr class="cabecalho">
+					<th colspan="1">Vazadouro a céu aberto (lixão)</th>
+					<th colspan="1">Aterro controlado</th>
+					<th colspan="1">Aterro sanitário</th>
+					<th colspan="1">Estação de compostagem</th>
+					<th colspan="1">Estação de triagem</th>
+				</tr>
+
+				<tr class="total">
+					<td>Brasil</td>
+					<td>48.321,7</td>
+					<td>84.575,5</td>
+					<td>82.640,3</td>
+					<td>6.549,7</td>
+					<td>2.265</td>
+				</tr>
+				<tr>
+					<td>Norte</td>
+					<td>6.279</td>
+					<td>3.133,9</td>
+					<td>1.468,8</td>
+					<td>5</td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>Nordeste</td>
+					<td>20.043,5</td>
+					<td>6.071,9</td>
+					<td>15.030,1</td>
+					<td>74</td>
+					<td>92,5</td>
+				</tr>
+				<tr>
+					<td>Sudeste</td>
+					<td>13.755,9</td>
+					<td>65.851,4</td>
+					<td>52.542,3</td>
+					<td>5.437,9</td>
+					<td>1.262,9</td>
+				</tr>
+				<tr>
+					<td>Sul</td>
+					<td>5.112,3</td>
+					<td>4.833,9</td>
+					<td>8.046</td>
+					<td>347,2</td>
+					<td>832,6</td>
+				</tr>
+				<tr>
+					<td>Centro-Oeste</td>
+					<td>3.131</td>
+					<td>4.684,4</td>
+					<td>5.553,1</td>
+					<td>685,6</td>
+					<td>77</td>
+				</tr>
+				<tr class="media">
+					<td>MÉDIA</td>
+					<td><span class="fundo-formula" onclick="popUp('9.664,34')">9.664,34</span></td>
+					<td><span class="fundo-formula" onclick="popUp('16.915,1')">16.915,1</span></td>
+					<td><input class="fundo-editavel fundo-editavel-normal" onblur='validarResultados()' onkeyup='validarResultados(); apenasNumero(this);' id='formula-media-a' type="text"></td>
+					<td><span class="fundo-formula" onclick="popUp('1.309,94')">1.309,94</span></td>
+					<td><input class="fundo-editavel fundo-editavel-normal" onblur='validarResultados()' onkeyup='validarResultados(); apenasNumero(this);' id='formula-media-b' type="text"></td>
+				</tr>
+				<tr class="mediana">
+					<td>MEDIANA</td>
+					<td><span class="fundo-formula" onclick="popUp('6.279')">6.279</span></td>
+					<td><span class="fundo-formula" onclick="popUp('4.833,9')">4.833,9</span></td>
+					<td><input class="fundo-editavel fundo-editavel-normal" onblur='validarResultados()' onkeyup='validarResultados(); apenasNumero(this);' id='formula-mediana-a' type="text"></td>
+					<td><span class="fundo-formula" onclick="popUp('347,2')">347,2</span></td>
+					<td><input class="fundo-editavel fundo-editavel-normal" onblur='validarResultados()' onkeyup='validarResultados(); apenasNumero(this);' id='formula-mediana-b' type="text"></td>
+				</tr>
+			</table>
+			<div class="fonte">
+				<h6>Fonte: IBGE, Diretoria de Pesquisas, Departamento de População e Indicadores Sociais, Pesquisa Nacional de Saneamento <span id='auto-completar'>Básico</span>.</h6>
+			</div>
+		</div>
+
+		<h4 class="muito-mais-top">Lembre-se que para identificar a mediana devemos ordenar os dados em ordem crescente, para tal, preenchar os campos laranjas.</h4>
+
+	</div>
+</div>
 
 <style media="screen">
 
-/*.geral-interno {
+.muitissimo-mais-top {
+	margin-top: 48px !important;
+}
+
+.muito-mais-bottom {
+	margin-bottom: 48px !important;
+}
+
+.muito-mais-top {
+	margin-top: 36px !important;
+}
+
+.muito-mais-bottom {
+	margin-bottom: 36px !important;
+}
+
+.mais-top {
+	margin-top: 16px !important;
+}
+
+.mais-bottom {
+	margin-bottom: 16px !important;
+}
+
+.tab {
+	display:inline-block; width: 30px;
+}
+
+.geral-interno {
 	position: relative;
 }
 
 .fundo {
 	width: 100%;
-}*/
+}
+
+.tabela th,td {
+	text-align: center;
+	vertical-align: middle !important;
+}
+
+.tabela .cabecalho {
+	background-color: #80C9F2;
+}
+
+.tabela .total {
+	background-color: #BAE4FC;
+	font-weight: bold;
+}
+
+.tabela .media {
+	font-weight: bold;
+}
+
+.tabela .mediana {
+	font-weight: bold;
+}
+
+.tabela .fonte {
+	text-align: center;
+}
+
+.texto-auxiliar {
+	text-align: center;
+	font-style: italic;
+}
+
+.texto-formula {
+	font-style: normal;
+	color: #80C9F2;
+	transition: .3s ease;
+}
+
+.texto-formula:hover {
+	color: #FFFFFF;
+	background-color: #80C9F2;
+	padding-left: 3px;
+	padding-right: 3px;
+	border-radius: 4px;
+	transition: .3s ease;
+}
+
+.fundo-formula {
+	color: #FFFFFF;
+	background-color: #80C9F2;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 6px;
+	padding-right: 6px;
+	border-radius: 4px;
+	transition: .3s ease;
+}
+
+.fundo-formula:hover {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 8px;
+	padding-right: 8px;
+	cursor: pointer;
+	transition: .3s ease;
+}
+
+.texto-editavel {
+	font-style: normal;
+	color: #F28B6F;
+	transition: .3s ease;
+}
+
+.texto-editavel:hover {
+	color: #FFFFFF;
+	background-color: #F28B6F;
+	padding-left: 3px;
+	padding-right: 3px;
+	border-radius: 4px;
+	transition: .3s ease;
+}
+
+.fundo-editavel {
+	border-width: 0px;
+	border-radius: 4px;
+	width: 100px;
+	height: 24px;
+	text-align: center;
+}
+
+.fundo-editavel-normal {
+	color: #FFFFFF;
+	background-color: #F28B6F;
+	transition: .3s ease;
+}
+
+.fundo-editavel-ok {
+	color: #FFFFFF;
+	background-color: #46D079;
+	transition: .3s ease;
+}
+
+.formula-texto {
+	text-align: center;
+	margin: 36px;
+}
+
+.formula-texto h3 {
+	font-size: 48px;
+}
+
+.formula-img {
+	text-align: center;
+}
+
+.formula-img img {
+	width: 800px;
+}
 
 </style>
 
 <script type="text/javascript">
-
 $("#iconSetaEsquerda").show();
-$("#iconSetaDireita").show();
+$("#iconSetaDireita").hide();
 $("#iconAjuda").hide();
 
 iconSetaEsquerda.addEventListener("click", function() {
@@ -32,11 +274,14 @@ iconAjuda.addEventListener("click", function() {
 	ajuda();
 });
 
+let posIndex = 0;
 function anterior() {
+
 	carregarParte('inicio-questoes.html');
 }
 
 function proxima() {
+
 	// carregarParte('questao-1.html');
 }
 
@@ -45,6 +290,150 @@ function ajuda() {
 	if (msgAjuda) {
 		swal(msgAjuda);
 	}
+}
+
+function apenasNumero(campo) {
+
+	campo.value = campo.value.replace(/[^\d.,]/,'');
+}
+
+let formulaMediaA = document.querySelector('#formula-media-a');
+let formulaMediaB = document.querySelector('#formula-media-b');
+let formulaMedianaA = document.querySelector('#formula-mediana-a');
+let formulaMedianaB = document.querySelector('#formula-mediana-b');
+
+let respostaMediaA = 16528.06;
+let respostaMediaB = 453;
+let respostaMedianaA = 8046;
+let respostaMedianaB = 462.55;
+
+document.querySelector('#auto-completar').addEventListener('click', function (evt) {
+	if (evt.detail === 3) {
+		formulaMediaA.value = respostaMediaA.toString().replace('.', ',');
+		formulaMediaB.value = respostaMediaB.toString().replace('.', ',');
+		formulaMedianaA.value = respostaMedianaA.toString().replace('.', ',');
+		formulaMedianaB.value = respostaMedianaB.toString().replace('.', ',');
+		validarResultados();
+	}
+});
+
+function validarResultados() {
+	let valMediaA = formulaMediaA.value.replace('.', '').replace(',', '.');
+	let valMediaB = formulaMediaB.value.replace('.', '').replace(',', '.');
+	let valMedianaA = formulaMedianaA.value.replace('.', '').replace(',', '.');
+	let valMedianaB = formulaMedianaB.value.replace('.', '').replace(',', '.');
+
+	let validacaoMediaA = (valMediaA == respostaMediaA);
+	let validacaoMediaB = (valMediaB == respostaMediaB);
+	let validacaoMedianaA = (valMedianaA == respostaMedianaA);
+	let validacaoMedianaB = (valMedianaB == respostaMedianaB);
+
+	if (validacaoMediaA) {
+		formulaMediaA.classList.remove('fundo-editavel-normal');
+		formulaMediaA.classList.add('fundo-editavel-ok');
+	} else {
+		formulaMediaA.classList.add('fundo-editavel-normal');
+		formulaMediaA.classList.remove('fundo-editavel-ok');
+	}
+
+	if (validacaoMediaB) {
+		formulaMediaB.classList.remove('fundo-editavel-normal');
+		formulaMediaB.classList.add('fundo-editavel-ok');
+	} else {
+		formulaMediaB.classList.add('fundo-editavel-normal');
+		formulaMediaB.classList.remove('fundo-editavel-ok');
+	}
+
+	if (validacaoMedianaA) {
+		formulaMedianaA.classList.remove('fundo-editavel-normal');
+		formulaMedianaA.classList.add('fundo-editavel-ok');
+	} else {
+		formulaMedianaA.classList.add('fundo-editavel-normal');
+		formulaMedianaA.classList.remove('fundo-editavel-ok');
+	}
+
+	if (validacaoMedianaB) {
+		formulaMedianaB.classList.remove('fundo-editavel-normal');
+		formulaMedianaB.classList.add('fundo-editavel-ok');
+	} else {
+		formulaMedianaB.classList.add('fundo-editavel-normal');
+		formulaMedianaB.classList.remove('fundo-editavel-ok');
+	}
+
+	if (validacaoMediaA
+		&& validacaoMediaB
+		&& validacaoMedianaA
+		&& validacaoMedianaB) {
+
+		$("#iconSetaDireita").show();
+	} else {
+
+		$("#iconSetaDireita").hide();
+	}
+}
+
+function popUp(valor) {
+
+	if (document.querySelector('#dialog-form') == null) {
+		let inner = document.querySelector(".geral-interno").innerHTML;
+		inner += `
+		<div id="dialog-form">
+			<div class="row">
+				<div class='formula-texto'>
+					<h3 id='formula-texto'></h3>
+				</div>
+				<div class='formula-img'>
+					<img id='formula-img' src=''>
+				</div>
+			</div>
+		</div>`
+		document.querySelector(".geral-interno").innerHTML = inner;
+
+	}
+
+	let caminhoImg = 'assets/img/';
+	switch (valor) {
+
+		default:
+		case '9.664,34':
+			caminhoImg += 'questao-1-formula-media-1.png';
+			break;
+
+		case '16.915,1':
+			caminhoImg += 'questao-1-formula-media-2.png';
+			break;
+
+		case '1.309,94':
+			caminhoImg += 'questao-1-formula-media-3.png';
+			break;
+
+		case '6.279':
+			caminhoImg += 'questao-1-formula-mediana-1.png';
+			break;
+
+		case '4.833,9':
+			caminhoImg += 'questao-1-formula-mediana-2.png';
+			break;
+
+		case '347,2':
+			caminhoImg += 'questao-1-formula-mediana-3.png';
+			break;
+
+	}
+
+	document.querySelector('#formula-texto').innerHTML = valor;
+	document.querySelector('#formula-img').src = caminhoImg;
+
+	let dialog = $("#dialog-form").dialog({
+		autoOpen: false,
+		height: 300,
+		width: 850,
+		modal: true,
+		buttons: {},
+		close: function() {
+		}
+	});
+	dialog.dialog("open");
 }
 
 </script>
