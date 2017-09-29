@@ -74,7 +74,6 @@
 		$("#sceneCaminhosEnergia").hide();
 		$("#sceneMatrizEnergetica").hide();
 		$("#scenePotenciaEletrodomesticos").hide();
-		$("#sceneVideo").hide();
 		$("#sceneIntroBandeirasEnergia").hide();
 		$("#sceneBandeirasEnergia").hide();
 		$("#sceneQuestaoImposto").hide();
@@ -160,7 +159,6 @@
 					case 11:
 					case 12:
 					case 14:
-					case 15:
 					nextScene();
 					break;
 					case 8:
@@ -172,7 +170,7 @@
 						break;
 					}
 					break;
-					case 13:
+					case 12:
 					switch(questionNumber) {
 						default:
 						questionNumber++;
@@ -260,16 +258,15 @@
 		 		case 11:
 		 		case 12:
 		 		case 15:
-		 		case 16:
 		 		previousScene();
 		 		break;
 		 		case 8:
 		 		case 5:
-		 		case 14:
+		 		case 13:
 		 		questionNumber--;
 		 		previousScene();
 		 		break;
-		 		case 13:
+		 		case 12:
 		 		switch(questionNumber) {
 		 			case 16:
 		 			previousScene();
@@ -1958,9 +1955,6 @@
 	  			title: {
 	  				text: 'Potência média por aparelho (Watts)'
 	  			},
-	  			subtitle: {
-	  				text: 'Fonte: '
-	  			},
 	  			xAxis: {
 	  				categories: [
 	  				'Celular',
@@ -2013,9 +2007,6 @@
 					},
 					title: {
 						text: 'Valor final da energia elétrica'
-					},
-					subtitle: {
-						text: "Fonte: ?"
 					},
 					tooltip: {
 						pointFormat: '{series.name}: <b>{point.y}</b>'
@@ -2555,35 +2546,33 @@
 	  			$("#iconMais").fadeIn(fadeTime);
 
 	  			break;
+
 	  			case 10:
-	  			$("#sceneVideo").fadeIn(fadeTime);
-	  			break;
-	  			case 11:
 	  			$("#sceneIntroBandeirasEnergia").fadeIn(fadeTime);
 	  			$("#tituloGeral").html(dataJSON.stringsGerais.title3);
 	  			$("#iconSetaDireita").show();
 
 	  			break;
-	  			case 12:
+	  			case 11:
 	  			$("#sceneBandeirasEnergia").fadeIn(fadeTime);
 	  			$("#tituloGeral").html(dataJSON.stringsGerais.title4);
 	  			$("#iconSetaDireita").show();
 	  			break;
-	  			case 13:
+	  			case 12:
 	  			$("#sceneQuestoesBandeiras").fadeIn(fadeTime);
 	  			$("#tituloGeral").html(dataJSON.stringsGerais.title4);
 	  			loadQuestion();
 	  			break;
-	  			case 14:
+	  			case 13:
 	  			$("#sceneQuestaoImposto").fadeIn(fadeTime);
 	  			loadQuestion();
 	  			break;
-	  			case 15:
+	  			case 14:
 	  			$("#sceneDistribuicaoTarifa").fadeIn(fadeTime);
 	  			$("#alertConta").hide();
 	  			checkTarifa();
 	  			break;
-	  			case 16:
+	  			case 15:
 	  			$("#sceneGerarGrafico").fadeIn(fadeTime);
 	  			break;
 	  		}
@@ -2637,24 +2626,21 @@
 	  			$("#iconMais").fadeOut(fadeTime);
 	  			break;
 	  			case 10:
-	  			$("#sceneVideo").fadeOut(fadeTime);
-	  			break;
-	  			case 11:
 	  			$("#sceneIntroBandeirasEnergia").fadeOut(fadeTime);
 	  			break;
-	  			case 12:
+	  			case 11:
 	  			$("#sceneBandeirasEnergia").fadeOut(fadeTime);
 	  			break;
-	  			case 13:
+	  			case 12:
 	  			$("#sceneQuestoesBandeiras").fadeOut(fadeTime);
 	  			break;
-	  			case 14:
+	  			case 13:
 	  			$("#sceneQuestaoImposto").fadeOut(fadeTime);
 	  			break;
-	  			case 15:
+	  			case 14:
 	  			$("#sceneDistribuicaoTarifa").fadeOut(fadeTime);
 	  			break;
-	  			case 16:
+	  			case 15:
 	  			$("#sceneGerarGrafico").fadeOut(fadeTime);
 	  			break;
 	  		}
