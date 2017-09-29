@@ -1,3 +1,5 @@
+var calculadoraAberta = false;
+
 $(document).on('click', '#iconCalculadora', function () {
 	if (calculadoraAberta){
 		hideCalc();

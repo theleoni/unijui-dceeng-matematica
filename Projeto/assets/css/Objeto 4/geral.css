@@ -224,3 +224,9 @@ body {
 	white-space: normal;
 	text-align: left;
 }
+
+.invisibleTable {
+	margin-bottom-color: transparent;
+	margin-right-color: transparent;
+	margin-top-color: transparent;
+}
