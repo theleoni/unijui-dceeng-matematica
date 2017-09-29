@@ -157,7 +157,7 @@
 					case 9:
 					case 10:
 					case 11:
-					case 12:
+					case 13:
 					case 14:
 					nextScene();
 					break;
@@ -2699,7 +2699,7 @@
 	  			case 9:
 	  			swal("Ajuda!", "Coloque o valor que sua companhia de energia cobra por 1 kw. Caso você não saiba use R$ 0,50");
 	  			break;
-	  			case 13:
+	  			case 12:
 	  			switch (questionNumber) {
 	  				case 16:
 	  				swal("Ajuda!", "Em caso de dúvida, volte a tela anterior");
@@ -2712,10 +2712,10 @@
 	  				break;
 	  			}
 	  			break;
-	  			case 14:
+	  			case 13:
 	  			swal("Ajuda!", "Observe atentamente o gráfico e a pergunta da questão. Passe o mouse sobre o gráfico para ver a porcentagem");
 	  			break;
-	  			case 15:
+	  			case 14:
 	  			swal("Ajuda!", "Passe o mouse sobre os quadros na tela superior direita para observar a porcentagem.");
 	  			break;
 	  		}
