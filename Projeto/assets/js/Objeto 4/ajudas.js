@@ -39,8 +39,30 @@ var ajudaQuestao4_5 = [
 }]
 
 
+var ajudaQuestao6_7 = [
+{
+  progressSteps: ['1', '2'],
+  title: 'Ajuda!',
+  html: '<span>Número de amostras da água distribuída em função da turbidez em Ijuí nos dias 7 e 13 de julho de 2013</span><table class="table table-responsive table-bordered"><thead><tr><td><strong>Turbidez (UT)</strong></td><td><strong>Nº de Amostras</strong></td><td class="invisibleTable"> </td></tr></thead><tbody><tr><td>0,5</td><td>2</td><td class="invisibleTable"> </td></tr><tr><td>0,6</td><td>2</td><td class="invisibleTable"> </td></tr><tr><td>0,7</td><td>3</td><td class="invisibleTable"> </td></tr><tr><td>0,8</td><td>6</td><td class="invisibleTable"> </td></tr><tr><td>0,9</td><td style="color:#1143f9;">3</td><td><span class="glyphicon glyphicon-arrow-left"></span></td></tr><tr><td>1</td><td>2</td><td class="invisibleTable"> </td></tr><tr><td>1,3</td><td>1</td><td class="invisibleTable"> </td></tr><tr><td>1,6</td><td>1</td><td class="invisibleTable"> </td></tr></tbody></table><span>Fonte: CORSAN Unidade 107</span>'
+},
+{
+  progressSteps: ['1', '2'],
+  title: 'Ajuda!',
+  html: '<span style="text-align:left">Na questão número 6, para calcular a probabilidade da turbidez ser 0,9  P(0,9UT), ao escolher uma amostra aleatoriamente ou por acaso,  devemos dividir o número de casos favoráveis pelo número de quantidades possíveis. Na tabela aparece 3 casos onde turbidez é 0,9UT,  entre um total de 20 amostras  analisadas.  <br><br>Cálculo: P(0,9UT) = 3/20= 0,15 Este número também pode ser representado  por  15/100   ou 15%.<br><br> Na questão número 7 você deve fazer uma análise  a exemplo da primeira, considerando o que costa na segunda. </span>'
+}]
 
 
+var ajudaQuestao8= [
+{
+  progressSteps: ['1', '2'],
+  title: 'Ajuda!',
+  html: '<br><br><span>Turbidez das águas do rio Potiribu em seis pontos de coleta de amostras de água. Ijuí, 2004.</span><table class="table table-responsive table-bordered"> <thead> <tr> <td>Pontos</td><td><strong>Cloretos (mg/L Cl)</strong></td><td><strong>Turbidez (NTU)</strong></td></tr></thead> <tbody> <tr> <td>P1</td><td>2,5</td><td style="color:#ff1d19">0,14</td></tr><tr> <td>P2</td><td>15,7</td><td>5,7</td></tr><tr> <td>P3</td><td>3,7</td><td>10</td></tr><tr> <td>P4</td><td style="color: #289e07">< 0,15</td><td>39</td></tr><tr> <td>P5</td><td style="color: #289e07">< 0,15</td><td>39</td></tr><tr> <td>P6</td><td style="color: #289e07">< 0,15</td><td>54</td></tr></tbody></table><span>Fonte: Projeto ECRAE, 2006 - DBQ/UNIJUI - Laboratório de Microbiologia</span>'
+},
+{
+  progressSteps: ['1', '2'],
+  title: 'Ajuda!',
+  html: '<span style="text-align:left">Neste caso pede-se a probabilidade de obter um ponto entre os pontos de coleta no Rio Potiribu a turbidez é menor que 5 e cloretos abaixo de 1  no mesmo ponto.  Mas não há nenhum caso em que isto acontece. <br><br>Portanto  o Nº de casos favoráveis   0 (zero)!  Portanto a probabilidade é 0 ou seja é um evento impossível. </span>'
+}]
 
 
 
@@ -54,17 +76,19 @@ function getHelpScene(numeroDaTela) {
   switch(numeroDaTela){
     default:
     return ajudaPadrao;
-    break;
     case '211':
     return ajudaQuestao1;
-    break;
     case '212':
     case '213':
     return ajudaQuestao2_3;
-    break;
     case '214':
     case '215':
     return ajudaQuestao4_5;
+    case '216':
+    case '217':
+    return ajudaQuestao6_7;
+    case '218':
+    return ajudaQuestao8;
 
     
 
