@@ -172,25 +172,22 @@
 
 <script type="text/javascript">
 
-try {
-	$("#iconSetaEsquerda").show();
-	$("#iconSetaDireita").show();
-	$("#iconAjuda").hide();
+$("#iconSetaEsquerda").show();
+$("#iconSetaDireita").show();
+$("#iconAjuda").hide();
+$("#iconCalculadora").hide();
 
-	iconSetaEsquerda.addEventListener("click", function() {
-		anterior();
-	});
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
 
-	iconSetaDireita.addEventListener("click", function() {
-		proxima();
-	});
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
 
-	iconAjuda.addEventListener("click", function() {
-		ajuda();
-	});
-
-} catch (e) {
-}
+iconAjuda.addEventListener("click", function() {
+	ajuda();
+});
 
 function anterior() {
 	carregarParte('sala-aula.html');
@@ -209,10 +206,7 @@ function ajuda() {
 
 function popUp(tipo) {
 
-	try {
-		$("#iconAjuda").show();
-	} catch(e) {
-	}
+	$("#iconAjuda").show();
 
 	if (document.querySelector('#dialog-form') == null) {
 		let inner = document.querySelector(".geral-interno").innerHTML;
@@ -576,10 +570,7 @@ function popUp(tipo) {
 		modal: true,
 		buttons: {},
 		close: function() {
-			try {
-				$("#iconAjuda").hide();
-			} catch (e) {
-			}
+			$("#iconAjuda").hide();
 		}
 	});
 	dialog.dialog("open");

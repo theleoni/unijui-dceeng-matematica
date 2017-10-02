@@ -15,9 +15,11 @@
 </style>
 
 <script type="text/javascript">
+
 $("#iconSetaEsquerda").show();
 $("#iconSetaDireita").show();
 $("#iconAjuda").hide();
+$("#iconCalculadora").hide();
 
 iconSetaEsquerda.addEventListener("click", function() {
 	anterior();
@@ -45,7 +47,7 @@ function anterior() {
 		case 1:
 			let imgFundo = document.querySelector('#img-fundo');
 			imgFundo.src = 'assets/img/inicio-questoes-1.jpg';
-			
+
 			posIndex--;
 			break;
 
