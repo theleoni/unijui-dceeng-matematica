@@ -97,6 +97,9 @@
 		<h4 class="muito-mais-top">Lembre-se que para identificar a mediana devemos ordenar os dados em ordem crescente, para tal, preenchar os campos laranjas.</h4>
 
 	</div>
+
+	<div class="mensagens">
+	</div>
 </div>
 
 <style media="screen">
@@ -255,12 +258,95 @@
 	width: 800px;
 }
 
+.oculto {
+	display: none;
+}
+
+
+
+
+
+.formula {
+	text-align: center;
+	margin: 25px;
+}
+
+.dia-semana {
+	display: inline-flex;
+}
+
+.dia-semana h4 {
+	margin-left: 12px;
+	margin-right: 12px;
+}
+
+/*.formula .segunda {
+	font-weight: bold;
+	color: #135bac;
+}
+
+.formula .terca {
+	font-weight: bold;
+	color: #ce3330;
+}
+
+.formula .quarta {
+	font-weight: bold;
+	color: #29702d;
+}
+
+.formula .quinta {
+	font-weight: bold;
+	color: #e1ac28;
+}
+
+.formula .sexta {
+	font-weight: bold;
+	color: #6A534C;
+}
+
+.formula .dias-semana-qtd {
+	font-weight: bold;
+}
+
+.formula .total {
+	font-weight: bold;
+}
+
+.formula-descrita {
+	font-style: italic;
+	display: inline-flex;
+}
+
+.formula-descrita h4 {
+	margin: 10px;
+}*/
+
+.cima-baixo {
+    display: grid;
+	text-align: center;
+}
+
+.cima-baixo hr {
+	margin: 0px;
+    border-top: 1px solid #000;
+}
+
+.cima {
+	display: inline-flex;
+}
+
+.baixo {
+}
+
 </style>
 
 <script type="text/javascript">
+
 $("#iconSetaEsquerda").show();
 $("#iconSetaDireita").hide();
-$("#iconAjuda").hide();
+$("#iconAjuda").show();
+$("#iconCalculadora").show();
 
 iconSetaEsquerda.addEventListener("click", function() {
 	anterior();
@@ -274,7 +360,6 @@ iconAjuda.addEventListener("click", function() {
 	ajuda();
 });
 
-let posIndex = 0;
 function anterior() {
 
 	carregarParte('inicio-questoes.html');
@@ -282,13 +367,110 @@ function anterior() {
 
 function proxima() {
 
-	// carregarParte('questao-1.html');
+	carregarParte('destino-lixo.html');
 }
 
-let msgAjuda = '';
 function ajuda() {
-	if (msgAjuda) {
-		swal(msgAjuda);
+	if (document.querySelector('#dialog-ajuda') == null) {
+		let innerAjuda = document.querySelector(".geral-interno").innerHTML;
+		innerAjuda += `
+		<div id="dialog-ajuda">
+			<div class='row'>
+
+				<div class="principal">
+					<h4>Ao clicar/encostar sobre os resultados já calculados, aparecerão os desenvolvimentos dos cálculos.</h4>
+					<h4>Realize os cálculos de média aritmética e mediana conforme as colunas, lembrando que, os dados relacionados ao Brasil são totais das regiões, então, ao realizar o cálculo use apenas esses dados ou apenas os dados das regiões.</h4>
+
+					<h4>Se desejas rever algum destes conteúdos clique sobre ele:</h4>
+					<div class='text-center'>
+						<button class='btn' onclick="ajudaPage('media')">Média Aritmética</button>
+						<button class='btn' onclick="ajudaPage('mediana')">Mediana</button>
+					</div>
+				</div>
+
+				<div class='media'>
+					<h4><span class='tab'/>Na média aritmética simples, somamos todos os elementos do conjunto e, em seguida, dividimos o resultado obtido pela quantidade de elementos que compõe o conjunto.</h4>
+					<h4>Exemplo: Um determinado catador recolheu 52 latinhas de refrigerante na segunda-feira, 44 na terça-feira, 69 na quarta-feira, 57 na quinta-feira e 73 na sexta-feira. Calcule a média de latinhas recolhidas por dia, pelo catador, nesse período:</h4>
+
+					<div class='text-center'>
+						<img src='assets/img/questao-ajuda-media-formula.png'/>
+					</div>
+
+					<h4>Na semana analisada, o catador recolheu, <b>em média</b>, 59 latinhas por dia.</h4>
+
+					<div class='text-center'>
+						<button class='btn' onclick="ajudaPage('principal')">Voltar</button>
+					</div>
+				</div>
+
+				<div class='mediana'>
+
+					<ul><li><h4>Quando o número de dados for ímpar, teremos apenas uma mediana.</h4></li></ul>
+					<h4 class='muito-mais-top'><span class='tab'/>Dadas as regiões brasileiras da tabela e seus dados quanto ao lixo gerado em toneladas/dia em cada estado, determine a mediana dos valores:</h4>
+					<h4>{6.330; 3.079; 2.520; 4.126; 2.956; 17.592; 21.041; 56.626; 8.507; 8.225; 4.613}</h4>
+
+					<h4 class='mais-top'><span class='tab'/>1) Primeiro devemos organizar os dados em ordem crescente:</h4>
+					<h4>{2.520; 2.956; 3.079; 4.126; 4.613; 6.330; 8.225; 8.507; 17.592; 21.041; 56.626}</h4>
+
+					<h4 class='mais-top'><span class='tab'/>2) Em seguida, encontramos o valor central:</h4>
+					<h4>{2.520; 2.956; 3.079; 4.126; 4.613; <span style='color:#45C876;'>6.330</span>; 8.225; 8.507; 17.592; 21.041; 56.626}</h4>
+
+					<h4 class='mais-top'><span class='tab'/></sp>Observe que o valor <span style='color:#45C876;'>6.330</span> divide o conjunto exatamente ao meio, pois há somente cinco elementos antes e cinco elementos após este número. Portanto, ele é a própria mediana.</h4>
+
+					<div class='text-center'>
+						<img src='assets/img/questao-ajuda-mediana-grafico.png'/>
+					</div>
+
+					<div class='text-center'>
+						<button class='btn' onclick="ajudaPage('principal')">Voltar</button>
+					</div>
+				</div>
+
+			</div>
+		</div>`
+		document.querySelector(".mensagens").innerHTML = innerAjuda;
+		ajudaPage('principal');
+	}
+
+	let dialogAjuda = $("#dialog-ajuda").dialog({
+		autoOpen: false,
+		height: 500,
+		width: 850,
+		modal: true,
+		buttons: {}
+	});
+	dialogAjuda.dialog("open");
+}
+
+function ajudaPage(tipo) {
+
+	let divAjuda = document.querySelector('#dialog-ajuda');
+	let divAjudaPrincipal = divAjuda.querySelector('.principal');
+	let divAjudaMedia = divAjuda.querySelector('.media');
+	let divAjudaMediana = divAjuda.querySelector('.mediana');
+
+	let classAddRemove = 'oculto';
+	switch (tipo) {
+
+		default:
+		case 'principal':
+			divAjudaPrincipal.classList.remove(classAddRemove);
+			divAjudaMedia.classList.add(classAddRemove);
+			divAjudaMediana.classList.add(classAddRemove);
+			break;
+
+		case 'media':
+			divAjudaPrincipal.classList.add(classAddRemove);
+			divAjudaMedia.classList.remove(classAddRemove);
+			divAjudaMediana.classList.add(classAddRemove);
+			break;
+
+		case 'mediana':
+			divAjudaPrincipal.classList.add(classAddRemove);
+			divAjudaMedia.classList.add(classAddRemove);
+			divAjudaMediana.classList.remove(classAddRemove);
+			break;
+
 	}
 }
 
@@ -387,7 +569,7 @@ function popUp(valor) {
 				</div>
 			</div>
 		</div>`
-		document.querySelector(".geral-interno").innerHTML = inner;
+		document.querySelector(".mensagens").innerHTML = inner;
 
 	}
 
