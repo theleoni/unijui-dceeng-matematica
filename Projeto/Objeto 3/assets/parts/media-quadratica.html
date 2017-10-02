@@ -1,0 +1,82 @@
+<div class="geral-interno">
+	<img class="fundo" src="assets/img/destino-lixo-fundo.png"/>
+
+	<div class="mensagens">
+	</div>
+</div>
+
+<style media="screen">
+
+.geral-interno {
+	position: relative;
+}
+
+.fundo {
+	width: 100%;
+}
+
+.muitissimo-mais-top {
+	margin-top: 48px !important;
+}
+
+.muito-mais-bottom {
+	margin-bottom: 48px !important;
+}
+
+.muito-mais-top {
+	margin-top: 36px !important;
+}
+
+.muito-mais-bottom {
+	margin-bottom: 36px !important;
+}
+
+.mais-top {
+	margin-top: 16px !important;
+}
+
+.mais-bottom {
+	margin-bottom: 16px !important;
+}
+
+.tab {
+	display:inline-block; width: 30px;
+}
+
+</style>
+
+<script type="text/javascript">
+
+$("#iconSetaEsquerda").show();
+$("#iconSetaDireita").show();
+$("#iconAjuda").hide();
+$("#iconCalculadora").hide();
+
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
+
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
+
+iconAjuda.addEventListener("click", function() {
+	ajuda();
+});
+
+function anterior() {
+
+	carregarParte('destino-lixo.html');
+}
+
+function proxima() {
+
+	// carregarParte('media-quadratica.html');
+}
+
+function ajuda() {
+	// swal('Clique/encoste sobre cada imagem para ler a explicação sobre as principais unidades de destino final do lixo.');
+}
+
+
+</script>
