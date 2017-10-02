@@ -1,6 +1,6 @@
 {
 	"stringsGerais": {
-		"sceneIntroGeralBalao01": "! Eu sou o engenheiro Euler, estou aqui para auxiliá-lo neste percurso de aprendizado, a partir da matemática iremos conhecer os modos de geração de energia elétrica, o caminho e o custo até chegar à sua casa.",
+		"sceneIntroGeralBalao01": "! Eu sou o engenheiro Euler, estou aqui para auxiliá-lo neste percurso de aprendizado. A partir da matemática iremos conhecer os modos de geração de energia elétrica, o caminho e o custo até chegar à sua casa.",
 		"title1": "Formas de produção de energia",
 		"title2": "Impostos pagos sobre a energia elétrica",
 		"title3": "Entenda a tarifa de Energia",
@@ -12,7 +12,7 @@
 		"titleHidreletrica": "Energia Hídrica",
 		"usinaHidreletrica": "Energia gerada pela água em usinas Hidrelétricas. A energia contida nas correntezas de rios é transformada em energia cinética que movimenta uma turbina, movendo um gerador que por sua vez irá gerar energia elétrica",
 		"titleEolica": "Energia Eólica",
-		"usinaEolica": "É a energia gerada pelo vento, grandes turibinas são posicionadas em locais abertos e com grande quantidade de vento. O vento, ao mover as turbinas gera energia elétrica através de um gerador.",
+		"usinaEolica": "É a energia gerada pelo vento, grandes turbinas são posicionadas em locais abertos e com grande quantidade de vento. O vento, ao mover as turbinas gera energia elétrica através de um gerador.",
 		"titleFossil": "Energia Fóssil",
 		"usinaFossil": "Energia gerada através de reações químicas de combustão de materiais orgânicos decompostos, quando as ligações químicas dos hidrocarbonetos são quebradas, a energia é liberada",
 		"titleNuclear": "Energia Nuclear",
