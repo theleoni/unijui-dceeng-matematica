@@ -1,5 +1,20 @@
 <div class="geral-interno">
-	<div class="container">
+	<img class="fundo" src="assets/img/destino-lixo-fundo.png"/>
+
+	<div class="container destino-lixo">
+		<div class="saiba-mais">
+			<img src="assets/img/destino-lixo-saiba-mais.png" onclick="saibaMais()"/>
+		</div>
+		<div class="text-center">
+			<img class="destino" src="assets/img/destino-lixo-vazadouro-aberto.png" onclick="popUp('vazadouro-aberto')"/>
+			<img class="destino" src="assets/img/destino-lixo-vazadouro-alagado.png" onclick="popUp('vazadouro-alagado')"/>
+			<img class="destino" src="assets/img/destino-lixo-aterro-controlado.png" onclick="popUp('aterro-controlado')"/>
+		</div>
+		<div class="text-center">
+			<img class="destino" src="assets/img/destino-lixo-aterro-sanitario.png" onclick="popUp('aterro-sanitario')"/>
+			<img class="destino" src="assets/img/destino-lixo-compostagem.png" onclick="popUp('compostagem')"/>
+			<img class="destino" src="assets/img/destino-lixo-triagem.png" onclick="popUp('triagem')"/>
+		</div>
 	</div>
 
 	<div class="mensagens">
@@ -7,6 +22,42 @@
 </div>
 
 <style media="screen">
+
+.geral-interno {
+	position: relative;
+}
+
+.fundo {
+	width: 100%;
+}
+
+.destino-lixo {
+	top: 7%;
+	position: absolute;
+}
+
+.destino {
+	width: 20%;
+	margin: 0.4%;
+	vertical-align: top;
+	transition: .3s ease;
+}
+
+.destino:hover {
+	width: 22%;
+	transition: .3s ease;
+	cursor: pointer;
+}
+
+.saiba-mais {
+	margin-left: 18.6%;
+	margin-bottom: 2.4%;
+}
+
+.saiba-mais img {
+	width: 15%;
+	cursor: pointer;
+}
 
 .muitissimo-mais-top {
 	margin-top: 48px !important;
@@ -36,22 +87,13 @@
 	display:inline-block; width: 30px;
 }
 
-.geral-interno {
-	position: relative;
-}
-
-.fundo {
-	width: 100%;
-}
-
-
 </style>
 
 <script type="text/javascript">
 
 $("#iconSetaEsquerda").show();
 $("#iconSetaDireita").show();
-$("#iconAjuda").hide();
+$("#iconAjuda").show();
 $("#iconCalculadora").hide();
 
 iconSetaEsquerda.addEventListener("click", function() {
@@ -77,7 +119,94 @@ function proxima() {
 }
 
 function ajuda() {
+	swal('Clique/encoste sobre cada imagem para ler a explicação sobre as principais unidades de destino final do lixo.');
+}
 
+function popUp(tipo) {
+
+	if (document.querySelector('#dialog-form') == null) {
+		let inner = document.querySelector(".mensagens").innerHTML;
+		inner += `
+		<div id="dialog-form">
+			<h2 id='destino-explicacao-titulo' class='text-center'>Titulo</h2>
+			<h4 id='destino-explicacao-texto' lass='muito-mais-top'>Texto</h4>
+		</div>`
+		document.querySelector(".mensagens").innerHTML = inner;
+
+	}
+
+	let titulo;
+	let texto;
+	switch (tipo) {
+
+		default:
+		case 'vazadouro-aberto':
+			titulo = 'Vazadouro a céu aberto';
+			texto = 'Conhecidos como lixões, onde o lixo fica jogado a céu aberto sem nenhum tipo de tratamento, contaminando o meio ambiente e atraindo vetores de doenças.';
+			break;
+
+		case 'vazadouro-alagado':
+			titulo = 'Vazadouro em áreas alagadas';
+			texto = 'Lixo jogado em áreas alagadas, contaminando o meio ambiente, principalmente a água.';
+			break;
+
+		case 'aterro-controlado':
+			titulo = 'Aterro controlado';
+			texto = 'Local onde o lixo é jogado sobre um terreno, e diariamente é coberto por uma camada de terra, afim de minimizar os impactos.';
+			break;
+
+		case 'aterro-sanitario':
+			titulo = 'Aterro sanitário';
+			texto = 'Uma forma mais adequada e controlada, para que não sejam causados danos a saúde e ao meio ambiente. É orientado conforme a legislação ambiental vigente.';
+			break;
+
+		case 'compostagem':
+			titulo = 'Estação de compostagem';
+			texto = 'Instalações para o processamento de resíduos orgânicos.';
+			break;
+
+		case 'triagem':
+			titulo = 'Estação de triagem';
+			texto = 'Instalações onde os materiais coletados são separados por classe e tipo de recicláveis, em seguida preparados para a comercialização.';
+			break;
+	}
+
+	document.querySelector('#destino-explicacao-titulo').innerHTML = titulo;
+	document.querySelector('#destino-explicacao-texto').innerHTML = texto;
+
+	let dialog = $("#dialog-form").dialog({
+		autoOpen: false,
+		height:300,
+		width: 600,
+		modal: true,
+		buttons: {},
+		close: function() {
+		}
+	});
+	dialog.dialog("open");
+}
+
+function saibaMais() {
+	if (document.querySelector('#dialog-saiba-mais') == null) {
+		let inner = document.querySelector(".mensagens").innerHTML;
+		inner += `
+		<div id="dialog-saiba-mais">
+			<img src="assets/img/destino-lixo-saiba-mais-tabela.png"/>
+		</div>`
+		document.querySelector(".mensagens").innerHTML = inner;
+
+	}
+
+	let dialog = $("#dialog-saiba-mais").dialog({
+		autoOpen: false,
+		height:540,
+		width: 750,
+		modal: true,
+		buttons: {},
+		close: function() {
+		}
+	});
+	dialog.dialog("open");
 }
 
 </script>
