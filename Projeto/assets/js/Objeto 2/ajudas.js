@@ -112,7 +112,7 @@ var ajudaTela14Ativ3 = [
 {
   progressSteps: ['1', '2', '3'],
   title: 'Ajuda',
-  html: '<div style="text-align:left;">Complete a tabela calculando a média e a mediana dos dados. Após completar clique no botão "Enviar Resposta" para fazer a correção das respostas. Em seguida responda as perguntas, você só poderá ver a próxima pergunta após responder corretamente cada pergunta. <br>Observação: A diferença entre a média e mediana é calculada da segiunte forma: valor da média - valor da mediana.</div>'
+  html: '<div style="text-align:left;">Complete a tabela calculando a média e a mediana dos dados. Após completar clique no botão "Enviar Resposta" para fazer a correção das respostas. Em seguida responda as perguntas, você só poderá ver a próxima pergunta após responder corretamente cada pergunta. <br>Observação: A diferença entre a média e mediana é calculada da segiunte forma: valor da média - valor da mediana.<br>Na hora de realizar os cálculos considere dois números após a virgula, arredondando caso necessário.</div>'
 },
 {
   progressSteps: ['1', '2', '3'],
