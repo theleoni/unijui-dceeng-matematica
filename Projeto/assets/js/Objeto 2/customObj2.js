@@ -666,7 +666,9 @@ $(document).on('click', '#iconSetaDireita', function() {
 		nextScene();
 		break;
 
-
+		case 14:
+		swal("","Você finalizou o objeto!", "error");
+		break;
 
 		case 3:
 		if (!videoMediaAritmeticaAssistido) {
