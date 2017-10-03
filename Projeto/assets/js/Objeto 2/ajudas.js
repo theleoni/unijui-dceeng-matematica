@@ -145,6 +145,13 @@ var ajudaTela14Ativ4 = [
 },
 ]
 
+var ajudaTela5 = [
+{
+  title: 'Ajuda',
+  width: '45%',
+  html: '<div style="text-align:left;"><center><img src="../assets/img/Objeto 2/ajudaMediaAritmetica.PNG"> <br><h3>Se tivermos a soma, e o número de casos basta realizarmos a divisão da soma pelo número de casos.</h3></center>'
+}]
+
 var ajudaPadrao = [
 {
   title: 'Ajuda',
@@ -178,6 +185,8 @@ function getHelpScene(numeroDaTela) {
     return ajudaTela14Ativ3;
     case '144':
     return ajudaTela14Ativ4;
+    case 5:
+    return ajudaTela5;
   }
 }
 
