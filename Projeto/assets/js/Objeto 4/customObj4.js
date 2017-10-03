@@ -481,6 +481,15 @@ function checkIfStuck() {
 		}
 	})
 
+
+	//Função para exibir os saiba mais
+	$(document).on('click', '#iconMais', function() {
+		if (scene != 21) {
+			showSaibaMais(scene);
+		} else {
+			showSaibaMais(scene + questionNumber.toString());
+		}
+	})
 	//Função chamada ao clicar na seta direita
 	$(document).on('click', '#iconSetaDireita', function() {
 		switch (scene) {
@@ -574,6 +583,8 @@ function checkIfStuck() {
 
 			case 1:
 			$("#telaNome").show();
+			$("#iconMais").hide();
+			$("#iconHelp").hide();
 			changeTitle(" ");
 			break;
 
@@ -635,6 +646,8 @@ function checkIfStuck() {
 			changeTitle(" ");
 			showArrows();
 			showUpperIcons();
+			$("#iconMais").hide();
+
 
 			break;
 
@@ -664,6 +677,7 @@ function checkIfStuck() {
 			$("#telaRioSujo").show();
 			showArrows();
 			showUpperIcons();
+			$("#iconMais").hide();
 			changeTitle(" ");
 			break;
 
@@ -671,6 +685,7 @@ function checkIfStuck() {
 			$("#telaChegadaCorsan").show();
 			showArrows();
 			showUpperIcons();
+			$("#iconMais").hide();
 			changeTitle(" ");
 			break;
 
@@ -697,12 +712,14 @@ function checkIfStuck() {
 			$("#telaTabela1").show();
 			changeTitle(" ");
 			showUpperIcons();
+			$("#iconMais").hide();
 			break;
 
 			case 12:
 			$("#telaTabela2").show();
 			changeTitle(" ");
 			showUpperIcons();
+			$("#iconMais").hide();
 			break;
 
 			case 13:
@@ -715,6 +732,7 @@ function checkIfStuck() {
 			$("#telaLaboratorio2").show();
 			changeTitle(" ");
 			showUpperIcons();
+			$("#iconMais").hide();
 			break;
 
 			case 15:
@@ -741,12 +759,14 @@ function checkIfStuck() {
 			$("#telaEscola").show();
 			changeTitle(" ");
 			showUpperIcons();
+			$("#iconMais").hide();
 			break;
 
 			case 17:
 			$("#telaSalaDeAula").show();
 			changeTitle(" ");
 			showUpperIcons();
+			$("#iconMais").hide();
 			break;
 
 			case 18:
@@ -760,12 +780,17 @@ function checkIfStuck() {
 			$("body").css("overflow", "auto");
 			changeTitle(" ");
 			showUpperIcons();
+			$("#iconMais").hide();
+
 			break;
 
 			case 20:
 			$("#telaSalaDeAula3").show();
 			changeTitle(" ");
+			showArrows();
 			showUpperIcons();
+			$("#iconMais").hide();
+
 			break;
 
 			case 21:
