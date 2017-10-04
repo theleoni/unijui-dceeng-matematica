@@ -1,3 +1,5 @@
+//			swal("Atenção!", "Nas respostas dos exercícios a seguir utilize valores arredondados para duas casas após a virgula");
+
 
 var nomeDoUsuario;
 var scene = 1;
@@ -21,7 +23,11 @@ var conversaLaboratorioCompleta = false;
 
 var questionNumber = 1;
 var questoesCorretas = [false,false,false,false,false,false,false,false,false,false,false,false,false, false, false, false, false, false]
-var respostasCorretas = ['#buttonAf4', '#buttonAf1', '#buttonAf4', '#buttonAf3', '#buttonAf2', '#buttonAf2', '#buttonAf3', '#buttonAf1', '#buttonAf4', '#buttonAf3', '#buttonAf3', '#buttonAf1', '#buttonAf2', '#buttonAf5', '#buttonAf1', '#buttonAf3', '#buttonAf4', '#buttonAf2'];
+var respostasCorretas = ['#buttonAf4', '#buttonAf1', 0.5, '#buttonAf3', 0.33, '#buttonAf2', 0.2, '#buttonAf1', '#buttonAf4', 0.16, '#buttonAf3', 0.10, 0.80, 1, 0, 1, '#buttonAf4', '#buttonAf2'];
+var respostasCorretasOutra = ["Sem resposta", "Sem resposta", 50, "Sem resposta", 33, "Sem resposta", 20, "Sem resposta", "Sem resposta", 16, "Sem resposta", 10, 80, 100, 0, 100, "Sem resposta", "Sem resposta"];
+var respostasCorretasTerceira = ["Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", 0.17, "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta"];
+var respostasCorretasQuarta = ["Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", 17, "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta"];
+
 
 $(document).ready(function() {
 	hideDivsOnObjectStart();
@@ -318,44 +324,90 @@ function checkIfStuck() {
 
 	//Função utilizada para carregar a questão correta
 	function loadQuestion() {
-		var i = 1;
-		for (var conteudo in dataJSON[questionNumber]) {
-			switch (i) {
-				case 1:
-				$("#tituloQuestao").html("<span style='color:#d88d1c;'>" + questionNumber + ".</span> " + dataJSON[questionNumber][conteudo]);
-				i++;
-				break;
 
-				case 2:
-				$("#buttonAf1").html(dataJSON[questionNumber][conteudo]);
-				i++;
-				break;
+		switch (questionNumber) {
+			case 1:
+			case 2:
+			case 4:
+			case 6:
+			case 8:
+			case 9:
+			case 11:
+			case 17:
+			case 18:
+			$("#inputResposta").hide();
+			$("#buttonAf1").show();
+			$("#buttonAf2").show();
+			$("#buttonAf3").show();
+			$("#buttonAf4").show();
+			$("#buttonAf5").show();
+			var i = 1;
+			for (var conteudo in dataJSON[questionNumber]) {
+				switch (i) {
+					case 1:
+					$("#tituloQuestao").html("<span style='color:#d88d1c;'>" + questionNumber + ".</span> " + dataJSON[questionNumber][conteudo]);
+					i++;
+					break;
 
-				case 3:
-				$("#buttonAf2").html(dataJSON[questionNumber][conteudo]);
-				i++;
-				break;
-				
-				case 4:
-				$("#buttonAf3").html(dataJSON[questionNumber][conteudo]);
-				i++;
-				break;
-				
-				case 5:
-				$("#buttonAf4").html(dataJSON[questionNumber][conteudo]);
-				i++;
-				break;
-				
-				case 6:
-				$("#buttonAf5").html(dataJSON[questionNumber][conteudo]);
-				i++;
-				break;
+					case 2:
+					$("#buttonAf1").html(dataJSON[questionNumber][conteudo]);
+					i++;
+					break;
 
-				case 7:
-				$("#containerTabelaQuestao").html(dataJSON[dataJSON[questionNumber][conteudo]]);
-				i++;
-				break;
+					case 3:
+					$("#buttonAf2").html(dataJSON[questionNumber][conteudo]);
+					i++;
+					break;
+
+					case 4:
+					$("#buttonAf3").html(dataJSON[questionNumber][conteudo]);
+					i++;
+					break;
+
+					case 5:
+					$("#buttonAf4").html(dataJSON[questionNumber][conteudo]);
+					i++;
+					break;
+
+					case 6:
+					$("#buttonAf5").html(dataJSON[questionNumber][conteudo]);
+					i++;
+					break;
+
+					case 7:
+					$("#containerTabelaQuestao").html(dataJSON[dataJSON[questionNumber][conteudo]]);
+					i++;
+					break;
+				}
 			}
+			break;
+
+
+			//Questões 2 em diante
+			default:
+			$("#inputResposta").show();
+			$("#buttonAf1").hide();
+			$("#buttonAf2").hide();
+			$("#buttonAf3").hide();
+			$("#buttonAf4").hide();
+			$("#buttonAf5").hide();
+
+			var i = 1;
+			for (var conteudo in dataJSON[questionNumber]) {
+				switch (i) {
+					case 1:
+					$("#tituloQuestao").html("<span style='color:#d88d1c;'>" + questionNumber + ".</span> " + dataJSON[questionNumber][conteudo]);
+					i++;
+					break;
+
+					case 2:
+					$("#containerTabelaQuestao").html(dataJSON[dataJSON[questionNumber][conteudo]]);
+					i++;
+					break;
+				}
+			}
+			break;
+
 		}
 
 		if (questoesCorretas[questionNumber-1] == true) {
@@ -375,32 +427,84 @@ function checkIfStuck() {
 
 	//Função que verifica a resposta
 	function checkAnswer() {
-		if ($(respostasCorretas[questionNumber-1]).hasClass('btn-primary')) {
-			$("#alertQuestao").show();
-			$("#alertQuestao").html(dataJSON.questoes.alertaCerto);
-			$("#alertQuestao").addClass("alert-success");
-			$("#alertQuestao").removeClass("alert-danger");
-			questoesCorretas[questionNumber-1] = true;
-			allowNextScene();
-			blockQuestionButtons();
-		} else {
-			$("#alertQuestao").show();
-			$("#alertQuestao").html(dataJSON.questoes.alertaErrado);
-			$("#alertQuestao").addClass("alert-danger");
-			$("#alertQuestao").removeClass("alert-success");
+		switch (questionNumber) {
+			case 1:
+			case 2:
+			case 4:
+			case 6:
+			case 8:
+			case 9:
+			case 11:
+			case 17:
+			case 18:
+			if ($(respostasCorretas[questionNumber-1]).hasClass('btn-primary')) {
+				$("#alertQuestao").show();
+				$("#alertQuestao").html(dataJSON.questoes.alertaCerto);
+				$("#alertQuestao").addClass("alert-success");
+				$("#alertQuestao").removeClass("alert-danger");
+				questoesCorretas[questionNumber-1] = true;
+				allowNextScene();
+				blockQuestionButtons();
+			} else {
+				$("#alertQuestao").show();
+				$("#alertQuestao").html(dataJSON.questoes.alertaErrado);
+				$("#alertQuestao").addClass("alert-danger");
+				$("#alertQuestao").removeClass("alert-success");
+			}
+			break;
+
+			default:
+			if (respostasCorretas[questionNumber-1] == $("#inputResposta").val() || respostasCorretasOutra[questionNumber-1] == $("#inputResposta").val() || respostasCorretasTerceira[questionNumber-1] == $("#inputResposta").val() || respostasCorretasQuarta[questionNumber-1] == $("#inputResposta").val()) {
+				questoesCorretas[questionNumber-1] = true;
+				allowNextScene();
+				blockQuestionButtons();
+			} else {
+				$("#alertQuestao").show();
+				$("#alertQuestao").html(dataJSON.questoes.alertaErrado);
+				$("#alertQuestao").addClass("alert-danger");
+				$("#alertQuestao").removeClass("alert-success");
+			}
+
 		}
 	}
 
 	//Função para desabilitar os botões das questões
 	function blockQuestionButtons() {
-		$("#buttonAf1").prop("disabled", "disabled");
-		$("#buttonAf2").prop("disabled", "disabled");
-		$("#buttonAf3").prop("disabled", "disabled");
-		$("#buttonAf4").prop("disabled", "disabled");
-		$("#buttonAf5").prop("disabled", "disabled");
-		$("#botaoEnviarResposta").prop("disabled", "disabled");
-		$(respostasCorretas[questionNumber-1]).addClass("btn-primary");
-		$(respostasCorretas[questionNumber-1]).siblings().removeClass("btn-primary");
+		$("#alertQuestao").show();
+		$("#alertQuestao").html(dataJSON.questoes.alertaCerto);
+		$("#alertQuestao").addClass("alert-success");
+		$("#alertQuestao").removeClass("alert-danger");
+
+		switch (questionNumber) {
+
+			case 1:
+			case 2:
+			case 4:
+			case 6:
+			case 8:
+			case 9:
+			case 11:
+			case 17:
+			case 18:
+			$("#buttonAf1").prop("disabled", "disabled");
+			$("#buttonAf2").prop("disabled", "disabled");
+			$("#buttonAf3").prop("disabled", "disabled");
+			$("#buttonAf4").prop("disabled", "disabled");
+			$("#buttonAf5").prop("disabled", "disabled");
+			$("#botaoEnviarResposta").prop("disabled", "disabled");
+			$(respostasCorretas[questionNumber-1]).addClass("btn-primary");
+			$(respostasCorretas[questionNumber-1]).siblings().removeClass("btn-primary");
+			break;
+
+
+			default:
+
+			$("#inputResposta").prop("disabled", "disabled");
+			$("#inputResposta").val(respostasCorretas[questionNumber-1]);
+			$("#botaoEnviarResposta").prop("disabled", "disabled");
+			break;
+
+		}
 
 	}
 
@@ -410,6 +514,8 @@ function checkIfStuck() {
 		$("#buttonAf3").prop("disabled", "");
 		$("#buttonAf4").prop("disabled", "");
 		$("#buttonAf5").prop("disabled", "");
+		$("#inputResposta").prop("disabled", "");
+		$("#inputResposta").val("");
 		$("#botaoEnviarResposta").prop("disabled", "");
 		$("#buttonAf1").removeClass("btn-primary");
 		$("#buttonAf2").removeClass("btn-primary");
