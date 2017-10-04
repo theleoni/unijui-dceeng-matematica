@@ -2054,6 +2054,7 @@
 	  				$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular1.gif").fadeIn(1000);
 	  				$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg1).fadeIn(1000);
 	  			});
+	  			$("#setaTransmissaoEsquerda").hide();
 	  			break;
 
 	  			case 2:
@@ -2064,6 +2065,8 @@
 	  				$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular2.gif").fadeIn(1000);
 	  				$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg2).fadeIn(1000);
 	  			});
+	  			$("#setaTransmissaoEsquerda").show();
+
 	  			break;
 	  			case 3:
 	  			$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title3);
@@ -2092,6 +2095,8 @@
 	  				$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular5.gif").fadeIn(1000);
 	  				$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
 	  			});
+	  			$("#setaTransmissaoDireita").show();
+
 	  			break;
 	  			case 6:
 	  			$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title6);
@@ -2103,6 +2108,7 @@
 	  			});
 	  			$("#iconSetaDireita").show();
 	  			jaViuTransmissao = true;
+	  			$("#setaTransmissaoDireita").hide();
 	  			break;
 	  		}
 
