@@ -327,6 +327,7 @@ function checkIfStuck() {
 
 		switch (questionNumber) {
 			case 1:
+			swal("Atenção!", "Nas respostas dos exercícios a seguir utilize valores arredondados para duas casas após a virgula");
 			case 2:
 			case 4:
 			case 6:
@@ -636,7 +637,8 @@ function checkIfStuck() {
 				questionNumber++;
 				loadQuestion();
 			} else {
-				nextScene();
+				//nextScene();
+				swal("Fim!", "Parabéns! Você finalizou todas as atividades.");
 			}
 			break;
 		}
