@@ -10,7 +10,7 @@
   var updateText = [false, false];
   var jaViuTransmissao = false;
   var dataJSON;
-  var respostaCorreta7 = 63.99;
+  var respostaCorreta7 = 61.6;
   var respostaCorreta18 = 3.50;
   var respostasCorretasQuestion10 = [45, 14, 78];
   var inputRespostasQuestao10;
