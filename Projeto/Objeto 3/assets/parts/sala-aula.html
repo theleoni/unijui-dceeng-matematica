@@ -16,6 +16,8 @@ video {
 
 <script type="text/javascript">
 
+console.log('sala-aula.html');
+
 $("#iconSetaEsquerda").show();
 $("#iconSetaDireita").show();
 $("#iconAjuda").hide();
@@ -40,14 +42,14 @@ function proxima() {
 	carregarParte('media-mediana-moda.html');
 }
 
-let video = document.querySelector("video");
+let videoSalaAula = document.querySelector("video");
 
-let source = document.createElement('source');
-source.setAttribute('src', 'assets/video/sala-aula.mp4');
-video.appendChild(source);
-video.play();
+let sourceSalaAula = document.createElement('source');
+videoSalaAula.setAttribute('src', 'assets/video/sala-aula.mp4');
+videoSalaAula.appendChild(sourceSalaAula);
+videoSalaAula.play();
 
-video.addEventListener("ended", function() {
+videoSalaAula.addEventListener("ended", function() {
 	proxima();
 });
 </script>

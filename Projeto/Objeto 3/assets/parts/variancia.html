@@ -1,5 +1,12 @@
 <div class="geral-interno">
-	<img id='img-fundo' class="fundo" src="assets/img/inicio-questoes-1.jpg"/>
+	<img id='img-fundo' class="fundo" src="assets/img/variancia-1.png"/>
+
+	<div>
+		
+	</div>
+
+	<div class="mensagens">
+	</div>
 </div>
 
 <style media="screen">
@@ -16,7 +23,7 @@
 
 <script type="text/javascript">
 
-console.log('inicio-questoes.html');
+console.log('variancia.html');
 
 $("#iconSetaEsquerda").show();
 $("#iconSetaDireita").show();
@@ -35,57 +42,47 @@ iconAjuda.addEventListener("click", function() {
 	ajuda();
 });
 
-let posIndexInicioQuestoes = 0;
+let posIndexVariancia = 0;
 function anterior() {
 
-	switch (posIndexInicioQuestoes) {
+	switch (posIndexVariancia) {
 
 		default:
 		case 0:
-
-			carregarParte('media-mediana-moda.html');
+			carregarParte('questao-2.html');
 			break;
 
 		case 1:
 			let imgFundo = document.querySelector('#img-fundo');
-			imgFundo.src = 'assets/img/inicio-questoes-1.jpg';
+			imgFundo.src = 'assets/img/variancia-1.png';
 
-			posIndexInicioQuestoes--;
+			posIndexVariancia--;
 			break;
-
 	}
 }
 
 function proxima() {
-	switch (posIndexInicioQuestoes) {
+	switch (posIndexVariancia) {
 
 		case 0:
 			let imgFundo = document.querySelector('#img-fundo');
-			imgFundo.src = 'assets/img/inicio-questoes-2.jpg';
+			imgFundo.src = 'assets/img/variancia-2.png';
 
-			posIndexInicioQuestoes++;
+			posIndexVariancia++;
 			break;
 
 		default:
-		case 1:
-			swal({
-				title: `Olá ${nomePessoa}, por favor ajude-nos a encontrar as respostas desta atividade!`,
-				closeOnClickOutside: false,
-				closeOnEsc: false,
-				button: {
-					text: 'Vamos lá!',
-					closeModal: true,
-					className: 'btn',
-				},
-			})
-			.then((value) => {
-				carregarParte('questao-1.html');
-			});
+		case 3:
+			// carregarParte('media-quadratica-dados-agrupados.html');
 			break;
 	}
 }
 
+let msgAjudaVariancia = '';
 function ajuda() {
+	if (msgAjudaVariancia) {
+		swal(msgAjudaVariancia);
+	}
 }
 
 </script>

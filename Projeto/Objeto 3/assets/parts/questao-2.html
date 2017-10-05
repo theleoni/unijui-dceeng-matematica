@@ -1,0 +1,319 @@
+<div class="geral-interno">
+	<div class="container">
+
+		<h4 class="mais-top"><b>ATIVIDADE 2</b> Considerando os seguintes valores considerados, responda as <span id='auto-completar'>questões</span> a seguir: A = {1, 2, 4, 10}</h4>
+
+		<div class="questao-a">
+			<h5><span class='tab'/><b>a)</b> Quais são os quadrados dos valores considerados?</h5>
+
+			<div class="col-xs-3 text-center">
+				<div class="questao-a-1 input-x fundo-normal">
+					<h5>1²=</h5>
+					<input id='input-questao-a-1' type="text" oninput="this.value = this.value.replace(/[^0-9,]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onkeyup="validarValores()" onblur="validarValores()">
+				</div>
+			</div>
+
+			<div class="col-xs-3 text-center">
+				<div class="questao-a-2 input-x fundo-normal">
+					<h5>2²=</h5>
+					<input id='input-questao-a-2' type="text" oninput="this.value = this.value.replace(/[^0-9,]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onkeyup="validarValores()" onblur="validarValores()">
+				</div>
+			</div>
+
+			<div class="col-xs-3 text-center">
+				<div class="questao-a-3 input-x fundo-normal">
+					<h5>4²=</h5>
+					<input id='input-questao-a-3' type="text" oninput="this.value = this.value.replace(/[^0-9,]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onkeyup="validarValores()" onblur="validarValores()">
+				</div>
+			</div>
+
+			<div class="col-xs-3 text-center">
+				<div class="questao-a-4 input-x fundo-normal">
+					<h5>10²=</h5>
+					<input id='input-questao-a-4' type="text" oninput="this.value = this.value.replace(/[^0-9,]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onkeyup="validarValores()" onblur="validarValores()">
+				</div>
+			</div>
+		</div>
+
+		<div class="questao-b">
+			<h5><span class='tab'/><b>b)</b> Qual o valor que corresponde à soma dos quadrados dos valores considerados?</h5>
+
+			<div class="text-center">
+				<div class="input-x fundo-normal">
+					<input id='input-questao-b' type="text" oninput="this.value = this.value.replace(/[^0-9,]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onkeyup="validarValores()" onblur="validarValores()">
+				</div>
+			</div>
+		</div>
+
+		<div class="questao-c">
+			<h5><span class='tab'/><b>c)</b> Qual o valor encontrado ao diminuir a resposta anterior pela quantidade de valores considerados?</h5>
+
+			<div class="text-center">
+				<div class="input-x fundo-normal">
+					<input id='input-questao-c' type="text" oninput="this.value = this.value.replace(/[^0-9,]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onkeyup="validarValores()" onblur="validarValores()">
+				</div>
+			</div>
+		</div>
+
+		<div class="questao-d">
+			<h5><span class='tab'/><b>d)</b> Qual será a Média Quadrática, ou seja, a raiz quadrada da resposta da questão anterior?</h5>
+
+			<div class="text-center">
+				<div class="input-x fundo-normal">
+					<input id='input-questao-d' type="text" oninput="this.value = this.value.replace(/[^0-9,]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onkeyup="validarValores()" onblur="validarValores()">
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="mensagens">
+	</div>
+</div>
+
+<style media="screen">
+
+.geral-interno {
+	position: relative;
+}
+
+.fundo {
+	width: 100%;
+}
+
+.questao-a, .questao-b, .questao-c, .questao-d {
+	height: 80px;
+}
+
+.input-x {
+	display: inline-flex;
+	border-radius: 6px;
+}
+
+.input-x h5 {
+	color: #F5F5F5;
+	margin: 6px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.fundo-ok {
+	background-color: #46D079;
+	border: solid #46D079 3px;
+	transition: all .3s;
+}
+
+.fundo-normal {
+	background-color: #F28B6F;
+	border: solid #F28B6F 3px;
+	transition: all .3s;
+}
+
+input {
+	width: 55px;
+	border: solid #FFFFFF 0px;
+	border-radius: 6px;
+	text-align: center;
+	font-size: 16px;
+}
+
+</style>
+
+<script type="text/javascript">
+
+console.log('questao-2.html');
+
+$("#iconSetaEsquerda").show();
+$("#iconSetaDireita").hide();
+$("#iconAjuda").show();
+$("#iconCalculadora").hide();
+
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
+
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
+
+iconAjuda.addEventListener("click", function() {
+	ajuda();
+});
+
+function anterior() {
+
+	carregarParte('media-quadratica-dados-agrupados.html');
+}
+
+function proxima() {
+
+	carregarParte('variancia.html');
+}
+
+
+function ajuda() {
+	if (document.querySelector('#dialog-ajuda') == null) {
+		let innerAjuda = document.querySelector(".mensagens").innerHTML;
+		innerAjuda += `
+		<div id="dialog-ajuda">
+			<h3 class='text-center muito-mais-bottom'><b>Média Quadrática</b></h3>
+
+			<h4><b>Média Quadrática Simples: (para dados não agrupados)</b></h4>
+			<div class='text-center'>
+				<img src="assets/img/media-quadratica-dados-agrupados-formula-ajuda.jpg" />
+			</div>
+
+			<h4>Exemplo: Calcular a média quadrática simples do seguinte conjunto de números:  A= {2, 3, 4, 5}</h4>
+			<div class='text-center'>
+				<img src="assets/img/media-quadratica-dados-agrupados-formula-ajuda-2.jpg" />
+			</div>
+
+			<h4 class='muito-mais-top muito-mais-bottom'>Observação: A raiz será sempre quadrada.</h4>
+
+			<h4><b>Resolução:</b></h4>
+			<h5><b>1° passo:</b> Elevar cada um dos números ao quadrado;</h5>
+			<h5><b>2° passo:</b> Resolver os quadrados e somar os resultados;</h5>
+			<h5><b>3° passo:</b> Dividir por n, ou seja, a quantidade de números elevados ao quadrado;</h5>
+			<h5><b>4° passo:</b> Obter a raiz quadrada;</h5>
+
+		</div>`;
+		document.querySelector(".mensagens").innerHTML = innerAjuda;
+	}
+
+	let dialogAjuda = $("#dialog-ajuda").dialog({
+		autoOpen: false,
+		height: 500,
+		width: 850,
+		modal: true,
+		buttons: {}
+	});
+	dialogAjuda.dialog("open");
+}
+
+let valorCorretoQuestaoA1 = 1;
+let valorCorretoQuestaoA2 = 4;
+let valorCorretoQuestaoA3 = 16;
+let valorCorretoQuestaoA4 = 100;
+let valorCorretoQuestaoB = 121;
+let valorCorretoQuestaoC = 30.25;
+let valorCorretoQuestaoD = 5.5;
+
+let isQuestaoA1Ok = false;
+let isQuestaoA2Ok = false;
+let isQuestaoA3Ok = false;
+let isQuestaoA4Ok = false;
+let isQuestaoBOk = false;
+let isQuestaoCOk = false;
+let isQuestaoDOk = false;
+
+let inputQuestaoA1 = document.querySelector('#input-questao-a-1');
+let inputQuestaoA2 = document.querySelector('#input-questao-a-2');
+let inputQuestaoA3 = document.querySelector('#input-questao-a-3');
+let inputQuestaoA4 = document.querySelector('#input-questao-a-4');
+let inputQuestaoB = document.querySelector('#input-questao-b');
+let inputQuestaoC = document.querySelector('#input-questao-c');
+let inputQuestaoD = document.querySelector('#input-questao-d');
+
+let campoQuestaoA1 = document.querySelector('.questao-a-1');
+let campoQuestaoA2 = document.querySelector('.questao-a-2');
+let campoQuestaoA3 = document.querySelector('.questao-a-3');
+let campoQuestaoA4 = document.querySelector('.questao-a-4');
+let campoQuestaoB = document.querySelector('.questao-b .input-x');
+let campoQuestaoC = document.querySelector('.questao-c .input-x');
+let campoQuestaoD = document.querySelector('.questao-d .input-x');
+
+document.querySelector('#auto-completar').addEventListener('click', function (evt) {
+	if (evt.detail === 3) {
+		inputQuestaoA1.value = valorCorretoQuestaoA1.toString().replace('.', ',');
+		inputQuestaoA2.value = valorCorretoQuestaoA2.toString().replace('.', ',');
+		inputQuestaoA3.value = valorCorretoQuestaoA3.toString().replace('.', ',');
+		inputQuestaoA4.value = valorCorretoQuestaoA4.toString().replace('.', ',');
+
+		inputQuestaoB.value = valorCorretoQuestaoB.toString().replace('.', ',');
+		inputQuestaoC.value = valorCorretoQuestaoC.toString().replace('.', ',');
+		inputQuestaoD.value = valorCorretoQuestaoD.toString().replace('.', ',');
+		validarValores();
+	}
+});
+
+function validarValores() {
+	let valQuestaoA1 = inputQuestaoA1.value.replace('.', '').replace(',', '.');
+	let valQuestaoA2 = inputQuestaoA2.value.replace('.', '').replace(',', '.');
+	let valQuestaoA3 = inputQuestaoA3.value.replace('.', '').replace(',', '.');
+	let valQuestaoA4 = inputQuestaoA4.value.replace('.', '').replace(',', '.');
+	let valQuestaoB = inputQuestaoB.value.replace('.', '').replace(',', '.');
+	let valQuestaoC = inputQuestaoC.value.replace('.', '').replace(',', '.');
+	let valQuestaoD = inputQuestaoD.value.replace('.', '').replace(',', '.');
+
+	isQuestaoA1Ok = (valQuestaoA1 == valorCorretoQuestaoA1);
+	isQuestaoA2Ok = (valQuestaoA2 == valorCorretoQuestaoA2);
+	isQuestaoA3Ok = (valQuestaoA3 == valorCorretoQuestaoA3);
+	isQuestaoA4Ok = (valQuestaoA4 == valorCorretoQuestaoA4);
+	isQuestaoBOk = (valQuestaoB == valorCorretoQuestaoB);
+	isQuestaoCOk = (valQuestaoC == valorCorretoQuestaoC);
+	isQuestaoDOk = (valQuestaoD == valorCorretoQuestaoD);
+
+	if (isQuestaoA1Ok) {
+		campoQuestaoA1.classList.add('fundo-ok');
+		campoQuestaoA1.classList.remove('fundo-normal');
+	} else {
+		campoQuestaoA1.classList.remove('fundo-ok');
+		campoQuestaoA1.classList.add('fundo-normal');
+	}
+
+	if (isQuestaoA2Ok) {
+		campoQuestaoA2.classList.add('fundo-ok');
+		campoQuestaoA2.classList.remove('fundo-normal');
+	} else {
+		campoQuestaoA2.classList.remove('fundo-ok');
+		campoQuestaoA2.classList.add('fundo-normal');
+	}
+
+	if (isQuestaoA3Ok) {
+		campoQuestaoA3.classList.add('fundo-ok');
+		campoQuestaoA3.classList.remove('fundo-normal');
+	} else {
+		campoQuestaoA3.classList.remove('fundo-ok');
+		campoQuestaoA3.classList.add('fundo-normal');
+	}
+
+	if (isQuestaoA4Ok) {
+		campoQuestaoA4.classList.add('fundo-ok');
+		campoQuestaoA4.classList.remove('fundo-normal');
+	} else {
+		campoQuestaoA4.classList.remove('fundo-ok');
+		campoQuestaoA4.classList.add('fundo-normal');
+	}
+
+	if (isQuestaoBOk) {
+		campoQuestaoB.classList.add('fundo-ok');
+		campoQuestaoB.classList.remove('fundo-normal');
+	} else {
+		campoQuestaoB.classList.remove('fundo-ok');
+		campoQuestaoB.classList.add('fundo-normal');
+	}
+
+	if (isQuestaoCOk) {
+		campoQuestaoC.classList.add('fundo-ok');
+		campoQuestaoC.classList.remove('fundo-normal');
+	} else {
+		campoQuestaoC.classList.remove('fundo-ok');
+		campoQuestaoC.classList.add('fundo-normal');
+	}
+
+	if (isQuestaoDOk) {
+		campoQuestaoD.classList.add('fundo-ok');
+		campoQuestaoD.classList.remove('fundo-normal');
+	} else {
+		campoQuestaoD.classList.remove('fundo-ok');
+		campoQuestaoD.classList.add('fundo-normal');
+	}
+
+	if (isQuestaoA1Ok && isQuestaoA2Ok && isQuestaoA3Ok && isQuestaoA4Ok && isQuestaoBOk && isQuestaoCOk && isQuestaoDOk) {
+		$("#iconSetaDireita").show();
+	} else {
+		$("#iconSetaDireita").hide();
+	}
+}
+
+</script>

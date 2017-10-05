@@ -104,34 +104,6 @@
 
 <style media="screen">
 
-.muitissimo-mais-top {
-	margin-top: 48px !important;
-}
-
-.muito-mais-bottom {
-	margin-bottom: 48px !important;
-}
-
-.muito-mais-top {
-	margin-top: 36px !important;
-}
-
-.muito-mais-bottom {
-	margin-bottom: 36px !important;
-}
-
-.mais-top {
-	margin-top: 16px !important;
-}
-
-.mais-bottom {
-	margin-bottom: 16px !important;
-}
-
-.tab {
-	display:inline-block; width: 30px;
-}
-
 .geral-interno {
 	position: relative;
 }
@@ -258,14 +230,6 @@
 	width: 800px;
 }
 
-.oculto {
-	display: none;
-}
-
-
-
-
-
 .formula {
 	text-align: center;
 	margin: 25px;
@@ -279,48 +243,6 @@
 	margin-left: 12px;
 	margin-right: 12px;
 }
-
-/*.formula .segunda {
-	font-weight: bold;
-	color: #135bac;
-}
-
-.formula .terca {
-	font-weight: bold;
-	color: #ce3330;
-}
-
-.formula .quarta {
-	font-weight: bold;
-	color: #29702d;
-}
-
-.formula .quinta {
-	font-weight: bold;
-	color: #e1ac28;
-}
-
-.formula .sexta {
-	font-weight: bold;
-	color: #6A534C;
-}
-
-.formula .dias-semana-qtd {
-	font-weight: bold;
-}
-
-.formula .total {
-	font-weight: bold;
-}
-
-.formula-descrita {
-	font-style: italic;
-	display: inline-flex;
-}
-
-.formula-descrita h4 {
-	margin: 10px;
-}*/
 
 .cima-baixo {
     display: grid;
@@ -342,6 +264,8 @@
 </style>
 
 <script type="text/javascript">
+
+console.log('questao-1.html');
 
 $("#iconSetaEsquerda").show();
 $("#iconSetaDireita").hide();
@@ -372,7 +296,7 @@ function proxima() {
 
 function ajuda() {
 	if (document.querySelector('#dialog-ajuda') == null) {
-		let innerAjuda = document.querySelector(".geral-interno").innerHTML;
+		let innerAjuda = document.querySelector(".mensagens").innerHTML;
 		innerAjuda += `
 		<div id="dialog-ajuda">
 			<div class='row'>
@@ -427,7 +351,7 @@ function ajuda() {
 				</div>
 
 			</div>
-		</div>`
+		</div>`;
 		document.querySelector(".mensagens").innerHTML = innerAjuda;
 		ajudaPage('principal');
 	}

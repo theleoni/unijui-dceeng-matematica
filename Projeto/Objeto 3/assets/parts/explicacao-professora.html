@@ -14,6 +14,8 @@ video {
 
 <script type="text/javascript">
 
+console.log('explicacao-professora.html');
+
 $("#iconSetaEsquerda").show();
 $("#iconSetaDireita").show();
 $("#iconAjuda").hide();
@@ -39,14 +41,14 @@ function proxima() {
 	carregarParte('sala-aula.html');
 }
 
-let video = document.querySelector("video");
+let videoExplicacaoProfessora = document.querySelector("video");
 
-let sourceVideo = document.createElement('source');
-sourceVideo.setAttribute('src', 'assets/video/explicacao-professora.mp4');
-video.appendChild(sourceVideo);
-video.play();
+let sourceVideoExplicacaoProfessora = document.createElement('source');
+sourceVideoExplicacaoProfessora.setAttribute('src', 'assets/video/explicacao-professora.mp4');
+videoExplicacaoProfessora.appendChild(sourceVideoExplicacaoProfessora);
+videoExplicacaoProfessora.play();
 
-video.addEventListener("ended", function() {
+videoExplicacaoProfessora.addEventListener("ended", function() {
 	proxima();
 });
 </script>
