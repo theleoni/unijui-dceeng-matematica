@@ -112,7 +112,7 @@ var ajudaTela14Ativ3 = [
 {
   progressSteps: ['1', '2', '3'],
   title: 'Ajuda',
-  html: '<div style="text-align:left;">Complete a tabela calculando a média e a mediana dos dados. Após completar clique no botão "Enviar Resposta" para fazer a correção das respostas. Em seguida responda as perguntas, você só poderá ver a próxima pergunta após responder corretamente cada pergunta. <br>Observação: A diferença entre a média e mediana é calculada da segiunte forma: valor da média - valor da mediana.</div>'
+  html: '<div style="text-align:left;">Complete a tabela calculando a média e a mediana dos dados. Após completar clique no botão "Enviar Resposta" para fazer a correção das respostas. Em seguida responda as perguntas, você só poderá ver a próxima pergunta após responder corretamente cada pergunta. <br>Observação: A diferença entre a média e mediana é calculada da segiunte forma: valor da média - valor da mediana.<br>Na hora de realizar os cálculos considere dois números após a virgula, arredondando caso necessário.</div>'
 },
 {
   progressSteps: ['1', '2', '3'],
@@ -144,6 +144,13 @@ var ajudaTela14Ativ4 = [
  html: '<div style="text-align:left;"><table id="tabelaAgrupadaConsumoMensal" class="table table-responsive table-bordered"><thead><tr><td><strong>Consumo diário em kWh</strong></td><td><strong>Nº de dias de consumo</strong></td></tr></thead><tr><td class="noLeftBorder">3,0</td><td class="noRightBorder">2</td></tr><tr><td class="noLeftBorder">3,5</td><td class="noRightBorder">4</td></tr><tr><td class="noLeftBorder">3,8</td><td class="noRightBorder"> 5</td></tr><tr><td class="noLeftBorder">4,0</td><td class="noRightBorder">17</td></tr><tr><td class="noLeftBorder tabelaTotal">Soma</td><td class="noRightBorder tabelaTotal">28</td></tr></table><br>Para descobrirmos a moda, basta observar qual o número que apareceu om maior frequência, da seguinte maneira: <br> • O número 3 apareceu <span style="color:green;">2</span> vezes <br>• O número 3.5 apareceu <span style="color:blue;">4</span> vezes <br>• O número 3.8 apareceu <span style="color:brown;">5</span> vezes <br>• O número 4 apareceu <span style="color:red;">17</span> vezes <br><br>A maior frequência foi o 17, então o número 4 se repetiu mais vezes que os outros números, logo a nossa moda é o 4.</div>'
 },
 ]
+
+var ajudaTela5 = [
+{
+  title: 'Ajuda',
+  width: '45%',
+  html: '<div style="text-align:left;"><center><img src="../assets/img/Objeto 2/ajudaMediaAritmetica.PNG"> <br><h3>Se tivermos a soma, e o número de casos basta realizarmos a divisão da soma pelo número de casos.</h3></center>'
+}]
 
 var ajudaPadrao = [
 {
@@ -178,6 +185,8 @@ function getHelpScene(numeroDaTela) {
     return ajudaTela14Ativ3;
     case '144':
     return ajudaTela14Ativ4;
+    case 5:
+    return ajudaTela5;
   }
 }
 

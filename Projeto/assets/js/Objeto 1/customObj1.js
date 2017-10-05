@@ -8,10 +8,9 @@
   var questaoSelecionada;
   var corretas = [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false];
   var updateText = [false, false];
-  var firstTimeTransmission = true;
-  var ftTransmission = true;
+  var jaViuTransmissao = false;
   var dataJSON;
-  var respostaCorreta7 = 63.99;
+  var respostaCorreta7 = 61.6;
   var respostaCorreta18 = 3.50;
   var respostasCorretasQuestion10 = [45, 14, 78];
   var inputRespostasQuestao10;
@@ -2031,7 +2030,7 @@
 							name: 'Tributos: ICMS e PIS/COFINS',
 							y: 29.5
 						}, {
-							name: 'Parcela A: Compra de energia, Transmissão de energia, e Encargos Setoriais',
+							name: 'Parcela A: Compra, Transmissao e Encargos',
 							y: 53.5
 
 						}, {
@@ -2045,128 +2044,93 @@
 	  	}
 
 
-	  	function contentSwitcher() {
-			if (ftTransmission) { //Gambiarra para funcionar o ocultamento/disable nos botões
-				$("#iconSetaEsquerda").hide();
-				$("#iconSetaDireita").hide();
-				$('#setaTransmissaoDireita').toggleClass('disabledCursor');
-				$('#setaTransmissaoEsquerda').toggleClass('disabledCursor');
-				ftTransmission = false;
-			}
-			if (firstTimeTransmission) {
-				setTimeout(function () {
-					switch (transmissionBeingShown) {
-						case 1:
-						case 2:
-						case 3:
-						case 4:
-						case 5:
-						loadTransmissionData();
-						contentSwitcher(++transmissionBeingShown);
-						break;
-						case 6:
-						firstTimeTransmission = false;
-						loadTransmissionData();
-						$("#iconSetaEsquerda").show();
-						$("#iconSetaDireita").show();
-						$('#setaTransmissaoDireita').toggleClass('disabledCursor');
-						$('#setaTransmissaoEsquerda').toggleClass('disabledCursor');
-						break;
+	  	function loadTransmissionData() {
+	  		switch (transmissionBeingShown) {
+	  			case 1:
+	  			$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title1);
+	  			$('#imgCirculo').fadeOut(500);
+	  			$('#textosceneCaminhosEnergia').fadeOut(500);
+	  			sleep(500).then(() => {
+	  				$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular1.gif").fadeIn(1000);
+	  				$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg1).fadeIn(1000);
+	  			});
+	  			$("#setaTransmissaoEsquerda").hide();
+	  			break;
 
-					}
+	  			case 2:
+	  			$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title2);
+	  			$('#imgCirculo').fadeOut(500);
+	  			$('#textosceneCaminhosEnergia').fadeOut(500);
+	  			sleep(500).then(() => {
+	  				$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular2.gif").fadeIn(1000);
+	  				$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg2).fadeIn(1000);
+	  			});
+	  			$("#setaTransmissaoEsquerda").show();
 
-				}, 15000);
-			}
-			else {
-				loadTransmissionData();
-			}
+	  			break;
+	  			case 3:
+	  			$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title3);
+	  			$('#imgCirculo').fadeOut(500);
+	  			$('#textosceneCaminhosEnergia').fadeOut(500);
+	  			sleep(500).then(() => {
+	  				$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular3.gif").fadeIn(1000);
+	  				$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg3).fadeIn(1000);
+	  			});
 
-		}
+	  			break;
+	  			case 4:
+	  			$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title4);
+	  			$('#imgCirculo').fadeOut(500);
+	  			$('#textosceneCaminhosEnergia').fadeOut(500);
+	  			sleep(500).then(() => {
+	  				$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular4.gif").fadeIn(1000);
+	  				$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg4).fadeIn(1000);
+	  			});
+	  			break;
+	  			case 5:
+	  			$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title5);
+	  			$('#imgCirculo').fadeOut(500);
+	  			$('#textosceneCaminhosEnergia').fadeOut(500);
+	  			sleep(500).then(() => {
+	  				$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular5.gif").fadeIn(1000);
+	  				$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
+	  			});
+	  			$("#setaTransmissaoDireita").show();
 
-		function loadTransmissionData() {
-			switch (transmissionBeingShown) {
-				case 1:
-				$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title1);
-				$('#imgCirculo').fadeOut(500);
-				$('#textosceneCaminhosEnergia').fadeOut(500);
-				sleep(500).then(() => {
-					$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular1.gif").fadeIn(1000);
-					$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg1).fadeIn(1000);
-				});
-				break;
+	  			break;
+	  			case 6:
+	  			$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title6);
+	  			$('#imgCirculo').fadeOut(500);
+	  			$('#textosceneCaminhosEnergia').fadeOut(500);
+	  			sleep(500).then(() => {
+	  				$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular6.gif").fadeIn(1000);
+	  				$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
+	  			});
+	  			$("#iconSetaDireita").show();
+	  			jaViuTransmissao = true;
+	  			$("#setaTransmissaoDireita").hide();
+	  			break;
+	  		}
 
-				case 2:
-				$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title2);
-				$('#imgCirculo').fadeOut(500);
-				$('#textosceneCaminhosEnergia').fadeOut(500);
-				sleep(500).then(() => {
-					$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular2.gif").fadeIn(1000);
-					$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg2).fadeIn(1000);
-				});
-				break;
-				case 3:
-				$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title3);
-				$('#imgCirculo').fadeOut(500);
-				$('#textosceneCaminhosEnergia').fadeOut(500);
-				sleep(500).then(() => {
-					$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular3.gif").fadeIn(1000);
-					$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg3).fadeIn(1000);
-				});
-
-				break;
-				case 4:
-				$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title4);
-				$('#imgCirculo').fadeOut(500);
-				$('#textosceneCaminhosEnergia').fadeOut(500);
-				sleep(500).then(() => {
-					$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular4.gif").fadeIn(1000);
-					$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg4).fadeIn(1000);
-				});
-				break;
-				case 5:
-				$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title5);
-				$('#imgCirculo').fadeOut(500);
-				$('#textosceneCaminhosEnergia').fadeOut(500);
-				sleep(500).then(() => {
-					$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular5.gif").fadeIn(1000);
-					$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
-				});
-				break;
-				case 6:
-				$("#titleCaminho").html(dataJSON.mensagensCaminhoEnergia.title6);
-				$('#imgCirculo').fadeOut(500);
-				$('#textosceneCaminhosEnergia').fadeOut(500);
-				sleep(500).then(() => {
-					$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular6.gif").fadeIn(1000);
-					$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
-				});
-
-				setaTransmissaoClicavel = true;
-				break;
-			}
-
-		}
+	  	}
 
 
-		$(document).on('click', '#setaTransmissaoDireita', function () {
-			if (!($("#setaTransmissaoDireita").hasClass('disabledCursor'))) {
-				if (transmissionBeingShown < 6) {
-					transmissionBeingShown++;
-					loadTransmissionData();
-				}
-			}
+	  	$(document).on('click', '#setaTransmissaoDireita', function () {
+	  		if (transmissionBeingShown < 6) {
+	  			transmissionBeingShown++;
+	  			loadTransmissionData();
+	  		}
 
-		});
+	  	});
 
-		$(document).on('click', '#setaTransmissaoEsquerda', function () {
-			if (!($("#setaTransmissaoEsquerda").hasClass('disabledCursor'))) {
-				if (transmissionBeingShown > 1) {
-					transmissionBeingShown--;
-					loadTransmissionData();
-				}
-			}
+	  	$(document).on('click', '#setaTransmissaoEsquerda', function () {
+	  		if (transmissionBeingShown > 1) {
+	  			transmissionBeingShown--;
+	  			loadTransmissionData();
+	  		}
+	  		
 
-		});
+	  	});
 
 
 
@@ -2177,64 +2141,70 @@
 
 
 
-		/* SCENE ? */
+	  	/* SCENE ? */
 
-		function graphMatrizEnergetica() {
-			var chart = Highcharts.chart('graphMatrizEnergetica', {
-				chart: {
-					backgroundColor: 'rgba(0,0,0,0)',
-					type: 'pie',
+	  	function graphMatrizEnergetica() {
+	  		var chart = Highcharts.chart('graphMatrizEnergetica', {
+	  			chart: {
+	  				backgroundColor: 'rgba(0,0,0,0)',
+	  				type: 'pie',
+	  				style: {
+	  					color: "#FFFFFF"
+	  				}
+	  			},
+	  			title: {
+	  				text: 'Dados da Matriz Energética Brasileira',
+	  				style: {
+	  					color: "#FFFFFF"
+	  				}
+	  			},
+	  			tooltip: {
+	  				pointFormat: '{series.name}: <b>{point.y}</b>'
+	  			},
+	  			plotOptions: {
+	  				pie: {
+	  					allowPointSelect: false,
+	  					cursor: 'pointer',
+	  					dataLabels: {
+	  						enabled: true,
+	  						format: '{point.name}: {point.y}',
+	  						style: {
+	  							textOutline: false,
+	  							color: "#FFFFFF"
+	  						}
+	  					}
+	  				}
+	  			},
+	  			series: [{
+	  				name: 'Usinas ',
+	  				colorByPoint: true,
+	  				data: [{
+	  					name: 'Hidrelétrica',
+	  					y: 1251
+	  				}, {
+	  					name: 'Biomassa',
+	  					y: 534
+	  				}, {
+	  					name: 'Fóssil',
+	  					y: 2412
+	  				}, {
+	  					name: 'Eólica',
+	  					y: 418
+	  				}, {
+	  					name: 'Nuclear',
+	  					y: 2
+	  				}, {
+	  					name: 'Solar',
+	  					y: 42
+	  				}]
+	  			}]
+	  		});
 
-				},
-				title: {
-					text: 'Dados da Matriz Energética Brasileira'
-				},
-				tooltip: {
-					pointFormat: '{series.name}: <b>{point.y}</b>'
-				},
-				plotOptions: {
-					pie: {
-						allowPointSelect: false,
-						cursor: 'pointer',
-						dataLabels: {
-							enabled: true,
-							format: '{point.name}: {point.y}',
-							style: {
-								textOutline: false,
-							}
-						}
-					}
-				},
-				series: [{
-					name: 'Usinas ',
-					colorByPoint: true,
-					data: [{
-						name: 'Hidrelétrica',
-						y: 1251
-					}, {
-						name: 'Biomassa',
-						y: 534
-					}, {
-						name: 'Fóssil',
-						y: 2412
-					}, {
-						name: 'Eólica',
-						y: 418
-					}, {
-						name: 'Nuclear',
-						y: 2
-					}, {
-						name: 'Solar',
-						y: 42
-					}]
-				}]
-			});
+	  		chart.reflow();
+	  	}
 
-			chart.reflow();
-		}
-
-		function gerarGraficoCustom() {
-			$(document).ready(function () {
+	  	function gerarGraficoCustom() {
+	  		$(document).ready(function () {
 
 				// Gera o gráfico
 				Highcharts.chart('containerGraficoCustom', {
@@ -2293,30 +2263,30 @@
 					}]
 				});
 			});
-		}
+	  	}
 
 
-		$(document).on('click', '#botaoMatrizVerificar', function () {
-			var verificacaoLocal = true;
-			getInputValues();
-			for (var i = 0; i < respostasMatrizEnergetica.length; i++) {
-				if (!(inputRespostasMatrizEnergetica[i].val().replace(/,/g, '.') == respostasMatrizEnergetica[i])) {
-					inputRespostasMatrizEnergetica[i].css('background-color', 'red');
-					verificacaoLocal = false;
-					$("#alertMatriz").show();
-				}
-				else {
-					inputRespostasMatrizEnergetica[i].css('background-color', '');
-				}
-			}
-			if (verificacaoLocal == true) {
-				$("#alertMatriz").hide();
-				graphMatrizEnergetica();
-				$("#containerQuestoesMatrizEnergetica").show();
-				loadQuestion();
-				listeningToKeyPress = true;
-				$(this).hide();
-				graficoMatrizGerado = true;
+	  	$(document).on('click', '#botaoMatrizVerificar', function () {
+	  		var verificacaoLocal = true;
+	  		getInputValues();
+	  		for (var i = 0; i < respostasMatrizEnergetica.length; i++) {
+	  			if (!(inputRespostasMatrizEnergetica[i].val().replace(/,/g, '.') == respostasMatrizEnergetica[i])) {
+	  				inputRespostasMatrizEnergetica[i].css('background-color', 'red');
+	  				verificacaoLocal = false;
+	  				$("#alertMatriz").show();
+	  			}
+	  			else {
+	  				inputRespostasMatrizEnergetica[i].css('background-color', '');
+	  			}
+	  		}
+	  		if (verificacaoLocal == true) {
+	  			$("#alertMatriz").hide();
+	  			graphMatrizEnergetica();
+	  			$("#containerQuestoesMatrizEnergetica").show();
+	  			loadQuestion();
+	  			listeningToKeyPress = true;
+	  			$(this).hide();
+	  			graficoMatrizGerado = true;
 				//Disable nos inputs
 				for (var i = 0; i < inputRespostasMatrizEnergetica.length; i++) {
 					inputRespostasMatrizEnergetica[i].prop('disabled', true);
@@ -2327,74 +2297,74 @@
 
 
 
-		function getInputValues() {
-			inputRespostasMatrizEnergetica =
-			[
-			$("#inputConsumoUsinasBiomassa"),
-			$("#inputNumeroUsinasHidrica"),
-			$("#inputConsumoUsinasSolar"),
-			$("#inputNumeroUsinasNuclear"),
-			$("#inputNumeroUsinasFossil"),
-			$("#inputConsumoImportacao")
-			];
-		}
+	  	function getInputValues() {
+	  		inputRespostasMatrizEnergetica =
+	  		[
+	  		$("#inputConsumoUsinasBiomassa"),
+	  		$("#inputNumeroUsinasHidrica"),
+	  		$("#inputConsumoUsinasSolar"),
+	  		$("#inputNumeroUsinasNuclear"),
+	  		$("#inputNumeroUsinasFossil"),
+	  		$("#inputConsumoImportacao")
+	  		];
+	  	}
 
-		$(document).on('click', '#botaoAtualizarTabelaPotencia', function () {
-			$("#gastoMensalTelevisao").html(parseFloat(($("#quantidadeTelevisao").html() * ($("#potenciaTelevisao").html()/1000) * $("#tempoTelevisao").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-			$("#gastoMensalMaquinaDeLavar").html(parseFloat(($("#quantidadeMaquinaDeLavar").html() * ($("#potenciaMaquinaDeLavar").html()/1000) * $("#tempoMaquinaDeLavar").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-			$("#gastoMensalChuveiro").html(parseFloat(($("#quantidadeChuveiro").html() * ($("#potenciaChuveiro").html()/1000) * $("#tempoChuveiro").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-			$("#gastoMensalGeladeira").html(parseFloat(($("#quantidadeGeladeira").html() * ($("#potenciaGeladeira").html()/1000) * $("#tempoGeladeira").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-			$("#gastoMensalComputador").html(parseFloat(($("#quantidadeComputador").html() * ($("#potenciaComputador").html()/1000) * $("#tempoComputador").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-			$("#gastoMensalLampada").html(parseFloat(($("#quantidadeLampada").html() * ($("#potenciaLampada").html()/1000) * $("#tempoLampada").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-			$("#gastoMensalFerro").html(parseFloat(($("#quantidadeFerro").html() * ($("#potenciaFerro").html()/1000) * $("#tempoFerro").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-			$("#gastoMensalCelular").html(parseFloat(($("#quantidadeCelular").html() * ($("#potenciaCelular").html()/1000) * $("#tempoCelular").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+	  	$(document).on('click', '#botaoAtualizarTabelaPotencia', function () {
+	  		$("#gastoMensalTelevisao").html(parseFloat(($("#quantidadeTelevisao").html() * ($("#potenciaTelevisao").html()/1000) * $("#tempoTelevisao").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+	  		$("#gastoMensalMaquinaDeLavar").html(parseFloat(($("#quantidadeMaquinaDeLavar").html() * ($("#potenciaMaquinaDeLavar").html()/1000) * $("#tempoMaquinaDeLavar").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+	  		$("#gastoMensalChuveiro").html(parseFloat(($("#quantidadeChuveiro").html() * ($("#potenciaChuveiro").html()/1000) * $("#tempoChuveiro").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+	  		$("#gastoMensalGeladeira").html(parseFloat(($("#quantidadeGeladeira").html() * ($("#potenciaGeladeira").html()/1000) * $("#tempoGeladeira").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+	  		$("#gastoMensalComputador").html(parseFloat(($("#quantidadeComputador").html() * ($("#potenciaComputador").html()/1000) * $("#tempoComputador").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+	  		$("#gastoMensalLampada").html(parseFloat(($("#quantidadeLampada").html() * ($("#potenciaLampada").html()/1000) * $("#tempoLampada").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+	  		$("#gastoMensalFerro").html(parseFloat(($("#quantidadeFerro").html() * ($("#potenciaFerro").html()/1000) * $("#tempoFerro").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+	  		$("#gastoMensalCelular").html(parseFloat(($("#quantidadeCelular").html() * ($("#potenciaCelular").html()/1000) * $("#tempoCelular").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
 
-			$("#valorTotalTabelaPotencia").html((
-				parseFloat($("#gastoMensalTelevisao").html()) +
-				parseFloat($("#gastoMensalMaquinaDeLavar").html()) +
-				parseFloat($("#gastoMensalChuveiro").html()) +
-				parseFloat($("#gastoMensalGeladeira").html()) +
-				parseFloat($("#gastoMensalComputador").html()) +
-				parseFloat($("#gastoMensalLampada").html()) +
-				parseFloat($("#gastoMensalFerro").html()) +
-				parseFloat($("#gastoMensalCelular").html())).toFixed(2));
-		});
-
-
-
-		function getInputValueConta() {
-			inputRespostasConta =
-			[
-			$("#inputImpostos"),
-			$("#inputGeracao"),
-			$("#inputEncargos"),
-			$("#inputDistribuicao"),
-			$("#inputTransmissao"),
-			$("#inputGeracao")
-			];
-		}
+	  		$("#valorTotalTabelaPotencia").html((
+	  			parseFloat($("#gastoMensalTelevisao").html()) +
+	  			parseFloat($("#gastoMensalMaquinaDeLavar").html()) +
+	  			parseFloat($("#gastoMensalChuveiro").html()) +
+	  			parseFloat($("#gastoMensalGeladeira").html()) +
+	  			parseFloat($("#gastoMensalComputador").html()) +
+	  			parseFloat($("#gastoMensalLampada").html()) +
+	  			parseFloat($("#gastoMensalFerro").html()) +
+	  			parseFloat($("#gastoMensalCelular").html())).toFixed(2));
+	  	});
 
 
-		function checkTableConta() {
-			var verificacaoLocal = true;
-			getInputValueConta();
-			for (var i = 0; i < respostasConta.length; i++) {
-				if (!(inputRespostasConta[i].val().replace(/,/g, '.') == respostasConta[i])) {
-					inputRespostasConta[i].css('background-color', 'red');
-					verificacaoLocal = false;
-					$("#alertConta").show();
-				}
-				else {
-					inputRespostasConta[i].css('background-color', '');
-				}
-			}
-			if (verificacaoLocal == true) {
-				$("#alertConta").show();
-				$("#alertConta").removeClass("alert-danger");
-				$("#alertConta").addClass("alert-success");
-				distribuicaoTarifa = true;
-				$("#iconSetaDireita").show();
-				$("#alertConta").html("Resposta correta! Prossiga para a próxima questão   <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>");
+
+	  	function getInputValueConta() {
+	  		inputRespostasConta =
+	  		[
+	  		$("#inputImpostos"),
+	  		$("#inputGeracao"),
+	  		$("#inputEncargos"),
+	  		$("#inputDistribuicao"),
+	  		$("#inputTransmissao"),
+	  		$("#inputGeracao")
+	  		];
+	  	}
+
+
+	  	function checkTableConta() {
+	  		var verificacaoLocal = true;
+	  		getInputValueConta();
+	  		for (var i = 0; i < respostasConta.length; i++) {
+	  			if (!(inputRespostasConta[i].val().replace(/,/g, '.') == respostasConta[i])) {
+	  				inputRespostasConta[i].css('background-color', 'red');
+	  				verificacaoLocal = false;
+	  				$("#alertConta").show();
+	  			}
+	  			else {
+	  				inputRespostasConta[i].css('background-color', '');
+	  			}
+	  		}
+	  		if (verificacaoLocal == true) {
+	  			$("#alertConta").show();
+	  			$("#alertConta").removeClass("alert-danger");
+	  			$("#alertConta").addClass("alert-success");
+	  			distribuicaoTarifa = true;
+	  			$("#iconSetaDireita").show();
+	  			$("#alertConta").html("Resposta correta! Prossiga para a próxima questão   <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>");
 
 				//Disable nos inputs
 				for (var i = 0; i < inputRespostasConta.length; i++) {
@@ -2518,12 +2488,15 @@
 	  			$("#sceneIntroCaminhos").fadeIn(fadeTime);
 	  			$("#iconSetaDireita").show();
 	  			break;
+
 	  			case 6:
 	  			$("#sceneCaminhosEnergia").fadeIn(fadeTime);
-	  			$("#iconSetaDireita").show();
-	  			contentSwitcher();
 	  			$("#iconMais").fadeIn(fadeTime);
-
+	  			if (jaViuTransmissao) {
+	  				$("#iconSetaDireita").show();
+	  			} else {
+	  				$("#iconSetaDireita").hide();
+	  			}
 	  			break;
 	  			case 7:
 	  			$("#sceneMatrizEnergetica").fadeIn(fadeTime);
@@ -2611,6 +2584,7 @@
 	  			case 6:
 	  			$("#sceneCaminhosEnergia").fadeOut(fadeTime);
 	  			transmissionBeingShown = 1;
+	  			loadTransmissionData();
 	  			$("#iconMais").fadeOut(fadeTime);
 
 	  			break;

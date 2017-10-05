@@ -34,16 +34,11 @@
 	},
 	"3": {
 		"tituloQuestao": "Qual a probabilidade da turbidez ser 0,7 ou 0,8 se escolhermos um mês de forma aleatória?",
-		"op1": "0,33",
-		"op2": "0,66",
-		"op3": "0,44",
-		"op4": "0,5",
-		"op5": "0,2",
 		"tabela": "tabela1"
 
 	},
 	"4": {
-		"tituloQuestao": "Qual a probabilidade do cloro residual livre ser maior que 1mg/L e menor que 1,1mg/L, se sortearmos um mês do ano da tabela acima?",
+		"tituloQuestao": "Qual a probabilidade do cloro residual livre ser maior ou igual a 1mg/L e menor que 1,1mg/L, se sortearmos um mês do ano da tabela acima?",
 		"op1": "5",
 		"op2": "0,05",
 		"op3": "0,5",
@@ -54,11 +49,6 @@
 	},
 	"5": {
 		"tituloQuestao": "Aproximadamente, qual a probabilidade entres os meses de abr/13 e set/13, da cor da água estar em 3 e o cloro residual acima de 1?",
-		"op1": "10%",
-		"op2": "16%",
-		"op3": "25%",
-		"op4": "33%",
-		"op5": "41%",
 		"tabela": "tabela1"
 
 	},
@@ -73,14 +63,10 @@
 	},
 	"7": {
 		"tituloQuestao": "Qual a probabilidade de uma amostra ser da Turbidez maior ou igual a 1UT",
-		"op1": "0,15",
-		"op2": "0,16",
-		"op3": "0,20",
-		"op4": "0,17",
-		"op5": "0,30"
+		"tabela": "tabela2"
 	},
 	"8": {
-		"tituloQuestao": "Qual a probabilidade de se obter um ponto em que o índice de cloretos está abaixo de 1mg/L e, ao mesmo tempo, com índice de turbidez maior que 1UT, se sortearmos uma amostra do manancial Rio Potiribú entre os 6 da tabela?",
+		"tituloQuestao": "Qual a probabilidade de se obter um ponto em que o índice de cloretos está abaixo de 1mg/L e, ao mesmo tempo, com índice de turbidez menor que 1UT, se sortearmos uma amostra do manancial Rio Potiribú entre os 6 da tabela?",
 		"op1": "0, ou seja, impossível",
 		"op2": "0,5",
 		"op3": "1, ou seja, evento garantido",
@@ -100,11 +86,6 @@
 	},
 	"10": {
 		"tituloQuestao": "Qual a probabilidade de se obter um ponto em que o índice de cloretos está abaixo de 5mg/L Cl e, ao mesmo tempo, com índice de turbidez menor que 10UT, se sortearmos uma amostra do manancial do Rio Potiribú entre os 6 da tabela?",
-		"op1": "0, ou seja, impossível",
-		"op2": "0,5",
-		"op3": "0,33",
-		"op4": "0,167",
-		"op5": "0,14",
 		"tabela": "tabela3"
 
 	},
@@ -119,48 +100,23 @@
 
 	},
 	"12": {
-		"tituloQuestao": "Qual a probabilidade de uma amostra, escolhida pro acaso entre as que constam na tabela, ter turbidez maior ou igual a 1UT?",
-		"op1": "0,20",
-		"op2": "0,80",
-		"op3": "0,25",
-		"op4": "0,13",
-		"op5": "0,30",
+		"tituloQuestao": "Qual a probabilidade de uma amostra, escolhida pro acaso entre as que constam na tabela, ter turbidez maior a 1UT?",
 		"tabela": "tabela2"
 	},
 	"13": {
 		"tituloQuestao": "Qual a probabilidade de uma amostra escolhida por acaso, entre as que constam na tabela, ter turbidez menor que 1UT?",
-		"op1": "0,20",
-		"op2": "0,80",
-		"op3": "0,16",
-		"op4": "0,25",
-		"op5": "0,30",
 		"tabela": "tabela2"
 	},
 	"14": {
 		"tituloQuestao": "Qual a probabilidade de uma amostra escolhida por acaso, entre as que constam na tabela, ter turbidez entre 0 e 2 UT",
-		"op1": "0,15",
-		"op2": "0,20",
-		"op3": "0,16",
-		"op4": "0,13",
-		"op5": "1",
 		"tabela": "tabela2"
 	},
 	"15": {
 		"tituloQuestao": "Qual a probabilidade de uma amostra escolhida por acaso, entre as que constam na tabela, ter turbidez maior que 2UT?",
-		"op1": "0",
-		"op2": "1",
-		"op3": "0,90",
-		"op4": "0,5",
-		"op5": "0,3",
 		"tabela": "tabela2"
 	},
 	"16": {
 		"tituloQuestao": "Qual a probabilidade de uma amostra escolhida por acaso, entre as que constam na tabela, ter turbidez menor que 2UT?",
-		"op1": "0,1",
-		"op2": "0,20",
-		"op3": "1",
-		"op4": "2",
-		"op5": "0,5",
 		"tabela": "tabela2"
 	},
 	"17": {
