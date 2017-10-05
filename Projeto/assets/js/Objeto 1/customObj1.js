@@ -2030,7 +2030,7 @@
 							name: 'Tributos: ICMS e PIS/COFINS',
 							y: 29.5
 						}, {
-							name: 'Parcela A: Compra de energia, Transmissão de energia, e Encargos Setoriais',
+							name: 'Parcela A: Compra, Transmissao e Encargos',
 							y: 53.5
 
 						}, {
@@ -2148,10 +2148,15 @@
 	  			chart: {
 	  				backgroundColor: 'rgba(0,0,0,0)',
 	  				type: 'pie',
-
+	  				style: {
+	  					color: "#FFFFFF"
+	  				}
 	  			},
 	  			title: {
-	  				text: 'Dados da Matriz Energética Brasileira'
+	  				text: 'Dados da Matriz Energética Brasileira',
+	  				style: {
+	  					color: "#FFFFFF"
+	  				}
 	  			},
 	  			tooltip: {
 	  				pointFormat: '{series.name}: <b>{point.y}</b>'
@@ -2165,6 +2170,7 @@
 	  						format: '{point.name}: {point.y}',
 	  						style: {
 	  							textOutline: false,
+	  							color: "#FFFFFF"
 	  						}
 	  					}
 	  				}

@@ -16,6 +16,8 @@
 
 <script type="text/javascript">
 
+console.log('inicio-questoes.html');
+
 $("#iconSetaEsquerda").show();
 $("#iconSetaDireita").show();
 $("#iconAjuda").hide();
@@ -33,10 +35,10 @@ iconAjuda.addEventListener("click", function() {
 	ajuda();
 });
 
-let posIndex = 0;
+let posIndexInicioQuestoes = 0;
 function anterior() {
 
-	switch (posIndex) {
+	switch (posIndexInicioQuestoes) {
 
 		default:
 		case 0:
@@ -48,20 +50,20 @@ function anterior() {
 			let imgFundo = document.querySelector('#img-fundo');
 			imgFundo.src = 'assets/img/inicio-questoes-1.jpg';
 
-			posIndex--;
+			posIndexInicioQuestoes--;
 			break;
 
 	}
 }
 
 function proxima() {
-	switch (posIndex) {
+	switch (posIndexInicioQuestoes) {
 
 		case 0:
 			let imgFundo = document.querySelector('#img-fundo');
 			imgFundo.src = 'assets/img/inicio-questoes-2.jpg';
 
-			posIndex++;
+			posIndexInicioQuestoes++;
 			break;
 
 		default:
@@ -83,11 +85,7 @@ function proxima() {
 	}
 }
 
-let msgAjuda = '';
 function ajuda() {
-	if (msgAjuda) {
-		swal(msgAjuda);
-	}
 }
 
 </script>

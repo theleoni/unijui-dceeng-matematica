@@ -1,0 +1,262 @@
+<div class="geral-interno">
+	<img id='img-fundo' class="fundo" src="assets/img/variancia-1.png"/>
+
+	<div class='explicacoes container oculto muito-mais-top'>
+		<div class="tabela">
+			<table class="table text-center">
+				<tr>
+					<th>Grandes Regiões</th>
+					<th>Municípios com serviço de coleta seletiva de papel e/ou papelão</th>
+				</tr>
+				<tr>
+					<th>Brasil</th>
+					<th>980</th>
+				</tr>
+				<tr>
+					<td>Norte</td>
+					<td>20</td>
+				</tr>
+				<tr>
+					<td>Nordeste</td>
+					<td>73</td>
+				</tr>
+				<tr>
+					<td>Sudeste</td>
+					<td>403</td>
+				</tr>
+				<tr>
+					<td>Sul</td>
+					<td>453</td>
+				</tr>
+				<tr>
+					<td>Centro-Oeste</td>
+					<td>31</td>
+				</tr>
+				<tr class="total">
+					<td>Variância</td>
+					<td>36.445,6</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="formulas muito-mais-top">
+
+			<h4><b>1º Média Aritmética: </b></h4>
+			<div class="text-center">
+				<img src="assets/img/variancia-formula-3.jpg">
+			</div>
+
+			<h4 class="mais-top"><b>2º Variância: </b> média dos quadrados dos desvios (desvio é cada um dos valores menos a média)</h4>
+
+		</div>
+
+		<div class="dados muito-mais-top">
+			<div class="tabela">
+				<table class="table text-center">
+					<tr>
+						<th>Xi (valores)</th>
+						<th>X&#772; (média)</th>
+						<th>(Xi - X&#772;) (valor - média)</th>
+						<th>(Xi - X&#772;)²</th>
+					</tr>
+					<tr>
+						<td><span class="preenchimento-a">20</span></td>
+						<td><span class="preenchimento-b">196</span></td>
+						<td><span class="preenchimento-a">20</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">-176</span></td>
+						<td><span class="preenchimento-d">30.976</span></td>
+					</tr>
+					<tr>
+						<td><span class="preenchimento-a">73</span></td>
+						<td><span class="preenchimento-b">196</span></td>
+						<td><span class="preenchimento-a">73</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">-123</span></td>
+						<td><span class="preenchimento-d">15.129</span></td>
+					</tr>
+					<tr>
+						<td><span class="preenchimento-a">403</span></td>
+						<td><span class="preenchimento-b">196</span></td>
+						<td><span class="preenchimento-a">403</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">207</span></td>
+						<td><span class="preenchimento-d">42.849</span></td>
+					</tr>
+					<tr>
+						<td><span class="preenchimento-a">453</span></td>
+						<td><span class="preenchimento-b">196</span></td>
+						<td><span class="preenchimento-a">453</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">257</span></td>
+						<td><span class="preenchimento-d">66.049</span></td>
+					</tr>
+					<tr>
+						<td><span class="preenchimento-a">31</span></td>
+						<td><span class="preenchimento-b">196</span></td>
+						<td><span class="preenchimento-a">31</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">-165</span></td>
+						<td><span class="preenchimento-d">27.225</span></td>
+					</tr>
+					<tr class="total">
+						<td colspan="2"></td>
+						<td>Soma=</td>
+						<td>182.228</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="text-center muito-mais-top">
+			<img src="assets/img/variancia-formula-1.jpg">
+		</div>
+
+	</div>
+
+	<div class='explicacoes-quadrado container oculto muito-mais-top'>
+		<h2><b>Variância - S²</b></h2>
+		<h4>A variância é uma medida que tem pouco utilidade como estatística descritiva, porém é extremamente importante na inferência e em combinações de amostras.</h4>
+		<h4 class="mais-top">A <b>variância</b> é calculada da seguinte forma:</h4>
+		<h4>O cálculo é igual ao somatório dos quadrados das diferenças entre cada valor e a média aritmética, dividido pelo número de valores:</h4>
+
+	</div>
+
+	<div class="mensagens">
+	</div>
+</div>
+
+<style media="screen">
+
+.geral-interno {
+	position: relative;
+}
+
+.fundo {
+	width: auto;
+	max-width: 100%;
+}
+
+.tabela th {
+	text-align: center;
+}
+
+.tabela th, .tabela .total {
+	background-color: #F9F1F1;
+}
+
+.tabela .total {
+	color: #FF3C3C;
+	font-weight: bold;
+}
+
+.preenchimento-a {
+	color: #43D07B;
+}
+
+.preenchimento-b {
+	color: #3196C2;
+}
+
+.preenchimento-c {
+	color: #7849C6;
+}
+
+.preenchimento-d {
+	color: #CD8B32;
+}
+
+.explicacoes img {
+	width: 80%;
+}
+
+.vertical-centro {
+	vertical-align: center;
+	display: inline-block;
+}
+
+</style>
+
+<script type="text/javascript">
+
+console.log('variancia.html');
+
+$("#iconSetaEsquerda").show();
+$("#iconSetaDireita").show();
+$("#iconAjuda").hide();
+$("#iconCalculadora").hide();
+
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
+
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
+
+iconAjuda.addEventListener("click", function() {
+	ajuda();
+});
+
+let posIndexVariancia = 0;
+function anterior() {
+
+	switch (posIndexVariancia) {
+
+		default:
+		case 0:
+			carregarParte('questao-2.html');
+			break;
+
+		case 1:
+			let imgFundo = document.querySelector('#img-fundo');
+			imgFundo.src = 'assets/img/variancia-1.png';
+
+			posIndexVariancia--;
+			break;
+
+		case 2:
+			document.querySelector('#img-fundo').classList.remove('oculto');
+			document.querySelector(".explicacoes").classList.add('oculto');
+
+			posIndexVariancia--;
+			break;
+
+		case 3:
+		document.querySelector('.explicacoes').classList.remove('oculto');
+		document.querySelector(".explicacoes-quadrado").classList.add('oculto');
+
+			posIndexVariancia--;
+			break;
+	}
+}
+
+function proxima() {
+	switch (posIndexVariancia) {
+
+		case 0:
+			let imgFundo = document.querySelector('#img-fundo');
+			imgFundo.src = 'assets/img/variancia-2.png';
+
+			posIndexVariancia++;
+			break;
+
+		case 1:
+			document.querySelector('#img-fundo').classList.add('oculto');
+			document.querySelector(".explicacoes").classList.remove('oculto');
+
+			posIndexVariancia++;
+			break;
+
+		case 2:
+			document.querySelector('.explicacoes').classList.add('oculto');
+			document.querySelector(".explicacoes-quadrado").classList.remove('oculto');
+
+			posIndexVariancia++;
+			break;
+
+		default:
+		case 3:
+			// carregarParte('media-quadratica-dados-agrupados.html');
+			break;
+	}
+}
+
+let msgAjudaVariancia = '';
+function ajuda() {
+	if (msgAjudaVariancia) {
+		swal(msgAjudaVariancia);
+	}
+}
+
+</script>
