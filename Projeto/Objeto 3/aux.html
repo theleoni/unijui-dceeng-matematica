@@ -15,7 +15,7 @@
 	<!-- <link rel="stylesheet" type="text/css" href="assets/css/botoesFixos.css"> -->
 	<script src="assets/js/sweetalert.min.js"></script>
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -47,6 +47,7 @@
 				<button type="button" class="btn butonlousso" onclick="carregarParte('media-quadratica-dados-agrupados.html');">M.Q. Agrupados</button>
 				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-2.html');">Questão 2</button>
 				<button type="button" class="btn butonlousso" onclick="carregarParte('variancia.html');">Variância</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-3.html');">Questão 3</button>
 			</div>
 		</center>
 
@@ -140,9 +141,18 @@
 		iconCalculadora = divBotoesFixos.querySelector('#iconCalculadora');
 	}
 
+	function apenasNumeros(input) {
+
+		input.addEventListener('input', function(evt) {
+
+			this.value = this.value.replace(/[^0-9,]/g, '');
+			this.value = this.value.replace(/(\..*)\./g, '$1');
+		});
+	}
+
 	</script>
 
-	<script src='http://localhost:35729/livereload.js'></script>
+	<script src='http://localhost:35165/livereload.js'></script>
 
 </body>
 </html>

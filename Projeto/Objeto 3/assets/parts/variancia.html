@@ -48,8 +48,14 @@
 
 			<h4 class="mais-top"><b>2º Variância: </b> média dos quadrados dos desvios (desvio é cada um dos valores menos a média)</h4>
 
+			<div class="text-center">
+				<img src="assets/img/variancia-formula-2.jpg">
+			</div>
+
 		</div>
 
+
+		<h4>Podemos organizar os dados em uma tabela, da seguinte forma.</h4>
 		<div class="dados muito-mais-top">
 			<div class="tabela">
 				<table class="table text-center">
@@ -98,18 +104,25 @@
 			</div>
 		</div>
 
-		<div class="text-center muito-mais-top">
+		<div class="text-center muito-mais-top muitissimo-mais-bottom">
 			<img src="assets/img/variancia-formula-1.jpg">
 		</div>
 
 	</div>
 
 	<div class='explicacoes-quadrado container oculto muito-mais-top'>
-		<h2><b>Variância - S²</b></h2>
-		<h4>A variância é uma medida que tem pouco utilidade como estatística descritiva, porém é extremamente importante na inferência e em combinações de amostras.</h4>
-		<h4 class="mais-top">A <b>variância</b> é calculada da seguinte forma:</h4>
+		<h2 class="text-center muito-mais-bottom"><b>Variância - S²</b></h2>
+		<h4><span class='tab'/><span class='tab'/>A variância é uma medida que tem pouco utilidade como estatística descritiva, porém é extremamente importante na inferência e em combinações de amostras.</h4>
+		<h4 class="muito-mais-top"><span class='tab'/><span class='tab'/>A <b>variância</b> é calculada da seguinte forma:</h4>
 		<h4>O cálculo é igual ao somatório dos quadrados das diferenças entre cada valor e a média aritmética, dividido pelo número de valores:</h4>
-
+		<div class="text-center mais-top">
+			<img src="assets/img/variancia-formula-4.jpg">
+		</div>
+		<h4>Se indicarmos a Variância por S² e a média por x&#772;, então:</h4>
+		<div class="text-center mais-top">
+			<img src="assets/img/variancia-formula-5.jpg">
+		</div>
+		<h4>O símbolo &#x2211; significa o somatório da expressão indicada após esse símbolo, para cada um dos valores de Xi. Os valores do índice i são: 1, 2, 3, ..., n.</h4>
 	</div>
 
 	<div class="mensagens">
@@ -154,10 +167,6 @@
 
 .preenchimento-d {
 	color: #CD8B32;
-}
-
-.explicacoes img {
-	width: 80%;
 }
 
 .vertical-centro {
@@ -213,8 +222,8 @@ function anterior() {
 			break;
 
 		case 3:
-		document.querySelector('.explicacoes').classList.remove('oculto');
-		document.querySelector(".explicacoes-quadrado").classList.add('oculto');
+			document.querySelector('.explicacoes').classList.remove('oculto');
+			document.querySelector(".explicacoes-quadrado").classList.add('oculto');
 
 			posIndexVariancia--;
 			break;
@@ -247,16 +256,12 @@ function proxima() {
 
 		default:
 		case 3:
-			// carregarParte('media-quadratica-dados-agrupados.html');
+			carregarParte('questao-3.html');
 			break;
 	}
 }
 
-let msgAjudaVariancia = '';
 function ajuda() {
-	if (msgAjudaVariancia) {
-		swal(msgAjudaVariancia);
-	}
 }
 
 </script>
