@@ -53,7 +53,7 @@
 
 	},
 	"6": {
-		"tituloQuestao": "Qual a probabilidade de uma amostra ser da Turbidez 0,9UT?",
+		"tituloQuestao": "Qual a probabilidade de uma amostra ter Turbidez 0,9UT?",
 		"op1": "0,14",
 		"op2": "0,15",
 		"op3": "0,16",
