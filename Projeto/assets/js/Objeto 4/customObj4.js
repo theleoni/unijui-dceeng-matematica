@@ -912,6 +912,10 @@ function checkIfStuck() {
 
 			case 22:
 			$("#telaAgradecimento").show();
+			showUpperIcons();
+			changeTitle(" ");
+			$("#iconMais").hide();
+
 			break;
 		}
 	}
