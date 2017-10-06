@@ -129,7 +129,7 @@
 		"tabela": "tabela4"
 	},
 	"18": {
-		"tituloQuestao": "De acordo com as informações acima sobre cloro residual livre e o número de amostras do intervalo, estaria correto afirmar que:<br><br>I - A probabilidade de não termos bactérias heterotróficas no intervalo 1,46 a 1,56 é de 30%<br>II - A probabilidade de termos bactérias heterotróficas no intervalo 10,6 a 1,26 é de 0%<br>III - Temos um total de 5 amostras no intervalo 1,26 a 1,46<br>IV - a probabilidade de termos bactéricas heterotróficas no intervalo 0,86 a 1,06 é de 100%.<br><br>Marque a alternativa correta com relação às afirmações acima:",
+		"tituloQuestao": "De acordo com as informações acima sobre cloro residual livre e o número de amostras do intervalo, estaria correto afirmar que:<br><br>I - A probabilidade de não termos bactérias heterotróficas no intervalo 1,46 a 1,56 é de 30%<br>II - A probabilidade de termos bactérias heterotróficas no intervalo 1,06 a 1,26 é de 0%<br>III - Temos um total de 5 amostras no intervalo 1,26 a 1,46<br>IV - a probabilidade de termos bactéricas heterotróficas no intervalo 0,86 a 1,06 é de 100%.<br><br>Marque a alternativa correta com relação às afirmações acima:",
 		"op1": "Apenas I e III são verdadeiras",
 		"op2": "Apenas II é verdadeira",
 		"op3": "Apenas II, III e IV são verdadeiras",

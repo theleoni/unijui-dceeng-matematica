@@ -16,6 +16,9 @@
 	<!-- SweetAlerts -->
 	<script src="../assets/js/Misc/sweetalert2.min.js"></script>
 
+	<!-- jQuery UI -->
+	<script src="../assets/jquery-ui/jquery-ui.min.js"></script>
+
 	<!-- HighCharts -->
 	<script src="../assets/highcharts/code/highcharts.js"> </script>
 
@@ -40,14 +43,14 @@
 
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
-    		<div class="navbar-header">
-    			<a href= "#" > <img class="positionLeft imagemLogoResponsivaNavbar" src="../assets/img/logo_ministerio_educacao.png" height="80%"></a>
+			<div class="navbar-header">
+				<a href= "#" > <img class="positionLeft imagemLogoResponsivaNavbar" src="../assets/img/logo_ministerio_educacao.png" height="80%"></a>
 				<div id="title" class="positionCenter textTitle">
 					A ESTATÍSTICA E CONSUMO DE ENERGIA ELÉTRICA
 				</div>
-	      		<ul class="nav navbar-nav"><a href="#"><img class="positionRight imagemUnijuiResponsivaNavbar" src="../assets/img/novo_logo_unijui.png" height="80%"></a></ul>
-	    	</div>
-	   </div>
+				<ul class="nav navbar-nav"><a href="#"><img class="positionRight imagemUnijuiResponsivaNavbar" src="../assets/img/novo_logo_unijui.png" height="80%"></a></ul>
+			</div>
+		</div>
 	</nav>
 
 	<div class="row">
@@ -67,16 +70,16 @@
 			</div>
 			<div class="col-xs-1" id="iconFechar">
 				<span title="Sair" class="iconFixoFechar glyphicon glyphicon glyphicon-remove-circle"> </span>
-				</a>
-			</div>
-			<div id="iconSetaEsquerda">
-				<span title="Voltar" class="iconFixoSetaEsquerda glyphicon glyphicon glyphicon-arrow-left"> </span>
-			</div>
-			<div id="iconSetaDireita">
-				<span title="Avançar" class="iconFixoSetaDireita glyphicon glyphicon glyphicon-arrow-right"> </span>
-			</div>
+			</a>
+		</div>
+		<div id="iconSetaEsquerda">
+			<span title="Voltar" class="iconFixoSetaEsquerda glyphicon glyphicon glyphicon-arrow-left"> </span>
+		</div>
+		<div id="iconSetaDireita">
+			<span title="Avançar" class="iconFixoSetaDireita glyphicon glyphicon glyphicon-arrow-right"> </span>
 		</div>
 	</div>
+</div>
 
 
 <div id="geral" class="container-fluid">
@@ -141,7 +144,7 @@
 			</div>
 			<div class="col-xs-2">
 				<div class="imagemPlaneta">
-						<img class="imagemPlanetaIntroGeral" id="imagemPlanetasceneIntroGeral" src="../assets/img/Objeto 1/planeta.png">
+					<img class="imagemPlanetaIntroGeral" id="imagemPlanetasceneIntroGeral" src="../assets/img/Objeto 1/planeta.png">
 				</div>
 			</div>
 		</div>
@@ -160,47 +163,47 @@
 			</div>
 		</div>
 
-			<div id="additionalSceneTiposUsinas">
-				<div class="row" style="height:40%">
+		<div id="additionalSceneTiposUsinas">
+			<div class="row" style="height:40%">
 
-					<div class="col-xs-2">
-						<div>
-							<img onclick="showMoreInfo('hidreletrica')" class="imagemUsinasGeral img-responsive" title="Usina Hidrelétrica" src="../assets/img/Objeto 1/hidreletrica.png">
-						</div>
-					</div>
-					<div class="col-xs-2">
-						<div id="imagemEolicaSceneTiposUsinas">
-							<img onclick="showMoreInfo('eolica')" class="imagemUsinasGeral img-responsive"  title="Usina Eólica" src="../assets/img/Objeto 1/eolica.png">
-						</div>
-					</div>
-					<div class="col-xs-2">
-						<div id="imagemFossilSceneTiposUsinas">
-							<img onclick="showMoreInfo('fossil')"  class="imagemUsinasGeral img-responsive"  title="Energia Fóssil" src="../assets/img/Objeto 1/fossil.png">
-						</div>
-					</div>
-					<div class="col-xs-2" style="margin-top: 5vh;">
-						<p id="sceneTiposUsinasText1" class="sceneTiposUsinasText1"> Interaja com os elementos para conhecer mais sobre os meios de produção de energia elétrica </p>
-						<div id="sceneTiposUsinasBubble1"> <img class="sceneTiposUsinasBubble1" src="../assets/img/Objeto 1/bubble1.png"> </div>
+				<div class="col-xs-2">
+					<div>
+						<img onclick="showMoreInfo('hidreletrica')" class="imagemUsinasGeral img-responsive" title="Usina Hidrelétrica" src="../assets/img/Objeto 1/hidreletrica.png">
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-xs-2">
-						<div id="imagemNuclearSceneTiposUsinas" >
-							<img onclick="showMoreInfo('nuclear')"  class="imagemUsinasGeral img-responsive" title="Usina Nuclear" src="../assets/img/Objeto 1/nuclear.png">
-						</div>
-					</div>
-					<div class="col-xs-2">
-						<div id="imagemSolarSceneTiposUsinas">
-							<img onclick="showMoreInfo('solar')"  class="imagemUsinasGeral img-responsive"  title="Usina Solar" src="../assets/img/Objeto 1/solar.png">
-						</div>
-					</div>
-					<div class="col-xs-2">
-						<div id="imagemBiomassaSceneTiposUsinas">
-							<img onclick="showMoreInfo('biomassa')"  class="imagemUsinasGeral img-responsive"  title="Usina de Biomassa" src="../assets/img/Objeto 1/biomassa.png">
-						</div>
-					</div>
+				<div class="col-xs-2">
+					<div id="imagemEolicaSceneTiposUsinas">
+						<img onclick="showMoreInfo('eolica')" class="imagemUsinasGeral img-responsive"  title="Usina Eólica" src="../assets/img/Objeto 1/eolica.png">
 					</div>
 				</div>
+				<div class="col-xs-2">
+					<div id="imagemFossilSceneTiposUsinas">
+						<img onclick="showMoreInfo('fossil')"  class="imagemUsinasGeral img-responsive"  title="Energia Fóssil" src="../assets/img/Objeto 1/fossil.png">
+					</div>
+				</div>
+				<div class="col-xs-2" style="margin-top: 5vh;">
+					<p id="sceneTiposUsinasText1" class="sceneTiposUsinasText1"> Interaja com os elementos para conhecer mais sobre os meios de produção de energia elétrica </p>
+					<div id="sceneTiposUsinasBubble1"> <img class="sceneTiposUsinasBubble1" src="../assets/img/Objeto 1/bubble1.png"> </div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="imagemNuclearSceneTiposUsinas" >
+						<img onclick="showMoreInfo('nuclear')"  class="imagemUsinasGeral img-responsive" title="Usina Nuclear" src="../assets/img/Objeto 1/nuclear.png">
+					</div>
+				</div>
+				<div class="col-xs-2">
+					<div id="imagemSolarSceneTiposUsinas">
+						<img onclick="showMoreInfo('solar')"  class="imagemUsinasGeral img-responsive"  title="Usina Solar" src="../assets/img/Objeto 1/solar.png">
+					</div>
+				</div>
+				<div class="col-xs-2">
+					<div id="imagemBiomassaSceneTiposUsinas">
+						<img onclick="showMoreInfo('biomassa')"  class="imagemUsinasGeral img-responsive"  title="Usina de Biomassa" src="../assets/img/Objeto 1/biomassa.png">
+					</div>
+				</div>
+			</div>
+		</div>
 
 
 
@@ -211,706 +214,706 @@
 					<div id="sceneTiposUsinasSub2" class="sceneTiposUsinasSub2"> </div>
 					<div class="col-xs-4">
 						<div id="animacaoUsina"> <video autoplay loop class="animacaoUsina img-responsive" id="imgUsina"> </div>
-					</div>
-					<div class="col-xs-8" style="z-index:3">
-						<p id="tituloUsina" class="tituloUsina">  </p>
-						<p id="textoUsina" class="textoUsina">  </p>
-						<img id="imgDetalhesSceneTiposUsinas" class="img-responsive imagemDetalheUsinas">
-
-						<div id="imagemFecharUsinas">
-							<span title="Fechar" id="imagemFecharUsinas" onclick="restoresceneTiposUsinas()" class="iconFecharUsinas glyphicon glyphicon-remove-circle">
 						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+						<div class="col-xs-8" style="z-index:3">
+							<p id="tituloUsina" class="tituloUsina">  </p>
+							<p id="textoUsina" class="textoUsina">  </p>
+							<img id="imgDetalhesSceneTiposUsinas" class="img-responsive imagemDetalheUsinas">
 
-
-	<div id="sceneImpostos">
-			<div class="row marginImposto paddingLeftImposto">
-				<div id="imagensImpostos">
-					<div class="col-xs-4 noPadding">
-						<div class="noPadding col-xs-4"> <img onclick="showImposto('icms')" class="imagensImpostos" src="../assets/img/Objeto 1/ICMS.png"> </div>
-						<div class="noPadding col-xs-4"> <img onclick="showImposto('tusd')" class="imagensImpostos" src="../assets/img/Objeto 1/TUSD.png"> </div>
-						<div class="noPadding col-xs-4"> <img onclick="showImposto('cofins')" class="imagensImpostos" src="../assets/img/Objeto 1/COFINS.png"> </div>
-					</div>
-					<div class="col-xs-4 noPadding">
-						<div class="noPadding col-xs-4"> <img onclick="showImposto('cip')" class="imagensImpostos" src="../assets/img/Objeto 1/CIP.png"> </div>
-						<div class="noPadding col-xs-4"> <img onclick="showImposto('pispasep')" class="imagensImpostos" src="../assets/img/Objeto 1/PISPASEP.png"> </div>
-						<div class="noPadding col-xs-4"> <img onclick="showImposto('tust')" class="imagensImpostos" src="../assets/img/Objeto 1/TUST.png"></div>
-					</div>
-				</div>
-				<div class="col-xs-1">
-					<div id="sceneImpostosBubble1"> <img class="sceneImpostosBubble1"src="../assets/img/Objeto 1/bubble2.png"> </div>
-					<p id="sceneImpostosText1" class="sceneImpostosText1"> Interaja com os elementos para conhecer mais sobre os impostos da tarifa de energia elétrica </p>
-				</div>
-				<div class="col-xs-3">
-					<div id="imagemEngenheiro3">
-						<img class="imagemEngenheiroImpostos"   src="../assets/img/Objeto 1/engenheiro_esquerda.png">
-					</div>
-				</div>
-				<div id="containerImposto" class="col-xs-8 containerImposto textoImposto"></div>
-
-			</div>
-
-	</div>
-
-
-	<div id="sceneIntroGraficos">
-		<div class="row">
-			<div class="col-xs-offset-2 col-xs-6">
-				<div id="sceneIntroGraficosBubble1"> <img class="sceneIntroGraficosBubble1" src="../assets/img/Objeto 1/bubble1.png"> </div>
-				<p id="sceneIntroGraficosText1" class="sceneIntroGraficosText1"> Agora que você já sabe um pouco sobre a produção da eletricidade, vamos analisar, interpretar e responder algumas questões a partir de diferentes tipos de gráficos, referentes ao consumo de energia. </p>
-			</div>
-			<div class="col-xs-4">
-				<div id="imagemEngenheirosceneIntroGraficos" >
-					<img class="imagemEngenheiroIntroGraficos img-responsive"   src="../assets/img/Objeto 1/engenheiro_esquerda.png">
-				</div>
-			</div>
-			<div id="imagensIntroGraficos">
-				<div class="col-xs-offset-1 col-xs-1">
-					<img id="sceneIntroGraficosImg1" class="imagenssceneIntroGraficos img-responsive" src="../assets/img/Objeto 1/imagem1CenaIntroGraficos.png">
-				</div>
-				<div class="col-xs-offset-1 col-xs-1">
-					<img id="sceneIntroGraficosImg2" class="imagenssceneIntroGraficos img-responsive" src="../assets/img/Objeto 1/imagem2CenaIntroGraficos.png">
-				</div>
-				<div class="col-xs-offset-1 col-xs-1">
-					<img id="sceneIntroGraficosImg3" class="imagenssceneIntroGraficos img-responsive" src="../assets/img/Objeto 1/imagem3CenaIntroGraficos.png">
-
-				</div>
-
-				<div class="col-xs-offset-1 col-xs-1">
-					<img id="sceneIntroGraficosImg4" class="imagenssceneIntroGraficos img-responsive" src="../assets/img/Objeto 1/imagem4CenaIntroGraficos.png">
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="sceneQuestoesGraficos">
-		<div class="row">
-			<div class="col-xs-6">
-				<div id="sceneIntroGraficosQuestionContainer">
-					<span id="sceneIntroGraficosQuestionNumber" class="questionNumber"></span>
-					<span id="sceneIntroGraficosQuestion" class="questionText"></span>
-				</div>
-				<div class="row">
-
-					<div class="col-xs-7">
-						<button id="opcaoA" type="button" class="btn btn-block btn-secondary btn-questoes"> </button>
-						<button id="opcaoB" type="button" class="btn btn-block btn-secondary btn-questoes"> </button>
-						<button id="opcaoC" type="button" class="btn btn-block btn-secondary btn-questoes"> </button>
-						<button id="opcaoD" type="button" class="btn btn-block btn-secondary btn-questoes"> </button>
-
-
-
-						<div id="questionGroup" >
- 								<button type="button" id="botaoJaneiro" class="btn btn-questoes">Janeiro</button>
-  								<button type="button" id="botaoFevereiro" class="btn btn-questoes">Fevereiro</button>
- 								<button type="button" id="botaoMarco" class="btn btn-questoes">Março</button>
- 								<button type="button" id="botaoAbril" class="btn btn-questoes">Abril</button>
- 								<button type="button" id="botaoMaio" class="btn btn-questoes">Maio</button>
-  								<button type="button" id="botaoJunho" class="btn btn-questoes">Junho</button>
- 								<button type="button" id="botaoJulho" class="btn btn-questoes">Julho</button>
- 								<button type="button" id="botaoAgosto" class="btn btn-questoes">Agosto</button>
-  								<button type="button" id="botaoSetembro" class="btn btn-questoes">Setembro</button>
- 								<button type="button" id="botaoOutubro" class="btn btn-questoes">Outubro</button>
- 								<button type="button" id="botaoNovembro" class="btn btn-questoes">Novembro</button>
-  								<button type="button" id="botaoDezembro" class="btn btn-questoes">Dezembro</button>
-						</div>
-
-
-						<div id="inputRespostasceneQuestoesGraficos" class="input-group">
-							<input id="inputNumbersceneQuestoesGraficos" type="number" class="form-control" min="0" max="100" step="0.01">
-								<span class="input-group-addon">%</span>
-						</div>
-
-						<div id="tabelaQuestoesGraficos">
-							<table class="table table-responsive table-bordered tableDadosQuestao10">
-							    <thead>
-							      <tr>
-							        <th>Aparelho</th>
-							        <th>Potência</th>
-							      </tr>
-							    </thead>
-
-							    <tbody>
-							      <tr>
-							        <td>Celular</td>
-							        <td>7W</td>
-
-							      </tr>
-							      <tr>
-							        <td>Impressora</td>
-							        <td><input id="inputPotenciaImpressora" type="text"> W</td>
-							      </tr>
-							      <tr>
-							        <td>Lâmpada</td>
-							        <td><input id="inputPotenciaLampada" type="text">W</td>
-							      </tr>
-							      <tr>
-							        <td>Televisor 21'</td>
-							        <td><input id="inputPotenciaTelevisor" type="text">W</td>
-							      </tr>
-							      <tr>
-							        <td>Ventilador</td>
-							        <td>100W</td>
-							      </tr>
-							    </tbody>
-						  	</table>
-						</div>
-
-
-						<button id="enviarResposta" type="button" class="btn btn-block btn-info btn-enviar"> Confirmar resposta </button>
-
-						<div id="alertAnswer" class="alert">	</div>
-
-					</div>
-
-
-				</div>
-			</div>
-			<div class="col-xs-6">
-				<div id="sceneQuestoesGraph">
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="sceneIntroCaminhos">
-		<div class="row">
-			<div class="col-xs-offset-2 col-xs-6">
-				<div id="sceneIntroCaminhosBubble1"> <img class="sceneIntroCaminhosBubble1" src="../assets/img/Objeto 1/bubble1.png"> </div>
-				<p id="sceneIntroCaminhosText1" class="sceneIntroCaminhosText1"> O infográfico a seguir irá mostrar os caminhos que a energia elétrica leva, partindo da usina geradora até chegar à sua casa. </p>
-			</div>
-			<div class="col-xs-4">
-				<div id="imagemEngenheirosceneIntroCaminhos" >
-					<img class="imagemEngenheiroIntroCaminhos img-responsive"   src="../assets/img/Objeto 1/engenheiro_esquerda.png">
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-	<div id="sceneCaminhosEnergia">
-		<div class="row">
-			<center><p id="titleCaminho" class="titleCaminho"> Geração </p></center>
-		</div>
-		<div class="row">
-			<div class="col-xs-offset-3 col-xs-1">
-				<span title="Voltar" id="setaTransmissaoEsquerda" class="setaTransmissao glyphicon glyphicon glyphicon-arrow-left"> </span>
-			</div>
-			<div class="col-xs-4">
-				<center>
-					<img id="imgCirculo" class="imagemCircular img-circular-responsive" src="../assets/img/Objeto 1/circular1.gif">
-					<p id="textosceneCaminhosEnergia" class="textosceneCaminhosEnergia"> A energia elétrica pode ser gerada de diversas formas, mas a principio, no Brasil, a principal geração de energia é através de hidrelétricas. Assim na geração, em que o gerador é entrado em movimento para a produção de energia, ela é gerada a uma voltagem de aproximadamente de 15.000V. </p>
-				</center>
-			</div>
-			<div class="col-xs-1">
-				<span title="Avançar" id="setaTransmissaoDireita" class="setaTransmissao glyphicon glyphicon glyphicon-arrow-right"> </span>
-			</div>
-
-		</div>
-	</div>
-
-
-	<div id="sceneMatrizEnergetica">
-		<div class="row">
-			<div class="col-xs-4">
-				<p id="titleMatrizEnergetica" class="titleMatrizEnergetica"> Conhecendo os dados sobre a Matriz Energética Brasileira </p>
-				<p id="textoMatrizEnergetica" class="textoMatrizEnergetica"> Segundo dados da ANEEL (Agência Nacional de Energia Elétrica), cerca de 94,89% da energia elétrica consumida é produzida no Brasil, e o restante é importada dos países vizinhos (Paraguai, Argentina, Venezuela e Uruguai). Esta produção advém de usinas do tipo: hidrelétricas, solar, eólica, nuclear, fóssil e biomassa. Existem 534 usinas que produzem energia de origem biomassa, estas são responsáveis por aproximadamente 8,86% da energia consumida, 1251 de origem hídrica responsáveiss por 61,34% da energia consumida, 42 de origem solar responsáveis por 0,01% da energia consumida, 2 de origem nuclear responsáveis por 1,24% da energia consumida, 418 de origem eólica responsáveis por 6,58% da energia consumida, 2412 de origem fóssivel responsáveis por 16.86% da energia consumida </p>
-			</div>
-			<div class="col-xs-8">
-				<div class="col-xs-12">
-				<div id="fundoMatrizEnergetica" class="fundoMatrizEnergetica">
-					<div class="col-xs-6">
-					<div id="tabelaMatrizEnergetica" class="divTabelaMatrizEnergetica">
-						<table class="table table-responsive table-bordered tableDadosMatrizEnergetica">
-						    <thead>
-						      <tr>
-						        <th>Origem</th>
-						        <th>Nº de Usinas</th>
-						        <th>Produção em kW</th>
-						        <th>% do consumo</th>
-						      </tr>
-						    </thead>
-
-						    <tbody>
-						      <tr>
-						        <td>Biomassa</td>
-						        <td>534</td>
-						        <td id="producaoBiomassaTabela">40.789.632</td>
-						        <td><input id="inputConsumoUsinasBiomassa" type="text" class="form-control"></td>
-						      </tr>
-						      <tr>
-						        <td>Hidrelétrica</td>
-						        <td><input id="inputNumeroUsinasHidrica" type="text" class="form-control" ></td>
-						        <td id="producaoHidreletricaTabela">282.396.846</td>
-						        <td>61,34</td>
-						      </tr>
-						      <tr>
-						        <td>Solar</td>
-						        <td>42</td>
-						        <td id="producaoSolarTabela">46.038</td>
-						        <td><input id="inputConsumoUsinasSolar" type="text" class="form-control"></td>
-						      </tr>
-						      <tr>
-						        <td>Nuclear</td>
-						        <td><input id="inputNumeroUsinasNuclear" type="text" class="form-control" ></td>
-						        <td id="producaoNuclearTabela">5.708.707</td>
-						        <td>1,24</td>
-						      </tr>
-						      <tr>
-						        <td>Eólica</td>
-						        <td>418</td>
-						        <td id="producaoEolicaTabela">30.282.978</td>
-						        <td>6,58</td>
-						      </tr>
-						      <tr>
-						        <td>Fóssil</td>
-						        <td><input id="inputNumeroUsinasFossil" type="text" class="form-control" ></td>
-						        <td id="producaoFossilTabela">77.620.000</td>
-						        <td>16,86</td>
-						      </tr>
-						      <tr>
-						        <td>Importação</td>
-						        <td>---</td>
-						        <td id="producaoImportacaoTabela">23.525.398</td>
-						        <td><input id="inputConsumoImportacao" type="text" class="form-control"></td>
-
-						      </tr>
-
-						      <tr>
-						      <td>Total </td>
-						      <td>---</td>
-						      <td id="totalProducaoTabela">460.409.599</td>
-						      <td>100</td>
-						      </tr>
-						    </tbody>
-						  	</table>
- 						</div>
- 						<div id="alertMatriz" class="alert alert-danger" role="alert">
-							<center><strong>Oops!</strong> As respostas destacadas em vermelho estão incorretas. </center>
-						</div>
- 					</div>
- 					<div class="col-xs-6">
- 						<div id="graphMatrizEnergetica"> </div>
- 						<button id="botaoMatrizVerificar" type="button" class="btn btn-block btn-info botaoMatrizVerificar"> Gerar gráfico </button>
-
- 					</div>
-				 </div>
-
-				</div>
-
-				<div id="containerQuestoesMatrizEnergetica" class="col-xs-12 containerQuestoesMatriz">
-					<div class="col-xs-12">
-						<span id="questionNumberMatrizEnergetica" class="questionNumber"></span>
-						<span id="questionMatrizEnergetica" class="questionText"></span>
-					</div>
-					<div class="col-xs-7">
-						<div class="col-xs-12">
-							<input id="inputRespostasMatrizEnergetica" type="text" class="form-control">
-						</div>
-						<div class="col-xs-6">
-							<button type="button" id= "botaoMatrizQuestoesSim" class="btn btn-success btn-block btnQuestoesMatriz">Sim</button>
-						</div>
-						<div class="col-xs-6">
-							<button type="button" id= "botaoMatrizQuestoesNao" class="btn btn-danger btn-block btnQuestoesMatriz">Não</button>
-						</div>
-						<div class="col-xs-12">
-							<button id="enviarRespostaMatriz" type="button" class="btn btn-block btn-info btn-enviar"> Confirmar resposta </button>
-							<div id="alertAnswerMatriz" class="alert">	</div>
-						</div>
-					</div>
-
-
-				</div>
-
-
-			</div>
-
-		</div>
-	</div>
-
-	<div id="scenePotenciaEletrodomesticos">
-		<div class="row">
-			<div class="col-xs-5">
-				<p id="textoPotenciaEletro" class="textoPotenciaEletro"> A tabela a seguir apresenta os principais eletrodomésticos e suas quantidades em uma residência com três pessoas, a potência elétrica de cada equipamento e o tempo mensal de funcionamento em horas.<br> O valor da energia(VE) de cada aparelho é calculado da seguinte maneira: <br><span class="equation"> VE = P/1000 * ∆t * VALOR </span>, onde P é a potência em Watts, ∆t é o tempo em horas de uso. <br>Informe o preço de 1KWh de energia que sua companhia de energia elétrica cobra. Caso você não saiba, coloque 0,50</p>
-
-					<div id="valorEnergiaEletrica">
-						<p class="textoPotenciaEletro">Valor: </p>
-						<div class="col-xs-4">
-							<div class="input-group">
-								<span class="input-group-addon">R$</span>
-								<input id="inputValorEnergiaEletrica" type="number" class="testeInput form-control">
+							<div id="imagemFecharUsinas">
+								<span title="Fechar" id="imagemFecharUsinas" onclick="restoresceneTiposUsinas()" class="iconFecharUsinas glyphicon glyphicon-remove-circle">
+								</div>
 							</div>
 						</div>
-						<div class="col-xs-4">
-							<button type="button" id="botaoAtualizarTabelaPotencia" class="btn btn-primary btn-block">Atualizar tabela</button>
+					</div>
+				</div>
+			</div>
+
+
+			<div id="sceneImpostos">
+				<div class="row marginImposto paddingLeftImposto">
+					<div id="imagensImpostos">
+						<div class="col-xs-4 noPadding">
+							<div class="noPadding col-xs-4"> <img onclick="showImposto('icms')" class="imagensImpostos" src="../assets/img/Objeto 1/ICMS.png"> </div>
+							<div class="noPadding col-xs-4"> <img onclick="showImposto('tusd')" class="imagensImpostos" src="../assets/img/Objeto 1/TUSD.png"> </div>
+							<div class="noPadding col-xs-4"> <img onclick="showImposto('cofins')" class="imagensImpostos" src="../assets/img/Objeto 1/COFINS.png"> </div>
+						</div>
+						<div class="col-xs-4 noPadding">
+							<div class="noPadding col-xs-4"> <img onclick="showImposto('cip')" class="imagensImpostos" src="../assets/img/Objeto 1/CIP.png"> </div>
+							<div class="noPadding col-xs-4"> <img onclick="showImposto('pispasep')" class="imagensImpostos" src="../assets/img/Objeto 1/PISPASEP.png"> </div>
+							<div class="noPadding col-xs-4"> <img onclick="showImposto('tust')" class="imagensImpostos" src="../assets/img/Objeto 1/TUST.png"></div>
 						</div>
 					</div>
-			</div>
+					<div class="col-xs-1">
+						<div id="sceneImpostosBubble1"> <img class="sceneImpostosBubble1"src="../assets/img/Objeto 1/bubble2.png"> </div>
+						<p id="sceneImpostosText1" class="sceneImpostosText1"> Interaja com os elementos para conhecer mais sobre os impostos da tarifa de energia elétrica </p>
+					</div>
+					<div class="col-xs-3">
+						<div id="imagemEngenheiro3">
+							<img class="imagemEngenheiroImpostos"   src="../assets/img/Objeto 1/engenheiro_esquerda.png">
+						</div>
+					</div>
+					<div id="containerImposto" class="col-xs-8 containerImposto textoImposto"></div>
 
-			<div class="col-xs-offset-1 col-xs-6">
-						<table class="table table-responsive table-bordered">
-						    <thead>
-						      <tr>
-						        <th>Aparelho</th>
-						        <th>Quant.</th>
-						        <th>Potência (Watts)</th>
-						        <th>Tempo mensal (Horas)</th>
-						        <th> Gasto mensal (R$)
-						      </tr>
-						    </thead>
-
-						    <tbody>
-							     <tr>
-							        <td class="tdCentralizado"><img title="Televisão" class="img-tabela" src="../assets/img/Objeto 1/televisaoTabela.png"></td>
-							        <td id="quantidadeTelevisao" class="tdCentralizado">1</td>
-							        <td id="potenciaTelevisao" class="tdCentralizado">90</td>
-							        <td id="tempoTelevisao" class="tdCentralizado">60</td>
-							      	<td id="gastoMensalTelevisao" class="tdCentralizado"></td>
-							     </tr>
-						    	<tr>
-							        <td class="tdCentralizado"><img title="Maquina de lavar" class="img-tabela" src="../assets/img/Objeto 1/maquinaDeLavarTabela.png"></td>
-							        <td id="quantidadeMaquinaDeLavar" class="tdCentralizado">1</td>
-							        <td id="potenciaMaquinaDeLavar" class="tdCentralizado">1000</td>
-							        <td id="tempoMaquinaDeLavar" class="tdCentralizado">20</td>
-							      	<td id="gastoMensalMaquinaDeLavar" class="tdCentralizado"></td>
-						     	</tr>
-						    	<tr>
-							        <td class="tdCentralizado"><img title="Chuveiro" class="img-tabela" src="../assets/img/Objeto 1/chuveiroTabela.png"></td>
-							        <td id="quantidadeChuveiro" class="tdCentralizado">1</td>
-							        <td id="potenciaChuveiro" class="tdCentralizado">5500</td>
-							        <td id="tempoChuveiro" class="tdCentralizado">23</td>
-							      	<td id="gastoMensalChuveiro" class="tdCentralizado"></td>
-						     	</tr>
-						      	<tr>
-							        <td class="tdCentralizado"><img title="Geladeira" class="img-tabela" src="../assets/img/Objeto 1/geladeiraTabela.png"></td>
-							        <td id="quantidadeGeladeira" class="tdCentralizado">1</td>
-							        <td id="potenciaGeladeira" class="tdCentralizado">250</td>
-							        <td id="tempoGeladeira" class="tdCentralizado">720</td>
-							      	<td id="gastoMensalGeladeira" class="tdCentralizado"></td>
-			      				</tr>
-			      			     <tr>
-							        <td class="tdCentralizado"><img title="Computador" class="img-tabela" src="../assets/img/Objeto 1/computadorTabela.png"></td>
-							        <td id="quantidadeComputador" class="tdCentralizado">1</td>
-							        <td id="potenciaComputador" class="tdCentralizado">300</td>
-							        <td id="tempoComputador" class="tdCentralizado">60</td>
-							      	<td id="gastoMensalComputador" class="tdCentralizado"></td>
-							     </tr>
-						    	<tr>
-							        <td class="tdCentralizado"><img title="Lâmpada" class="img-tabela" src="../assets/img/Objeto 1/lampadaTabela.png"></td>
-							        <td id="quantidadeLampada" class="tdCentralizado">6</td>
-							        <td id="potenciaLampada" class="tdCentralizado">20</td>
-							        <td id="tempoLampada" class="tdCentralizado">120</td>
-							      	<td id="gastoMensalLampada" class="tdCentralizado"></td>
-						     	</tr>
-						    	<tr>
-							        <td class="tdCentralizado"><img title="Ferro de passar" class="img-tabela" src="../assets/img/Objeto 1/ferroDePassarTabela.png"></td>
-							        <td id="quantidadeFerro" class="tdCentralizado">1</td>
-							        <td id="potenciaFerro" class="tdCentralizado">1000</td>
-							        <td id="tempoFerro" class="tdCentralizado">6</td>
-							      	<td id="gastoMensalFerro" class="tdCentralizado"></td>
-						     	</tr>
-						      	<tr>
-							        <td class="tdCentralizado"><img class="img-tabela" src="../assets/img/Objeto 1/celularTabela.png"></td>
-							        <td id="quantidadeCelular" class="tdCentralizado">3</td>
-							        <td id="potenciaCelular" class="tdCentralizado">7</td>
-							        <td id="tempoCelular" class="tdCentralizado">30</td>
-							      	<td id="gastoMensalCelular" class="tdCentralizado"></td>
-			      				</tr>
-			      				 <tr>
-							        <td colspan="4">Total</td>
-							      	<td id="valorTotalTabelaPotencia" class="tdCentralizado"></td>
-			      				</tr>
-						    </tbody>
-						  	</table>
-			</div>
-		</div>
-	</div>
-
-	<div id="sceneIntroBandeirasEnergia">
-		<div class="row">
-			<div class="col-xs-offset-2 col-xs-7">
-				<img class="sceneIntroBandeirasBubble1" src="../assets/img/Objeto 1/bubble3.png">
-				<p id="sceneIntroBandeirasTitle1" class="sceneIntroBandeirasTitle1"> <b>•</b> O que é a Tarifa de Energia? </p>
-				<p id="sceneIntroBandeirasText1" class="sceneIntroBandeirasText1"> A TARIFA DE ENERGIA é o preço cobrado por unidade de energia (R$/kWh). Assim, espera-se que o preço da energia seja suficiente para arcar com os custos de operação e expansão de todos os elementos elétricos que compõe o sistema, desde a usina geradora até o ramal de ligação dos consumidores de baixa tensão. </p>
-				<p id="sceneIntroBandeirasTitle2" class="sceneIntroBandeirasTitle2"> <b>•</b> Custos com a aquisição de energia elétrica: </p>
-				<p id="sceneIntroBandeirasText1" class="sceneIntroBandeirasText2"> Os principais custos referentes à aquisição da energia elétrica são: <br>
-						• Custos relativos ao uso do sistema de distribuição;<br>
-						• Custos relativos ao uso do sistema de transmissão; <br>
-						• Perdas técnicas e não técnicas; <br>
-						• Encargos diversos e impostos.
-					</ul>
-				</p>
-
-
-			</div>
-		</div>
-	</div>
-
-
-	<div id="sceneBandeirasEnergia">
-		<div class="row">
-			<div class="col-xs-offset-3 col-xs-2 noPadding">
-				<img class="img-responsive" src="../assets/img/Objeto 1/bandeiraVerdeComListra.png">
-				<p class="titulosBandeiras"> VERDE </p>
-				<p class="textosBandeiras"> Hidrelétricas operam normalmente </p>
-				<p class="subBandeiras" style="color:#5BB433"> ♦ Não há alteração na tarifa </p>
-			</div>
-			<div class="col-xs-2 noPadding">
-				<img class="img-responsive" src="../assets/img/Objeto 1/bandeiraAmarelaComListra.png">
-				<p class="titulosBandeiras"> AMARELA </p>
-				<p class="textosBandeiras"> Usinas térmicas ativadas </p>
-				<p class="subBandeiras" style="color:#FFC100"> ♦ Acrescente R$2,00 para cada 100kWh </p>
-			</div>
-			<div class="col-xs-2 noPadding">
-				<img class="img-responsive" src="../assets/img/Objeto 1/bandeiraVermelhaComListra.png">
-				<p class="titulosBandeiras"> VERMELHA </p>
-				<p id="textoBandeiraVermelha" class="textosBandeiras"> Usinas térmicas ativadas e alta demanda </p>
-				<p class="subBandeiras" style="color:#FF4132"> ♦ Patamar 1: Acrescente R$3,00 para cada 100kWh<br>
-				♦ Patamar 2: Acrescente R$3,50 para cada 100kWh</p>
-			</div>
-		</div>
-	</div>
-
-	<div id="sceneQuestoesBandeiras">
-		<div class="row">
-
-				<div class="col-xs-offset-4 col-xs-7 questaoBandeira">
-					<span id="questionNumberBandeiras" class="questionNumber"></span>
-					<span id="questaoBandeira" class="questionText">	 </span>
 				</div>
 
-				<div id="bandeirasOpcoes">
-					<div class="col-xs-offset-4">
-						<div class="col-xs-2 noPadding">
-							<img id="bandeiraVerdeOpcao" class="img-responsive bandeiraOpcao" src="../assets/img/Objeto 1/bandeiraVerde.png">
-						</div>
-						<div class="col-xs-2 noPadding">
-							<img id="bandeiraAmarelaOpcao" class="img-responsive bandeiraOpcao" src="../assets/img/Objeto 1/bandeiraAmarela.png">
-						</div>
-						<div class="col-xs-2 noPadding">
-							<img id="bandeiraVermelhaOpcao" class="img-responsive bandeiraOpcao" src="../assets/img/Objeto 1/bandeiraVermelha.png">
-						</div>
-					 </div>
+			</div>
 
+
+			<div id="sceneIntroGraficos">
+				<div class="row">
+					<div class="col-xs-offset-2 col-xs-6">
+						<div id="sceneIntroGraficosBubble1"> <img class="sceneIntroGraficosBubble1" src="../assets/img/Objeto 1/bubble1.png"> </div>
+						<p id="sceneIntroGraficosText1" class="sceneIntroGraficosText1"> Agora que você já sabe um pouco sobre a produção da eletricidade, vamos analisar, interpretar e responder algumas questões a partir de diferentes tipos de gráficos, referentes ao consumo de energia. </p>
 					</div>
-							<div id="inputBandeiras">
-								<div class="col-xs-offset-4 col-xs-4">
-									<div class="input-group">
-										<span class="input-group-addon">R$</span>
-										<input id="inputValorBandeiras" type="number" class="testeInput form-control">
-									</div>
+					<div class="col-xs-4">
+						<div id="imagemEngenheirosceneIntroGraficos" >
+							<img class="imagemEngenheiroIntroGraficos img-responsive"   src="../assets/img/Objeto 1/engenheiro_esquerda.png">
+						</div>
+					</div>
+					<div id="imagensIntroGraficos">
+						<div class="col-xs-offset-1 col-xs-1">
+							<img id="sceneIntroGraficosImg1" class="imagenssceneIntroGraficos img-responsive" src="../assets/img/Objeto 1/imagem1CenaIntroGraficos.png">
+						</div>
+						<div class="col-xs-offset-1 col-xs-1">
+							<img id="sceneIntroGraficosImg2" class="imagenssceneIntroGraficos img-responsive" src="../assets/img/Objeto 1/imagem2CenaIntroGraficos.png">
+						</div>
+						<div class="col-xs-offset-1 col-xs-1">
+							<img id="sceneIntroGraficosImg3" class="imagenssceneIntroGraficos img-responsive" src="../assets/img/Objeto 1/imagem3CenaIntroGraficos.png">
 
-									<button id="enviarRespostaBandeiras" type="button" class="btn btn-block btn-info btn-enviar"> Confirmar resposta </button>
+						</div>
+
+						<div class="col-xs-offset-1 col-xs-1">
+							<img id="sceneIntroGraficosImg4" class="imagenssceneIntroGraficos img-responsive" src="../assets/img/Objeto 1/imagem4CenaIntroGraficos.png">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="sceneQuestoesGraficos">
+				<div class="row">
+					<div class="col-xs-6">
+						<div id="sceneIntroGraficosQuestionContainer">
+							<span id="sceneIntroGraficosQuestionNumber" class="questionNumber"></span>
+							<span id="sceneIntroGraficosQuestion" class="questionText"></span>
+						</div>
+						<div class="row">
+
+							<div class="col-xs-7">
+								<button id="opcaoA" type="button" class="btn btn-block btn-secondary btn-questoes"> </button>
+								<button id="opcaoB" type="button" class="btn btn-block btn-secondary btn-questoes"> </button>
+								<button id="opcaoC" type="button" class="btn btn-block btn-secondary btn-questoes"> </button>
+								<button id="opcaoD" type="button" class="btn btn-block btn-secondary btn-questoes"> </button>
+
+
+
+								<div id="questionGroup" >
+									<button type="button" id="botaoJaneiro" class="btn btn-questoes">Janeiro</button>
+									<button type="button" id="botaoFevereiro" class="btn btn-questoes">Fevereiro</button>
+									<button type="button" id="botaoMarco" class="btn btn-questoes">Março</button>
+									<button type="button" id="botaoAbril" class="btn btn-questoes">Abril</button>
+									<button type="button" id="botaoMaio" class="btn btn-questoes">Maio</button>
+									<button type="button" id="botaoJunho" class="btn btn-questoes">Junho</button>
+									<button type="button" id="botaoJulho" class="btn btn-questoes">Julho</button>
+									<button type="button" id="botaoAgosto" class="btn btn-questoes">Agosto</button>
+									<button type="button" id="botaoSetembro" class="btn btn-questoes">Setembro</button>
+									<button type="button" id="botaoOutubro" class="btn btn-questoes">Outubro</button>
+									<button type="button" id="botaoNovembro" class="btn btn-questoes">Novembro</button>
+									<button type="button" id="botaoDezembro" class="btn btn-questoes">Dezembro</button>
+								</div>
+
+
+								<div id="inputRespostasceneQuestoesGraficos" class="input-group">
+									<input id="inputNumbersceneQuestoesGraficos" type="number" class="form-control" min="0" max="100" step="0.01">
+									<span class="input-group-addon">%</span>
+								</div>
+
+								<div id="tabelaQuestoesGraficos">
+									<table class="table table-responsive table-bordered tableDadosQuestao10">
+										<thead>
+											<tr>
+												<th>Aparelho</th>
+												<th>Potência</th>
+											</tr>
+										</thead>
+
+										<tbody>
+											<tr>
+												<td>Celular</td>
+												<td>7W</td>
+
+											</tr>
+											<tr>
+												<td>Impressora</td>
+												<td><input id="inputPotenciaImpressora" type="text"> W</td>
+											</tr>
+											<tr>
+												<td>Lâmpada</td>
+												<td><input id="inputPotenciaLampada" type="text">W</td>
+											</tr>
+											<tr>
+												<td>Televisor 21'</td>
+												<td><input id="inputPotenciaTelevisor" type="text">W</td>
+											</tr>
+											<tr>
+												<td>Ventilador</td>
+												<td>100W</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+
+
+								<button id="enviarResposta" type="button" class="btn btn-block btn-info btn-enviar"> Confirmar resposta </button>
+
+								<div id="alertAnswer" class="alert">	</div>
+
+							</div>
+
+
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div id="sceneQuestoesGraph">
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="sceneIntroCaminhos">
+				<div class="row">
+					<div class="col-xs-offset-2 col-xs-6">
+						<div id="sceneIntroCaminhosBubble1"> <img class="sceneIntroCaminhosBubble1" src="../assets/img/Objeto 1/bubble1.png"> </div>
+						<p id="sceneIntroCaminhosText1" class="sceneIntroCaminhosText1"> O infográfico a seguir irá mostrar os caminhos que a energia elétrica leva, partindo da usina geradora até chegar à sua casa. </p>
+					</div>
+					<div class="col-xs-4">
+						<div id="imagemEngenheirosceneIntroCaminhos" >
+							<img class="imagemEngenheiroIntroCaminhos img-responsive"   src="../assets/img/Objeto 1/engenheiro_esquerda.png">
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div id="sceneCaminhosEnergia">
+				<div class="row">
+					<center><p id="titleCaminho" class="titleCaminho"> Geração </p></center>
+				</div>
+				<div class="row">
+					<div class="col-xs-offset-3 col-xs-1">
+						<span title="Voltar" id="setaTransmissaoEsquerda" class="setaTransmissao glyphicon glyphicon glyphicon-arrow-left"> </span>
+					</div>
+					<div class="col-xs-4">
+						<center>
+							<img id="imgCirculo" class="imagemCircular img-circular-responsive" src="../assets/img/Objeto 1/circular1.gif">
+							<p id="textosceneCaminhosEnergia" class="textosceneCaminhosEnergia"> A energia elétrica pode ser gerada de diversas formas, mas a principio, no Brasil, a principal geração de energia é através de hidrelétricas. Assim na geração, em que o gerador é entrado em movimento para a produção de energia, ela é gerada a uma voltagem de aproximadamente de 15.000V. </p>
+						</center>
+					</div>
+					<div class="col-xs-1">
+						<span title="Avançar" id="setaTransmissaoDireita" class="setaTransmissao glyphicon glyphicon glyphicon-arrow-right"> </span>
+					</div>
+
+				</div>
+			</div>
+
+
+			<div id="sceneMatrizEnergetica">
+				<div class="row">
+					<div class="col-xs-4">
+						<p id="titleMatrizEnergetica" class="titleMatrizEnergetica"> Conhecendo os dados sobre a Matriz Energética Brasileira </p>
+						<p id="textoMatrizEnergetica" class="textoMatrizEnergetica"> Segundo dados da ANEEL (Agência Nacional de Energia Elétrica), cerca de 94,89% da energia elétrica consumida é produzida no Brasil, e o restante é importada dos países vizinhos (Paraguai, Argentina, Venezuela e Uruguai). Esta produção advém de usinas do tipo: hidrelétricas, solar, eólica, nuclear, fóssil e biomassa. Existem 534 usinas que produzem energia de origem biomassa, estas são responsáveis por aproximadamente 8,86% da energia consumida, 1251 de origem hídrica responsáveiss por 61,34% da energia consumida, 42 de origem solar responsáveis por 0,01% da energia consumida, 2 de origem nuclear responsáveis por 1,24% da energia consumida, 418 de origem eólica responsáveis por 6,58% da energia consumida, 2412 de origem fóssivel responsáveis por 16.86% da energia consumida </p>
+					</div>
+					<div class="col-xs-8">
+						<div class="col-xs-12">
+							<div id="fundoMatrizEnergetica" class="fundoMatrizEnergetica">
+								<div class="col-xs-6">
+									<div id="tabelaMatrizEnergetica" class="divTabelaMatrizEnergetica">
+										<table class="table table-responsive table-bordered tableDadosMatrizEnergetica">
+											<thead>
+												<tr>
+													<th>Origem</th>
+													<th>Nº de Usinas</th>
+													<th>Produção em kW</th>
+													<th>% do consumo</th>
+												</tr>
+											</thead>
+
+											<tbody>
+												<tr>
+													<td>Biomassa</td>
+													<td>534</td>
+													<td id="producaoBiomassaTabela">40.789.632</td>
+													<td><input id="inputConsumoUsinasBiomassa" type="text" class="form-control"></td>
+												</tr>
+												<tr>
+													<td>Hidrelétrica</td>
+													<td><input id="inputNumeroUsinasHidrica" type="text" class="form-control" ></td>
+													<td id="producaoHidreletricaTabela">282.396.846</td>
+													<td>61,34</td>
+												</tr>
+												<tr>
+													<td>Solar</td>
+													<td>42</td>
+													<td id="producaoSolarTabela">46.038</td>
+													<td><input id="inputConsumoUsinasSolar" type="text" class="form-control"></td>
+												</tr>
+												<tr>
+													<td>Nuclear</td>
+													<td><input id="inputNumeroUsinasNuclear" type="text" class="form-control" ></td>
+													<td id="producaoNuclearTabela">5.708.707</td>
+													<td>1,24</td>
+												</tr>
+												<tr>
+													<td>Eólica</td>
+													<td>418</td>
+													<td id="producaoEolicaTabela">30.282.978</td>
+													<td>6,58</td>
+												</tr>
+												<tr>
+													<td>Fóssil</td>
+													<td><input id="inputNumeroUsinasFossil" type="text" class="form-control" ></td>
+													<td id="producaoFossilTabela">77.620.000</td>
+													<td>16,86</td>
+												</tr>
+												<tr>
+													<td>Importação</td>
+													<td>---</td>
+													<td id="producaoImportacaoTabela">23.525.398</td>
+													<td><input id="inputConsumoImportacao" type="text" class="form-control"></td>
+
+												</tr>
+
+												<tr>
+													<td>Total </td>
+													<td>---</td>
+													<td id="totalProducaoTabela">460.409.599</td>
+													<td>100</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div id="alertMatriz" class="alert alert-danger" role="alert">
+										<center><strong>Oops!</strong> As respostas destacadas em vermelho estão incorretas. </center>
+									</div>
+								</div>
+								<div class="col-xs-6">
+									<div id="graphMatrizEnergetica"> </div>
+									<button id="botaoMatrizVerificar" type="button" class="btn btn-block btn-info botaoMatrizVerificar"> Gerar gráfico </button>
 
 								</div>
 							</div>
 
+						</div>
 
-			<div class="col-xs-offset-4 col-xs-4">
+						<div id="containerQuestoesMatrizEnergetica" class="col-xs-12 containerQuestoesMatriz">
+							<div class="col-xs-12">
+								<span id="questionNumberMatrizEnergetica" class="questionNumber"></span>
+								<span id="questionMatrizEnergetica" class="questionText"></span>
+							</div>
+							<div class="col-xs-7">
+								<div class="col-xs-12">
+									<input id="inputRespostasMatrizEnergetica" type="text" class="form-control">
+								</div>
+								<div class="col-xs-6">
+									<button type="button" id= "botaoMatrizQuestoesSim" class="btn btn-success btn-block btnQuestoesMatriz">Sim</button>
+								</div>
+								<div class="col-xs-6">
+									<button type="button" id= "botaoMatrizQuestoesNao" class="btn btn-danger btn-block btnQuestoesMatriz">Não</button>
+								</div>
+								<div class="col-xs-12">
+									<button id="enviarRespostaMatriz" type="button" class="btn btn-block btn-info btn-enviar"> Confirmar resposta </button>
+									<div id="alertAnswerMatriz" class="alert">	</div>
+								</div>
+							</div>
 
-				<div id="alertAnswerBandeiras" class="alert">	</div>
+
+						</div>
+
+
+					</div>
+
+				</div>
 			</div>
-		</div>
-	</div>
 
+			<div id="scenePotenciaEletrodomesticos">
+				<div class="row">
+					<div class="col-xs-5">
+						<p id="textoPotenciaEletro" class="textoPotenciaEletro"> A tabela a seguir apresenta os principais eletrodomésticos e suas quantidades em uma residência com três pessoas, a potência elétrica de cada equipamento e o tempo mensal de funcionamento em horas.<br> O valor da energia(VE) de cada aparelho é calculado da seguinte maneira: <br><span class="equation"> VE = P/1000 * ∆t * VALOR </span>, onde P é a potência em Watts, ∆t é o tempo em horas de uso. <br>Informe o preço de 1KWh de energia que sua companhia de energia elétrica cobra. Caso você não saiba, coloque 0,50</p>
 
+						<div id="valorEnergiaEletrica">
+							<p class="textoPotenciaEletro">Valor: </p>
+							<div class="col-xs-4">
+								<div class="input-group">
+									<span class="input-group-addon">R$</span>
+									<input id="inputValorEnergiaEletrica" type="number" class="testeInput form-control">
+								</div>
+							</div>
+							<div class="col-xs-4">
+								<button type="button" id="botaoAtualizarTabelaPotencia" class="btn btn-primary btn-block">Atualizar tabela</button>
+							</div>
+						</div>
+					</div>
 
-	<div id="sceneQuestaoImposto">
-		<div class="row">
-			<div class="col-xs-offset-1 col-xs-6">
-				<span id="questionNumberImposto" class="questionNumber"></span>
-				<span id="questionImposto" class="questionText"></span>
-
-				<form id="radioImpostos">
-				  <input type="radio" id="radioButtonA" name="opcaoimposto" value="a"> Somente I e II estão corretas<br>
-				  <input type="radio" name="opcaoimposto" value="b"> Somente II e III estão corretas<br>
-				  <input type="radio" name="opcaoimposto" value="c"> Somente I e IV estão corretas<br>
-				  <input type="radio" name="opcaoimposto" value="d"> Somente III e V estão ocorretas<br>
-				  <input type="radio" name="opcaoimposto" value="e"> Todas estão corretas<br>
-				<button id="enviarRespostaImposto" type="button" class="btn btn-block btn-info btn-enviar"> Confirmar resposta </button>
-				<div id="alertAnswerImposto" class="alert">	</div>
-				</form>
-			</div>
-
-			<div class="col-xs-4">
-			<div id="graphImposto"></div>
-			</div>
-		</div>
-	</div>
-	<div id="sceneDistribuicaoTarifa">
-		<div class="row">
-			<div class="col-xs-offset-1 col-xs-4">
-				<p class="textosCustos"> De acordo com as informações apresentadas complete a tabela abaixo. Passe o mouse sobre cada um dos quadros para visualizar o conteúdo dos mesmos.</p>
-					<div class="col-xs-10">
+					<div class="col-xs-offset-1 col-xs-6">
 						<table class="table table-responsive table-bordered">
-							    <thead>
-							      <tr>
-							        <th>Custos</th>
-							        <th>% da conta</th>
-							      </tr>
-							    </thead>
+							<thead>
+								<tr>
+									<th>Aparelho</th>
+									<th>Quant.</th>
+									<th>Potência (Watts)</th>
+									<th>Tempo mensal (Horas)</th>
+									<th> Gasto mensal (R$)
+									</tr>
+								</thead>
 
-							    <tbody>
-								     <tr>
-								        <td id="tableImpostos" class="tdCentralizado">Impostos</td>
-							        	<td><input id="inputImpostos" type="number" class="form-control"></td>
-								     </tr>
-							    	<tr>
-								        <td id="tableGeracao" class="tdCentralizado">Geração</td>
-							        	<td><input id="inputGeracao" type="number" class="form-control"></td>
-							     	</tr>
-							    	<tr>
-								        <td id="tableEncargos" class="tdCentralizado">Encargos</td>
-							        	<td><input id="inputEncargos" type="number" class="form-control"></td>
-							     	</tr>
-							      	<tr>
-								        <td id="tableDistribuicao" class="tdCentralizado">Distribuição</td>
-							        	<td><input id="inputDistribuicao" type="number" class="form-control"></td>
-				      				</tr>
-				      			     <tr>
-								        <td id="tableTransmissao" class="tdCentralizado">Transmissao</td>
-							        	<td><input id="inputTransmissao" type="number" class="form-control"></td>
-								     </tr>
-							      	<tr>
-								        <td id="tableTotal" class="tdCentralizado">Total</td>
-								        <td id="tableTotalValor" class="tdCentralizado">100%</td>
-				      				</tr>
+								<tbody>
+									<tr>
+										<td class="tdCentralizado"><img title="Televisão" class="img-tabela" src="../assets/img/Objeto 1/televisaoTabela.png"></td>
+										<td id="quantidadeTelevisao" class="tdCentralizado">1</td>
+										<td id="potenciaTelevisao" class="tdCentralizado">90</td>
+										<td id="tempoTelevisao" class="tdCentralizado">60</td>
+										<td id="gastoMensalTelevisao" class="tdCentralizado"></td>
+									</tr>
+									<tr>
+										<td class="tdCentralizado"><img title="Maquina de lavar" class="img-tabela" src="../assets/img/Objeto 1/maquinaDeLavarTabela.png"></td>
+										<td id="quantidadeMaquinaDeLavar" class="tdCentralizado">1</td>
+										<td id="potenciaMaquinaDeLavar" class="tdCentralizado">1000</td>
+										<td id="tempoMaquinaDeLavar" class="tdCentralizado">20</td>
+										<td id="gastoMensalMaquinaDeLavar" class="tdCentralizado"></td>
+									</tr>
+									<tr>
+										<td class="tdCentralizado"><img title="Chuveiro" class="img-tabela" src="../assets/img/Objeto 1/chuveiroTabela.png"></td>
+										<td id="quantidadeChuveiro" class="tdCentralizado">1</td>
+										<td id="potenciaChuveiro" class="tdCentralizado">5500</td>
+										<td id="tempoChuveiro" class="tdCentralizado">23</td>
+										<td id="gastoMensalChuveiro" class="tdCentralizado"></td>
+									</tr>
+									<tr>
+										<td class="tdCentralizado"><img title="Geladeira" class="img-tabela" src="../assets/img/Objeto 1/geladeiraTabela.png"></td>
+										<td id="quantidadeGeladeira" class="tdCentralizado">1</td>
+										<td id="potenciaGeladeira" class="tdCentralizado">250</td>
+										<td id="tempoGeladeira" class="tdCentralizado">720</td>
+										<td id="gastoMensalGeladeira" class="tdCentralizado"></td>
+									</tr>
+									<tr>
+										<td class="tdCentralizado"><img title="Computador" class="img-tabela" src="../assets/img/Objeto 1/computadorTabela.png"></td>
+										<td id="quantidadeComputador" class="tdCentralizado">1</td>
+										<td id="potenciaComputador" class="tdCentralizado">300</td>
+										<td id="tempoComputador" class="tdCentralizado">60</td>
+										<td id="gastoMensalComputador" class="tdCentralizado"></td>
+									</tr>
+									<tr>
+										<td class="tdCentralizado"><img title="Lâmpada" class="img-tabela" src="../assets/img/Objeto 1/lampadaTabela.png"></td>
+										<td id="quantidadeLampada" class="tdCentralizado">6</td>
+										<td id="potenciaLampada" class="tdCentralizado">20</td>
+										<td id="tempoLampada" class="tdCentralizado">120</td>
+										<td id="gastoMensalLampada" class="tdCentralizado"></td>
+									</tr>
+									<tr>
+										<td class="tdCentralizado"><img title="Ferro de passar" class="img-tabela" src="../assets/img/Objeto 1/ferroDePassarTabela.png"></td>
+										<td id="quantidadeFerro" class="tdCentralizado">1</td>
+										<td id="potenciaFerro" class="tdCentralizado">1000</td>
+										<td id="tempoFerro" class="tdCentralizado">6</td>
+										<td id="gastoMensalFerro" class="tdCentralizado"></td>
+									</tr>
+									<tr>
+										<td class="tdCentralizado"><img class="img-tabela" src="../assets/img/Objeto 1/celularTabela.png"></td>
+										<td id="quantidadeCelular" class="tdCentralizado">3</td>
+										<td id="potenciaCelular" class="tdCentralizado">7</td>
+										<td id="tempoCelular" class="tdCentralizado">30</td>
+										<td id="gastoMensalCelular" class="tdCentralizado"></td>
+									</tr>
+									<tr>
+										<td colspan="4">Total</td>
+										<td id="valorTotalTabelaPotencia" class="tdCentralizado"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
 
-							    </tbody>
-							  	</table>
-							  	<button id="enviarRespostaTabelaImpostos" type="button" class="btn btn-block btn-info btn-enviar"> Enviar resposta </button>
-							 	 	<div id="alertConta" class="alert alert-danger" role="alert">
-								<center><strong>Oops!</strong> Algumas respostas estão incorretas.</center>
-									</div>
+				<div id="sceneIntroBandeirasEnergia">
+					<div class="row">
+						<div class="col-xs-offset-2 col-xs-7">
+							<img class="sceneIntroBandeirasBubble1" src="../assets/img/Objeto 1/bubble3.png">
+							<p id="sceneIntroBandeirasTitle1" class="sceneIntroBandeirasTitle1"> <b>•</b> O que é a Tarifa de Energia? </p>
+							<p id="sceneIntroBandeirasText1" class="sceneIntroBandeirasText1"> A TARIFA DE ENERGIA é o preço cobrado por unidade de energia (R$/kWh). Assim, espera-se que o preço da energia seja suficiente para arcar com os custos de operação e expansão de todos os elementos elétricos que compõe o sistema, desde a usina geradora até o ramal de ligação dos consumidores de baixa tensão. </p>
+							<p id="sceneIntroBandeirasTitle2" class="sceneIntroBandeirasTitle2"> <b>•</b> Custos com a aquisição de energia elétrica: </p>
+							<p id="sceneIntroBandeirasText1" class="sceneIntroBandeirasText2"> Os principais custos referentes à aquisição da energia elétrica são: <br>
+								• Custos relativos ao uso do sistema de distribuição;<br>
+								• Custos relativos ao uso do sistema de transmissão; <br>
+								• Perdas técnicas e não técnicas; <br>
+								• Encargos diversos e impostos.
+							</ul>
+						</p>
 
-					</div>
-			</div>
-			<div class="col-xs-offset-2 col-xs-5">
-				<div>
-					<div class="col-xs-2 noPadding">
-						<img id="imagem1Conta" data-alt-src="../assets/img/Objeto 1/geracaoLongo.jpg" class="img-responsive imgsDistribuicao" src="../assets/img/Objeto 1/geracao.jpg">
-					</div>
-					<div class="col-xs-2 noPadding">
-						<img id="imagem2Conta" data-alt-src="../assets/img/Objeto 1/impostosLongo.jpg" class="img-responsive imgsDistribuicao" src="../assets/img/Objeto 1/impostos.jpg">
-					</div>
-					<div class="col-xs-2 noPadding">
-						<img id="imagem3Conta" data-alt-src="../assets/img/Objeto 1/encargosLongo.jpg" class="img-responsive imgsDistribuicao" src="../assets/img/Objeto 1/encargos.jpg">
-					</div>
-					<div class="col-xs-2 noPadding">
-						<img id="imagem4Conta" data-alt-src="../assets/img/Objeto 1/distribuicaoLongo.jpg" class="img-responsive imgsDistribuicao" src="../assets/img/Objeto 1/distribuicao.jpg">
-					</div>
-					<div class="col-xs-2 noPadding">
-						<img id="imagem5Conta" data-alt-src="../assets/img/Objeto 1/transmissaoLongo.jpg" class="img-responsive imgsDistribuicao" src="../assets/img/Objeto 1/transmissao.jpg">
+
 					</div>
 				</div>
 			</div>
+
+
+			<div id="sceneBandeirasEnergia">
+				<div class="row">
+					<div class="col-xs-offset-3 col-xs-2 noPadding">
+						<img class="img-responsive" src="../assets/img/Objeto 1/bandeiraVerdeComListra.png">
+						<p class="titulosBandeiras"> VERDE </p>
+						<p class="textosBandeiras"> Hidrelétricas operam normalmente </p>
+						<p class="subBandeiras" style="color:#5BB433"> ♦ Não há alteração na tarifa </p>
+					</div>
+					<div class="col-xs-2 noPadding">
+						<img class="img-responsive" src="../assets/img/Objeto 1/bandeiraAmarelaComListra.png">
+						<p class="titulosBandeiras"> AMARELA </p>
+						<p class="textosBandeiras"> Usinas térmicas ativadas </p>
+						<p class="subBandeiras" style="color:#FFC100"> ♦ Acrescente R$2,00 para cada 100kWh </p>
+					</div>
+					<div class="col-xs-2 noPadding">
+						<img class="img-responsive" src="../assets/img/Objeto 1/bandeiraVermelhaComListra.png">
+						<p class="titulosBandeiras"> VERMELHA </p>
+						<p id="textoBandeiraVermelha" class="textosBandeiras"> Usinas térmicas ativadas e alta demanda </p>
+						<p class="subBandeiras" style="color:#FF4132"> ♦ Patamar 1: Acrescente R$3,00 para cada 100kWh<br>
+						♦ Patamar 2: Acrescente R$3,50 para cada 100kWh</p>
+					</div>
+				</div>
 			</div>
-		</div>
+
+			<div id="sceneQuestoesBandeiras">
+				<div class="row">
+
+					<div class="col-xs-offset-4 col-xs-7 questaoBandeira">
+						<span id="questionNumberBandeiras" class="questionNumber"></span>
+						<span id="questaoBandeira" class="questionText">	 </span>
+					</div>
+
+					<div id="bandeirasOpcoes">
+						<div class="col-xs-offset-4">
+							<div class="col-xs-2 noPadding">
+								<img id="bandeiraVerdeOpcao" class="img-responsive bandeiraOpcao" src="../assets/img/Objeto 1/bandeiraVerde.png">
+							</div>
+							<div class="col-xs-2 noPadding">
+								<img id="bandeiraAmarelaOpcao" class="img-responsive bandeiraOpcao" src="../assets/img/Objeto 1/bandeiraAmarela.png">
+							</div>
+							<div class="col-xs-2 noPadding">
+								<img id="bandeiraVermelhaOpcao" class="img-responsive bandeiraOpcao" src="../assets/img/Objeto 1/bandeiraVermelha.png">
+							</div>
+						</div>
+
+					</div>
+					<div id="inputBandeiras">
+						<div class="col-xs-offset-4 col-xs-4">
+							<div class="input-group">
+								<span class="input-group-addon">R$</span>
+								<input id="inputValorBandeiras" type="number" class="testeInput form-control">
+							</div>
+
+							<button id="enviarRespostaBandeiras" type="button" class="btn btn-block btn-info btn-enviar"> Confirmar resposta </button>
+
+						</div>
+					</div>
+
+
+					<div class="col-xs-offset-4 col-xs-4">
+
+						<div id="alertAnswerBandeiras" class="alert">	</div>
+					</div>
+				</div>
+			</div>
+
+
+
+			<div id="sceneQuestaoImposto">
+				<div class="row">
+					<div class="col-xs-offset-1 col-xs-6">
+						<span id="questionNumberImposto" class="questionNumber"></span>
+						<span id="questionImposto" class="questionText"></span>
+
+						<form id="radioImpostos">
+							<input type="radio" id="radioButtonA" name="opcaoimposto" value="a"> Somente I e II estão corretas<br>
+							<input type="radio" name="opcaoimposto" value="b"> Somente II e III estão corretas<br>
+							<input type="radio" name="opcaoimposto" value="c"> Somente I e IV estão corretas<br>
+							<input type="radio" name="opcaoimposto" value="d"> Somente III e V estão ocorretas<br>
+							<input type="radio" name="opcaoimposto" value="e"> Todas estão corretas<br>
+							<button id="enviarRespostaImposto" type="button" class="btn btn-block btn-info btn-enviar"> Confirmar resposta </button>
+							<div id="alertAnswerImposto" class="alert">	</div>
+						</form>
+					</div>
+
+					<div class="col-xs-4">
+						<div id="graphImposto"></div>
+					</div>
+				</div>
+			</div>
+			<div id="sceneDistribuicaoTarifa">
+				<div class="row">
+					<div class="col-xs-offset-1 col-xs-4">
+						<p class="textosCustos"> De acordo com as informações apresentadas complete a tabela abaixo. Passe o mouse sobre cada um dos quadros para visualizar o conteúdo dos mesmos.</p>
+						<div class="col-xs-10">
+							<table class="table table-responsive table-bordered">
+								<thead>
+									<tr>
+										<th>Custos</th>
+										<th>% da conta</th>
+									</tr>
+								</thead>
+
+								<tbody>
+									<tr>
+										<td id="tableImpostos" class="tdCentralizado">Impostos</td>
+										<td><input id="inputImpostos" type="number" class="form-control"></td>
+									</tr>
+									<tr>
+										<td id="tableGeracao" class="tdCentralizado">Geração</td>
+										<td><input id="inputGeracao" type="number" class="form-control"></td>
+									</tr>
+									<tr>
+										<td id="tableEncargos" class="tdCentralizado">Encargos</td>
+										<td><input id="inputEncargos" type="number" class="form-control"></td>
+									</tr>
+									<tr>
+										<td id="tableDistribuicao" class="tdCentralizado">Distribuição</td>
+										<td><input id="inputDistribuicao" type="number" class="form-control"></td>
+									</tr>
+									<tr>
+										<td id="tableTransmissao" class="tdCentralizado">Transmissao</td>
+										<td><input id="inputTransmissao" type="number" class="form-control"></td>
+									</tr>
+									<tr>
+										<td id="tableTotal" class="tdCentralizado">Total</td>
+										<td id="tableTotalValor" class="tdCentralizado">100%</td>
+									</tr>
+
+								</tbody>
+							</table>
+							<button id="enviarRespostaTabelaImpostos" type="button" class="btn btn-block btn-info btn-enviar"> Enviar resposta </button>
+							<div id="alertConta" class="alert alert-danger" role="alert">
+								<center><strong>Oops!</strong> Algumas respostas estão incorretas.</center>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-xs-offset-2 col-xs-5">
+						<div>
+							<div class="col-xs-2 noPadding">
+								<img id="imagem1Conta" data-alt-src="../assets/img/Objeto 1/geracaoLongo.jpg" class="img-responsive imgsDistribuicao" src="../assets/img/Objeto 1/geracao.jpg">
+							</div>
+							<div class="col-xs-2 noPadding">
+								<img id="imagem2Conta" data-alt-src="../assets/img/Objeto 1/impostosLongo.jpg" class="img-responsive imgsDistribuicao" src="../assets/img/Objeto 1/impostos.jpg">
+							</div>
+							<div class="col-xs-2 noPadding">
+								<img id="imagem3Conta" data-alt-src="../assets/img/Objeto 1/encargosLongo.jpg" class="img-responsive imgsDistribuicao" src="../assets/img/Objeto 1/encargos.jpg">
+							</div>
+							<div class="col-xs-2 noPadding">
+								<img id="imagem4Conta" data-alt-src="../assets/img/Objeto 1/distribuicaoLongo.jpg" class="img-responsive imgsDistribuicao" src="../assets/img/Objeto 1/distribuicao.jpg">
+							</div>
+							<div class="col-xs-2 noPadding">
+								<img id="imagem5Conta" data-alt-src="../assets/img/Objeto 1/transmissaoLongo.jpg" class="img-responsive imgsDistribuicao" src="../assets/img/Objeto 1/transmissao.jpg">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 
 			<div id="sceneGerarGrafico">
-			<div class="row">
-				<div class="col-xs-offset-1 col-xs-3">
-				<p class="textoGeracaoGrafico"> Insira as informações abaixo para gerar um gráfico de acordo com a entrada de dados </p>
-					<div class="form-group row">
-						<label for="tituloGerarGrafico" class="col-xs-2 col-form-label">Título</label>
-						<div class="col-xs-10">
-					 		<input class="form-control" type="text" placeholder="Título" id="tituloGerarGrafico">
+				<div class="row">
+					<div class="col-xs-offset-1 col-xs-3">
+						<p class="textoGeracaoGrafico"> Insira as informações abaixo para gerar um gráfico de acordo com a entrada de dados </p>
+						<div class="form-group row">
+							<label for="tituloGerarGrafico" class="col-xs-2 col-form-label">Título</label>
+							<div class="col-xs-10">
+								<input class="form-control" type="text" placeholder="Título" id="tituloGerarGrafico">
+							</div>
 						</div>
-					</div>
-					<div class="form-group row">
-						<label for="fonteGerarGrafico" class="col-xs-2 col-form-label">Fonte</label>
-						<div class="col-xs-10">
-					 		<input class="form-control" type="text" placeholder="Fonte" id="fonteGerarGrafico">
+						<div class="form-group row">
+							<label for="fonteGerarGrafico" class="col-xs-2 col-form-label">Fonte</label>
+							<div class="col-xs-10">
+								<input class="form-control" type="text" placeholder="Fonte" id="fonteGerarGrafico">
+							</div>
 						</div>
+						<table class="table table-responsive table-bordered">
+							<thead>
+								<tr>
+									<th>Identificador</th>
+									<th>Valor</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								<tr>
+									<td class="tdCentralizado"><input id="inputGerarGrafico1" type="text" class="form-control"></td>
+									<td class="tdCentralizado"><input id="inputGerarGraficoValue1" type="number" class="form-control"></td>
+								</tr>
+								<tr>
+									<td class="tdCentralizado"><input id="inputGerarGrafico2" type="text" class="form-control"></td>
+									<td class="tdCentralizado"><input id="inputGerarGraficoValue2" type="number" class="form-control"></td>
+								</tr>
+								<tr>
+									<td class="tdCentralizado"><input id="inputGerarGrafico3" type="text" class="form-control"></td>
+									<td class="tdCentralizado"><input id="inputGerarGraficoValue3" type="number" class="form-control"></td>
+								</tr>
+								<tr>
+									<td class="tdCentralizado"><input id="inputGerarGrafico4" type="text" class="form-control"></td>
+									<td class="tdCentralizado"><input id="inputGerarGraficoValue4" type="number" class="form-control"></td>
+								</tr>
+								<tr>
+									<td class="tdCentralizado"><input id="inputGerarGrafico5" type="text" class="form-control"></td>
+									<td class="tdCentralizado"><input id="inputGerarGraficoValue5" type="number" class="form-control"></td>
+								</tr>
+								<tr>
+									<td class="tdCentralizado"><input id="inputGerarGrafico6" type="text" class="form-control"></td>
+									<td class="tdCentralizado"><input id="inputGerarGraficoValue6" type="number" class="form-control"></td>
+								</tr>
+
+							</tbody>
+						</table>
+						<form id="selecaoGrafico">
+							<input type="radio" name="tipoGraph" value="column" checked="true">Colunas
+							<input type="radio" name="tipoGraph" value="bar"> Barras
+							<input type="radio" name="tipoGraph" value="scatter"> Dispersão
+							<input type="radio" name="tipoGraph" value="pie"> Pizza
+						</form>
+						<button type="button" id="botaoGraficoCustom" class="btn btn-primary btn-block">Gerar Grafico</button>
+
 					</div>
-							<table class="table table-responsive table-bordered">
-							    <thead>
-							      <tr>
-							        <th>Identificador</th>
-							        <th>Valor</th>
-							      </tr>
-							    </thead>
-
-							    <tbody>
-								     <tr>
-								        <td class="tdCentralizado"><input id="inputGerarGrafico1" type="text" class="form-control"></td>
-								        <td class="tdCentralizado"><input id="inputGerarGraficoValue1" type="number" class="form-control"></td>
-								     </tr>
-							    	<tr>
-								        <td class="tdCentralizado"><input id="inputGerarGrafico2" type="text" class="form-control"></td>
-								        <td class="tdCentralizado"><input id="inputGerarGraficoValue2" type="number" class="form-control"></td>
-							     	</tr>
-							    	<tr>
-								        <td class="tdCentralizado"><input id="inputGerarGrafico3" type="text" class="form-control"></td>
-								        <td class="tdCentralizado"><input id="inputGerarGraficoValue3" type="number" class="form-control"></td>
-							     	</tr>
-							      	<tr>
-								        <td class="tdCentralizado"><input id="inputGerarGrafico4" type="text" class="form-control"></td>
-								        <td class="tdCentralizado"><input id="inputGerarGraficoValue4" type="number" class="form-control"></td>
-				      				</tr>
-				      			     <tr>
-								        <td class="tdCentralizado"><input id="inputGerarGrafico5" type="text" class="form-control"></td>
-								        <td class="tdCentralizado"><input id="inputGerarGraficoValue5" type="number" class="form-control"></td>
-								     </tr>
-							      	<tr>
-								        <td class="tdCentralizado"><input id="inputGerarGrafico6" type="text" class="form-control"></td>
-								        <td class="tdCentralizado"><input id="inputGerarGraficoValue6" type="number" class="form-control"></td>
-				      				</tr>
-
-							    </tbody>
-							  	</table>
-							  	<form id="selecaoGrafico">
-								  <input type="radio" name="tipoGraph" value="column" checked="true">Colunas
-								  <input type="radio" name="tipoGraph" value="bar"> Barras
-								  <input type="radio" name="tipoGraph" value="scatter"> Dispersão
-								  <input type="radio" name="tipoGraph" value="pie"> Pizza
-				 				 </form>
-							  	<button type="button" id="botaoGraficoCustom" class="btn btn-primary btn-block">Gerar Grafico</button>
-
-				</div>
-				<div class="col-xs-offset-2 col-xs-3">
-					<div id="containerGraficoCustom"> </div>
+					<div class="col-xs-offset-2 col-xs-3">
+						<div id="containerGraficoCustom"> </div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-		<div id="calculadora">
-			<div class="top">
-				<span class="clear">C</span>
-				<div class="screen"></div>
-			</div>
-
-			<div class="keys">
-				<!-- operators and other keys -->
-				<span>7</span>
-				<span>8</span>
-				<span>9</span>
-				<span class="operator">+</span>
-				<span>4</span>
-				<span>5</span>
-				<span>6</span>
-				<span class="operator">-</span>
-				<span>1</span>
-				<span>2</span>
-				<span>3</span>
-				<span class="operator">÷</span>
-				<span>0</span>
-				<span>.</span>
-				<span class="eval">=</span>
-				<span class="operator">x</span>
-			</div>
+	<div id="calculadora">
+		<div class="top">
+			<span class="clear">C</span>
+			<div class="screen"></div>
 		</div>
 
+		<div class="keys">
+			<!-- operators and other keys -->
+			<span>7</span>
+			<span>8</span>
+			<span>9</span>
+			<span class="operator">+</span>
+			<span>4</span>
+			<span>5</span>
+			<span>6</span>
+			<span class="operator">-</span>
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<span class="operator">÷</span>
+			<span>0</span>
+			<span>.</span>
+			<span class="eval">=</span>
+			<span class="operator">x</span>
+		</div>
+	</div>
 
-			<!-- Calculadora -->
+
+	<!-- Calculadora -->
 	<script src="../assets/js/Misc/calculadora.js"></script>
 
 </body>

@@ -1298,29 +1298,37 @@
 
 		$(document).on('click', '#iconCalculadora', function () {
 			if (calculadoraAberta){
-				$("#geral").show();
-				$("#iconMais").show();
-				$("#iconHelp").show();
-				$("#iconFechar").show();
-				$("#iconSetaEsquerda").show();
-				$("#iconSetaDireita").show();
-				$("#calculadora").hide();
-				$(".iconFixoCalculadora").css("color", "green");
-				calculadoraAberta = false;
+				hideCalc();
 			}
 			else {
-				calculadoraAberta = true;
-				$("#geral").hide();
-				$("#iconMais").hide();
-				$("#iconHelp").hide();
-				$("#iconFechar").hide();
-				$("#iconSetaEsquerda").hide();
-				$("#iconSetaDireita").hide();
-				$("#calculadora").show();
-				$(".iconFixoCalculadora").css("color", "red");
-
+				showCalc();
 			}
 		});
+
+
+		function showCalc() {
+			$("#calculadora").dialog({
+				closeOnEscape: false,
+				resizable: false,
+				open: function(event, ui) {
+					$(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+				},
+				focus: function(event, ui) {
+					$(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+				},
+				height: 600,
+				width: 336
+			});
+			$("#iconCalculadora").css("color", "red");
+			calculadoraAberta = true;
+
+		}
+
+		function hideCalc() {
+			$("#calculadora").dialog('close');
+			$("#iconCalculadora").css("color", "green");
+			calculadoraAberta = false;
+		}
 
 		//Verifica se as teclas A, B, C, D ou ENTER foram pressionadas, e realiza a função respectiva (Selecionar alternativa / Enviar resposta)
 		$(document).bind('keydown', function(event) {
