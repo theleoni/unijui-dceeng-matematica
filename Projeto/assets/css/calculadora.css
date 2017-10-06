@@ -13,9 +13,9 @@
 /* Using box shadows to create 3D effects */
 #calculadora {
 	width: 325px;
-	height: auto;
+	height: auto !important;
 	
-	margin: 100px auto;
+	/*margin: 100px auto;*/
 	padding: 20px 20px 9px;
 	
 	background: #9dd2ea;
@@ -25,27 +25,27 @@
 }
 
 /* Top portion */
-.top span.clear {
+/.top span.clear {
 	float: left;
 }
 
 /* Inset shadow on the screen to create indent */
 .top .screen {
 	height: 40px;
-	width: 146px;
+	width: 215px;
 	
 	float: right;
 	
 	padding: 0 10px;
 	
-	background: rgba(0, 0, 0, 0.2);
+	background: #FFFFFF;
 	border-radius: 3px;
 	box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
 	
 	/* Typography */
-	font-size: 17px;
+	font-size: 12px;
 	line-height: 40px;
-	color: white;
+	color: black;
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 	text-align: right;
 	letter-spacing: 1px;
@@ -53,6 +53,7 @@
 
 /* Clear floats */
 .keys, .top {overflow: hidden;}
+
 
 /* Applying same to the keys */
 .keys span, .top span.clear {
@@ -80,6 +81,9 @@
 	
 	/* Smoothing out hover and active states using css3 transitions */
 	transition: all 0.2s ease;
+
+		font-size: 30px;
+
 }
 
 /* Remove right margins from operator keys */
@@ -135,3 +139,5 @@
 	top: 4px;
 	box-shadow: 0px 0px #d3545d;
 }
+
+.ui-dialog { z-index: 1000 !important ;}

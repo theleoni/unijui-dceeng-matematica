@@ -62,6 +62,7 @@ function hideDivsOnObjectStart() {
 	$("#telaPrevisaoDoTempo").hide();
 	$("#telaVideoOnibus1ponto1").hide();
 	$("#telaRioSujo").hide();
+	$("#telaAgradecimento").hide();
 
 
 }
@@ -637,8 +638,7 @@ function checkIfStuck() {
 				questionNumber++;
 				loadQuestion();
 			} else {
-				//nextScene();
-				swal("Fim!", "Parabéns! Você finalizou todas as atividades.");
+				nextScene();
 			}
 			break;
 		}
@@ -666,6 +666,7 @@ function checkIfStuck() {
 			case 18:
 			case 19:
 			case 20:
+			case 22:
 			previousScene();
 			break;
 			case 21:
@@ -907,6 +908,13 @@ function checkIfStuck() {
 			loadQuestion();
 			changeTitle(" ");
 			showUpperIcons();
+			break;
+
+			case 22:
+			$("#telaAgradecimento").show();
+			showUpperIcons();
+			changeTitle(" ");
+			$("#iconMais").hide();
 
 			break;
 		}
@@ -1001,6 +1009,10 @@ function checkIfStuck() {
 			$("#telaQuestoes").hide();
 			$("body").css("overflow", "hidden");
 			window.scrollTo(0,0);
+			break;
+
+			case 22:
+			$("#telaAgradecimento").hide();
 			break;
 		}
 	}

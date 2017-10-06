@@ -802,6 +802,7 @@ $(document).on('click', '#iconFechar', function () {
 function showCalc() {
 	$("#calculadora").dialog({
 		closeOnEscape: false,
+		resizable: false,
 		open: function(event, ui) {
 			$(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
 		},
