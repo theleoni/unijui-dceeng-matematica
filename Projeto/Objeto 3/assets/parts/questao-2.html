@@ -9,28 +9,28 @@
 			<div class="col-xs-3 text-center">
 				<div class="questao-a-1 input-x fundo-normal">
 					<h5>1²=</h5>
-					<input id='input-questao-a-1' type="text" oninput="this.value = this.value.replace(/[^0-9,]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onkeyup="validarValores()" onblur="validarValores()">
+					<input id='input-questao-a-1' type="text" onkeyup="validarValores()" onblur="validarValores()">
 				</div>
 			</div>
 
 			<div class="col-xs-3 text-center">
 				<div class="questao-a-2 input-x fundo-normal">
 					<h5>2²=</h5>
-					<input id='input-questao-a-2' type="text" oninput="this.value = this.value.replace(/[^0-9,]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onkeyup="validarValores()" onblur="validarValores()">
+					<input id='input-questao-a-2' type="text" onkeyup="validarValores()" onblur="validarValores()">
 				</div>
 			</div>
 
 			<div class="col-xs-3 text-center">
 				<div class="questao-a-3 input-x fundo-normal">
 					<h5>4²=</h5>
-					<input id='input-questao-a-3' type="text" oninput="this.value = this.value.replace(/[^0-9,]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onkeyup="validarValores()" onblur="validarValores()">
+					<input id='input-questao-a-3' type="text" onkeyup="validarValores()" onblur="validarValores()">
 				</div>
 			</div>
 
 			<div class="col-xs-3 text-center">
 				<div class="questao-a-4 input-x fundo-normal">
 					<h5>10²=</h5>
-					<input id='input-questao-a-4' type="text" oninput="this.value = this.value.replace(/[^0-9,]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onkeyup="validarValores()" onblur="validarValores()">
+					<input id='input-questao-a-4' type="text" onkeyup="validarValores()" onblur="validarValores()">
 				</div>
 			</div>
 		</div>
@@ -40,17 +40,17 @@
 
 			<div class="text-center">
 				<div class="input-x fundo-normal">
-					<input id='input-questao-b' type="text" oninput="this.value = this.value.replace(/[^0-9,]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onkeyup="validarValores()" onblur="validarValores()">
+					<input id='input-questao-b' type="text" onkeyup="validarValores()" onblur="validarValores()">
 				</div>
 			</div>
 		</div>
 
 		<div class="questao-c">
-			<h5><span class='tab'/><b>c)</b> Qual o valor encontrado ao diminuir a resposta anterior pela quantidade de valores considerados?</h5>
+			<h5><span class='tab'/><b>c)</b> Qual o valor encontrado ao dividir a resposta anterior pela quantidade de valores considerados?</h5>
 
 			<div class="text-center">
 				<div class="input-x fundo-normal">
-					<input id='input-questao-c' type="text" oninput="this.value = this.value.replace(/[^0-9,]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onkeyup="validarValores()" onblur="validarValores()">
+					<input id='input-questao-c' type="text" onkeyup="validarValores()" onblur="validarValores()">
 				</div>
 			</div>
 		</div>
@@ -60,7 +60,7 @@
 
 			<div class="text-center">
 				<div class="input-x fundo-normal">
-					<input id='input-questao-d' type="text" oninput="this.value = this.value.replace(/[^0-9,]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');" onkeyup="validarValores()" onblur="validarValores()">
+					<input id='input-questao-d' type="text" onkeyup="validarValores()" onblur="validarValores()">
 				</div>
 			</div>
 		</div>
@@ -104,8 +104,8 @@
 }
 
 .fundo-normal {
-	background-color: #F28B6F;
-	border: solid #F28B6F 3px;
+	background-color: #ae6df5;
+	border: solid #ae6df5 3px;
 	transition: all .3s;
 }
 
@@ -122,6 +122,14 @@ input {
 <script type="text/javascript">
 
 console.log('questao-2.html');
+
+apenasNumeros(document.querySelector("#input-questao-a-1"));
+apenasNumeros(document.querySelector("#input-questao-a-2"));
+apenasNumeros(document.querySelector("#input-questao-a-3"));
+apenasNumeros(document.querySelector("#input-questao-a-4"));
+apenasNumeros(document.querySelector("#input-questao-b"));
+apenasNumeros(document.querySelector("#input-questao-c"));
+apenasNumeros(document.querySelector("#input-questao-d"));
 
 $("#iconSetaEsquerda").show();
 $("#iconSetaDireita").hide();
