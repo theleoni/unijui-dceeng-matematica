@@ -3,7 +3,7 @@
 		<h4 class="mais-top"><b>ATIVIDADE 1</b> Complete a tabela preenchendo as células amarelas com a média e a mediana da quantidade diária de lixo coletado, em toneladas, por região brasileira:</h4>
 
 		<h5 class="texto-auxiliar muito-mais-top mais-bottom">Clique/encoste nos campos em <span class="texto-formula"><b>AZUL</b></span> para visualizar o desenvolvimento.</h5>
-		<h5 class="texto-auxiliar muito-mais-bottom">Clique/encoste nos campos em <span class="texto-editavel"><b>LARANJA</b></span> para editar o valor.</h5>
+		<h5 class="texto-auxiliar muito-mais-bottom">Clique/encoste nos campos em <span class="texto-editavel"><b>ROXO</b></span> para editar o valor.</h5>
 
 		<div class="tabela">
 			<table class='table'>
@@ -38,7 +38,7 @@
 					<td>3.133,9</td>
 					<td>1.468,8</td>
 					<td>5</td>
-					<td>-</td>
+					<td>0</td>
 				</tr>
 				<tr>
 					<td>Nordeste</td>
@@ -76,17 +76,17 @@
 					<td>MÉDIA</td>
 					<td><span class="fundo-formula" onclick="popUp('9.664,34')">9.664,34</span></td>
 					<td><span class="fundo-formula" onclick="popUp('16.915,1')">16.915,1</span></td>
-					<td><input class="fundo-editavel fundo-editavel-normal" onblur='validarResultados()' onkeyup='validarResultados(); apenasNumero(this);' id='formula-media-a' type="text"></td>
+					<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarResultados()' onkeyup='validarResultados()' id='formula-media-a' type="text"></td>
 					<td><span class="fundo-formula" onclick="popUp('1.309,94')">1.309,94</span></td>
-					<td><input class="fundo-editavel fundo-editavel-normal" onblur='validarResultados()' onkeyup='validarResultados(); apenasNumero(this);' id='formula-media-b' type="text"></td>
+					<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarResultados()' onkeyup='validarResultados()' id='formula-media-b' type="text"></td>
 				</tr>
 				<tr class="mediana">
 					<td>MEDIANA</td>
 					<td><span class="fundo-formula" onclick="popUp('6.279')">6.279</span></td>
 					<td><span class="fundo-formula" onclick="popUp('4.833,9')">4.833,9</span></td>
-					<td><input class="fundo-editavel fundo-editavel-normal" onblur='validarResultados()' onkeyup='validarResultados(); apenasNumero(this);' id='formula-mediana-a' type="text"></td>
+					<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarResultados()' onkeyup='validarResultados()' id='formula-mediana-a' type="text"></td>
 					<td><span class="fundo-formula" onclick="popUp('347,2')">347,2</span></td>
-					<td><input class="fundo-editavel fundo-editavel-normal" onblur='validarResultados()' onkeyup='validarResultados(); apenasNumero(this);' id='formula-mediana-b' type="text"></td>
+					<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarResultados()' onkeyup='validarResultados()' id='formula-mediana-b' type="text"></td>
 				</tr>
 			</table>
 			<div class="fonte">
@@ -180,13 +180,13 @@
 
 .texto-editavel {
 	font-style: normal;
-	color: #F28B6F;
+	color: #ae6df5;
 	transition: .3s ease;
 }
 
 .texto-editavel:hover {
 	color: #FFFFFF;
-	background-color: #F28B6F;
+	background-color: #ae6df5;
 	padding-left: 3px;
 	padding-right: 3px;
 	border-radius: 4px;
@@ -203,7 +203,7 @@
 
 .fundo-editavel-normal {
 	color: #FFFFFF;
-	background-color: #F28B6F;
+	background-color: #ae6df5;
 	transition: .3s ease;
 }
 
@@ -266,6 +266,11 @@
 <script type="text/javascript">
 
 console.log('questao-1.html');
+
+apenasNumeros(document.querySelector("#formula-media-a"));
+apenasNumeros(document.querySelector("#formula-media-b"));
+apenasNumeros(document.querySelector("#formula-mediana-a"));
+apenasNumeros(document.querySelector("#formula-mediana-b"));
 
 $("#iconSetaEsquerda").show();
 $("#iconSetaDireita").hide();
@@ -396,11 +401,6 @@ function ajudaPage(tipo) {
 			break;
 
 	}
-}
-
-function apenasNumero(campo) {
-
-	campo.value = campo.value.replace(/[^\d.,]/,'');
 }
 
 let formulaMediaA = document.querySelector('#formula-media-a');

@@ -1,0 +1,562 @@
+<div class="geral-interno">
+	<div class="container">
+
+		<h3>Calcular a variância dos valores da seguinte tabela, complete onde for <span id='auto-completar'>indicado</span> por '<b>?</b>'.</h3>
+		<div class="tabela col-xs-12 col-md-6">
+			<table class="table text-center">
+				<tr>
+					<th>Grandes Regiões</th>
+					<th>Municípios com serviço de coleta seletiva de plástico</th>
+				</tr>
+				<tr>
+					<th>Brasil</th>
+					<th>977</th>
+				</tr>
+				<tr>
+					<td>Norte</td>
+					<td>19</td>
+				</tr>
+				<tr>
+					<td>Nordeste</td>
+					<td>74</td>
+				</tr>
+				<tr>
+					<td>Sudeste</td>
+					<td>403</td>
+				</tr>
+				<tr>
+					<td>Sul</td>
+					<td>450</td>
+				</tr>
+				<tr>
+					<td>Centro-Oeste</td>
+					<td>31</td>
+				</tr>
+				<tr class="total">
+					<td>Variância</td>
+					<td>36.160,24</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="col-xs-12 col-md-6" style="display:flex">
+			<h4>1º Média Aritimética: </h4>
+			<div class="campo-media">
+				<div class="text-center">
+					<div class="input-x fundo-normal preenchimento-b">
+						<input id='media' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-md-6 mais-top">
+			<h4>2º Variância: média dos quadrados dos desvios (desvio é cada um dos valores menos a média)</h4>
+
+			<div class="row">
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Variância = </h5>
+
+						<div class="calculo">
+							<div class="cima">
+								<h5>(valor1 - média)² + (valor2 + média)² + (valor3 + média)²</h5>
+							</div>
+							<div class="linha">
+								<hr>
+							</div>
+							<div class="baixo">
+								<h5>(número de valores)</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Var = </h5>
+
+						<div class="calculo">
+							<div class="cima">
+								<h5>
+									(<span class="preenchimento-a">19</span> - <span class="media-pre preenchimento-b">?</span>)² +
+									(<span class="preenchimento-a">74</span> - <span class="media-pre preenchimento-b">?</span>)² +
+									(<span class="preenchimento-a">403</span> - <span class="media-pre preenchimento-b">?</span>)² +
+									(<span class="preenchimento-a">450</span> - <span class="media-pre preenchimento-b">?</span>)² +
+									(<span class="preenchimento-a">31</span> - <span class="media-pre preenchimento-b">?</span>)²
+								</h5>
+							</div>
+							<div class="linha">
+								<hr>
+							</div>
+							<div class="baixo">
+								<h5>5</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Var = </h5>
+
+						<div class="calculo">
+							<div class="cima">
+								<h5>
+									(<span class="preenchimento-c soma-a">?</span> - <span class="media-pre preenchimento-b">?</span>)² +
+									(<span class="preenchimento-c soma-b">?</span> - <span class="media-pre preenchimento-b">?</span>)² +
+									(<span class="preenchimento-c soma-c">?</span> - <span class="media-pre preenchimento-b">?</span>)² +
+									(<span class="preenchimento-c soma-d">?</span> - <span class="media-pre preenchimento-b">?</span>)² +
+									(<span class="preenchimento-c soma-e">?</span> - <span class="media-pre preenchimento-b">?</span>)²
+								</h5>
+							</div>
+							<div class="linha">
+								<hr>
+							</div>
+							<div class="baixo">
+								<h5><b>5</b></h5>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Var = </h5>
+
+						<div class="calculo">
+							<div class="cima">
+								<h5>
+									<span class="preenchimento-d total-a">?</span> +
+									<span class="preenchimento-d total-b">?</span> +
+									<span class="preenchimento-d total-c">?</span> +
+									<span class="preenchimento-d total-d">?</span> +
+									<span class="preenchimento-d total-e">?</span>
+								</h5>
+							</div>
+							<div class="linha">
+								<hr>
+							</div>
+							<div class="baixo">
+								<h5><b>5</b></h5>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Var = </h5>
+
+						<div class="calculo">
+							<div class="cima">
+								<h5>
+									<b><span class="totalizado-final">?</span></b>
+								</h5>
+							</div>
+							<div class="linha">
+								<hr>
+							</div>
+							<div class="baixo">
+								<h5><b>5</b></h5>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Var = </h5>
+
+						<div class="calculo">
+							<h5>
+								<b><span class="final-geral">?</span></b>
+							</h5>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="tabela col-xs-12 mais-top">
+			<h4>Podemos organizar os dados em uma tabela, da seguinte forma:</h4>
+
+			<table class="table text-center">
+				<tr>
+					<th>Xi (valores)</th>
+					<th>X&#772; (média)</th>
+					<th>(Xi - X&#772;) (valor - média)</th>
+					<th>(Xi - X&#772;)²</th>
+				</tr>
+				<tr>
+					<td><span class="preenchimento-a">19</span></td>
+					<td><span class="preenchimento-b media-pre">?</span></td>
+					<td><span class="preenchimento-a">19</span> - <span class="preenchimento-b media-pre">?</span> = <span class="preenchimento-c soma-a">?</span></td>
+					<td><span class="preenchimento-d total-a">?</span></td>
+				</tr>
+				<tr>
+					<td><span class="preenchimento-a">74</span></td>
+					<td><span class="preenchimento-b media-pre">?</span></td>
+					<td><span class="preenchimento-a">74</span> - <span class="preenchimento-b media-pre">?</span> = <span class="preenchimento-c soma-b">?</span></td>
+					<td><span class="preenchimento-d total-b">?</span></td>
+				</tr>
+				<tr>
+					<td><span class="preenchimento-a">403</span></td>
+					<td><span class="preenchimento-b media-pre">?</span></td>
+					<td><span class="preenchimento-a">403</span> - <span class="preenchimento-b media-pre">?</span> = <span class="preenchimento-c soma-c">?</span></td>
+					<td><span class="preenchimento-d total-c">?</span></td>
+				</tr>
+				<tr>
+					<td><span class="preenchimento-a">453</span></td>
+					<td><span class="preenchimento-b media-pre">?</span></td>
+					<td><span class="preenchimento-a">453</span> - <span class="preenchimento-b media-pre">?</span> = <span class="preenchimento-c soma-d">?</span></td>
+					<td><span class="preenchimento-d total-d">?</span></td>
+				</tr>
+				<tr>
+					<td><span class="preenchimento-a">31</span></td>
+					<td><span class="preenchimento-b media-pre">?</span></td>
+					<td><span class="preenchimento-a">31</span> - <span class="preenchimento-b media-pre">?</span> = <span class="preenchimento-c soma-e">?</span></td>
+					<td><span class="preenchimento-d total-e">?</span></td>
+				</tr>
+				<tr class="total">
+					<td colspan="2"></td>
+					<td>Soma = </td>
+					<td><span class="totalizado-final">?</span></td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+
+	<div class="mensagens">
+	</div>
+</div>
+
+<style media="screen">
+
+.geral-interno {
+	position: relative;
+}
+
+.fundo {
+	width: 100%;
+}
+
+.tabela th {
+	text-align: center;
+}
+
+.tabela th, .tabela .total {
+	background-color: #F1ECF6;
+}
+
+.tabela .total {
+	color: #ae6df5;
+	font-weight: bold;
+}
+
+.input-x {
+	display: inline-flex;
+	border-radius: 6px;
+}
+
+.fundo-ok {
+	background-color: #46D079;
+	border: solid #46D079 3px;
+	transition: all .3s;
+}
+
+.fundo-normal {
+	background-color: #ae6df5;
+	border: solid #ae6df5 3px;
+	transition: all .3s;
+}
+
+input {
+	border: solid #FFFFFF 0px;
+	border-radius: 6px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.input-x input {
+	width: 80px;
+}
+
+.campo-media {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.preenchimento-a, .preenchimento-b, .preenchimento-c, .preenchimento-d {
+	font-weight: bold;
+}
+
+.preenchimento-a {
+	color: #43D07B;
+}
+
+.preenchimento-b {
+	color: #3196C2;
+}
+
+.preenchimento-c {
+	color: #7849C6;
+}
+
+.preenchimento-d {
+	color: #CD8B32;
+}
+
+.pre-formula {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.formula {
+	display: inline-flex;
+	text-align: center;
+}
+
+.calculo {
+	margin-left: 1rem;
+	margin-right: : 1rem;
+}
+
+.calculo hr {
+	margin: 0px;
+	border-top: 1px solid #000;
+}
+
+.calculo .cima {
+	text-align: center;
+}
+
+.calculo .baixo {
+	text-align: center;
+}
+
+</style>
+
+<script type="text/javascript">
+
+console.log('questao-2.html');
+
+apenasNumeros(document.querySelector("#media"));
+
+$("#iconSetaEsquerda").show();
+$("#iconSetaDireita").hide();
+$("#iconAjuda").show();
+$("#iconCalculadora").hide();
+
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
+
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
+
+iconAjuda.addEventListener("click", function() {
+	ajuda();
+});
+
+function anterior() {
+
+	carregarParte('variancia.html');
+}
+
+function proxima() {
+
+	// carregarParte('variancia.html');
+}
+
+function ajuda() {
+	if (document.querySelector('#dialog-ajuda') == null) {
+		let innerAjuda = document.querySelector(".mensagens").innerHTML;
+		innerAjuda += `
+		<div id="dialog-ajuda">
+
+
+		</div>`;
+		document.querySelector(".mensagens").innerHTML = innerAjuda;
+	}
+
+	let dialogAjuda = $("#dialog-ajuda").dialog({
+		autoOpen: false,
+		height: 500,
+		width: 850,
+		modal: true,
+		buttons: {}
+	});
+	dialogAjuda.dialog("open");
+}
+
+let inputMedia = document.querySelector("#media");
+
+let campoMedia = document.querySelector(".campo-media .input-x");
+
+let mediaOk = false;
+
+let valorCorretoMedia = 195.4;
+let valorSomaA = -176.4;
+let valorSomaB = -121.4;
+let valorSomaC = 207.6;
+let valorSomaD = 254.6;
+let valorSomaE = -164.4;
+let valorTotalA = Math.pow(valorSomaA, 2).toFixed(2);
+let valorTotalB = Math.pow(valorSomaB, 2).toFixed(2);
+let valorTotalC = Math.pow(valorSomaC, 2).toFixed(2);
+let valorTotalD = Math.pow(valorSomaD, 2).toFixed(2);
+let valorTotalE = Math.pow(valorSomaE, 2).toFixed(2);
+let valorTotalizado = parseFloat(valorTotalA) + parseFloat(valorTotalB) + parseFloat(valorTotalC) + parseFloat(valorTotalD) + parseFloat(valorTotalE);
+let valorTotalizadoFinal = (valorTotalizado / 5).toFixed(2);
+
+document.querySelector('#auto-completar').addEventListener('click', function (evt) {
+	if (evt.detail === 3) {
+		inputMedia.value = valorCorretoMedia.toString().replace('.', ',');
+
+		validarValores();
+	}
+});
+
+function validarValores() {
+	let valorMedia = inputMedia.value.replace('.', '').replace(',', '.');
+
+	mediaOk = (valorMedia == valorCorretoMedia);
+
+	if (mediaOk) {
+		campoMedia.classList.add('fundo-ok');
+		campoMedia.classList.remove('fundo-normal');
+	} else {
+		campoMedia.classList.remove('fundo-ok');
+		campoMedia.classList.add('fundo-normal');
+	}
+	preencherCamposMedia(mediaOk);
+
+	if (mediaOk) {
+		$("#iconSetaDireita").show();
+	} else {
+		$("#iconSetaDireita").hide();
+	}
+
+}
+
+function preencherCamposMedia(mediaOk) {
+	let medias = document.querySelectorAll('.media-pre');
+	for (var posMedia in medias) {
+		if (mediaOk) {
+			medias[posMedia].innerHTML = valorCorretoMedia.toString().replace('.', ',');
+		} else {
+			medias[posMedia].innerHTML = '?';
+		}
+	}
+
+	let somasA = document.querySelectorAll('.soma-a');
+	let somasB = document.querySelectorAll('.soma-b');
+	let somasC = document.querySelectorAll('.soma-c');
+	let somasD = document.querySelectorAll('.soma-d');
+	let somasE = document.querySelectorAll('.soma-e');
+	let totaisA = document.querySelectorAll('.total-a');
+	let totaisB = document.querySelectorAll('.total-b');
+	let totaisC = document.querySelectorAll('.total-c');
+	let totaisD = document.querySelectorAll('.total-d');
+	let totaisE = document.querySelectorAll('.total-e');
+	let totalizadoFinal = document.querySelectorAll('.totalizado-final');
+	let totalFinal = document.querySelectorAll('.final-geral');
+
+	for (var posSomaA in somasA) {
+		if (mediaOk) {
+			somasA[posSomaA].innerHTML = valorSomaA.toString().replace('.', ',');
+		} else {
+			somasA[posSomaA].innerHTML = '?';
+		}
+	}
+	for (var posSomaB in somasB) {
+		if (mediaOk) {
+			somasB[posSomaB].innerHTML = valorSomaB.toString().replace('.', ',');
+		} else {
+			somasB[posSomaB].innerHTML = '?';
+		}
+	}
+	for (var posSomaC in somasC) {
+		if (mediaOk) {
+			somasC[posSomaC].innerHTML = valorSomaC.toString().replace('.', ',');
+		} else {
+			somasC[posSomaC].innerHTML = '?';
+		}
+	}
+	for (var posSomaD in somasD) {
+		if (mediaOk) {
+			somasD[posSomaD].innerHTML = valorSomaD.toString().replace('.', ',');
+		} else {
+			somasD[posSomaD].innerHTML = '?';
+		}
+	}
+	for (var posSomaE in somasE) {
+		if (mediaOk) {
+			somasE[posSomaE].innerHTML = valorSomaE.toString().replace('.', ',');
+		} else {
+			somasE[posSomaE].innerHTML = '?';
+		}
+	}
+
+	for (var posTotalA in totaisA) {
+		if (mediaOk) {
+			totaisA[posTotalA].innerHTML = valorTotalA.toString().replace('.', ',');
+		} else {
+			totaisA[posTotalA].innerHTML = '?';
+		}
+	}
+	for (var posTotalB in totaisB) {
+		if (mediaOk) {
+			totaisB[posTotalB].innerHTML = valorTotalB.toString().replace('.', ',');
+		} else {
+			totaisB[posTotalB].innerHTML = '?';
+		}
+	}
+	for (var posTotalC in totaisC) {
+		if (mediaOk) {
+			totaisC[posTotalC].innerHTML = valorTotalC.toString().replace('.', ',');
+		} else {
+			totaisC[posTotalC].innerHTML = '?';
+		}
+	}
+	for (var posTotalD in totaisD) {
+		if (mediaOk) {
+			totaisD[posTotalD].innerHTML = valorTotalD.toString().replace('.', ',');
+		} else {
+			totaisD[posTotalD].innerHTML = '?';
+		}
+	}
+	for (var posTotalE in totaisE) {
+		if (mediaOk) {
+			totaisE[posTotalE].innerHTML = valorTotalE.toString().replace('.', ',');
+		} else {
+			totaisE[posTotalE].innerHTML = '?';
+		}
+	}
+
+	for (var posTotalFinal in totalizadoFinal) {
+		if (mediaOk) {
+			totalizadoFinal[posTotalFinal].innerHTML = valorTotalizado.toString().replace('.', ',');
+		} else {
+			totalizadoFinal[posTotalFinal].innerHTML = '?';
+		}
+	}
+
+	for (var posTotal in totalFinal) {
+		if (mediaOk) {
+			totalFinal[posTotal].innerHTML = valorTotalizadoFinal.toString().replace('.', ',');
+		} else {
+			totalFinal[posTotal].innerHTML = '?';
+		}
+	}
+}
+
+</script>
