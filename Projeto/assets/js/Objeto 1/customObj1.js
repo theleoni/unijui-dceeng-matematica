@@ -255,7 +255,6 @@
 		 		case 9:
 		 		case 10:
 		 		case 11:
-		 		case 12:
 		 		case 15:
 		 		previousScene();
 		 		break;
@@ -2434,7 +2433,7 @@
 		/* Funções Gerais */
 	  	//Função que realiza a troca de uma cena para a próxima, bem como adicionar um sleep igual ao tempo de fade
 	  	function nextScene() {
-	  		if (scene == 16) {
+	  		if (scene == 15) {
 	  			swal("","Você finalizou o objeto!", "error");
 	  		}
 	  		else {
