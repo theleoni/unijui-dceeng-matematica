@@ -63,6 +63,9 @@ $(document).on('keyup', 'body', function (e) {
 	if(calculadoraAberta) {
 		botaoPressionado = e.which;
 		switch (botaoPressionado) {
+			case 96:
+			$("#0Calculadora").click();
+			break;
 			case 97:
 			$("#1Calculadora").click();
 			break;
