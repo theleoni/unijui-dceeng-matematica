@@ -1,0 +1,270 @@
+<div class="geral-interno">
+
+	<div class='explicacoes-tabela-1 container muito-mais-top'>
+
+		<div class="col-xs-12">
+			<h3>Atividade 8 - Calcular o Desvio Padrão, complete onde for <span id='auto-completar'>indicado</span> por '<b>?</b>'.</h3>
+		</div>
+
+		<div class="tabela col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+			<table class="table text-center">
+				<tr>
+					<th>Grandes Regiões</th>
+					<th>Municípios com serviço de coleta seletiva de plástico</th>
+				</tr>
+				<tr>
+					<th>Brasil</th>
+					<th>915</th>
+				</tr>
+				<tr>
+					<td>Norte</td>
+					<td>18</td>
+				</tr>
+				<tr>
+					<td>Nordeste</td>
+					<td>66</td>
+				</tr>
+				<tr>
+					<td>Sudeste</td>
+					<td>383</td>
+				</tr>
+				<tr>
+					<td>Sul</td>
+					<td>419</td>
+				</tr>
+				<tr>
+					<td>Centro-Oeste</td>
+					<td>29</td>
+				</tr>
+				<tr class="total">
+					<td>Variância</td>
+					<td class="valor-total">?</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="col-xs-12">
+			<h4>Encontre o desvio padrão:</h4>
+
+			<div class="text-center mais-top">
+				<span>S = &#8730;</span>
+				<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao-a">
+					<input id='input-desvio-padrao-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+				</div>
+				<span> = </span>
+				<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao-b">
+					<input id='input-desvio-padrao-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="mensagens">
+	</div>
+</div>
+
+<style media="screen">
+
+.geral-interno {
+	position: relative;
+}
+
+.fundo {
+	width: auto;
+	max-width: 100%;
+}
+
+.tabela th {
+	text-align: center;
+}
+
+.tabela th, .tabela .total {
+	background-color: #F1ECF6;
+}
+
+.tabela .total {
+	color: #ae6df5;
+	font-weight: bold;
+}
+
+.input-x {
+	display: inline-flex;
+	border-radius: 6px;
+}
+
+.fundo-ok {
+	background-color: #46D079;
+	border: solid #46D079 3px;
+	transition: all .3s;
+}
+
+.fundo-normal {
+	background-color: #ae6df5;
+	border: solid #ae6df5 3px;
+	transition: all .3s;
+}
+
+input {
+	border: solid #FFFFFF 0px;
+	border-radius: 6px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.input-x input {
+	width: 80px;
+}
+
+.campo-media {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.preenchimento-a, .preenchimento-b, .preenchimento-c, .preenchimento-d {
+	font-weight: bold;
+}
+
+.preenchimento-a {
+	color: #43D07B;
+}
+
+.preenchimento-b {
+	color: #3196C2;
+}
+
+.preenchimento-c {
+	color: #7849C6;
+}
+
+.preenchimento-d {
+	color: #CD8B32;
+}
+
+.pre-formula {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.formula {
+	display: inline-flex;
+	text-align: center;
+}
+
+.calculo {
+	margin-left: 1rem;
+	margin-right: : 1rem;
+}
+
+.calculo hr {
+	margin: 0px;
+	border-top: 1px solid #000;
+}
+
+.calculo .cima {
+	text-align: center;
+}
+
+.calculo .baixo {
+	text-align: center;
+}
+
+</style>
+
+<script type="text/javascript">
+
+console.log('questao-8.html');
+
+$("#iconSetaEsquerda").show();
+$("#iconSetaDireita").hide();
+$("#iconAjuda").hide();
+$("#iconCalculadora").show();
+
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
+
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
+
+iconAjuda.addEventListener("click", function() {
+	ajuda();
+});
+
+function anterior() {
+
+	carregarParte('questao-7.html');
+}
+
+function proxima() {
+
+	carregarParte('desvio-tabela.html');
+}
+
+function ajuda() {
+}
+
+let inputQuestao6ADesvioPadrao = document.querySelector("#input-desvio-padrao-a");
+let inputQuestao6BDesvioPadrao = document.querySelector("#input-desvio-padrao-b");
+let campoQuestao6ADesvioPadrao = document.querySelector("#campo-desvio-padrao-a");
+let campoQuestao6BDesvioPadrao = document.querySelector("#campo-desvio-padrao-b");
+
+let campoTotal = document.querySelector(".valor-total");
+
+let valorQuestao6ADesvioPadrao = 32065.2;
+let valorQuestao6BDesvioPadrao = 179.06;
+
+document.querySelector('#auto-completar').addEventListener('click', function (evt) {
+	if (evt.detail === 3) {
+
+		inputQuestao6ADesvioPadrao.value = valorQuestao6ADesvioPadrao.toString().replace('.', ',');
+		inputQuestao6BDesvioPadrao.value = valorQuestao6BDesvioPadrao.toString().replace('.', ',');
+		validarValores();
+	}
+});
+
+function validarValores() {
+	let valorQuestao6A = inputQuestao6ADesvioPadrao.value.replace('.', '').replace(',', '.');
+	let valorQuestao6B = inputQuestao6BDesvioPadrao.value.replace('.', '').replace(',', '.');
+
+	let valorQuestao6AOk = (valorQuestao6A == valorQuestao6ADesvioPadrao);
+	let valorQuestao6BOk = (valorQuestao6B == valorQuestao6BDesvioPadrao);
+
+	if (valorQuestao6AOk) {
+
+		campoQuestao6ADesvioPadrao.classList.add('fundo-ok');
+		campoQuestao6ADesvioPadrao.classList.remove('fundo-normal');
+
+		campoTotal.innerHTML = valorQuestao6ADesvioPadrao.toString().replace('.', ',');
+	} else {
+
+		campoQuestao6ADesvioPadrao.classList.remove('fundo-ok');
+		campoQuestao6ADesvioPadrao.classList.add('fundo-normal');
+
+		campoTotal.innerHTML = '?';
+	}
+
+	if (valorQuestao6BOk) {
+
+		campoQuestao6BDesvioPadrao.classList.add('fundo-ok');
+		campoQuestao6BDesvioPadrao.classList.remove('fundo-normal');
+	} else {
+
+		campoQuestao6BDesvioPadrao.classList.remove('fundo-ok');
+		campoQuestao6BDesvioPadrao.classList.add('fundo-normal');
+	}
+
+	if (valorQuestao6AOk && valorQuestao6BOk) {
+
+		$("#iconSetaDireita").show();
+	} else {
+
+		$("#iconSetaDireita").hide();
+	}
+
+}
+</script>

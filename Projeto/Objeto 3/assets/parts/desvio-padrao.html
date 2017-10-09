@@ -2,6 +2,16 @@
 	<img id='img-fundo' class="fundo" src="assets/img/desvio_padrao.png"/>
 
 	<div class='explicacoes container oculto muito-mais-top'>
+		<h4><span class="tab"/>O desvio padrão baseia-se nos desvios em torno da média aritmética e a sua fórmula básica pode ser traduzida como: a raiz quadrada da média aritmética dos quadrados dos desvios e aqui é representada por S.</h4>
+		<h4><span class="tab"/>Também pode ser entendido como a raiz quadrada da variância.</h4>
+		<ul class="mais-top"><li><h4>A fórmula é empregada quando tratamos de uma população não agrupados.</h4></li></ul>
+		<h4 class="mais-top"><span class="tab"/>Considerando que S² é a variância, então:</h4>
+		<div class="text-center mais-top">
+			<img src="assets/img/desvio_padrao-formula-1.png">
+		</div>
+	</div>
+
+	<div class='explicacoes-comparacao container oculto muito-mais-top'>
 		<h4>Comparação de fórmulas</h4>
 
 		<div class="text-center mais-top">
@@ -10,6 +20,55 @@
 
 		<h4>Observe, que o desvio padrão é a raiz quadrada da variância.</h4>
 		<h4>Dessa forma, podemos calcular o desvio padrão apenas extraindo a raiz quadrada da variância.</h4>
+
+	</div>
+
+	<div class='explicacoes-tabela-1 container oculto muito-mais-top'>
+
+		<div class="tabela col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+			<table class="table text-center">
+				<tr>
+					<th>Grandes Regiões</th>
+					<th>Municípios com serviço de coleta seletiva de plástico</th>
+				</tr>
+				<tr>
+					<th>Brasil</th>
+					<th>980</th>
+				</tr>
+				<tr>
+					<td>Norte</td>
+					<td>20</td>
+				</tr>
+				<tr>
+					<td>Nordeste</td>
+					<td>73</td>
+				</tr>
+				<tr>
+					<td>Sudeste</td>
+					<td>403</td>
+				</tr>
+				<tr>
+					<td>Sul</td>
+					<td>453</td>
+				</tr>
+				<tr>
+					<td>Centro-Oeste</td>
+					<td>31</td>
+				</tr>
+				<tr class="total">
+					<td>Variância</td>
+					<td>36.445,6</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="col-xs-12">
+			<h4>Para calcularmos o desvio padrão, basta encontrarmos a raiz quadrada da variância:</h4>
+			<div class="text-center mais-top">
+				<img src="assets/img/desvio_padrao-formula-2.png">
+			</div>
+		</div>
+
 
 	</div>
 
@@ -154,7 +213,7 @@ function anterior() {
 
 		default:
 		case 0:
-			carregarParte('questao-2.html');
+			carregarParte('questao-5.html');
 			break;
 
 		case 1:
@@ -165,14 +224,16 @@ function anterior() {
 			break;
 
 		case 2:
+			document.querySelector('.explicacoes').classList.remove('oculto');
+			document.querySelector(".explicacoes-comparacao").classList.add('oculto');
 
 
 			posIndexVariancia--;
 			break;
 
 		case 3:
-			// document.querySelector('.explicacoes').classList.remove('oculto');
-			// document.querySelector(".explicacoes-quadrado").classList.add('oculto');
+			document.querySelector('.explicacoes-comparacao').classList.remove('oculto');
+			document.querySelector(".explicacoes-tabela-1").classList.add('oculto');
 
 			posIndexVariancia--;
 			break;
@@ -190,22 +251,34 @@ function proxima() {
 			break;
 
 		case 1:
-			// document.querySelector('#img-fundo').classList.add('oculto');
-			// document.querySelector(".explicacoes").classList.remove('oculto');
+			document.querySelector('.explicacoes').classList.add('oculto');
+			document.querySelector(".explicacoes-comparacao").classList.remove('oculto');
 
 			posIndexVariancia++;
 			break;
 
 		case 2:
-			// document.querySelector('.explicacoes').classList.add('oculto');
-			// document.querySelector(".explicacoes-quadrado").classList.remove('oculto');
+			document.querySelector('.explicacoes-comparacao').classList.add('oculto');
+			document.querySelector(".explicacoes-tabela-1").classList.remove('oculto');
 
 			posIndexVariancia++;
 			break;
 
 		default:
 		case 3:
-			// carregarParte('questao-3.html');
+			swal({
+				title: `Agora é com você ${nomePessoa}! Complete com o Desvio Padrão...`,
+				closeOnClickOutside: false,
+				closeOnEsc: false,
+				button: {
+					text: 'Vamos lá!',
+					closeModal: true,
+					className: 'btn',
+				},
+			})
+			.then((value) => {
+				carregarParte('questao-6.html');
+			});
 			break;
 	}
 }
@@ -231,5 +304,5 @@ function ajuda() {
 		buttons: {}
 	});
 	dialogAjuda.dialog("open");
-
+}
 </script>
