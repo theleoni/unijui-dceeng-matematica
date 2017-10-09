@@ -1,0 +1,235 @@
+<div class="geral-interno">
+	<img id='img-fundo' class="fundo" src="assets/img/desvio_padrao.png"/>
+
+	<div class='explicacoes container oculto muito-mais-top'>
+		<h4>Comparação de fórmulas</h4>
+
+		<div class="text-center mais-top">
+			<img src="assets/img/desvio_padrao-parte-a-formula-1.png">
+		</div>
+
+		<h4>Observe, que o desvio padrão é a raiz quadrada da variância.</h4>
+		<h4>Dessa forma, podemos calcular o desvio padrão apenas extraindo a raiz quadrada da variância.</h4>
+
+	</div>
+
+	<div class="mensagens">
+	</div>
+</div>
+
+<style media="screen">
+
+.geral-interno {
+	position: relative;
+}
+
+.fundo {
+	width: auto;
+	max-width: 100%;
+}
+
+.tabela th {
+	text-align: center;
+}
+
+.tabela th, .tabela .total {
+	background-color: #F1ECF6;
+}
+
+.tabela .total {
+	color: #ae6df5;
+	font-weight: bold;
+}
+
+.input-x {
+	display: inline-flex;
+	border-radius: 6px;
+}
+
+.fundo-ok {
+	background-color: #46D079;
+	border: solid #46D079 3px;
+	transition: all .3s;
+}
+
+.fundo-normal {
+	background-color: #ae6df5;
+	border: solid #ae6df5 3px;
+	transition: all .3s;
+}
+
+input {
+	border: solid #FFFFFF 0px;
+	border-radius: 6px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.input-x input {
+	width: 80px;
+}
+
+.campo-media {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.preenchimento-a, .preenchimento-b, .preenchimento-c, .preenchimento-d {
+	font-weight: bold;
+}
+
+.preenchimento-a {
+	color: #43D07B;
+}
+
+.preenchimento-b {
+	color: #3196C2;
+}
+
+.preenchimento-c {
+	color: #7849C6;
+}
+
+.preenchimento-d {
+	color: #CD8B32;
+}
+
+.pre-formula {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.formula {
+	display: inline-flex;
+	text-align: center;
+}
+
+.calculo {
+	margin-left: 1rem;
+	margin-right: : 1rem;
+}
+
+.calculo hr {
+	margin: 0px;
+	border-top: 1px solid #000;
+}
+
+.calculo .cima {
+	text-align: center;
+}
+
+.calculo .baixo {
+	text-align: center;
+}
+
+</style>
+
+<script type="text/javascript">
+
+console.log('desvio-padrao.html');
+
+$("#iconSetaEsquerda").show();
+$("#iconSetaDireita").show();
+$("#iconAjuda").hide();
+$("#iconCalculadora").hide();
+
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
+
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
+
+iconAjuda.addEventListener("click", function() {
+	ajuda();
+});
+
+let posIndexVariancia = 0;
+function anterior() {
+
+	switch (posIndexVariancia) {
+
+		default:
+		case 0:
+			carregarParte('questao-2.html');
+			break;
+
+		case 1:
+			document.querySelector('#img-fundo').classList.remove('oculto');
+			document.querySelector(".explicacoes").classList.add('oculto');
+
+			posIndexVariancia--;
+			break;
+
+		case 2:
+
+
+			posIndexVariancia--;
+			break;
+
+		case 3:
+			// document.querySelector('.explicacoes').classList.remove('oculto');
+			// document.querySelector(".explicacoes-quadrado").classList.add('oculto');
+
+			posIndexVariancia--;
+			break;
+	}
+}
+
+function proxima() {
+	switch (posIndexVariancia) {
+
+		case 0:
+			document.querySelector('#img-fundo').classList.add('oculto');
+			document.querySelector(".explicacoes").classList.remove('oculto');
+
+			posIndexVariancia++;
+			break;
+
+		case 1:
+			// document.querySelector('#img-fundo').classList.add('oculto');
+			// document.querySelector(".explicacoes").classList.remove('oculto');
+
+			posIndexVariancia++;
+			break;
+
+		case 2:
+			// document.querySelector('.explicacoes').classList.add('oculto');
+			// document.querySelector(".explicacoes-quadrado").classList.remove('oculto');
+
+			posIndexVariancia++;
+			break;
+
+		default:
+		case 3:
+			// carregarParte('questao-3.html');
+			break;
+	}
+}
+
+function ajuda() {
+	if (document.querySelector('#dialog-ajuda') == null) {
+		let innerAjuda = document.querySelector(".mensagens").innerHTML;
+		innerAjuda += `
+		<div id="dialog-ajuda">
+			<h4>O desvio padrão tem de algumas propriedades, dentre as quais destacamos:</h4>
+			<h5>1ª Somando-se (ou subtraindo-se) uma constante a todos os valores de uma variável, o desvio padrão não se altera.</h5>
+			<h5>2ª Multiplicando-se (ou dividindo-se) todos os valores de uma variável por uma constante (diferente de zero), o desvio padrão fica multiplicado ( ou dividido) por essa constante.</h5>
+
+		</div>`;
+		document.querySelector(".mensagens").innerHTML = innerAjuda;
+	}
+
+	let dialogAjuda = $("#dialog-ajuda").dialog({
+		autoOpen: false,
+		height: 500,
+		width: 850,
+		modal: true,
+		buttons: {}
+	});
+	dialogAjuda.dialog("open");
+
+</script>

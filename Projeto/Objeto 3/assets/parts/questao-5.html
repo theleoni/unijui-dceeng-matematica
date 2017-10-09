@@ -1,0 +1,604 @@
+<div class="geral-interno">
+	<div class="container">
+
+		<h3>Atividade 5 - Calcular a variância dos valores da seguinte tabela, complete onde for <span id='auto-completar'>indicado</span> por '<b>?</b>'.</h3>
+		<div class="tabela col-xs-12 col-md-6">
+			<table class="table text-center">
+				<tr>
+					<th>Grandes Regiões</th>
+					<th>Municípios com serviço de coleta seletiva de plástico</th>
+				</tr>
+				<tr>
+					<th>Brasil</th>
+					<th>915</th>
+				</tr>
+				<tr>
+					<td>Norte</td>
+					<td>18</td>
+				</tr>
+				<tr>
+					<td>Nordeste</td>
+					<td>66</td>
+				</tr>
+				<tr>
+					<td>Sudeste</td>
+					<td>383</td>
+				</tr>
+				<tr>
+					<td>Sul</td>
+					<td>419</td>
+				</tr>
+				<tr>
+					<td>Centro-Oeste</td>
+					<td>29</td>
+				</tr>
+				<tr class="total">
+					<td>Variância</td>
+					<td>33.065,2</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="col-xs-12 col-md-6" style="display:flex">
+
+			<div class="formula">
+				<h4>1º Média Aritmética = </h4>
+
+				<div class="calculo">
+					<div class="cima">
+						<h5>18 + 66 + 383 + 419 + 29</h5>
+					</div>
+					<div class="linha">
+						<hr>
+					</div>
+					<div class="baixo">
+						<h5>5</h5>
+					</div>
+				</div>
+
+				<h5> = </h5>
+
+				<div class="calculo">
+					<div class="cima">
+						<h5>915</h5>
+					</div>
+					<div class="linha">
+						<hr>
+					</div>
+					<div class="baixo">
+						<h5>5</h5>
+					</div>
+				</div>
+
+				<h5> = <span class='preenchimento-b'>183</span></h5>
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-md-6 mais-top">
+			<h4>2º Variância: média dos quadrados dos desvios (desvio é cada um dos valores menos a média)</h4>
+
+			<div class="row">
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Variância = </h5>
+
+						<div class="calculo">
+							<div class="cima">
+								<h5>(valor1 - média)² + (valor2 + média)² + (valor3 + média)²</h5>
+							</div>
+							<div class="linha">
+								<hr>
+							</div>
+							<div class="baixo">
+								<h5>(número de valores)</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Var = </h5>
+
+						<div class="calculo">
+							<div class="cima">
+								<h5>
+									(<span class="preenchimento-a">18</span> - <span class="media-pre preenchimento-b">183</span>)² +
+									(<span class="preenchimento-a">66</span> - <span class="media-pre preenchimento-b">183</span>)² +
+									(<span class="preenchimento-a">383</span> - <span class="media-pre preenchimento-b">183</span>)² +
+									(<span class="preenchimento-a">419</span> - <span class="media-pre preenchimento-b">183</span>)² +
+									(<span class="preenchimento-a">29</span> - <span class="media-pre preenchimento-b">183</span>)²
+								</h5>
+							</div>
+							<div class="linha">
+								<hr>
+							</div>
+							<div class="baixo">
+								<h5>5</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Var = </h5>
+
+						<div class="calculo">
+							<div class="cima">
+								<h5>
+									(<span class="preenchimento-a">-165</span>)² +
+									(<span class="preenchimento-a">-117</span>)² +
+									(<span class="preenchimento-a">200</span>)² +
+									(<span class="preenchimento-a">236</span>)² +
+									(<span class="preenchimento-a">-154</span>)²
+								</h5>
+							</div>
+							<div class="linha">
+								<hr>
+							</div>
+							<div class="baixo">
+								<h5><b>5</b></h5>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Var = </h5>
+
+						<div class="calculo">
+							<div class="cima">
+								<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-a">
+									<input id='input-soma-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								</div>
+								+
+								<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-b">
+									<input id='input-soma-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								</div>
+								+
+								<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-c">
+									<input id='input-soma-c' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								</div>
+								+
+								<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-d">
+									<input id='input-soma-d' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								</div>
+								+
+								<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-e">
+									<input id='input-soma-e' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								</div>
+							</div>
+							<div class="linha">
+								<hr>
+							</div>
+							<div class="baixo">
+								<h5><b>5</b></h5>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Var = </h5>
+
+						<div class="calculo">
+							<div class="cima">
+								<h5>
+									<b><span class="totalizado-final">160.326</span></b>
+								</h5>
+							</div>
+							<div class="linha">
+								<hr>
+							</div>
+							<div class="baixo">
+								<h5><b>5</b></h5>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Var = </h5>
+
+						<div class="calculo">
+							<h5>
+								<b><span class="final-geral">32.065,2</span></b>
+							</h5>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="tabela col-xs-12 mais-top">
+			<h4>Podemos organizar os dados em uma tabela, da seguinte forma:</h4>
+
+			<table class="table text-center">
+				<tr>
+					<th>Xi (valores)</th>
+					<th>X&#772; (média)</th>
+					<th>(Xi - X&#772;) (valor - média)</th>
+					<th>(Xi - X&#772;)²</th>
+				</tr>
+				<tr>
+					<td><span class="preenchimento-a">18</span></td>
+					<td><span class="preenchimento-b">183</span></td>
+					<td><span class="preenchimento-a">18</span> - <span class="preenchimento-b">183</span> = <span class="preenchimento-c">-165</span></td>
+					<td><span class="preenchimento-d total-a">?</span></td>
+				</tr>
+				<tr>
+					<td><span class="preenchimento-a">66</span></td>
+					<td><span class="preenchimento-b">183</span></td>
+					<td><span class="preenchimento-a">66</span> - <span class="preenchimento-b">183</span> = <span class="preenchimento-c soma-b">-117</span></td>
+					<td><span class="preenchimento-d total-b">?</span></td>
+				</tr>
+				<tr>
+					<td><span class="preenchimento-a">383</span></td>
+					<td><span class="preenchimento-b">183</span></td>
+					<td><span class="preenchimento-a">383</span> - <span class="preenchimento-b">183</span> = <span class="preenchimento-c soma-c">200</span></td>
+					<td><span class="preenchimento-d total-c">?</span></td>
+				</tr>
+				<tr>
+					<td><span class="preenchimento-a">419</span></td>
+					<td><span class="preenchimento-b">183</span></td>
+					<td><span class="preenchimento-a">419</span> - <span class="preenchimento-b">183</span> = <span class="preenchimento-c soma-d">236</span></td>
+					<td><span class="preenchimento-d total-d">?</span></td>
+				</tr>
+				<tr>
+					<td><span class="preenchimento-a">29</span></td>
+					<td><span class="preenchimento-b">183</span></td>
+					<td><span class="preenchimento-a">29</span> - <span class="preenchimento-b">183</span> = <span class="preenchimento-c soma-e">-154</span></td>
+					<td><span class="preenchimento-d total-e">?</span></td>
+				</tr>
+				<tr class="total">
+					<td colspan="2"></td>
+					<td>Soma = </td>
+					<td><span class="totalizado-final">160.326</span></td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+
+	<div class="mensagens">
+	</div>
+</div>
+
+<style media="screen">
+
+.geral-interno {
+	position: relative;
+}
+
+.fundo {
+	width: 100%;
+}
+
+.tabela th {
+	text-align: center;
+}
+
+.tabela th, .tabela .total {
+	background-color: #F1ECF6;
+}
+
+.tabela .total {
+	color: #ae6df5;
+	font-weight: bold;
+}
+
+.input-x {
+	display: inline-flex;
+	border-radius: 6px;
+}
+
+.fundo-ok {
+	background-color: #46D079;
+	border: solid #46D079 3px;
+	transition: all .3s;
+}
+
+.fundo-normal {
+	background-color: #ae6df5;
+	border: solid #ae6df5 3px;
+	transition: all .3s;
+}
+
+input {
+	border: solid #FFFFFF 0px;
+	border-radius: 6px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.input-x input {
+	width: 60px;
+}
+
+.campo-media {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.preenchimento-a, .preenchimento-b, .preenchimento-c, .preenchimento-d {
+	font-weight: bold;
+}
+
+.preenchimento-a {
+	color: #43D07B;
+}
+
+.preenchimento-b {
+	color: #3196C2;
+}
+
+.preenchimento-c {
+	color: #7849C6;
+}
+
+.preenchimento-d {
+	color: #CD8B32;
+}
+
+.pre-formula {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.formula {
+	display: inline-flex;
+	text-align: center;
+}
+
+.calculo {
+	margin-left: 1rem;
+	margin-right: : 1rem;
+}
+
+.calculo hr {
+	margin: 0px;
+	border-top: 1px solid #000;
+}
+
+.calculo .cima {
+	text-align: center;
+}
+
+.calculo .baixo {
+	text-align: center;
+}
+
+</style>
+
+<script type="text/javascript">
+
+console.log('questao-5.html');
+
+apenasNumeros(document.querySelector("#input-soma-a"));
+apenasNumeros(document.querySelector("#input-soma-b"));
+apenasNumeros(document.querySelector("#input-soma-c"));
+apenasNumeros(document.querySelector("#input-soma-d"));
+apenasNumeros(document.querySelector("#input-soma-e"));
+
+$("#iconSetaEsquerda").show();
+$("#iconSetaDireita").hide();
+$("#iconAjuda").show();
+$("#iconCalculadora").hide();
+
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
+
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
+
+iconAjuda.addEventListener("click", function() {
+	ajuda();
+});
+
+function anterior() {
+
+	carregarParte('questao-4.html');
+}
+
+function proxima() {
+
+	carregarParte('desvio-padrao.html');
+}
+
+function ajuda() {
+	if (document.querySelector('#dialog-ajuda') == null) {
+		let innerAjuda = document.querySelector(".mensagens").innerHTML;
+		innerAjuda += `
+		<div id="dialog-ajuda">
+
+
+		</div>`;
+		document.querySelector(".mensagens").innerHTML = innerAjuda;
+	}
+
+	let dialogAjuda = $("#dialog-ajuda").dialog({
+		autoOpen: false,
+		height: 500,
+		width: 850,
+		modal: true,
+		buttons: {}
+	});
+	dialogAjuda.dialog("open");
+}
+
+let valorSomaA = 27225;
+let valorSomaB = 13689;
+let valorSomaC = 40000;
+let valorSomaD = 55696;
+let valorSomaE = 23716;
+
+document.querySelector('#auto-completar').addEventListener('click', function (evt) {
+	if (evt.detail === 3) {
+
+		inputQuestao5SomaA.value = valorSomaA.toString().replace('.', ',');
+		inputQuestao5SomaB.value = valorSomaB.toString().replace('.', ',');
+		inputQuestao5SomaC.value = valorSomaC.toString().replace('.', ',');
+		inputQuestao5SomaD.value = valorSomaD.toString().replace('.', ',');
+		inputQuestao5SomaE.value = valorSomaE.toString().replace('.', ',');
+
+		validarValores();
+	}
+});
+
+let inputQuestao5SomaA = document.querySelector("#input-soma-a");
+let inputQuestao5SomaB = document.querySelector("#input-soma-b");
+let inputQuestao5SomaC = document.querySelector("#input-soma-c");
+let inputQuestao5SomaD = document.querySelector("#input-soma-d");
+let inputQuestao5SomaE = document.querySelector("#input-soma-e");
+
+let campoQuestao5SomaA = document.querySelector("#campo-da-soma-a");
+let campoQuestao5SomaB = document.querySelector("#campo-da-soma-b");
+let campoQuestao5SomaC = document.querySelector("#campo-da-soma-c");
+let campoQuestao5SomaD = document.querySelector("#campo-da-soma-d");
+let campoQuestao5SomaE = document.querySelector("#campo-da-soma-e");
+
+function validarValores() {
+	let valorQuestao4SomaA = inputQuestao5SomaA.value.replace('.', '').replace(',', '.');
+	let valorQuestao4SomaB = inputQuestao5SomaB.value.replace('.', '').replace(',', '.');
+	let valorQuestao4SomaC = inputQuestao5SomaC.value.replace('.', '').replace(',', '.');
+	let valorQuestao4SomaD = inputQuestao5SomaD.value.replace('.', '').replace(',', '.');
+	let valorQuestao4SomaE = inputQuestao5SomaE.value.replace('.', '').replace(',', '.');
+
+	let valorQuestao4SomaAOk = (valorQuestao4SomaA == valorSomaA);
+	let valorQuestao4SomaBOk = (valorQuestao4SomaB == valorSomaB);
+	let valorQuestao4SomaCOk = (valorQuestao4SomaC == valorSomaC);
+	let valorQuestao4SomaDOk = (valorQuestao4SomaD == valorSomaD);
+	let valorQuestao4SomaEOk = (valorQuestao4SomaE == valorSomaE);
+
+	let somasA = document.querySelector('.total-a');
+	let somasB = document.querySelector('.total-b');
+	let somasC = document.querySelector('.total-c');
+	let somasD = document.querySelector('.total-d');
+	let somasE = document.querySelector('.total-e');
+
+	if (valorQuestao4SomaAOk) {
+		campoQuestao5SomaA.classList.add('fundo-ok');
+		campoQuestao5SomaA.classList.remove('fundo-normal');
+
+		somasA.innerHTML = valorSomaA.toString().replace('.', ',');
+	} else {
+		campoQuestao5SomaA.classList.remove('fundo-ok');
+		campoQuestao5SomaA.classList.add('fundo-normal');
+
+		somasA.innerHTML = '?';
+	}
+
+	if (valorQuestao4SomaBOk) {
+		campoQuestao5SomaB.classList.add('fundo-ok');
+		campoQuestao5SomaB.classList.remove('fundo-normal');
+
+		somasB.innerHTML = valorSomaB.toString().replace('.', ',');
+	} else {
+		campoQuestao5SomaB.classList.remove('fundo-ok');
+		campoQuestao5SomaB.classList.add('fundo-normal');
+
+		somasB.innerHTML = '?';
+	}
+
+	if (valorQuestao4SomaCOk) {
+		campoQuestao5SomaC.classList.add('fundo-ok');
+		campoQuestao5SomaC.classList.remove('fundo-normal');
+
+		somasC.innerHTML = valorSomaC.toString().replace('.', ',');
+	} else {
+		campoQuestao5SomaC.classList.remove('fundo-ok');
+		campoQuestao5SomaC.classList.add('fundo-normal');
+
+		somasC.innerHTML = '?';
+	}
+
+	if (valorQuestao4SomaDOk) {
+		campoQuestao5SomaD.classList.add('fundo-ok');
+		campoQuestao5SomaD.classList.remove('fundo-normal');
+
+		somasD.innerHTML = valorSomaD.toString().replace('.', ',');
+	} else {
+		campoQuestao5SomaD.classList.remove('fundo-ok');
+		campoQuestao5SomaD.classList.add('fundo-normal');
+
+		somasD.innerHTML = '?';
+	}
+
+	if (valorQuestao4SomaEOk) {
+		campoQuestao5SomaE.classList.add('fundo-ok');
+		campoQuestao5SomaE.classList.remove('fundo-normal');
+
+		somasE.innerHTML = valorSomaE.toString().replace('.', ',');
+	} else {
+		campoQuestao5SomaE.classList.remove('fundo-ok');
+		campoQuestao5SomaE.classList.add('fundo-normal');
+
+		somasE.innerHTML = '?';
+	}
+
+	if (valorQuestao4SomaAOk && valorQuestao4SomaBOk && valorQuestao4SomaCOk && valorQuestao4SomaDOk && valorQuestao4SomaEOk) {
+
+		$("#iconSetaDireita").show();
+	} else {
+
+		$("#iconSetaDireita").hide();
+	}
+
+}
+
+function preencherCamposMedia(mediaOk) {
+	let medias = document.querySelectorAll('.media-pre');
+	for (var posMedia in medias) {
+		if (mediaOk) {
+			medias[posMedia].innerHTML = valorCorretoMedia.toString().replace('.', ',');
+		} else {
+			medias[posMedia].innerHTML = '?';
+		}
+	}
+
+
+
+
+	for (var posSomaB in somasB) {
+		if (mediaOk) {
+			somasB[posSomaB].innerHTML = valorSomaB.toString().replace('.', ',');
+		} else {
+			somasB[posSomaB].innerHTML = '?';
+		}
+	}
+	for (var posSomaC in somasC) {
+		if (mediaOk) {
+			somasC[posSomaC].innerHTML = valorSomaC.toString().replace('.', ',');
+		} else {
+			somasC[posSomaC].innerHTML = '?';
+		}
+	}
+	for (var posSomaD in somasD) {
+		if (mediaOk) {
+			somasD[posSomaD].innerHTML = valorSomaD.toString().replace('.', ',');
+		} else {
+			somasD[posSomaD].innerHTML = '?';
+		}
+	}
+	for (var posSomaE in somasE) {
+		if (mediaOk) {
+			somasE[posSomaE].innerHTML = valorSomaE.toString().replace('.', ',');
+		} else {
+			somasE[posSomaE].innerHTML = '?';
+		}
+	}
+
+}
+
+</script>

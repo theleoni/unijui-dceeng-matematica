@@ -2,11 +2,12 @@
 	<img id='img-fundo' class="fundo" src="assets/img/variancia-1.png"/>
 
 	<div class='explicacoes container oculto muito-mais-top'>
-		<div class="tabela">
+		<h3>Calcular a variância dos valores da seguinte tabela, complete onde for <span id='auto-completar'>indicado</span> por '<b>?</b>'.</h3>
+		<div class="tabela col-xs-12 col-md-6">
 			<table class="table text-center">
 				<tr>
 					<th>Grandes Regiões</th>
-					<th>Municípios com serviço de coleta seletiva de papel e/ou papelão</th>
+					<th>Municípios com serviço de coleta seletiva de plástico</th>
 				</tr>
 				<tr>
 					<th>Brasil</th>
@@ -39,73 +40,218 @@
 			</table>
 		</div>
 
-		<div class="formulas muito-mais-top">
+		<div class="col-xs-12 col-md-6" style="display:flex">
+	
+			<div class="formula">
+				<h4>1º Média Aritmética = </h4>
 
-			<h4><b>1º Média Aritmética: </b></h4>
-			<div class="text-center">
-				<img src="assets/img/variancia-formula-3.jpg">
+				<div class="calculo">
+					<div class="cima">
+						<h5>20 + 73 + 403 + 453 + 31</h5>
+					</div>
+					<div class="linha">
+						<hr>
+					</div>
+					<div class="baixo">
+						<h5>5</h5>
+					</div>
+				</div>
+
+				<h5> = </h5>
+
+				<div class="calculo">
+					<div class="cima">
+						<h5>980</h5>
+					</div>
+					<div class="linha">
+						<hr>
+					</div>
+					<div class="baixo">
+						<h5>5</h5>
+					</div>
+				</div>
+
+				<h5> = <span class='preenchimento-b'>196</span></h5>
 			</div>
+		</div>
 
-			<h4 class="mais-top"><b>2º Variância: </b> média dos quadrados dos desvios (desvio é cada um dos valores menos a média)</h4>
+		<div class="col-xs-12 col-md-6 mais-top">
+			<h4>2º Variância: média dos quadrados dos desvios (desvio é cada um dos valores menos a média)</h4>
 
-			<div class="text-center">
-				<img src="assets/img/variancia-formula-2.jpg">
+			<div class="row">
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Variância = </h5>
+
+						<div class="calculo">
+							<div class="cima">
+								<h5>(valor1 - média)² + (valor2 + média)² + (valor3 + média)²</h5>
+							</div>
+							<div class="linha">
+								<hr>
+							</div>
+							<div class="baixo">
+								<h5>(número de valores)</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Var = </h5>
+
+						<div class="calculo">
+							<div class="cima">
+								<h5>
+									(<span class="preenchimento-a">20</span> - <span class="media-pre preenchimento-b">196</span>)² +
+									(<span class="preenchimento-a">73</span> - <span class="media-pre preenchimento-b">196</span>)² +
+									(<span class="preenchimento-a">403</span> - <span class="media-pre preenchimento-b">196</span>)² +
+									(<span class="preenchimento-a">453</span> - <span class="media-pre preenchimento-b">196</span>)² +
+									(<span class="preenchimento-a">31</span> - <span class="media-pre preenchimento-b">196</span>)²
+								</h5>
+							</div>
+							<div class="linha">
+								<hr>
+							</div>
+							<div class="baixo">
+								<h5>5</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Var = </h5>
+
+						<div class="calculo">
+							<div class="cima">
+								<h5>
+									(<span class="preenchimento-c">-176</span>)² +
+									(<span class="preenchimento-c">-123</span>)² +
+									(<span class="preenchimento-c">207</span>)² +
+									(<span class="preenchimento-c">257</span>)² +
+									(<span class="preenchimento-c">-165</span>)²
+								</h5>
+							</div>
+							<div class="linha">
+								<hr>
+							</div>
+							<div class="baixo">
+								<h5><b>5</b></h5>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Var = </h5>
+
+						<div class="calculo">
+							<div class="cima">
+								<h5>
+									<span class="preenchimento-d">30.976</span> +
+									<span class="preenchimento-d">15.129</span> +
+									<span class="preenchimento-d">42.849</span> +
+									<span class="preenchimento-d">66.049</span> +
+									<span class="preenchimento-d">27.225</span>
+								</h5>
+							</div>
+							<div class="linha">
+								<hr>
+							</div>
+							<div class="baixo">
+								<h5><b>5</b></h5>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Var = </h5>
+
+						<div class="calculo">
+							<div class="cima">
+								<h5>
+									<b><span class="totalizado-final">182.228</span></b>
+								</h5>
+							</div>
+							<div class="linha">
+								<hr>
+							</div>
+							<div class="baixo">
+								<h5><b>5</b></h5>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 mais-top pre-formula">
+					<div class="formula">
+						<h5>Var = </h5>
+
+						<div class="calculo">
+							<h5>
+								<b><span class="final-geral">36.445,6</span></b>
+							</h5>
+						</div>
+					</div>
+				</div>
+
 			</div>
 
 		</div>
 
+		<div class="tabela col-xs-12 mais-top">
+			<h4>Podemos organizar os dados em uma tabela, da seguinte forma:</h4>
 
-		<h4>Podemos organizar os dados em uma tabela, da seguinte forma.</h4>
-		<div class="dados muito-mais-top">
-			<div class="tabela">
-				<table class="table text-center">
-					<tr>
-						<th>Xi (valores)</th>
-						<th>X&#772; (média)</th>
-						<th>(Xi - X&#772;) (valor - média)</th>
-						<th>(Xi - X&#772;)²</th>
-					</tr>
-					<tr>
-						<td><span class="preenchimento-a">20</span></td>
-						<td><span class="preenchimento-b">196</span></td>
-						<td><span class="preenchimento-a">20</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">-176</span></td>
-						<td><span class="preenchimento-d">30.976</span></td>
-					</tr>
-					<tr>
-						<td><span class="preenchimento-a">73</span></td>
-						<td><span class="preenchimento-b">196</span></td>
-						<td><span class="preenchimento-a">73</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">-123</span></td>
-						<td><span class="preenchimento-d">15.129</span></td>
-					</tr>
-					<tr>
-						<td><span class="preenchimento-a">403</span></td>
-						<td><span class="preenchimento-b">196</span></td>
-						<td><span class="preenchimento-a">403</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">207</span></td>
-						<td><span class="preenchimento-d">42.849</span></td>
-					</tr>
-					<tr>
-						<td><span class="preenchimento-a">453</span></td>
-						<td><span class="preenchimento-b">196</span></td>
-						<td><span class="preenchimento-a">453</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">257</span></td>
-						<td><span class="preenchimento-d">66.049</span></td>
-					</tr>
-					<tr>
-						<td><span class="preenchimento-a">31</span></td>
-						<td><span class="preenchimento-b">196</span></td>
-						<td><span class="preenchimento-a">31</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">-165</span></td>
-						<td><span class="preenchimento-d">27.225</span></td>
-					</tr>
-					<tr class="total">
-						<td colspan="2"></td>
-						<td>Soma=</td>
-						<td>182.228</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-
-		<div class="text-center muito-mais-top muitissimo-mais-bottom">
-			<img src="assets/img/variancia-formula-1.jpg">
+			<table class="table text-center">
+				<tr>
+					<th>Xi (valores)</th>
+					<th>X&#772; (média)</th>
+					<th>(Xi - X&#772;) (valor - média)</th>
+					<th>(Xi - X&#772;)²</th>
+				</tr>
+				<tr>
+					<td><span class="preenchimento-a">20</span></td>
+					<td><span class="preenchimento-b">196</span></td>
+					<td><span class="preenchimento-a">20</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">-176</span></td>
+					<td><span class="preenchimento-d">30.976</span></td>
+				</tr>
+				<tr>
+					<td><span class="preenchimento-a">73</span></td>
+					<td><span class="preenchimento-b">196</span></td>
+					<td><span class="preenchimento-a">74</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">-123</span></td>
+					<td><span class="preenchimento-d">15.129</span></td>
+				</tr>
+				<tr>
+					<td><span class="preenchimento-a">403</span></td>
+					<td><span class="preenchimento-b">196</span></td>
+					<td><span class="preenchimento-a">403</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">207</span></td>
+					<td><span class="preenchimento-d">42.849</span></td>
+				</tr>
+				<tr>
+					<td><span class="preenchimento-a">453</span></td>
+					<td><span class="preenchimento-b">196</span></td>
+					<td><span class="preenchimento-a">453</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">257</span></td>
+					<td><span class="preenchimento-d">66.049</span></td>
+				</tr>
+				<tr>
+					<td><span class="preenchimento-a">31</span></td>
+					<td><span class="preenchimento-b">196</span></td>
+					<td><span class="preenchimento-a">31</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">-165</span></td>
+					<td><span class="preenchimento-d">27.225</span></td>
+				</tr>
+				<tr class="total">
+					<td colspan="2"></td>
+					<td>Soma = </td>
+					<td><span class="totalizado-final">182.228</span></td>
+				</tr>
+			</table>
 		</div>
 
 	</div>
@@ -145,11 +291,50 @@
 }
 
 .tabela th, .tabela .total {
-	background-color: #F9F1F1;
+	background-color: #F1ECF6;
 }
 
 .tabela .total {
-	color: #FF3C3C;
+	color: #ae6df5;
+	font-weight: bold;
+}
+
+.input-x {
+	display: inline-flex;
+	border-radius: 6px;
+}
+
+.fundo-ok {
+	background-color: #46D079;
+	border: solid #46D079 3px;
+	transition: all .3s;
+}
+
+.fundo-normal {
+	background-color: #ae6df5;
+	border: solid #ae6df5 3px;
+	transition: all .3s;
+}
+
+input {
+	border: solid #FFFFFF 0px;
+	border-radius: 6px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.input-x input {
+	width: 80px;
+}
+
+.campo-media {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.preenchimento-a, .preenchimento-b, .preenchimento-c, .preenchimento-d {
 	font-weight: bold;
 }
 
@@ -169,9 +354,32 @@
 	color: #CD8B32;
 }
 
-.vertical-centro {
-	vertical-align: center;
-	display: inline-block;
+.pre-formula {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.formula {
+	display: inline-flex;
+	text-align: center;
+}
+
+.calculo {
+	margin-left: 1rem;
+	margin-right: : 1rem;
+}
+
+.calculo hr {
+	margin: 0px;
+	border-top: 1px solid #000;
+}
+
+.calculo .cima {
+	text-align: center;
+}
+
+.calculo .baixo {
+	text-align: center;
 }
 
 </style>

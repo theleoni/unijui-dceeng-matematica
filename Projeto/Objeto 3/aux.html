@@ -48,6 +48,9 @@
 				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-2.html');">Questão 2</button>
 				<button type="button" class="btn butonlousso" onclick="carregarParte('variancia.html');">Variância</button>
 				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-3.html');">Questão 3</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-4.html');">Questão 4</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-5.html');">Questão 5</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('desvio-padrao.html');">Desvio Padrão</button>
 			</div>
 		</center>
 
@@ -145,14 +148,18 @@
 
 		input.addEventListener('input', function(evt) {
 
-			this.value = this.value.replace(/[^0-9,]/g, '');
+			this.value = this.value.replace(/[^0-9\-,]/g, '');
 			this.value = this.value.replace(/(\..*)\./g, '$1');
 		});
 	}
 
+// CODIGO TEMP
+	carregarParte('pre-login.html');
+	document.querySelector(".body-header h1").innerHTML = '';
+
 	</script>
 
-	<script src='http://localhost:35165/livereload.js'></script>
+	<script src='http://localhost:35729/livereload.js'></script>
 
 </body>
 </html>
