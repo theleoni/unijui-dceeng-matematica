@@ -63,8 +63,6 @@ function hideDivsOnObjectStart() {
 	$("#telaVideoOnibus1ponto1").hide();
 	$("#telaRioSujo").hide();
 	$("#telaAgradecimento").hide();
-
-
 }
 
 
