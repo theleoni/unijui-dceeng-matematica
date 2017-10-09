@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Aux</title>
+
+	<script src="assets/js/jquery-1.12.4.js"></script>
+	<script src="assets/js/jquery-ui-1.12.1.js"></script>
+
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/bib/highcharts/code/highcharts.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/jquery-ui.css">
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/botoesFixos.css"> -->
+	<script src="assets/js/sweetalert.min.js"></script>
+
+	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> -->
+</head>
+
+<body>
+	<div class="body-header">
+		<h1>Tela Aux</h1>
+
+		<div id='botoes-fixos'>
+
+		</div>
+	</div>
+
+	<div class="geral">
+
+		<center>
+			<div>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('pre-login.html');">Pré-Login</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('login.html');">Login</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('lixeiras.html');">Lixeiras</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('explicacao-professora.html');">Explicação prof.</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('sala-aula.html');">Sala de aula</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('media-mediana-moda.html');">Média/Mediana/Moda</button>
+			</div>
+
+			<div>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('inicio-questoes.html');">Início Questões</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-1.html');">Questão 1</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('destino-lixo.html');">Destino Lixo</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('media-quadratica.html');">Média Quadrática</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('media-quadratica-dados-agrupados.html');">M.Q. Agrupados</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-2.html');">Questão 2</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('variancia.html');">Variância</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-3.html');">Questão 3</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-4.html');">Questão 4</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-5.html');">Questão 5</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('desvio-padrao.html');">Desvio Padrão</button>
+			</div>
+		</center>
+
+	</div>
+
+	<style media="screen">
+	.geral {
+		height: 100%
+	}
+
+	.body-header {
+		width: 100%;
+		display: inline-flex;
+	}
+
+	.muitissimo-mais-top {
+		margin-top: 48px !important;
+	}
+
+	.muitissimo-mais-bottom {
+		margin-bottom: 48px !important;
+	}
+
+	.muito-mais-top {
+		margin-top: 36px !important;
+	}
+
+	.muito-mais-bottom {
+		margin-bottom: 36px !important;
+	}
+
+	.mais-top {
+		margin-top: 16px !important;
+	}
+
+	.mais-bottom {
+		margin-bottom: 16px !important;
+	}
+
+	.tab {
+		display:inline-block; width: 30px;
+	}
+
+	.ocultar {
+		display: none;
+	}
+
+	.oculto {
+		display: none;
+	}
+
+	.butonlousso {
+		margin: 6px;
+	}
+	</style>
+
+	<script type="text/javascript">
+	var iconSetaEsquerda;
+	var iconSetaDireita;
+	var iconAjuda;
+	var iconCalculadora;
+
+	let divBotoesFixos = document.getElementById('botoes-fixos');
+	recarregarBotoes();
+
+	$("#iconSetaEsquerda").hide();
+	$("#iconSetaDireita").hide();
+	$("#iconAjuda").hide();
+	$("#iconCalculadora").hide();
+
+	var nomePessoa = 'Jureg';
+	// $('.geral').load('assets/parts/lixeiras.html');
+
+	function carregarParte(link) {
+		recarregarBotoes();
+		$('.geral').load(`assets/parts/${link}`);
+	}
+
+	function recarregarBotoes() {
+		divBotoesFixos.innerHTML =
+		`
+		<button type="button" class="btn" id='iconSetaEsquerda'>Voltar</button>
+		<button type="button" class="btn" id='iconSetaDireita'>Avançar</button>
+		<button type="button" class="btn" id='iconAjuda'>Ajuda</button>
+		<button type="button" class="btn" id='iconCalculadora'>Calculadora</button>
+		`;
+
+		iconSetaEsquerda = divBotoesFixos.querySelector('#iconSetaEsquerda');
+		iconSetaDireita = divBotoesFixos.querySelector('#iconSetaDireita');
+		iconAjuda = divBotoesFixos.querySelector('#iconAjuda');
+		iconCalculadora = divBotoesFixos.querySelector('#iconCalculadora');
+	}
+
+	function apenasNumeros(input) {
+
+		input.addEventListener('input', function(evt) {
+
+			this.value = this.value.replace(/[^0-9\-,]/g, '');
+			this.value = this.value.replace(/(\..*)\./g, '$1');
+		});
+	}
+
+// CODIGO TEMP
+	carregarParte('pre-login.html');
+	document.querySelector(".body-header h1").innerHTML = '';
+
+	</script>
+
+	<script src='http://localhost:35729/livereload.js'></script>
+
+</body>
+</html>
