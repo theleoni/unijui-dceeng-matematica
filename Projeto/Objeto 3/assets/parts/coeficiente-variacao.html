@@ -1,0 +1,340 @@
+<div class="geral-interno">
+	<img id='img-fundo' class="fundo" src="assets/img/coeficiente-variacao.png"/>
+
+	<div class='explicacoes-1 container muito-mais-top oculto'>
+		<h3>COEFICIENTE DE VARIAÇÃO DE PEARSON - CVP</h3>
+
+		<h4><span class="tab"/>É a razão entre o desvio padrão e a média referentes a dados de uma mesma série, dado pela fórmula:</h4>
+
+		<div class="text-center mais-top">
+			<img src="assets/img/coeficiente-variacao-formula-1.png">
+		</div>
+
+		<h4>Onde,</h4>
+		<h4>CV > é o coeficiente de variação</h4>
+		<h4>S > é o desvio padrão</h4>
+		<h4>x&#772; > é a média dos dados</h4>
+
+		<h4 class="muito-mais-top">O coeficiente de variação é dado em %, por isso a fórmula é multiplicada por 100.</h4>
+		<div class="text-center mais-top">
+			<img src="assets/img/coeficiente-variacao-formula-2.png">
+		</div>
+
+	</div>
+
+	<div class='explicacoes-2 container muito-mais-top oculto'>
+
+		<h4>Tabelas utilizadas para estudar variância e desvio padrão</h4>
+
+		<div class="tabela col-xs-12 col-md-6">
+			<table class="table text-center">
+				<tr>
+					<th>Grandes Regiões</th>
+					<th>Municípios com serviço de coleta seletiva de papel e/ou papelão</th>
+				</tr>
+				<tr>
+					<th>Brasil</th>
+					<th>980</th>
+				</tr>
+				<tr>
+					<td>Norte</td>
+					<td>20</td>
+				</tr>
+				<tr>
+					<td>Nordeste</td>
+					<td>73</td>
+				</tr>
+				<tr>
+					<td>Sudeste</td>
+					<td>403</td>
+				</tr>
+				<tr>
+					<td>Sul</td>
+					<td>453</td>
+				</tr>
+				<tr>
+					<td>Centro-Oeste</td>
+					<td>31</td>
+				</tr>
+				<tr class="total">
+					<td>Variância (S²)</td>
+					<td>36.445,6</td>
+				</tr>
+				<tr class="total">
+					<td>Desvio Padrão (S)</td>
+					<td>√36.445,6 = 190,9</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="tabela col-xs-12 col-md-6">
+			<table class="table text-center">
+				<tr>
+					<th>Grandes Regiões</th>
+					<th>Municípios com serviço de coleta seletiva de metal</th>
+				</tr>
+				<tr>
+					<th>Brasil</th>
+					<th>915</th>
+				</tr>
+				<tr>
+					<td>Norte</td>
+					<td>18</td>
+				</tr>
+				<tr>
+					<td>Nordeste</td>
+					<td>66</td>
+				</tr>
+				<tr>
+					<td>Sudeste</td>
+					<td>383</td>
+				</tr>
+				<tr>
+					<td>Sul</td>
+					<td>419</td>
+				</tr>
+				<tr>
+					<td>Centro-Oeste</td>
+					<td>29</td>
+				</tr>
+				<tr class="total">
+					<td>Variância (S²)</td>
+					<td>32.065,2</td>
+				</tr>
+				<tr class="total">
+					<td>Desvio Padrão (S)</td>
+					<td>√32.065,2 = 179,06</td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="col-xs-12">
+			<h4>Ex:  Tomemos os resultados dos municípios com serviço de coleta seletiva de papel e de metal, apresentados nas tabelas acima:</h4>
+			<div class="tabela col-xs-12 col-md-6 col-md-offset-3">
+				<table class="table text-center">
+					<tr>
+						<th>Discriminação</th>
+						<th>Média</th>
+						<th>Desvio Padrão</th>
+					</tr>
+					<tr>
+						<td>Papel</td>
+						<td>196</td>
+						<td>190,9</td>
+					</tr>
+					<tr>
+						<td>Metal</td>
+						<td>183</td>
+						<td>179,06</td>
+					</tr>
+				</table>
+			</div>
+
+		</div>
+
+		<div class="col-xs-12">
+			<h4>Qual dos materiais (Papel ou Metal) possui maior homogeneidade ?</h4>
+
+			<h4>Teremos que calcular o <b>CVP</b> (Coeficiente de Variação de Pearson) do <b>Papel</b> e do <b>Metal</b>. O <b>resultado menor</b> será o de <b>maior homogenidade</b> (menor dispersão ou variabilidade).</h4>
+
+			<div class="text-center mais-top">
+				<img src="assets/img/coeficiente-variacao-formula-3.png">
+			</div>
+
+			<h4>Logo o papel apresenta menor grau de dispersão que o metal.</h4>
+		</div>
+
+	</div>
+
+	<div class="mensagens">
+	</div>
+</div>
+
+<style media="screen">
+
+.geral-interno {
+	position: relative;
+}
+
+.fundo {
+	width: auto;
+	max-width: 100%;
+}
+
+.tabela th {
+	text-align: center;
+}
+
+.tabela th, .tabela .total,
+.tabela .bg-colorido {
+	background-color: #F1ECF6;
+}
+
+.tabela .total {
+	color: #ae6df5;
+	font-weight: bold;
+}
+
+.input-x {
+	display: inline-flex;
+	border-radius: 6px;
+}
+
+.fundo-ok {
+	background-color: #46D079;
+	border: solid #46D079 3px;
+	transition: all .3s;
+}
+
+.fundo-normal {
+	background-color: #ae6df5;
+	border: solid #ae6df5 3px;
+	transition: all .3s;
+}
+
+input {
+	border: solid #FFFFFF 0px;
+	border-radius: 6px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.input-x input {
+	width: 80px;
+}
+
+.campo-media {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.preenchimento-a, .preenchimento-b, .preenchimento-c, .preenchimento-d {
+	font-weight: bold;
+}
+
+.preenchimento-a {
+	color: #43D07B;
+}
+
+.preenchimento-b {
+	color: #3196C2;
+}
+
+.preenchimento-c {
+	color: #7849C6;
+}
+
+.preenchimento-d {
+	color: #CD8B32;
+}
+
+.pre-formula {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.formula {
+	display: inline-flex;
+	text-align: center;
+}
+
+.calculo {
+	margin-left: 1rem;
+	margin-right: : 1rem;
+}
+
+.calculo hr {
+	margin: 0px;
+	border-top: 1px solid #000;
+}
+
+.calculo .cima {
+	text-align: center;
+}
+
+.calculo .baixo {
+	text-align: center;
+}
+
+</style>
+
+<script type="text/javascript">
+
+console.log('coeficiente-variacao.html');
+
+$("#iconSetaEsquerda").show();
+$("#iconSetaDireita").show();
+$("#iconAjuda").hide();
+$("#iconCalculadora").hide();
+
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
+
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
+
+iconAjuda.addEventListener("click", function() {
+	ajuda();
+});
+
+let posIndexVariancia = 0;
+function anterior() {
+
+	switch (posIndexVariancia) {
+
+		default:
+		case 0:
+			carregarParte('desvio-amostral.html');
+			break;
+
+		case 1:
+			document.querySelector('#img-fundo').classList.remove('oculto');
+			document.querySelector(".explicacoes-1").classList.add('oculto');
+
+			posIndexVariancia--;
+			break;
+
+		case 2:
+			document.querySelector(".explicacoes-1").classList.remove('oculto');
+			document.querySelector(".explicacoes-2").classList.add('oculto');
+
+			posIndexVariancia--;
+			break;
+
+	}
+}
+
+function proxima() {
+	switch (posIndexVariancia) {
+
+		case 0:
+			document.querySelector('#img-fundo').classList.add('oculto');
+			document.querySelector(".explicacoes-1").classList.remove('oculto');
+
+			posIndexVariancia++;
+			break;
+
+		case 1:
+			document.querySelector(".explicacoes-1").classList.add('oculto');
+			document.querySelector(".explicacoes-2").classList.remove('oculto');
+
+			posIndexVariancia++;
+			break;
+
+		default:
+		case 2:
+			carregarParte('questao-10.html');
+			break;
+
+	}
+}
+
+function ajuda() {
+
+}
+
+</script>
