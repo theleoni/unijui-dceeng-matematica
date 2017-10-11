@@ -88,7 +88,7 @@
 	},
 	"questao8": {
 	"numeroQuestao": "8.",
-	"textoQuestao": "De acordo com o gráfico, qual a forma de produção de energia mais utilizada no Brasil?",
+	"textoQuestao": "De acordo com o gráfico, qual a fonte que gera mais energia elétrica no Brasil?",
 	"alternativa1Questao": "<span class='containerLetra'>A</span>Hidrelétrica",
 	"alternativa2Questao": "<span class='containerLetra'>B</span>Solar",
 	"alternativa3Questao": "<span class='containerLetra'>C</span>Gás Natural",
@@ -116,7 +116,7 @@
 		},
 	"questao13": {
 		"numeroQuestao": "3.",
-		"textoQuestao": "Qual das formas de produção de energia elétrica é a que mais produz em kW?"
+		"textoQuestao": "Segundo a tabela, qual das formas de produção de energia elétrica é a que mais produz em KW?"
 	},
 	"questao14": {
 		"numeroQuestao": "4.",

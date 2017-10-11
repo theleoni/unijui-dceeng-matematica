@@ -165,7 +165,7 @@
 						nextScene();
 						break;
 					} else {
-						swal("","Clique nos impostos para ver o conteúdo", "error");
+						swal("","Clique nos impostos para ver o conteúdo", "error").catch(swal.noop);
 						break;
 					}
 					break;
@@ -224,6 +224,9 @@
 						questionNumber++;
 						nextScene();
 						break;
+						case 11:
+						nextScene();
+						break;
 					}
 					break;
 
@@ -232,7 +235,7 @@
 						nextScene();
 						break;
 					} else {
-						swal("","Clique nas usinas para ver o conteúdo", "error");
+						swal("","Clique nas usinas para ver o conteúdo", "error").catch(swal.noop);
 						break;
 					}
 					break;
@@ -240,7 +243,7 @@
 				}
 
 			} else {
-				swal("","Espere para passar à próxima tela");
+				swal("","Espere para passar à próxima tela").catch(swal.noop);
 			}
 
 		});
@@ -255,6 +258,7 @@
 		 		case 9:
 		 		case 10:
 		 		case 11:
+		 		case 14:
 		 		case 15:
 		 		previousScene();
 		 		break;
@@ -297,37 +301,36 @@
 		 			previousScene();
 
 
-							//Tempo de espera até a cena carregar, ou as imagens não irão aparecer
-							sleep(500).then(() => {
-								$("#imagensIntroGraficos").show();
-							});
+						//Tempo de espera até a cena carregar, ou as imagens não irão aparecer
+						sleep(500).then(() => {
+							$("#imagensIntroGraficos").show();
+						});
 
-							break;
-							default:
-							questionNumber--;
-							loadQuestion();
-							break;
-						}
 						break;
-						case 7:
-						switch(questionNumber) {
-							case 11:
-							questionNumber--;
-							previousScene();
-							break;
-							default:
-							questionNumber--;
-							loadQuestion();
-							break;
-						}
+						default:
+						questionNumber--;
+						loadQuestion();
 						break;
+					}
+					break;
+					case 7:
+					switch(questionNumber) {
+						case 11:
+						previousScene();
+						break;
+						default:
+						questionNumber--;
+						loadQuestion();
+						break;
+					}
+					break;
 
 
 
 
 
 
-					}		});
+				}		});
 
 
 
@@ -634,6 +637,7 @@
 	  		break;
 
 	  		case 5:
+	  		swal("Atenção!", "Nas respostas dos exercícios a seguir utilize valores arredondados para duas casas após a virgula").catch(swal.noop);
 	  		$("#questionGroup").hide();
 	  		$("#opcaoA").show().siblings().show();
 	  		$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao5.numeroQuestao);
@@ -645,7 +649,6 @@
 	  		$("#questionGroup").hide();
 	  		$("#tabelaQuestoesGraficos").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
-
 	  		grafico2();
 
 	  		if (corretas[4] == false) {
@@ -1129,7 +1132,7 @@
 
 	  	}).then(function() {
 	  		window.location.href = "../index.html";
-	  	})
+	  	}).catch(swal.noop)
 	  }
 	  function getInputValuesQuestion10() {
 	  	inputRespostasQuestao10 =
@@ -1146,14 +1149,14 @@
 	  		swal({
 	  			title: "",
 	  			html: "Campo elétrico é o que chamamos também de campo eletrostático, é o espaço em torno de um corpo eletrizado, no qual se pode observar as ações que o corpo carregado de elétrons é capaz de exercer sobre outros corpos carregados ou não.<br> Referente aos componentes básicos na eletrônica e mesmo no campo da eletricidade temos o capacitor: Que são dois condutores separados por um isolante, geralmente os condutores são placas chamadas de armaduras do capacitor, e o isolante pode ser chamado de dielétrico. O capacito é utilizado em circuitos para armazenar cargas elétricas.",
-	  		});
+	  		}).catch(swal.noop);
 	  		break;
 	  		case 2:
 
 	  		swal({
 	  			title: "",
 	  			html: "Quando nos referimos ao consumo de energia elétrica estamos nos referindo a passagem de corrente no condutor de energia em que relacionado com a tensão temos a potência do aparelho. Pensamos como se fosse uma mangueira de água em que a água é a corrente e a pressão da água é a tensão da rede elétrica, assim quanto maior a quantidade de água passando na torneira, maior é o consumo, podemos aplicar a mesma lógica ao condutor elétrico.<br> Porque o fio aquece então? Porque temos uma passagem de corrente maior que o suportado pelo condutor, o que acarretará com o desarmamento do disjuntor termoelétrico consequentemente.",
-	  		});
+	  		}).catch(swal.noop);
 	  		break;
 	  		case 4:
 	  		switch (questionNumber) {
@@ -1161,57 +1164,57 @@
 	  			swal({
 	  				title: "O que significa KWh?",
 	  				html: " É uma unidade de medida elétrica, onde essa medida é determinada tempo de uso de um aparelho elétrico. O Watt-hora é o consumo de 1 Watts durante uma hora. Por exemplo em um chuveiro elétrico onde a potência marcada em sua embalagem é de 7500 Watts, significa que essa potência irá ser consumida em uma hora. Se esse chuveiro for ligado 7 horas temos então 7500 Watts X 7 horas = 52.500 Watt-hora, ou seja, 52,5 kWh.",
-	  			});
+	  			}).catch(swal.noop);
 	  			break;
 	  			case 2:
 	  			swal({
 	  				title: "Energia Elétrica",
 	  				html: "E a capacidade de gerar, de alguma forma, trabalho, ou seja, o movimento de um motor ou a produção de calor em uma resistência. A energia elétrica, por ser gerada através de fontes renováveis como visto neste projeto, como das águas, do sol, dos ventos e através da biomassa, também pode ser gerada através de fontes não renováveis como a nuclear.",
-	  			});
+	  			}).catch(swal.noop);
 	  			break;
 
 	  			case 3:
 	  			swal({
 	  				title: "Usina de Itaipu",
 	  				html: "Temos como a principal fonte de energia elétrica no Brasil a Usina de Itaipu, localizada no Rio Paraná na fronteira entre o Brasil e Paraguai, em que sua geração de energia elétrica se da através da diferença de potencial elétrico em dois condutores diferentes. Pois assim, quem descobriu a energia elétrica, foi Tales de Mileto (624 a.C.-558 a.C.) , grego, com a descoberta das cargas elétricas.",
-	  			});
+	  			}).catch(swal.noop);
 	  			break;
 	  			case 4:
 	  			swal({
 	  				title: "Calculo de Energia Elétrica",
 	  				html: "Para calcular a energia elétrica temos a seguinte fórmula <br> <b> E  = P . ∆t </b> <br> Onde: <br> <b>E </b>: energia elétrica <br> <b>P</b>: Potência <br> <b>∆t</b>: Variação do tempo",
-	  			});
+	  			}).catch(swal.noop);
 	  			break;
 	  			case 5:
 	  			swal({
 	  				title: "Corrente elétrica",
 	  				html: "A corrente elétrica é o movimento de partículas eletrizadas, o que é chamado de íons, em um condutor. Essa forma de movimentação de partículas é caracterizada pela diferença de potencial elétrico, ou seja, tensão elétrica.",
-	  			});
+	  			}).catch(swal.noop);
 	  			break;
 	  			case 6:
 	  			swal({
 	  				title: "O que significa Joule?",
 	  				html: " 1 Wh equivale a 3.600 joules,<br>É uma unidade de medida, onde ocorre a passagem de corrente em uma resistência, e que essa passagem de correte é transformada em calor. <br>Entendemos como Joule, a quantidade de elétrons que passa por segundo em um condutor com uma tensão de 1Volt.",
-	  			});
+	  			}).catch(swal.noop);
 	  			break;
 	  			case 7:
 	  			swal({
 	  				title: "Resistência",
 	  				html: "A resistência estabelecida pelo condutor, pode estabelecer uma resistência elétrica de forma que possa dificultar ap assagem de corrente elétrica, ou de modo que facilite a passagem de corrente. O cálculo para acharmos a reistência é definido pela primeira lei de Ohm <br><b>R = U/I</b> <br><i>U = Tensão <br><i> I = Corrente",
-	  			});
+	  			}).catch(swal.noop);
 	  			break;
 	  			case 8:
 	  			swal({
 	  				title: "Multiplos da tensão",
 	  				html: "Megavolt (MV) = 1.000.000 V <br> Quilovolt (kV) = 1.000 V <br> Volt (V) = 1 V <br> Milivolt (mV) = 0,001 V <br> Microvolt (µV) = 0,000.001 V",
-	  			});
+	  			}).catch(swal.noop);
 	  			break;
 	  			case 9:
 	  			case 10:
 	  			swal ({
 	  				title: "",
 	  				html: "Energia elétrica é a capacidade de produzir trabalho. <br> Queda de tensão é a diferença de potencial, ou seja, a diferença de tensão entre dois pontos distintos do circuito elétrico. <br> Potência elétrica é a rapidez com que se gasta energia, ou a rapidez com que se produz trabalho. <br><br> WATT-HORA (Wh) = 3.600 WATTS-SEGUNDOS = 3.600 JOULES <br><br> QUILOWATT-HORA (kWh) =1.000 Wh = 3.600.000 JOULES <br><br> HORSEPOWER (HP) = 746 Watts <br><br> CAVALO-VAPOR (cv) = 736 Watts",
-	  			});
+	  			}).catch(swal.noop);
 	  			break;
 
 	  		}
@@ -1220,14 +1223,14 @@
 	  		swal ({
 	  			title: "Transformadores de energia elétrica",
 	  			html: "De acordo com a ABNT (Associação Brasileira de Normas Técnicas) este é definido como um equipamento elétrico estático. São os elementos da rede de energia que transformam a tensão em outras tensões sejam elas elevadas ou rebaixadas. <br>São peças muito caras na rede elétrica e muito importantes para fazer a interligação da rede de alta tensão para a baixa tensão que é geralmente encontrada nos postes de energia nas ruas de nossas cidades.",
-	  		});
+	  		}).catch(swal.noop);
 	  		break;
 
 	  		case 9:
 	  		swal ({
 	  			title: "Corrente Elétrica",
 	  			html: 'Para saber calcular a corrente elétrica em um condutor de eletrodoméstico, adotamos a lei de Ohm. George Simon Ohm estudou as relações entre a tensão (V), a corrente (A), e a resistência elétrica (R), e chegou a uma afirmação: "A intensidade da corrente elétrica de um condutor é diretamente proporcional à força eletromotriz e inversamente proporcional à sua resistência elétrica". Com a seguinte fórmula:<br> I = V/R',
-	  		});
+	  		}).catch(swal.noop);
 	  		break;
 	  	}
 	  }
@@ -2062,6 +2065,8 @@
 	  				$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg1).fadeIn(1000);
 	  			});
 	  			$("#setaTransmissaoEsquerda").hide();
+	  			$("#setaTransmissaoDireita").show();
+
 	  			break;
 
 	  			case 2:
@@ -2317,24 +2322,29 @@
 	  	}
 
 	  	$(document).on('click', '#botaoAtualizarTabelaPotencia', function () {
-	  		$("#gastoMensalTelevisao").html(parseFloat(($("#quantidadeTelevisao").html() * ($("#potenciaTelevisao").html()/1000) * $("#tempoTelevisao").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-	  		$("#gastoMensalMaquinaDeLavar").html(parseFloat(($("#quantidadeMaquinaDeLavar").html() * ($("#potenciaMaquinaDeLavar").html()/1000) * $("#tempoMaquinaDeLavar").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-	  		$("#gastoMensalChuveiro").html(parseFloat(($("#quantidadeChuveiro").html() * ($("#potenciaChuveiro").html()/1000) * $("#tempoChuveiro").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-	  		$("#gastoMensalGeladeira").html(parseFloat(($("#quantidadeGeladeira").html() * ($("#potenciaGeladeira").html()/1000) * $("#tempoGeladeira").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-	  		$("#gastoMensalComputador").html(parseFloat(($("#quantidadeComputador").html() * ($("#potenciaComputador").html()/1000) * $("#tempoComputador").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-	  		$("#gastoMensalLampada").html(parseFloat(($("#quantidadeLampada").html() * ($("#potenciaLampada").html()/1000) * $("#tempoLampada").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-	  		$("#gastoMensalFerro").html(parseFloat(($("#quantidadeFerro").html() * ($("#potenciaFerro").html()/1000) * $("#tempoFerro").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-	  		$("#gastoMensalCelular").html(parseFloat(($("#quantidadeCelular").html() * ($("#potenciaCelular").html()/1000) * $("#tempoCelular").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
 
-	  		$("#valorTotalTabelaPotencia").html((
-	  			parseFloat($("#gastoMensalTelevisao").html()) +
-	  			parseFloat($("#gastoMensalMaquinaDeLavar").html()) +
-	  			parseFloat($("#gastoMensalChuveiro").html()) +
-	  			parseFloat($("#gastoMensalGeladeira").html()) +
-	  			parseFloat($("#gastoMensalComputador").html()) +
-	  			parseFloat($("#gastoMensalLampada").html()) +
-	  			parseFloat($("#gastoMensalFerro").html()) +
-	  			parseFloat($("#gastoMensalCelular").html())).toFixed(2));
+	  		if ($("#inputTempoTelevisao").val() != "" && $("#inputTempoCelular").val() != "" && $("#inputTempoComputador").val() != "") {
+	  			$("#gastoMensalTelevisao").html(parseFloat(($("#quantidadeTelevisao").html() * ($("#potenciaTelevisao").html()/1000) * $("#inputTempoTelevisao").val() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+	  			$("#gastoMensalMaquinaDeLavar").html(parseFloat(($("#quantidadeMaquinaDeLavar").html() * ($("#potenciaMaquinaDeLavar").html()/1000) * $("#tempoMaquinaDeLavar").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+	  			$("#gastoMensalChuveiro").html(parseFloat(($("#quantidadeChuveiro").html() * ($("#potenciaChuveiro").html()/1000) * $("#tempoChuveiro").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+	  			$("#gastoMensalGeladeira").html(parseFloat(($("#quantidadeGeladeira").html() * ($("#potenciaGeladeira").html()/1000) * $("#tempoGeladeira").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+	  			$("#gastoMensalComputador").html(parseFloat(($("#quantidadeComputador").html() * ($("#potenciaComputador").html()/1000) * $("#inputTempoComputador").val() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+	  			$("#gastoMensalLampada").html(parseFloat(($("#quantidadeLampada").html() * ($("#potenciaLampada").html()/1000) * $("#tempoLampada").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+	  			$("#gastoMensalFerro").html(parseFloat(($("#quantidadeFerro").html() * ($("#potenciaFerro").html()/1000) * $("#tempoFerro").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+	  			$("#gastoMensalCelular").html(parseFloat(($("#quantidadeCelular").html() * ($("#potenciaCelular").html()/1000) * $("#inputTempoCelular").val() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+
+	  			$("#valorTotalTabelaPotencia").html((
+	  				parseFloat($("#gastoMensalTelevisao").html()) +
+	  				parseFloat($("#gastoMensalMaquinaDeLavar").html()) +
+	  				parseFloat($("#gastoMensalChuveiro").html()) +
+	  				parseFloat($("#gastoMensalGeladeira").html()) +
+	  				parseFloat($("#gastoMensalComputador").html()) +
+	  				parseFloat($("#gastoMensalLampada").html()) +
+	  				parseFloat($("#gastoMensalFerro").html()) +
+	  				parseFloat($("#gastoMensalCelular").html())).toFixed(2));
+	  		} else {
+	  			swal("Preencha todos os valores da tabela, e o valor do consumo").catch(swal.noop);
+	  		}
 	  	});
 
 
@@ -2434,7 +2444,7 @@
 	  	//Função que realiza a troca de uma cena para a próxima, bem como adicionar um sleep igual ao tempo de fade
 	  	function nextScene() {
 	  		if (scene == 15) {
-	  			swal("","Você finalizou o objeto!", "error");
+	  			swal("","Você finalizou o objeto!", "error").catch(swal.noop);
 	  		}
 	  		else {
 	  			unloadScene();
@@ -2449,7 +2459,7 @@
 		//Função que realiza a troca de uma cena para a anterior, bem como adicionar um sleep igual ao tempo de fade
 		function previousScene() {
 			if (scene == 1) {
-				swal("","Não é possível voltar!", "error");
+				swal("","Não é possível voltar!", "error").catch(swal.noop);
 			}
 			else {
 				unloadScene();
@@ -2504,6 +2514,8 @@
 	  			} else {
 	  				$("#iconSetaDireita").hide();
 	  			}
+	  			transmissionBeingShown = 1;
+	  			loadTransmissionData();
 	  			break;
 	  			case 7:
 	  			$("#sceneMatrizEnergetica").fadeIn(fadeTime);
@@ -2514,7 +2526,10 @@
 	  				$("#containerQuestoesMatrizEnergetica").show();
 	  				loadQuestion();
 	  				listeningToKeyPress = true;
+	  			} else {
+	  				swal("Atenção!", "Para completar a tabela utilize valores arredondados para duas casas após a virgula").catch(swal.noop);
 	  			}
+
 	  			break;
 	  			case 8:
 	  			$("#sceneImpostos").fadeIn(fadeTime);
@@ -2591,7 +2606,6 @@
 	  			case 6:
 	  			$("#sceneCaminhosEnergia").fadeOut(fadeTime);
 	  			transmissionBeingShown = 1;
-	  			loadTransmissionData();
 	  			$("#iconMais").fadeOut(fadeTime);
 
 	  			break;
@@ -2634,22 +2648,22 @@
 	  			case 4:
 	  			switch (questionNumber) {
 	  				case 3:
-	  				swal("Ajuda!", "Arraste o mouse sobre as barras do gráfico para ver o consumo");
+	  				swal("Ajuda!", "Arraste o mouse sobre as barras do gráfico para ver o consumo").catch(swal.noop);
 	  				break;
 	  				case 4:
-	  				swal("Ajuda!", "Arraste o mouse sobre as barras gráfico para ver o consumo");
+	  				swal("Ajuda!", "Arraste o mouse sobre as barras gráfico para ver o consumo").catch(swal.noop);
 	  				break;
 	  				case 5:
-	  				swal("Ajuda!", "Para saber a média, basta dividir o total do consumo de energia pela quantidade de meses correspondentes");
+	  				swal("Ajuda!", "Para saber a média, basta dividir o total do consumo de energia pela quantidade de meses correspondentes").catch(swal.noop);
 	  				break;
 	  				case 6:
-	  				swal("Ajuda!", "Arraste o mouse sobre o gráfico para ver os valores");
+	  				swal("Ajuda!", "Arraste o mouse sobre o gráfico para ver os valores").catch(swal.noop);
 	  				break;
 	  				case 7:
-	  				swal("Ajuda!", "Para saber a diferença basta subtrair a energia hidrelétrica pela energia solar");
+	  				swal("Ajuda!", "Para saber a diferença basta subtrair a energia hidrelétrica pela energia nuclear").catch(swal.noop);
 	  				break;
 	  				case 10:
-	  				swal("Ajuda!", "Arraste o mouse sobre as barras do gráfico para ver a potência");
+	  				swal("Ajuda!", "Arraste o mouse sobre as barras do gráfico para ver a potência").catch(swal.noop);
 	  				break;
 	  			}
 	  			break;
@@ -2657,47 +2671,53 @@
 	  			if (graficoMatrizGerado) {
 	  				switch (questionNumber) {
 	  					case 11:
-	  					swal("Ajuda!", "Para facilitar sua resposta observe a tabela");
+	  					swal("Ajuda!", "Para facilitar sua resposta observe a tabela").catch(swal.noop);
 	  					break;
 	  					case 12:
-	  					swal("Ajuda!", "Para facilitar sua resposta observe a tabela");
+	  					swal("Ajuda!", "Para facilitar sua resposta observe a tabela").catch(swal.noop);
 	  					break;
 	  					case 13:
-	  					swal("Ajuda!", "Para facilitar sua resposta observe a tabela");
+	  					swal("Ajuda!", "Para facilitar sua resposta observe a tabela").catch(swal.noop);
 	  					break;
 	  					case 14:
-	  					swal("Ajuda!", "Observe no texto para responder essa questão");
+	  					swal("Ajuda!", "Observe no texto para responder essa questão").catch(swal.noop);
 	  					break;
 	  					case 15:
-	  					swal("Ajuda!", "Observe e analise atentamente a tabela e o gráfico");
+	  					swal("Ajuda!", "Observe e analise atentamente a tabela e o gráfico").catch(swal.noop);
 	  					break;
 	  				}
 	  			} else {
-	  				swal("Ajuda!", "Preencha a tabela com os dados do texto");
+	  				swal (
+	  				{
+	  					title: 'Ajuda',
+	  					width: '57%',
+	  					html: '<div class="col-xs-6">Preencha a tabela com os dados do texto. <br><br><b>Critérios de arredondamento</b><br><br>1-Se o primeiro valor após os que irão permanecer for menor que 5, então apenas elimine as demais casa decimais  que estão a tua direita.<br>Por exemplo: 24,37<span style="color:#0AC813; font-size:14px">2</span>01 se for arredondado para  duas casas decimais fica 24,3<span style="color:#FF0000; font-size:14px">7</span>.<br><br>2-Se o primeiro valor após os que irão permanecer for maior que 5, então o último que permanece fica acrescido de uma unidade.<br>Por exemplo: 24,37<span style="color:#0AC813; font-size:14px">6</span>01 se for arredondado para  duas casas decimais fica 24,3<span style="color:#FF0000; font-size:14px">8</span>.<br><br>3-Se o primeiro valor após os que irão permanecer for igual a 5, e após este tiverem outros algarismos onde pelo menos um é diferente de zero, então o último que permanece fica acrescido de uma unidade.   Por exemplo: 24,37<span style="color:#0AC813; font-size:14px">501</span>  fica 24,3<span style="color:#FF0000; font-size:14px">8</span>.<br><br>4-Se o primeiro valor após os que irão permanecer for igual a 5, e após este não tiverem outros algarismos diferente de zero, então o último que permanece fica acrescido de uma unidade somente se o que permanecer é impar, caso contrário o último que fica permanece sem alteração.</div><div class="col-xs-6"><table class="table table-bordered"><thead><tr><th>Valor original</th><th>Valor arredondado com 2 casa decimais</th></tr></thead><tbody><tr><td>24,3<span style="color:#FF0000">7</span><span style="color:#3A0EF7">2</span>01</td><td>24,3<span style="color:#FF0000">7</span></td></tr><tr><td>24,3<span style="color:#FF0000">7</span><span style="color:#3A0EF7">6</span>01</td><td>24,3<span style="color:#FF0000">8</span></td></tr><tr><td>24,3<span style="color:#FF0000">7</span><span style="color:#00D053">501</span></td><td>24,3<span style="color:#FF0000">8</span></td></tr><tr><td>24,3<span style="color:#FF0000">7</span><span style="color:#00D053">500</span></td><td>24,3<span style="color:#FF0000">8</span></td></tr><tr><td>24,3<span style="color:#FF0000">2</span><span style="color:#00D053">500</span></td><td>24,3<span style="color:#FF0000">2</span></td></tr><tr><td>24,3<span style="color:#FF0000">5</span><span style="color:#00D053">500</span></td><td>24,3<span style="color:#FF0000">6</span></td></tr><tr><td>24,3<span style="color:#FF0000">6</span><span style="color:#00D053">500</span></td><td>24,3<span style="color:#FF0000">6</span></td></tr></tbody></table></div>'
+	  				}
+	  				).catch(swal.noop);
 
 	  			}
 	  			break;
 	  			case 9:
-	  			swal("Ajuda!", "Coloque o valor que sua companhia de energia cobra por 1 kw. Caso você não saiba use R$ 0,50");
+	  			swal("Ajuda!", "Coloque o valor que sua companhia de energia cobra por 1 kw. Caso você não saiba use R$ 0,50").catch(swal.noop);
 	  			break;
 	  			case 12:
 	  			switch (questionNumber) {
 	  				case 16:
-	  				swal("Ajuda!", "Em caso de dúvida, volte a tela anterior");
+	  				swal("Ajuda!", "Em caso de dúvida, volte a tela anterior").catch(swal.noop);
 	  				break;
 	  				case 17:
-	  				swal("Ajuda!", "Em caso de dúvida volte 2 telas");
+	  				swal("Ajuda!", "Em caso de dúvida volte 2 telas").catch(swal.noop);
 	  				break;
 	  				case 18:
-	  				swal("Ajuda!", "Em caso de dúvida volte 3 telas");
+	  				swal("Ajuda!", "Em caso de dúvida volte 3 telas").catch(swal.noop);
 	  				break;
 	  			}
 	  			break;
 	  			case 13:
-	  			swal("Ajuda!", "Observe atentamente o gráfico e a pergunta da questão. Passe o mouse sobre o gráfico para ver a porcentagem");
+	  			swal("Ajuda!", "Observe atentamente o gráfico e a pergunta da questão. Passe o mouse sobre o gráfico para ver a porcentagem").catch(swal.noop);
 	  			break;
 	  			case 14:
-	  			swal("Ajuda!", "Passe o mouse sobre os quadros na tela superior direita para observar a porcentagem.");
+	  			swal("Ajuda!", "Passe o mouse sobre os quadros na tela superior direita para observar a porcentagem.").catch(swal.noop);
 	  			break;
 	  		}
 	  	}

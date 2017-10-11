@@ -22,7 +22,7 @@ body {
 	cursor: help;
 	z-index: 1;
 	font-size: 40px;
-	color: gray;
+	color: #ff0000;
 }
 
 .iconFixoCalculadora {
@@ -33,18 +33,18 @@ body {
 }
 
 .iconFixoHelp:hover {
-	color: black;
+	color: #a20202;
 }
 
 .iconFixoMais {
 	z-index: 5;
 	font-size: 40px;
-	color: gray;
+	color: #1712e6;
 	cursor: pointer;
 }
 
 .iconFixoMais:hover {
-	color:green;
+	color:#04018a;
 }
 
 .iconFixoFechar {
@@ -915,4 +915,10 @@ th, td { padding: 5px; }
 	margin-top: 3%;
 	font-size: calc((2vh + 1vw)/1.5);
 	display: inline-block;
+}
+
+.inputConsumoUsuario {
+	display: inherit;
+	padding: 0px;
+	width: 20%;
 }

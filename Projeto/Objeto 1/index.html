@@ -423,7 +423,7 @@
 				<div class="row">
 					<div class="col-xs-4">
 						<p id="titleMatrizEnergetica" class="titleMatrizEnergetica"> Conhecendo os dados sobre a Matriz Energética Brasileira </p>
-						<p id="textoMatrizEnergetica" class="textoMatrizEnergetica"> Segundo dados da ANEEL (Agência Nacional de Energia Elétrica), cerca de 94,89% da energia elétrica consumida é produzida no Brasil, e o restante é importada dos países vizinhos (Paraguai, Argentina, Venezuela e Uruguai). Esta produção advém de usinas do tipo: hidrelétricas, solar, eólica, nuclear, fóssil e biomassa. Existem 534 usinas que produzem energia de origem biomassa, estas são responsáveis por aproximadamente 8,86% da energia consumida, 1251 de origem hídrica responsáveiss por 61,34% da energia consumida, 42 de origem solar responsáveis por 0,01% da energia consumida, 2 de origem nuclear responsáveis por 1,24% da energia consumida, 418 de origem eólica responsáveis por 6,58% da energia consumida, 2412 de origem fóssivel responsáveis por 16.86% da energia consumida </p>
+						<p id="textoMatrizEnergetica" class="textoMatrizEnergetica"> Segundo dados da ANEEL (Agência Nacional de Energia Elétrica), cerca de 94,89% da energia elétrica consumida é produzida no Brasil, e o restante é importada dos países vizinhos (Paraguai, Argentina, Venezuela e Uruguai). Esta produção advém de usinas do tipo: hidrelétricas, solar, eólica, nuclear, fóssil e biomassa. Existem 534 usinas que produzem energia de origem biomassa, estas são responsáveis por aproximadamente 8,86% da energia consumida, 1251 de origem hídrica responsáveis por 61,34% da energia consumida, 42 de origem solar responsáveis por 0,01% da energia consumida, 2 de origem nuclear responsáveis por 1,24% da energia consumida, 418 de origem eólica responsáveis por 6,58% da energia consumida, 2412 de origem fóssivel responsáveis por 16.86% da energia consumida </p>
 					</div>
 					<div class="col-xs-8">
 						<div class="col-xs-12">
@@ -573,7 +573,9 @@
 										<td class="tdCentralizado"><img title="Televisão" class="img-tabela" src="../assets/img/Objeto 1/televisaoTabela.png"></td>
 										<td id="quantidadeTelevisao" class="tdCentralizado">1</td>
 										<td id="potenciaTelevisao" class="tdCentralizado">90</td>
-										<td id="tempoTelevisao" class="tdCentralizado">60</td>
+										<!--<td id="tempoTelevisao" class="tdCentralizado">60</td>-->
+										<td id="tempoTelevisao" class="tdCentralizado"> <input id="inputTempoTelevisao" type="number" class="form-control  inputConsumoUsuario"> </td>
+
 										<td id="gastoMensalTelevisao" class="tdCentralizado"></td>
 									</tr>
 									<tr>
@@ -601,7 +603,9 @@
 										<td class="tdCentralizado"><img title="Computador" class="img-tabela" src="../assets/img/Objeto 1/computadorTabela.png"></td>
 										<td id="quantidadeComputador" class="tdCentralizado">1</td>
 										<td id="potenciaComputador" class="tdCentralizado">300</td>
-										<td id="tempoComputador" class="tdCentralizado">60</td>
+										<!--<td id="tempoComputador" class="tdCentralizado">60</td>-->
+										<td id="tempoComputador" class="tdCentralizado"> <input id="inputTempoComputador" type="number" class="form-control  inputConsumoUsuario"> </td>
+
 										<td id="gastoMensalComputador" class="tdCentralizado"></td>
 									</tr>
 									<tr>
@@ -622,7 +626,8 @@
 										<td class="tdCentralizado"><img class="img-tabela" src="../assets/img/Objeto 1/celularTabela.png"></td>
 										<td id="quantidadeCelular" class="tdCentralizado">3</td>
 										<td id="potenciaCelular" class="tdCentralizado">7</td>
-										<td id="tempoCelular" class="tdCentralizado">30</td>
+										<!--<td id="tempoCelular" class="tdCentralizado">30</td>-->
+										<td id="tempoCelular" class="tdCentralizado"> <input id="inputTempoCelular" type="number" class="form-control inputConsumoUsuario"> </td>
 										<td id="gastoMensalCelular" class="tdCentralizado"></td>
 									</tr>
 									<tr>
@@ -876,6 +881,7 @@
 							<input type="radio" name="tipoGraph" value="pie"> Pizza
 						</form>
 						<button type="button" id="botaoGraficoCustom" class="btn btn-primary btn-block">Gerar Grafico</button>
+						<br><h4>Obs.: Se optar pelo gráfico de pizzas, o valor apresentado no gráfico será sobre a porcentagem do valor</h4>
 
 					</div>
 					<div class="col-xs-offset-2 col-xs-3">
