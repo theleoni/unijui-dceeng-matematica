@@ -33,7 +33,7 @@ var verificacaoAtividade1 = [false, false];
 var corretasAtividade1Moda = ["Amodal", "Amodal", "Amodal", "Unimodal", "Amodal", "Amodal", "Amodal", "Amodal", "Bimodal", "Amodal", "Unimodal", "Amodal"];
 var selecionadasModa = [];
 var numeroErradasModa = 0;
-var corretasAtividade1Mediana = [37804, 34059, 36011, 35723, 32679, 30768.5, 32734, 32600, 32398.5, 34256, 31738, 34210.5]
+var corretasAtividade1Mediana = [37.81, 34.06, 36.01, 35.73, 32.68, 30.77, 32.74, 32.6, 32.4, 34.26, 31.74, 34.21]
 var numeroErradasMediana = 0;
 var inputAtividade1Mediana = [];
 var mesesErradosAtividade1;
@@ -1677,7 +1677,7 @@ function loadQuestion() {
 					verificacaoAtividade1[1] = true;
 					atividadesCompletas[0] = true;
 					$("#botaoEnviarRespostaAtv1").hide();
-					swal("Parabéns!", "Você finalizou esta atividade!", "success")
+					swal("Parabéns!", "Você finalizou esta atividade! Clique na seta do lado esquerdo da tela para retornar à seleção de atividades", "success")
 					fixarValoresMediana();
 					updateQuestionAtividadeText();
 				} else {
@@ -1729,7 +1729,7 @@ function loadQuestion() {
 					updateQuestionAtividadeText();
 					fixarValoresAtv2();
 					if (verificacaoAtividade2[1] == true) {
-						swal("Parabéns!", "Você finalizou esta atividade!", "success");
+						swal("Parabéns!", "Você finalizou esta atividade! Clique na seta do lado esquerdo da tela para retornar à seleção de atividades", "success")
 					}
 				} else if (numeroErradasMedianaAtv2 == 0) {
 					$("#alertAtividade2").show();
@@ -1920,7 +1920,7 @@ function loadQuestion() {
 					});
 					$("#botaoEnviarRespostaAtv3").hide();
 					atividadesCompletas[2] = true;
-					swal("Parabéns!", "Você finalizou esta atividade!", "success");
+					swal("Parabéns!", "Você finalizou esta atividade! Clique na seta do lado esquerdo da tela para retornar à seleção de atividades", "success")
 				}
 				
 			}
@@ -1951,7 +1951,7 @@ function loadQuestion() {
 				updateQuestionAtividadeText();
 				$("#botaoEnviarRespostaAtv4").hide();
 				atividadesCompletas[3] = true;
-				swal("Parabéns!", "Você finalizou esta atividade!", "success");
+				swal("Parabéns!", "Você finalizou esta atividade! Clique na seta do lado esquerdo da tela para retornar à seleção de atividades", "success")
 				$("#atv4InputModa").prop('disabled','true');
 				$("#atv4InputMediana").prop('disabled','true');
 
