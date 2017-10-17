@@ -1,0 +1,190 @@
+<div class="geral-interno">
+
+	<div class='container'>
+
+		<h3>Você pode realizar os testes que quiser. Preencha os valores conforme quiser para que a Média, Mediana, Desvio Padrão e Variância sejam preenchidas automaticamente.</h3>
+
+		<div class="row text-center mais-top">
+
+			<div class="input-x fundo-normal">
+				<h5>Nº Coluna(s):</h5>
+				<input id="input-coluna" type="text" oninput="validarLinhasTabela()">
+			</div>
+			<div class="input-x fundo-normal">
+				<h5>Nº Linha(s):</h5>
+				<input id="input-linha" type="text" oninput="validarLinhasTabela()">
+			</div>
+			<button id="input-calcular" type="button" class="btn" onclick="carregarTabela()">Criar tabela!</button>
+
+		</div>
+
+		<div class="row">
+			<table class="tabela table col-xs-12">
+				<tr class="titulo">
+				</tr>
+			</table>
+		</div>
+
+
+
+	</div>
+
+	<div class="mensagens">
+	</div>
+</div>
+
+<style media="screen">
+
+.geral-interno {
+	position: relative;
+}
+
+.fundo {
+	width: auto;
+	max-width: 100%;
+}
+
+.tabela th {
+	text-align: center;
+}
+
+.tabela th, .tabela .total {
+	background-color: #F1ECF6;
+}
+
+.tabela .total {
+	color: #ae6df5;
+	font-weight: bold;
+}
+
+.input-x {
+	display: inline-flex;
+	border-radius: .5rem;
+}
+
+.input-x h5 {
+	color: #F5F5F5;
+	border-radius: .54rem;
+	font-weight: bold;
+	font-size: 1.6rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.fundo-ok {
+	background-color: #46D079;
+	border: solid #46D079 .28rem;
+	transition: all .3s;
+}
+
+.fundo-normal {
+	background-color: #ae6df5;
+	border: solid #ae6df5 .28rem;
+	transition: all .3s;
+}
+
+input {
+	width: 55px;
+	border: solid #FFFFFF 0px;
+	border-radius: .54rem;
+	text-align: center;
+	font-size: 1.6rem;
+}
+
+#input-calcular {
+	border: solid #FFFFFF 0px;
+	margin: 0px;
+	vertical-align: top;
+	width: 12rem;
+	height: 4.3rem;
+	font-size: 1.6rem;
+}
+
+</style>
+
+<script type="text/javascript">
+
+console.log('final.html');
+
+$("#iconSetaEsquerda").show();
+$("#iconSetaDireita").show();
+$("#iconAjuda").hide();
+$("#iconCalculadora").hide();
+
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
+
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
+
+iconAjuda.addEventListener("click", function() {
+	ajuda();
+});
+
+function anterior() {
+
+	carregarParte('reduzir-reutilizar-reciclar.html');
+}
+
+function proxima() {
+
+	carregarParte('creditos.html');
+}
+
+function ajuda() {
+}
+
+let buttonCalcular = document.querySelector("#input-calcular");
+let inputColuna = document.querySelector("#input-coluna");
+let inputLinha = document.querySelector("#input-linha");
+
+function validarLinhasTabela() {
+
+	if (inputColuna.value && inputLinha.value
+		&& inputColuna.value > 0 && inputColuna.value <= 10
+		&& inputLinha.value > 0 && inputLinha.value <= 10
+	) {
+
+		buttonCalcular.disabled = false;
+		buttonCalcular.classList.remove("disabled");
+	} else {
+
+		buttonCalcular.disabled = true;
+		buttonCalcular.classList.add("disabled");
+	}
+}
+validarLinhasTabela();
+
+function validarTabela() {
+
+
+}
+
+function carregarTabela() {
+
+	let divTabela = document.querySelector(".tabela");
+
+	let thTitulo = document.createElement("th");
+	thTitulo.innerHTML = '<input id="input-titulo" class="fundo-editavel fundo-editavel-normal" placeholder="?" type="text" oninput="validarTabela()">';
+	thTitulo.colspan = inputColuna.value;
+
+	for (var i = 0; i < array.length; i++) {
+
+	}
+
+	let tr = document.createElement("tr");
+
+	for (var variable in object) {
+
+		let td = document.createElement("td");
+	}
+
+
+
+	document.querySelector(".tabela .titulo").appendChild(thTitulo);
+
+}
+
+</script>

@@ -1,0 +1,237 @@
+<div class="geral-interno">
+	<img id='img-fundo' class="fundo" src="assets/img/3r.png"/>
+
+	<div class='explicacoes container oculto muito-mais-top'>
+		<h3 class="text-center">O Princípio dos 3Rs (Reduzir, Reutilizar e Reciclar)</h3>
+		<h4 class="muito-mais-top"><span class="tab"/>É um conjunto de atitudes relacionadas aos nossos hábitos de consumo que ajudam a poupar os recursos naturais, gerar menos resíduos e minimizar seu impacto sobre o meio ambiente, além da geração de trabalho e renda. Os 3Rs também são objetivos da Política Nacional de Resíduos Sólidos, Lei12.305/2010.</h4>
+		<ul>
+			<li><h4><b>REDUZIR:</b> Sempre que possível devemos diminuir a nossa produção de resíduos.</h4></li>
+			<li><h4><b>REUTILIZAR:</b> processo de aproveitamento dos resíduos sólidos sem sua transformação biológica, física ou físico-química.</h4></li>
+			<li><h4><b>RECICLAR:</b> processo de transformação dos resíduos sólidos que envolve a alteração de suas propriedades físicas, físico-químicas ou biológicas, com vistas à transformação em insumos ou novos produtos.</h4></li>
+		</ul>
+	</div>
+
+	<img id='img-fundo-final' class="fundo oculto" src="assets/img/3r-final.png"/>
+
+	<div class="mensagens">
+	</div>
+</div>
+
+<style media="screen">
+
+.geral-interno {
+	position: relative;
+}
+
+.fundo {
+	width: auto;
+	max-width: 100%;
+}
+
+.tabela th {
+	text-align: center;
+}
+
+.tabela th, .tabela .total {
+	background-color: #F1ECF6;
+}
+
+.tabela .total {
+	color: #ae6df5;
+	font-weight: bold;
+}
+
+.input-x {
+	display: inline-flex;
+	border-radius: 6px;
+}
+
+.fundo-ok {
+	background-color: #46D079;
+	border: solid #46D079 3px;
+	transition: all .3s;
+}
+
+.fundo-normal {
+	background-color: #ae6df5;
+	border: solid #ae6df5 3px;
+	transition: all .3s;
+}
+
+input {
+	border: solid #FFFFFF 0px;
+	border-radius: 6px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.input-x input {
+	width: 80px;
+}
+
+.campo-media {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.preenchimento-a, .preenchimento-b, .preenchimento-c, .preenchimento-d {
+	font-weight: bold;
+}
+
+.preenchimento-a {
+	color: #43D07B;
+}
+
+.preenchimento-b {
+	color: #3196C2;
+}
+
+.preenchimento-c {
+	color: #7849C6;
+}
+
+.preenchimento-d {
+	color: #CD8B32;
+}
+
+.pre-formula {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.formula {
+	display: inline-flex;
+	text-align: center;
+}
+
+.calculo {
+	margin-left: 1rem;
+	margin-right: : 1rem;
+}
+
+.calculo hr {
+	margin: 0px;
+	border-top: 1px solid #000;
+}
+
+.calculo .cima {
+	text-align: center;
+}
+
+.calculo .baixo {
+	text-align: center;
+}
+
+</style>
+
+<script type="text/javascript">
+
+console.log('reduzir-reutilizar-reciclar.html');
+
+$("#iconSetaEsquerda").show();
+$("#iconSetaDireita").show();
+$("#iconAjuda").hide();
+$("#iconCalculadora").hide();
+
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
+
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
+
+iconAjuda.addEventListener("click", function() {
+	ajuda();
+});
+
+let posIndex3r = 0;
+function anterior() {
+
+	switch (posIndex3r) {
+
+		default:
+		case 0:
+			carregarParte('questao-11.html');
+			break;
+
+		case 1:
+			document.querySelector('#img-fundo').classList.remove('oculto');
+			document.querySelector('.explicacoes').classList.add('oculto');
+
+			posIndex3r--;
+			break;
+	}
+}
+
+function proxima() {
+	switch (posIndex3r) {
+
+		case 0:
+			document.querySelector('#img-fundo').classList.add('oculto');
+			document.querySelector(".explicacoes").classList.remove('oculto');
+
+			posIndex3r++;
+			break;
+
+		case 1:
+			document.querySelector('.explicacoes').classList.add('oculto');
+			document.querySelector('#img-fundo-final').classList.remove('oculto');
+
+			swal({
+				title: `${nomePessoa}, obrigado por ter participado da nossa aula!`,
+				closeOnClickOutside: false,
+				closeOnEsc: false,
+				button: {
+					text: 'Próximo',
+					closeModal: true,
+					className: 'btn',
+				},
+			})
+			.then((value) => {
+				posIndex3r++;
+				proxima();
+			});
+			break;
+
+		case 2:
+			swal({
+				title: 'Obrigado por ter nos ajudado a realizar as questões!',
+				closeOnClickOutside: false,
+				closeOnEsc: false,
+				button: {
+					text: 'Próximo',
+					closeModal: true,
+					className: 'btn',
+				},
+			})
+			.then((value) => {
+				posIndex3r++;
+				proxima();
+			});
+			break;
+
+		default:
+		case 3:
+			swal({
+				title: 'Agora você já sabe uma pouco mais sobre Estatística!',
+				closeOnClickOutside: false,
+				closeOnEsc: false,
+				button: {
+					text: 'Próximo',
+					closeModal: true,
+					className: 'btn',
+				},
+			})
+			.then((value) => {
+				carregarParte('final.html');
+			});
+			break;
+	}
+}
+
+function ajuda() {
+}
+</script>
