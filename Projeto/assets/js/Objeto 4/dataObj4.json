@@ -75,11 +75,11 @@
 		"tabela": "tabela3"
 	},
 	"9": {
-		"tituloQuestao": "Qual a probabilidade de se obter um ponto em que o índice de cloretos está acima de 1mg/L Cl e, ao mesmo tempo, com índice de turbidex menor que 5UT, se sortearmos uma amostra do manancial Rio Potiribú entre os 6 da tabela?",
+		"tituloQuestao": "Qual a probabilidade de se obter um ponto em que o índice de cloretos está acima de 1mg/L Cl e, ao mesmo tempo, com índice de turbidez menor que 5UT, se sortearmos uma amostra do manancial Rio Potiribú entre os 6 da tabela?",
 		"op1": "0, ou seja, impossível",
 		"op2": "0,5",
 		"op3": "1, ou seja, evento garantido",
-		"op4": "0,167",
+		"op4": "0,17",
 		"op5": "0,14",
 		"tabela": "tabela3"
 
