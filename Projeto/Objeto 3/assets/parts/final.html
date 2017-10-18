@@ -4,15 +4,15 @@
 
 		<h3>Você pode realizar os testes que quiser. Preencha os valores conforme quiser para que a Média, Mediana, Desvio Padrão e Variância sejam preenchidas automaticamente.</h3>
 
-		<div class="row text-center mais-top">
+		<div class="row text-center mais-top mais-bottom">
 
 			<div class="input-x fundo-normal">
-				<h5>Nº Coluna(s):</h5>
-				<input id="input-coluna" type="text" oninput="validarLinhasTabela()">
+				<h5>Nº Linha(s):</h5>
+				<input id="input-linha" type="text" oninput="validarLinhasTabela()" onkeyup="enterCarregarTabela(event)">
 			</div>
 			<div class="input-x fundo-normal">
-				<h5>Nº Linha(s):</h5>
-				<input id="input-linha" type="text" oninput="validarLinhasTabela()">
+				<h5>Nº Coluna(s):</h5>
+				<input id="input-coluna" type="text" oninput="validarLinhasTabela()" onkeyup="enterCarregarTabela(event)">
 			</div>
 			<button id="input-calcular" type="button" class="btn" onclick="carregarTabela()">Criar tabela!</button>
 
@@ -20,13 +20,8 @@
 
 		<div class="row">
 			<table class="tabela table col-xs-12">
-				<tr class="titulo">
-				</tr>
 			</table>
 		</div>
-
-
-
 	</div>
 
 	<div class="mensagens">
@@ -60,6 +55,12 @@
 .input-x {
 	display: inline-flex;
 	border-radius: .5rem;
+	margin: 0rem;
+	padding: 0rem;
+}
+
+.input-x .x {
+	text-align: left;
 }
 
 .input-x h5 {
@@ -89,6 +90,26 @@ input {
 	border-radius: .54rem;
 	text-align: center;
 	font-size: 1.6rem;
+}
+
+.fundo-editavel {
+	border-width: 0px;
+	border-radius: 4px;
+	width: 100px;
+	height: 24px;
+	text-align: center;
+}
+
+.fundo-editavel-normal {
+	color: #FFFFFF;
+	background-color: #ae6df5;
+	transition: .3s ease;
+}
+
+.fundo-editavel-ok {
+	color: #FFFFFF;
+	background-color: #46D079;
+	transition: .3s ease;
 }
 
 #input-calcular {
@@ -140,11 +161,14 @@ let buttonCalcular = document.querySelector("#input-calcular");
 let inputColuna = document.querySelector("#input-coluna");
 let inputLinha = document.querySelector("#input-linha");
 
+let maximoLinhaColuna = 12;
+let minimoLinhaColuna = 2;
+
 function validarLinhasTabela() {
 
 	if (inputColuna.value && inputLinha.value
-		&& inputColuna.value > 0 && inputColuna.value <= 10
-		&& inputLinha.value > 0 && inputLinha.value <= 10
+		&& inputColuna.value >= minimoLinhaColuna && inputColuna.value <= maximoLinhaColuna
+		&& inputLinha.value >= minimoLinhaColuna && inputLinha.value <= maximoLinhaColuna
 	) {
 
 		buttonCalcular.disabled = false;
@@ -159,32 +183,185 @@ validarLinhasTabela();
 
 function validarTabela() {
 
+	let numeroLinhas = inputLinha.value;
+	let numeroColunas = inputColuna.value;
+	// console.log(numeroLinhas + "x" + numeroColunas);
 
+	let colunas = [];
+	for (var j = 0; j < numeroColunas; j++) {
+
+		let linhas = [];
+		for (var i = 0; i < numeroLinhas; i++) {
+
+			linhas.push(document.querySelector(`#input-texto-${i+1}-${j+1}`));
+		}
+		colunas.push(linhas);
+	}
+
+	let algumErrado = false;
+	for (var posColunas in colunas) {
+
+		let valoresColuns = [];
+
+		let algumErradoColuna = false;
+		let linhas = colunas[posColunas];
+		for (var posLinhas in linhas) {
+
+			let inputTmp = linhas[posLinhas];
+			valoresColuns.push(inputTmp.value);
+			if (inputTmp.value) {
+
+				inputTmp.classList.add('fundo-editavel-ok');
+				inputTmp.classList.remove('fundo-editavel-normal');
+			} else {
+
+				inputTmp.classList.remove('fundo-editavel-ok');
+				inputTmp.classList.add('fundo-editavel-normal');
+
+				algumErradoColuna = true;
+				algumErrado = true;
+			}
+		}
+
+
+		if (!algumErradoColuna) {
+
+			let somaVals = 0;
+			valoresColuns.map((val) => somaVals += Number(val));
+
+			// MEDIA
+			let media = somaVals / valoresColuns.length;
+
+			// MEDIANA
+			let mediana = 0;
+			valoresColuns.sort(function (a, b) {return a-b});
+			if (valoresColuns.length % 2 == 0) { // PAR
+
+				let posMeio = valoresColuns.length / 2;
+				mediana = (Number(valoresColuns[posMeio - 1]) + Number(valoresColuns[posMeio])) / 2;
+			} else { // IMPAR
+
+				mediana = valoresColuns[Math.trunc(valoresColuns.length / 2)];
+			}
+
+			// VARIANCIA
+			let variancia;
+			let varianciaTmp = 0;
+			for (var posItem in valoresColuns) {
+
+				varianciaTmp += Math.pow((valoresColuns[posItem]) - media, 2);
+			}
+			variancia = varianciaTmp / valoresColuns.length;
+
+			// DESVIO PADRAO
+			let desvioPadrao = Math.sqrt(variancia);
+
+			document.querySelector(`#span-media-${Number(posColunas) + 1}`).innerHTML = Number(media).toFixed(2);
+			document.querySelector(`#span-mediana-${Number(posColunas) + 1}`).innerHTML = Number(mediana).toFixed(2);
+			document.querySelector(`#span-desvio-${Number(posColunas) + 1}`).innerHTML = Number(variancia).toFixed(2);
+			document.querySelector(`#span-amostra-${Number(posColunas) + 1}`).innerHTML = Number(desvioPadrao).toFixed(2);
+		} else {
+
+			document.querySelector(`#span-media-${Number(posColunas) + 1}`).innerHTML = textoTmp;
+			document.querySelector(`#span-mediana-${Number(posColunas) + 1}`).innerHTML = textoTmp;
+			document.querySelector(`#span-desvio-${Number(posColunas) + 1}`).innerHTML = textoTmp;
+			document.querySelector(`#span-amostra-${Number(posColunas) + 1}`).innerHTML = textoTmp;
+		}
+
+	}
+
+	if (algumErrado) {
+		// calcular
+	} else {
+
+	}
+}
+
+let textoTmp = '-';
+
+function enterCarregarTabela(evt) {
+
+	if (evt.keyCode === 13) {
+
+		validarLinhasTabela();
+		if (!buttonCalcular.disabled) {
+
+			carregarTabela();
+		}
+	}
 }
 
 function carregarTabela() {
 
+	let numeroLinhas = inputLinha.value;
+	let numeroColunas = inputColuna.value;
+
 	let divTabela = document.querySelector(".tabela");
+	divTabela.innerHTML = '';
 
-	let thTitulo = document.createElement("th");
-	thTitulo.innerHTML = '<input id="input-titulo" class="fundo-editavel fundo-editavel-normal" placeholder="?" type="text" oninput="validarTabela()">';
-	thTitulo.colspan = inputColuna.value;
+	let linhaTitulo = divTabela.insertRow(0);
+	let colunaTitulo = linhaTitulo.insertCell(0);
+	colunaTitulo.colSpan = numeroColunas + 1;
+	colunaTitulo.innerHTML = '<div class="input-x fundo-ok preenchimento-c col-xs-12"> <input class="col-xs-12" placeholder="Título" type="text"> </div>';
 
-	for (var i = 0; i < array.length; i++) {
+	for (var i = 0; i < numeroLinhas; i++) {
 
+		let linha = divTabela.insertRow(i + 1);
+		let colunaTexto = linha.insertCell(0);
+		colunaTexto.innerHTML = '<div class="input-x fundo-ok preenchimento-c col-xs-12"> <input class="col-xs-12 x" placeholder="Linha ' + (i + 1) + '" type="text"> </div>';
+
+		for (var j = 0; j < numeroColunas; j++) {
+
+			let colunaTexto = linha.insertCell(j + 1);
+			colunaTexto.classList.add("text-center");
+			colunaTexto.innerHTML = '<input id="input-texto-' + (i + 1) + '-' + (j + 1) + '" class="fundo-editavel fundo-editavel-normal" placeholder="?" oninput="validarTabela()" type="text">';
+		}
 	}
 
-	let tr = document.createElement("tr");
+	let classTmp = '';
 
-	for (var variable in object) {
+	let linhaMedia = divTabela.insertRow(Number(numeroLinhas) + 1);
+	let colunaMediaTitulo = linhaMedia.insertCell(0);
+	colunaMediaTitulo.innerHTML = '<h4>Média: </h4>';
+	for (var j = 0; j < numeroColunas; j++) {
 
-		let td = document.createElement("td");
+		let colunaMedia = linhaMedia.insertCell(j + 1);
+		colunaMedia.classList.add("text-center");
+		colunaMedia.innerHTML = '<span id="span-media-' + (j + 1) + '" class="' + classTmp + '">' + textoTmp + '</span>';
 	}
 
+	let linhaMediana = divTabela.insertRow(Number(numeroLinhas) + 2);
+	let colunaMedianaTitulo = linhaMediana.insertCell(0);
+	colunaMedianaTitulo.innerHTML = '<h4>Mediana: </h4>';
+	for (var j = 0; j < numeroColunas; j++) {
 
+		let colunaMediana = linhaMediana.insertCell(j + 1);
+		colunaMediana.classList.add("text-center");
+		colunaMediana.innerHTML = '<span id="span-mediana-' + (j + 1) + '" class="' + classTmp + '">' + textoTmp + '</span>';
+	}
 
-	document.querySelector(".tabela .titulo").appendChild(thTitulo);
+	let linhaDesvioPadrao = divTabela.insertRow(Number(numeroLinhas) + 3);
+	let colunaDesvioPadraoTitulo = linhaDesvioPadrao.insertCell(0);
+	colunaDesvioPadraoTitulo.innerHTML = '<h4>Desvio Padrão: </h4>';
+	for (var j = 0; j < numeroColunas; j++) {
 
+		let colunaDesvioPadrao = linhaDesvioPadrao.insertCell(j + 1);
+		colunaDesvioPadrao.classList.add("text-center");
+		colunaDesvioPadrao.innerHTML = '<span id="span-desvio-' + (j + 1) + '" class="' + classTmp + '">' + textoTmp + '</span>';
+	}
+
+	let linhaAmostra = divTabela.insertRow(Number(numeroLinhas) + 4);
+	let colunaAmostraTitulo = linhaAmostra.insertCell(0);
+	colunaAmostraTitulo.innerHTML = '<h4>Variância da Amostra: </h4>';
+	for (var j = 0; j < numeroColunas; j++) {
+
+		let colunaAmostra = linhaAmostra.insertCell(j + 1);
+		colunaAmostra.classList.add("text-center");
+		colunaAmostra.innerHTML = '<span id="span-amostra-' + (j + 1) + '" class="' + classTmp + '">' + textoTmp + '</span>';
+	}
+
+	// todos os campos apenas numeros
+	// apenasNumeros(document.querySelector("#media"));
 }
 
 </script>
