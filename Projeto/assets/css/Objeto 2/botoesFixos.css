@@ -20,12 +20,12 @@
 	position: absolute;
 	left: 10vw;
 	font-size: 40px;
-	color: gray;
+	color: #1712e6;
 	cursor: pointer;
 }
 
 #iconMais:hover {
-	color:green;
+	color:#04018a;
 }
 
 #iconHelp {
@@ -34,7 +34,7 @@
 	left: 5vw;
 	z-index: 1;
 	font-size: 40px;
-	color: gray;
+	color: #b712d4;
 }
 
 #iconFechar {
