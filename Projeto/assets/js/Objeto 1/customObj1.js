@@ -798,6 +798,7 @@
 	  		$("#botaoMatrizQuestoesNao").hide();
 	  		$("#inputRespostasMatrizEnergetica").show();
 	  		$("#enviarRespostaMatriz").show();
+	  		graphMatrizEnergetica();
 
 	  		if (corretas[11] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -815,9 +816,9 @@
 	  		$("#questionMatrizEnergetica").html(dataJSON.questao13.textoQuestao);
 	  		$("#botaoMatrizQuestoesSim").hide();
 	  		$("#botaoMatrizQuestoesNao").hide();
-
 	  		$("#inputRespostasMatrizEnergetica").show();
 	  		$("#enviarRespostaMatriz").show();
+	  		graphMatrizEnergetica2();
 
 
 	  		if (corretas[12] == false) {
@@ -2208,6 +2209,67 @@
 	  				}, {
 	  					name: 'Solar',
 	  					y: 42
+	  				}]
+	  			}]
+	  		});
+
+	  		chart.reflow();
+	  	}
+
+
+	  	function graphMatrizEnergetica2() {
+	  		var chart = Highcharts.chart('graphMatrizEnergetica', {
+	  			chart: {
+	  				backgroundColor: 'rgba(0,0,0,0)',
+	  				type: 'pie',
+	  				style: {
+	  					color: "#FFFFFF"
+	  				}
+	  			},
+	  			title: {
+	  				text: 'Dados da Matriz Energética Brasileira',
+	  				style: {
+	  					color: "#FFFFFF"
+	  				}
+	  			},
+	  			tooltip: {
+	  				pointFormat: '{series.name}: <b>{point.y}</b>'
+	  			},
+	  			plotOptions: {
+	  				pie: {
+	  					allowPointSelect: false,
+	  					cursor: 'pointer',
+	  					dataLabels: {
+	  						enabled: true,
+	  						format: '{point.name}: {point.y}',
+	  						style: {
+	  							textOutline: false,
+	  							color: "#FFFFFF"
+	  						}
+	  					}
+	  				}
+	  			},
+	  			series: [{
+	  				name: 'Usinas ',
+	  				colorByPoint: true,
+	  				data: [{
+	  					name: 'Hidrelétrica',
+	  					y: 282396846
+	  				}, {
+	  					name: 'Biomassa',
+	  					y: 40789632	
+	  				}, {
+	  					name: 'Fóssil',
+	  					y: 77620000
+	  				}, {
+	  					name: 'Eólica',
+	  					y: 30282978
+	  				}, {
+	  					name: 'Nuclear',
+	  					y: 5708707
+	  				}, {
+	  					name: 'Solar',
+	  					y: 46038
 	  				}]
 	  			}]
 	  		});
