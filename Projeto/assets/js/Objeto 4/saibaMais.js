@@ -124,28 +124,28 @@ function getSaibaMais(numeroDaTela) {
     return saibaMais18;
     case 19:
     return saibaMais19;
-    case '211':
+    case '261':
     return saibaMaisQuestao1;
-    case '212':
-    case '213':
+    case '262':
+    case '263':
     return saibaMaisQuestao2_3;
-    case '214':
-    case '215':
+    case '264':
+    case '265':
     return saibaMaisQuestao4_5;
-    case '216':
-    case '217':
+    case '266':
+    case '267':
     return saibaMaisQuestao6_7;
-    case '218':
-    case '219':
-    case '2110':
-    case '2111':
-    case '2112':
-    case '2113':
-    case '2114':
-    case '2115':
-    case '2116':
-    case '2117':
-    case '2118':
+    case '268':
+    case '269':
+    case '2610':
+    case '2611':
+    case '2612':
+    case '2613':
+    case '2614':
+    case '2615':
+    case '2616':
+    case '2617':
+    case '2618':
     return saibaMaisGenerico;
 
 
