@@ -14,15 +14,15 @@
 				</tr>
 				<tr>
 					<th>Brasil</th>
-					<th>980</th>
+					<th>977</th>
 				</tr>
 				<tr>
 					<td>Norte</td>
-					<td>20</td>
+					<td>19</td>
 				</tr>
 				<tr>
 					<td>Nordeste</td>
-					<td>73</td>
+					<td>74</td>
 				</tr>
 				<tr>
 					<td>Sudeste</td>
@@ -30,7 +30,7 @@
 				</tr>
 				<tr>
 					<td>Sul</td>
-					<td>453</td>
+					<td>450</td>
 				</tr>
 				<tr>
 					<td>Centro-Oeste</td>
@@ -38,7 +38,7 @@
 				</tr>
 				<tr class="total">
 					<td>Variância</td>
-					<td>36.445,6</td>
+					<td>36.160,24</td>
 				</tr>
 			</table>
 		</div>
@@ -176,7 +176,7 @@ console.log('questao-6.html');
 
 $("#iconSetaEsquerda").show();
 $("#iconSetaDireita").hide();
-$("#iconAjuda").hide();
+$("#iconAjuda").show();
 $("#iconCalculadora").show();
 
 iconSetaEsquerda.addEventListener("click", function() {
@@ -202,6 +202,25 @@ function proxima() {
 }
 
 function ajuda() {
+
+	if (document.querySelector('#dialog-ajuda') == null) {
+		let innerAjuda = document.querySelector(".mensagens").innerHTML;
+		innerAjuda += `
+		<div id="dialog-ajuda">
+			<img src="assets/img/questao-6-7-ajuda.png" />
+
+		</div>`;
+		document.querySelector(".mensagens").innerHTML = innerAjuda;
+	}
+
+	let dialogAjuda = $("#dialog-ajuda").dialog({
+		autoOpen: false,
+		height: 500,
+		width: 800,
+		modal: true,
+		buttons: {}
+	});
+	dialogAjuda.dialog("open");
 }
 
 let inputQuestao6DesvioPadrao = document.querySelector("#input-desvio-padrao");

@@ -1,24 +1,6 @@
 <div class="geral-interno">
 	<img id='img-fundo' class="fundo" src="assets/img/media-quadratica-1.png"/>
 
-	<div id='explicacao-fundo' class="container ocultar">
-		<h2 class="text-center muitissimo-mais-top"><b>MÉDIA QUADRÁTICA</b></h2>
-		<h3>É a raiz quadrada da média aritmética dos quadrados dos valores considerados.</h3>
-
-		<ul><li><h3>Se os valores considerados forem representados por <b>x1</b>, <b>x2</b>, <b>x3</b>, <b>...</b>, <b>x12</b>, então:</h3></li></ul>
-		<div class='text-center muitissimo-mais-top muitissimo-mais-bottom' style="position: inline-block;">
-			<img src="assets/img/media-quadratica-formula.png" />
-			<h6><i>Quantidade de valores no conjunto</i></h6>
-		</div>
-
-		<h4>Exemplo: Calcular a média quadrática do seguinte conjunto de números:</h4>
-
-		<div class='text-center'>
-			<img src="assets/img/media-quadratica-formula-outra.png" style="width:300px;">
-		</div>
-
-	</div>
-
 	<video id='video-fundo' class='fundo ocultar' src="assets/video/matematica-quadratica-explicacao.mp4"/>
 
 	<div class="mensagens">
@@ -61,6 +43,7 @@ iconAjuda.addEventListener("click", function() {
 let posIndexMediaQuadratica = 0;
 function anterior() {
 
+	let imgFundo = document.querySelector('#img-fundo');
 	switch (posIndexMediaQuadratica) {
 
 		default:
@@ -69,21 +52,19 @@ function anterior() {
 			break;
 
 		case 1:
-			let imgFundo = document.querySelector('#img-fundo');
 			imgFundo.src = 'assets/img/media-quadratica-1.png';
 
 			posIndexMediaQuadratica--;
 			break;
 
 		case 2:
-			document.querySelector('#img-fundo').classList.remove('ocultar');
-			document.querySelector('#explicacao-fundo').classList.add('ocultar');
+			imgFundo.src = 'assets/img/media-quadratica-exemplo.png';
 
 			posIndexMediaQuadratica--;
 			break;
 
 		case 3:
-			document.querySelector('#explicacao-fundo').classList.remove('ocultar');
+			document.querySelector('#img-fundo').classList.remove('ocultar');
 			let videoFundo  = document.querySelector('#video-fundo');
 			videoFundo.classList.add('ocultar');
 			videoFundo.load();
@@ -95,24 +76,24 @@ function anterior() {
 }
 
 function proxima() {
+
+	let imgFundo = document.querySelector('#img-fundo');
 	switch (posIndexMediaQuadratica) {
 
 		case 0:
-			let imgFundo = document.querySelector('#img-fundo');
 			imgFundo.src = 'assets/img/media-quadratica-2.png';
 
 			posIndexMediaQuadratica++;
 			break;
 
 		case 1:
-			document.querySelector('#img-fundo').classList.add('ocultar');
-			document.querySelector('#explicacao-fundo').classList.remove('ocultar');
+			imgFundo.src = 'assets/img/media-quadratica-exemplo.png';
 
 			posIndexMediaQuadratica++;
 			break;
 
 		case 2:
-			document.querySelector('#explicacao-fundo').classList.add('ocultar');
+			document.querySelector('#img-fundo').classList.add('ocultar');
 			let videoFundo  = document.querySelector('#video-fundo');
 			videoFundo.classList.remove('ocultar');
 			videoFundo.play();

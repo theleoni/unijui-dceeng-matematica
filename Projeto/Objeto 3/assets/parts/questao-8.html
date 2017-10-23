@@ -180,7 +180,7 @@ console.log('questao-8.html');
 
 $("#iconSetaEsquerda").show();
 $("#iconSetaDireita").hide();
-$("#iconAjuda").hide();
+$("#iconAjuda").show();
 $("#iconCalculadora").show();
 
 iconSetaEsquerda.addEventListener("click", function() {
@@ -206,6 +206,25 @@ function proxima() {
 }
 
 function ajuda() {
+
+	if (document.querySelector('#dialog-ajuda') == null) {
+		let innerAjuda = document.querySelector(".mensagens").innerHTML;
+		innerAjuda += `
+		<div id="dialog-ajuda">
+			<img src="assets/img/questao-8-ajuda.png" />
+
+		</div>`;
+		document.querySelector(".mensagens").innerHTML = innerAjuda;
+	}
+
+	let dialogAjuda = $("#dialog-ajuda").dialog({
+		autoOpen: false,
+		height: 500,
+		width: 1000,
+		modal: true,
+		buttons: {}
+	});
+	dialogAjuda.dialog("open");
 }
 
 let inputQuestao6ADesvioPadrao = document.querySelector("#input-desvio-padrao-a");
