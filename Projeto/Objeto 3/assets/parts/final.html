@@ -127,6 +127,9 @@ input {
 
 console.log('final.html');
 
+apenasNumeros(document.querySelector('#input-linha'));
+apenasNumeros(document.querySelector('#input-coluna'));
+
 $("#iconSetaEsquerda").show();
 $("#iconSetaDireita").show();
 $("#iconAjuda").hide();
@@ -162,17 +165,27 @@ let inputColuna = document.querySelector("#input-coluna");
 let inputLinha = document.querySelector("#input-linha");
 
 let maximoLinhaColuna = 12;
-let minimoLinhaColuna = 2;
+let minimoLinha = 2;
+let minimoColuna = 1;
 
 function validarLinhasTabela() {
 
-	if (inputColuna.value && inputLinha.value
-		&& inputColuna.value >= minimoLinhaColuna && inputColuna.value <= maximoLinhaColuna
-		&& inputLinha.value >= minimoLinhaColuna && inputLinha.value <= maximoLinhaColuna
-	) {
+	if (inputColuna.value && inputLinha.value) {
 
-		buttonCalcular.disabled = false;
-		buttonCalcular.classList.remove("disabled");
+		let coluna = Math.floor(inputColuna.value);
+		let linha = Math.floor(inputLinha.value);
+
+		if (inputColuna.value >= minimoColuna && inputLinha.value >= minimoLinha
+			&& inputColuna.value <= maximoLinhaColuna && inputLinha.value <= maximoLinhaColuna
+		) {
+
+			buttonCalcular.disabled = false;
+			buttonCalcular.classList.remove("disabled");
+		} else {
+
+			buttonCalcular.disabled = true;
+			buttonCalcular.classList.add("disabled");
+		}
 	} else {
 
 		buttonCalcular.disabled = true;
@@ -183,9 +196,8 @@ validarLinhasTabela();
 
 function validarTabela() {
 
-	let numeroLinhas = inputLinha.value;
-	let numeroColunas = inputColuna.value;
-	// console.log(numeroLinhas + "x" + numeroColunas);
+	let numeroLinhas = Math.floor(inputLinha.value);
+	let numeroColunas = Math.floor(inputColuna.value);
 
 	let colunas = [];
 	for (var j = 0; j < numeroColunas; j++) {
@@ -223,10 +235,9 @@ function validarTabela() {
 			}
 		}
 
-
 		if (!algumErradoColuna) {
 
-			let somaVals = 0;
+			let somaVals = 0.0;
 			valoresColuns.map((val) => somaVals += Number(val));
 
 			// MEDIA
@@ -315,6 +326,8 @@ function carregarTabela() {
 			let colunaTexto = linha.insertCell(j + 1);
 			colunaTexto.classList.add("text-center");
 			colunaTexto.innerHTML = '<input id="input-texto-' + (i + 1) + '-' + (j + 1) + '" class="fundo-editavel fundo-editavel-normal" placeholder="?" oninput="validarTabela()" type="text">';
+
+			apenasNumeros(document.querySelector('#input-texto-' + (i + 1) + '-' + (j + 1) + ''));
 		}
 	}
 
@@ -359,9 +372,6 @@ function carregarTabela() {
 		colunaAmostra.classList.add("text-center");
 		colunaAmostra.innerHTML = '<span id="span-amostra-' + (j + 1) + '" class="' + classTmp + '">' + textoTmp + '</span>';
 	}
-
-	// todos os campos apenas numeros
-	// apenasNumeros(document.querySelector("#media"));
 }
 
 </script>
