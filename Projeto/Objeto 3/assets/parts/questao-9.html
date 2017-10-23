@@ -76,6 +76,10 @@
 					</td>
 				</tr>
 			</table>
+
+			<div class="text-center mais-top muitissimo-mais-bottom">
+				<button type="button" class="btn" onclick="saibaMais()">Saiba mais!</button>
+			</div>
 		</div>
 
 		<div class="col-xs-12 col-md-6">
@@ -453,7 +457,7 @@ iconAjuda.addEventListener("click", function() {
 
 function anterior() {
 
-	carregarParte('catadores-reciclavel.html');
+	carregarParte('desvio-tabela.html');
 }
 
 function proxima() {
@@ -574,5 +578,25 @@ function validarValores() {
 		$("#iconSetaDireita").hide();
 	}
 
+}
+
+function saibaMais() {
+	if (document.querySelector('#dialog-saiba-mais') == null) {
+		let innerAjuda = document.querySelector(".mensagens").innerHTML;
+		innerAjuda += `
+		<div id="dialog-saiba-mais">
+
+		</div>`;
+		document.querySelector(".mensagens").innerHTML = innerAjuda;
+	}
+
+	let dialogAjuda = $("#dialog-saiba-mais").dialog({
+		autoOpen: false,
+		height: 500,
+		width: 1000,
+		modal: true,
+		buttons: {}
+	});
+	dialogAjuda.dialog("open");
 }
 </script>
