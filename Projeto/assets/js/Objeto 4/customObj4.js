@@ -222,7 +222,7 @@ function checkIfStuck() {
 			stuckOnFirstImage = false;
 
 			setTimeout(function() {
-				$("#iconSetaDireita").css("color", "gray");
+				$("#iconSetaDireita").css("color", "#FFF");
 				$("#iconSetaDireita").css("font-size", "40px");
 
 			}, 5000)
@@ -584,6 +584,20 @@ function checkIfStuck() {
 	}
 
 
+	function changeCorSetas(cor) {
+		switch (cor) {
+		case 'branco':
+		$("#iconSetaDireita").css('color', '#FFF');
+		$("#iconSetaEsquerda").css('color', '#FFF');
+		break;
+
+		case 'preto':
+		$("#iconSetaDireita").css('color', '#000');
+		$("#iconSetaEsquerda").css('color', '#000');
+		break;
+	}
+
+}
 	//Função para exibir ajudas
 	$(document).on('click', '#iconHelp', function() {
 		if (scene != 26) {
@@ -717,6 +731,7 @@ function checkIfStuck() {
 			$("#iconCalculadora").hide();
 			$("#iconMais").hide();
 			$("#iconHelp").hide();
+			changeCorSetas('branco');
 			changeTitle(" ");
 			if (!videoOnibus1Assistido) {
 				videoOnibus1.currentTime = 0;
@@ -734,6 +749,7 @@ function checkIfStuck() {
 
 			case 3:
 			$("#telaPrevisaoDoTempo").show();
+			changeCorSetas('branco');
 			changeTitle(" ");
 			showArrows();
 			showUpperIcons();
@@ -744,6 +760,7 @@ function checkIfStuck() {
 			case 4:
 			disallowPreviousScene();
 			$("#telaVideoOnibus1ponto1").show();
+			changeCorSetas('branco');
 			$("#iconCalculadora").hide();
 			$("#iconMais").hide();
 			$("#iconHelp").hide();
@@ -767,6 +784,7 @@ function checkIfStuck() {
 			case 5:
 			$("#telaInfografico1").show();
 			changeTitle(" ");
+			changeCorSetas('branco');
 			showArrows();
 			showUpperIcons();
 			$("#iconMais").hide();
@@ -779,6 +797,7 @@ function checkIfStuck() {
 			$("#iconCalculadora").hide();
 			$("#iconMais").hide();
 			$("#iconHelp").hide();
+			changeCorSetas('branco');
 			changeTitle(" ");
 			if (!videoOnibus2Assistido) {
 				videoOnibus2.currentTime = 0;
@@ -802,6 +821,7 @@ function checkIfStuck() {
 			showUpperIcons();
 			$("#iconMais").hide();
 			changeTitle(" ");
+			changeCorSetas('branco');
 			break;
 
 			case 8:
@@ -810,6 +830,7 @@ function checkIfStuck() {
 			showUpperIcons();
 			$("#iconMais").hide();
 			changeTitle(" ");
+			changeCorSetas('branco');
 			break;
 
 			case 9:
@@ -817,6 +838,8 @@ function checkIfStuck() {
 			$("#textoTratamento").html(dataJSON.telaTratamento.fala1Guia);
 			showArrows();
 			showUpperIcons();
+			changeCorSetas('preto');
+
 			break;
 
 			case 10:
@@ -824,6 +847,8 @@ function checkIfStuck() {
 			changeTitle(" ");
 			showUpperIcons();
 			updateConversaLaboratorio();
+			changeCorSetas('preto');
+
 			if (conversaLaboratorioCompleta == true) {
 				allowNextScene();
 			} else {
@@ -836,6 +861,7 @@ function checkIfStuck() {
 			changeTitle(" ");
 			showUpperIcons();
 			$("#iconMais").hide();
+			changeCorSetas('preto');
 			break;
 
 			case 12:
@@ -843,12 +869,14 @@ function checkIfStuck() {
 			changeTitle(" ");
 			showUpperIcons();
 			$("#iconMais").hide();
+			changeCorSetas('preto');
 			break;
 
 			case 13:
 			$("#telaTabela3").show();
 			changeTitle(" ");
 			showUpperIcons();
+			changeCorSetas('preto');
 			break;
 
 			case 14:
@@ -856,6 +884,7 @@ function checkIfStuck() {
 			changeTitle(" ");
 			showUpperIcons();
 			$("#iconMais").hide();
+			changeCorSetas('preto');
 			break;
 
 			case 15:
@@ -864,6 +893,7 @@ function checkIfStuck() {
 			$("#iconCalculadora").hide();
 			$("#iconMais").hide();
 			$("#iconHelp").hide();
+			changeCorSetas('branco');
 			if (!videoOnibusVoltandoAssistido) {
 				videoOnibusVoltando.currentTime = 0;
 				videoOnibusVoltando.play()
@@ -883,6 +913,7 @@ function checkIfStuck() {
 			changeTitle(" ");
 			showUpperIcons();
 			$("#iconMais").hide();
+			changeCorSetas('branco');
 			break;
 
 			case 17:
@@ -890,12 +921,14 @@ function checkIfStuck() {
 			changeTitle(" ");
 			showUpperIcons();
 			$("#iconMais").hide();
+			changeCorSetas('branco');
 			break;
 
 			case 18:
 			$("#telaSalaDeAula2").show();
 			changeTitle(" ");
 			showUpperIcons();
+			changeCorSetas('branco');
 			break;
 
 			case 19:
@@ -904,6 +937,8 @@ function checkIfStuck() {
 			changeTitle(" ");
 			showUpperIcons();
 			$("#iconMais").hide();
+			changeCorSetas('preto');
+
 			break;
 
 			case 20:
@@ -912,6 +947,7 @@ function checkIfStuck() {
 			changeTitle(" ");
 			showUpperIcons();
 			$("#iconMais").hide();
+			changeCorSetas('preto');
 			break;
 
 			case 21:
@@ -920,6 +956,7 @@ function checkIfStuck() {
 			changeTitle(" ");
 			showUpperIcons();
 			$("#iconMais").hide();
+			changeCorSetas('preto');
 			break;
 
 			case 22:
@@ -928,6 +965,7 @@ function checkIfStuck() {
 			changeTitle(" ");
 			showUpperIcons();
 			$("#iconMais").hide();
+			changeCorSetas('preto');
 			break;
 
 			case 23:
@@ -936,6 +974,7 @@ function checkIfStuck() {
 			changeTitle(" ");
 			showUpperIcons();
 			$("#iconMais").hide();
+			changeCorSetas('preto');
 			break;
 
 			case 24:
@@ -944,6 +983,7 @@ function checkIfStuck() {
 			changeTitle(" ");
 			showUpperIcons();
 			$("#iconMais").hide();
+			changeCorSetas('preto');
 			break;
 
 			case 25:
@@ -952,6 +992,8 @@ function checkIfStuck() {
 			showArrows();
 			showUpperIcons();
 			$("#iconMais").hide();
+			changeCorSetas('branco');
+
 
 			break;
 
@@ -961,6 +1003,8 @@ function checkIfStuck() {
 			loadQuestion();
 			changeTitle(" ");
 			showUpperIcons();
+			changeCorSetas('preto');
+
 			break;
 
 			case 27:
