@@ -10,6 +10,7 @@
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/bib/highcharts/code/highcharts.js"></script>
 
+	<link rel="stylesheet" type="text/css" href="assets/css/calculadora.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/jquery-ui.css">
 	<!-- <link rel="stylesheet" type="text/css" href="assets/css/botoesFixos.css"> -->
@@ -58,10 +59,17 @@
 				<button type="button" class="btn butonlousso" onclick="carregarParte('catadores-reciclavel.html');">Catadores - M.R.</button>
 				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-9.html');">Questão 9</button>
 				<button type="button" class="btn butonlousso" onclick="carregarParte('desvio-amostral.html');">Desvio Amostral</button>
-				<!-- <button type="button" class="btn butonlousso" onclick="carregarParte('questao-10.html');">Questão 10</button> -->
 				<button type="button" class="btn butonlousso" onclick="carregarParte('coeficiente-variacao.html');">Coeficiente Variação</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-10.html');">Questão 10</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-11.html');">Questão 11</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('reduzir-reutilizar-reciclar.html');">3 Rs</button>
+				<button type="button" class="btn butonlousso" onclick="carregarParte('final.html');">Final</button>
 			</div>
 		</center>
+
+	</div>
+
+	<div class="div-msg-geral">
 
 	</div>
 
@@ -137,10 +145,21 @@
 	var nomePessoa = 'Jureg';
 	// $('.geral').load('assets/parts/lixeiras.html');
 
+	var ultimoLinkCarregado = '';
 	function carregarParte(link) {
+
+		ultimoLinkCarregado = link;
 		recarregarBotoes();
 		$('.geral').load(`assets/parts/${link}`);
 	}
+
+	document.querySelector('body').addEventListener('keyup', function (event) {
+
+		if (ultimoLinkCarregado && event.keyCode == '82') {
+
+			carregarParte(ultimoLinkCarregado);
+		}
+	});
 
 	function recarregarBotoes() {
 		divBotoesFixos.innerHTML =
@@ -155,6 +174,55 @@
 		iconSetaDireita = divBotoesFixos.querySelector('#iconSetaDireita');
 		iconAjuda = divBotoesFixos.querySelector('#iconAjuda');
 		iconCalculadora = divBotoesFixos.querySelector('#iconCalculadora');
+
+		iconCalculadora.addEventListener('click', function() {
+
+			if (document.querySelector('#dialog-calculadora') == null) {
+				let innerCalculadora = document.querySelector(".div-msg-geral").innerHTML;
+				innerCalculadora += `
+				<div id="dialog-calculadora" style=margin:0px;>
+					<div id="calculadora">
+						<div class="top">
+							<span class="clear">C</span>
+							<div class="screen"></div>
+						</div>
+
+						<div class="keys">
+							<!-- operators and other keys -->
+							<span id="7Calculadora">7</span>
+							<span id="8Calculadora">8</span>
+							<span id="9Calculadora">9</span>
+							<span id="MaisCalculadora"class="operator">+</span>
+							<span id="4Calculadora">4</span>
+							<span id="5Calculadora">5</span>
+							<span id="6Calculadora">6</span>
+							<span id="MenosCalculadora"class="operator">-</span>
+							<span id="1Calculadora">1</span>
+							<span id="2Calculadora">2</span>
+							<span id="3Calculadora">3</span>
+							<span id="DivisaoCalculadora" class="operator">÷</span>
+							<span id="0Calculadora">0</span>
+							<span id="PontoCalculadora">.</span>
+							<span id="IgualCalculadora" class="eval">=</span>
+							<span id="MultiplicacaoCalculadora" class="operator">x</span>
+						</div>
+					</div>
+
+				</div>`;
+				document.querySelector(".div-msg-geral").innerHTML = innerCalculadora;
+
+				carregarCalculadora();
+			}
+
+			let dialogCalculadora = $("#dialog-calculadora").dialog({
+				autoOpen: false,
+				height: 340,
+				width: 360,
+				modal: false,
+				buttons: {}
+			});
+			dialogCalculadora.dialog("open");
+		});
 	}
 
 	function apenasNumeros(input) {
@@ -172,7 +240,8 @@
 
 	</script>
 
-	<script src='http://localhost:35729/livereload.js'></script>
+	<script src='assets/js/calculadora.js'></script>
+	<script src='http://localhost:43132/livereload.js'></script>
 
 </body>
 </html>
