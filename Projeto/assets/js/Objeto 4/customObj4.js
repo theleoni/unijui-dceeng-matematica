@@ -56,7 +56,13 @@ function hideDivsOnObjectStart() {
 	$("#telaEscola").hide();
 	$("#telaSalaDeAula").hide();
 	$("#telaSalaDeAula2").hide();
-	$("#telaExemplos").hide();
+	$("#telaExemplo1").hide();
+	$("#telaExemplo2").hide();
+	$("#telaExemplo3").hide();
+	$("#telaExemplo4").hide();
+	$("#telaExemplo5").hide();
+	$("#telaExemplo6").hide();
+
 	$("#telaSalaDeAula3").hide();
 	$("#telaQuestoes").hide();
 	$("#telaPrevisaoDoTempo").hide();
@@ -580,7 +586,7 @@ function checkIfStuck() {
 
 	//Função para exibir ajudas
 	$(document).on('click', '#iconHelp', function() {
-		if (scene != 21) {
+		if (scene != 26) {
 			showHelp(scene);
 		} else {
 			showHelp(scene + questionNumber.toString());
@@ -590,7 +596,7 @@ function checkIfStuck() {
 
 	//Função para exibir os saiba mais
 	$(document).on('click', '#iconMais', function() {
-		if (scene != 21) {
+		if (scene != 26) {
 			showSaibaMais(scene);
 		} else {
 			showSaibaMais(scene + questionNumber.toString());
@@ -617,6 +623,11 @@ function checkIfStuck() {
 			case 18:
 			case 19:
 			case 20:
+			case 21:
+			case 22:
+			case 23:
+			case 24:
+			case 25:
 			nextScene();
 			break
 			case 3:
@@ -632,7 +643,7 @@ function checkIfStuck() {
 			}
 			break;
 
-			case 21:
+			case 26:
 			if (questionNumber < 18 ) {
 				questionNumber++;
 				loadQuestion();
@@ -665,10 +676,14 @@ function checkIfStuck() {
 			case 18:
 			case 19:
 			case 20:
+			case 21:
 			case 22:
+			case 23:
+			case 24:
+			case 25:
 			previousScene();
 			break;
-			case 21:
+			case 26:
 			if (questionNumber > 1) {
 				questionNumber--;
 				loadQuestion();
@@ -884,15 +899,54 @@ function checkIfStuck() {
 			break;
 
 			case 19:
-			$("#telaExemplos").show();
+			$("#telaExemplo1").show();
 			$("body").css("overflow", "auto");
 			changeTitle(" ");
 			showUpperIcons();
 			$("#iconMais").hide();
-
 			break;
 
 			case 20:
+			$("#telaExemplo2").show();
+			$("body").css("overflow", "auto");
+			changeTitle(" ");
+			showUpperIcons();
+			$("#iconMais").hide();
+			break;
+
+			case 21:
+			$("#telaExemplo3").show();
+			$("body").css("overflow", "auto");
+			changeTitle(" ");
+			showUpperIcons();
+			$("#iconMais").hide();
+			break;
+
+			case 22:
+			$("#telaExemplo4").show();
+			$("body").css("overflow", "auto");
+			changeTitle(" ");
+			showUpperIcons();
+			$("#iconMais").hide();
+			break;
+
+			case 23:
+			$("#telaExemplo5").show();
+			$("body").css("overflow", "auto");
+			changeTitle(" ");
+			showUpperIcons();
+			$("#iconMais").hide();
+			break;
+
+			case 24:
+			$("#telaExemplo6").show();
+			$("body").css("overflow", "auto");
+			changeTitle(" ");
+			showUpperIcons();
+			$("#iconMais").hide();
+			break;
+
+			case 25:
 			$("#telaSalaDeAula3").show();
 			changeTitle(" ");
 			showArrows();
@@ -901,7 +955,7 @@ function checkIfStuck() {
 
 			break;
 
-			case 21:
+			case 26:
 			$("#telaQuestoes").show();
 			$("body").css("overflow", "auto");
 			loadQuestion();
@@ -909,7 +963,7 @@ function checkIfStuck() {
 			showUpperIcons();
 			break;
 
-			case 22:
+			case 27:
 			$("#telaAgradecimento").show();
 			showUpperIcons();
 			changeTitle(" ");
@@ -995,22 +1049,52 @@ function checkIfStuck() {
 			break;
 
 			case 19:
-			$("#telaExemplos").hide();
+			$("#telaExemplo1").hide();
 			$("body").css("overflow", "hidden");
 			window.scrollTo(0,0);
 			break;
 
 			case 20:
-			$("#telaSalaDeAula3").hide();
+			$("#telaExemplo2").hide();
+			$("body").css("overflow", "hidden");
+			window.scrollTo(0,0);
 			break;
 
 			case 21:
-			$("#telaQuestoes").hide();
+			$("#telaExemplo3").hide();
 			$("body").css("overflow", "hidden");
 			window.scrollTo(0,0);
 			break;
 
 			case 22:
+			$("#telaExemplo4").hide();
+			$("body").css("overflow", "hidden");
+			window.scrollTo(0,0);
+			break;
+
+			case 23:
+			$("#telaExemplo5").hide();
+			$("body").css("overflow", "hidden");
+			window.scrollTo(0,0);
+			break;
+
+			case 24:
+			$("#telaExemplo6").hide();
+			$("body").css("overflow", "hidden");
+			window.scrollTo(0,0);
+			break;
+
+			case 25:
+			$("#telaSalaDeAula3").hide();
+			break;
+
+			case 26:
+			$("#telaQuestoes").hide();
+			$("body").css("overflow", "hidden");
+			window.scrollTo(0,0);
+			break;
+
+			case 27:
 			$("#telaAgradecimento").hide();
 			break;
 		}

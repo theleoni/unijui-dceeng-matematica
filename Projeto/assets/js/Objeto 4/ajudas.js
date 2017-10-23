@@ -84,29 +84,29 @@ function getHelpScene(numeroDaTela) {
   switch(numeroDaTela){
     default:
     return ajudaPadrao;
-    case '211':
+    case '261':
     return ajudaQuestao1;
-    case '212':
-    case '213':
+    case '262':
+    case '263':
     return ajudaQuestao2_3;
-    case '214':
-    case '215':
+    case '264':
+    case '265':
     return ajudaQuestao4_5;
-    case '216':
-    case '217':
+    case '266':
+    case '267':
     return ajudaQuestao6_7;
-    case '218':
+    case '268':
     return ajudaQuestao8;
-    case '219':
-    case '2110':
+    case '269':
+    case '2610':
     return ajudaQuestao9_10;
-    case '2111':
+    case '2611':
     return ajudaQuestao11;
-    case '2112':
-    case '2113':
-    case '2114':
-    case '2115':
-    case '2116':
+    case '2612':
+    case '2613':
+    case '2614':
+    case '2615':
+    case '2616':
     return ajudaQuestao12_13_14_15_16;    
 
   }
