@@ -227,6 +227,36 @@
 					<td><span class="totalizado-final">?</span></td>
 				</tr>
 			</table>
+
+			<div class="col-xs-12 mais-top pre-formula">
+				<div class="formula">
+					<h5>Var = </h5>
+
+					<div class="calculo">
+						<div class="cima">
+							<h5>
+								<b><span class="totalizado-final">?</span></b>
+							</h5>
+						</div>
+						<div class="linha">
+							<hr>
+						</div>
+						<div class="baixo">
+							<h5><b>5</b></h5>
+						</div>
+					</div>
+				
+					<h5> = </h5>
+
+					<div class="calculo">
+						<h5>
+							<b><span class="final-geral">?</span></b>
+						</h5>
+					</div>
+				</div>
+			</div>
+
+
 		</div>
 
 	</div>
@@ -352,7 +382,7 @@ apenasNumeros(document.querySelector("#media"));
 $("#iconSetaEsquerda").show();
 $("#iconSetaDireita").hide();
 $("#iconAjuda").show();
-$("#iconCalculadora").hide();
+$("#iconCalculadora").show();
 
 iconSetaEsquerda.addEventListener("click", function() {
 	anterior();
@@ -381,7 +411,7 @@ function ajuda() {
 		let innerAjuda = document.querySelector(".mensagens").innerHTML;
 		innerAjuda += `
 		<div id="dialog-ajuda">
-
+			<img src="assets/img/questao-3-4-5-ajuda.png" />
 
 		</div>`;
 		document.querySelector(".mensagens").innerHTML = innerAjuda;
@@ -389,8 +419,8 @@ function ajuda() {
 
 	let dialogAjuda = $("#dialog-ajuda").dialog({
 		autoOpen: false,
-		height: 500,
-		width: 850,
+		height: 600,
+		width: 1000,
 		modal: true,
 		buttons: {}
 	});
