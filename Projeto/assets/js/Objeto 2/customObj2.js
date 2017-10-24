@@ -2540,7 +2540,7 @@ function loadQuestion() {
 
 	function changeVideoSources() {
 		videoHidreletrica.src = "../assets/img/Objeto 2/videoHidreletricaAndroid.mp4";
-		video2TelaConversa2.src = "../assets/img/Objeto 2/telaConversa2Video2Android.mp4";
+		video2TelaConversa2.src = "../assets/img/Objeto 2/telaNomeVideo2Android.mp4";
 		video2TelaNome.src = "../assets/img/Objeto 2/telaNomeVideo2Android.mp4";
 		video1TelaNome.src = "../assets/img/Objeto 2/videoGatoAndroid.mp4";
 		video1TelaConversa2.src = "../assets/img/Objeto 2/videoGatoAndroid.mp4";
