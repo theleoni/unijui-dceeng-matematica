@@ -870,6 +870,7 @@ function checkIfStuck() {
 			showUpperIcons();
 			$("#iconMais").hide();
 			changeCorSetas('preto');
+			allowNextScene();
 			break;
 
 			case 13:
@@ -877,6 +878,7 @@ function checkIfStuck() {
 			changeTitle(" ");
 			showUpperIcons();
 			changeCorSetas('preto');
+			allowNextScene();
 			break;
 
 			case 14:
@@ -885,6 +887,7 @@ function checkIfStuck() {
 			showUpperIcons();
 			$("#iconMais").hide();
 			changeCorSetas('preto');
+			allowNextScene();
 			break;
 
 			case 15:
