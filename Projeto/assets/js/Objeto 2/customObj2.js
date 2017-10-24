@@ -74,6 +74,9 @@ var verificacaoAtividade4 = false;
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 	setSwalDefaults();
+	if(isAndroid) {
+		changeVideoSources();
+	}
 });
 
 
@@ -162,9 +165,6 @@ function loadScene() {
 		break;
 
 		case 2:
-		if(isAndroid) {
-			videoHidreletrica.src = "../assets/img/Objeto 2/videoHidreletricaAndroid.mp4"
-		}
 		$("#telaVideoHidreletrica").show();
 		$("#iconCalculadora").hide();
 		$("#iconMais").hide();
@@ -2537,3 +2537,16 @@ function loadQuestion() {
 
 		}
 	});
+
+	function changeVideoSources() {
+		videoHidreletrica.src = "../assets/img/Objeto 2/videoHidreletricaAndroid.mp4";
+		video2TelaConversa2.src = "../assets/img/Objeto2/telaConversa2Video2Android.mp4";
+		video2TelaNome.src = "../assets/img/Objeto2/telaNomeVideo2Android.mp4";
+		video1TelaNome.src = "../assets/img/Objeto2/videoGatoAndroid.mp4";
+		video1TelaConversa2.src = "../assets/img/Objeto2/videoGatoAndroid.mp4";
+		videoMediaAritmetica.src = "../assets/img/Objeto2/videoMediaAritmeticaAndroid.mp4";
+		videoMediana.src = "../assets/img/Objeto2/videoMedianaAndroid.mp4";
+		videoMediana2.src = "../assets/img/Objeto2/videoMediana2Android.mp4";
+		videoQuestaoMediaAritmetica.src = "../assets/img/Objeto2/videoQuestaoMediaAritmeticaAndroid.mp4";
+		videoSelecaoQuestoes.src = "../assets/img/Objeto2/videoSelecaoQuestoesAndroid.mp4";
+	}
