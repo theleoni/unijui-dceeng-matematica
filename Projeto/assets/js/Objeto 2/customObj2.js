@@ -77,6 +77,11 @@ $(document).ready(function() {
 });
 
 
+var ua = navigator.userAgent.toLowerCase();
+var isAndroid = ua.indexOf("android") > -1;
+
+
+
 function sleep (time) {
 	return new Promise((resolve) => setTimeout(resolve, time));
 }
@@ -157,6 +162,9 @@ function loadScene() {
 		break;
 
 		case 2:
+		if(isAndroid) {
+			videoHidreletrica.src = "../assets/img/Objeto 2/videoHidreletricaAndroid.mp4"
+		}
 		$("#telaVideoHidreletrica").show();
 		$("#iconCalculadora").hide();
 		$("#iconMais").hide();
