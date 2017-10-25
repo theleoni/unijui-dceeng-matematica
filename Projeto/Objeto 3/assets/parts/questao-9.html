@@ -1,6 +1,6 @@
 <div class="geral-interno">
 
-	<div class='explicacoes-tabela-1 container muito-mais-top'>
+	<div class='explicacoes-tabela-1 container muito-mais-top muitissimo-mais-bottom'>
 
 		<div class="col-xs-12">
 			<h3>Atividade 9 - Calcule a Variância e o Desvio Padrão do número de catadores na área urbana com até 14 anos, <span id='auto-completar'>completando</span> as tabelas a seguir.</h3>
@@ -138,10 +138,8 @@
 						<td><span class="preenchimento-a">1</span></td>
 						<td><span class="preenchimento-b">1,4</span></td>
 						<td><span class="preenchimento-a">1</span> - <span class="preenchimento-b">1,4</span> =
-							<span class="preenchimento-c soma-a">
-								<div class="input-x input-xx fundo-normal preenchimento-c" id="campo-tabela-a">
-									<input id='input-tabela-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
-								</div>
+							<span class="preenchimento-c">
+								<input id='input-menor-a' class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
 							</span>
 						</td>
 						<td><span class="preenchimento-d total-a">0,16</span></td>
@@ -157,9 +155,7 @@
 						<td><span class="preenchimento-b">1,4</span></td>
 						<td><span class="preenchimento-a">2</span> - <span class="preenchimento-b">1,4</span> = <span class="preenchimento-c soma-c">0,6</span></td>
 						<td><span class="preenchimento-d total-c">
-							<div class="input-x input-xx fundo-normal preenchimento-c" id="campo-tabela-b">
-								<input id='input-tabela-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
-							</div>
+							<input id="input-menor-b" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
 						</span></td>
 					</tr>
 					<tr>
@@ -178,21 +174,19 @@
 						<td colspan="2"></td>
 						<td>Soma = </td>
 						<td><span class="totalizado-final">
-							<div class="input-x input-xx fundo-normal preenchimento-c" id="campo-tabela-c">
-								<input id='input-tabela-c' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
-							</div>
+							<input id="input-menor-c" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
 						</span></td>
 					</tr>
 				</table>
 			</div>
 
-			<div class="text-center ">
-				<div class="formula col-xs-12">
+			<div class="text-center">
+				<div class="formula">
 					<h4>Variância: S² = </h4>
 
 					<div class="calculo">
 						<div class="cima">
-							<h4 class="valor-tabela-c">?</h4>
+							<h4 class="valor-menor-total">?</h4>
 						</div>
 						<div class="linha">
 							<hr>
@@ -201,17 +195,32 @@
 							<h4>5</h4>
 						</div>
 					</div>
-
+					<div class="calculo">
+						<h4>=</h4>
+					</div>
 					<div class="calculo">
 						<div class="cima">
-							=
-							<h4 class="valor-variancia-a">?</h4>
+							<h4 class="valor-menor-variancia">?</h4>
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<div class="formula  col-xs-12">
-					<h4>Desvio padrão: S = &#8730;74 = 8,6</h4>
+			<div class="text-center">
+				<div class="formula">
+					<h4>Desvio padrão: S = √</h4>
+
+					<div class="calculo">
+						<h4 class="valor-menor-variancia">?</h4>
+					</div>
+					<div class="calculo">
+						<h4>=</h4>
+					</div>
+					<div class="calculo">
+						<div class="cima">
+							<h4 class="valor-menor-desvio">?</h4>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -226,7 +235,7 @@
 
 					<div class="calculo">
 						<div class="cima">
-							<h5>1 + 1 + 2 + 2 + 1</h5>
+							<h5>2 + 12 + 26 + 16 + 7</h5>
 						</div>
 						<div class="linha">
 							<hr>
@@ -240,7 +249,7 @@
 					</div>
 					<div class="calculo">
 						<div class="cima">
-							<h5>7</h5>
+							<h5>63</h5>
 						</div>
 						<div class="linha">
 							<hr>
@@ -250,7 +259,7 @@
 						</div>
 					</div>
 					<div class="calculo">
-						<h5> = <span class="preenchimento-b">1,4</span></h5>
+						<h5> = <span class="preenchimento-b">12,6</span></h5>
 					</div>
 				</div>
 			</div>
@@ -270,41 +279,97 @@
 						<th>(Xi - X&#772;)²</th>
 					</tr>
 					<tr>
-						<td><span class="preenchimento-a">3</span></td>
-						<td><span class="preenchimento-b">14</span></td>
-						<td><span class="preenchimento-a">3</span> - <span class="preenchimento-b">14</span> = <span class="preenchimento-c soma-a">-11</span></td>
-						<td><span class="preenchimento-d total-a">121</span></td>
+						<td><span class="preenchimento-a">2</span></td>
+						<td><span class="preenchimento-b">12,6</span></td>
+						<td><span class="preenchimento-a">2</span> - <span class="preenchimento-b">12,6</span> = <span class="preenchimento-c soma-a">-10,6</span></td>
+						<td>
+							<span class="preenchimento-c">
+								<input id="input-maior-b" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+							</span>
+						</td>
 					</tr>
 					<tr>
-						<td><span class="preenchimento-a">13</span></td>
-						<td><span class="preenchimento-b">14</span></td>
-						<td><span class="preenchimento-a">13</span> - <span class="preenchimento-b">14</span> = <span class="preenchimento-c soma-b">-1</span></td>
-						<td><span class="preenchimento-d total-b">1</span></td>
+						<td><span class="preenchimento-a">12</span></td>
+						<td><span class="preenchimento-b">12,6</span></td>
+						<td><span class="preenchimento-a">12</span> - <span class="preenchimento-b">12,6</span> = <span class="preenchimento-c soma-b">-0,6</span></td>
+						<td><span class="preenchimento-d total-b">0,36</span></td>
 					</tr>
 					<tr>
-						<td><span class="preenchimento-a">28</span></td>
-						<td><span class="preenchimento-b">14</span></td>
-						<td><span class="preenchimento-a">28</span> - <span class="preenchimento-b">14</span> = <span class="preenchimento-c soma-c">14</span></td>
-						<td><span class="preenchimento-d total-c">196</span></td>
+						<td><span class="preenchimento-a">26</span></td>
+						<td><span class="preenchimento-b">12,6</span></td>
+						<td><span class="preenchimento-a">26</span> - <span class="preenchimento-b">12,6</span> =
+							<span class="preenchimento-c">
+								<input id="input-maior-a" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+							</span>
+						</td>
+						<td><span class="preenchimento-d total-c">179,56</span></td>
 					</tr>
 					<tr>
-						<td><span class="preenchimento-a">18</span></td>
-						<td><span class="preenchimento-b">14</span></td>
-						<td><span class="preenchimento-a">18</span> - <span class="preenchimento-b">14</span> = <span class="preenchimento-c soma-d">4</span></td>
-						<td><span class="preenchimento-d total-d">16</span></td>
+						<td><span class="preenchimento-a">16</span></td>
+						<td><span class="preenchimento-b">12,6</span></td>
+						<td><span class="preenchimento-a">16</span> - <span class="preenchimento-b">12,6</span> = <span class="preenchimento-c soma-d">3,4</span></td>
+						<td><span class="preenchimento-d total-d">11,56</span></td>
 					</tr>
 					<tr>
-						<td><span class="preenchimento-a">8</span></td>
-						<td><span class="preenchimento-b">14</span></td>
-						<td><span class="preenchimento-a">8</span> - <span class="preenchimento-b">14</span> = <span class="preenchimento-c soma-e">-6</span></td>
-						<td><span class="preenchimento-d total-e">36</span></td>
+						<td><span class="preenchimento-a">7</span></td>
+						<td><span class="preenchimento-b">12,6</span></td>
+						<td><span class="preenchimento-a">7</span> - <span class="preenchimento-b">12,6</span> = <span class="preenchimento-c soma-e">-5,6</span></td>
+						<td>
+							<span class="preenchimento-c">
+								<input id="input-maior-c" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+							</span>
+						</td>
 					</tr>
 					<tr class="total">
 						<td colspan="2"></td>
 						<td>Soma = </td>
-						<td><span class="totalizado-final">370</span></td>
+						<td><span class="totalizado-final">335,2</span></td>
 					</tr>
 				</table>
+			</div>
+
+			<div class="text-center">
+				<div class="formula">
+					<h4>Variância: S² = </h4>
+
+					<div class="calculo">
+						<div class="cima">
+							<h4 class="total-fake">335,2</h4>
+						</div>
+						<div class="linha">
+							<hr>
+						</div>
+						<div class="baixo">
+							<h4>5</h4>
+						</div>
+					</div>
+					<div class="calculo">
+						<h4>=</h4>
+					</div>
+					<div class="calculo">
+						<div class="cima">
+							<h4 class="valor-maior-variancia">?</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="text-center">
+				<div class="formula">
+					<h4>Desvio padrão: S = √</h4>
+
+					<div class="calculo">
+						<h4 class="valor-maior-variancia">?</h4>
+					</div>
+					<div class="calculo">
+						<h4>=</h4>
+					</div>
+					<div class="calculo">
+						<div class="cima">
+							<h4 class="valor-maior-desvio">?</h4>
+						</div>
+					</div>
+				</div>
 			</div>
 
 		</div>
@@ -316,6 +381,14 @@
 </div>
 
 <style media="screen">
+
+.yolo-total-vermelho {
+	color: #FF5C5C;
+}
+
+.yolo-total-azul {
+	color: #4271FF;
+}
 
 .geral-interno {
 	position: relative;
@@ -334,7 +407,8 @@
 	background-color: #F1ECF6;
 }
 
-.tabela .total {
+.tabela .total,
+.total-fake {
 	color: #ae6df5;
 	font-weight: bold;
 }
@@ -427,6 +501,26 @@
 	text-align: center;
 }
 
+.fundo-editavel {
+	border-width: 0px;
+	border-radius: 4px;
+	width: 60px;
+	height: 24px;
+	text-align: center;
+}
+
+.fundo-editavel-normal {
+	color: #FFFFFF;
+	background-color: #ae6df5;
+	transition: .3s ease;
+}
+
+.fundo-editavel-ok {
+	color: #FFFFFF;
+	background-color: #46D079;
+	transition: .3s ease;
+}
+
 </style>
 
 <script type="text/javascript">
@@ -440,7 +534,7 @@ apenasNumeros(document.querySelector("#input-desvio-b"));
 
 $("#iconSetaEsquerda").show();
 $("#iconSetaDireita").show();
-$("#iconAjuda").hide();
+$("#iconAjuda").show();
 $("#iconCalculadora").show();
 
 iconSetaEsquerda.addEventListener("click", function() {
@@ -462,10 +556,29 @@ function anterior() {
 
 function proxima() {
 
-	carregarParte('desvio-amostral.html');
+	carregarParte('coeficiente-variacao.html');
 }
 
 function ajuda() {
+
+	if (document.querySelector('#dialog-ajuda') == null) {
+		let innerAjuda = document.querySelector(".mensagens").innerHTML;
+		innerAjuda += `
+		<div id="dialog-ajuda">
+
+
+		</div>`;
+		document.querySelector(".mensagens").innerHTML = innerAjuda;
+	}
+
+	let dialogAjuda = $("#dialog-ajuda").dialog({
+		autoOpen: false,
+		height: 500,
+		width: 1000,
+		modal: true,
+		buttons: {}
+	});
+	dialogAjuda.dialog("open");
 }
 
 swal({
@@ -488,20 +601,39 @@ let campoQuestao9VarianciaB = document.querySelector("#campo-variancia-b");
 let campoQuestao9DesvioA = document.querySelector("#campo-desvio-a");
 let campoQuestao9DesvioB = document.querySelector("#campo-desvio-b");
 
-// let campoTotal = document.querySelector(".valor-total");
+let inputQuestao9MenorA = document.querySelector("#input-menor-a");
+let inputQuestao9MenorB = document.querySelector("#input-menor-b");
+let inputQuestao9MenorC = document.querySelector("#input-menor-c");
+let inputQuestao9MaiorA = document.querySelector("#input-maior-a");
+let inputQuestao9MaiorB = document.querySelector("#input-maior-b");
+let inputQuestao9MaiorC = document.querySelector("#input-maior-c");
 
-let valorQuestao9VarianciaA = 0.24;
-let valorQuestao9VarianciaB = 67.04;
-let valorQuestao9DesvioA = 0.48;
-let valorQuestao9DesvioB = 8.18;
+let valorCorretoQuestao9VarianciaA = 0.24;
+let valorCorretoQuestao9VarianciaB = 67.04;
+let valorCorretoQuestao9DesvioA = 0.48;
+let valorCorretoQuestao9DesvioB = 8.18;
+
+let valorQuestao9MenorA = -0.4;
+let valorQuestao9MenorB = 0.36;
+let valorQuestao9MenorC = 1.2;
+let valorQuestao9MaiorA = 13.4;
+let valorQuestao9MaiorB = 112.36;
+let valorQuestao9MaiorC = 31.36;
 
 document.querySelector('#auto-completar').addEventListener('click', function (evt) {
 	if (evt.detail === 3) {
 
-		inputQuestao9VarianciaA.value = valorQuestao9VarianciaA.toString().replace('.', ',');
-		inputQuestao9VarianciaB.value = valorQuestao9VarianciaB.toString().replace('.', ',');
-		inputQuestao9DesvioA.value = valorQuestao9DesvioA.toString().replace('.', ',');
-		inputQuestao9DesvioB.value = valorQuestao9DesvioB.toString().replace('.', ',');
+		inputQuestao9VarianciaA.value = valorCorretoQuestao9VarianciaA.toString().replace('.', ',');
+		inputQuestao9VarianciaB.value = valorCorretoQuestao9VarianciaB.toString().replace('.', ',');
+		inputQuestao9DesvioA.value = valorCorretoQuestao9DesvioA.toString().replace('.', ',');
+		inputQuestao9DesvioB.value = valorCorretoQuestao9DesvioB.toString().replace('.', ',');
+
+		inputQuestao9MenorA.value = valorQuestao9MenorA.toString().replace('.', ',');
+		inputQuestao9MenorB.value = valorQuestao9MenorB.toString().replace('.', ',');
+		inputQuestao9MenorC.value = valorQuestao9MenorC.toString().replace('.', ',');
+		inputQuestao9MaiorA.value = valorQuestao9MaiorA.toString().replace('.', ',');
+		inputQuestao9MaiorB.value = valorQuestao9MaiorB.toString().replace('.', ',');
+		inputQuestao9MaiorC.value = valorQuestao9MaiorC.toString().replace('.', ',');
 		validarValores();
 	}
 });
@@ -512,65 +644,175 @@ function validarValores() {
 	let valorQuestao9DesvioA = inputQuestao9DesvioA.value.replace('.', '').replace(',', '.');
 	let valorQuestao9DesvioB = inputQuestao9DesvioB.value.replace('.', '').replace(',', '.');
 
-	let valorQuestao9VarianciaAOk = (valorQuestao9VarianciaA == valorQuestao9VarianciaA);
-	let valorQuestao9VarianciaBOk = (valorQuestao9VarianciaB == valorQuestao9VarianciaB);
-	let valorQuestao9DesvioAOk = (valorQuestao9DesvioA == valorQuestao9DesvioA);
-	let valorQuestao9DesvioBOk = (valorQuestao9DesvioB == valorQuestao9DesvioB);
+	let valorQuestao9MenA = inputQuestao9MenorA.value.replace('.', '').replace(',', '.');
+	let valorQuestao9MenB = inputQuestao9MenorB.value.replace('.', '').replace(',', '.');
+	let valorQuestao9MenC = inputQuestao9MenorC.value.replace('.', '').replace(',', '.');
+	let valorQuestao9MaiA = inputQuestao9MaiorA.value.replace('.', '').replace(',', '.');
+	let valorQuestao9MaiB = inputQuestao9MaiorB.value.replace('.', '').replace(',', '.');
+	let valorQuestao9MaiC = inputQuestao9MaiorC.value.replace('.', '').replace(',', '.');
 
-	if (valorQuestao9VarianciaA) {
+	let valorQuestao9VarianciaAOk = (valorQuestao9VarianciaA == valorCorretoQuestao9VarianciaA);
+	let valorQuestao9VarianciaBOk = (valorQuestao9VarianciaB == valorCorretoQuestao9VarianciaB);
+	let valorQuestao9DesvioAOk = (valorQuestao9DesvioA == valorCorretoQuestao9DesvioA);
+	let valorQuestao9DesvioBOk = (valorQuestao9DesvioB == valorCorretoQuestao9DesvioB);
+
+	let valorQuestao9MenAOk = (valorQuestao9MenA == valorQuestao9MenorA);
+	let valorQuestao9MenBOk = (valorQuestao9MenB == valorQuestao9MenorB);
+	let valorQuestao9MenCOk = (valorQuestao9MenC == valorQuestao9MenorC);
+	let valorQuestao9MaiAOk = (valorQuestao9MaiA == valorQuestao9MaiorA);
+	let valorQuestao9MaiBOk = (valorQuestao9MaiB == valorQuestao9MaiorB);
+	let valorQuestao9MaiCOk = (valorQuestao9MaiC == valorQuestao9MaiorC);
+
+	if (valorQuestao9VarianciaAOk) {
 
 		campoQuestao9VarianciaA.classList.add('fundo-ok');
 		campoQuestao9VarianciaA.classList.remove('fundo-normal');
 
-		// campoTotal.innerHTML = valorQuestao6ADesvioPadrao.toString().replace('.', ',');
+		let valorMenorVariancia = document.querySelectorAll(".valor-menor-variancia");
+		for (var i = 0; i < valorMenorVariancia.length; i++) {
+			valorMenorVariancia[i].innerHTML = valorCorretoQuestao9VarianciaA.toString().replace('.', ',');
+		}
 	} else {
 
 		campoQuestao9VarianciaA.classList.remove('fundo-ok');
 		campoQuestao9VarianciaA.classList.add('fundo-normal');
 
-		// campoTotal.innerHTML = '?';
+		let valorMenorVariancia = document.querySelectorAll(".valor-menor-variancia");
+		for (var i = 0; i < valorMenorVariancia.length; i++) {
+			valorMenorVariancia[i].innerHTML = '?';
+		}
 	}
-	if (valorQuestao9VarianciaB) {
+	if (valorQuestao9VarianciaBOk) {
 
 		campoQuestao9VarianciaB.classList.add('fundo-ok');
 		campoQuestao9VarianciaB.classList.remove('fundo-normal');
 
-		// campoTotal.innerHTML = valorQuestao6ADesvioPadrao.toString().replace('.', ',');
+		let valorMaiorVariancia = document.querySelectorAll(".valor-maior-variancia");
+		for (var i = 0; i < valorMaiorVariancia.length; i++) {
+			valorMaiorVariancia[i].innerHTML = valorCorretoQuestao9VarianciaA.toString().replace('.', ',');
+		}
 	} else {
 
 		campoQuestao9VarianciaB.classList.remove('fundo-ok');
 		campoQuestao9VarianciaB.classList.add('fundo-normal');
 
-		// campoTotal.innerHTML = '?';
+		let valorMaiorVariancia = document.querySelectorAll(".valor-maior-variancia");
+		for (var i = 0; i < valorMaiorVariancia.length; i++) {
+			valorMaiorVariancia[i].innerHTML = '?';
+		}
 	}
-	if (valorQuestao9DesvioA) {
+	if (valorQuestao9DesvioAOk) {
 
 		campoQuestao9DesvioA.classList.add('fundo-ok');
 		campoQuestao9DesvioA.classList.remove('fundo-normal');
 
-		// campoTotal.innerHTML = valorQuestao6ADesvioPadrao.toString().replace('.', ',');
+		let valorMenorDesvio = document.querySelectorAll(".valor-menor-desvio");
+		for (var i = 0; i < valorMenorDesvio.length; i++) {
+			valorMenorDesvio[i].innerHTML = valorCorretoQuestao9DesvioA.toString().replace('.', ',');
+		}
 	} else {
 
 		campoQuestao9DesvioA.classList.remove('fundo-ok');
 		campoQuestao9DesvioA.classList.add('fundo-normal');
 
-		// campoTotal.innerHTML = '?';
+		let valorMenorDesvio = document.querySelectorAll(".valor-menor-desvio");
+		for (var i = 0; i < valorMenorDesvio.length; i++) {
+			valorMenorDesvio[i].innerHTML = '?';
+		}
 	}
-	if (valorQuestao9DesvioB) {
+	if (valorQuestao9DesvioBOk) {
 
 		campoQuestao9DesvioB.classList.add('fundo-ok');
 		campoQuestao9DesvioB.classList.remove('fundo-normal');
 
-		// campoTotal.innerHTML = valorQuestao6ADesvioPadrao.toString().replace('.', ',');
+		let valorMaiorDesvio = document.querySelectorAll(".valor-maior-desvio");
+		for (var i = 0; i < valorMaiorDesvio.length; i++) {
+			valorMaiorDesvio[i].innerHTML = valorCorretoQuestao9DesvioB.toString().replace('.', ',');
+		}
 	} else {
 
 		campoQuestao9DesvioB.classList.remove('fundo-ok');
 		campoQuestao9DesvioB.classList.add('fundo-normal');
 
-		// campoTotal.innerHTML = '?';
+		let valorMaiorDesvio = document.querySelectorAll(".valor-maior-desvio");
+		for (var i = 0; i < valorMaiorDesvio.length; i++) {
+			valorMaiorDesvio[i].innerHTML = '?';
+		}
 	}
 
-	if (valorQuestao9VarianciaA && valorQuestao9VarianciaB && valorQuestao9DesvioA && valorQuestao9DesvioB) {
+	if (valorQuestao9MenAOk) {
+
+		inputQuestao9MenorA.classList.add('fundo-editavel-ok');
+		inputQuestao9MenorA.classList.remove('fundo-editavel-normal');
+	} else {
+
+		inputQuestao9MenorA.classList.remove('fundo-editavel-ok');
+		inputQuestao9MenorA.classList.add('fundo-editavel-normal');
+	}
+
+	if (valorQuestao9MenBOk) {
+
+		inputQuestao9MenorB.classList.add('fundo-editavel-ok');
+		inputQuestao9MenorB.classList.remove('fundo-editavel-normal');
+	} else {
+
+		inputQuestao9MenorB.classList.remove('fundo-editavel-ok');
+		inputQuestao9MenorB.classList.add('fundo-editavel-normal');
+	}
+
+	if (valorQuestao9MenCOk) {
+
+		inputQuestao9MenorC.classList.add('fundo-editavel-ok');
+		inputQuestao9MenorC.classList.remove('fundo-editavel-normal');
+
+		let valorMenorDesvio = document.querySelectorAll(".valor-menor-total");
+		for (var i = 0; i < valorMenorDesvio.length; i++) {
+			valorMenorDesvio[i].innerHTML = valorQuestao9MenorC.toString().replace('.', ',');
+		}
+	} else {
+
+		inputQuestao9MenorC.classList.remove('fundo-editavel-ok');
+		inputQuestao9MenorC.classList.add('fundo-editavel-normal');
+
+		let valorMenorDesvio = document.querySelectorAll(".valor-menor-total");
+		for (var i = 0; i < valorMenorDesvio.length; i++) {
+			valorMenorDesvio[i].innerHTML = '?';
+		}
+	}
+
+	if (valorQuestao9MaiAOk) {
+
+		inputQuestao9MaiorA.classList.add('fundo-editavel-ok');
+		inputQuestao9MaiorA.classList.remove('fundo-editavel-normal');
+	} else {
+
+		inputQuestao9MaiorA.classList.remove('fundo-editavel-ok');
+		inputQuestao9MaiorA.classList.add('fundo-editavel-normal');
+	}
+
+	if (valorQuestao9MaiBOk) {
+
+		inputQuestao9MaiorB.classList.add('fundo-editavel-ok');
+		inputQuestao9MaiorB.classList.remove('fundo-editavel-normal');
+	} else {
+
+		inputQuestao9MaiorB.classList.remove('fundo-editavel-ok');
+		inputQuestao9MaiorB.classList.add('fundo-editavel-normal');
+	}
+
+	if (valorQuestao9MaiCOk) {
+
+		inputQuestao9MaiorC.classList.add('fundo-editavel-ok');
+		inputQuestao9MaiorC.classList.remove('fundo-editavel-normal');
+	} else {
+
+		inputQuestao9MaiorC.classList.remove('fundo-editavel-ok');
+		inputQuestao9MaiorC.classList.add('fundo-editavel-normal');
+	}
+
+	if (valorQuestao9VarianciaAOk && valorQuestao9VarianciaBOk && valorQuestao9DesvioAOk && valorQuestao9DesvioBOk
+		&& valorQuestao9MenAOk && valorQuestao9MenBOk && valorQuestao9MenCOk && valorQuestao9MaiAOk && valorQuestao9MaiBOk && valorQuestao9MaiCOk
+	) {
 
 		$("#iconSetaDireita").show();
 	} else {
@@ -581,10 +823,107 @@ function validarValores() {
 }
 
 function saibaMais() {
+
 	if (document.querySelector('#dialog-saiba-mais') == null) {
 		let innerAjuda = document.querySelector(".mensagens").innerHTML;
 		innerAjuda += `
 		<div id="dialog-saiba-mais">
+			<h3 class="text-center">Desvio Padrão Amostral</h3>
+
+			<h4><span class="tab"/>Quando nosso interesse não se restringe à descrição dos dados, mas, partindo da <b>amostra</b>, visamos tirar inferências válidas para a respectiva população, convém efetuar uma modificação, que consiste em usar o divisor <b>n – 1</b> em lugar de <b>n</b>. A fórmula ficará então:</h4>
+			<div class="text-center mais-top">
+				<img src="assets/img/desvio-amostral-formula-1.png">
+			</div>
+
+			<ol><li><h4>Se os dados 18, 66, 383, 419 e 29 representassem uma amostra o desvio padrão amostral seria:</h4></li></ol>
+			<div class="text-center mais-top">
+				<img src="assets/img/desvio-amostral-formula-2.png">
+			</div>
+
+			<h4>Quando os dados estão agrupados, temos a presença de frequências (fi), e a fórmula do desvio padrão ficará:</h4>
+			<div class="text-center mais-top">
+				<img src="assets/img/desvio-amostral-formula-3.png">
+			</div>
+
+			<h4 class='muitissimo-mais-top'>Ex: Calcule o desvio padrão populacional da tabela abaixo:</h4>
+			<div class="tabela mais-top">
+				<table class="table text-center">
+					<tr>
+						<th>Xi<br/>(Dados população)</th>
+						<th>fi<br/>(Frequência)</th>
+						<th>(Xi - fi)</th>
+						<th>X&#772;<br/>(média)</th>
+						<th>(Xi - X&#772;)</th>
+						<th>(Xi - X&#772;)²</th>
+						<th>(Xi - X&#772;)² * fi</th>
+					</tr>
+					<tr>
+						<td>0</td>
+						<td>2</td>
+						<td>0</td>
+						<td>2,1</td>
+						<td>-2,1</td>
+						<td>4,41</td>
+						<td>8,82</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>6</td>
+						<td>6</td>
+						<td>2,1</td>
+						<td>-1,1</td>
+						<td>1,21</td>
+						<td>7,26</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>12</td>
+						<td>24</td>
+						<td>2,1</td>
+						<td>-0,1</td>
+						<td>0,01</td>
+						<td>0,12</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>72</td>
+						<td>21</td>
+						<td>2,1</td>
+						<td>0,9</td>
+						<td>0,81</td>
+						<td>5,67</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>3</td>
+						<td>12</td>
+						<td>2,1</td>
+						<td>1,9</td>
+						<td>3,61</td>
+						<td>10,83</td>
+					</tr>
+					<tr>
+						<td>Total</td>
+						<td><span class='yolo-total-vermelho'>30</span></td>
+						<td><b>63</b></td>
+						<td></td>
+						<td></td>
+						<td>E = </td>
+						<td><span class='yolo-total-azul'>32,70</span></td>
+					</tr>
+				</table>
+			</div>
+			<div class="text-center mais-top">
+				<img src="assets/img/desvio-amostral-formula-4.png">
+			</div>
+
+			<h4 class='mais-top'>Se considerarmos os dados como sendo de uma <b>amostra</b> o desvio padrão seria:</h4>
+			<div class="text-center mais-top">
+				<img src="assets/img/desvio-amostral-formula-5.png">
+			</div>
+
+			<h4 class='mais-top'>Obs: Nas tabelas de frequências com intervalos de classe a fórmula a ser utilizada é a mesma do exemplo anterior.</h4>
+
 
 		</div>`;
 		document.querySelector(".mensagens").innerHTML = innerAjuda;
