@@ -3,19 +3,8 @@
 	<div class='explicacoes-1 container muito-mais-top'>
 
 		<div class="col-xs-12">
+
 			<h3>Atividade 10 - Calcule o coeficiente de variação dos seguintes valores: 3, 13, 28, 18 e 8; utilizando os dados já calculados da tabela ao lado e <span id='auto-completar'>resolvendo</span> o que se pede. Em seguida marque a alternativa correta que corresponde ao coeficiente de variação:</h3>
-
-			<div class="radio col-xs-11 col-xs-offset-1">
-				<input class="sem-borda" type="radio" name="resposta-questao-10" id="radio-questao-10-a" value="a" onclick="validarValores()" onkeyup="validarValores()" onblur="validarValores()"><h4 class="sem-borda">0,61%</h4><br>
-				<input class="sem-borda" type="radio" name="resposta-questao-10" id="radio-questao-10-b" value="b" onclick="validarValores()" onkeyup="validarValores()" onblur="validarValores()"><h4 class="sem-borda">8,4%</h4><br>
-				<input class="sem-borda" type="radio" name="resposta-questao-10" id="radio-questao-10-c" value="c" onclick="validarValores()" onkeyup="validarValores()" onblur="validarValores()"><h4 class="sem-borda">14%</h4><br>
-				<input class="sem-borda" type="radio" name="resposta-questao-10" id="radio-questao-10-correto" value="d" onclick="validarValores()" onkeyup="validarValores()" onblur="validarValores()"><h4 id="radio-texto-correto" class="sem-borda">61%</h4><br>
-				<input class="sem-borda" type="radio" name="resposta-questao-10" id="radio-questao-10-e" value="e" onclick="validarValores()" onkeyup="validarValores()" onblur="validarValores()"><h4 class="sem-borda">162%</h4><br>
-			</div>
-
-		</div>
-
-		<div class="col-xs-12">
 
 			<div class="text-center">
 				<div class="formula">
@@ -405,17 +394,12 @@ let campoValorA = document.querySelector('#campo-valor-a');
 let campoValorB = document.querySelector('#campo-valor-b');
 let campoValorC = document.querySelector('#campo-valor-c');
 
-let radioCorreto = document.querySelector("#radio-questao-10-correto");
-let radioCorretoTexto = document.querySelector("#radio-texto-correto");
-
 document.querySelector('#auto-completar').addEventListener('click', function (evt) {
 	if (evt.detail === 3) {
 
 		inputValorA.value = valorCorretoA.toString().replace('.', ',');
 		inputValorB.value = valorCorretoB.toString().replace('.', ',');
 		inputValorC.value = valorCorretoC.toString().replace('.', ',');
-
-		document.querySelector("#radio-questao-10-correto").checked = true;
 
 		validarValores();
 	}
@@ -459,19 +443,7 @@ function validarValores() {
 		campoValorC.classList.add('fundo-normal');
 	}
 
-	let radioCorretoOk = radioCorreto.checked;
-
-	if (radioCorretoOk) {
-		radioCorretoTexto.classList.add('texto-ok');
-
-		document.querySelector(".valor-correto-texto").innerHTML = valorCorretoD.toString().replace('.', ',');
-	} else {
-		radioCorretoTexto.classList.remove('texto-ok');
-
-		document.querySelector(".valor-correto-texto").innerHTML = '?';
-	}
-
-	if (valorTotalAOk && valorTotalBOk && valorTotalCOk && radioCorretoOk) {
+	if (valorTotalAOk && valorTotalBOk && valorTotalCOk) {
 		$("#iconSetaDireita").show();
 	} else {
 		$("#iconSetaDireita").hide();
