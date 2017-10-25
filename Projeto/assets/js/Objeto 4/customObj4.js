@@ -95,6 +95,7 @@ function previousScene() {
 $(document).on('click', 'body', function() {
 	if (isAndroid) {
 		if (!jaClicou) {
+			jaClicou = true;
 			videoIntroducao.play();
 			videoIntroducao.pause();
 			videoOnibus1.play()
