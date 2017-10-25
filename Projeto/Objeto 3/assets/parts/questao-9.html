@@ -565,20 +565,99 @@ function ajuda() {
 		let innerAjuda = document.querySelector(".mensagens").innerHTML;
 		innerAjuda += `
 		<div id="dialog-ajuda">
+			<div class='row'>
 
+				<div class="principal text-center">
 
+					<div class='muitissimo-mais-top'>
+						<button class='btn' onclick="ajudaPage('variancia')">Variância</button>
+					</div>
+					<div class='muitissimo-mais-top'>
+						<button class='btn' onclick="ajudaPage('desvio')">Desvio Padrão</button>
+					</div>
+
+				</div>
+
+				<div class='variancia'>
+					<h3 class='text-center'>Variância - S²</h3>
+
+					<h4>Exemplo: Calcular a variância dos valores: 3, 5 e 7.</h4>
+
+					<h4 class='mais-top'>1º Média Aritimética: </h4>
+					<div class='text-center'>
+						<img src='assets/img/questao-9-ajuda-variancia-formula-1.png'/>
+					</div>
+
+					<h4 class='mais-top'>2º Variância: </h4>
+					<div class='text-center'>
+						<img src='assets/img/questao-9-ajuda-variancia-formula-2.png'/>
+					</div>
+
+					<div class='text-center muito-mais-bottom'>
+						<button class='btn' onclick="ajudaPage('principal')">Voltar</button>
+					</div>
+				</div>
+
+				<div class='desvio'>
+
+					<h3 class='text-center'>Desvio Padrão</h3>
+					<h4 class='text-center'>Raiz quadrada da variância.</h4>
+
+					<div class='text-center'>
+						<img src='assets/img/questao-9-ajuda-desvio-formula-1.png'/>
+					</div>
+
+					<div class='text-center muito-mais-bottom'>
+						<button class='btn' onclick="ajudaPage('principal')">Voltar</button>
+					</div>
+				</div>
+
+			</div>
 		</div>`;
 		document.querySelector(".mensagens").innerHTML = innerAjuda;
+		ajudaPage('principal');
 	}
 
 	let dialogAjuda = $("#dialog-ajuda").dialog({
 		autoOpen: false,
 		height: 500,
-		width: 1000,
+		width: 850,
 		modal: true,
 		buttons: {}
 	});
 	dialogAjuda.dialog("open");
+}
+
+function ajudaPage(tipo) {
+
+	let divAjuda = document.querySelector('#dialog-ajuda');
+	let divAjudaPrincipal = divAjuda.querySelector('.principal');
+	let divAjudaVariancia = divAjuda.querySelector('.variancia');
+	let divAjudaDesvio = divAjuda.querySelector('.desvio');
+
+	let classAddRemove = 'oculto';
+	switch (tipo) {
+
+		default:
+		case 'principal':
+			divAjudaPrincipal.classList.remove(classAddRemove);
+			divAjudaVariancia.classList.add(classAddRemove);
+			divAjudaDesvio.classList.add(classAddRemove);
+			break;
+
+		case 'variancia':
+			divAjudaPrincipal.classList.add(classAddRemove);
+			divAjudaVariancia.classList.remove(classAddRemove);
+			divAjudaDesvio.classList.add(classAddRemove);
+			break;
+
+		case 'desvio':
+			divAjudaPrincipal.classList.add(classAddRemove);
+			divAjudaVariancia.classList.add(classAddRemove);
+			divAjudaDesvio.classList.remove(classAddRemove);
+			break;
+
+	}
 }
 
 swal({

@@ -47,7 +47,7 @@
 						</div>
 					</div>
 					<div class="calculo">
-						<h4> = 14</h4>
+						<h4> = 195,4</h4>
 					</div>
 				</div>
 			</div>
@@ -366,6 +366,30 @@ function proxima() {
 }
 
 function ajuda() {
+
+	if (document.querySelector('#dialog-ajuda') == null) {
+		let innerAjuda = document.querySelector(".mensagens").innerHTML;
+		innerAjuda += `
+		<div id="dialog-ajuda">
+			<h3>Coeficiente de Variação de Pearson - CVP</h3>
+
+			<h4><span class='tab'/>É a razão entre o desvio padrão e a média referentes a dados de uma mesma série, dado pela fórmula:</h4>
+			<div class='text-center'>
+				<img src='assets/img/questao-10-ajuda-formula-1.png'/>
+			</div>
+
+		</div>`;
+		document.querySelector(".mensagens").innerHTML = innerAjuda;
+	}
+
+	let dialogAjuda = $("#dialog-ajuda").dialog({
+		autoOpen: false,
+		height: 500,
+		width: 1000,
+		modal: true,
+		buttons: {}
+	});
+	dialogAjuda.dialog("open");
 }
 
 let valorCorretoA = 190.15;
