@@ -8,7 +8,7 @@ var defaultFadeTime = 500;
 var extendedFadeTime = 1250;
 var shortFadeTime = 250;
 
-
+var jaClicou = false; //Variável de controle para Android
 //Variáveis especificas
 var videoOnibus1Assistido = false;
 var videoOnibus2Assistido = false;
@@ -32,8 +32,14 @@ var respostasCorretasQuarta = ["Sem resposta", "Sem resposta", "Sem resposta", "
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 	videoIntroducao.pause();
-
+	if(isAndroid) {
+		changeVideoSources();
+	}
 });
+
+
+var ua = navigator.userAgent.toLowerCase();
+var isAndroid = ua.indexOf("android") > -1;
 
 // ############################################################################################################################################################################################################################################
 
@@ -87,6 +93,18 @@ function previousScene() {
 	loadScene();
 }
 
+
+$(document).on('click', 'body', function() {
+	if (isAndroid) {
+		if (!jaClicou) {
+			jaClicou = true;
+			videoIntroducao.play();
+			videoIntroducao.pause();
+			videoOnibus1.play()
+			videoOnibus1.pause()
+		}
+	}
+});
 
 //Função chamada ao clicar no botão de inserir o nome
 $(document).on('click', '#botaoNome', function() {
@@ -531,6 +549,16 @@ function checkIfStuck() {
 		$("#alertQuestao").hide();
 	}
 
+	//Função para trocar os vídeos caso seja Android
+	function changeVideoSources() {
+		videoIntroducao.src = "../assets/img/Objeto 4/videoIntroducaoAndroid.mp4";
+		videoOnibus1.src = "../assets/img/Objeto 4/videoOnibus1Android.mp4";
+		videoOnibus1ponto1.src = "../assets/img/Objeto 4/videoOnibus1Ponto1Android.mp4";
+		videoOnibus2.src = "../assets/img/Objeto 4/videoOnibus2Android.mp4";
+		videoOnibusVoltando.src = "../assets/img/Objeto 4/videoOnibusVoltandoAndroid.mp4";
+	}
+
+
 	//Funções de controle dos icones fixos nas telas
 	function allowNextScene() {
 		$("#iconesFixos").show();
@@ -586,18 +614,18 @@ function checkIfStuck() {
 
 	function changeCorSetas(cor) {
 		switch (cor) {
-		case 'branco':
-		$("#iconSetaDireita").css('color', '#FFF');
-		$("#iconSetaEsquerda").css('color', '#FFF');
-		break;
+			case 'branco':
+			$("#iconSetaDireita").css('color', '#FFF');
+			$("#iconSetaEsquerda").css('color', '#FFF');
+			break;
 
-		case 'preto':
-		$("#iconSetaDireita").css('color', '#000');
-		$("#iconSetaEsquerda").css('color', '#000');
-		break;
+			case 'preto':
+			$("#iconSetaDireita").css('color', '#000');
+			$("#iconSetaEsquerda").css('color', '#000');
+			break;
+		}
+
 	}
-
-}
 	//Função para exibir ajudas
 	$(document).on('click', '#iconHelp', function() {
 		if (scene != 26) {
