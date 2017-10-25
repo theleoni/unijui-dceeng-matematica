@@ -32,7 +32,7 @@ var respostasCorretasQuarta = ["Sem resposta", "Sem resposta", "Sem resposta", "
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 	videoIntroducao.pause();
-	if(!isAndroid) {
+	if(isAndroid) {
 		changeVideoSources();
 	}
 });
