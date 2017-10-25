@@ -35,6 +35,10 @@ $(document).ready(function() {
 
 });
 
+
+var ua = navigator.userAgent.toLowerCase();
+var isAndroid = ua.indexOf("android") > -1;
+
 // ############################################################################################################################################################################################################################################
 
 //Função que oculta as divs ao iniciar o objeto
@@ -87,6 +91,10 @@ function previousScene() {
 	loadScene();
 }
 
+window.addEventListener('touchstart', function videoStart() {
+  videoIntroducao.play();
+  this.removeEventListener('touchstart', videoStart);
+});
 
 //Função chamada ao clicar no botão de inserir o nome
 $(document).on('click', '#botaoNome', function() {
@@ -586,18 +594,18 @@ function checkIfStuck() {
 
 	function changeCorSetas(cor) {
 		switch (cor) {
-		case 'branco':
-		$("#iconSetaDireita").css('color', '#FFF');
-		$("#iconSetaEsquerda").css('color', '#FFF');
-		break;
+			case 'branco':
+			$("#iconSetaDireita").css('color', '#FFF');
+			$("#iconSetaEsquerda").css('color', '#FFF');
+			break;
 
-		case 'preto':
-		$("#iconSetaDireita").css('color', '#000');
-		$("#iconSetaEsquerda").css('color', '#000');
-		break;
+			case 'preto':
+			$("#iconSetaDireita").css('color', '#000');
+			$("#iconSetaEsquerda").css('color', '#000');
+			break;
+		}
+
 	}
-
-}
 	//Função para exibir ajudas
 	$(document).on('click', '#iconHelp', function() {
 		if (scene != 26) {
