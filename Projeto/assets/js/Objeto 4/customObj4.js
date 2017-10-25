@@ -32,7 +32,9 @@ var respostasCorretasQuarta = ["Sem resposta", "Sem resposta", "Sem resposta", "
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 	videoIntroducao.pause();
-
+	if(!isAndroid) {
+		changeVideoSources();
+	}
 });
 
 
@@ -100,7 +102,6 @@ $(document).on('click', 'body', function() {
 			videoIntroducao.pause();
 			videoOnibus1.play()
 			videoOnibus1.pause()
-
 		}
 	}
 });
@@ -547,6 +548,16 @@ function checkIfStuck() {
 		$("#buttonAf5").removeClass("btn-primary");
 		$("#alertQuestao").hide();
 	}
+
+	//Função para trocar os vídeos caso seja Android
+	function changeVideoSources() {
+		videoIntroducao.src = "../assets/img/Objeto 4/videoIntroducaoAndroid.mp4";
+		videoOnibus1.src = "../assets/img/Objeto 4/videoOnibus1Android.mp4";
+		videoOnibus1ponto1.src = "../assets/img/Objeto 4/videoOnibus1Ponto1Android.mp4";
+		videoOnibus2.src = "../assets/img/Objeto 4/videoOnibus2Android.mp4";
+		videoOnibusVoltando.src = "../assets/img/Objeto 4/videoOnibusVoltandoAndroid.mp4";
+	}
+
 
 	//Funções de controle dos icones fixos nas telas
 	function allowNextScene() {
