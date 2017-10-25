@@ -1,0 +1,209 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<!-- <script src="assets/js/customObj3.js"> </script> -->
+	<!-- <script src="assets/js/graficos.js"></script> -->
+	<script src="assets/bib/highcharts/code/highcharts.js"> </script>
+	<script src="assets/js/sweetalert.min.js"></script>
+	<script src="assets/bib/jquery-ui/jquery-ui.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/calculadora.css">
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/botoesFixos.css"> -->
+	<link rel="stylesheet" type="text/css" href="assets/css/geral.css">
+
+	<link rel="stylesheet" type="text/css" href="assets/css/sweetalert.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/bib/jquery-ui/jquery-ui.min.css">
+
+	<!-- Fontes -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+	<title>Desvio Padrão! O que é isso?</title>
+
+</head>
+
+<body>
+	<!--##################### NAVBAR ##################### -->
+	<div class="navbar">
+		<!-- <div class="container-fluid"> -->
+		<!-- <div class="navbar-header"> -->
+		<!-- <a href= "#" > <img class="positionLeft imagemLogoResponsivaNavbar" src="../assets/img/logo_ministerio_educacao.png" height="80%"></a> -->
+		<!-- <div id="title" class="positionCenter textTitle"> -->
+		<div class="row">
+			<div class="col-xs-3">
+			</div>
+			<div class="col-xs-6">
+				<h1 class="titulo text-center">
+					DESVIO PADRÃO! O QUE É ISTO?
+				</h1>
+			</div>
+			<div class="col-xs-3">
+			</div>
+		</div>
+		<!-- </div> -->
+		<!-- <ul class="nav navbar-nav"><a href="#"><img class="positionRight imagemUnijuiResponsivaNavbar" src="../assets/img/novo_logo_unijui.png" height="25%"></a></ul> -->
+		<!-- </div> -->
+		<!-- </div> -->
+
+		<div id='botoes-fixos'>
+
+		</div>
+	</div>
+
+	<!-- <div id="iconesFixos">
+		<div class="row">
+			<div class="col-xs-offset-4 col-xs-4">
+				<div id="tituloGeral" class="textTitleContent"> </div>
+			</div>
+			<div class="col-xs-1">
+				<span id="iconCalculadora" title="Calculadora" class="glyphicon glyphicon-th"> </span>
+			</div>
+			<div class="col-xs-1" >
+				<span id="iconMais" title="Mais informações" class="glyphicon glyphicon-plus"> </span>
+			</div>
+			<div class="col-xs-1" >
+				<span id="iconHelp" title= "Ajuda" class="glyphicon glyphicon-question-sign"> </span>
+			</div>
+			<div class="col-xs-1">
+				<span id="iconFechar" title="Sair" class="glyphicon glyphicon glyphicon-remove-circle"> </span>
+			</div>
+			<div class="col-xs-1">
+				<span id="iconSetaEsquerda" title="Voltar" class="glyphicon glyphicon glyphicon-arrow-left"> </span>
+			</div>
+			<div class="col-xs-offset-2 col-xs-1">
+				<span id="iconSetaDireita" title="Avançar" class="glyphicon glyphicon glyphicon-arrow-right"> </span>
+			</div>
+		</div>
+	</div> -->
+
+	<div class="geral">
+	</div>
+
+	<!--Div geral -->
+	<!--##################### CALCULADORA ##################### -->
+
+	<div id="containerGeralGraficos">
+		<div id="containerGraficos"></div>
+		<div id="textoGraficos"></div>
+	</div>
+
+	<!-- <div id="calculadora">
+		<div class="top">
+			<span class="clear">C</span>
+			<div class="screen"></div>
+		</div>
+
+		<div class="keys">
+			<span>7</span>
+			<span>8</span>
+			<span>9</span>
+			<span class="operator">+</span>
+			<span>4</span>
+			<span>5</span>
+			<span>6</span>
+			<span class="operator">-</span>
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<span class="operator">÷</span>
+			<span>0</span>
+			<span>.</span>
+			<span class="eval">=</span>
+			<span class="operator">x</span>
+		</div>
+	</div> -->
+	<!-- Calculadora -->
+	<!-- <script src="assets/js/calculadora.js"></script> -->
+
+	<!-- <script src="assets/js/loader.js"></script> -->
+	<!-- <script src="assets/js/login.js"></script>
+	<script src="assets/js/primeiro.js"></script> -->
+
+	<style>
+	.muitissimo-mais-top {
+		margin-top: 48px !important;
+	}
+
+	.muitissimo-mais-bottom {
+		margin-bottom: 48px !important;
+	}
+
+	.muito-mais-top {
+		margin-top: 36px !important;
+	}
+
+	.muito-mais-bottom {
+		margin-bottom: 36px !important;
+	}
+
+	.mais-top {
+		margin-top: 16px !important;
+	}
+
+	.mais-bottom {
+		margin-bottom: 16px !important;
+	}
+
+	.tab {
+		display:inline-block; width: 30px;
+	}
+
+	.ocultar {
+		display: none;
+	}
+
+	.oculto {
+		display: none;
+	}
+
+	</style>
+
+	<script>
+	var iconSetaEsquerda;
+	var iconSetaDireita;
+	var iconAjuda;
+
+	let divBotoesFixos = document.getElementById('botoes-fixos');
+	recarregarBotoes();
+
+	$("#iconSetaEsquerda").hide();
+	$("#iconSetaDireita").hide();
+	$("#iconAjuda").hide();
+
+	function carregarParte(link) {
+		recarregarBotoes();
+		$('.geral').load(`assets/parts/${link}`);
+	}
+
+	function recarregarBotoes() {
+		divBotoesFixos.innerHTML =
+		`<button type="button" class="btn" id='iconSetaEsquerda'>Voltar</button>
+		<button type="button" class="btn" id='iconSetaDireita'>Avançar</button>
+		<button type="button" class="btn" id='iconAjuda'>Ajuda</button>`;
+
+		iconSetaEsquerda = divBotoesFixos.querySelector('#iconSetaEsquerda');
+		iconSetaDireita = divBotoesFixos.querySelector('#iconSetaDireita');
+		iconAjuda = divBotoesFixos.querySelector('#iconAjuda');
+	}
+
+	function apenasNumeros(input) {
+
+		input.addEventListener('input', function(evt) {
+
+			this.value = this.value.replace(/[^0-9,]/g, '');
+			this.value = this.value.replace(/(\..*)\./g, '$1');
+		});
+	}
+
+	var nomePessoa = '';
+	// carregarParte('pre-login.html');
+window.open('auxiliar.html', '_self');
+	</script>
+
+</body>
+</html>
