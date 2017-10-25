@@ -85,8 +85,8 @@ body {
 
 #textoLaboratorio {
 	position: absolute;
-	left: -40%;
-	right: 0%;
+	left: -6%;
+	right: -20%;
 	text-align: justify;
 	z-index: 2;
 	color: #FFFFFF;
@@ -99,11 +99,11 @@ body {
 
 #balaoDeFalaLaboratorio {
 	position: absolute;
-	left: -50%;
+	left: -18%;
 	top: -82vh;
-	right: 28%;
+	right: 8%;
 	z-index: 1;
-	width: 30vw;
+	width: 28vw;
 	height: 22vh;
 }
 
