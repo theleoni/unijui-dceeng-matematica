@@ -8,7 +8,7 @@ var defaultFadeTime = 500;
 var extendedFadeTime = 1250;
 var shortFadeTime = 250;
 
-
+var jaClicou = false; //Variável de controle para Android
 //Variáveis especificas
 var videoOnibus1Assistido = false;
 var videoOnibus2Assistido = false;
@@ -94,9 +94,13 @@ function previousScene() {
 
 $(document).on('click', 'body', function() {
 	if (isAndroid) {
-		videoIntroducao.play();
-		videoIntroducao.pause();
+		if (!jaClicou) {
+			videoIntroducao.play();
+			videoIntroducao.pause();
+			videoOnibus1.play()
+			videoOnibus1.pause()
 
+		}
 	}
 });
 
