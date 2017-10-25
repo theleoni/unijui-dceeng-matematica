@@ -91,9 +91,13 @@ function previousScene() {
 	loadScene();
 }
 
-window.addEventListener('touchstart', function videoStart() {
-  videoIntroducao.play();
-  this.removeEventListener('touchstart', videoStart);
+
+$(document).on('click', 'body', function() {
+	if (isAndroid) {
+		videoIntroducao.play();
+		videoIntroducao.pause();
+
+	}
 });
 
 //Função chamada ao clicar no botão de inserir o nome
