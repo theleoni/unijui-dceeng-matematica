@@ -555,6 +555,7 @@
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
 	  		$("#tabelaQuestoesGraficos").hide();
 	  		grafico1();
+	  		$("#fonteGraficos1").html("<center>Fonte: Procel - 2005</center>");
 
 	  		if (corretas[0] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -579,8 +580,8 @@
 	  		$("#questionGroup").hide();
 	  		$("#tabelaQuestoesGraficos").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
-
 	  		grafico1();
+	  		$("#fonteGraficos1").html("<center>Fonte: Procel - 2005</center>");
 
 
 	  		if (corretas[1] == false) {
@@ -604,6 +605,7 @@
 	  		$("#sceneIntroGraficosQuestion").html(dataJSON.questao3.textoQuestao);
 
 	  		grafico2();
+	  		$("#fonteGraficos1").html("<center>Fonte: Professor Hugo Gomes</center>");
 
 	  		if (corretas[2] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -626,6 +628,7 @@
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
 
 	  		grafico2();
+	  		$("#fonteGraficos1").html("<center>Fonte: Professor Hugo Gomes</center>");
 
 	  		if (corretas[3] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -651,6 +654,7 @@
 	  		$("#tabelaQuestoesGraficos").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
 	  		grafico2();
+	  		$("#fonteGraficos1").html("<center>Fonte: Professor Hugo Gomes</center>");
 
 	  		if (corretas[4] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -673,6 +677,8 @@
 	  		$("#questionGroup").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
 	  		grafico3();
+	  		$("#fonteGraficos1").html("<center>Fonte: Dados fictícios</center>");
+
 
 	  		if (corretas[5] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -693,6 +699,7 @@
 	  		$("#tabelaQuestoesGraficos").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").show();
 	  		grafico4();
+	  		$("#fonteGraficos1").html("<center>Fonte: Empresa de Pesquisa Energética – EPE</center>");
 
 	  		if (corretas[6] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -716,7 +723,7 @@
 	  		$("#questionGroup").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
 	  		grafico4();
-
+	  		$("#fonteGraficos1").html("<center>Fonte: Empresa de Pesquisa Energética – EPE</center>");
 	  		if (corretas[7] == false) {
 	  			$("#iconSetaDireita").hide();
 	  			resetQuestionButtons();
@@ -1659,9 +1666,6 @@
 					title: {
 						text: 'Percentagem de uso de energia elétrica por eletrodoméstico'
 					},
-					subtitle: {
-						text: 'Fonte: Procel - 2005'
-					},
 					tooltip: {
 						pointFormat: '{series.name}: <b>{point.y}</b>'
 					},
@@ -1722,9 +1726,6 @@
 	  			},
 	  			title: {
 	  				text: 'Consumo de energia elétrica de uma residência'
-	  			},
-	  			subtitle: {
-	  				text: 'Fonte: Professor Hugo Gomes'
 	  			},
 	  			xAxis: {
 	  				categories: [
@@ -1831,9 +1832,6 @@
 					},
 					title: {
 						text: 'Oferta interna de energia elétrica por fonte - Brasil, 2015'
-					},
-					subtitle: {
-						text: "Fonte: Empresa de Pesquisa Energética – EPE"
 					},
 					tooltip: {
 						pointFormat: '{series.name}: <b>{point.y}</b>'
@@ -2279,6 +2277,7 @@
 	  	}
 
 	  	function gerarGraficoCustom() {
+	  		$("#fonteGraficoCustom").html(inputGrafico[1]);
 	  		$(document).ready(function () {
 
 				// Gera o gráfico
@@ -2292,11 +2291,14 @@
 					title: {
 						text: inputGrafico[0]
 					},
-					subtitle: {
-						text: inputGrafico[1]
-					},
 					tooltip: {
 						pointFormat: '{series.name}: <b>{point.y}</b>'
+					},
+					yAxis: {
+						min: 0,
+						title: {
+							text: 'Valores'
+						}
 					},
 					plotOptions: {
 						pie: {
