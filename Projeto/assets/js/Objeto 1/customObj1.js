@@ -637,7 +637,7 @@
 	  		break;
 
 	  		case 5:
-	  		swal("Atenção!", "Nas respostas dos exercícios a seguir utilize valores arredondados para duas casas após a virgula").catch(swal.noop);
+	  		swal("Atenção!", "Nas respostas dos exercícios a seguir utilize valores arredondados para duas casas após a vírgula").catch(swal.noop);
 	  		$("#questionGroup").hide();
 	  		$("#opcaoA").show().siblings().show();
 	  		$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao5.numeroQuestao);
@@ -2589,7 +2589,7 @@
 	  				loadQuestion();
 	  				listeningToKeyPress = true;
 	  			} else {
-	  				swal("Atenção!", "Para completar a tabela utilize valores arredondados para duas casas após a virgula").catch(swal.noop);
+	  				swal("Atenção!", "Para completar a tabela utilize valores arredondados para duas casas após a vírgula").catch(swal.noop);
 	  			}
 
 	  			break;
