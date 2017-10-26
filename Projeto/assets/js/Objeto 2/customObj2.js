@@ -77,6 +77,8 @@ $(document).ready(function() {
 	if(isAndroid) {
 		changeVideoSources();
 	}
+	dataJSON = JSON.stringify(dados);
+	dataJSON = JSON.parse(dataJSON);
 });
 
 
@@ -102,9 +104,9 @@ function previousScene() {
 	loadScene();
 }
 
-$.getJSON('../assets/js/Objeto 2/dataObj2.json', function(data) {
+/* $.getJSON('../assets/js/Objeto 2/dataObj2.json', function(data) {
 	dataJSON = data;
-});
+}); */
 
 function setSwalDefaults() {
 	swal.setDefaults({

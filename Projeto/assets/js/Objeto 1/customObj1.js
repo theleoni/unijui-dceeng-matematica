@@ -52,9 +52,9 @@
   }
 
   	//Recupera as informações do arquivo data.json
-  	$.getJSON('../assets/js/Objeto 1/dataObj1.json', function(data) {
+  	/* $.getJSON('../assets/js/Objeto 1/dataObj1.json', function(data) {
   		dataJSON = data;
-  	});
+  	}); */
 
   	//Adiciona um sleep equivalente ao tempo passado como input
   	function sleep (time) {
@@ -126,7 +126,8 @@
 			'../assets/img/Objeto 1/circular6.gif'
 			]);
 
-
+		dataJSON = JSON.stringify(dados);
+		dataJSON = JSON.parse(dataJSON);
 
 
 	});
@@ -554,6 +555,7 @@
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
 	  		$("#tabelaQuestoesGraficos").hide();
 	  		grafico1();
+	  		$("#fonteGraficos1").html("<center>Fonte: Procel - 2005</center>");
 
 	  		if (corretas[0] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -578,8 +580,8 @@
 	  		$("#questionGroup").hide();
 	  		$("#tabelaQuestoesGraficos").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
-
 	  		grafico1();
+	  		$("#fonteGraficos1").html("<center>Fonte: Procel - 2005</center>");
 
 
 	  		if (corretas[1] == false) {
@@ -603,6 +605,7 @@
 	  		$("#sceneIntroGraficosQuestion").html(dataJSON.questao3.textoQuestao);
 
 	  		grafico2();
+	  		$("#fonteGraficos1").html("<center>Fonte: Professor Hugo Gomes</center>");
 
 	  		if (corretas[2] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -625,6 +628,7 @@
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
 
 	  		grafico2();
+	  		$("#fonteGraficos1").html("<center>Fonte: Professor Hugo Gomes</center>");
 
 	  		if (corretas[3] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -637,7 +641,7 @@
 	  		break;
 
 	  		case 5:
-	  		swal("Atenção!", "Nas respostas dos exercícios a seguir utilize valores arredondados para duas casas após a virgula").catch(swal.noop);
+	  		swal("Atenção!", "Nas respostas dos exercícios a seguir utilize valores arredondados para duas casas após a vírgula").catch(swal.noop);
 	  		$("#questionGroup").hide();
 	  		$("#opcaoA").show().siblings().show();
 	  		$("#sceneIntroGraficosQuestionNumber").html(dataJSON.questao5.numeroQuestao);
@@ -650,6 +654,7 @@
 	  		$("#tabelaQuestoesGraficos").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
 	  		grafico2();
+	  		$("#fonteGraficos1").html("<center>Fonte: Professor Hugo Gomes</center>");
 
 	  		if (corretas[4] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -672,6 +677,8 @@
 	  		$("#questionGroup").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
 	  		grafico3();
+	  		$("#fonteGraficos1").html("<center>Fonte: Dados fictícios</center>");
+
 
 	  		if (corretas[5] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -692,6 +699,7 @@
 	  		$("#tabelaQuestoesGraficos").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").show();
 	  		grafico4();
+	  		$("#fonteGraficos1").html("<center>Fonte: Empresa de Pesquisa Energética – EPE</center>");
 
 	  		if (corretas[6] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -715,7 +723,7 @@
 	  		$("#questionGroup").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
 	  		grafico4();
-
+	  		$("#fonteGraficos1").html("<center>Fonte: Empresa de Pesquisa Energética – EPE</center>");
 	  		if (corretas[7] == false) {
 	  			$("#iconSetaDireita").hide();
 	  			resetQuestionButtons();
@@ -1007,7 +1015,7 @@
 	  		break;
 
 	  		case 7:
-	  		if($("#inputNumbersceneQuestoesGraficos").val() == respostaCorreta7) {
+	  		if($("#inputNumbersceneQuestoesGraficos").val().replace(",", ".") == respostaCorreta7) {
 	  			respostaCorreta();
 	  		}
 	  		else {
@@ -1100,7 +1108,7 @@
 	  		}
 	  		break;
 	  		case 18:
-	  		if ($("#inputValorBandeiras").val() == respostaCorreta18) {
+	  		if ($("#inputValorBandeiras").val().replace(",", ".") == respostaCorreta18) {
 	  			respostaCorreta();
 	  		}
 	  		else {
@@ -1658,9 +1666,6 @@
 					title: {
 						text: 'Percentagem de uso de energia elétrica por eletrodoméstico'
 					},
-					subtitle: {
-						text: 'Fonte: Procel - 2005'
-					},
 					tooltip: {
 						pointFormat: '{series.name}: <b>{point.y}</b>'
 					},
@@ -1721,9 +1726,6 @@
 	  			},
 	  			title: {
 	  				text: 'Consumo de energia elétrica de uma residência'
-	  			},
-	  			subtitle: {
-	  				text: 'Fonte: Professor Hugo Gomes'
 	  			},
 	  			xAxis: {
 	  				categories: [
@@ -1830,9 +1832,6 @@
 					},
 					title: {
 						text: 'Oferta interna de energia elétrica por fonte - Brasil, 2015'
-					},
-					subtitle: {
-						text: "Fonte: Empresa de Pesquisa Energética – EPE"
 					},
 					tooltip: {
 						pointFormat: '{series.name}: <b>{point.y}</b>'
@@ -2278,6 +2277,7 @@
 	  	}
 
 	  	function gerarGraficoCustom() {
+	  		$("#fonteGraficoCustom").html(inputGrafico[1]);
 	  		$(document).ready(function () {
 
 				// Gera o gráfico
@@ -2291,11 +2291,14 @@
 					title: {
 						text: inputGrafico[0]
 					},
-					subtitle: {
-						text: inputGrafico[1]
-					},
 					tooltip: {
 						pointFormat: '{series.name}: <b>{point.y}</b>'
+					},
+					yAxis: {
+						min: 0,
+						title: {
+							text: 'Valores'
+						}
 					},
 					plotOptions: {
 						pie: {
@@ -2386,14 +2389,14 @@
 	  	$(document).on('click', '#botaoAtualizarTabelaPotencia', function () {
 
 	  		if ($("#inputTempoTelevisao").val() != "" && $("#inputTempoCelular").val() != "" && $("#inputTempoComputador").val() != "") {
-	  			$("#gastoMensalTelevisao").html(parseFloat(($("#quantidadeTelevisao").html() * ($("#potenciaTelevisao").html()/1000) * $("#inputTempoTelevisao").val() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-	  			$("#gastoMensalMaquinaDeLavar").html(parseFloat(($("#quantidadeMaquinaDeLavar").html() * ($("#potenciaMaquinaDeLavar").html()/1000) * $("#tempoMaquinaDeLavar").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-	  			$("#gastoMensalChuveiro").html(parseFloat(($("#quantidadeChuveiro").html() * ($("#potenciaChuveiro").html()/1000) * $("#tempoChuveiro").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-	  			$("#gastoMensalGeladeira").html(parseFloat(($("#quantidadeGeladeira").html() * ($("#potenciaGeladeira").html()/1000) * $("#tempoGeladeira").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-	  			$("#gastoMensalComputador").html(parseFloat(($("#quantidadeComputador").html() * ($("#potenciaComputador").html()/1000) * $("#inputTempoComputador").val() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-	  			$("#gastoMensalLampada").html(parseFloat(($("#quantidadeLampada").html() * ($("#potenciaLampada").html()/1000) * $("#tempoLampada").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-	  			$("#gastoMensalFerro").html(parseFloat(($("#quantidadeFerro").html() * ($("#potenciaFerro").html()/1000) * $("#tempoFerro").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
-	  			$("#gastoMensalCelular").html(parseFloat(($("#quantidadeCelular").html() * ($("#potenciaCelular").html()/1000) * $("#inputTempoCelular").val() * $("#inputValorEnergiaEletrica").val()).toFixed(2)));
+	  			$("#gastoMensalTelevisao").html(parseFloat(($("#quantidadeTelevisao").html() * ($("#potenciaTelevisao").html()/1000) * $("#inputTempoTelevisao").val() * $("#inputValorEnergiaEletrica").val()).toFixed(2).replace(",", ".")));
+	  			$("#gastoMensalMaquinaDeLavar").html(parseFloat(($("#quantidadeMaquinaDeLavar").html() * ($("#potenciaMaquinaDeLavar").html()/1000) * $("#tempoMaquinaDeLavar").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2).replace(",", ".")));
+	  			$("#gastoMensalChuveiro").html(parseFloat(($("#quantidadeChuveiro").html() * ($("#potenciaChuveiro").html()/1000) * $("#tempoChuveiro").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2).replace(",", ".")));
+	  			$("#gastoMensalGeladeira").html(parseFloat(($("#quantidadeGeladeira").html() * ($("#potenciaGeladeira").html()/1000) * $("#tempoGeladeira").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2).replace(",", ".")));
+	  			$("#gastoMensalComputador").html(parseFloat(($("#quantidadeComputador").html() * ($("#potenciaComputador").html()/1000) * $("#inputTempoComputador").val() * $("#inputValorEnergiaEletrica").val()).toFixed(2).replace(",", ".")));
+	  			$("#gastoMensalLampada").html(parseFloat(($("#quantidadeLampada").html() * ($("#potenciaLampada").html()/1000) * $("#tempoLampada").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2).replace(",", ".")));
+	  			$("#gastoMensalFerro").html(parseFloat(($("#quantidadeFerro").html() * ($("#potenciaFerro").html()/1000) * $("#tempoFerro").html() * $("#inputValorEnergiaEletrica").val()).toFixed(2).replace(",", ".")));
+	  			$("#gastoMensalCelular").html(parseFloat(($("#quantidadeCelular").html() * ($("#potenciaCelular").html()/1000) * $("#inputTempoCelular").val() * $("#inputValorEnergiaEletrica").val()).toFixed(2).replace(",", ".")));
 
 	  			$("#valorTotalTabelaPotencia").html((
 	  				parseFloat($("#gastoMensalTelevisao").html()) +
@@ -2428,7 +2431,7 @@
 	  		var verificacaoLocal = true;
 	  		getInputValueConta();
 	  		for (var i = 0; i < respostasConta.length; i++) {
-	  			if (!(inputRespostasConta[i].val().replace(/,/g, '.') == respostasConta[i])) {
+	  			if (!(inputRespostasConta[i].val().replace(',', '.') == respostasConta[i])) {
 	  				inputRespostasConta[i].css('background-color', 'red');
 	  				verificacaoLocal = false;
 	  				$("#alertConta").show();
@@ -2589,7 +2592,7 @@
 	  				loadQuestion();
 	  				listeningToKeyPress = true;
 	  			} else {
-	  				swal("Atenção!", "Para completar a tabela utilize valores arredondados para duas casas após a virgula").catch(swal.noop);
+	  				swal("Atenção!", "Para completar a tabela utilize valores arredondados para duas casas após a vírgula").catch(swal.noop);
 	  			}
 
 	  			break;

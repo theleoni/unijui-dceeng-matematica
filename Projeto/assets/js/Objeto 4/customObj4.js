@@ -35,6 +35,8 @@ $(document).ready(function() {
 	if(isAndroid) {
 		changeVideoSources();
 	}
+	dataJSON = JSON.stringify(dados);
+	dataJSON = JSON.parse(dataJSON);
 });
 
 
@@ -128,9 +130,11 @@ $(document).on('keyup', '#inputNome', function (e) {
 
 
 //Importando informações do json
+/*
 $.getJSON('../assets/js/Objeto 4/dataObj4.json', function(data) {
 	dataJSON = data;
 });
+*/
 
 
 //Função chamada para identificar o fim do vídeo da introdução

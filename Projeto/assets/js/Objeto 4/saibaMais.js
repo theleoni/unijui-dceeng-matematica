@@ -7,7 +7,7 @@ var saibaMaisPadrao = [
 var saibaMais3 = [
 {
   title: 'Saiba mais!',
-  html: '<div style="text-align:left;">A <b>CORSAN</b> - Companhia Riograndense de Saneamento foi oficialmente instalada em 28 de março de 1966, sendo esta a data oficial de sua fundação. O desafio de proporcionar ao Rio Grande do Sul e a sua população melhor qualidade de vida foi enfrentado pela empresa que surgia. Atualmente, a CORSAN abastece cerca de 6 milhões de gaúchos. Isto representa 2/3 da população do Estado, distribuídos em 316 municípios , sendo que o total de municípios do Rio Grande do Sul é de  497. <br><br>Você sabe qual é o nome da empresa que cuida da água da cidade do teu município?'
+  html: '<div style="text-align:left;">A <b>CORSAN</b> - Companhia Riograndense de Saneamento foi oficialmente instalada em 28 de março de 1966, sendo esta a data oficial de sua fundação. O desafio de proporcionar ao Rio Grande do Sul e a sua população melhor qualidade de vida foi enfrentado pela empresa que surgia. Atualmente, a CORSAN abastece cerca de 6 milhões de gaúchos. Isto representa 2/3 da população do Estado, distribuídos em 316 municípios , sendo que o total de municípios do Rio Grande do Sul é de  497. <br><br>Você sabe qual é o nome da empresa que cuida da água da cidade do seu município?'
 }]
 
 var saibaMais9 = [
@@ -48,7 +48,7 @@ var saibaMais18 = [
 {
   title: 'Saiba mais!',
   width: '42%',
-  html: '<div style="text-align:left;">Probabilidade é o estudo das chances de obtenção de cada resultado de um experimento. A essas chances são atribuídos os números reais do intervalo entre 0 e 1. Resultados mais próximos de 1 têm mais chances de ocorrer. Além disso, a probabilidade também pode ser apresentada na forma de percentual. Para transformar a probabilidade expressa com valores entre o em porcentagem, basta multiplicá-lo por 100% conservando o símbolo %. Ou seja multiplica-se por 100 e acrescenta o símbolo %. </div>'
+  html: '<div style="text-align:left;">Probabilidade é o estudo das chances de obtenção de cada resultado de um experimento. A essas chances são atribuídos os números reais do intervalo entre 0 e 1. Resultados mais próximos de 1 têm mais chances de ocorrer. Além disso, a probabilidade também pode ser apresentada na forma de percentual. Para transformar a probabilidade expressa com valores em porcentagem, basta multiplicá-lo por 100% conservando o símbolo %. Ou seja multiplica-se por 100 e acrescenta o símbolo %. </div>'
 }]
 
 var saibaMais19 = [

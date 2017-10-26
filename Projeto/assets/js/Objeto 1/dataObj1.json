@@ -53,7 +53,7 @@
 	"alternativa1Questao": "<span class='containerLetra'>A</span>Ferro Elétrico",
 	"alternativa2Questao": "<span class='containerLetra'>B</span>Outros",
 	"alternativa3Questao": "<span class='containerLetra'>C</span>Televisão",
-	"alternativa4Questao": "<span class='containerLetra'>D</span>Maquina de lavar"
+	"alternativa4Questao": "<span class='containerLetra'>D</span>Máquina de lavar"
 	},
 
 	"questao3": {
@@ -149,7 +149,7 @@
 		"title4": "Subestação abaixadora",
 		"title5": "Distribuição",
 		"title6": "Transformador para tensão final",
-		"msg1": "A energia elétrica pode ser gerada de diversas formas, mas a principio, no Brasil, a principal geração de energia é através de hidrelétricas. Assim na geração, em que o gerador é entrado em movimento para a produção de energia, ela é gerada a uma voltagem de aproximadamente de 15.000V.",
+		"msg1": "A energia elétrica pode ser gerada de diversas formas, mas a princípio, no Brasil, a principal geração de energia é através de hidrelétricas. Assim na geração, em que o gerador é entrado em movimento para a produção de energia, ela é gerada a uma voltagem de aproximadamente de 15.000V.",
 		"msg2": "No próximo passo a energia é direcionada para a subestação elevadora, em que encontra-se transformadores que elevam a tensão para a transmissão (aproximadamente acima de 230.000 V).",
 		"msg3": "Na etapa seguinte, a energia é passada para as linhas de transmissão, em que a elevação de energia são para que as perdas de energia sejam minimizadas, através do aquecimento por efeito Joule, essas linhas percorrem centenas de quilômetros onde cabos de alta tensão são sustentados por torres que fazem a transmissão de energia elétrica até chegar a subestação abaixadora.",
 		"msg4": "Na subestação de distribuição, em que a tensão é abaixada novamente, através de transformadores, a energia segue para as redes de distribuição nas cidades.",
