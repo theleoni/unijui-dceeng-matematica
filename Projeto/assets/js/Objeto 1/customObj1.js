@@ -52,9 +52,9 @@
   }
 
   	//Recupera as informações do arquivo data.json
-  	$.getJSON('../assets/js/Objeto 1/dataObj1.json', function(data) {
+  	/* $.getJSON('../assets/js/Objeto 1/dataObj1.json', function(data) {
   		dataJSON = data;
-  	});
+  	}); */
 
   	//Adiciona um sleep equivalente ao tempo passado como input
   	function sleep (time) {
@@ -126,7 +126,8 @@
 			'../assets/img/Objeto 1/circular6.gif'
 			]);
 
-
+		dataJSON = JSON.stringify(dados);
+		dataJSON = JSON.parse(dataJSON);
 
 
 	});
