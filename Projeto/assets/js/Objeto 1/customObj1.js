@@ -1015,7 +1015,7 @@
 	  		break;
 
 	  		case 7:
-	  		if($("#inputNumbersceneQuestoesGraficos").val() == respostaCorreta7) {
+	  		if($("#inputNumbersceneQuestoesGraficos").val().replace(",", ".") == respostaCorreta7) {
 	  			respostaCorreta();
 	  		}
 	  		else {
