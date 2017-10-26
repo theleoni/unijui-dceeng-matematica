@@ -73,6 +73,43 @@
 	</div>
 
 	<style media="screen">
+	@font-face {
+		font-family: 'Material Icons';
+		font-style: normal;
+		font-weight: 400;
+		src: url(assets/fonts/material-design/MaterialIcons-Regular.eot); /* For IE6-8 */
+		src: local('Material Icons'),
+		local('MaterialIcons-Regular'),
+		url(assets/fonts/material-design/MaterialIcons-Regular.woff2) format('woff2'),
+		url(assets/fonts/material-design/MaterialIcons-Regular.woff) format('woff'),
+		url(assets/fonts/material-design/MaterialIcons-Regular.ttf) format('truetype');
+	}
+
+	.material-icons {
+		font-family: 'Material Icons';
+		font-weight: normal;
+		font-style: normal;
+		font-size: 36px;  /* Preferred icon size */
+		display: inline-block;
+		line-height: 1;
+		text-transform: none;
+		letter-spacing: normal;
+		word-wrap: normal;
+		white-space: nowrap;
+		direction: ltr;
+
+		/* Support for all WebKit browsers. */
+		-webkit-font-smoothing: antialiased;
+		/* Support for Safari and Chrome. */
+		text-rendering: optimizeLegibility;
+
+		/* Support for Firefox. */
+		-moz-osx-font-smoothing: grayscale;
+
+		/* Support for IE. */
+		font-feature-settings: 'liga';
+	}
+
 	.geral {
 		height: 100%
 	}
@@ -125,6 +162,39 @@
 	.butonlousso {
 		margin: 6px;
 	}
+
+	.icon {
+
+		color: #F1F1F1;
+		background-color: #292929;
+		border-radius: 50%;
+		padding: .6rem;
+	}
+	.icon:hover {
+
+		 cursor: pointer;
+	}
+
+	#iconSetaEsquerda{
+
+		position: absolute;
+		z-index: 999;
+		bottom: 1rem;
+		left: 1rem;
+	}
+	#iconSetaDireita{
+
+		position: absolute;
+		z-index: 999;
+		bottom: 1rem;
+		right: 1rem;
+	}
+	.demais-icones {
+		position: absolute;
+		z-index: 999;
+		top: 6rem;
+		right: 1rem;
+	}
 	</style>
 
 	<script type="text/javascript">
@@ -141,8 +211,7 @@
 	$("#iconAjuda").hide();
 	$("#iconCalculadora").hide();
 
-	var nomePessoa = 'Jureg';
-	// $('.geral').load('assets/parts/lixeiras.html');
+	var nomePessoa = 'Aluno';
 
 	var ultimoLinkCarregado = '';
 	function carregarParte(link) {
@@ -163,10 +232,13 @@
 	function recarregarBotoes() {
 		divBotoesFixos.innerHTML =
 		`
-		<button type="button" class="btn" id='iconSetaEsquerda'>Voltar</button>
-		<button type="button" class="btn" id='iconSetaDireita'>Avançar</button>
-		<button type="button" class="btn" id='iconAjuda'>Ajuda</button>
-		<button type="button" class="btn" id='iconCalculadora'>Calculadora</button>
+		<i id='iconSetaEsquerda' class="material-icons icon">navigate_before</i>
+		<i id='iconSetaDireita' class="material-icons icon">navigate_next</i>
+
+		<div class='demais-icones'>
+			<i id='iconAjuda' class="material-icons icon">help_outline</i>
+			<i id='iconCalculadora' class="material-icons icon">grid_on</i>
+		</div>
 		`;
 
 		iconSetaEsquerda = divBotoesFixos.querySelector('#iconSetaEsquerda');
