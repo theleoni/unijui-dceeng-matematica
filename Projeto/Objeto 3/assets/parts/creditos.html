@@ -1,0 +1,56 @@
+<div class="geral-interno">
+
+	<img id='img-fundo' class="fundo" src="../assets/img/telaFinal.jpg"/>
+
+	<div class="mensagens">
+	</div>
+</div>
+
+<style media="screen">
+
+.geral-interno {
+	position: relative;
+}
+
+.fundo {
+	width: 100%;
+}
+
+</style>
+
+<script type="text/javascript">
+
+console.log('creditos.html');
+
+$(".navbar-topo").hide();
+
+$("#iconSetaEsquerda").show();
+$("#iconSetaDireita").hide();
+$("#iconAjuda").hide();
+$("#iconCalculadora").hide();
+
+iconSetaEsquerda.addEventListener("click", function() {
+	anterior();
+});
+
+iconSetaDireita.addEventListener("click", function() {
+	proxima();
+});
+
+iconAjuda.addEventListener("click", function() {
+	ajuda();
+});
+
+function anterior() {
+
+	$(".navbar-topo").show();
+	carregarParte('final.html');
+}
+
+function proxima() {
+}
+
+function ajuda() {
+}
+
+</script>
