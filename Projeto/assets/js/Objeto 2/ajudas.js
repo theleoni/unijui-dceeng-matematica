@@ -99,7 +99,7 @@ var ajudaTela14Ativ2 = [
 {
 	progressSteps: ['1', '2'],
 	title: 'Média!',
-	html: '<div style="text-align:left;">É calculada somando-se todos os elementos do conjunto, e em seguida, dividindo o resultado pela quantidade de elementos que compões o conjunto. Fórmula:<br><img src="../assets/img/Objeto 2/ajuda1Atividade2.PNG"><br>Exemplo:<br><img src="../assets/img/Objeto 2/ajuda2Atividade2.PNG"></div>'
+	html: '<div style="text-align:left;">É calculada somando-se todos os elementos do conjunto, e em seguida, dividindo o resultado pela quantidade de elementos que compões o conjunto. Fórmula:<br><img src="../assets/img/Objeto 2/ajuda1Atividade2.PNG"><br>Exemplo:<br><img src="../assets/img/Objeto 2/ajuda2Atividade2.PNG" class="img-responsive"></div>'
 }, 
 {
 	progressSteps: ['1', '2'],
@@ -127,7 +127,7 @@ var ajudaTela14Ativ3 = [
 {
 	progressSteps: ['1', '2', '3', '4'],
 	title: 'Média!',
-	html: '<div style="text-align:left;">É calculada somando-se todos os elementos do conjunto, e em seguida, dividindo o resultado pela quantidade de elementos que compões o conjunto. Fórmula:<br><img src="../assets/img/Objeto 2/ajuda1Atividade2.PNG"><br>Exemplo:<br><img src="../assets/img/Objeto 2/ajuda2Atividade2.PNG"></div>'
+	html: '<div style="text-align:left;">É calculada somando-se todos os elementos do conjunto, e em seguida, dividindo o resultado pela quantidade de elementos que compões o conjunto. Fórmula:<br><img src="../assets/img/Objeto 2/ajuda1Atividade2.PNG"><br>Exemplo:<br><img src="../assets/img/Objeto 2/ajuda2Atividade2.PNG" class="img-responsive"></div>'
 }
 ]
 
