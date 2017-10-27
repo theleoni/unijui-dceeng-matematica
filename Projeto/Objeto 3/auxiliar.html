@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Aux</title>
+	<title>Matemática</title>
 
 	<script src="assets/js/jquery-1.12.4.js"></script>
 	<script src="assets/js/jquery-ui-1.12.1.js"></script>
@@ -10,26 +10,25 @@
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/bib/highcharts/code/highcharts.js"></script>
 
+	<!-- <link rel="stylesheet" type="text/css" href="assets/css/navbar.css"> -->
 	<link rel="stylesheet" type="text/css" href="assets/css/calculadora.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/jquery-ui.css">
-	<!-- <link rel="stylesheet" type="text/css" href="assets/css/botoesFixos.css"> -->
 	<script src="assets/js/sweetalert.min.js"></script>
 
-	<!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> -->
 </head>
 
 <body>
-	<div class="body-header">
-		<h1>Tela Aux</h1>
 
-		<div id='botoes-fixos'>
-
+	<div class="navbar-topo">
+		<img class="esquerda" src="../assets/img/logo_ministerio_educacao.png" height="80%" />
+		<div class="centro">
+			<h1>MATEMÁTICA</h1>
 		</div>
+		<img class="direita" src="../assets/img/novo_logo_unijui.png" height="25%">
 	</div>
 
 	<div class="geral">
-
 		<center>
 			<div>
 				<button type="button" class="btn butonlousso" onclick="carregarParte('pre-login.html');">Pré-Login</button>
@@ -45,7 +44,7 @@
 				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-1.html');">Questão 1</button>
 				<button type="button" class="btn butonlousso" onclick="carregarParte('destino-lixo.html');">Destino Lixo</button>
 				<button type="button" class="btn butonlousso" onclick="carregarParte('media-quadratica.html');">Média Quadrática</button>
-				<button type="button" class="btn butonlousso" onclick="carregarParte('media-quadratica-dados-agrupados.html');">M.Q. Agrupados</button>
+				<!-- <button type="button" class="btn butonlousso" onclick="carregarParte('media-quadratica-dados-agrupados.html');">M.Q. Agrupados</button> -->
 				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-2.html');">Questão 2</button>
 				<button type="button" class="btn butonlousso" onclick="carregarParte('variancia.html');">Variância</button>
 				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-3.html');">Questão 3</button>
@@ -57,7 +56,6 @@
 				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-8.html');">Questão 8</button>
 				<button type="button" class="btn butonlousso" onclick="carregarParte('desvio-tabela.html');">Desvio Tabela</button>
 				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-9.html');">Questão 9</button>
-				<!-- <button type="button" class="btn butonlousso" onclick="carregarParte('desvio-amostral.html');">Desvio Amostral</button> -->
 				<button type="button" class="btn butonlousso" onclick="carregarParte('coeficiente-variacao.html');">Coeficiente Variação</button>
 				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-10.html');">Questão 10</button>
 				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-11.html');">Questão 11</button>
@@ -65,14 +63,63 @@
 				<button type="button" class="btn butonlousso" onclick="carregarParte('final.html');">Final</button>
 			</div>
 		</center>
+	</div>
 
+	<div id='botoes-fixos'>
 	</div>
 
 	<div class="div-msg-geral">
-
 	</div>
 
 	<style media="screen">
+	.navbar-topo {
+		background-color: #00458e;
+		display: flex;
+		height: 12rem;
+	}
+
+	.navbar-topo .esquerda {
+		left: 1rem;
+		height: 10rem;
+		margin: 1rem;
+		position: absolute;
+	}
+
+	.navbar-topo .centro {
+
+		width: 100%;
+		height: 12rem;
+		color: #FFFFFF;
+
+		text-align: center;
+		vertical-align: middle;
+
+		/*padding-top 4rem;*/
+
+	}
+
+	.navbar-topo .centro h1 {
+		text-align: center;
+		vertical-align: middle;
+		width: 100%;
+		height: 12rem;
+		margin: 0;
+		padding-top: 3rem;
+	}
+
+	.navbar-topo .centro h1 {
+		font-family: 'Roboto Condensed', sans-serif;
+		text-align: center;
+		font-size: 5rem;
+	}
+
+	.navbar-topo .direita {
+		right: 1rem;
+		height: 10rem;
+		margin: 1rem;
+		position: absolute;
+	}
+
 	@font-face {
 		font-family: 'Material Icons';
 		font-style: normal;
@@ -117,6 +164,10 @@
 	.body-header {
 		width: 100%;
 		display: inline-flex;
+	}
+
+	.top {
+		margin-top: 70px !important;
 	}
 
 	.muitissimo-mais-top {
@@ -166,13 +217,14 @@
 	.icon {
 
 		color: #F1F1F1;
-		background-color: #292929;
+		background-color: rgba(40, 40, 40, 0.65);
 		border-radius: 50%;
 		padding: .6rem;
 	}
 	.icon:hover {
 
-		 cursor: pointer;
+		background-color: rgb(40, 40, 40);
+		cursor: pointer;
 	}
 
 	#iconSetaEsquerda{
@@ -192,7 +244,7 @@
 	.demais-icones {
 		position: absolute;
 		z-index: 999;
-		top: 6rem;
+		top: 13rem;
 		right: 1rem;
 	}
 	</style>
@@ -221,11 +273,22 @@
 		$('.geral').load(`assets/parts/${link}`);
 	}
 
+	let shiftPressionado = false;
+	document.querySelector('body').addEventListener('keydown', function (event) {
+
+		if (event.keyCode == '16') { // 16 - SHIFT
+
+			shiftPressionado = true;
+		}
+	});
+
 	document.querySelector('body').addEventListener('keyup', function (event) {
 
-		if (ultimoLinkCarregado && event.keyCode == '82') {
+		if (ultimoLinkCarregado && event.keyCode == '82' && shiftPressionado) {
 
 			carregarParte(ultimoLinkCarregado);
+		} else if (event.keyCode == '16') { // 16 - SHIFT
+			shiftPressionado = false;
 		}
 	});
 
@@ -304,10 +367,6 @@
 			this.value = this.value.replace(/(\..*)\./g, '$1');
 		});
 	}
-
-// CODIGO TEMP
-	// carregarParte('pre-login.html');
-	// document.querySelector(".body-header h1").innerHTML = '';
 
 	</script>
 

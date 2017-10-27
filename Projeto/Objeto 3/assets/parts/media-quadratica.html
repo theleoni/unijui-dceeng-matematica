@@ -3,6 +3,8 @@
 
 	<video id='video-fundo' class='fundo ocultar' src="assets/video/matematica-quadratica-explicacao.mp4"/>
 
+	<button type="button" class="btn" onclick="saibaMais()">Saiba mais</button>
+
 	<div class="mensagens">
 	</div>
 </div>
@@ -87,6 +89,7 @@ function proxima() {
 			break;
 
 		case 1:
+		//botão saiba mais - dados agrupados
 			imgFundo.src = 'assets/img/media-quadratica-exemplo.png';
 
 			posIndexMediaQuadratica++;
@@ -115,4 +118,25 @@ document.querySelector('#video-fundo').addEventListener('ended', function() {
 	proxima();
 });
 
+function saibaMais() {
+
+	if (document.querySelector('#dialog-saiba-mais') == null) {
+		let innerAjuda = document.querySelector(".mensagens").innerHTML;
+		innerAjuda += `
+		<div id="dialog-saiba-mais">
+
+
+		</div>`;
+		document.querySelector(".mensagens").innerHTML = innerAjuda;
+	}
+
+	let dialogAjuda = $("#dialog-saiba-mais").dialog({
+		autoOpen: false,
+		height: 500,
+		width: 1000,
+		modal: true,
+		buttons: {}
+	});
+	dialogAjuda.dialog("open");
+}
 </script>
