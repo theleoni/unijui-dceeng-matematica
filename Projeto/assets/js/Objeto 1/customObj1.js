@@ -81,6 +81,7 @@
 		$("#calculadora").hide();
 		$("#sceneDistribuicaoTarifa").hide();
 		$("#sceneGerarGrafico").hide();
+		$("#telaFinal").hide();
 		preloadVideo([
 			'../assets/img/Objeto 1/biomassa_animada.mp4',
 			'../assets/img/Objeto 1/eolica_animada.mp4',
@@ -159,6 +160,7 @@
 					case 11:
 					case 13:
 					case 14:
+					case 15:
 					nextScene();
 					break;
 					case 8:
@@ -261,6 +263,7 @@
 		 		case 11:
 		 		case 14:
 		 		case 15:
+		 		case 16:
 		 		previousScene();
 		 		break;
 		 		case 8:
@@ -1308,12 +1311,7 @@
 		});
 
 		$(document).on('click', '#iconCalculadora', function () {
-			if (calculadoraAberta){
-				hideCalc();
-			}
-			else {
 				showCalc();
-			}
 		});
 
 
@@ -1321,24 +1319,9 @@
 			$("#calculadora").dialog({
 				closeOnEscape: false,
 				resizable: false,
-				open: function(event, ui) {
-					$(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
-				},
-				focus: function(event, ui) {
-					$(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
-				},
 				height: 600,
 				width: 336
 			});
-			$("#iconCalculadora").css("color", "red");
-			calculadoraAberta = true;
-
-		}
-
-		function hideCalc() {
-			$("#calculadora").dialog('close');
-			$("#iconCalculadora").css("color", "green");
-			calculadoraAberta = false;
 		}
 
 		//Verifica se as teclas A, B, C, D ou ENTER foram pressionadas, e realiza a função respectiva (Selecionar alternativa / Enviar resposta)
@@ -2514,7 +2497,7 @@
 		/* Funções Gerais */
 	  	//Função que realiza a troca de uma cena para a próxima, bem como adicionar um sleep igual ao tempo de fade
 	  	function nextScene() {
-	  		if (scene == 15) {
+	  		if (scene == 16) {
 	  			swal("","Você finalizou o objeto!", "error").catch(swal.noop);
 	  		}
 	  		else {
@@ -2641,6 +2624,14 @@
 	  			case 15:
 	  			$("#sceneGerarGrafico").fadeIn(fadeTime);
 	  			break;
+
+	  			case 16:
+	  			$("#telaFinal").fadeIn(fadeTime);
+	  			$("#imagensFixasCima").hide();
+	  			$(".navbar").hide();
+	  			$("body").css('padding-top', '0px');
+	  			$("html").css('padding-top', '0px');
+	  			break;
 	  		}
 	  	}
 
@@ -2708,6 +2699,14 @@
 	  			break;
 	  			case 15:
 	  			$("#sceneGerarGrafico").fadeOut(fadeTime);
+	  			break;
+	  			case 16: 
+	  			$("#telaFinal").fadeOut(fadeTime);
+	  			$("#imagensFixasCima").show();
+	  			$(".navbar").show();
+	  			$("body").css('padding-top', '59px');
+	  			$("html").css('padding-top', '59px');
+
 	  			break;
 	  		}
 	  	}

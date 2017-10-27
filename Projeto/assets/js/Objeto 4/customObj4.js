@@ -23,10 +23,10 @@ var conversaLaboratorioCompleta = false;
 
 var questionNumber = 1;
 var questoesCorretas = [false,false,false,false,false,false,false,false,false,false,false,false,false, false, false, false, false, false]
-var respostasCorretas = ['#buttonAf4', '#buttonAf1', 0.5, '#buttonAf3', 0.33, '#buttonAf2', 0.2, '#buttonAf1', '#buttonAf4', 0.16, '#buttonAf3', 0.10, 0.80, 1, 0, 1, '#buttonAf4', '#buttonAf2'];
-var respostasCorretasOutra = ["Sem resposta", "Sem resposta", 50, "Sem resposta", 33, "Sem resposta", 20, "Sem resposta", "Sem resposta", 16, "Sem resposta", 10, 80, 100, 0, 100, "Sem resposta", "Sem resposta"];
-var respostasCorretasTerceira = ["Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", 0.17, "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta"];
-var respostasCorretasQuarta = ["Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", 17, "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta"];
+var respostasCorretas = ['#buttonAf4', '#buttonAf1', 0.5, '#buttonAf3', 0.33, '#buttonAf2', 0.2, '#buttonAf1', '#buttonAf4', 0.16, '#buttonAf3', 0.10, 0.80, 1, 0, 1, '#buttonAf4', '#buttonAf2', '#buttonAf5'];
+var respostasCorretasOutra = ["Sem resposta", "Sem resposta", 50, "Sem resposta", 33, "Sem resposta", 20, "Sem resposta", "Sem resposta", 16, "Sem resposta", 10, 80, 100, 0, 100, "Sem resposta", "Sem resposta", "Sem resposta"];
+var respostasCorretasTerceira = ["Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", 0.17, "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem Resposta"];
+var respostasCorretasQuarta = ["Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", 17, "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem Resposta"];
 
 
 $(document).ready(function() {
@@ -363,6 +363,7 @@ function checkIfStuck() {
 			case 11:
 			case 17:
 			case 18:
+			case 19:
 			$("#inputResposta").hide();
 			$("#buttonAf1").show();
 			$("#buttonAf2").show();
@@ -465,6 +466,7 @@ function checkIfStuck() {
 			case 11:
 			case 17:
 			case 18:
+			case 19:
 			if ($(respostasCorretas[questionNumber-1]).hasClass('btn-primary')) {
 				$("#alertQuestao").show();
 				$("#alertQuestao").html(dataJSON.questoes.alertaCerto);
@@ -514,6 +516,7 @@ function checkIfStuck() {
 			case 11:
 			case 17:
 			case 18:
+			case 19:
 			$("#buttonAf1").prop("disabled", "disabled");
 			$("#buttonAf2").prop("disabled", "disabled");
 			$("#buttonAf3").prop("disabled", "disabled");
@@ -690,7 +693,7 @@ function checkIfStuck() {
 			break;
 
 			case 26:
-			if (questionNumber < 18 ) {
+			if (questionNumber < 19 ) {
 				questionNumber++;
 				loadQuestion();
 			} else {
