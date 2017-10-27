@@ -3,7 +3,9 @@
 
 	<video id='video-fundo' class='fundo ocultar' src="assets/video/matematica-quadratica-explicacao.mp4"/>
 
-	<button type="button" class="btn" onclick="saibaMais()">Saiba mais</button>
+	<div class="muito-mais-top muitissimo-mais-bottom text-center ocultar" id="div-saiba-mais">
+		<button type="button" class="btn" onclick="saibaMais()">Saiba mais</button>
+	</div>
 
 	<div class="mensagens">
 	</div>
@@ -45,6 +47,7 @@ iconAjuda.addEventListener("click", function() {
 let posIndexMediaQuadratica = 0;
 function anterior() {
 
+	let divSaibaMais = document.querySelector('#div-saiba-mais');
 	let imgFundo = document.querySelector('#img-fundo');
 	switch (posIndexMediaQuadratica) {
 
@@ -60,16 +63,20 @@ function anterior() {
 			break;
 
 		case 2:
-			imgFundo.src = 'assets/img/media-quadratica-exemplo.png';
+			divSaibaMais.classList.add('ocultar');
+
+			imgFundo.src = 'assets/img/media-quadratica-2.png';
 
 			posIndexMediaQuadratica--;
 			break;
 
 		case 3:
+			divSaibaMais.classList.remove('ocultar');
+
+			imgFundo.src = 'assets/img/media-quadratica-exemplo.png';
+
 			document.querySelector('#img-fundo').classList.remove('ocultar');
-			let videoFundo  = document.querySelector('#video-fundo');
-			videoFundo.classList.add('ocultar');
-			videoFundo.load();
+			document.querySelector('#video-fundo').classList.add('ocultar');
 
 			posIndexMediaQuadratica--;
 			break;
@@ -79,6 +86,7 @@ function anterior() {
 
 function proxima() {
 
+	let divSaibaMais = document.querySelector('#div-saiba-mais');
 	let imgFundo = document.querySelector('#img-fundo');
 	switch (posIndexMediaQuadratica) {
 
@@ -89,13 +97,16 @@ function proxima() {
 			break;
 
 		case 1:
-		//botão saiba mais - dados agrupados
+			divSaibaMais.classList.remove('ocultar');
+
 			imgFundo.src = 'assets/img/media-quadratica-exemplo.png';
 
 			posIndexMediaQuadratica++;
 			break;
 
 		case 2:
+			divSaibaMais.classList.add('ocultar');
+
 			document.querySelector('#img-fundo').classList.add('ocultar');
 			let videoFundo  = document.querySelector('#video-fundo');
 			videoFundo.classList.remove('ocultar');
