@@ -2297,8 +2297,12 @@
 					yAxis: {
 						min: 0,
 						title: {
-							text: 'Valores'
+							text: inputGrafico[15]
 						}
+					},
+					xAxis: {
+						categories: [inputGrafico[2], inputGrafico[4], inputGrafico[6], inputGrafico[8], inputGrafico[10], inputGrafico[12]],
+
 					},
 					plotOptions: {
 						pie: {
@@ -2314,7 +2318,7 @@
 						}
 					},
 					series: [{
-						name: 'Gráfico 1',
+						name: inputGrafico[14],
 						colorByPoint: true,
 						data: [{
 							name: inputGrafico[2],
@@ -2481,7 +2485,9 @@
 			$("#inputGerarGrafico5").val(),
 			parseFloat($("#inputGerarGraficoValue5").val()),
 			$("#inputGerarGrafico6").val(),
-			parseFloat($("#inputGerarGraficoValue6").val())
+			parseFloat($("#inputGerarGraficoValue6").val()),
+			$("#inputNomeDadosGraficoCustom").val(),
+			$("#inputUnidadeDadosGraficoCustom").val()
 			];
 		}
 
