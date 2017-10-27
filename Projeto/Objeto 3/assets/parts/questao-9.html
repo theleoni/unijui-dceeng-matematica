@@ -51,28 +51,20 @@
 					<td>Variância</td>
 					<td class="valor-total">74</td>
 					<td class="valor-total">
-						<div class="input-x fundo-normal preenchimento-c" id="campo-variancia-a">
-							<input id='input-variancia-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
-						</div>
+						<h4 class="valor-menor-variancia">?</h4>
 					</td>
 					<td class="valor-total">
-						<div class="input-x fundo-normal preenchimento-c" id="campo-variancia-b">
-							<input id='input-variancia-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
-						</div>
+						<h4 class="valor-maior-variancia">?</h4>
 					</td>
 				</tr>
 				<tr class="total">
 					<td>Desvio Parão</td>
 					<td class="valor-total">8,6</td>
 					<td class="valor-total">
-						<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-a">
-							<input id='input-desvio-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
-						</div>
+						<h4 class="valor-menor-desvio">?</h4>
 					</td>
 					<td class="valor-total">
-						<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-b">
-							<input id='input-desvio-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
-						</div>
+						<h4 class="valor-maior-desvio">?</h4>
 					</td>
 				</tr>
 			</table>
@@ -200,7 +192,9 @@
 					</div>
 					<div class="calculo">
 						<div class="cima">
-							<h4 class="valor-menor-variancia">?</h4>
+							<div class="input-x fundo-normal preenchimento-c" id="campo-variancia-a">
+								<input id='input-variancia-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -218,7 +212,9 @@
 					</div>
 					<div class="calculo">
 						<div class="cima">
-							<h4 class="valor-menor-desvio">?</h4>
+							<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-a">
+								<input id='input-desvio-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -348,7 +344,9 @@
 					</div>
 					<div class="calculo">
 						<div class="cima">
-							<h4 class="valor-maior-variancia">?</h4>
+							<div class="input-x fundo-normal preenchimento-c" id="campo-variancia-b">
+								<input id='input-variancia-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -366,7 +364,9 @@
 					</div>
 					<div class="calculo">
 						<div class="cima">
-							<h4 class="valor-maior-desvio">?</h4>
+							<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-b">
+								<input id='input-desvio-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -768,7 +768,7 @@ function validarValores() {
 
 		let valorMaiorVariancia = document.querySelectorAll(".valor-maior-variancia");
 		for (var i = 0; i < valorMaiorVariancia.length; i++) {
-			valorMaiorVariancia[i].innerHTML = valorCorretoQuestao9VarianciaA.toString().replace('.', ',');
+			valorMaiorVariancia[i].innerHTML = valorCorretoQuestao9VarianciaB.toString().replace('.', ',');
 		}
 	} else {
 
