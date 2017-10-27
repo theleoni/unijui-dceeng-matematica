@@ -1,7 +1,7 @@
 <div class="geral-interno">
 	<img id='img-fundo' class="fundo" src="assets/img/desvio_padrao.png"/>
 
-	<div class='explicacoes container oculto muito-mais-top'>
+	<!-- <div class='explicacoes container oculto muito-mais-top'>
 		<h4><span class="tab"/>O desvio padrão baseia-se nos desvios em torno da média aritmética e a sua fórmula básica pode ser traduzida como: a raiz quadrada da média aritmética dos quadrados dos desvios e aqui é representada por S.</h4>
 		<h4><span class="tab"/>Também pode ser entendido como a raiz quadrada da variância.</h4>
 		<ul class="mais-top"><li><h4>A fórmula é empregada quando tratamos de uma população não agrupados.</h4></li></ul>
@@ -21,7 +21,7 @@
 		<h4>Observe, que o desvio padrão é a raiz quadrada da variância.</h4>
 		<h4>Dessa forma, podemos calcular o desvio padrão apenas extraindo a raiz quadrada da variância.</h4>
 
-	</div>
+	</div> -->
 
 	<div class='explicacoes-tabela-1 container oculto muito-mais-top'>
 
@@ -220,21 +220,13 @@ function anterior() {
 
 		case 1:
 			document.querySelector('#img-fundo').classList.remove('oculto');
-			document.querySelector(".explicacoes").classList.add('oculto');
-
-			posIndexVariancia--;
-			break;
-
-		case 2:
-			document.querySelector('.explicacoes').classList.remove('oculto');
-			document.querySelector(".explicacoes-comparacao").classList.add('oculto');
-
+			document.querySelector('#img-fundo').src = 'assets/img/desvio_padrao.png';
 
 			posIndexVariancia--;
 			break;
 
 		case 3:
-			document.querySelector('.explicacoes-comparacao').classList.remove('oculto');
+			document.querySelector('#img-fundo').classList.remove('oculto');
 			document.querySelector(".explicacoes-tabela-1").classList.add('oculto');
 
 			posIndexVariancia--;
@@ -246,28 +238,20 @@ function proxima() {
 	switch (posIndexVariancia) {
 
 		case 0:
-			document.querySelector('#img-fundo').classList.add('oculto');
-			document.querySelector(".explicacoes").classList.remove('oculto');
+			document.querySelector('#img-fundo').src = 'assets/img/desvio_padrao-2.png';
 
 			posIndexVariancia++;
 			break;
 
 		case 1:
-			document.querySelector('.explicacoes').classList.add('oculto');
-			document.querySelector(".explicacoes-comparacao").classList.remove('oculto');
-
-			posIndexVariancia++;
-			break;
-
-		case 2:
-			document.querySelector('.explicacoes-comparacao').classList.add('oculto');
+			document.querySelector('#img-fundo').classList.add('oculto');
 			document.querySelector(".explicacoes-tabela-1").classList.remove('oculto');
 
 			posIndexVariancia++;
 			break;
 
 		default:
-		case 3:
+		case 2:
 			swal({
 				title: `Agora é com você ${nomePessoa}! Complete com o Desvio Padrão...`,
 				closeOnClickOutside: false,
