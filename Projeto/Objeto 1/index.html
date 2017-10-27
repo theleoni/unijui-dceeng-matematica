@@ -38,6 +38,9 @@
 	<!-- SweetAlerts CSS -->
 	<link href="../assets/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
 
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="../assets/font-awesome/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -61,7 +64,7 @@
 				<div id="tituloGeral" class="textTitleContent"> </div>
 			</div>
 			<div class="col-xs-1 text-right">
-				<span id="iconCalculadora" title="Calculadora" class="iconFixoCalculadora glyphicon glyphicon-th"> </span>
+				<span id="iconCalculadora" title="Calculadora" class=" fa fa-calculator "> </span>
 			</div>
 			<div class="col-xs-1 text-right" >
 				<span id="iconMais" title="Mais informações" class="iconFixoMais glyphicon glyphicon-plus"> </span>
@@ -114,8 +117,8 @@
 
 
 		<div class="row">
-			<div class="col-xs-offset-10 col-xs-2" id="imagemPlanetaSceneNome">
-				<img src="../assets/img/Objeto 1/planeta.png">
+			<div>
+				<img id="imagemFundo" src="../assets/img/Objeto 1/fundoTelaInicial.jpg">
 			</div>
 		</div>
 	</div>
@@ -311,14 +314,19 @@
 								<div id="questionGroup" >
 									<button type="button" id="botaoJaneiro" class="btn btn-questoes">Janeiro</button>
 									<button type="button" id="botaoFevereiro" class="btn btn-questoes">Fevereiro</button>
+									<br>
 									<button type="button" id="botaoMarco" class="btn btn-questoes">Março</button>
 									<button type="button" id="botaoAbril" class="btn btn-questoes">Abril</button>
+									<br>
 									<button type="button" id="botaoMaio" class="btn btn-questoes">Maio</button>
 									<button type="button" id="botaoJunho" class="btn btn-questoes">Junho</button>
+									<br>
 									<button type="button" id="botaoJulho" class="btn btn-questoes">Julho</button>
 									<button type="button" id="botaoAgosto" class="btn btn-questoes">Agosto</button>
+									<br>
 									<button type="button" id="botaoSetembro" class="btn btn-questoes">Setembro</button>
 									<button type="button" id="botaoOutubro" class="btn btn-questoes">Outubro</button>
+									<br>
 									<button type="button" id="botaoNovembro" class="btn btn-questoes">Novembro</button>
 									<button type="button" id="botaoDezembro" class="btn btn-questoes">Dezembro</button>
 								</div>
@@ -881,7 +889,6 @@
 						<form id="selecaoGrafico">
 							<input type="radio" name="tipoGraph" value="column" checked="true">Colunas
 							<input type="radio" name="tipoGraph" value="bar"> Barras
-							<input type="radio" name="tipoGraph" value="scatter"> Dispersão
 							<input type="radio" name="tipoGraph" value="pie"> Pizza
 						</form>
 						<button type="button" id="botaoGraficoCustom" class="btn btn-primary btn-block">Gerar Grafico</button>

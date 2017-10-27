@@ -25,7 +25,7 @@ body {
 	color: #b712d4;
 }
 
-.iconFixoCalculadora {
+#iconCalculadora {
 	cursor: pointer;
 	z-index: 1;
 	font-size: 40px;
