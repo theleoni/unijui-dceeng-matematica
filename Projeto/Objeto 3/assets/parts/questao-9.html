@@ -562,10 +562,10 @@ function proxima() {
 
 function ajuda() {
 
-	if (document.querySelector('#dialog-ajuda') == null) {
+	if (document.querySelector('#dialog-questao-9-ajuda') == null) {
 		let innerAjuda = document.querySelector(".mensagens").innerHTML;
 		innerAjuda += `
-		<div id="dialog-ajuda">
+		<div id="dialog-questao-9-ajuda">
 			<div class='row'>
 
 				<div class="principal text-center">
@@ -619,19 +619,19 @@ function ajuda() {
 		ajudaPage('principal');
 	}
 
-	let dialogAjuda = $("#dialog-ajuda").dialog({
+	let dialogQuestao9Ajuda = $("#dialog-questao-9-ajuda").dialog({
 		autoOpen: false,
 		height: 500,
 		width: 850,
 		modal: true,
 		buttons: {}
 	});
-	dialogAjuda.dialog("open");
+	dialogQuestao9Ajuda.dialog("open");
 }
 
 function ajudaPage(tipo) {
 
-	let divAjuda = document.querySelector('#dialog-ajuda');
+	let divAjuda = document.querySelector('#dialog-questao-9-ajuda');
 	let divAjudaPrincipal = divAjuda.querySelector('.principal');
 	let divAjudaVariancia = divAjuda.querySelector('.variancia');
 	let divAjudaDesvio = divAjuda.querySelector('.desvio');
@@ -904,10 +904,10 @@ function validarValores() {
 
 function saibaMais() {
 
-	if (document.querySelector('#dialog-saiba-mais') == null) {
+	if (document.querySelector('#dialog-questao-9-saiba-mais') == null) {
 		let innerAjuda = document.querySelector(".mensagens").innerHTML;
 		innerAjuda += `
-		<div id="dialog-saiba-mais">
+		<div id="dialog-questao-9-saiba-mais">
 			<h3 class="text-center">Desvio Padrão Amostral</h3>
 
 			<h4><span class="tab"/>Quando nosso interesse não se restringe à descrição dos dados, mas, partindo da <b>amostra</b>, visamos tirar inferências válidas para a respectiva população, convém efetuar uma modificação, que consiste em usar o divisor <b>n – 1</b> em lugar de <b>n</b>. A fórmula ficará então:</h4>
@@ -1009,13 +1009,13 @@ function saibaMais() {
 		document.querySelector(".mensagens").innerHTML = innerAjuda;
 	}
 
-	let dialogAjuda = $("#dialog-saiba-mais").dialog({
+	let dialogQuestao9Ajuda = $("#dialog-questao-9-saiba-mais").dialog({
 		autoOpen: false,
 		height: 500,
 		width: 1000,
 		modal: true,
 		buttons: {}
 	});
-	dialogAjuda.dialog("open");
+	dialogQuestao9Ajuda.dialog("open");
 }
 </script>

@@ -131,23 +131,23 @@ document.querySelector('#video-fundo').addEventListener('ended', function() {
 
 function saibaMais() {
 
-	if (document.querySelector('#dialog-saiba-mais') == null) {
+	if (document.querySelector('#dialog-media-quadratica-saiba-mais') == null) {
 		let innerAjuda = document.querySelector(".mensagens").innerHTML;
 		innerAjuda += `
-		<div id="dialog-saiba-mais">
+		<div id="dialog-media-quadratica-saiba-mais">
 
 
 		</div>`;
 		document.querySelector(".mensagens").innerHTML = innerAjuda;
 	}
 
-	let dialogAjuda = $("#dialog-saiba-mais").dialog({
+	let dialogMediaQuadratiaSaibaMais = $("#dialog-media-quadratica-saiba-mais").dialog({
 		autoOpen: false,
 		height: 500,
 		width: 1000,
 		modal: true,
 		buttons: {}
 	});
-	dialogAjuda.dialog("open");
+	dialogMediaQuadratiaSaibaMais.dialog("open");
 }
 </script>

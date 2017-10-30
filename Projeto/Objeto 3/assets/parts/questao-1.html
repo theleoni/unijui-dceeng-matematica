@@ -298,10 +298,10 @@ function proxima() {
 }
 
 function ajuda() {
-	if (document.querySelector('#dialog-ajuda') == null) {
+	if (document.querySelector('#dialog-questao-1-ajuda') == null) {
 		let innerAjuda = document.querySelector(".mensagens").innerHTML;
 		innerAjuda += `
-		<div id="dialog-ajuda">
+		<div id="dialog-questao-1-ajuda">
 			<div class='row'>
 
 				<div class="principal">
@@ -359,19 +359,19 @@ function ajuda() {
 		ajudaPage('principal');
 	}
 
-	let dialogAjuda = $("#dialog-ajuda").dialog({
+	let dialogQuestao1Ajuda = $("#dialog-questao-1-ajuda").dialog({
 		autoOpen: false,
 		height: 500,
 		width: 850,
 		modal: true,
 		buttons: {}
 	});
-	dialogAjuda.dialog("open");
+	dialogQuestao1Ajuda.dialog("open");
 }
 
 function ajudaPage(tipo) {
 
-	let divAjuda = document.querySelector('#dialog-ajuda');
+	let divAjuda = document.querySelector('#dialog-questao-1-ajuda');
 	let divAjudaPrincipal = divAjuda.querySelector('.principal');
 	let divAjudaMedia = divAjuda.querySelector('.media');
 	let divAjudaMediana = divAjuda.querySelector('.mediana');
@@ -478,10 +478,10 @@ function validarResultados() {
 
 function popUp(valor) {
 
-	if (document.querySelector('#dialog-form') == null) {
+	if (document.querySelector('#dialog-questao-1-pop-up') == null) {
 		let inner = document.querySelector(".mensagens").innerHTML;
 		inner += `
-		<div id="dialog-form">
+		<div id="dialog-questao-1-pop-up">
 			<div class="row">
 				<div class='formula-texto'>
 					<h3 id='formula-texto'></h3>
@@ -528,7 +528,7 @@ function popUp(valor) {
 	document.querySelector('#formula-texto').innerHTML = valor;
 	document.querySelector('#formula-img').src = caminhoImg;
 
-	let dialog = $("#dialog-form").dialog({
+	let dialogQuestao1PopUp = $("#dialog-questao-1-pop-up").dialog({
 		autoOpen: false,
 		height: 300,
 		width: 850,
@@ -537,7 +537,7 @@ function popUp(valor) {
 		close: function() {
 		}
 	});
-	dialog.dialog("open");
+	dialogQuestao1PopUp.dialog("open");
 }
 
 </script>

@@ -445,24 +445,24 @@ function proxima() {
 }
 
 function ajuda() {
-	if (document.querySelector('#dialog-ajuda') == null) {
+	if (document.querySelector('#dialog-questao-5-ajuda') == null) {
 		let innerAjuda = document.querySelector(".mensagens").innerHTML;
 		innerAjuda += `
-		<div id="dialog-ajuda">
+		<div id="dialog-questao-5-ajuda">
 			<img src="assets/img/questao-3-4-5-ajuda.png" />
 
 		</div>`;
 		document.querySelector(".mensagens").innerHTML = innerAjuda;
 	}
 
-	let dialogAjuda = $("#dialog-ajuda").dialog({
+	let dialogQuestao5Ajuda = $("#dialog-questao-5-ajuda").dialog({
 		autoOpen: false,
 		height: 600,
 		width: 1000,
 		modal: true,
 		buttons: {}
 	});
-	dialogAjuda.dialog("open");
+	dialogQuestao5Ajuda.dialog("open");
 }
 
 let valorSomaA = 27225;

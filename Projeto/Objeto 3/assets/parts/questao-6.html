@@ -203,24 +203,24 @@ function proxima() {
 
 function ajuda() {
 
-	if (document.querySelector('#dialog-ajuda') == null) {
+	if (document.querySelector('#dialog-questao-6-ajuda') == null) {
 		let innerAjuda = document.querySelector(".mensagens").innerHTML;
 		innerAjuda += `
-		<div id="dialog-ajuda">
+		<div id="dialog-questao-6-ajuda">
 			<img src="assets/img/questao-6-7-ajuda.png" />
 
 		</div>`;
 		document.querySelector(".mensagens").innerHTML = innerAjuda;
 	}
 
-	let dialogAjuda = $("#dialog-ajuda").dialog({
+	let dialogQuestao6Ajuda = $("#dialog-questao-6-ajuda").dialog({
 		autoOpen: false,
 		height: 500,
 		width: 800,
 		modal: true,
 		buttons: {}
 	});
-	dialogAjuda.dialog("open");
+	dialogQuestao6Ajuda.dialog("open");
 }
 
 let inputQuestao6DesvioPadrao = document.querySelector("#input-desvio-padrao");
