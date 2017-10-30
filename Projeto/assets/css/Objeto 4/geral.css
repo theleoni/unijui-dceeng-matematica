@@ -92,7 +92,7 @@ body {
 	color: #FFFFFF;
 	font-size: calc((2vh + 1vw)/2);
 	font-family: 'Roboto Condensed', sans-serif;
-	top: -77vh;
+	top: -69vh;
 	word-wrap: break-word;
 }
 
@@ -100,7 +100,7 @@ body {
 #balaoDeFalaLaboratorio {
 	position: absolute;
 	left: -18%;
-	top: -82vh;
+	top: -75vh;
 	right: 8%;
 	z-index: 1;
 	width: 28vw;
@@ -111,7 +111,7 @@ body {
 #setaEsquerdaLaboratorio {	
 	position: absolute;
 	font-size: 40;
-	top: -60vh;
+	top: -55vh;
 	left: -4vw;
 	cursor: pointer;
 	color: gray;
@@ -125,7 +125,7 @@ body {
 #setaDireitaLaboratorio {
 	position: absolute;
 	font-size: 40;
-	top: -60vh;
+	top: -55vh;
 	left: 13vw;
 	z-index: 5;
 	cursor: pointer;
