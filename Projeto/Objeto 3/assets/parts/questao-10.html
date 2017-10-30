@@ -173,7 +173,9 @@
 					</div>
 
 					<div class="calculo">
-						<h4><b><span class="valor-correto-texto">?</span></b></h4>
+						<div class="input-x fundo-normal preenchimento-c" id="campo-valor-d">
+							<input id='input-valor-d' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+						</div>
 					</div>
 
 					<div class="calculo">
@@ -389,10 +391,12 @@ let valorCorretoD = 61;
 let inputValorA = document.querySelector('#input-valor-a');
 let inputValorB = document.querySelector('#input-valor-b');
 let inputValorC = document.querySelector('#input-valor-c');
+let inputValorD = document.querySelector('#input-valor-d');
 
 let campoValorA = document.querySelector('#campo-valor-a');
 let campoValorB = document.querySelector('#campo-valor-b');
 let campoValorC = document.querySelector('#campo-valor-c');
+let campoValorD = document.querySelector('#campo-valor-d');
 
 document.querySelector('#auto-completar').addEventListener('click', function (evt) {
 	if (evt.detail === 3) {
@@ -400,6 +404,7 @@ document.querySelector('#auto-completar').addEventListener('click', function (ev
 		inputValorA.value = valorCorretoA.toString().replace('.', ',');
 		inputValorB.value = valorCorretoB.toString().replace('.', ',');
 		inputValorC.value = valorCorretoC.toString().replace('.', ',');
+		inputValorD.value = valorCorretoD.toString().replace('.', ',');
 
 		validarValores();
 	}
@@ -410,10 +415,12 @@ function validarValores() {
 	let valorTotalA = inputValorA.value.replace('.', '').replace(',', '.');
 	let valorTotalB = inputValorB.value.replace('.', '').replace(',', '.');
 	let valorTotalC = inputValorC.value.replace('.', '').replace(',', '.');
+	let valorTotalD = inputValorD.value.replace('.', '').replace(',', '.');
 
 	let valorTotalAOk = (valorTotalA == valorCorretoA);
 	let valorTotalBOk = (valorTotalB == valorCorretoB);
 	let valorTotalCOk = (valorTotalC == valorCorretoC);
+	let valorTotalDOk = (valorTotalD == valorCorretoD);
 
 	if (valorTotalAOk) {
 
@@ -442,8 +449,17 @@ function validarValores() {
 		campoValorC.classList.remove('fundo-ok');
 		campoValorC.classList.add('fundo-normal');
 	}
+	if (valorTotalDOk) {
 
-	if (valorTotalAOk && valorTotalBOk && valorTotalCOk) {
+		campoValorD.classList.add('fundo-ok');
+		campoValorD.classList.remove('fundo-normal');
+	} else {
+
+		campoValorD.classList.remove('fundo-ok');
+		campoValorD.classList.add('fundo-normal');
+	}
+
+	if (valorTotalAOk && valorTotalBOk && valorTotalCOk && valorTotalCOk) {
 		$("#iconSetaDireita").show();
 	} else {
 		$("#iconSetaDireita").hide();
