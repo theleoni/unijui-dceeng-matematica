@@ -33,7 +33,8 @@ var verificacaoAtividade1 = [false, false];
 var corretasAtividade1Moda = ["Amodal", "Amodal", "Amodal", "Unimodal", "Amodal", "Amodal", "Amodal", "Amodal", "Bimodal", "Amodal", "Unimodal", "Amodal"];
 var selecionadasModa = [];
 var numeroErradasModa = 0;
-var corretasAtividade1Mediana = [37.81, 34.06, 36.01, 35.73, 32.68, 30.77, 32.74, 32.6, 32.4, 34.26, 31.74, 34.21]
+var corretasAtividade1Mediana = [37.81, 34.06, 36.01, 35.73, 32.68, 30.77, 32.74, 32.6, 32.4, 34.26, 31.74, 34.21];
+var corretasAlternativaAtividade1Mediana = [37.80, 34.06, 36.01, 35.72, 32.68, 30.77, 32.74, 32.6, 32.4, 34.26, 31.74, 34.21];
 var numeroErradasMediana = 0;
 var inputAtividade1Mediana = [];
 var mesesErradosAtividade1;
@@ -1651,7 +1652,7 @@ function loadQuestion() {
 				mesesErradosAtividade1 = null;
 				getValuesMediana();
 				for (var i = 0; i <= corretasAtividade1Mediana.length -1; i++) {
-					if (inputAtividade1Mediana[i] == corretasAtividade1Mediana[i]) {
+					if (inputAtividade1Mediana[i] == corretasAtividade1Mediana[i] || inputAtividade1Mediana[i] == corretasAlternativaAtividade1Mediana[i]) {
 					} else {
 
 						numeroErradasMediana++;
