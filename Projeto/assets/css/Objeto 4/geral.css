@@ -49,7 +49,7 @@ body {
 	position: absolute;
 	max-width: 40%;
 	z-index: 1;
-	top: 50%;
+	top: 3vh;
 	margin-top: -4%;
 }
 
