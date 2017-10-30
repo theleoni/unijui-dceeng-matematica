@@ -101,7 +101,7 @@
 
  	},
  	"12": {
- 		"tituloQuestao": "Qual a probabilidade de uma amostra, escolhida pro acaso entre as que constam na tabela, ter turbidez maior a 1UT?",
+ 		"tituloQuestao": "Qual a probabilidade de uma amostra, escolhida por acaso entre as que constam na tabela, ter turbidez maior a 1UT?",
  		"tabela": "tabela2"
  	},
  	"13": {
