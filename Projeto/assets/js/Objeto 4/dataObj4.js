@@ -140,9 +140,9 @@
  	},
  	"19":
  	{
- 		"tituloQuestao": "Considere que um mês da tabela seja selecionar de forma aleatória.<br>I – A probabilidade de ser turbidez abaixo de 0,6 UT é de 0,3.<br> II – A probabilidade da cor ser abaixo de 1 UH é de 0,9.<br>nIII – A probabilidade do Cloro Residual Livre estar abaixo de 1,3 mg/L é de 0,58. <br>IV – A probabilidade da turbidez estar acima 1 nos meses de jan/17 e set/17 é de 0,11. <br>Marque a alternativa correta com relação às afirmativas acima.",
- 		"op1": "Apenas II,  III e IV são verdadeiras.",
- 		"op2": "Apenas I ,II, e III são verdadeiras.",
+ 		"tituloQuestao": "Considere que um mês da tabela seja selecionar de forma aleatória.<br>I – A probabilidade de ser turbidez abaixo de 0,6 UT é de 0,3.<br> II – A probabilidade da cor ser abaixo de 1 UH é de 0,9.<br>III – A probabilidade do Cloro Residual Livre estar abaixo de 1,3 mg/L é de 0,58. <br>IV – A probabilidade da turbidez estar acima 1 nos meses de jan/17 e set/17 é de 0,11. <br>Marque a alternativa correta com relação às afirmativas acima.",
+ 		"op1": "Apenas II, III e IV são verdadeiras.",
+ 		"op2": "Apenas I, II, e III são verdadeiras.",
  		"op3": "Apenas  I e III são verdadeiras.",
  		"op4": "Apenas I e II são verdadeiras.",
  		"op5": "Apenas III e IV são verdadeiras.",
