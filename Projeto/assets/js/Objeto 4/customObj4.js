@@ -37,6 +37,10 @@ $(document).ready(function() {
 	}
 	dataJSON = JSON.stringify(dados);
 	dataJSON = JSON.parse(dataJSON);
+	showCalc();
+	$("#calculadora" ).dialog( "close" );
+
+
 });
 
 

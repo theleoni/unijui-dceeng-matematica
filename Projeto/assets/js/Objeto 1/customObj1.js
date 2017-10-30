@@ -129,6 +129,8 @@
 
 		dataJSON = JSON.stringify(dados);
 		dataJSON = JSON.parse(dataJSON);
+		showCalc();
+		$("#calculadora" ).dialog( "close" );
 
 
 	});
@@ -1311,7 +1313,7 @@
 		});
 
 		$(document).on('click', '#iconCalculadora', function () {
-				showCalc();
+			showCalc();
 		});
 
 
@@ -2804,7 +2806,7 @@
 	  	}
 
 	  	$(document).on('keyup', 'body', function (e) {
-	  		if(calculadoraAberta) {
+	  		if($("#calculadora").dialog('isOpen')) {
 	  			botaoPressionado = e.which;
 	  			switch (botaoPressionado) {
 	  				case 96:

@@ -37,7 +37,7 @@ function closeObject() {
 //Função para os botões da calculadora
 
 $(document).on('keyup', 'body', function (e) {
-	if(calculadoraAberta) {
+	if($("#calculadora").dialog('isOpen')) {
 		botaoPressionado = e.which;
 		switch (botaoPressionado) {
 			case 96:
