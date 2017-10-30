@@ -29,10 +29,10 @@
 		"telaPrimeirasQuestoes": {
 			"tituloQuestao1": "Analise as alternativas à seguir, considerando as informações apresentadas na tabela assinale a alternativa correta",
 			"afirmacao1Questao1": "%verdadeiro%<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residencial no mês de Janeiro de 2017 é obtida pela divisão do consumo total mensal pelo número de consumidores residenciais do mês.",
-			"afirmacao2Questao1": "%verdadeiro%<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residencial, no Brasil, em Janeiro de 2017 é 172,33GWh.",
-			"afirmacao3Questao1": "<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residencial no mês de Janeiro de 2017, na região Sudeste foi de 172,33GWh, visto que, esta é a média nacional.",
-			"afirmacao4Questao1": "%verdadeiro%<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residencial no mês de Janeiro de 2017, na região nordeste foi de 122,77GWh, visto que este valor é obtido pelo total de energia gasta nesta região, dividido pelo número de consumidores residenciais.",
-			"afirmacao5Questao1": "<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residencial no mês de Janeiro de 2017, na região Sul foi de 204,90GWh, visto que este é o valor da média nacional.",
+			"afirmacao2Questao1": "%verdadeiro%<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residencial, no Brasil, em Janeiro de 2017 é 172,33kWh.",
+			"afirmacao3Questao1": "<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residencial no mês de Janeiro de 2017, na região Sudeste foi de 172,33kWh, visto que, esta é a média nacional.",
+			"afirmacao4Questao1": "%verdadeiro%<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residencial no mês de Janeiro de 2017, na região nordeste foi de 122,77kWh, visto que este valor é obtido pelo total de energia gasta nesta região, dividido pelo número de consumidores residenciais.",
+			"afirmacao5Questao1": "<b>%numeroAlternativa%</b> - A média de consumo de energia elétrica por consumidor residencial no mês de Janeiro de 2017, na região Sul foi de 204,90kWh, visto que este é o valor da média nacional.",
 			"alertaErrado": "<center><strong>Oops!</strong> Resposta incorreta.</center>",
 			"alertaCerto": "<center><strong>Parabéns!</strong> Resposta correta.</center>"
 		},
