@@ -98,10 +98,10 @@ function ajuda() {
 
 function popUp(tipo) {
 
-	if (document.querySelector('#dialog-form') == null) {
+	if (document.querySelector('#dialog-destino-lixo-pop-up') == null) {
 		let inner = document.querySelector(".mensagens").innerHTML;
 		inner += `
-		<div id="dialog-form">
+		<div id="dialog-destino-lixo-pop-up">
 			<h2 id='destino-explicacao-titulo' class='text-center'>Titulo</h2>
 			<h4 id='destino-explicacao-texto' lass='muito-mais-top'>Texto</h4>
 		</div>`
@@ -148,7 +148,7 @@ function popUp(tipo) {
 	document.querySelector('#destino-explicacao-titulo').innerHTML = titulo;
 	document.querySelector('#destino-explicacao-texto').innerHTML = texto;
 
-	let dialog = $("#dialog-form").dialog({
+	let dialogMediaQuadratica = $("#dialog-destino-lixo-pop-up").dialog({
 		autoOpen: false,
 		height:300,
 		width: 600,
@@ -157,21 +157,21 @@ function popUp(tipo) {
 		close: function() {
 		}
 	});
-	dialog.dialog("open");
+	dialogMediaQuadratica.dialog("open");
 }
 
 function saibaMais() {
-	if (document.querySelector('#dialog-saiba-mais') == null) {
+	if (document.querySelector('#dialog-destino-lixo-saiba-mais') == null) {
 		let inner = document.querySelector(".mensagens").innerHTML;
 		inner += `
-		<div id="dialog-saiba-mais">
+		<div id="dialog-destino-lixo-saiba-mais">
 			<img src="assets/img/destino-lixo-saiba-mais-tabela.png"/>
 		</div>`
 		document.querySelector(".mensagens").innerHTML = inner;
 
 	}
 
-	let dialog = $("#dialog-saiba-mais").dialog({
+	let dialogDestinoLixoSaibaMais = $("#dialog-destino-lixo-saiba-mais").dialog({
 		autoOpen: false,
 		height:540,
 		width: 750,
@@ -180,7 +180,7 @@ function saibaMais() {
 		close: function() {
 		}
 	});
-	dialog.dialog("open");
+	dialogDestinoLixoSaibaMais.dialog("open");
 }
 
 </script>

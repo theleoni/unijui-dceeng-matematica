@@ -549,7 +549,7 @@ function popUp(tipo) {
 
 	}
 
-	let dialog = $("#dialog-form-mmm").dialog({
+	let dialogMMMPopUp = $("#dialog-form-mmm").dialog({
 		autoOpen: false,
 		height: 500,
 		width: 850,
@@ -559,7 +559,7 @@ function popUp(tipo) {
 			$("#iconAjuda").hide();
 		}
 	});
-	dialog.dialog("open");
+	dialogMMMPopUp.dialog("open");
 
 	function graficoMedia1() {
 		Highcharts.chart('media-grafico-1', {

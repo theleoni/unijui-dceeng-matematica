@@ -130,10 +130,10 @@ function proxima() {
 
 function popUp(tipo) {
 
-	if (document.querySelector('#dialog-form') == null) {
+	if (document.querySelector('#dialog-lixeiras-pop-up') == null) {
 		let inner = document.querySelector(".geral-interno").innerHTML;
 		inner += `
-		<div id="dialog-form">
+		<div id="dialog-lixeiras-pop-up">
 			<div class="lixeira-explicacao row">
 				<div class="imagem text-center col-xs-12 col-sm-12 col-md-6 col-lg-6">
 					<img id="lixeira-explicacao-img" src="" />
@@ -310,7 +310,7 @@ function popUp(tipo) {
 	document.querySelector('#lixeira-explicacao-titulo').innerHTML = titulo;
 	document.querySelector('#lixeira-explicacao-secundario').innerHTML = secundario;
 
-	let dialog = $("#dialog-form").dialog({
+	let dialogLixeirasPopUp = $("#dialog-lixeiras-pop-up").dialog({
 		autoOpen: false,
 		height: 500,
 		width: 850,
@@ -318,7 +318,7 @@ function popUp(tipo) {
 		buttons: {}
 	});
 
-	dialog.dialog("open");
+	dialogLixeirasPopUp.dialog("open");
 }
 
 </script>

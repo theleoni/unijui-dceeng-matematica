@@ -114,7 +114,7 @@
 
 					<h4><spanc class='tab'/> > <spanc class='tab'/></h4>
 
-					<h4>Desvio padrão: S = &#8730;36.160,24 = 190,15</h4>
+					<h4>Desvio padrão: S = &#8730;36.160,24 = 190,16</h4>
 
 				</div>
 			</div>
@@ -355,10 +355,10 @@ function proxima() {
 
 function ajuda() {
 
-	if (document.querySelector('#dialog-ajuda') == null) {
+	if (document.querySelector('#dialog-questao-11-ajuda') == null) {
 		let innerAjuda = document.querySelector(".mensagens").innerHTML;
 		innerAjuda += `
-		<div id="dialog-ajuda">
+		<div id="dialog-questao-11-ajuda">
 			<h3>Coeficiente de Variação de Pearson - CVP</h3>
 
 			<h4><span class='tab'/>É a razão entre o desvio padrão e a média referentes a dados de uma mesma série, dado pela fórmula:</h4>
@@ -370,17 +370,17 @@ function ajuda() {
 		document.querySelector(".mensagens").innerHTML = innerAjuda;
 	}
 
-	let dialogAjuda = $("#dialog-ajuda").dialog({
+	let dialogQuestao11Ajuda = $("#dialog-questao-11-ajuda").dialog({
 		autoOpen: false,
 		height: 500,
 		width: 1000,
 		modal: true,
 		buttons: {}
 	});
-	dialogAjuda.dialog("open");
+	dialogQuestao11Ajuda.dialog("open");
 }
 
-let valorCorretoA = 190.15;
+let valorCorretoA = 190.16;
 let valorCorretoB = 195.4;
 let valorCorretoC = 0.97;
 let valorCorretoD = 97;

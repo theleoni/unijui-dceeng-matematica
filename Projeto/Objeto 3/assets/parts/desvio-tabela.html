@@ -336,10 +336,10 @@ function ajuda() {
 }
 
 function saibaMais() {
-	if (document.querySelector('#dialog-saiba-mais') == null) {
+	if (document.querySelector('#dialog-desvio-tabela-saiba-mais') == null) {
 		let innerAjuda = document.querySelector(".mensagens").innerHTML;
 		innerAjuda += `
-		<div id="dialog-saiba-mais">
+		<div id="dialog-desvio-tabela-saiba-mais">
 			<h3 class="text-center">CATADORES DE MATERIA RECICLÁVEL</h3>
 
 			<h4><span class="tab"/>Os catadores de materiais recicláveis desempenham papel fundamental na implementação da Política Nacional de Resíduos Sólidos (PNRS). De modo geral, atuam nas atividades da coleta seletiva, triagem, classificação, processamento e comercialização dos resíduos reutilizáveis e recicláveis, contribuindo de forma significativa para a cadeia produtiva da reciclagem.</h4>
@@ -382,13 +382,13 @@ function saibaMais() {
 		document.querySelector(".mensagens").innerHTML = innerAjuda;
 	}
 
-	let dialogAjuda = $("#dialog-saiba-mais").dialog({
+	let dialogDesvioTabelaSaibaMais = $("#dialog-desvio-tabela-saiba-mais").dialog({
 		autoOpen: false,
 		height: 500,
 		width: 1000,
 		modal: true,
 		buttons: {}
 	});
-	dialogAjuda.dialog("open");
+	dialogDesvioTabelaSaibaMais.dialog("open");
 }
 </script>

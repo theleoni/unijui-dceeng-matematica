@@ -207,24 +207,24 @@ function proxima() {
 
 function ajuda() {
 
-	if (document.querySelector('#dialog-ajuda') == null) {
+	if (document.querySelector('#dialog-questao-7-ajuda') == null) {
 		let innerAjuda = document.querySelector(".mensagens").innerHTML;
 		innerAjuda += `
-		<div id="dialog-ajuda">
+		<div id="dialog-questao-7-ajuda">
 			<img src="assets/img/questao-6-7-ajuda.png" />
 
 		</div>`;
 		document.querySelector(".mensagens").innerHTML = innerAjuda;
 	}
 
-	let dialogAjuda = $("#dialog-ajuda").dialog({
+	let dialogQuestao7Ajuda = $("#dialog-questao-7-ajuda").dialog({
 		autoOpen: false,
 		height: 500,
 		width: 800,
 		modal: true,
 		buttons: {}
 	});
-	dialogAjuda.dialog("open");
+	dialogQuestao7Ajuda.dialog("open");
 }
 
 let inputQuestao6ADesvioPadrao = document.querySelector("#input-desvio-padrao-a");

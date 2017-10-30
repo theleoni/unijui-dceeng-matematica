@@ -160,10 +160,10 @@ function proxima() {
 
 
 function ajuda() {
-	if (document.querySelector('#dialog-ajuda') == null) {
+	if (document.querySelector('#dialog-questao-2-ajuda') == null) {
 		let innerAjuda = document.querySelector(".mensagens").innerHTML;
 		innerAjuda += `
-		<div id="dialog-ajuda">
+		<div id="dialog-questao-2-ajuda">
 			<h3 class='text-center muito-mais-bottom'><b>Média Quadrática</b></h3>
 
 			<h4><b>Média Quadrática Simples: (para dados não agrupados)</b></h4>
@@ -188,14 +188,14 @@ function ajuda() {
 		document.querySelector(".mensagens").innerHTML = innerAjuda;
 	}
 
-	let dialogAjuda = $("#dialog-ajuda").dialog({
+	let dialogQuestao2Ajuda = $("#dialog-questao-2-ajuda").dialog({
 		autoOpen: false,
 		height: 500,
 		width: 850,
 		modal: true,
 		buttons: {}
 	});
-	dialogAjuda.dialog("open");
+	dialogQuestao2Ajuda.dialog("open");
 }
 
 let valorCorretoQuestaoA1 = 1;

@@ -1,28 +1,6 @@
 <div class="geral-interno">
 	<img id='img-fundo' class="fundo" src="assets/img/desvio_padrao.png"/>
 
-	<!-- <div class='explicacoes container oculto muito-mais-top'>
-		<h4><span class="tab"/>O desvio padrão baseia-se nos desvios em torno da média aritmética e a sua fórmula básica pode ser traduzida como: a raiz quadrada da média aritmética dos quadrados dos desvios e aqui é representada por S.</h4>
-		<h4><span class="tab"/>Também pode ser entendido como a raiz quadrada da variância.</h4>
-		<ul class="mais-top"><li><h4>A fórmula é empregada quando tratamos de uma população não agrupados.</h4></li></ul>
-		<h4 class="mais-top"><span class="tab"/>Considerando que S² é a variância, então:</h4>
-		<div class="text-center mais-top">
-			<img src="assets/img/desvio_padrao-formula-1.png">
-		</div>
-	</div>
-
-	<div class='explicacoes-comparacao container oculto muito-mais-top'>
-		<h4>Comparação de fórmulas:</h4>
-
-		<div class="text-center mais-top">
-			<img src="assets/img/desvio_padrao-parte-a-formula-1.png">
-		</div>
-
-		<h4>Observe, que o desvio padrão é a raiz quadrada da variância.</h4>
-		<h4>Dessa forma, podemos calcular o desvio padrão apenas extraindo a raiz quadrada da variância.</h4>
-
-	</div> -->
-
 	<div class='explicacoes-tabela-1 container oculto muito-mais-top'>
 
 		<h4>Exemplo de Desvio Padrão:</h4>
@@ -270,10 +248,10 @@ function proxima() {
 }
 
 function ajuda() {
-	if (document.querySelector('#dialog-ajuda') == null) {
+	if (document.querySelector('#dialog-form-desvio-padrao-ajuda') == null) {
 		let innerAjuda = document.querySelector(".mensagens").innerHTML;
 		innerAjuda += `
-		<div id="dialog-ajuda">
+		<div id="dialog-form-desvio-padrao-ajuda">
 			<h4>O desvio padrão tem de algumas propriedades, dentre as quais destacamos:</h4>
 			<h5>1ª Somando-se (ou subtraindo-se) uma constante a todos os valores de uma variável, o desvio padrão não se altera.</h5>
 			<h5>2ª Multiplicando-se (ou dividindo-se) todos os valores de uma variável por uma constante (diferente de zero), o desvio padrão fica multiplicado ( ou dividido) por essa constante.</h5>
@@ -282,13 +260,13 @@ function ajuda() {
 		document.querySelector(".mensagens").innerHTML = innerAjuda;
 	}
 
-	let dialogAjuda = $("#dialog-ajuda").dialog({
+	let dialogDesvioPadraoAjuda = $("#dialog-form-desvio-padrao-ajuda").dialog({
 		autoOpen: false,
 		height: 500,
 		width: 850,
 		modal: true,
 		buttons: {}
 	});
-	dialogAjuda.dialog("open");
+	dialogDesvioPadraoAjuda.dialog("open");
 }
 </script>
