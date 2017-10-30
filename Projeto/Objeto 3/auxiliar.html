@@ -270,7 +270,11 @@
 
 		ultimoLinkCarregado = link;
 		recarregarBotoes();
-		$('.geral').load(`assets/parts/${link}`);
+		$('.geral').load(`assets/parts/${link}`,
+			function (responseText, textStatus, jqXHR) {
+
+			}
+		);
 	}
 
 	let shiftPressionado = false;
@@ -371,7 +375,7 @@
 	</script>
 
 	<script src='assets/js/calculadora.js'></script>
-	<script src='http://localhost:35729/livereload.js'></script>
+	<script src='http://localhost:32778/livereload.js'></script>
 
 </body>
 </html>

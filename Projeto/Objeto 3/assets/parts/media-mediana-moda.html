@@ -186,10 +186,10 @@ function popUp(tipo) {
 
 	$("#iconAjuda").show();
 
-	if (document.querySelector('#dialog-form') == null) {
+	if (document.querySelector('#dialog-form-mmm') == null) {
 		let inner = document.querySelector(".geral-interno").innerHTML;
 		inner += `
-		<div id="dialog-form">
+		<div id="dialog-form-mmm">
 			<div class="botao-explicacao row">
 				<div class="texto col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<h1 id="botao-explicacao-titulo" class="text-center">texto</h1>
@@ -549,7 +549,7 @@ function popUp(tipo) {
 
 	}
 
-	let dialog = $("#dialog-form").dialog({
+	let dialog = $("#dialog-form-mmm").dialog({
 		autoOpen: false,
 		height: 500,
 		width: 850,
