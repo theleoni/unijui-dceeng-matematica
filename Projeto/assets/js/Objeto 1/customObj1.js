@@ -2625,11 +2625,13 @@
 	  			break;
 	  			case 15:
 	  			$("#sceneGerarGrafico").fadeIn(fadeTime);
+	  			$("#iconSetaDireita").show();
 	  			break;
 
 	  			case 16:
 	  			$("#telaFinal").fadeIn(fadeTime);
 	  			$("#imagensFixasCima").hide();
+	  			$("#iconSetaDireita").hide();
 	  			$(".navbar").hide();
 	  			$("body").css('padding-top', '0px');
 	  			$("html").css('padding-top', '0px');
