@@ -734,6 +734,7 @@ function checkIfStuck() {
 			case 23:
 			case 24:
 			case 25:
+			case 27:
 			previousScene();
 			break;
 			case 26:
