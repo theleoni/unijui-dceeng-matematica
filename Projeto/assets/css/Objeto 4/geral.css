@@ -244,6 +244,10 @@ body {
 .fraction span.barra {display: none;}
 
 
+.tdCentralizado {
+	text-align: center;
+}
+
 @media (device-aspect-ratio: 4/3) {
 	#textoDados {
 		top: 40vh !important;
