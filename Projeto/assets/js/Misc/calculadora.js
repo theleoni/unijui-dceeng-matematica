@@ -31,7 +31,7 @@ for(var i = 0; i < keys.length; i++) {
 				equation = equation.replace(/.$/, '');
 			
 			if(equation)
-				input.innerHTML = eval(equation);
+				input.innerHTML = Math.ceil(eval(equation) * 1000) / 1000;
 				
 			decimalAdded = false;
 		}
