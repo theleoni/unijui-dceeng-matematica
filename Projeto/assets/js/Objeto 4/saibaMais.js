@@ -136,16 +136,6 @@ function getSaibaMais(numeroDaTela) {
     case '267':
     return saibaMaisQuestao6_7;
     case '268':
-    case '269':
-    case '2610':
-    case '2611':
-    case '2612':
-    case '2613':
-    case '2614':
-    case '2615':
-    case '2616':
-    case '2617':
-    case '2618':
     return saibaMaisGenerico;
 
 
