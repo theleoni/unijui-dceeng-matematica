@@ -1,4 +1,4 @@
-var scene = 1;
+var scene = 0;
 
 var defaultFadeTime = 500;
 var extendedFadeTime = 1250;
@@ -147,7 +147,7 @@ function hideDivsOnObjectStart() {
 	$("#atividade3").hide();
 	$("#atividade4").hide();
 	$("#telaAgradecimento").hide();
-
+	$("#telaCv1").hide();
 	$("#perguntasAtividade3").hide();
 	$("#formAtividade3").hide();		
 	$("#divQuestaoAtividade3").hide();
@@ -165,7 +165,7 @@ function hideIconsNome() {
 function loadScene() {
 	switch (scene) {
 		case 1:
-		$("#telaNome").show();
+		$("#telaCv1").show();
 		changeTitle(" ");
 		break;
 
@@ -286,8 +286,13 @@ function loadScene() {
 
 function unloadScene() {
 	switch (scene) {
-		case 1:
+
+		case 0:
 		$("#telaNome").hide();
+		break;
+
+		case 1:
+		$("#telaCv1").hide();
 		break;
 
 		case 2:
@@ -371,7 +376,6 @@ $(document).on('click', '#botaoNome', function() {
 	if (nomeDoUsuario != "") {
 		$("#iconesFixos").show();
 		$("#iconMais").hide();
-
 		nomeDoUsuario = $("#inputNome").val();
 		$("#nomeUsuarioTabelaModa").html($("#nomeUsuarioTabelaModa").html().replace("%fulano%", nomeDoUsuario));
 		$("#inputNomeContainer").fadeOut(defaultFadeTime);
@@ -389,6 +393,7 @@ $(document).on('click', '#botaoNome', function() {
 		video2TelaConversa2.play();
 		disallowNextScene();
 		$("#iconSetaEsquerda").hide();
+		nextScene();
 	} else {
 		$("#alertNome").show();
 

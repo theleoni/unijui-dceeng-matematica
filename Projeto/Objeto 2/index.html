@@ -105,72 +105,37 @@
 	<div id="geral">
 
 		<div id="telaNome">
-			<div id="verificacaoNome">
-				<div class="row" style="height:200%">
-					<div class="col-xs-offset-1 col-xs-2">
-
-						<div id="inputNomeContainer">
-							<input type="text" class="form-control" id="inputNome" maxlength="55"" placeholder="Insira o seu nome"> </input>
-							<div class="row">
-								<div class="col-md-12">
-									<center>
-										<button type="button" id="botaoNome" class="btn btn-primary btn-block">Confirmar</button>
-									</center>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="col-xs-12">
-									<div id="alertNome" class="alert alert-danger" role="alert">
-										<center><strong>Oops!</strong> Você precisa colocar o seu nome.</center>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div id="containerPersonagemExtraTelaNome">
-							<img id="seuChicoTelaNome" class="img-responsive" src="../assets/img/Objeto 2/seuChicoComHamburguer.png">
-						</div>
-
-					</div>
-
-					<div class="col-xs-1">
-
-						<img id="balao2TelaNome" src="../assets/img/Objeto 2/balaoDeFala2.png">
-						<p id="fala2TelaNome"> </p>
-						<span id="setaEsquerdaNome" class="glyphicon glyphicon-triangle-left"> </span>
-						<span id="setaDireitaNome" class="glyphicon glyphicon-triangle-right"> </span>
-						<img id="balao1TelaNome" src="../assets/img/Objeto 2/balaoDeFala1.png">
-						<p id="fala1TelaNome"> </p>
-
-
-					</div>
-					<div id="containerVideosNome">
-						<div class="col-xs-2" id="containerVideo1TelaNome">
-							<video autoplay muted loop class="img-responsive" id="video1TelaNome" src="../assets/img/Objeto 2/videoGato.mp4"></video>
-						</div>
-						<div class="col-xs-5">
-							<video autoplay muted loop class="img-responsive" id="video2TelaNome" src="../assets/img/Objeto 2/telaNomeVideo2.mp4"></video>
-
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-		<div id="telaVideoHidreletrica">
 			<div class="row">
-				<div class="col-xs-12 video-container">
-					<video  class="img-responsive" id="videoHidreletrica" src="../assets/img/Objeto 2/videoHidreletrica.mp4"></video>
+				<div>
+					<img class="img-responsive" style="margin-top:-10px" id="imagemFundo" src="../assets/img/Objeto 2/telaInicial.jpg">
+				</div>
+			</div>
+			<div class="row marginName" id="rowInputName">
+				<div class="col-md-4"></div>
+				<div class="col-md-4" style="position:fixed; top:18%; right:15%">
+					<input type="text" class="form-control" id="inputNome" maxlength="55" placeholder="Insira o seu nome"> </input>
 
+					<div class="row">
+						<div class="col-md-12">
+							<center>
+								<button type="button" id= "botaoNome" class="btn btn-primary btn-block">Confirmar</button>
+							</center>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div id="alertNome" class="alert alert-danger" role="alert">
+								<center><strong>Oops!</strong> Você precisa colocar o seu nome.</center>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 
 
-		<div id="telaConversa2">
-
+		<div id="telaCv1">
 			<div class="col-xs-offset-1 col-xs-2" id="containerPersonagemExtraTelaNome">
 				<img id="seuChicoTelaConversa2" class="img-responsive" src="../assets/img/Objeto 2/seuChico.png">
 			</div>
@@ -178,1316 +143,1361 @@
 
 			<div class="col-xs-1">
 
-				<img id="balao2TelaConversa2" src="../assets/img/Objeto 2/balaoDeFala2.png">
-				<p id="fala2TelaConversa2"> </p>
-				<span id="setaEsquerdaConversa2" class="glyphicon glyphicon-triangle-left"> </span>
-				<span id="setaDireitaConversa2" class="glyphicon glyphicon-triangle-right"> </span>
-				<img id="balao1TelaConversa2" src="../assets/img/Objeto 2/balaoDeFala1.png">
-				<p id="fala1TelaConversa2"> </p>
+				<img id="balao2TelaNome" src="../assets/img/Objeto 2/balaoDeFala2.png">
+				<p id="fala2TelaNome"> </p>
+				<span id="setaEsquerdaNome" class="glyphicon glyphicon-triangle-left"> </span>
+				<span id="setaDireitaNome" class="glyphicon glyphicon-triangle-right"> </span>
+				<img id="balao1TelaNome" src="../assets/img/Objeto 2/balaoDeFala1.png">
+				<p id="fala1TelaNome"> </p>
 
 
 			</div>
-			<div id="containerVideosConversa2">
+			<div id="containerVideosNome">
 				<div class="col-xs-2" id="containerVideo1TelaConversa2">
-					<video autoplay loop class="img-responsive" id="video1TelaConversa2" src="../assets/img/Objeto 2/videoGato.mp4"></video>
+					<video autoplay loop class="img-responsive" id="video1TelaNome" src="../assets/img/Objeto 2/videoGato.mp4"></video>
 				</div>
 				<div class="col-xs-5">
-					<video autoplay loop class="img-responsive" id="video2TelaConversa2" src="../assets/img/Objeto 2/telaConversa2Video2.mp4"></video>
+					<video autoplay loop class="img-responsive" id="video2TelaNome" src="../assets/img/Objeto 2/telaNomeVideo2.mp4"></video>
 
 				</div>
 			</div>
+
 		</div>
 
 
-		<div id="telaMediaAritmetica">
-			<div class="row">
-				<div class="col-xs-offset-3 col-xs-6">
-					<video class="img-responsive" id="videoMediaAritmetica" src="../assets/img/Objeto 2/videoMediaAritmetica.mp4"></video>
-				</div>
-			</div>
 
-			<div class="row">
-				<div class="col-xs-offset-6 col-xs-1">
-					<span id="iconePlayMediaAritmetica" class="glyphicon glyphicon-play-circle"> </span>
-				</div>
+
+	</div>
+
+	<div id="telaVideoHidreletrica">
+		<div class="row">
+			<div class="col-xs-12 video-container">
+				<video  class="img-responsive" id="videoHidreletrica" src="../assets/img/Objeto 2/videoHidreletrica.mp4"></video>
+
+			</div>
+		</div>
+	</div>
+
+
+	<div id="telaConversa2">
+
+		<div class="col-xs-offset-1 col-xs-2" id="containerPersonagemExtraTelaNome">
+			<img id="seuChicoTelaConversa2" class="img-responsive" src="../assets/img/Objeto 2/seuChico.png">
+		</div>
+
+
+		<div class="col-xs-1">
+
+			<img id="balao2TelaConversa2" src="../assets/img/Objeto 2/balaoDeFala2.png">
+			<p id="fala2TelaConversa2"> </p>
+			<span id="setaEsquerdaConversa2" class="glyphicon glyphicon-triangle-left"> </span>
+			<span id="setaDireitaConversa2" class="glyphicon glyphicon-triangle-right"> </span>
+			<img id="balao1TelaConversa2" src="../assets/img/Objeto 2/balaoDeFala1.png">
+			<p id="fala1TelaConversa2"> </p>
+
+
+		</div>
+		<div id="containerVideosConversa2">
+			<div class="col-xs-2" id="containerVideo1TelaConversa2">
+				<video autoplay loop class="img-responsive" id="video1TelaConversa2" src="../assets/img/Objeto 2/videoGato.mp4"></video>
+			</div>
+			<div class="col-xs-5">
+				<video autoplay loop class="img-responsive" id="video2TelaConversa2" src="../assets/img/Objeto 2/telaConversa2Video2.mp4"></video>
+
+			</div>
+		</div>
+	</div>
+
+
+	<div id="telaMediaAritmetica">
+		<div class="row">
+			<div class="col-xs-offset-3 col-xs-6">
+				<video class="img-responsive" id="videoMediaAritmetica" src="../assets/img/Objeto 2/videoMediaAritmetica.mp4"></video>
 			</div>
 		</div>
 
-		<div id="telaPrimeirasQuestoes">
-			<h1> Selecione as afirmativas corretas </h1>
-			<div class="row">
-				<div class="col-xs-6">
-					<div id="containerQuestao">
-						<button class="btn btn-block whiteSpaceButton" id="buttonAf1" ></button>
+		<div class="row">
+			<div class="col-xs-offset-6 col-xs-1">
+				<span id="iconePlayMediaAritmetica" class="glyphicon glyphicon-play-circle"> </span>
+			</div>
+		</div>
+	</div>
 
-						<button class="btn btn-block whiteSpaceButton"  id='buttonAf2'></button>
+	<div id="telaPrimeirasQuestoes">
+		<h1> Selecione as afirmativas corretas </h1>
+		<div class="row">
+			<div class="col-xs-6">
+				<div id="containerQuestao">
+					<button class="btn btn-block whiteSpaceButton" id="buttonAf1" ></button>
 
-						<button class="btn btn-block whiteSpaceButton"  id='buttonAf3'></button>
+					<button class="btn btn-block whiteSpaceButton"  id='buttonAf2'></button>
 
-						<button class="btn btn-block whiteSpaceButton"  id='buttonAf4'></button>
+					<button class="btn btn-block whiteSpaceButton"  id='buttonAf3'></button>
 
-						<button class="btn btn-block whiteSpaceButton"  id='buttonAf5'></button>
+					<button class="btn btn-block whiteSpaceButton"  id='buttonAf4'></button>
 
+					<button class="btn btn-block whiteSpaceButton"  id='buttonAf5'></button>
+
+				</div>
+				<div class="row">
+					<div class="col-xs-offset-3 col-xs-6">
+						<button id="botaoEnviarRespostaQ1" type="button" class="btn btn-success btn-block">Enviar resposta</button>
 					</div>
-					<div class="row">
-						<div class="col-xs-offset-3 col-xs-6">
-							<button id="botaoEnviarRespostaQ1" type="button" class="btn btn-success btn-block">Enviar resposta</button>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-offset-3 col-xs-6">
-							<div id="alertQ1" class="alert alert-danger" role="alert">
-								<center><strong>Oops!</strong> Resposta incorreta.</center>
-							</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-offset-3 col-xs-6">
+						<div id="alertQ1" class="alert alert-danger" role="alert">
+							<center><strong>Oops!</strong> Resposta incorreta.</center>
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<div class="col-xs-6">
+			<div class="col-xs-6">
 
-					<h2>Número de consumidores residenciais de energia elétrica atendidos pela rede e o consumo total por região em Janeiro de 2017 - Brasil</h2>
-					<table class="table table-responsive table-bordered">
+				<h2>Número de consumidores residenciais de energia elétrica atendidos pela rede e o consumo total por região em Janeiro de 2017 - Brasil</h2>
+				<table class="table table-responsive table-bordered">
+					<thead>
+						<tr>
+							<td class="noLeftBorder"><strong>Região Geográfica</strong></td>
+							<td><strong>Nº de consumidores residenciais (Em milhões)</strong></td>
+							<td class="noRightBorder"><strong>Consumo mensal  (em milhões de kWh)</strong></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="noLeftBorder">Norte</td>
+							<td>4,32</td>
+							<td class="noRightBorder">746,52</td>
+						</tr>
+
+						<tr>
+							<td class="noLeftBorder">Nordeste</td>
+							<td>18,53</td>
+							<td class="noRightBorder">2.274,89</td>
+						</tr>
+
+						<tr>
+							<td class="noLeftBorder">Sudeste</td>
+							<td>31,59</td>
+							<td class="noRightBorder">5.998,41</td>
+						</tr>
+
+						<tr>
+							<td class="noLeftBorder">Sul</td>
+							<td>9,77</td>
+							<td class="noRightBorder">2.001,87</td>
+						</tr>
+						<tr>
+							<td class="noLeftBorder">Centro-Oeste</td>
+							<td>5,23</td>
+							<td class="noRightBorder">944,61</td>
+						</tr>
+						<tr>
+							<td class="noLeftBorder tabelaTotal"><strong>Total</strong></td>
+							<td class="tabelaTotal">69,44</td>
+							<td class="noRightBorder tabelaTotal"><strong>11.966,30</strong></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div id="telaVideoQuestaoMediaAritmetica">
+		<div class="row">
+			<div class="col-xs-offset-3 col-xs-6">
+				<video class="img-responsive" id="videoQuestaoMediaAritmetica" src="../assets/img/Objeto 2/videoQuestaoMediaAritmetica.mp4"></video>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-offset-6 col-xs-1">
+				<span id="iconePlayQuestaoMediaAritmetica" class="glyphicon glyphicon-play-circle"> </span>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="telaConsumoSeuChico">
+		<div class="row">
+			<div class="col-xs-12">
+				<img id="imgConsumoSeuChico" src="../assets/img/Objeto 2/consumoMensalSeuChico.jpg">
+			</div>
+		</div>
+	</div>
+
+
+	<div id="telaQuestao2">
+		<div class="row">
+			<div class="col-xs-6">
+				<h2>Encontre a média de consumo por dia daquele mês e selecione a alternativa correta</h2>
+
+				<div id="containerQuestao2">
+					<button class="btn btn-block alternativasQ2"  id="opcao1Q2" ></button>
+
+					<button class="btn btn-block alternativasQ2"  id='opcao2Q2'></button>
+
+					<button class="btn btn-block alternativasQ2"  id='opcao3Q2'></button>
+
+					<button class="btn btn-block alternativasQ2"  id='opcao4Q2'></button>
+
+					<button class="btn btn-block alternativasQ2"  id='opcao5Q2'></button>
+
+				</div>
+
+				<div class="row">
+					<div class="col-xs-offset-3 col-xs-6">
+						<button id="botaoEnviarRespostaQ2" type="button" class="btn btn-success btn-block">Enviar resposta</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-offset-3 col-xs-6">
+						<div id="alertQ2" class="alert alert-danger" role="alert">
+							<center><strong>Oops!</strong> Resposta incorreta.</center>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-6">
+				<div style="margin-top: 5%">
+					<h2> Artur organizou os dados numa tabela, contando os dias com o mesmo consumo </h2>
+
+					<table id="tabelaAgrupadaConsumoMensal" class="table table-responsive table-bordered">
 						<thead>
 							<tr>
-								<td class="noLeftBorder"><strong>Região Geográfica</strong></td>
-								<td><strong>Nº de consumidores residenciais (Em milhões)</strong></td>
-								<td class="noRightBorder"><strong>Consumo mensal  (em milhões de kWh)</strong></td>
+								<td><strong>Consumo diário em kWh</strong></td>
+								<td><strong>Nº de dias de consumo</strong></td>
 							</tr>
+						</thead>
+
+						<tr>
+							<td class="noLeftBorder">3,0</td>
+							<td class="noRightBorder">2</td>
+						</tr>
+						<tr>
+							<td class="noLeftBorder">3,5</td>
+							<td class="noRightBorder">4</td>
+						</tr>
+
+						<tr>
+							<td class="noLeftBorder">3,8</td>
+							<td class="noRightBorder"> 5</td>
+						</tr>
+
+						<tr>
+							<td class="noLeftBorder">4,0</td>
+							<td class="noRightBorder">17</td>
+						</tr>
+
+						<tr>
+							<td class="noLeftBorder tabelaTotal">Soma</td>
+							<td class="noRightBorder tabelaTotal">28</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="telaMediana">
+		<div class="row">
+			<div class="col-xs-offset-3 col-xs-6">
+				<video class="img-responsive" id="videoMediana" src="../assets/img/Objeto 2/videoMediana.mp4"></video>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-offset-6 col-xs-1">
+				<span id="iconePlayMediana" class="glyphicon glyphicon-play-circle"> </span>
+			</div>
+		</div>
+	</div>
+
+	<div id="telaMediana2">
+		<div class="row">
+			<div class="col-xs-offset-3 col-xs-6">
+				<video class="img-responsive" id="videoMediana2" src="../assets/img/Objeto 2/videoMediana2.mp4"></video>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-offset-6 col-xs-1">
+				<span id="iconePlayMediana2" class="glyphicon glyphicon-play-circle"> </span>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="introducaoModa">
+		<div class="row">
+			<div class="col-xs-offset-1 col-xs-3">
+				<img id="seuChicoTelaModa" class="img-responsive" src="../assets/img/Objeto 2/seuChico.png">
+			</div>
+			<div class="col-xs-3">
+				<img id="balaoTelaModa" src="../assets/img/Objeto 2/balaoDeFala2.png">
+				<p id="falaModa">A moda corresponde ao valor que aparece com mais frequência, ou seja, que detém o maior número de observações no conjunto em estudo. Pode existir mais de uma moda para o mesmo grupo de dados.</p>
+
+			</div>
+
+		</div>
+	</div>
+	<div id="tabelasModa">
+		<div class="row">
+			<div class="col-xs-offset-05 col-xs-2">
+				<h4>Joana pagou no ano de 2016 os seguintes valores:</h4>
+				<table id="tabelaAgrupadaConsumoMensal" class="table table-responsive table-bordered">
+					<tr>
+						<td>Janeiro</td>
+						<td>R$96.00</td>
+					</tr>
+
+					<tr>
+						<td>Fevereiro</td>
+						<td>R$78.00</td>
+					</tr>
+
+					<tr>
+						<td>Março</td>
+						<td style="color:red"> R$82.00</td>
+					</tr>
+
+					<tr>
+						<td>Abril</td>
+						<td>R$103.00</td>
+					</tr>
+
+					<tr>
+						<td>Maio</td>
+						<td>R$97.00</td>
+					</tr>
+
+					<tr>
+						<td>Junho</td>
+						<td>R$85.00</td>
+					</tr>
+
+					<tr>
+						<td>Julho</td>
+						<td>R$100.00</td>
+					</tr>
+
+					<tr>
+						<td>Agosto</td>
+						<td style="color:red">R$82.00</td>
+					</tr>
+
+					<tr>
+						<td>Setembro</td>
+						<td>R$94.00</td>
+					</tr>
+
+					<tr>
+						<td>Outubro</td>
+						<td>R$89.00</td>
+					</tr>
+
+					<tr>
+						<td>Novembro</td>
+						<td>R$91.00</td>
+					</tr>
+
+					<tr>
+						<td>Dezembro</td>
+						<td>R$115.00</td>
+					</tr>
+				</table>
+				<h4>Apenas dois valores são iguais, ou seja, apresenta uma moda definida como R$82. A classificação para uma moda é <strong>unimodal</strong></h4>
+			</div>
+
+			<div class="col-xs-offset-1 col-xs-2">
+				<h4>Arthur pagou no ano de 2016 os seguintes valores:</h4>
+				<table id="tabelaAgrupadaConsumoMensal" class="table table-responsive table-bordered">
+					<tr>
+						<td>Janeiro</td>
+						<td style="color:blue">R$129.00</td>
+					</tr>
+
+					<tr>
+						<td>Fevereiro</td>
+						<td>R$118.00</td>
+					</tr>
+
+					<tr>
+						<td>Março</td>
+						<td>R$107.00</td>
+					</tr>
+
+					<tr>
+						<td>Abril</td>
+						<td style="color:red">R$115.00</td>
+					</tr>
+
+					<tr>
+						<td>Maio</td>
+						<td>R$122.00</td>
+					</tr>
+
+					<tr>
+						<td>Junho</td>
+						<td>R$120.00</td>
+					</tr>
+
+					<tr>
+						<td>Julho</td>
+						<td style="color:red">R$115.00</td>
+					</tr>
+
+					<tr>
+						<td>Agosto</td>
+						<td style="color:blue">R$129.00</td>
+					</tr>
+
+					<tr>
+						<td>Setembro</td>
+						<td>R$105.00</td>
+					</tr>
+
+					<tr>
+						<td>Outubro</td>
+						<td>R$111.00</td>
+					</tr>
+
+					<tr>
+						<td>Novembro</td>
+						<td>R$126.00</td>
+					</tr>
+
+					<tr>
+						<td>Dezembro</td>
+						<td>R$134.00</td>
+					</tr>
+				</table>
+				<h4>Existem dois valores diferentes que se repetiram, R$115 e R$129. Sendo assim, apresenta duas modas, sua classificação é <strong>bimodal</strong></h4>
+			</div>
+
+			<div class="col-xs-offset-1 col-xs-2">
+				<h4><br>Mateus pagou no ano de 2016 os seguintes valores:</h4>
+				<table id="tabelaAgrupadaConsumoMensal" class="table table-responsive table-bordered">
+					<tr>
+						<td>Janeiro</td>
+						<td style="color:red">R$165.00</td>
+					</tr>
+
+					<tr>
+						<td>Fevereiro</td>
+						<td style="color:#269228">R$162.00</td>
+					</tr>
+
+					<tr>
+						<td>Março</td>
+						<td>R$153.00</td>
+					</tr>
+
+					<tr>
+						<td>Abril</td>
+						<td style="color:blue">R$159.00</td>
+					</tr>
+
+					<tr>
+						<td>Maio</td>
+						<td style="color:red">R$165.00</td>
+					</tr>
+
+					<tr>
+						<td>Junho</td>
+						<td>R$150.00</td>
+					</tr>
+
+					<tr>
+						<td>Julho</td>
+						<td style="color:blue">R$159.00</td>
+					</tr>
+
+					<tr>
+						<td>Agosto</td>
+						<td>R$161.00</td>
+					</tr>
+
+					<tr>
+						<td>Setembro</td>
+						<td>R$157.00</td>
+					</tr>
+
+					<tr>
+						<td>Outubro</td>
+						<td style="color:#269228">R$162.00</td>
+					</tr>
+
+					<tr>
+						<td>Novembro</td>
+						<td>R$160.00</td>
+					</tr>
+
+					<tr>
+						<td>Dezembro</td>
+						<td>R$155.00</td>
+					</tr>
+				</table>
+				<h4>Existem três valores diferentes que se repetiram: R$159, R$162, e R$165. Sendo assim, apresenta mais que duas modas, sua classificação é <strong>plurimodal</strong></h4>
+			</div>
+
+			<div class="col-xs-offset-1 col-xs-2">
+				<h4 id="nomeUsuarioTabelaModa">%fulano% pagou no ano de 2016 os seguintes valores:</h4>
+				<table id="tabelaAgrupadaConsumoMensal" class="table table-responsive table-bordered">
+					<tr>
+						<td>Janeiro</td>
+						<td>R$158.00</td>
+					</tr>
+
+					<tr>
+						<td>Fevereiro</td>
+						<td>R$134.00</td>
+					</tr>
+
+					<tr>
+						<td>Março</td>
+						<td>R$122.00</td>
+					</tr>
+
+					<tr>
+						<td>Abril</td>
+						<td>R$146.00</td>
+					</tr>
+
+					<tr>
+						<td>Maio</td>
+						<td>R$119.00</td>
+					</tr>
+
+					<tr>
+						<td>Junho</td>
+						<td>R$105.00</td>
+					</tr>
+
+					<tr>
+						<td>Julho</td>
+						<td>R$98.00</td>
+					</tr>
+
+					<tr>
+						<td>Agosto</td>
+						<td>R$108.00</td>
+					</tr>
+
+					<tr>
+						<td>Setembro</td>
+						<td>R$127.00</td>
+					</tr>
+
+					<tr>
+						<td>Outubro</td>
+						<td>R$131.00</td>
+					</tr>
+
+					<tr>
+						<td>Novembro</td>
+						<td>R$140.00</td>
+					</tr>
+
+					<tr>
+						<td>Dezembro</td>
+						<td>R$152.00</td>
+					</tr>
+				</table>
+				<h4>Não existem valores iguais, sendo assim não apresenta moda. Sua classificação é <strong>amodal</strong></h4>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="telaConversa3">
+		<div class="row">
+			<div class="col-xs-offset-3">
+				<img id="balao3TelaConversa3" src="../assets/img/Objeto 2/balaoDeFala3.png">
+				<p id="fala1TelaConversa3"></p>
+				<img id="balao2TelaConversa3" src="../assets/img/Objeto 2/balaoDeFala4.png">
+				<p id="fala2TelaConversa3"></p>
+				<img id="balao1TelaConversa3" src="../assets/img/Objeto 2/balaoDeFala5.png">
+				<p id="fala3TelaConversa3"></p>
+			</div>
+		</div>
+
+		<div class="row">
+			<span id="setaEsquerdaConversa3" class="glyphicon glyphicon-triangle-left"> </span>
+			<img id="telaCriancasConversa3" src="../assets/img/Objeto 2/telaConversa3Criancas.jpg">
+			<span id="setaDireitaConversa3" class="glyphicon glyphicon-triangle-right"> </span>
+
+		</div>
+	</div>
+
+	<div id="telaSelecaoQuestoes">
+		<div class="row">
+			<div class="mLeft23 col-xs-6">
+				<video autoplay muted loop class="img-responsive" id="videoSelecaoQuestoes" src="../assets/img/Objeto 2/videoSelecaoQuestoes.mp4"></video>
+				<img id="papelSelecaoQuestao1" src="../assets/img/Objeto 2/imgAtividade1.png">
+				<img id="papelSelecaoQuestao2" src="../assets/img/Objeto 2/imgAtividade2.png">
+				<img id="papelSelecaoQuestao3" src="../assets/img/Objeto 2/imgAtividade3.png">
+				<img id="papelSelecaoQuestao4" src="../assets/img/Objeto 2/imgAtividade4.png">
+
+			</div>
+		</div>
+	</div>
+
+
+	<div id="atividade1">
+		<div class="row">
+			<div class="col-xs-offset-1 col-xs-1">
+				<span id="iconSeta1VoltarAtividades" title="Voltar" class="glyphicon glyphicon glyphicon-arrow-left iconSetaVoltarAtividades"> </span>
+			</div>
+			<div class="col-xs-offset-1 col-xs-6">
+				<h4 id="instrucoesAtividade1"></h4>
+				Geração de energia hidráulica pelo Sistema Nacional Integrado de Energia, em TWh.
+				<table id="tabelaAgrupadaConsumoMensal" class="table table-responsive table-bordered">
+					<thead>
+						<tr>
+							<td style="display:none"></td>
+							<td></td>
+							<td>2012</td>
+							<td>2013</td>
+							<td>2014</td>
+							<td>2015</td>
+							<td>Classificação da Moda</td>
+							<td class="hideColumn1Ativ1">Mediana</td>
 						</thead>
 						<tbody>
 							<tr>
-								<td class="noLeftBorder">Norte</td>
-								<td>4,32</td>
-								<td class="noRightBorder">746,52</td>
+								<td class="index" id="indexJaneiro"></td>
+								<td>Janeiro</td>
+								<td>39,62</td>
+								<td>34,41</td>
+								<td>39,43</td>
+								<td>36,18</td>
+								<td id="tableModaJaneiro">
+									<select id="modaJaneiro" class="width100">
+										<option value="amodal">Amodal</option>
+										<option value="unimodal">Unimodal</option>
+										<option value="bimodal">Bimodal</option>
+										<option value="plurimodal">Plurimodal</option>
+									</select>
+								</td>
+
+								<td id="tableMedianaJaneiro" class="hideColumn1Ativ1">
+									<input type="text" class="form-control" id="atv1MedianaJaneiro">
+								</td>
 							</tr>
 
 							<tr>
-								<td class="noLeftBorder">Nordeste</td>
-								<td>18,53</td>
-								<td class="noRightBorder">2.274,89</td>
+								<td class="index" id="indexFevereiro"></td>
+								<td>Fevereiro</td>
+								<td>39,37</td>
+								<td>33,02</td>
+								<td>35,10</td>
+								<td>31,90</td>
+								<td id="tableModaFevereiro">
+									<select id="modaFevereiro" class="width100">
+										<option value="amodal">Amodal</option>
+										<option value="unimodal">Unimodal</option>
+										<option value="bimodal">Bimodal</option>
+										<option value="plurimodal">Plurimodal</option>
+									</select>
+								</td>
+								<td id="tableMedianaFevereiro" class="hideColumn1Ativ1">
+									<input type="text" class="form-control" id="atv1MedianaFevereiro">
+								</td>
 							</tr>
 
 							<tr>
-								<td class="noLeftBorder">Sudeste</td>
-								<td>31,59</td>
-								<td class="noRightBorder">5.998,41</td>
+								<td class="index" id="indexMarco"></td>
+								<td>Março</td>
+								<td>42,60</td>
+								<td>36,41</td>
+								<td>35,61</td>
+								<td>34,63</td>
+								<td id="tableModaMarco">
+									<select id="modaMarco" class="width100">
+										<option value="amodal">Amodal</option>
+										<option value="unimodal">Unimodal</option>
+										<option value="bimodal">Bimodal</option>
+										<option value="plurimodal">Plurimodal</option>
+									</select>
+								</td>
+
+								<td id="tableMedianaMarco" class="hideColumn1Ativ1">
+									<input type="text" class="form-control" id="atv1MedianaMarco">
+								</td>
 							</tr>
 
 							<tr>
-								<td class="noLeftBorder">Sul</td>
-								<td>9,77</td>
-								<td class="noRightBorder">2.001,87</td>
+								<td class="index" id="indexAbril"></td>
+								<td>Abril</td>
+								<td>36,92</td>
+								<td>34,53</td>
+								<td>36,92</td>
+								<td>31,51</td>
+								<td id="tableModaAbril">
+									<select id="modaAbril" class="width100">
+										<option value="amodal">Amodal</option>
+										<option value="unimodal">Unimodal</option>
+										<option value="bimodal">Bimodal</option>
+										<option value="plurimodal">Plurimodal</option>
+									</select>
+								</td>
+								<td id="tableMedianaAbril" class="hideColumn1Ativ1">
+									<input type="text" class="form-control" id="atv1MedianaAbril">
+								</td>
 							</tr>
+
 							<tr>
-								<td class="noLeftBorder">Centro-Oeste</td>
-								<td>5,23</td>
-								<td class="noRightBorder">944,61</td>
+								<td class="index" id="indexMaio"></td>
+								<td>Maio</td>
+								<td>36,39</td>
+								<td>33,37</td>
+								<td>31,99</td>
+								<td>30,65</td>
+								<td id="tableModaMaio">
+									<select id="modaMaio" class="width100">
+										<option value="amodal">Amodal</option>
+										<option value="unimodal">Unimodal</option>
+										<option value="bimodal">Bimodal</option>
+										<option value="plurimodal">Plurimodal</option>
+									</select>
+								</td>
+								<td id="tableMedianaMaio" class="hideColumn1Ativ1">
+									<input type="text" class="form-control" id="atv1MedianaMaio">
+								</td>
 							</tr>
+
 							<tr>
-								<td class="noLeftBorder tabelaTotal"><strong>Total</strong></td>
-								<td class="tabelaTotal">69,44</td>
-								<td class="noRightBorder tabelaTotal"><strong>11.966,30</strong></td>
+								<td class="index" id="indexJunho"></td>
+								<td>Junho</td>
+								<td>35,42</td>
+								<td>31,60</td>
+								<td>29,94</td>
+								<td>28,02</td>
+								<td id="tableModaJunho">
+									<select id="modaJunho" class="width100">
+										<option value="amodal">Amodal</option>
+										<option value="unimodal">Unimodal</option>
+										<option value="bimodal">Bimodal</option>
+										<option value="plurimodal">Plurimodal</option>
+									</select>
+								</td>
+								<td id="tableMedianaJunho" class="hideColumn1Ativ1">
+									<input type="text" class="form-control" id="atv1MedianaJunho">
+								</td>
+							</tr>
+
+							<tr>
+								<td class="index" id="indexJulho"></td>
+								<td>Julho</td>
+								<td>36,99</td>
+								<td>34,43</td>
+								<td>31,04</td>
+								<td>30,05</td>
+								<td id="tableModaJulho">
+									<select id="modaJulho" class="width100">
+										<option value="amodal">Amodal</option>
+										<option value="unimodal">Unimodal</option>
+										<option value="bimodal">Bimodal</option>
+										<option value="plurimodal">Plurimodal</option>
+									</select>
+								</td>
+								<td id="tableMedianaJulho" class="hideColumn1Ativ1">
+									<input type="text" class="form-control" id="atv1MedianaJulho">
+								</td>
+							</tr>
+
+
+							<tr>
+								<td class="index" id="indexAgosto"></td>
+								<td>Agosto</td>
+								<td>37,55</td>
+								<td>35,02</td>
+								<td>30,18</td>
+								<td>30,09</td>
+								<td id="tableModaAgosto">
+									<select id="modaAgosto" class="width100">
+										<option value="amodal">Amodal</option>
+										<option value="unimodal">Unimodal</option>
+										<option value="bimodal">Bimodal</option>
+										<option value="plurimodal">Plurimodal</option>
+									</select>
+								</td>
+								<td id="tableMedianaAgosto" class="hideColumn1Ativ1">
+									<input type="text" class="form-control" id="atv1MedianaAgosto">
+								</td>
+							</tr>
+
+							<tr>
+								<td class="index" id="indexSetembro"></td>
+								<td>Setembro</td>
+								<td>34,46</td>
+								<td>34,46</td>
+								<td>30,33</td>
+								<td>30,33</td>
+								<td id="tableModaSetembro">
+									<select id="modaSetembro" class="width100">
+										<option value="amodal">Amodal</option>
+										<option value="unimodal">Unimodal</option>
+										<option value="bimodal">Bimodal</option>
+										<option value="plurimodal">Plurimodal</option>
+									</select>
+								</td>
+								<td id="tableMedianaSetembro" class="hideColumn1Ativ1">
+									<input type="text" class="form-control" id="atv1MedianaSetembro">
+								</td>
+							</tr>
+
+							<tr>
+								<td class="index" id="indexOutubro"></td>
+								<td>Outubro</td>
+								<td>35,26</td>
+								<td>36,21</td>
+								<td>32,28</td>
+								<td>33,26</td>
+								<td id="tableModaOutubro">
+									<select id="modaOutubro" class="width100">
+										<option value="amodal">Amodal</option>
+										<option value="unimodal">Unimodal</option>
+										<option value="bimodal">Bimodal</option>
+										<option value="plurimodal">Plurimodal</option>
+									</select>
+								</td>
+								<td id="tableMedianaOutubro" class="hideColumn1Ativ1">
+									<input type="text" class="form-control" id="atv1MedianaOutubro">
+								</td>
+							</tr>
+
+							<tr>
+								<td class="index" id="indexNovembro"></td>
+								<td>Novembro</td>
+								<td>31,74</td>
+								<td>34,61</td>
+								<td>31,02</td>
+								<td>31,74</td>
+								<td id="tableModaNovembro">
+									<select id="modaNovembro" class="width100">
+										<option value="amodal">Amodal</option>
+										<option value="unimodal">Unimodal</option>
+										<option value="bimodal">Bimodal</option>
+										<option value="plurimodal">Plurimodal</option>
+									</select>
+								</td>
+								<td id="tableMedianaNovembro" class="hideColumn1Ativ1">
+									<input type="text" class="form-control" id="atv1MedianaNovembro">
+								</td>
+							</tr>
+
+							<tr>
+								<td class="index" id="indexDezembro"></td>
+								<td>Dezembro</td>
+								<td>34,86</td>
+								<td>36,60</td>
+								<td>31,60</td>
+								<td>33,56</td>
+								<td id="tableModaDezembro">
+									<select id="modaDezembro" class="width100">
+										<option value="amodal">Amodal</option>
+										<option value="unimodal">Unimodal</option>
+										<option value="bimodal">Bimodal</option>
+										<option value="plurimodal">Plurimodal</option>
+									</select>
+								</td>
+								<td id="tableMedianaDezembro" class="hideColumn1Ativ1">
+									<input type="text" class="form-control" id="atv1MedianaDezembro">
+								</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 			</div>
-		</div>
 
-		<div id="telaVideoQuestaoMediaAritmetica">
 			<div class="row">
-				<div class="col-xs-offset-3 col-xs-6">
-					<video class="img-responsive" id="videoQuestaoMediaAritmetica" src="../assets/img/Objeto 2/videoQuestaoMediaAritmetica.mp4"></video>
+				<div class="col-xs-offset-5 col-xs-2">
+					<button id="botaoEnviarRespostaAtv1" type="button" class="btn btn-success btn-block">Enviar resposta</button>
 				</div>
 			</div>
-
 			<div class="row">
-				<div class="col-xs-offset-6 col-xs-1">
-					<span id="iconePlayQuestaoMediaAritmetica" class="glyphicon glyphicon-play-circle"> </span>
-				</div>
-			</div>
-		</div>
-
-
-		<div id="telaConsumoSeuChico">
-			<div class="row">
-				<div class="col-xs-12">
-					<img id="imgConsumoSeuChico" src="../assets/img/Objeto 2/consumoMensalSeuChico.jpg">
-				</div>
-			</div>
-		</div>
-
-
-		<div id="telaQuestao2">
-			<div class="row">
-				<div class="col-xs-6">
-					<h2>Encontre a média de consumo por dia daquele mês e selecione a alternativa correta</h2>
-
-					<div id="containerQuestao2">
-						<button class="btn btn-block alternativasQ2"  id="opcao1Q2" ></button>
-
-						<button class="btn btn-block alternativasQ2"  id='opcao2Q2'></button>
-
-						<button class="btn btn-block alternativasQ2"  id='opcao3Q2'></button>
-
-						<button class="btn btn-block alternativasQ2"  id='opcao4Q2'></button>
-
-						<button class="btn btn-block alternativasQ2"  id='opcao5Q2'></button>
-
-					</div>
-
-					<div class="row">
-						<div class="col-xs-offset-3 col-xs-6">
-							<button id="botaoEnviarRespostaQ2" type="button" class="btn btn-success btn-block">Enviar resposta</button>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-offset-3 col-xs-6">
-							<div id="alertQ2" class="alert alert-danger" role="alert">
-								<center><strong>Oops!</strong> Resposta incorreta.</center>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-xs-6">
-					<div style="margin-top: 5%">
-						<h2> Artur organizou os dados numa tabela, contando os dias com o mesmo consumo </h2>
-
-						<table id="tabelaAgrupadaConsumoMensal" class="table table-responsive table-bordered">
-							<thead>
-								<tr>
-									<td><strong>Consumo diário em kWh</strong></td>
-									<td><strong>Nº de dias de consumo</strong></td>
-								</tr>
-							</thead>
-
-							<tr>
-								<td class="noLeftBorder">3,0</td>
-								<td class="noRightBorder">2</td>
-							</tr>
-							<tr>
-								<td class="noLeftBorder">3,5</td>
-								<td class="noRightBorder">4</td>
-							</tr>
-
-							<tr>
-								<td class="noLeftBorder">3,8</td>
-								<td class="noRightBorder"> 5</td>
-							</tr>
-
-							<tr>
-								<td class="noLeftBorder">4,0</td>
-								<td class="noRightBorder">17</td>
-							</tr>
-
-							<tr>
-								<td class="noLeftBorder tabelaTotal">Soma</td>
-								<td class="noRightBorder tabelaTotal">28</td>
-							</tr>
-						</table>
+				<div class="col-xs-offset-4 col-xs-4">
+					<div id="alertAtividade1" class="alert alert-danger" role="alert">
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div id="telaMediana">
-			<div class="row">
-				<div class="col-xs-offset-3 col-xs-6">
-					<video class="img-responsive" id="videoMediana" src="../assets/img/Objeto 2/videoMediana.mp4"></video>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-xs-offset-6 col-xs-1">
-					<span id="iconePlayMediana" class="glyphicon glyphicon-play-circle"> </span>
-				</div>
-			</div>
-		</div>
-
-		<div id="telaMediana2">
-			<div class="row">
-				<div class="col-xs-offset-3 col-xs-6">
-					<video class="img-responsive" id="videoMediana2" src="../assets/img/Objeto 2/videoMediana2.mp4"></video>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-xs-offset-6 col-xs-1">
-					<span id="iconePlayMediana2" class="glyphicon glyphicon-play-circle"> </span>
-				</div>
-			</div>
-		</div>
 
 
-		<div id="introducaoModa">
-			<div class="row">
-				<div class="col-xs-offset-1 col-xs-3">
-					<img id="seuChicoTelaModa" class="img-responsive" src="../assets/img/Objeto 2/seuChico.png">
-				</div>
-				<div class="col-xs-3">
-					<img id="balaoTelaModa" src="../assets/img/Objeto 2/balaoDeFala2.png">
-					<p id="falaModa">A moda corresponde ao valor que aparece com mais frequência, ou seja, que detém o maior número de observações no conjunto em estudo. Pode existir mais de uma moda para o mesmo grupo de dados.</p>
-
-				</div>
-
-			</div>
-		</div>
-		<div id="tabelasModa">
-			<div class="row">
-				<div class="col-xs-offset-05 col-xs-2">
-					<h4>Joana pagou no ano de 2016 os seguintes valores:</h4>
-					<table id="tabelaAgrupadaConsumoMensal" class="table table-responsive table-bordered">
-						<tr>
-							<td>Janeiro</td>
-							<td>R$96.00</td>
-						</tr>
-
-						<tr>
-							<td>Fevereiro</td>
-							<td>R$78.00</td>
-						</tr>
-
-						<tr>
-							<td>Março</td>
-							<td style="color:red"> R$82.00</td>
-						</tr>
-
-						<tr>
-							<td>Abril</td>
-							<td>R$103.00</td>
-						</tr>
-
-						<tr>
-							<td>Maio</td>
-							<td>R$97.00</td>
-						</tr>
-
-						<tr>
-							<td>Junho</td>
-							<td>R$85.00</td>
-						</tr>
-
-						<tr>
-							<td>Julho</td>
-							<td>R$100.00</td>
-						</tr>
-
-						<tr>
-							<td>Agosto</td>
-							<td style="color:red">R$82.00</td>
-						</tr>
-
-						<tr>
-							<td>Setembro</td>
-							<td>R$94.00</td>
-						</tr>
-
-						<tr>
-							<td>Outubro</td>
-							<td>R$89.00</td>
-						</tr>
-
-						<tr>
-							<td>Novembro</td>
-							<td>R$91.00</td>
-						</tr>
-
-						<tr>
-							<td>Dezembro</td>
-							<td>R$115.00</td>
-						</tr>
-					</table>
-					<h4>Apenas dois valores são iguais, ou seja, apresenta uma moda definida como R$82. A classificação para uma moda é <strong>unimodal</strong></h4>
-				</div>
-
-				<div class="col-xs-offset-1 col-xs-2">
-					<h4>Arthur pagou no ano de 2016 os seguintes valores:</h4>
-					<table id="tabelaAgrupadaConsumoMensal" class="table table-responsive table-bordered">
-						<tr>
-							<td>Janeiro</td>
-							<td style="color:blue">R$129.00</td>
-						</tr>
-
-						<tr>
-							<td>Fevereiro</td>
-							<td>R$118.00</td>
-						</tr>
-
-						<tr>
-							<td>Março</td>
-							<td>R$107.00</td>
-						</tr>
-
-						<tr>
-							<td>Abril</td>
-							<td style="color:red">R$115.00</td>
-						</tr>
-
-						<tr>
-							<td>Maio</td>
-							<td>R$122.00</td>
-						</tr>
-
-						<tr>
-							<td>Junho</td>
-							<td>R$120.00</td>
-						</tr>
-
-						<tr>
-							<td>Julho</td>
-							<td style="color:red">R$115.00</td>
-						</tr>
-
-						<tr>
-							<td>Agosto</td>
-							<td style="color:blue">R$129.00</td>
-						</tr>
-
-						<tr>
-							<td>Setembro</td>
-							<td>R$105.00</td>
-						</tr>
-
-						<tr>
-							<td>Outubro</td>
-							<td>R$111.00</td>
-						</tr>
-
-						<tr>
-							<td>Novembro</td>
-							<td>R$126.00</td>
-						</tr>
-
-						<tr>
-							<td>Dezembro</td>
-							<td>R$134.00</td>
-						</tr>
-					</table>
-					<h4>Existem dois valores diferentes que se repetiram, R$115 e R$129. Sendo assim, apresenta duas modas, sua classificação é <strong>bimodal</strong></h4>
-				</div>
-
-				<div class="col-xs-offset-1 col-xs-2">
-					<h4><br>Mateus pagou no ano de 2016 os seguintes valores:</h4>
-					<table id="tabelaAgrupadaConsumoMensal" class="table table-responsive table-bordered">
-						<tr>
-							<td>Janeiro</td>
-							<td style="color:red">R$165.00</td>
-						</tr>
-
-						<tr>
-							<td>Fevereiro</td>
-							<td style="color:#269228">R$162.00</td>
-						</tr>
-
-						<tr>
-							<td>Março</td>
-							<td>R$153.00</td>
-						</tr>
-
-						<tr>
-							<td>Abril</td>
-							<td style="color:blue">R$159.00</td>
-						</tr>
-
-						<tr>
-							<td>Maio</td>
-							<td style="color:red">R$165.00</td>
-						</tr>
-
-						<tr>
-							<td>Junho</td>
-							<td>R$150.00</td>
-						</tr>
-
-						<tr>
-							<td>Julho</td>
-							<td style="color:blue">R$159.00</td>
-						</tr>
-
-						<tr>
-							<td>Agosto</td>
-							<td>R$161.00</td>
-						</tr>
-
-						<tr>
-							<td>Setembro</td>
-							<td>R$157.00</td>
-						</tr>
-
-						<tr>
-							<td>Outubro</td>
-							<td style="color:#269228">R$162.00</td>
-						</tr>
-
-						<tr>
-							<td>Novembro</td>
-							<td>R$160.00</td>
-						</tr>
-
-						<tr>
-							<td>Dezembro</td>
-							<td>R$155.00</td>
-						</tr>
-					</table>
-					<h4>Existem três valores diferentes que se repetiram: R$159, R$162, e R$165. Sendo assim, apresenta mais que duas modas, sua classificação é <strong>plurimodal</strong></h4>
-				</div>
-
-				<div class="col-xs-offset-1 col-xs-2">
-					<h4 id="nomeUsuarioTabelaModa">%fulano% pagou no ano de 2016 os seguintes valores:</h4>
-					<table id="tabelaAgrupadaConsumoMensal" class="table table-responsive table-bordered">
-						<tr>
-							<td>Janeiro</td>
-							<td>R$158.00</td>
-						</tr>
-
-						<tr>
-							<td>Fevereiro</td>
-							<td>R$134.00</td>
-						</tr>
-
-						<tr>
-							<td>Março</td>
-							<td>R$122.00</td>
-						</tr>
-
-						<tr>
-							<td>Abril</td>
-							<td>R$146.00</td>
-						</tr>
-
-						<tr>
-							<td>Maio</td>
-							<td>R$119.00</td>
-						</tr>
-
-						<tr>
-							<td>Junho</td>
-							<td>R$105.00</td>
-						</tr>
-
-						<tr>
-							<td>Julho</td>
-							<td>R$98.00</td>
-						</tr>
-
-						<tr>
-							<td>Agosto</td>
-							<td>R$108.00</td>
-						</tr>
-
-						<tr>
-							<td>Setembro</td>
-							<td>R$127.00</td>
-						</tr>
-
-						<tr>
-							<td>Outubro</td>
-							<td>R$131.00</td>
-						</tr>
-
-						<tr>
-							<td>Novembro</td>
-							<td>R$140.00</td>
-						</tr>
-
-						<tr>
-							<td>Dezembro</td>
-							<td>R$152.00</td>
-						</tr>
-					</table>
-					<h4>Não existem valores iguais, sendo assim não apresenta moda. Sua classificação é <strong>amodal</strong></h4>
-				</div>
-			</div>
-		</div>
-
-
-		<div id="telaConversa3">
-			<div class="row">
-				<div class="col-xs-offset-3">
-					<img id="balao3TelaConversa3" src="../assets/img/Objeto 2/balaoDeFala3.png">
-					<p id="fala1TelaConversa3"></p>
-					<img id="balao2TelaConversa3" src="../assets/img/Objeto 2/balaoDeFala4.png">
-					<p id="fala2TelaConversa3"></p>
-					<img id="balao1TelaConversa3" src="../assets/img/Objeto 2/balaoDeFala5.png">
-					<p id="fala3TelaConversa3"></p>
-				</div>
-			</div>
-
-			<div class="row">
-				<span id="setaEsquerdaConversa3" class="glyphicon glyphicon-triangle-left"> </span>
-				<img id="telaCriancasConversa3" src="../assets/img/Objeto 2/telaConversa3Criancas.jpg">
-				<span id="setaDireitaConversa3" class="glyphicon glyphicon-triangle-right"> </span>
-
-			</div>
-		</div>
-
-		<div id="telaSelecaoQuestoes">
-			<div class="row">
-				<div class="mLeft23 col-xs-6">
-					<video autoplay muted loop class="img-responsive" id="videoSelecaoQuestoes" src="../assets/img/Objeto 2/videoSelecaoQuestoes.mp4"></video>
-					<img id="papelSelecaoQuestao1" src="../assets/img/Objeto 2/imgAtividade1.png">
-					<img id="papelSelecaoQuestao2" src="../assets/img/Objeto 2/imgAtividade2.png">
-					<img id="papelSelecaoQuestao3" src="../assets/img/Objeto 2/imgAtividade3.png">
-					<img id="papelSelecaoQuestao4" src="../assets/img/Objeto 2/imgAtividade4.png">
-
-				</div>
-			</div>
-		</div>
-
-
-		<div id="atividade1">
+		<div id="atividade2">
 			<div class="row">
 				<div class="col-xs-offset-1 col-xs-1">
-					<span id="iconSeta1VoltarAtividades" title="Voltar" class="glyphicon glyphicon glyphicon-arrow-left iconSetaVoltarAtividades"> </span>
+					<span id="iconSeta2VoltarAtividades" title="Voltar" class="glyphicon glyphicon glyphicon-arrow-left iconSetaVoltarAtividades"> </span>
 				</div>
 				<div class="col-xs-offset-1 col-xs-6">
-					<h4 id="instrucoesAtividade1"></h4>
-					Geração de energia hidráulica pelo Sistema Nacional Integrado de Energia, em TWh.
-					<table id="tabelaAgrupadaConsumoMensal" class="table table-responsive table-bordered">
+					<h4 id="instrucoesAtividade2"></h4>
+					Geração elétrica por fonte no Brasil (GWh)
+					<table id="tabelaGeracaoPorFonte" class="table table-responsive table-bordered">
 						<thead>
 							<tr>
-								<td style="display:none"></td>
 								<td></td>
+								<td>2011</td>
 								<td>2012</td>
 								<td>2013</td>
 								<td>2014</td>
 								<td>2015</td>
-								<td>Classificação da Moda</td>
-								<td class="hideColumn1Ativ1">Mediana</td>
+								<td>Média</td>
+								<td>Mediana</td>
 							</thead>
 							<tbody>
 								<tr>
-									<td class="index" id="indexJaneiro"></td>
-									<td>Janeiro</td>
-									<td>39,62</td>
-									<td>34,41</td>
-									<td>39,43</td>
-									<td>36,18</td>
-									<td id="tableModaJaneiro">
-										<select id="modaJaneiro" class="width100">
-											<option value="amodal">Amodal</option>
-											<option value="unimodal">Unimodal</option>
-											<option value="bimodal">Bimodal</option>
-											<option value="plurimodal">Plurimodal</option>
-										</select>
+									<td>Gás Natural</td>
+									<td>25095</td>
+									<td>46760</td>
+									<td>69003</td>
+									<td>81073</td>
+									<td>79490</td>
+									<td id="tdInputMediaGeracaoGasNatural">
+										<input type="text" class="form-control" id="inputMediaGeracaoGasNatural">
 									</td>
-
-									<td id="tableMedianaJaneiro" class="hideColumn1Ativ1">
-										<input type="text" class="form-control" id="atv1MedianaJaneiro">
+									<td id="tdInputMedianaGeracaoGasNatural" >
+										<input type="text" class="form-control" id="inputMedianaGeracaoGasNatural">
 									</td>
 								</tr>
 
 								<tr>
-									<td class="index" id="indexFevereiro"></td>
-									<td>Fevereiro</td>
-									<td>39,37</td>
-									<td>33,02</td>
-									<td>35,10</td>
-									<td>31,90</td>
-									<td id="tableModaFevereiro">
-										<select id="modaFevereiro" class="width100">
-											<option value="amodal">Amodal</option>
-											<option value="unimodal">Unimodal</option>
-											<option value="bimodal">Bimodal</option>
-											<option value="plurimodal">Plurimodal</option>
-										</select>
+									<td>Hidrelétrica</td>
+									<td>428333</td>
+									<td>415342</td>
+									<td>390992</td>
+									<td>373439</td>
+									<td>359743</td>
+									<td id="tdInputMediaGeracaoHidreletrica">
+										<input type="text" class="form-control" id="inputMediaGeracaoHidreletrica">
 									</td>
-									<td id="tableMedianaFevereiro" class="hideColumn1Ativ1">
-										<input type="text" class="form-control" id="atv1MedianaFevereiro">
+									<td id="tdInputMedianaGeracaoHidreletrica">
+										<input type="text" class="form-control" id="inputMedianaGeracaoHidreletrica">
 									</td>
 								</tr>
 
 								<tr>
-									<td class="index" id="indexMarco"></td>
-									<td>Março</td>
-									<td>42,60</td>
-									<td>36,41</td>
-									<td>35,61</td>
-									<td>34,63</td>
-									<td id="tableModaMarco">
-										<select id="modaMarco" class="width100">
-											<option value="amodal">Amodal</option>
-											<option value="unimodal">Unimodal</option>
-											<option value="bimodal">Bimodal</option>
-											<option value="plurimodal">Plurimodal</option>
-										</select>
+									<td>Derivados de Petróleo</td>
+									<td>12239</td>
+									<td>16214</td>
+									<td>22090</td>
+									<td>31529</td>
+									<td>25662</td>
+									<td id="tdInputMediaGeracaoDerivadosPetroleo" >
+										<input type="text" class="form-control" id="inputMediaGeracaoDerivadosPetroleo">
 									</td>
-
-									<td id="tableMedianaMarco" class="hideColumn1Ativ1">
-										<input type="text" class="form-control" id="atv1MedianaMarco">
+									<td id="tdInputMedianaGeracaoDerivadosPetroleo">
+										<input type="text" class="form-control" id="inputMedianaGeracaoDerivadosPetroleo">
 									</td>
 								</tr>
 
 								<tr>
-									<td class="index" id="indexAbril"></td>
-									<td>Abril</td>
-									<td>36,92</td>
-									<td>34,53</td>
-									<td>36,92</td>
-									<td>31,51</td>
-									<td id="tableModaAbril">
-										<select id="modaAbril" class="width100">
-											<option value="amodal">Amodal</option>
-											<option value="unimodal">Unimodal</option>
-											<option value="bimodal">Bimodal</option>
-											<option value="plurimodal">Plurimodal</option>
-										</select>
+									<td>Carvão</td>
+									<td>6485</td>
+									<td>8422</td>
+									<td>14801</td>
+									<td>18385</td>
+									<td>19096</td>
+									<td id="tdInputMediaGeracaoCarvao">
+										<input type="text" class="form-control" id="inputMediaGeracaoCarvao">
 									</td>
-									<td id="tableMedianaAbril" class="hideColumn1Ativ1">
-										<input type="text" class="form-control" id="atv1MedianaAbril">
+									<td id="tdInputMedianaGeracaoCarvao">
+										<input type="text" class="form-control" id="inputMedianaGeracaoCarvao">
 									</td>
 								</tr>
 
 								<tr>
-									<td class="index" id="indexMaio"></td>
-									<td>Maio</td>
-									<td>36,39</td>
-									<td>33,37</td>
-									<td>31,99</td>
-									<td>30,65</td>
-									<td id="tableModaMaio">
-										<select id="modaMaio" class="width100">
-											<option value="amodal">Amodal</option>
-											<option value="unimodal">Unimodal</option>
-											<option value="bimodal">Bimodal</option>
-											<option value="plurimodal">Plurimodal</option>
-										</select>
+									<td>Nuclear</td>
+									<td>15659</td>
+									<td>16038</td>
+									<td>15659</td>
+									<td>15378</td>
+									<td>14734</td>
+									<td id="tdInputMediaGeracaoNuclear">
+										<input type="text" class="form-control" id="inputMediaGeracaoNuclear">
 									</td>
-									<td id="tableMedianaMaio" class="hideColumn1Ativ1">
-										<input type="text" class="form-control" id="atv1MedianaMaio">
+									<td id="tdInputMedianaGeracaoNuclear">
+										<input type="text" class="form-control" id="inputMedianaGeracaoNuclear">
 									</td>
 								</tr>
 
 								<tr>
-									<td class="index" id="indexJunho"></td>
-									<td>Junho</td>
-									<td>35,42</td>
-									<td>31,60</td>
-									<td>29,94</td>
-									<td>28,02</td>
-									<td id="tableModaJunho">
-										<select id="modaJunho" class="width100">
-											<option value="amodal">Amodal</option>
-											<option value="unimodal">Unimodal</option>
-											<option value="bimodal">Bimodal</option>
-											<option value="plurimodal">Plurimodal</option>
-										</select>
+									<td>Biomassa</td>
+									<td>31633</td>
+									<td>34662</td>
+									<td>39679</td>
+									<td>44987</td>
+									<td>47394</td>
+									<td id="tdInputMediaGeracaoBiomassa">
+										<input type="text" class="form-control" id="inputMediaGeracaoBiomassa">
 									</td>
-									<td id="tableMedianaJunho" class="hideColumn1Ativ1">
-										<input type="text" class="form-control" id="atv1MedianaJunho">
+									<td id="tdInputMedianaGeracaoBiomassa" >
+										<input type="text" class="form-control" id="inputMedianaGeracaoBiomassa">
 									</td>
 								</tr>
 
 								<tr>
-									<td class="index" id="indexJulho"></td>
-									<td>Julho</td>
-									<td>36,99</td>
-									<td>34,43</td>
-									<td>31,04</td>
-									<td>30,05</td>
-									<td id="tableModaJulho">
-										<select id="modaJulho" class="width100">
-											<option value="amodal">Amodal</option>
-											<option value="unimodal">Unimodal</option>
-											<option value="bimodal">Bimodal</option>
-											<option value="plurimodal">Plurimodal</option>
-										</select>
+									<td>Eólica</td>
+									<td>2705</td>
+									<td>5050</td>
+									<td>6578</td>
+									<td>12210</td>
+									<td>21626</td>
+									<td id="tdInputMediaGeracaoEolica">
+										<input type="text" class="form-control" id="inputMediaGeracaoEolica">
 									</td>
-									<td id="tableMedianaJulho" class="hideColumn1Ativ1">
-										<input type="text" class="form-control" id="atv1MedianaJulho">
+									<td id="tdInputMedianaGeracaoEolica">
+										<input type="text" class="form-control" id="inputMedianaGeracaoEolica">
 									</td>
 								</tr>
 
 
 								<tr>
-									<td class="index" id="indexAgosto"></td>
-									<td>Agosto</td>
-									<td>37,55</td>
-									<td>35,02</td>
-									<td>30,18</td>
-									<td>30,09</td>
-									<td id="tableModaAgosto">
-										<select id="modaAgosto" class="width100">
-											<option value="amodal">Amodal</option>
-											<option value="unimodal">Unimodal</option>
-											<option value="bimodal">Bimodal</option>
-											<option value="plurimodal">Plurimodal</option>
-										</select>
+									<td>Outras</td>
+									<td>9609</td>
+									<td>10010</td>
+									<td>12241</td>
+									<td>13590</td>
+									<td>13741</td>
+									<td id="tdInputMediaGeracaoOutras">
+										<input type="text" class="form-control" id="inputMediaGeracaoOutras">
 									</td>
-									<td id="tableMedianaAgosto" class="hideColumn1Ativ1">
-										<input type="text" class="form-control" id="atv1MedianaAgosto">
-									</td>
-								</tr>
-
-								<tr>
-									<td class="index" id="indexSetembro"></td>
-									<td>Setembro</td>
-									<td>34,46</td>
-									<td>34,46</td>
-									<td>30,33</td>
-									<td>30,33</td>
-									<td id="tableModaSetembro">
-										<select id="modaSetembro" class="width100">
-											<option value="amodal">Amodal</option>
-											<option value="unimodal">Unimodal</option>
-											<option value="bimodal">Bimodal</option>
-											<option value="plurimodal">Plurimodal</option>
-										</select>
-									</td>
-									<td id="tableMedianaSetembro" class="hideColumn1Ativ1">
-										<input type="text" class="form-control" id="atv1MedianaSetembro">
-									</td>
-								</tr>
-
-								<tr>
-									<td class="index" id="indexOutubro"></td>
-									<td>Outubro</td>
-									<td>35,26</td>
-									<td>36,21</td>
-									<td>32,28</td>
-									<td>33,26</td>
-									<td id="tableModaOutubro">
-										<select id="modaOutubro" class="width100">
-											<option value="amodal">Amodal</option>
-											<option value="unimodal">Unimodal</option>
-											<option value="bimodal">Bimodal</option>
-											<option value="plurimodal">Plurimodal</option>
-										</select>
-									</td>
-									<td id="tableMedianaOutubro" class="hideColumn1Ativ1">
-										<input type="text" class="form-control" id="atv1MedianaOutubro">
-									</td>
-								</tr>
-
-								<tr>
-									<td class="index" id="indexNovembro"></td>
-									<td>Novembro</td>
-									<td>31,74</td>
-									<td>34,61</td>
-									<td>31,02</td>
-									<td>31,74</td>
-									<td id="tableModaNovembro">
-										<select id="modaNovembro" class="width100">
-											<option value="amodal">Amodal</option>
-											<option value="unimodal">Unimodal</option>
-											<option value="bimodal">Bimodal</option>
-											<option value="plurimodal">Plurimodal</option>
-										</select>
-									</td>
-									<td id="tableMedianaNovembro" class="hideColumn1Ativ1">
-										<input type="text" class="form-control" id="atv1MedianaNovembro">
-									</td>
-								</tr>
-
-								<tr>
-									<td class="index" id="indexDezembro"></td>
-									<td>Dezembro</td>
-									<td>34,86</td>
-									<td>36,60</td>
-									<td>31,60</td>
-									<td>33,56</td>
-									<td id="tableModaDezembro">
-										<select id="modaDezembro" class="width100">
-											<option value="amodal">Amodal</option>
-											<option value="unimodal">Unimodal</option>
-											<option value="bimodal">Bimodal</option>
-											<option value="plurimodal">Plurimodal</option>
-										</select>
-									</td>
-									<td id="tableMedianaDezembro" class="hideColumn1Ativ1">
-										<input type="text" class="form-control" id="atv1MedianaDezembro">
+									<td id="tdInputMedianaGeracaoOutras">
+										<input type="text" class="form-control" id="inputMedianaGeracaoOutras">
 									</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
 				</div>
-
+				<div class="row">
+					<div class="col-xs-offset-3 col-xs-075">
+						<img id="imgGasNatural" title="Gás Natural" class="img-responsive imgUsinas" src="../assets/img/Objeto 2/gasNatural.png">
+					</div>
+					<div class="col-xs-075">
+						<img id="imgHidreletrica" title="Hidrelétrica" class="img-responsive imgUsinas" src="../assets/img/Objeto 2/hidreletrica.png">
+					</div>
+					<div class="col-xs-075">
+						<img id="imgPetroleo" title="Derivados de Petróleo" class="img-responsive imgUsinas" src="../assets/img/Objeto 2/fossil.png">
+					</div>
+					<div class="col-xs-075">
+						<img id="imgCarvao" title="Carvão" class="img-responsive imgUsinas" src="../assets/img/Objeto 2/carvao.png">
+					</div>
+					<div class="col-xs-075">
+						<img id="imgNuclear" title="Nuclear" class="img-responsive imgUsinas" src="../assets/img/Objeto 2/nuclear.png">
+					</div>
+					<div class="col-xs-075">
+						<img id="imgBiomassa" title="Biomassa" class="img-responsive imgUsinas" src="../assets/img/Objeto 2/biomassa.png">
+					</div>
+					<div class="col-xs-075">
+						<img id="imgEolica" title="Eólica" class="img-responsive imgUsinas" src="../assets/img/Objeto 2/eolica.png">
+					</div>
+					<div class="col-xs-075">
+						<img id="imgOutras" title="Outras" class="img-responsive imgUsinas" src="../assets/img/Objeto 2/outras.png">
+					</div>
+				</div>
 				<div class="row">
 					<div class="col-xs-offset-5 col-xs-2">
-						<button id="botaoEnviarRespostaAtv1" type="button" class="btn btn-success btn-block">Enviar resposta</button>
+						<button id="botaoEnviarRespostaAtv2" type="button" class="btn btn-success btn-block">Enviar resposta</button>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-offset-4 col-xs-4">
-						<div id="alertAtividade1" class="alert alert-danger" role="alert">
+						<div id="alertAtividade2" class="alert alert-danger" role="alert">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="atividade3">
+				<div class="row">
+					<div class="col-xs-offset-1 col-xs-1">
+						<span id="iconSeta3VoltarAtividades" title="Voltar" class="glyphicon glyphicon glyphicon-arrow-left iconSetaVoltarAtividades"> </span>
+					</div>
+					<div class="col-xs-offset-1 col-xs-6">
+						<h4 id="instrucoesAtividade3"></h4>
+						Consumo de energia elétrica por região geográfica no Brasil (TWh)
+						<table id="tabelaConsumoPorRegiao" class="table table-responsive table-bordered noMargin">
+							<thead>
+								<tr>
+									<td>Região</td>
+									<td>2011</td>
+									<td>2012</td>
+									<td>2013</td>
+									<td>2014</td>
+									<td>Média</td>
+									<td>Mediana</td>
+								</tr>
+							</thead>
+							<tbody>
+
+								<tr>
+									<td>Norte</td>
+									<td>27,77</td>
+									<td>29,04</td>
+									<td>30,19</td>
+									<td>32,36</td>
+									<td class="inputRegioes" id="tdInputMediaNorte">
+										<input type="text" class="form-control" id="inputMediaNorte">
+									</td>
+									<td class="inputRegioes" id="tdInputMedianaNorte">
+										<input type="text" class="form-control" id="inputMedianaNorte">
+									</td>
+								</tr>
+
+								<tr>
+									<td>Nordeste</td>
+									<td>71,91</td>
+									<td>75,16</td>
+									<td>79,69</td>
+									<td>80,74</td>
+									<td class="inputRegioes" id="tdInputMediaNordeste">
+										<input type="text" class="form-control" id="inputMediaNordeste">
+									</td>
+									<td class="inputRegioes" id="tdInputMedianaNordeste">
+										<input type="text" class="form-control" id="inputMedianaNordeste">
+									</td>
+								</tr>
+
+								<tr>
+									<td>Sudeste</td>
+									<td>230,66</td>
+									<td>235,23</td>
+									<td>240,10</td>
+									<td>243,02</td>
+									<td class="inputRegioes" id="tdInputMediaSudeste">
+										<input type="text" class="form-control" id="inputMediaSudeste">
+									</td>
+									<td class="inputRegioes" id="tdInputMedianaSudeste">
+										<input type="text" class="form-control" id="inputMedianaSudeste">
+									</td>
+								</tr>
+
+								<tr>
+									<td>Sul</td>
+									<td>74,46</td>
+									<td>77,49</td>
+									<td>80,39</td>
+									<td>84,81</td>
+									<td class="inputRegioes" id="tdInputMediaSul">
+										<input type="text" class="form-control" id="inputMediaSul">
+									</td>
+									<td class="inputRegioes" id="tdInputMedianaSul">
+										<input type="text" class="form-control" id="inputMedianaSul">
+									</td>
+								</tr>
+
+								<tr>
+									<td>Centro-Oeste</td>
+									<td>28,20</td>
+									<td>30,71</td>
+									<td>32,75</td>
+									<td>34,38</td>
+									<td class="inputRegioes" id="tdInputMediaCentroOeste">
+										<input type="text" class="form-control" id="inputMediaCentroOeste">
+									</td>
+									<td class="inputRegioes" id="tdInputMedianaCentroOeste">
+										<input type="text" class="form-control" id="inputMedianaCentroOeste">
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div id="divQuestaoAtividade3" class="row">
+					<div class="col-xs-offset-3 col-xs-5">
+						<h4 id="questaoAtividade3"> </h4>
+					</div>
+				</div>
+				<div id="perguntasAtividade3">
+					<div class="row">
+						<div id="botoesRegioes" class="col-xs-offset-3 mLeft29">
+							<div class="col-xs-15 mLeft025">
+								<button class="btn btn-block botaoAlternativasAtv3" id="buttonAlternativa1Atv3">Norte</button>
+							</div>
+							<div class="col-xs-15 mLeft025">
+								<button class="btn btn-block botaoAlternativasAtv3"  id='buttonAlternativa2Atv3'>Nordeste</button>
+							</div>
+							<div class="col-xs-15 mLeft025">
+								<button class="btn btn-block botaoAlternativasAtv3"  id='buttonAlternativa3Atv3'>Sudeste</button>
+							</div>
+							<div class="col-xs-15 mLeft025">
+								<button class="btn btn-block botaoAlternativasAtv3"  id='buttonAlternativa4Atv3'>Sul</button>
+							</div>
+							<div class="col-xs-15 mLeft025">
+								<button class="btn btn-block botaoAlternativasAtv3"  id='buttonAlternativa5Atv3'>Centro-Oeste</button>
+							</div>
+						</div>	
+					</div>
+				</div>
+				<div id="formAtividade3" class="row">
+					<div class="col-xs-offset-3 mLeft29">
+						<div class="col-xs-15 mLeft025">
+							Norte
+							<input type="number" class="form-control" id="atv3DiferencaNorte">
+
+						</div>
+						<div class="col-xs-15 mLeft025">
+							Nordeste
+							<input type="number" class="form-control" id="atv3DiferencaNordeste">
+
+						</div>
+						<div class="col-xs-15 mLeft025">
+							Sudeste
+							<input type="number" class="form-control" id="atv3DiferencaSudeste">
+
+						</div>
+						<div class="col-xs-15 mLeft025">
+							Sul
+							<input type="number" class="form-control" id="atv3DiferencaSul">
+
+						</div>
+						<div class="col-xs-15 mLeft025">
+							Centro-Oeste
+							<input type="number" class="form-control" id="atv3DiferencaCentroOeste">
+
+						</div>	
+					</div>	
+				</div>
+
+				<div class="row">
+					<div class="col-xs-offset-5 col-xs-2">
+						<button id="botaoEnviarRespostaAtv3" type="button" class="btn btn-success btn-block">Enviar resposta</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-offset-4 col-xs-4">
+						<div id="alertAtividade3" class="alert alert-danger" role="alert">
 						</div>
 					</div>
 				</div>
 			</div>
 
 
-
-			<div id="atividade2">
+			<div id="atividade4">
 				<div class="row">
 					<div class="col-xs-offset-1 col-xs-1">
-						<span id="iconSeta2VoltarAtividades" title="Voltar" class="glyphicon glyphicon glyphicon-arrow-left iconSetaVoltarAtividades"> </span>
+						<span id="iconSeta4VoltarAtividades" title="Voltar" class="glyphicon glyphicon glyphicon-arrow-left iconSetaVoltarAtividades"> </span>
 					</div>
 					<div class="col-xs-offset-1 col-xs-6">
-						<h4 id="instrucoesAtividade2"></h4>
-						Geração elétrica por fonte no Brasil (GWh)
+						<h4 id="instrucoesAtividade4"></h4>
+						Número de distribuidoras por percentual de aumento da tarifa de consumo de energia elétrica para 2017 - Brasil 
 						<table id="tabelaGeracaoPorFonte" class="table table-responsive table-bordered">
 							<thead>
 								<tr>
-									<td></td>
-									<td>2011</td>
-									<td>2012</td>
-									<td>2013</td>
-									<td>2014</td>
-									<td>2015</td>
-									<td>Média</td>
-									<td>Mediana</td>
+									<td class="noLeftBorder tabelaTotal">Percentual de Aumento</td>
+									<td class="noRightBorder tabelaTotal">Nº de Distribuidoras</td>
 								</thead>
 								<tbody>
 									<tr>
-										<td>Gás Natural</td>
-										<td>25095</td>
-										<td>46760</td>
-										<td>69003</td>
-										<td>81073</td>
-										<td>79490</td>
-										<td id="tdInputMediaGeracaoGasNatural">
-											<input type="text" class="form-control" id="inputMediaGeracaoGasNatural">
-										</td>
-										<td id="tdInputMedianaGeracaoGasNatural" >
-											<input type="text" class="form-control" id="inputMedianaGeracaoGasNatural">
-										</td>
+										<td class="noLeftBorder">9</td>
+										<td class="noRightBorder">8</td>
 									</tr>
 
 									<tr>
-										<td>Hidrelétrica</td>
-										<td>428333</td>
-										<td>415342</td>
-										<td>390992</td>
-										<td>373439</td>
-										<td>359743</td>
-										<td id="tdInputMediaGeracaoHidreletrica">
-											<input type="text" class="form-control" id="inputMediaGeracaoHidreletrica">
-										</td>
-										<td id="tdInputMedianaGeracaoHidreletrica">
-											<input type="text" class="form-control" id="inputMedianaGeracaoHidreletrica">
-										</td>
+										<td class="noLeftBorder">10</td>
+										<td class="noRightBorder">7</td>
 									</tr>
 
 									<tr>
-										<td>Derivados de Petróleo</td>
-										<td>12239</td>
-										<td>16214</td>
-										<td>22090</td>
-										<td>31529</td>
-										<td>25662</td>
-										<td id="tdInputMediaGeracaoDerivadosPetroleo" >
-											<input type="text" class="form-control" id="inputMediaGeracaoDerivadosPetroleo">
-										</td>
-										<td id="tdInputMedianaGeracaoDerivadosPetroleo">
-											<input type="text" class="form-control" id="inputMedianaGeracaoDerivadosPetroleo">
-										</td>
+										<td class="noLeftBorder">11</td>
+										<td class="noRightBorder">15</td>
+
 									</tr>
 
 									<tr>
-										<td>Carvão</td>
-										<td>6485</td>
-										<td>8422</td>
-										<td>14801</td>
-										<td>18385</td>
-										<td>19096</td>
-										<td id="tdInputMediaGeracaoCarvao">
-											<input type="text" class="form-control" id="inputMediaGeracaoCarvao">
-										</td>
-										<td id="tdInputMedianaGeracaoCarvao">
-											<input type="text" class="form-control" id="inputMedianaGeracaoCarvao">
-										</td>
+										<td class="noLeftBorder">12</td>
+										<td class="noRightBorder">28</td>
 									</tr>
 
 									<tr>
-										<td>Nuclear</td>
-										<td>15659</td>
-										<td>16038</td>
-										<td>15659</td>
-										<td>15378</td>
-										<td>14734</td>
-										<td id="tdInputMediaGeracaoNuclear">
-											<input type="text" class="form-control" id="inputMediaGeracaoNuclear">
-										</td>
-										<td id="tdInputMedianaGeracaoNuclear">
-											<input type="text" class="form-control" id="inputMedianaGeracaoNuclear">
-										</td>
+										<td class="noLeftBorder">13</td>
+										<td class="noRightBorder">4</td>
+
 									</tr>
 
 									<tr>
-										<td>Biomassa</td>
-										<td>31633</td>
-										<td>34662</td>
-										<td>39679</td>
-										<td>44987</td>
-										<td>47394</td>
-										<td id="tdInputMediaGeracaoBiomassa">
-											<input type="text" class="form-control" id="inputMediaGeracaoBiomassa">
-										</td>
-										<td id="tdInputMedianaGeracaoBiomassa" >
-											<input type="text" class="form-control" id="inputMedianaGeracaoBiomassa">
-										</td>
-									</tr>
-
-									<tr>
-										<td>Eólica</td>
-										<td>2705</td>
-										<td>5050</td>
-										<td>6578</td>
-										<td>12210</td>
-										<td>21626</td>
-										<td id="tdInputMediaGeracaoEolica">
-											<input type="text" class="form-control" id="inputMediaGeracaoEolica">
-										</td>
-										<td id="tdInputMedianaGeracaoEolica">
-											<input type="text" class="form-control" id="inputMedianaGeracaoEolica">
-										</td>
-									</tr>
-
-
-									<tr>
-										<td>Outras</td>
-										<td>9609</td>
-										<td>10010</td>
-										<td>12241</td>
-										<td>13590</td>
-										<td>13741</td>
-										<td id="tdInputMediaGeracaoOutras">
-											<input type="text" class="form-control" id="inputMediaGeracaoOutras">
-										</td>
-										<td id="tdInputMedianaGeracaoOutras">
-											<input type="text" class="form-control" id="inputMedianaGeracaoOutras">
-										</td>
+										<td class="noLeftBorder tabelaTotal">Soma</td>
+										<td class="noRightBorder tabelaTotal">62</td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-xs-offset-3 col-xs-075">
-							<img id="imgGasNatural" title="Gás Natural" class="img-responsive imgUsinas" src="../assets/img/Objeto 2/gasNatural.png">
-						</div>
-						<div class="col-xs-075">
-							<img id="imgHidreletrica" title="Hidrelétrica" class="img-responsive imgUsinas" src="../assets/img/Objeto 2/hidreletrica.png">
-						</div>
-						<div class="col-xs-075">
-							<img id="imgPetroleo" title="Derivados de Petróleo" class="img-responsive imgUsinas" src="../assets/img/Objeto 2/fossil.png">
-						</div>
-						<div class="col-xs-075">
-							<img id="imgCarvao" title="Carvão" class="img-responsive imgUsinas" src="../assets/img/Objeto 2/carvao.png">
-						</div>
-						<div class="col-xs-075">
-							<img id="imgNuclear" title="Nuclear" class="img-responsive imgUsinas" src="../assets/img/Objeto 2/nuclear.png">
-						</div>
-						<div class="col-xs-075">
-							<img id="imgBiomassa" title="Biomassa" class="img-responsive imgUsinas" src="../assets/img/Objeto 2/biomassa.png">
-						</div>
-						<div class="col-xs-075">
-							<img id="imgEolica" title="Eólica" class="img-responsive imgUsinas" src="../assets/img/Objeto 2/eolica.png">
-						</div>
-						<div class="col-xs-075">
-							<img id="imgOutras" title="Outras" class="img-responsive imgUsinas" src="../assets/img/Objeto 2/outras.png">
+						<div class="col-xs-offset-3">
+							<div class="col-xs-1">
+								Moda
+								<input type="number" class="form-control" id="atv4InputModa">
+							</div>
+							<div class="col-xs-1">
+								Mediana
+								<input type="number" class="form-control" id="atv4InputMediana">
+							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-xs-offset-5 col-xs-2">
-							<button id="botaoEnviarRespostaAtv2" type="button" class="btn btn-success btn-block">Enviar resposta</button>
+							<button id="botaoEnviarRespostaAtv4" type="button" class="btn btn-success btn-block">Enviar resposta</button>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-xs-offset-4 col-xs-4">
-							<div id="alertAtividade2" class="alert alert-danger" role="alert">
+							<div id="alertAtividade4" class="alert alert-danger" role="alert">
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div id="atividade3">
+				<div id="telaAgradecimento">
 					<div class="row">
-						<div class="col-xs-offset-1 col-xs-1">
-							<span id="iconSeta3VoltarAtividades" title="Voltar" class="glyphicon glyphicon glyphicon-arrow-left iconSetaVoltarAtividades"> </span>
-						</div>
-						<div class="col-xs-offset-1 col-xs-6">
-							<h4 id="instrucoesAtividade3"></h4>
-							Consumo de energia elétrica por região geográfica no Brasil (TWh)
-							<table id="tabelaConsumoPorRegiao" class="table table-responsive table-bordered noMargin">
-								<thead>
-									<tr>
-										<td>Região</td>
-										<td>2011</td>
-										<td>2012</td>
-										<td>2013</td>
-										<td>2014</td>
-										<td>Média</td>
-										<td>Mediana</td>
-									</tr>
-								</thead>
-								<tbody>
-
-									<tr>
-										<td>Norte</td>
-										<td>27,77</td>
-										<td>29,04</td>
-										<td>30,19</td>
-										<td>32,36</td>
-										<td class="inputRegioes" id="tdInputMediaNorte">
-											<input type="text" class="form-control" id="inputMediaNorte">
-										</td>
-										<td class="inputRegioes" id="tdInputMedianaNorte">
-											<input type="text" class="form-control" id="inputMedianaNorte">
-										</td>
-									</tr>
-
-									<tr>
-										<td>Nordeste</td>
-										<td>71,91</td>
-										<td>75,16</td>
-										<td>79,69</td>
-										<td>80,74</td>
-										<td class="inputRegioes" id="tdInputMediaNordeste">
-											<input type="text" class="form-control" id="inputMediaNordeste">
-										</td>
-										<td class="inputRegioes" id="tdInputMedianaNordeste">
-											<input type="text" class="form-control" id="inputMedianaNordeste">
-										</td>
-									</tr>
-
-									<tr>
-										<td>Sudeste</td>
-										<td>230,66</td>
-										<td>235,23</td>
-										<td>240,10</td>
-										<td>243,02</td>
-										<td class="inputRegioes" id="tdInputMediaSudeste">
-											<input type="text" class="form-control" id="inputMediaSudeste">
-										</td>
-										<td class="inputRegioes" id="tdInputMedianaSudeste">
-											<input type="text" class="form-control" id="inputMedianaSudeste">
-										</td>
-									</tr>
-
-									<tr>
-										<td>Sul</td>
-										<td>74,46</td>
-										<td>77,49</td>
-										<td>80,39</td>
-										<td>84,81</td>
-										<td class="inputRegioes" id="tdInputMediaSul">
-											<input type="text" class="form-control" id="inputMediaSul">
-										</td>
-										<td class="inputRegioes" id="tdInputMedianaSul">
-											<input type="text" class="form-control" id="inputMedianaSul">
-										</td>
-									</tr>
-
-									<tr>
-										<td>Centro-Oeste</td>
-										<td>28,20</td>
-										<td>30,71</td>
-										<td>32,75</td>
-										<td>34,38</td>
-										<td class="inputRegioes" id="tdInputMediaCentroOeste">
-											<input type="text" class="form-control" id="inputMediaCentroOeste">
-										</td>
-										<td class="inputRegioes" id="tdInputMedianaCentroOeste">
-											<input type="text" class="form-control" id="inputMedianaCentroOeste">
-										</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-					<div id="divQuestaoAtividade3" class="row">
-						<div class="col-xs-offset-3 col-xs-5">
-							<h4 id="questaoAtividade3"> </h4>
-						</div>
-					</div>
-					<div id="perguntasAtividade3">
-						<div class="row">
-							<div id="botoesRegioes" class="col-xs-offset-3 mLeft29">
-								<div class="col-xs-15 mLeft025">
-									<button class="btn btn-block botaoAlternativasAtv3" id="buttonAlternativa1Atv3">Norte</button>
-								</div>
-								<div class="col-xs-15 mLeft025">
-									<button class="btn btn-block botaoAlternativasAtv3"  id='buttonAlternativa2Atv3'>Nordeste</button>
-								</div>
-								<div class="col-xs-15 mLeft025">
-									<button class="btn btn-block botaoAlternativasAtv3"  id='buttonAlternativa3Atv3'>Sudeste</button>
-								</div>
-								<div class="col-xs-15 mLeft025">
-									<button class="btn btn-block botaoAlternativasAtv3"  id='buttonAlternativa4Atv3'>Sul</button>
-								</div>
-								<div class="col-xs-15 mLeft025">
-									<button class="btn btn-block botaoAlternativasAtv3"  id='buttonAlternativa5Atv3'>Centro-Oeste</button>
-								</div>
-							</div>	
-						</div>
-					</div>
-					<div id="formAtividade3" class="row">
-						<div class="col-xs-offset-3 mLeft29">
-							<div class="col-xs-15 mLeft025">
-								Norte
-								<input type="number" class="form-control" id="atv3DiferencaNorte">
-
-							</div>
-							<div class="col-xs-15 mLeft025">
-								Nordeste
-								<input type="number" class="form-control" id="atv3DiferencaNordeste">
-
-							</div>
-							<div class="col-xs-15 mLeft025">
-								Sudeste
-								<input type="number" class="form-control" id="atv3DiferencaSudeste">
-
-							</div>
-							<div class="col-xs-15 mLeft025">
-								Sul
-								<input type="number" class="form-control" id="atv3DiferencaSul">
-
-							</div>
-							<div class="col-xs-15 mLeft025">
-								Centro-Oeste
-								<input type="number" class="form-control" id="atv3DiferencaCentroOeste">
-
-							</div>	
-						</div>	
-					</div>
-
-					<div class="row">
-						<div class="col-xs-offset-5 col-xs-2">
-							<button id="botaoEnviarRespostaAtv3" type="button" class="btn btn-success btn-block">Enviar resposta</button>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-offset-4 col-xs-4">
-							<div id="alertAtividade3" class="alert alert-danger" role="alert">
-							</div>
+						<div class="col-xs-offset-2 col-xs-8">
+							<img id="imgAgradecimento" class="imgsFull" src="../assets/img/Objeto 2/agradecimento.jpg">
 						</div>
 					</div>
 				</div>
+			</div> <!--Div geral -->
 
+			<div id="containerGeralGraficos">
+				<div id="containerGraficos"></div>
+				<div id="textoGraficos"></div>
+			</div>
 
-				<div id="atividade4">
-					<div class="row">
-						<div class="col-xs-offset-1 col-xs-1">
-							<span id="iconSeta4VoltarAtividades" title="Voltar" class="glyphicon glyphicon glyphicon-arrow-left iconSetaVoltarAtividades"> </span>
-						</div>
-						<div class="col-xs-offset-1 col-xs-6">
-							<h4 id="instrucoesAtividade4"></h4>
-							Número de distribuidoras por percentual de aumento da tarifa de consumo de energia elétrica para 2017 - Brasil 
-							<table id="tabelaGeracaoPorFonte" class="table table-responsive table-bordered">
-								<thead>
-									<tr>
-										<td class="noLeftBorder tabelaTotal">Percentual de Aumento</td>
-										<td class="noRightBorder tabelaTotal">Nº de Distribuidoras</td>
-									</thead>
-									<tbody>
-										<tr>
-											<td class="noLeftBorder">9</td>
-											<td class="noRightBorder">8</td>
-										</tr>
+			<!--##################### CALCULADORA ##################### -->
 
-										<tr>
-											<td class="noLeftBorder">10</td>
-											<td class="noRightBorder">7</td>
-										</tr>
-
-										<tr>
-											<td class="noLeftBorder">11</td>
-											<td class="noRightBorder">15</td>
-
-										</tr>
-
-										<tr>
-											<td class="noLeftBorder">12</td>
-											<td class="noRightBorder">28</td>
-										</tr>
-
-										<tr>
-											<td class="noLeftBorder">13</td>
-											<td class="noRightBorder">4</td>
-
-										</tr>
-
-										<tr>
-											<td class="noLeftBorder tabelaTotal">Soma</td>
-											<td class="noRightBorder tabelaTotal">62</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-offset-3">
-								<div class="col-xs-1">
-									Moda
-									<input type="number" class="form-control" id="atv4InputModa">
-								</div>
-								<div class="col-xs-1">
-									Mediana
-									<input type="number" class="form-control" id="atv4InputMediana">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-offset-5 col-xs-2">
-								<button id="botaoEnviarRespostaAtv4" type="button" class="btn btn-success btn-block">Enviar resposta</button>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-offset-4 col-xs-4">
-								<div id="alertAtividade4" class="alert alert-danger" role="alert">
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div id="telaAgradecimento">
-						<div class="row">
-							<div class="col-xs-offset-2 col-xs-8">
-								<img id="imgAgradecimento" class="imgsFull" src="../assets/img/Objeto 2/agradecimento.jpg">
-							</div>
-						</div>
-					</div>
-				</div> <!--Div geral -->
-
-				<div id="containerGeralGraficos">
-					<div id="containerGraficos"></div>
-					<div id="textoGraficos"></div>
+			<div id="calculadora">
+				<div class="top">
+					<span class="clear">C</span>
+					<div class="screen"></div>
 				</div>
 
-				<!--##################### CALCULADORA ##################### -->
-
-				<div id="calculadora">
-					<div class="top">
-						<span class="clear">C</span>
-						<div class="screen"></div>
-					</div>
-
-					<div class="keys">
-						<!-- operators and other keys -->
-						<span id="7Calculadora">7</span>
-						<span id="8Calculadora">8</span>
-						<span id="9Calculadora">9</span>
-						<span id="MaisCalculadora"class="operator">+</span>
-						<span id="4Calculadora">4</span>
-						<span id="5Calculadora">5</span>
-						<span id="6Calculadora">6</span>
-						<span id="MenosCalculadora"class="operator">-</span>
-						<span id="1Calculadora">1</span>
-						<span id="2Calculadora">2</span>
-						<span id="3Calculadora">3</span>
-						<span id="DivisaoCalculadora" class="operator">÷</span>
-						<span id="0Calculadora">0</span>
-						<span id="PontoCalculadora">.</span>
-						<span id="IgualCalculadora" class="eval">=</span>
-						<span id="MultiplicacaoCalculadora" class="operator">x</span>
-					</div>
+				<div class="keys">
+					<!-- operators and other keys -->
+					<span id="7Calculadora">7</span>
+					<span id="8Calculadora">8</span>
+					<span id="9Calculadora">9</span>
+					<span id="MaisCalculadora"class="operator">+</span>
+					<span id="4Calculadora">4</span>
+					<span id="5Calculadora">5</span>
+					<span id="6Calculadora">6</span>
+					<span id="MenosCalculadora"class="operator">-</span>
+					<span id="1Calculadora">1</span>
+					<span id="2Calculadora">2</span>
+					<span id="3Calculadora">3</span>
+					<span id="DivisaoCalculadora" class="operator">÷</span>
+					<span id="0Calculadora">0</span>
+					<span id="PontoCalculadora">.</span>
+					<span id="IgualCalculadora" class="eval">=</span>
+					<span id="MultiplicacaoCalculadora" class="operator">x</span>
 				</div>
-				
-				<!-- Calculadora -->
-				<script src="../assets/js/Misc/calculadora.js"></script>
+			</div>
 
-			</body>
-			</html>
+			<!-- Calculadora -->
+			<script src="../assets/js/Misc/calculadora.js"></script>
+
+		</body>
+		</html>
