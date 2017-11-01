@@ -151,8 +151,7 @@ function hideDivsOnObjectStart() {
 	$("#perguntasAtividade3").hide();
 	$("#formAtividade3").hide();		
 	$("#divQuestaoAtividade3").hide();
-
-
+	$("#telaFinal").hide();
 	hideIconsNome();
 }
 
@@ -277,8 +276,19 @@ function loadScene() {
 		case 15:
 		$("#telaAgradecimento").show();
 		changeTitle(" ");
+		$("#iconSetaDireita").show();
 		break;
 
+
+		case 16:
+		$("#telaFinal").show();
+		$("#imagensFixasCima").hide();
+		$("#iconSetaDireita").hide();
+		$(".navbar").hide();
+		$("body").css('padding-top', '0px');
+		$("html").css('padding-top', '0px');
+		$("body").css("overflow", "auto");
+		break;
 	}
 	$("#iconMais").hide();
 
@@ -362,6 +372,16 @@ function unloadScene() {
 
 		case 15:
 		$("#telaAgradecimento").hide();
+		break;
+
+		case 16:
+		$("#telaFinal").hide();
+		$("#imagensFixasCima").show();
+		$(".navbar").show();
+		$("body").css('padding-top', '72px');
+		$("html").css('padding-top', '72px');
+		$("body").css("overflow", "hidden");
+		window.scrollTo(0,0);
 		break;
 	}
 }
@@ -694,10 +714,8 @@ $(document).on('click', '#iconSetaDireita', function() {
 		case 12:
 		case 13:
 		case 14:
-		nextScene();
-		break;
 		case 15:
-		swal("","Você finalizou o objeto!", "error");
+		nextScene();
 		break;
 		case 3:
 		if (!videoMediaAritmeticaAssistido) {
@@ -765,6 +783,7 @@ $(document).on('click', '#iconSetaEsquerda', function() {
 		case 13:
 		case 14:
 		case 15:
+		case 16:
 		allowNextScene();
 		previousScene();
 		break;
