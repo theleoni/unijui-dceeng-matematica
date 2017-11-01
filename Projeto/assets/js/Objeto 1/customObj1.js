@@ -2793,8 +2793,19 @@
 	  			case 14:
 	  			swal("Ajuda!", "Passe o mouse sobre os quadros na tela superior direita para observar a porcentagem.").catch(swal.noop);
 	  			break;
+	  			case 15:
+	  			swal.queue(ajuda15).then(function () { });
+	  			break;
 	  		}
 	  	}
+
+	  	var ajuda15 = [
+	  	{
+	  		title: 'Ajuda!',
+	  		html: '<div class="row"><div style="text-align:left;" class="col-xs-12"><ul><li>Adicione um título para o gráfico;</li><li>Insira a fonte (referencia, site);</li><li>Em seguida insira os identificadores e seus respectivos valores;</li><li>Abaixo deverá ser inserido o nome para os dados;</li><li>Coloque a unidade dos dados (reais, cm, metros, kg, entre outros).</li></ul><br><h3>Veja o exemplo a seguir</h3></div><div class="col-xs-8"> <img class="img-responsive" src="../assets/img/Objeto 1/ajuda15.PNG"></div></div>',
+	  		width: '90%'
+	  	}]
+
 
 
 	  	$(document).on('click', '.iconFixoHelp', function () {
