@@ -82,6 +82,7 @@
 		$("#sceneDistribuicaoTarifa").hide();
 		$("#sceneGerarGrafico").hide();
 		$("#telaFinal").hide();
+		$("#telaAgradecimento").hide();
 		preloadVideo([
 			'../assets/img/Objeto 1/biomassa_animada.mp4',
 			'../assets/img/Objeto 1/eolica_animada.mp4',
@@ -163,6 +164,7 @@
 					case 13:
 					case 14:
 					case 15:
+					case 16:
 					nextScene();
 					break;
 					case 8:
@@ -266,6 +268,7 @@
 		 		case 14:
 		 		case 15:
 		 		case 16:
+		 		case 17:
 		 		previousScene();
 		 		break;
 		 		case 8:
@@ -2499,7 +2502,7 @@
 		/* Funções Gerais */
 	  	//Função que realiza a troca de uma cena para a próxima, bem como adicionar um sleep igual ao tempo de fade
 	  	function nextScene() {
-	  		if (scene == 16) {
+	  		if (scene == 17) {
 	  			swal("","Você finalizou o objeto!", "error").catch(swal.noop);
 	  		}
 	  		else {
@@ -2629,6 +2632,12 @@
 	  			break;
 
 	  			case 16:
+	  			$("#telaAgradecimento").fadeIn(fadeTime);
+	  			$("#imagensFixasCima").hide();
+	  			$("#iconSetaDireita").show();
+	  			break;
+
+	  			case 17:
 	  			$("#telaFinal").fadeIn(fadeTime);
 	  			$("#imagensFixasCima").hide();
 	  			$("#iconSetaDireita").hide();
@@ -2704,7 +2713,14 @@
 	  			case 15:
 	  			$("#sceneGerarGrafico").fadeOut(fadeTime);
 	  			break;
-	  			case 16: 
+
+	  			case 16:
+	  			$("#telaAgradecimento").hide();
+	  			$("#imagensFixasCima").show();
+
+	  			break;
+
+	  			case 17: 
 	  			$("#telaFinal").fadeOut(fadeTime);
 	  			$("#imagensFixasCima").show();
 	  			$(".navbar").show();
