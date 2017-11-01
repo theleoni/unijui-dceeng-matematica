@@ -569,3 +569,7 @@ body {
 .imgsFull {
 	width:100%;	
 }
+
+.tdCentralizado {
+	text-align: center;
+}
