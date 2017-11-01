@@ -133,6 +133,17 @@ $(document).on('keyup', '#inputNome', function (e) {
 	});
 
 
+$(document).bind('keydown', function(event) {
+	var code = event.keyCode;
+	if (scene == 26) {
+		switch (code) {
+			case 13:
+			$('#botaoEnviarResposta').trigger('click');
+			break;
+		}
+	}
+});
+
 //Importando informações do json
 /*
 $.getJSON('../assets/js/Objeto 4/dataObj4.json', function(data) {
