@@ -74,7 +74,7 @@ function hideDivsOnObjectStart() {
 	$("#telaExemplo4").hide();
 	$("#telaExemplo5").hide();
 	$("#telaExemplo6").hide();
-
+	$("#telaFinal").hide();
 	$("#telaSalaDeAula3").hide();
 	$("#telaQuestoes").hide();
 	$("#telaPrevisaoDoTempo").hide();
@@ -488,7 +488,7 @@ function checkIfStuck() {
 			break;
 
 			default:
-			if (respostasCorretas[questionNumber-1] == $("#inputResposta").val() || respostasCorretasOutra[questionNumber-1] == $("#inputResposta").val() || respostasCorretasTerceira[questionNumber-1] == $("#inputResposta").val() || respostasCorretasQuarta[questionNumber-1] == $("#inputResposta").val()) {
+			if (respostasCorretas[questionNumber-1] == $("#inputResposta").val().replace(",", ".") || respostasCorretasOutra[questionNumber-1] == $("#inputResposta").val().replace(",", ".") || respostasCorretasTerceira[questionNumber-1] == $("#inputResposta").val().replace(",", ".") || respostasCorretasQuarta[questionNumber-1] == $("#inputResposta").val().replace(",", ".")) {
 				questoesCorretas[questionNumber-1] = true;
 				allowNextScene();
 				blockQuestionButtons();
@@ -681,6 +681,7 @@ function checkIfStuck() {
 			case 23:
 			case 24:
 			case 25:
+			case 27:
 			nextScene();
 			break
 			case 3:
@@ -735,6 +736,7 @@ function checkIfStuck() {
 			case 24:
 			case 25:
 			case 27:
+			case 28:
 			previousScene();
 			break;
 			case 26:
@@ -1055,8 +1057,18 @@ function checkIfStuck() {
 			showUpperIcons();
 			changeTitle(" ");
 			$("#iconMais").hide();
-
+			$("#iconSetaDireita").show();
 			break;
+
+			case 28:
+			$("#telaFinal").show();
+			$("#imagensFixasCima").hide();
+			$("#iconSetaDireita").hide();
+			$(".navbar").hide();
+			$("body").css('padding-top', '0px');
+			$("html").css('padding-top', '0px');
+			$("body").css("overflow", "auto");
+
 		}
 	}
 
@@ -1183,6 +1195,16 @@ function checkIfStuck() {
 
 			case 27:
 			$("#telaAgradecimento").hide();
+			break;
+
+			case 28:
+			$("#telaFinal").hide();
+			$("#imagensFixasCima").show();
+			$(".navbar").show();
+			$("body").css('padding-top', '72px');
+			$("html").css('padding-top', '72px');
+			$("body").css("overflow", "hidden");
+			window.scrollTo(0,0);
 			break;
 		}
 	}
