@@ -441,62 +441,62 @@
 											<thead>
 												<tr>
 													<th>Origem</th>
-													<th>Nº de Usinas</th>
-													<th>Produção em kW</th>
-													<th>% do consumo</th>
+													<th class="tdCentralizado">Nº de Usinas</th>
+													<th class="tdCentralizado">Produção em kW</th>
+													<th class="tdCentralizado">% do consumo</th>
 												</tr>
 											</thead>
 
 											<tbody>
 												<tr>
 													<td>Biomassa</td>
-													<td>534</td>
-													<td id="producaoBiomassaTabela">40.789.632</td>
-													<td><input id="inputConsumoUsinasBiomassa" type="text" class="form-control"></td>
+													<td class="tdCentralizado">534</td>
+													<td class="tdCentralizado" id="producaoBiomassaTabela">40.789.632</td>
+													<td class="tdCentralizado"><input id="inputConsumoUsinasBiomassa" style="text-align:center;" type="text" class="form-control"></td>
 												</tr>
 												<tr>
 													<td>Hidrelétrica</td>
-													<td><input id="inputNumeroUsinasHidrica" type="text" class="form-control" ></td>
-													<td id="producaoHidreletricaTabela">282.396.846</td>
-													<td>61,34</td>
+													<td class="tdCentralizado"><input id="inputNumeroUsinasHidrica" style="text-align:center;" type="text" class="form-control" ></td>
+													<td class="tdCentralizado" id="producaoHidreletricaTabela">282.396.846</td>
+													<td class="tdCentralizado">61,34</td>
 												</tr>
 												<tr>
 													<td>Solar</td>
-													<td>42</td>
-													<td id="producaoSolarTabela">46.038</td>
-													<td><input id="inputConsumoUsinasSolar" type="text" class="form-control"></td>
+													<td class="tdCentralizado">42</td>
+													<td class="tdCentralizado" id="producaoSolarTabela">46.038</td>
+													<td class="tdCentralizado"><input id="inputConsumoUsinasSolar" style="text-align:center;" type="text" class="form-control"></td>
 												</tr>
 												<tr>
 													<td>Nuclear</td>
-													<td><input id="inputNumeroUsinasNuclear" type="text" class="form-control" ></td>
-													<td id="producaoNuclearTabela">5.708.707</td>
-													<td>1,24</td>
+													<td class="tdCentralizado"><input id="inputNumeroUsinasNuclear" style="text-align:center;" type="text" class="form-control" ></td>
+													<td class="tdCentralizado" id="producaoNuclearTabela">5.708.707</td>
+													<td class="tdCentralizado">1,24</td>
 												</tr>
 												<tr>
 													<td>Eólica</td>
-													<td>418</td>
-													<td id="producaoEolicaTabela">30.282.978</td>
-													<td>6,58</td>
+													<td class="tdCentralizado">418</td>
+													<td class="tdCentralizado" id="producaoEolicaTabela">30.282.978</td>
+													<td class="tdCentralizado">6,58</td>
 												</tr>
 												<tr>
 													<td>Fóssil</td>
-													<td><input id="inputNumeroUsinasFossil" type="text" class="form-control" ></td>
-													<td id="producaoFossilTabela">77.620.000</td>
-													<td>16,86</td>
+													<td class="tdCentralizado"><input id="inputNumeroUsinasFossil" style="text-align:center;" type="text" class="form-control" ></td>
+													<td class="tdCentralizado" id="producaoFossilTabela">77.620.000</td>
+													<td class="tdCentralizado">16,86</td>
 												</tr>
 												<tr>
 													<td>Importação</td>
-													<td>---</td>
-													<td id="producaoImportacaoTabela">23.525.398</td>
-													<td><input id="inputConsumoImportacao" type="text" class="form-control"></td>
+													<td class="tdCentralizado">---</td>
+													<td class="tdCentralizado" id="producaoImportacaoTabela">23.525.398</td>
+													<td class="tdCentralizado"><input id="inputConsumoImportacao" style="text-align:center;" type="text" class="form-control"></td>
 
 												</tr>
 
 												<tr>
 													<td>Total </td>
-													<td>---</td>
-													<td id="totalProducaoTabela">460.409.599</td>
-													<td>100</td>
+													<td class="tdCentralizado">---</td>
+													<td class="tdCentralizado" id="totalProducaoTabela">460.409.599</td>
+													<td class="tdCentralizado">100</td>
 												</tr>
 											</tbody>
 										</table>
@@ -581,7 +581,7 @@
 										<td id="quantidadeTelevisao" class="tdCentralizado">1</td>
 										<td id="potenciaTelevisao" class="tdCentralizado">90</td>
 										<!--<td id="tempoTelevisao" class="tdCentralizado">60</td>-->
-										<td id="tempoTelevisao" class="tdCentralizado"> <input id="inputTempoTelevisao" type="number" class="form-control  inputConsumoUsuario"> </td>
+										<td id="tempoTelevisao" class="tdCentralizado"> <input id="inputTempoTelevisao" style="text-align:center;" type="number" class="form-control  inputConsumoUsuario"> </td>
 
 										<td id="gastoMensalTelevisao" class="tdCentralizado"></td>
 									</tr>
@@ -611,7 +611,7 @@
 										<td id="quantidadeComputador" class="tdCentralizado">1</td>
 										<td id="potenciaComputador" class="tdCentralizado">300</td>
 										<!--<td id="tempoComputador" class="tdCentralizado">60</td>-->
-										<td id="tempoComputador" class="tdCentralizado"> <input id="inputTempoComputador" type="number" class="form-control  inputConsumoUsuario"> </td>
+										<td id="tempoComputador" class="tdCentralizado"> <input id="inputTempoComputador" style="text-align:center;" type="number" class="form-control  inputConsumoUsuario"> </td>
 
 										<td id="gastoMensalComputador" class="tdCentralizado"></td>
 									</tr>
@@ -634,7 +634,7 @@
 										<td id="quantidadeCelular" class="tdCentralizado">3</td>
 										<td id="potenciaCelular" class="tdCentralizado">7</td>
 										<!--<td id="tempoCelular" class="tdCentralizado">30</td>-->
-										<td id="tempoCelular" class="tdCentralizado"> <input id="inputTempoCelular" type="number" class="form-control inputConsumoUsuario"> </td>
+										<td id="tempoCelular" class="tdCentralizado"> <input id="inputTempoCelular" style="text-align:center;" type="number" class="form-control inputConsumoUsuario"> </td>
 										<td id="gastoMensalCelular" class="tdCentralizado"></td>
 									</tr>
 									<tr>
