@@ -951,7 +951,7 @@ var parts = {
 			<div class="col-xs-12">
 
 				<div class="text-center mais-top muitissimo-mais-bottom">
-					<button type="button" class="btn" onclick="saibaMais()">Saiba mais!</button>
+					<button id="desvio-tabela-saiba-mais" type="button" class="btn">Saiba mais!</button>
 				</div>
 
 				<h4>Encontre o desvio padrão:</h4>
@@ -1234,6 +1234,10 @@ var parts = {
 
 	function ajuda() {
 	}
+
+	document.querySelector("#desvio-tabela-saiba-mais").addEventListener('click', function() {
+		saibaMais();
+	});
 
 	function saibaMais() {
 		if (document.querySelector('#dialog-desvio-tabela-saiba-mais') == null) {
@@ -1855,11 +1859,11 @@ var parts = {
 		<img class="fundo" src="assets/img/lixeira_fundo.jpg"/>
 
 		<div class="lixeiras text-center">
-			<img class="lixeira" src="assets/img/lixeira_1_papel.png" onclick="popUp('papel')"/>
-			<img class="lixeira" src="assets/img/lixeira_2_plastico.png" onclick="popUp('plastico')"/>
-			<img class="lixeira" src="assets/img/lixeira_3_vidro.png" onclick="popUp('vidro')"/>
-			<img class="lixeira" src="assets/img/lixeira_4_metal.png" onclick="popUp('metal')"/>
-			<img class="lixeira" src="assets/img/lixeira_5_organico.png" onclick="popUp('organico')"/>
+			<img id="lixeiras-papel" class="lixeira" src="assets/img/lixeira_1_papel.png"/>
+			<img id="lixeiras-plastico" class="lixeira" src="assets/img/lixeira_2_plastico.png"/>
+			<img id="lixeiras-vidro" class="lixeira" src="assets/img/lixeira_3_vidro.png"/>
+			<img id="lixeiras-metal" class="lixeira" src="assets/img/lixeira_4_metal.png"/>
+			<img id="lixeiras-organico" class="lixeira" src="assets/img/lixeira_5_organico.png"/>
 		</div>
 
 		<div class="lixeiras-texto text-center">
@@ -1980,6 +1984,22 @@ var parts = {
 	function proxima() {
 		carregarParte('explicacao-professora.html');
 	}
+
+	document.querySelector("#lixeiras-papel").addEventListener('click', function() {
+		popUp('papel');
+	});
+	document.querySelector("#lixeiras-plastico").addEventListener('click', function() {
+		popUp('plastico');
+	});
+	document.querySelector("#lixeiras-vidro").addEventListener('click', function() {
+		popUp('vidro');
+	});
+	document.querySelector("#lixeiras-metal").addEventListener('click', function() {
+		popUp('metal');
+	});
+	document.querySelector("#lixeiras-organico").addEventListener('click', function() {
+		popUp('organico');
+	});
 
 	function popUp(tipo) {
 
@@ -2249,9 +2269,9 @@ var parts = {
 		<img class="fundo" src="assets/img/media-mediana-moda.png"/>
 
 		<div class="botoes text-center">
-			<img class="botao" src="assets/img/sala-aula-btn-media.png" onclick="popUp('media')"/>
-			<img class="botao" src="assets/img/sala-aula-btn-mediana.png" onclick="popUp('mediana')"/>
-			<img class="botao" src="assets/img/sala-aula-btn-moda.png" onclick="popUp('moda')"/>
+			<img id="media-mediana-moda-media" class="botao" src="assets/img/sala-aula-btn-media.png"/>
+			<img id="media-mediana-moda-mediana" class="botao" src="assets/img/sala-aula-btn-mediana.png"/>
+			<img id="media-mediana-moda-moda" class="botao" src="assets/img/sala-aula-btn-moda.png"/>
 		</div>
 
 	</div>
@@ -2341,13 +2361,13 @@ var parts = {
 	}
 
 	.cima-baixo {
-		display: grid;
+	    display: grid;
 		text-align: center;
 	}
 
 	.cima-baixo hr {
 		margin: 0px;
-		border-top: 1px solid #000;
+	    border-top: 1px solid #000;
 	}
 
 	.cima {
@@ -2428,6 +2448,16 @@ var parts = {
 			swal(msgAjudaMediaMedianaModa);
 		}
 	}
+
+	document.querySelector("#media-mediana-moda-media").addEventListener('click', function() {
+		popUp('media');
+	});
+	document.querySelector("#media-mediana-moda-mediana").addEventListener('click', function() {
+		popUp('mediana');
+	});
+	document.querySelector("#media-mediana-moda-moda").addEventListener('click', function() {
+		popUp('moda');
+	});
 
 	function popUp(tipo) {
 
@@ -2551,23 +2581,23 @@ var parts = {
 								<th>Lixo gerado em ton/dia</th>
 							</tr>
 							<tr>
-								<td>Região Norte</td>
+		    					<td>Região Norte</td>
 								<td>13.750</td>
 							</tr>
 							<tr>
-								<td>Região Nordeste</td>
+		    					<td>Região Nordeste</td>
 								<td>51.689</td>
 							</tr>
 							<tr>
-								<td>Região Centro-oeste</td>
+		    					<td>Região Centro-oeste</td>
 								<td>16.055</td>
 							</tr>
 							<tr>
-								<td>Região Sudeste</td>
+		    					<td>Região Sudeste</td>
 								<td>98.215</td>
 							</tr>
 							<tr>
-								<td>Região Sul</td>
+		    					<td>Região Sul</td>
 								<td>21.345</td>
 							</tr>
 						</table>
@@ -2641,19 +2671,19 @@ var parts = {
 								<th>Coleta per capita (Kg/hab/dia)</th>
 							</tr>
 							<tr>
-								<td>Espírito Santo (ES)</td>
+		    					<td>Espírito Santo (ES)</td>
 								<td class='texto-vermelho'>0,9</td>
 							</tr>
 							<tr>
-								<td>Minas Gerais (MG)</td>
+		    					<td>Minas Gerais (MG)</td>
 								<td class='texto-vermelho'>0,9</td>
 							</tr>
 							<tr>
-								<td>Rio de Janeiro (RJ)</td>
+		    					<td>Rio de Janeiro (RJ)</td>
 								<td>1,3</td>
 							</tr>
 							<tr>
-								<td>São Paulo (SP)</td>
+		    					<td>São Paulo (SP)</td>
 								<td>1,4</td>
 							</tr>
 						</table>
@@ -2668,31 +2698,31 @@ var parts = {
 								<th>Coleta per capita (Kg/hab/dia)</th>
 							</tr>
 							<tr>
-								<td>Amazonas (AM)</td>
+		    					<td>Amazonas (AM)</td>
 								<td>1,6</td>
 							</tr>
 							<tr>
-								<td>Amapá (AP)</td>
+		    					<td>Amapá (AP)</td>
 								<td class='texto-vermelho'>0,86</td>
 							</tr>
 							<tr>
-								<td>Acre (AC)</td>
+		    					<td>Acre (AC)</td>
 								<td class='texto-verde'>0,85</td>
 							</tr>
 							<tr>
-								<td>Pará (PR)</td>
+		    					<td>Pará (PR)</td>
 								<td>0,94</td>
 							</tr>
 							<tr>
-								<td>Rondônia (RO)</td>
+		    					<td>Rondônia (RO)</td>
 								<td class='texto-verde'>0,85</td>
 							</tr>
 							<tr>
-								<td>Roraima (RR)</td>
+		    					<td>Roraima (RR)</td>
 								<td class='texto-vermelho'>0,86</td>
 							</tr>
 							<tr>
-								<td>Tocantins (TO)</td>
+		    					<td>Tocantins (TO)</td>
 								<td>0,82</td>
 							</tr>
 						</table>
@@ -2707,39 +2737,39 @@ var parts = {
 								<th>Coleta per capita (Kg/hab/dia)</th>
 							</tr>
 							<tr>
-								<td>Alagoas (AL)</td>
+		    					<td>Alagoas (AL)</td>
 								<td>0,98</td>
 							</tr>
 							<tr>
-								<td>Bahia (BA)</td>
+		    					<td>Bahia (BA)</td>
 								<td class='texto-verde'>1,0</td>
 							</tr>
 							<tr>
-								<td>Ceará (CE)</td>
+		    					<td>Ceará (CE)</td>
 								<td class='texto-verde'>1,0</td>
 							</tr>
 							<tr>
-								<td>Maranhão (MA)</td>
+		    					<td>Maranhão (MA)</td>
 								<td class='texto-vermelho'>0,96</td>
 							</tr>
 							<tr>
-								<td>Paraíba (PB)</td>
+		    					<td>Paraíba (PB)</td>
 								<td class='texto-amarelo'>0,95</td>
 							</tr>
 							<tr>
-								<td>Pernambuco (PE)</td>
+		    					<td>Pernambuco (PE)</td>
 								<td>0,99</td>
 							</tr>
 							<tr>
-								<td>Piauí (PI)</td>
+		    					<td>Piauí (PI)</td>
 								<td class='texto-vermelho'>0,96</td>
 							</tr>
 							<tr>
-								<td>Rio Grande do Norte (RN)</td>
+		    					<td>Rio Grande do Norte (RN)</td>
 								<td class='texto-amarelo'>0,95</td>
 							</tr>
 							<tr>
-								<td>Sergipe (SE)</td>
+		    					<td>Sergipe (SE)</td>
 								<td>0,94</td>
 							</tr>
 						</table>
@@ -2754,15 +2784,15 @@ var parts = {
 								<th>Coleta per capita (Kg/hab/dia)</th>
 							</tr>
 							<tr>
-								<td>Paraná (PR)</td>
+		    					<td>Paraná (PR)</td>
 								<td>0,9</td>
 							</tr>
 							<tr>
-								<td>Rio Grande do Sul (RS)</td>
+		    					<td>Rio Grande do Sul (RS)</td>
 								<td>0,8</td>
 							</tr>
 							<tr>
-								<td>Santa Catarina (SC)</td>
+		    					<td>Santa Catarina (SC)</td>
 								<td>0,7</td>
 							</tr>
 						</table>
@@ -3469,19 +3499,19 @@ var parts = {
 					</tr>
 					<tr class="media">
 						<td>MÉDIA</td>
-						<td><span class="fundo-formula" onclick="popUp('9.664,34')">9.664,34</span></td>
-						<td><span class="fundo-formula" onclick="popUp('16.915,1')">16.915,1</span></td>
-						<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarResultados()' onkeyup='validarResultados()' id='formula-media-a' type="text"></td>
-						<td><span class="fundo-formula" onclick="popUp('1.309,94')">1.309,94</span></td>
-						<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarResultados()' onkeyup='validarResultados()' id='formula-media-b' type="text"></td>
+						<td><span id="questao-1-formula-a" class="fundo-formula">9.664,34</span></td>
+						<td><span id="questao-1-formula-b" class="fundo-formula">16.915,1</span></td>
+						<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' id='formula-media-a' type="text"></td>
+						<td><span id="questao-1-formula-c" class="fundo-formula">1.309,94</span></td>
+						<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' id='formula-media-b' type="text"></td>
 					</tr>
 					<tr class="mediana">
 						<td>MEDIANA</td>
-						<td><span class="fundo-formula" onclick="popUp('6.279')">6.279</span></td>
-						<td><span class="fundo-formula" onclick="popUp('4.833,9')">4.833,9</span></td>
-						<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarResultados()' onkeyup='validarResultados()' id='formula-mediana-a' type="text"></td>
-						<td><span class="fundo-formula" onclick="popUp('347,2')">347,2</span></td>
-						<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarResultados()' onkeyup='validarResultados()' id='formula-mediana-b' type="text"></td>
+						<td><span id="questao-1-formula-d" class="fundo-formula">6.279</span></td>
+						<td><span id="questao-1-formula-e" class="fundo-formula">4.833,9</span></td>
+						<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' id='formula-mediana-a' type="text"></td>
+						<td><span id="questao-1-formula-f" class="fundo-formula">347,2</span></td>
+						<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' id='formula-mediana-b' type="text"></td>
 					</tr>
 				</table>
 				<div class="fonte">
@@ -3638,13 +3668,13 @@ var parts = {
 	}
 
 	.cima-baixo {
-		display: grid;
+	    display: grid;
 		text-align: center;
 	}
 
 	.cima-baixo hr {
 		margin: 0px;
-		border-top: 1px solid #000;
+	    border-top: 1px solid #000;
 	}
 
 	.cima {
@@ -3691,6 +3721,38 @@ var parts = {
 
 		carregarParte('destino-lixo.html');
 	}
+
+	document.querySelector("#questao-1-formula-a").addEventListener('click', function() {
+		popUp('9.664,34');
+	});
+	document.querySelector("#questao-1-formula-b").addEventListener('click', function() {
+		popUp('16.915,1');
+	});
+	document.querySelector("#questao-1-formula-c").addEventListener('click', function() {
+		popUp('1.309,94')
+	});
+	document.querySelector("#questao-1-formula-d").addEventListener('click', function() {
+		popUp('6.279');
+	});
+	document.querySelector("#questao-1-formula-e").addEventListener('click', function() {
+		popUp('4.833,9');
+	});
+	document.querySelector("#questao-1-formula-f").addEventListener('click', function() {
+		popUp('347,2');
+	});
+
+	document.querySelector("#formula-media-a").addEventListener('input', function() {
+		validarResultados();
+	});
+	document.querySelector("#formula-media-b").addEventListener('input', function() {
+		validarResultados();
+	});
+	document.querySelector("#formula-mediana-a").addEventListener('input', function() {
+		validarResultados();
+	});
+	document.querySelector("#formula-mediana-b").addEventListener('input', function() {
+		validarResultados();
+	});
 
 	function ajuda() {
 		if (document.querySelector('#dialog-questao-1-ajuda') == null) {
@@ -3952,28 +4014,28 @@ var parts = {
 				<div class="col-xs-3 text-center">
 					<div class="questao-a-1 input-x fundo-normal">
 						<h5>1²=</h5>
-						<input id='input-questao-a-1' type="text" onkeyup="validarValores()" onblur="validarValores()">
+						<input id='input-questao-a-1' type="text">
 					</div>
 				</div>
 
 				<div class="col-xs-3 text-center">
 					<div class="questao-a-2 input-x fundo-normal">
 						<h5>2²=</h5>
-						<input id='input-questao-a-2' type="text" onkeyup="validarValores()" onblur="validarValores()">
+						<input id='input-questao-a-2' type="text">
 					</div>
 				</div>
 
 				<div class="col-xs-3 text-center">
 					<div class="questao-a-3 input-x fundo-normal">
 						<h5>4²=</h5>
-						<input id='input-questao-a-3' type="text" onkeyup="validarValores()" onblur="validarValores()">
+						<input id='input-questao-a-3' type="text">
 					</div>
 				</div>
 
 				<div class="col-xs-3 text-center">
 					<div class="questao-a-4 input-x fundo-normal">
 						<h5>10²=</h5>
-						<input id='input-questao-a-4' type="text" onkeyup="validarValores()" onblur="validarValores()">
+						<input id='input-questao-a-4' type="text">
 					</div>
 				</div>
 			</div>
@@ -3983,7 +4045,7 @@ var parts = {
 
 				<div class="text-center">
 					<div class="input-x fundo-normal">
-						<input id='input-questao-b' type="text" onkeyup="validarValores()" onblur="validarValores()">
+						<input id='input-questao-b' type="text">
 					</div>
 				</div>
 			</div>
@@ -3993,7 +4055,7 @@ var parts = {
 
 				<div class="text-center">
 					<div class="input-x fundo-normal">
-						<input id='input-questao-c' type="text" onkeyup="validarValores()" onblur="validarValores()">
+						<input id='input-questao-c' type="text">
 					</div>
 				</div>
 			</div>
@@ -4003,7 +4065,7 @@ var parts = {
 
 				<div class="text-center">
 					<div class="input-x fundo-normal">
-						<input id='input-questao-d' type="text" onkeyup="validarValores()" onblur="validarValores()">
+						<input id='input-questao-d' type="text">
 					</div>
 				</div>
 			</div>
@@ -4140,6 +4202,28 @@ var parts = {
 		});
 		dialogQuestao2Ajuda.dialog("open");
 	}
+
+	document.querySelector("#input-questao-a-1").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-questao-a-2").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-questao-a-3").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-questao-a-4").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-questao-b").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-questao-c").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-questao-d").addEventListener('input', function() {
+		validarValores();
+	});
 
 	let valorCorretoQuestaoA1 = 1;
 	let valorCorretoQuestaoA2 = 4;
@@ -4319,7 +4403,7 @@ var parts = {
 				<div class="campo-media">
 					<div class="text-center">
 						<div class="input-x fundo-normal preenchimento-b">
-							<input id='media' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+							<input id='media' type="text" placeholder="?">
 						</div>
 					</div>
 				</div>
@@ -4701,6 +4785,10 @@ var parts = {
 		});
 		dialogQuestao3Ajuda.dialog("open");
 	}
+
+	document.querySelector("#media").addEventListener('input', function() {
+		validarValores();
+	});
 
 	let inputMedia = document.querySelector("#media");
 

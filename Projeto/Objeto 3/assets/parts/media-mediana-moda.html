@@ -2,9 +2,9 @@
 	<img class="fundo" src="assets/img/media-mediana-moda.png"/>
 
 	<div class="botoes text-center">
-		<img class="botao" src="assets/img/sala-aula-btn-media.png" onclick="popUp('media')"/>
-		<img class="botao" src="assets/img/sala-aula-btn-mediana.png" onclick="popUp('mediana')"/>
-		<img class="botao" src="assets/img/sala-aula-btn-moda.png" onclick="popUp('moda')"/>
+		<img id="media-mediana-moda-media" class="botao" src="assets/img/sala-aula-btn-media.png"/>
+		<img id="media-mediana-moda-mediana" class="botao" src="assets/img/sala-aula-btn-mediana.png"/>
+		<img id="media-mediana-moda-moda" class="botao" src="assets/img/sala-aula-btn-moda.png"/>
 	</div>
 
 </div>
@@ -181,6 +181,16 @@ function ajuda() {
 		swal(msgAjudaMediaMedianaModa);
 	}
 }
+
+document.querySelector("#media-mediana-moda-media").addEventListener('click', function() {
+	popUp('media');
+});
+document.querySelector("#media-mediana-moda-mediana").addEventListener('click', function() {
+	popUp('mediana');
+});
+document.querySelector("#media-mediana-moda-moda").addEventListener('click', function() {
+	popUp('moda');
+});
 
 function popUp(tipo) {
 

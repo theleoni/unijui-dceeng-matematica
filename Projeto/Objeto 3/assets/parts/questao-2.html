@@ -9,28 +9,28 @@
 			<div class="col-xs-3 text-center">
 				<div class="questao-a-1 input-x fundo-normal">
 					<h5>1²=</h5>
-					<input id='input-questao-a-1' type="text" onkeyup="validarValores()" onblur="validarValores()">
+					<input id='input-questao-a-1' type="text">
 				</div>
 			</div>
 
 			<div class="col-xs-3 text-center">
 				<div class="questao-a-2 input-x fundo-normal">
 					<h5>2²=</h5>
-					<input id='input-questao-a-2' type="text" onkeyup="validarValores()" onblur="validarValores()">
+					<input id='input-questao-a-2' type="text">
 				</div>
 			</div>
 
 			<div class="col-xs-3 text-center">
 				<div class="questao-a-3 input-x fundo-normal">
 					<h5>4²=</h5>
-					<input id='input-questao-a-3' type="text" onkeyup="validarValores()" onblur="validarValores()">
+					<input id='input-questao-a-3' type="text">
 				</div>
 			</div>
 
 			<div class="col-xs-3 text-center">
 				<div class="questao-a-4 input-x fundo-normal">
 					<h5>10²=</h5>
-					<input id='input-questao-a-4' type="text" onkeyup="validarValores()" onblur="validarValores()">
+					<input id='input-questao-a-4' type="text">
 				</div>
 			</div>
 		</div>
@@ -40,7 +40,7 @@
 
 			<div class="text-center">
 				<div class="input-x fundo-normal">
-					<input id='input-questao-b' type="text" onkeyup="validarValores()" onblur="validarValores()">
+					<input id='input-questao-b' type="text">
 				</div>
 			</div>
 		</div>
@@ -50,7 +50,7 @@
 
 			<div class="text-center">
 				<div class="input-x fundo-normal">
-					<input id='input-questao-c' type="text" onkeyup="validarValores()" onblur="validarValores()">
+					<input id='input-questao-c' type="text">
 				</div>
 			</div>
 		</div>
@@ -60,7 +60,7 @@
 
 			<div class="text-center">
 				<div class="input-x fundo-normal">
-					<input id='input-questao-d' type="text" onkeyup="validarValores()" onblur="validarValores()">
+					<input id='input-questao-d' type="text">
 				</div>
 			</div>
 		</div>
@@ -197,6 +197,28 @@ function ajuda() {
 	});
 	dialogQuestao2Ajuda.dialog("open");
 }
+
+document.querySelector("#input-questao-a-1").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-questao-a-2").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-questao-a-3").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-questao-a-4").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-questao-b").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-questao-c").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-questao-d").addEventListener('input', function() {
+	validarValores();
+});
 
 let valorCorretoQuestaoA1 = 1;
 let valorCorretoQuestaoA2 = 4;

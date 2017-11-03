@@ -74,19 +74,19 @@
 				</tr>
 				<tr class="media">
 					<td>MÉDIA</td>
-					<td><span class="fundo-formula" onclick="popUp('9.664,34')">9.664,34</span></td>
-					<td><span class="fundo-formula" onclick="popUp('16.915,1')">16.915,1</span></td>
-					<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarResultados()' onkeyup='validarResultados()' id='formula-media-a' type="text"></td>
-					<td><span class="fundo-formula" onclick="popUp('1.309,94')">1.309,94</span></td>
-					<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarResultados()' onkeyup='validarResultados()' id='formula-media-b' type="text"></td>
+					<td><span id="questao-1-formula-a" class="fundo-formula">9.664,34</span></td>
+					<td><span id="questao-1-formula-b" class="fundo-formula">16.915,1</span></td>
+					<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' id='formula-media-a' type="text"></td>
+					<td><span id="questao-1-formula-c" class="fundo-formula">1.309,94</span></td>
+					<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' id='formula-media-b' type="text"></td>
 				</tr>
 				<tr class="mediana">
 					<td>MEDIANA</td>
-					<td><span class="fundo-formula" onclick="popUp('6.279')">6.279</span></td>
-					<td><span class="fundo-formula" onclick="popUp('4.833,9')">4.833,9</span></td>
-					<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarResultados()' onkeyup='validarResultados()' id='formula-mediana-a' type="text"></td>
-					<td><span class="fundo-formula" onclick="popUp('347,2')">347,2</span></td>
-					<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarResultados()' onkeyup='validarResultados()' id='formula-mediana-b' type="text"></td>
+					<td><span id="questao-1-formula-d" class="fundo-formula">6.279</span></td>
+					<td><span id="questao-1-formula-e" class="fundo-formula">4.833,9</span></td>
+					<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' id='formula-mediana-a' type="text"></td>
+					<td><span id="questao-1-formula-f" class="fundo-formula">347,2</span></td>
+					<td><input class="fundo-editavel fundo-editavel-normal" placeholder='?' id='formula-mediana-b' type="text"></td>
 				</tr>
 			</table>
 			<div class="fonte">
@@ -296,6 +296,38 @@ function proxima() {
 
 	carregarParte('destino-lixo.html');
 }
+
+document.querySelector("#questao-1-formula-a").addEventListener('click', function() {
+	popUp('9.664,34');
+});
+document.querySelector("#questao-1-formula-b").addEventListener('click', function() {
+	popUp('16.915,1');
+});
+document.querySelector("#questao-1-formula-c").addEventListener('click', function() {
+	popUp('1.309,94')
+});
+document.querySelector("#questao-1-formula-d").addEventListener('click', function() {
+	popUp('6.279');
+});
+document.querySelector("#questao-1-formula-e").addEventListener('click', function() {
+	popUp('4.833,9');
+});
+document.querySelector("#questao-1-formula-f").addEventListener('click', function() {
+	popUp('347,2');
+});
+
+document.querySelector("#formula-media-a").addEventListener('input', function() {
+	validarResultados();
+});
+document.querySelector("#formula-media-b").addEventListener('input', function() {
+	validarResultados();
+});
+document.querySelector("#formula-mediana-a").addEventListener('input', function() {
+	validarResultados();
+});
+document.querySelector("#formula-mediana-b").addEventListener('input', function() {
+	validarResultados();
+});
 
 function ajuda() {
 	if (document.querySelector('#dialog-questao-1-ajuda') == null) {

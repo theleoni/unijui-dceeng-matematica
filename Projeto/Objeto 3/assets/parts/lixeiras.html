@@ -2,11 +2,11 @@
 	<img class="fundo" src="assets/img/lixeira_fundo.jpg"/>
 
 	<div class="lixeiras text-center">
-		<img class="lixeira" src="assets/img/lixeira_1_papel.png" onclick="popUp('papel')"/>
-		<img class="lixeira" src="assets/img/lixeira_2_plastico.png" onclick="popUp('plastico')"/>
-		<img class="lixeira" src="assets/img/lixeira_3_vidro.png" onclick="popUp('vidro')"/>
-		<img class="lixeira" src="assets/img/lixeira_4_metal.png" onclick="popUp('metal')"/>
-		<img class="lixeira" src="assets/img/lixeira_5_organico.png" onclick="popUp('organico')"/>
+		<img id="lixeiras-papel" class="lixeira" src="assets/img/lixeira_1_papel.png"/>
+		<img id="lixeiras-plastico" class="lixeira" src="assets/img/lixeira_2_plastico.png"/>
+		<img id="lixeiras-vidro" class="lixeira" src="assets/img/lixeira_3_vidro.png"/>
+		<img id="lixeiras-metal" class="lixeira" src="assets/img/lixeira_4_metal.png"/>
+		<img id="lixeiras-organico" class="lixeira" src="assets/img/lixeira_5_organico.png"/>
 	</div>
 
 	<div class="lixeiras-texto text-center">
@@ -127,6 +127,22 @@ function anterior() {
 function proxima() {
 	carregarParte('explicacao-professora.html');
 }
+
+document.querySelector("#lixeiras-papel").addEventListener('click', function() {
+	popUp('papel');
+});
+document.querySelector("#lixeiras-plastico").addEventListener('click', function() {
+	popUp('plastico');
+});
+document.querySelector("#lixeiras-vidro").addEventListener('click', function() {
+	popUp('vidro');
+});
+document.querySelector("#lixeiras-metal").addEventListener('click', function() {
+	popUp('metal');
+});
+document.querySelector("#lixeiras-organico").addEventListener('click', function() {
+	popUp('organico');
+});
 
 function popUp(tipo) {
 

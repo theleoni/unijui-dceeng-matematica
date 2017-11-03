@@ -51,7 +51,7 @@
 		<div class="col-xs-12">
 
 			<div class="text-center mais-top muitissimo-mais-bottom">
-				<button type="button" class="btn" onclick="saibaMais()">Saiba mais!</button>
+				<button id="desvio-tabela-saiba-mais" type="button" class="btn">Saiba mais!</button>
 			</div>
 
 			<h4>Encontre o desvio padrão:</h4>
@@ -334,6 +334,10 @@ function proxima() {
 
 function ajuda() {
 }
+
+document.querySelector("#desvio-tabela-saiba-mais").addEventListener('click', function() {
+	saibaMais();
+});
 
 function saibaMais() {
 	if (document.querySelector('#dialog-desvio-tabela-saiba-mais') == null) {

@@ -44,7 +44,7 @@
 			<div class="campo-media">
 				<div class="text-center">
 					<div class="input-x fundo-normal preenchimento-b">
-						<input id='media' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+						<input id='media' type="text" placeholder="?">
 					</div>
 				</div>
 			</div>
@@ -426,6 +426,10 @@ function ajuda() {
 	});
 	dialogQuestao3Ajuda.dialog("open");
 }
+
+document.querySelector("#media").addEventListener('input', function() {
+	validarValores();
+});
 
 let inputMedia = document.querySelector("#media");
 

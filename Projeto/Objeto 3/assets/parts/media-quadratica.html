@@ -4,7 +4,7 @@
 	<video id='video-fundo' class='fundo ocultar' src="assets/video/matematica-quadratica-explicacao.mp4"/>
 
 	<div class="muito-mais-top muitissimo-mais-bottom text-center ocultar" id="div-saiba-mais">
-		<button type="button" class="btn" onclick="saibaMais()">Saiba mais</button>
+		<button id="media-quadratica-saiba-mais" type="button" class="btn">Saiba mais</button>
 	</div>
 
 	<div class="mensagens">
@@ -127,6 +127,10 @@ function ajuda() {
 
 document.querySelector('#video-fundo').addEventListener('ended', function() {
 	proxima();
+});
+
+document.querySelector("#media-quadratica-saiba-mais").addEventListener('click', function() {
+	saibaMais();
 });
 
 function saibaMais() {
