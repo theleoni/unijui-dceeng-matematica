@@ -226,7 +226,12 @@
 	}
 	</style>
 
+	<script src='assets/js/lista-partes.js'></script>
+
 	<script type="text/javascript">
+
+	let pre = ;
+
 	var iconSetaEsquerda;
 	var iconSetaDireita;
 	var iconAjuda;
@@ -242,39 +247,41 @@
 
 	var nomePessoa = 'Aluno';
 
-	var ultimoLinkCarregado = '';
-	var qtdErroCarregar = 0;
-	var qtdErroCarregarMax = 5;
+	// var ultimoLinkCarregado = '';
+	// var qtdErroCarregar = 0;
+	// var qtdErroCarregarMax = 5;
 	function carregarParte(link) {
 
-		if (qtdErroCarregar < qtdErroCarregarMax) {
+		document.querySelector('.geral').innerHTML = parts[link];
 
-			ultimoLinkCarregado = link;
-			recarregarBotoes();
-			$('.geral').load(`assets/parts/${link}`,
-				function (responseText, status, jqXHR) {
-
-					switch (status) {
-
-						case "success":
-						case "notmodified":
-
-							qtdErroCarregar = 0;
-							break;
-
-						default:
-						case "error":
-						case "timeout":
-						case "parsererror":
-
-							qtdErroCarregar++;
-							carregarParte(link);
-
-							break;
-					}
-				}
-			);
-		}
+		// if (qtdErroCarregar < qtdErroCarregarMax) {
+		//
+		// 	ultimoLinkCarregado = link;
+		// 	recarregarBotoes();
+		// 	$('.geral').load(`assets/parts/${link}`,
+		// 		function (responseText, status, jqXHR) {
+		//
+		// 			switch (status) {
+		//
+		// 				case "success":
+		// 				case "notmodified":
+		//
+		// 					qtdErroCarregar = 0;
+		// 					break;
+		//
+		// 				default:
+		// 				case "error":
+		// 				case "timeout":
+		// 				case "parsererror":
+		//
+		// 					qtdErroCarregar++;
+		// 					carregarParte(link);
+		//
+		// 					break;
+		// 			}
+		// 		}
+		// 	);
+		// }
 	}
 
 	let shiftPressionado = false;

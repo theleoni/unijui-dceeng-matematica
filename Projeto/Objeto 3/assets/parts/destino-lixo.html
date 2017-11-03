@@ -3,17 +3,17 @@
 
 	<div class="container destino-lixo">
 		<div class="saiba-mais">
-			<img src="assets/img/destino-lixo-saiba-mais.png" onclick="saibaMais()"/>
+			<img id="destino-lixo-img-saiba-mais" src="assets/img/destino-lixo-saiba-mais.png"/>
 		</div>
 		<div class="text-center">
-			<img class="destino" src="assets/img/destino-lixo-vazadouro-aberto.png" onclick="popUp('vazadouro-aberto')"/>
-			<img class="destino" src="assets/img/destino-lixo-vazadouro-alagado.png" onclick="popUp('vazadouro-alagado')"/>
-			<img class="destino" src="assets/img/destino-lixo-aterro-controlado.png" onclick="popUp('aterro-controlado')"/>
+			<img id="destino-lixo-img-vazadouro-aberto" class="destino" src="assets/img/destino-lixo-vazadouro-aberto.png"/>
+			<img id="destino-lixo-img-vazadouro-alagado" class="destino" src="assets/img/destino-lixo-vazadouro-alagado.png"/>
+			<img id="destino-lixo-img-aterro-controlado" class="destino" src="assets/img/destino-lixo-aterro-controlado.png"/>
 		</div>
 		<div class="text-center">
-			<img class="destino" src="assets/img/destino-lixo-aterro-sanitario.png" onclick="popUp('aterro-sanitario')"/>
-			<img class="destino" src="assets/img/destino-lixo-compostagem.png" onclick="popUp('compostagem')"/>
-			<img class="destino" src="assets/img/destino-lixo-triagem.png" onclick="popUp('triagem')"/>
+			<img id="destino-lixo-img-aterro-sanitario" class="destino" src="assets/img/destino-lixo-aterro-sanitario.png"/>
+			<img id="destino-lixo-img-compostagem" class="destino" src="assets/img/destino-lixo-compostagem.png"/>
+			<img id="destino-lixo-img-triagem" class="destino" src="assets/img/destino-lixo-triagem.png"/>
 		</div>
 	</div>
 
@@ -95,6 +95,28 @@ function proxima() {
 function ajuda() {
 	swal('Clique/encoste sobre cada imagem para ler a explicação sobre as principais unidades de destino final do lixo.');
 }
+
+document.querySelector("#destino-lixo-img-saiba-mais").addEventListener('click', function() {
+	saibaMais();
+});
+document.querySelector("#destino-lixo-img-vazadouro-aberto").addEventListener('click', function() {
+	popUp('vazadouro-aberto');
+});
+document.querySelector("#destino-lixo-img-vazadouro-alagado").addEventListener('click', function() {
+	popUp('vazadouro-alagado');
+});
+document.querySelector("#destino-lixo-img-aterro-controlado").addEventListener('click', function() {
+	popUp('aterro-controlado');
+});
+document.querySelector("#destino-lixo-img-aterro-sanitario").addEventListener('click', function() {
+	popUp('aterro-sanitario');
+});
+document.querySelector("#destino-lixo-img-compostagem").addEventListener('click', function() {
+	popUp('compostagem');
+});
+document.querySelector("#destino-lixo-img-triagem").addEventListener('click', function() {
+	popUp('triagem');
+});
 
 function popUp(tipo) {
 
