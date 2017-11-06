@@ -5088,23 +5088,23 @@ var parts = {
 							<div class="calculo">
 								<div class="cima">
 									<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-a">
-										<input id='input-soma-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+										<input id='input-soma-a' type="text" placeholder="?">
 									</div>
 									² +
 									<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-b">
-										<input id='input-soma-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+										<input id='input-soma-b' type="text" placeholder="?">
 									</div>
 									² +
 									<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-c">
-										<input id='input-soma-c' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+										<input id='input-soma-c' type="text" placeholder="?">
 									</div>
 									² +
 									<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-d">
-										<input id='input-soma-d' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+										<input id='input-soma-d' type="text" placeholder="?">
 									</div>
 									² +
 									<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-e">
-										<input id='input-soma-e' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+										<input id='input-soma-e' type="text" placeholder="?">
 									</div>
 									²
 								</div>
@@ -5425,6 +5425,22 @@ var parts = {
 		});
 		dialogQuestao4Ajuda.dialog("open");
 	}
+
+	document.querySelector("#input-soma-a").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-soma-b").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-soma-c").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-soma-d").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-soma-e").addEventListener('input', function() {
+		validarValores();
+	});
 
 	let valorSomaA = -168.6;
 	let valorSomaB = -117.6;
@@ -5750,23 +5766,23 @@ var parts = {
 							<div class="calculo">
 								<div class="cima">
 									<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-a">
-										<input id='input-soma-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+										<input id='input-soma-a' type="text" placeholder="?">
 									</div>
 									+
 									<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-b">
-										<input id='input-soma-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+										<input id='input-soma-b' type="text" placeholder="?">
 									</div>
 									+
 									<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-c">
-										<input id='input-soma-c' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+										<input id='input-soma-c' type="text" placeholder="?">
 									</div>
 									+
 									<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-d">
-										<input id='input-soma-d' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+										<input id='input-soma-d' type="text" placeholder="?">
 									</div>
 									+
 									<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-e">
-										<input id='input-soma-e' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+										<input id='input-soma-e' type="text" placeholder="?">
 									</div>
 								</div>
 								<div class="linha">
@@ -6063,6 +6079,22 @@ var parts = {
 		dialogQuestao5Ajuda.dialog("open");
 	}
 
+	document.querySelector("#input-soma-a").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-soma-b").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-soma-c").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-soma-d").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-soma-e").addEventListener('input', function() {
+		validarValores();
+	});
+
 	let valorSomaA = 27225;
 	let valorSomaB = 13689;
 	let valorSomaC = 40000;
@@ -6284,7 +6316,7 @@ var parts = {
 				<div class="text-center mais-top">
 					<img src="assets/img/desvio_padrao-formula-3.png">
 					<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao">
-						<input id='input-desvio-padrao' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+						<input id='input-desvio-padrao' type="text" placeholder="?">
 					</div>
 				</div>
 
@@ -6458,6 +6490,10 @@ var parts = {
 		dialogQuestao6Ajuda.dialog("open");
 	}
 
+	document.querySelector("#input-desvio-padrao").addEventListener('input', function() {
+		validarValores();
+	});
+
 	let inputQuestao6DesvioPadrao = document.querySelector("#input-desvio-padrao");
 	let campoQuestao6DesvioPadrao = document.querySelector("#campo-desvio-padrao");
 
@@ -6548,11 +6584,11 @@ var parts = {
 				<div class="text-center mais-top">
 					<span>S = &#8730;</span>
 					<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao-a">
-						<input id='input-desvio-padrao-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+						<input id='input-desvio-padrao-a' type="text" placeholder="?">
 					</div>
 					<span> = </span>
 					<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao-b">
-						<input id='input-desvio-padrao-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+						<input id='input-desvio-padrao-b' type="text" placeholder="?">
 					</div>
 				</div>
 
@@ -6726,6 +6762,13 @@ var parts = {
 		dialogQuestao7Ajuda.dialog("open");
 	}
 
+	document.querySelector("#input-desvio-padrao-a").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-desvio-padrao-b").addEventListener('input', function() {
+		validarValores()
+	});
+
 	let inputQuestao6ADesvioPadrao = document.querySelector("#input-desvio-padrao-a");
 	let inputQuestao6BDesvioPadrao = document.querySelector("#input-desvio-padrao-b");
 	let campoQuestao6ADesvioPadrao = document.querySelector("#campo-desvio-padrao-a");
@@ -6836,11 +6879,11 @@ var parts = {
 				<div class="text-center mais-top">
 					<span>S = &#8730;</span>
 					<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao-a">
-						<input id='input-desvio-padrao-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+						<input id='input-desvio-padrao-a' type="text" placeholder="?">
 					</div>
 					<span> = </span>
 					<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao-b">
-						<input id='input-desvio-padrao-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+						<input id='input-desvio-padrao-b' type="text" placeholder="?">
 					</div>
 				</div>
 
@@ -7014,6 +7057,13 @@ var parts = {
 		dialogQuestao8Ajuda.dialog("open");
 	}
 
+	document.querySelector("#input-desvio-padrao-a").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-desvio-padrao-b").addEventListener('input', function() {
+		validarValores()
+	});
+
 	let inputQuestao6ADesvioPadrao = document.querySelector("#input-desvio-padrao-a");
 	let inputQuestao6BDesvioPadrao = document.querySelector("#input-desvio-padrao-b");
 	let campoQuestao6ADesvioPadrao = document.querySelector("#campo-desvio-padrao-a");
@@ -7151,7 +7201,7 @@ var parts = {
 				</table>
 
 				<div class="text-center mais-top muitissimo-mais-bottom">
-					<button type="button" class="btn" onclick="saibaMais()">Saiba mais!</button>
+					<button type="button" class="btn" id="questao-9-saiba-mais">Saiba mais!</button>
 				</div>
 			</div>
 
@@ -7212,7 +7262,7 @@ var parts = {
 							<td><span class="preenchimento-b">1,4</span></td>
 							<td><span class="preenchimento-a">1</span> - <span class="preenchimento-b">1,4</span> =
 								<span class="preenchimento-c">
-									<input id='input-menor-a' class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+									<input id='input-menor-a' class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 								</span>
 							</td>
 							<td><span class="preenchimento-d total-a">0,16</span></td>
@@ -7228,7 +7278,7 @@ var parts = {
 							<td><span class="preenchimento-b">1,4</span></td>
 							<td><span class="preenchimento-a">2</span> - <span class="preenchimento-b">1,4</span> = <span class="preenchimento-c soma-c">0,6</span></td>
 							<td><span class="preenchimento-d total-c">
-								<input id="input-menor-b" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+								<input id="input-menor-b" class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 							</span></td>
 						</tr>
 						<tr>
@@ -7247,7 +7297,7 @@ var parts = {
 							<td colspan="2"></td>
 							<td>Soma = </td>
 							<td><span class="totalizado-final">
-								<input id="input-menor-c" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+								<input id="input-menor-c" class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 							</span></td>
 						</tr>
 					</table>
@@ -7274,7 +7324,7 @@ var parts = {
 						<div class="calculo">
 							<div class="cima">
 								<div class="input-x fundo-normal preenchimento-c" id="campo-variancia-a">
-									<input id='input-variancia-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+									<input id='input-variancia-a' type="text" placeholder="?">
 								</div>
 							</div>
 						</div>
@@ -7294,7 +7344,7 @@ var parts = {
 						<div class="calculo">
 							<div class="cima">
 								<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-a">
-									<input id='input-desvio-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+									<input id='input-desvio-a' type="text" placeholder="?">
 								</div>
 							</div>
 						</div>
@@ -7361,7 +7411,7 @@ var parts = {
 							<td><span class="preenchimento-a">2</span> - <span class="preenchimento-b">12,6</span> = <span class="preenchimento-c soma-a">-10,6</span></td>
 							<td>
 								<span class="preenchimento-c">
-									<input id="input-maior-b" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+									<input id="input-maior-b" class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 								</span>
 							</td>
 						</tr>
@@ -7376,7 +7426,7 @@ var parts = {
 							<td><span class="preenchimento-b">12,6</span></td>
 							<td><span class="preenchimento-a">26</span> - <span class="preenchimento-b">12,6</span> =
 								<span class="preenchimento-c">
-									<input id="input-maior-a" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+									<input id="input-maior-a" class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 								</span>
 							</td>
 							<td><span class="preenchimento-d total-c">179,56</span></td>
@@ -7393,7 +7443,7 @@ var parts = {
 							<td><span class="preenchimento-a">7</span> - <span class="preenchimento-b">12,6</span> = <span class="preenchimento-c soma-e">-5,6</span></td>
 							<td>
 								<span class="preenchimento-c">
-									<input id="input-maior-c" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+									<input id="input-maior-c" class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 								</span>
 							</td>
 						</tr>
@@ -7426,7 +7476,7 @@ var parts = {
 						<div class="calculo">
 							<div class="cima">
 								<div class="input-x fundo-normal preenchimento-c" id="campo-variancia-b">
-									<input id='input-variancia-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+									<input id='input-variancia-b' type="text" placeholder="?">
 								</div>
 							</div>
 						</div>
@@ -7446,7 +7496,7 @@ var parts = {
 						<div class="calculo">
 							<div class="cima">
 								<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-b">
-									<input id='input-desvio-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+									<input id='input-desvio-b' type="text" placeholder="?">
 								</div>
 							</div>
 						</div>
@@ -7751,6 +7801,41 @@ var parts = {
 			closeModal: true,
 			className: 'btn',
 		},
+	});
+
+	//!
+	document.querySelector("#questao-9").addEventListener('click', function() {
+		saibaMais();
+	});
+	document.querySelector("#input-maior-a").addEventListener('click', function() {
+		validarValores();
+	});
+	document.querySelector("#input-maior-b").addEventListener('click', function() {
+		validarValores();
+	});
+	document.querySelector("#input-maior-c").addEventListener('click', function() {
+		validarValores();
+	});
+	document.querySelector("#input-menor-a").addEventListener('click', function() {
+		validarValores();
+	});
+	document.querySelector("#input-menor-b").addEventListener('click', function() {
+		validarValores();
+	});
+	document.querySelector("#input-menor-c").addEventListener('click', function() {
+		validarValores();
+	});
+	document.querySelector("#input-variancia-a").addEventListener('click', function() {
+		validarValores();
+	});
+	document.querySelector("#input-variancia-b").addEventListener('click', function() {
+		validarValores();
+	});
+	document.querySelector("#input-desvio-a").addEventListener('click', function() {
+		validarValores();
+	});
+	document.querySelector("#input-desvio-b").addEventListener('click', function() {
+		validarValores();
 	});
 
 	let inputQuestao9VarianciaA = document.querySelector("#input-variancia-a");
@@ -8252,7 +8337,7 @@ var parts = {
 						<div class="calculo">
 							<div class="cima">
 								<div class="input-x fundo-normal preenchimento-c" id="campo-valor-a">
-									<input id='input-valor-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+									<input id='input-valor-a' type="text" placeholder="?">
 								</div>
 							</div>
 							<div class="linha">
@@ -8260,7 +8345,7 @@ var parts = {
 							</div>
 							<div class="baixo">
 								<div class="input-x fundo-normal preenchimento-c" id="campo-valor-b">
-									<input id='input-valor-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+									<input id='input-valor-b' type="text" placeholder="?">
 								</div>
 							</div>
 						</div>
@@ -8271,7 +8356,7 @@ var parts = {
 
 						<div class="calculo">
 							<div class="input-x fundo-normal preenchimento-c" id="campo-valor-c">
-								<input id='input-valor-c' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								<input id='input-valor-c' type="text" placeholder="?">
 							</div>
 						</div>
 
@@ -8281,7 +8366,7 @@ var parts = {
 
 						<div class="calculo">
 							<div class="input-x fundo-normal preenchimento-c" id="campo-valor-d">
-								<input id='input-valor-d' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								<input id='input-valor-d' type="text" placeholder="?">
 							</div>
 						</div>
 
@@ -8434,6 +8519,7 @@ var parts = {
 	apenasNumeros(document.querySelector("#input-valor-a"));
 	apenasNumeros(document.querySelector("#input-valor-b"));
 	apenasNumeros(document.querySelector("#input-valor-c"));
+	apenasNumeros(document.querySelector("#input-valor-d"));
 
 	$("#iconSetaEsquerda").show();
 	$("#iconSetaDireita").hide();
@@ -8489,6 +8575,20 @@ var parts = {
 		});
 		dialogQuestao10Ajuda.dialog("open");
 	}
+
+	//!
+	document.querySelector("#input-valor-a").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-valor-b").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-valor-c").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-valor-d").addEventListener('input', function() {
+		validarValores();
+	});
 
 	let valorCorretoA = 8.6;
 	let valorCorretoB = 14;
@@ -8566,7 +8666,7 @@ var parts = {
 			campoValorD.classList.add('fundo-normal');
 		}
 
-		if (valorTotalAOk && valorTotalBOk && valorTotalCOk && valorTotalCOk) {
+		if (valorTotalAOk && valorTotalBOk && valorTotalCOk && valorTotalDOk) {
 			$("#iconSetaDireita").show();
 		} else {
 			$("#iconSetaDireita").hide();
@@ -8726,7 +8826,7 @@ var parts = {
 						<div class="calculo">
 							<div class="cima">
 								<div class="input-x fundo-normal preenchimento-c" id="campo-valor-a">
-									<input id='input-valor-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+									<input id='input-valor-a' type="text" placeholder="?">
 								</div>
 							</div>
 							<div class="linha">
@@ -8734,7 +8834,7 @@ var parts = {
 							</div>
 							<div class="baixo">
 								<div class="input-x fundo-normal preenchimento-c" id="campo-valor-b">
-									<input id='input-valor-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+									<input id='input-valor-b' type="text" placeholder="?">
 								</div>
 							</div>
 						</div>
@@ -8745,7 +8845,7 @@ var parts = {
 
 						<div class="calculo">
 							<div class="input-x fundo-normal preenchimento-c" id="campo-valor-c">
-								<input id='input-valor-c' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								<input id='input-valor-c' type="text" placeholder="?">
 							</div>
 						</div>
 
@@ -8755,7 +8855,7 @@ var parts = {
 
 						<div class="calculo">
 							<div class="input-x fundo-normal preenchimento-c" id="campo-valor-d">
-								<input id='input-valor-d' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								<input id='input-valor-d' type="text" placeholder="?">
 							</div>
 						</div>
 
@@ -8908,6 +9008,7 @@ var parts = {
 	apenasNumeros(document.querySelector("#input-valor-a"));
 	apenasNumeros(document.querySelector("#input-valor-b"));
 	apenasNumeros(document.querySelector("#input-valor-c"));
+	apenasNumeros(document.querySelector("#input-valor-d"));
 
 	$("#iconSetaEsquerda").show();
 	$("#iconSetaDireita").hide();
@@ -8963,6 +9064,20 @@ var parts = {
 		});
 		dialogQuestao11Ajuda.dialog("open");
 	}
+
+	//!
+	document.querySelector("#input-valor-a").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-valor-b").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-valor-c").addEventListener('input', function() {
+		validarValores();
+	});
+	document.querySelector("#input-valor-d").addEventListener('input', function() {
+		validarValores();
+	});
 
 	let valorCorretoA = 190.16;
 	let valorCorretoB = 195.4;

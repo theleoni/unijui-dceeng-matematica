@@ -70,7 +70,7 @@
 			</table>
 
 			<div class="text-center mais-top muitissimo-mais-bottom">
-				<button type="button" class="btn" onclick="saibaMais()">Saiba mais!</button>
+				<button type="button" class="btn" id="questao-9-saiba-mais">Saiba mais!</button>
 			</div>
 		</div>
 
@@ -131,7 +131,7 @@
 						<td><span class="preenchimento-b">1,4</span></td>
 						<td><span class="preenchimento-a">1</span> - <span class="preenchimento-b">1,4</span> =
 							<span class="preenchimento-c">
-								<input id='input-menor-a' class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+								<input id='input-menor-a' class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 							</span>
 						</td>
 						<td><span class="preenchimento-d total-a">0,16</span></td>
@@ -147,7 +147,7 @@
 						<td><span class="preenchimento-b">1,4</span></td>
 						<td><span class="preenchimento-a">2</span> - <span class="preenchimento-b">1,4</span> = <span class="preenchimento-c soma-c">0,6</span></td>
 						<td><span class="preenchimento-d total-c">
-							<input id="input-menor-b" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+							<input id="input-menor-b" class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 						</span></td>
 					</tr>
 					<tr>
@@ -166,7 +166,7 @@
 						<td colspan="2"></td>
 						<td>Soma = </td>
 						<td><span class="totalizado-final">
-							<input id="input-menor-c" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+							<input id="input-menor-c" class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 						</span></td>
 					</tr>
 				</table>
@@ -193,7 +193,7 @@
 					<div class="calculo">
 						<div class="cima">
 							<div class="input-x fundo-normal preenchimento-c" id="campo-variancia-a">
-								<input id='input-variancia-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								<input id='input-variancia-a' type="text" placeholder="?">
 							</div>
 						</div>
 					</div>
@@ -213,7 +213,7 @@
 					<div class="calculo">
 						<div class="cima">
 							<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-a">
-								<input id='input-desvio-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								<input id='input-desvio-a' type="text" placeholder="?">
 							</div>
 						</div>
 					</div>
@@ -280,7 +280,7 @@
 						<td><span class="preenchimento-a">2</span> - <span class="preenchimento-b">12,6</span> = <span class="preenchimento-c soma-a">-10,6</span></td>
 						<td>
 							<span class="preenchimento-c">
-								<input id="input-maior-b" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+								<input id="input-maior-b" class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 							</span>
 						</td>
 					</tr>
@@ -295,7 +295,7 @@
 						<td><span class="preenchimento-b">12,6</span></td>
 						<td><span class="preenchimento-a">26</span> - <span class="preenchimento-b">12,6</span> =
 							<span class="preenchimento-c">
-								<input id="input-maior-a" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+								<input id="input-maior-a" class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 							</span>
 						</td>
 						<td><span class="preenchimento-d total-c">179,56</span></td>
@@ -312,7 +312,7 @@
 						<td><span class="preenchimento-a">7</span> - <span class="preenchimento-b">12,6</span> = <span class="preenchimento-c soma-e">-5,6</span></td>
 						<td>
 							<span class="preenchimento-c">
-								<input id="input-maior-c" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+								<input id="input-maior-c" class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 							</span>
 						</td>
 					</tr>
@@ -345,7 +345,7 @@
 					<div class="calculo">
 						<div class="cima">
 							<div class="input-x fundo-normal preenchimento-c" id="campo-variancia-b">
-								<input id='input-variancia-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								<input id='input-variancia-b' type="text" placeholder="?">
 							</div>
 						</div>
 					</div>
@@ -365,7 +365,7 @@
 					<div class="calculo">
 						<div class="cima">
 							<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-b">
-								<input id='input-desvio-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								<input id='input-desvio-b' type="text" placeholder="?">
 							</div>
 						</div>
 					</div>
@@ -670,6 +670,41 @@ swal({
 		closeModal: true,
 		className: 'btn',
 	},
+});
+
+//!
+document.querySelector("#questao-9").addEventListener('click', function() {
+	saibaMais();
+});
+document.querySelector("#input-maior-a").addEventListener('click', function() {
+	validarValores();
+});
+document.querySelector("#input-maior-b").addEventListener('click', function() {
+	validarValores();
+});
+document.querySelector("#input-maior-c").addEventListener('click', function() {
+	validarValores();
+});
+document.querySelector("#input-menor-a").addEventListener('click', function() {
+	validarValores();
+});
+document.querySelector("#input-menor-b").addEventListener('click', function() {
+	validarValores();
+});
+document.querySelector("#input-menor-c").addEventListener('click', function() {
+	validarValores();
+});
+document.querySelector("#input-variancia-a").addEventListener('click', function() {
+	validarValores();
+});
+document.querySelector("#input-variancia-b").addEventListener('click', function() {
+	validarValores();
+});
+document.querySelector("#input-desvio-a").addEventListener('click', function() {
+	validarValores();
+});
+document.querySelector("#input-desvio-b").addEventListener('click', function() {
+	validarValores();
 });
 
 let inputQuestao9VarianciaA = document.querySelector("#input-variancia-a");

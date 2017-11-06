@@ -128,23 +128,23 @@
 						<div class="calculo">
 							<div class="cima">
 								<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-a">
-									<input id='input-soma-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+									<input id='input-soma-a' type="text" placeholder="?">
 								</div>
 								² +
 								<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-b">
-									<input id='input-soma-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+									<input id='input-soma-b' type="text" placeholder="?">
 								</div>
 								² +
 								<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-c">
-									<input id='input-soma-c' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+									<input id='input-soma-c' type="text" placeholder="?">
 								</div>
 								² +
 								<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-d">
-									<input id='input-soma-d' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+									<input id='input-soma-d' type="text" placeholder="?">
 								</div>
 								² +
 								<div class="input-x fundo-normal preenchimento-c" id="campo-da-soma-e">
-									<input id='input-soma-e' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+									<input id='input-soma-e' type="text" placeholder="?">
 								</div>
 								²
 							</div>
@@ -465,6 +465,22 @@ function ajuda() {
 	});
 	dialogQuestao4Ajuda.dialog("open");
 }
+
+document.querySelector("#input-soma-a").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-soma-b").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-soma-c").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-soma-d").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-soma-e").addEventListener('input', function() {
+	validarValores();
+});
 
 let valorSomaA = -168.6;
 let valorSomaB = -117.6;

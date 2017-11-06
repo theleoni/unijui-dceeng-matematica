@@ -49,7 +49,7 @@
 			<div class="text-center mais-top">
 				<img src="assets/img/desvio_padrao-formula-3.png">
 				<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao">
-					<input id='input-desvio-padrao' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+					<input id='input-desvio-padrao' type="text" placeholder="?">
 				</div>
 			</div>
 
@@ -222,6 +222,10 @@ function ajuda() {
 	});
 	dialogQuestao6Ajuda.dialog("open");
 }
+
+document.querySelector("#input-desvio-padrao").addEventListener('input', function() {
+	validarValores();
+});
 
 let inputQuestao6DesvioPadrao = document.querySelector("#input-desvio-padrao");
 let campoQuestao6DesvioPadrao = document.querySelector("#campo-desvio-padrao");
