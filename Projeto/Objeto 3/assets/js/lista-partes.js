@@ -1869,6 +1869,9 @@ var parts = {
 		<div class="lixeiras-texto text-center">
 			<h4>Clique nas lixeiras para saber mais sobre separação do lixo</h4>
 		</div>
+
+		<div class="mensagens">
+		</div>
 	</div>
 
 	<style media="screen">
@@ -2004,8 +2007,8 @@ var parts = {
 	function popUp(tipo) {
 
 		if (document.querySelector('#dialog-lixeiras-pop-up') == null) {
-			let inner = document.querySelector(".geral-interno").innerHTML;
-			inner += $%&
+			let innerAjuda = document.querySelector(".mensagens").innerHTML;
+			innerAjuda += $%&
 			<div id="dialog-lixeiras-pop-up">
 				<div class="lixeira-explicacao row">
 					<div class="imagem text-center col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -2017,9 +2020,8 @@ var parts = {
 						<p id="lixeira-explicacao-secundario">texto</p>
 					</div>
 				</div>
-			</div>$%&
-			document.querySelector(".geral-interno").innerHTML = inner;
-
+			</div>$%&;
+			document.querySelector(".mensagens").innerHTML = innerAjuda;
 		}
 
 		let caminhoImg = 'assets/img/';
@@ -2049,7 +2051,7 @@ var parts = {
 					<span class="tab"></span>O mesmo papel pode ser reciclado entre 7 a 10 vezes. O papel é formado essencialmente por fibras celulósicas e estas vão se degradando a cada processo de reciclagem.
 					</h4>
 				</div>
-				$%&
+				$%&;
 				break;
 
 			case 'plastico':
@@ -2190,7 +2192,6 @@ var parts = {
 			modal: true,
 			buttons: {}
 		});
-
 		dialogLixeirasPopUp.dialog("open");
 	}
 
@@ -2272,6 +2273,9 @@ var parts = {
 			<img id="media-mediana-moda-media" class="botao" src="assets/img/sala-aula-btn-media.png"/>
 			<img id="media-mediana-moda-mediana" class="botao" src="assets/img/sala-aula-btn-mediana.png"/>
 			<img id="media-mediana-moda-moda" class="botao" src="assets/img/sala-aula-btn-moda.png"/>
+		</div>
+
+		<div class="mensagens">
 		</div>
 
 	</div>
@@ -2464,7 +2468,7 @@ var parts = {
 		$("#iconAjuda").show();
 
 		if (document.querySelector('#dialog-form-mmm') == null) {
-			let inner = document.querySelector(".geral-interno").innerHTML;
+			let inner = document.querySelector(".mensagens").innerHTML;
 			inner += $%&
 			<div id="dialog-form-mmm">
 				<div class="botao-explicacao row">
@@ -2474,7 +2478,7 @@ var parts = {
 					</div>
 				</div>
 			</div>$%&
-			document.querySelector(".geral-interno").innerHTML = inner;
+			document.querySelector(".mensagens").innerHTML = inner;
 		}
 
 		let titulo = '';

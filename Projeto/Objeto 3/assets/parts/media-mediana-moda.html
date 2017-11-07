@@ -7,6 +7,9 @@
 		<img id="media-mediana-moda-moda" class="botao" src="assets/img/sala-aula-btn-moda.png"/>
 	</div>
 
+	<div class="mensagens">
+	</div>
+
 </div>
 
 <style media="screen">
@@ -197,7 +200,7 @@ function popUp(tipo) {
 	$("#iconAjuda").show();
 
 	if (document.querySelector('#dialog-form-mmm') == null) {
-		let inner = document.querySelector(".geral-interno").innerHTML;
+		let inner = document.querySelector(".mensagens").innerHTML;
 		inner += `
 		<div id="dialog-form-mmm">
 			<div class="botao-explicacao row">
@@ -207,7 +210,7 @@ function popUp(tipo) {
 				</div>
 			</div>
 		</div>`
-		document.querySelector(".geral-interno").innerHTML = inner;
+		document.querySelector(".mensagens").innerHTML = inner;
 	}
 
 	let titulo = '';

@@ -12,6 +12,9 @@
 	<div class="lixeiras-texto text-center">
 		<h4>Clique nas lixeiras para saber mais sobre separação do lixo</h4>
 	</div>
+
+	<div class="mensagens">
+	</div>
 </div>
 
 <style media="screen">
@@ -147,8 +150,8 @@ document.querySelector("#lixeiras-organico").addEventListener('click', function(
 function popUp(tipo) {
 
 	if (document.querySelector('#dialog-lixeiras-pop-up') == null) {
-		let inner = document.querySelector(".geral-interno").innerHTML;
-		inner += `
+		let innerAjuda = document.querySelector(".mensagens").innerHTML;
+		innerAjuda += `
 		<div id="dialog-lixeiras-pop-up">
 			<div class="lixeira-explicacao row">
 				<div class="imagem text-center col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -160,9 +163,8 @@ function popUp(tipo) {
 					<p id="lixeira-explicacao-secundario">texto</p>
 				</div>
 			</div>
-		</div>`
-		document.querySelector(".geral-interno").innerHTML = inner;
-
+		</div>`;
+		document.querySelector(".mensagens").innerHTML = innerAjuda;
 	}
 
 	let caminhoImg = 'assets/img/';
@@ -192,7 +194,7 @@ function popUp(tipo) {
 				<span class="tab"></span>O mesmo papel pode ser reciclado entre 7 a 10 vezes. O papel é formado essencialmente por fibras celulósicas e estas vão se degradando a cada processo de reciclagem.
 				</h4>
 			</div>
-			`
+			`;
 			break;
 
 		case 'plastico':
@@ -333,7 +335,6 @@ function popUp(tipo) {
 		modal: true,
 		buttons: {}
 	});
-
 	dialogLixeirasPopUp.dialog("open");
 }
 
