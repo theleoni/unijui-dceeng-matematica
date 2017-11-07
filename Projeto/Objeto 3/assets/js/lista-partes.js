@@ -7808,37 +7808,37 @@ var parts = {
 	});
 
 	//!
-	document.querySelector("#questao-9").addEventListener('click', function() {
+	document.querySelector("#questao-9-saiba-mais").addEventListener('click', function() {
 		saibaMais();
 	});
-	document.querySelector("#input-maior-a").addEventListener('click', function() {
+	document.querySelector("#input-maior-a").addEventListener('input', function() {
 		validarValores();
 	});
-	document.querySelector("#input-maior-b").addEventListener('click', function() {
+	document.querySelector("#input-maior-b").addEventListener('input', function() {
 		validarValores();
 	});
-	document.querySelector("#input-maior-c").addEventListener('click', function() {
+	document.querySelector("#input-maior-c").addEventListener('input', function() {
 		validarValores();
 	});
-	document.querySelector("#input-menor-a").addEventListener('click', function() {
+	document.querySelector("#input-menor-a").addEventListener('input', function() {
 		validarValores();
 	});
-	document.querySelector("#input-menor-b").addEventListener('click', function() {
+	document.querySelector("#input-menor-b").addEventListener('input', function() {
 		validarValores();
 	});
-	document.querySelector("#input-menor-c").addEventListener('click', function() {
+	document.querySelector("#input-menor-c").addEventListener('input', function() {
 		validarValores();
 	});
-	document.querySelector("#input-variancia-a").addEventListener('click', function() {
+	document.querySelector("#input-variancia-a").addEventListener('input', function() {
 		validarValores();
 	});
-	document.querySelector("#input-variancia-b").addEventListener('click', function() {
+	document.querySelector("#input-variancia-b").addEventListener('input', function() {
 		validarValores();
 	});
-	document.querySelector("#input-desvio-a").addEventListener('click', function() {
+	document.querySelector("#input-desvio-a").addEventListener('input', function() {
 		validarValores();
 	});
-	document.querySelector("#input-desvio-b").addEventListener('click', function() {
+	document.querySelector("#input-desvio-b").addEventListener('input', function() {
 		validarValores();
 	});
 
