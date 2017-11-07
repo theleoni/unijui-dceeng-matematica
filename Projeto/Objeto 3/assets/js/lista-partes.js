@@ -7706,10 +7706,10 @@ var parts = {
 					<div class="principal text-center">
 
 						<div class='muitissimo-mais-top'>
-							<button class='btn' onclick="ajudaPage('variancia')">Variância</button>
+							<button class='btn' id="questao-9-saiba-mais-variancia">Variância</button>
 						</div>
 						<div class='muitissimo-mais-top'>
-							<button class='btn' onclick="ajudaPage('desvio')">Desvio Padrão</button>
+							<button class='btn' id="questao-9-saiba-mais-desvio">Desvio Padrão</button>
 						</div>
 
 					</div>
@@ -7730,7 +7730,7 @@ var parts = {
 						</div>
 
 						<div class='text-center muito-mais-bottom'>
-							<button class='btn' onclick="ajudaPage('principal')">Voltar</button>
+							<button class='btn' id="questao-9-saiba-mais-variancia-voltar">Voltar</button>
 						</div>
 					</div>
 
@@ -7744,13 +7744,27 @@ var parts = {
 						</div>
 
 						<div class='text-center muito-mais-bottom'>
-							<button class='btn' onclick="ajudaPage('principal')">Voltar</button>
+							<button class='btn' id="questao-9-saiba-mais-desvio-voltar">Voltar</button>
 						</div>
 					</div>
 
 				</div>
 			</div>$%&;
 			document.querySelector(".mensagens").innerHTML = innerAjuda;
+
+			document.querySelector("#questao-9-saiba-mais-variancia").addEventListener('click', function() {
+				ajudaPage('variancia');
+			});
+			document.querySelector("#questao-9-saiba-mais-desvio").addEventListener('click', function() {
+				ajudaPage('desvio');
+			});
+			document.querySelector("#questao-9-saiba-mais-variancia-voltar").addEventListener('click', function() {
+				ajudaPage('principal');
+			});
+			document.querySelector("#questao-9-saiba-mais-desvio-voltar").addEventListener('click', function() {
+				ajudaPage('principal');
+			});
+
 			ajudaPage('principal');
 		}
 
