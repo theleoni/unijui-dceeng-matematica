@@ -366,7 +366,11 @@ function checkIfStuck() {
 
 	//Função utilizada para carregar a questão correta
 	function loadQuestion() {
-
+		if (questionNumber > 8) {
+			$("#iconMais").hide();
+		} else {
+			$("#iconMais").show();
+		}
 		switch (questionNumber) {
 			case 1:
 			swal("Atenção!", "Nas respostas dos exercícios a seguir utilize valores arredondados para duas casas após a virgula");
