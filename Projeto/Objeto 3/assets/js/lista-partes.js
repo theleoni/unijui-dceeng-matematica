@@ -349,7 +349,7 @@ var parts = {
 	`
 	<div class="geral-interno">
 
-		<img id='img-fundo' class="fundo" src="../assets/img/telaFinal.jpg"/>
+		<img id='img-fundo' class="fundo" src="assets/img/tela-final.jpg"/>
 
 		<div class="mensagens">
 		</div>
@@ -1007,10 +1007,10 @@ var parts = {
 							<th>Quadrado dos desvios</th>
 						</tr>
 						<tr>
-							<th>Xi (valores)</th>
-							<th>X&#772; (média)</th>
-							<th>(Xi - X&#772;) (valor - média)</th>
-							<th>(Xi - X&#772;)²</th>
+							<th><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> (valores)</th>
+							<th><span class="formula-a">X&#772;</span> (média)</th>
+							<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>) (valor - média)</th>
+							<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>)²</th>
 						</tr>
 						<tr>
 							<td><span class="preenchimento-a">3</span></td>
@@ -1483,6 +1483,11 @@ var parts = {
 		font-size: 1.6rem;
 	}
 
+	.obs {
+		font-weight: bold;
+		color: #DD5454;
+	}
+
 	</style>
 
 	<script type="text/javascript">
@@ -1494,7 +1499,7 @@ var parts = {
 
 	$("#iconSetaEsquerda").show();
 	$("#iconSetaDireita").show();
-	$("#iconAjuda").hide();
+	$("#iconAjuda").show();
 	$("#iconCalculadora").hide();
 
 	iconSetaEsquerda.addEventListener("click", function() {
@@ -1520,6 +1525,31 @@ var parts = {
 	}
 
 	function ajuda() {
+
+		if (document.querySelector('#dialog-final-ajuda') == null) {
+			let innerAjuda = document.querySelector(".mensagens").innerHTML;
+			innerAjuda += $%&
+			<div id="dialog-final-ajuda">
+				<h3><span class='super-tab'></span>Adicione o número de linhas e colunas conforme quiser e achar necessário, <span class="obs">OBSERVANDO</span> o máximo de 12 linhas e 12 colunas! Coloque um Título para a tabela, em seguida nomeie cada linha, insira valores em cada linha e coluna e observe que abaixo será dado automaticamente o valor referente à Media, Mediana, Desvio Padrão e Variância. Por exemplo:</h3>
+
+				<div class='mais-top mais-bottom text-center'>
+					<img src='assets/img/final-ajuda.png'/>
+				</div>
+
+				<h3><span class='super-tab'></span>Foi adicionado valores referente à altura e o peso de cada aluno citado na tabela, foi dado os resultados de Média, Mediana, Desvio Padrão e Variância, tudo de forma Automática, ou seja, não é necessário realizar nenhuma operação, apenas é necessário usar a criatividade para inserir os dados na tabela!</h3>
+
+			</div>$%&;
+			document.querySelector(".mensagens").innerHTML = innerAjuda;
+		}
+
+		let dialogFinalAjuda = $("#dialog-final-ajuda").dialog({
+			autoOpen: false,
+			height: 500,
+			width: 1000,
+			modal: true,
+			buttons: {}
+		});
+		dialogFinalAjuda.dialog("open");
 	}
 
 	document.querySelector("#input-coluna").addEventListener('keyup', function(event) {
@@ -1534,7 +1564,7 @@ var parts = {
 	document.querySelector("#input-linha").addEventListener('input', function(event) {
 		validarLinhasTabela();
 	});
-	document.querySelector("#input-linha").addEventListener('click', function(event) {
+	document.querySelector("#input-calcular").addEventListener('click', function(event) {
 		carregarTabela();
 	});
 
@@ -3037,59 +3067,59 @@ var parts = {
 				<table class='table text-center'>
 					<tr>
 						<th>Classes</th>
-						<th>fi (Frequência)</th>
-						<th>Xi (Média Aritmética de cada class)</th>
-						<th>xi² (Média ao quadrado)</th>
-						<th>xi² * fi</th>
+						<th><span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span> (Frequência)</th>
+						<th><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> (Média Aritmética de cada class)</th>
+						<th><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span>² (Média ao quadrado)</th>
+						<th><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span>² × <span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span></th>
 					</tr>
 					<tr>
 						<td>2|------ 4</td>
 						<td>5</td>
 						<td>3</td>
 						<td>3² = 9</td>
-						<td>9*5 = 45</td>
+						<td>9 × 5 = 45</td>
 					</tr>
 					<tr>
 						<td>4|------ 6</td>
 						<td>1</td>
 						<td>5</td>
 						<td>5² = 25</td>
-						<td>25*10 = 250</td>
+						<td>25 × 10 = 250</td>
 					</tr>
 					<tr>
 						<td>6|------ 8</td>
 						<td>12</td>
 						<td>7</td>
 						<td>7² = 49</td>
-						<td>49*12 = 588</td>
+						<td>49 × 12 = 588</td>
 					</tr>
 					<tr>
 						<td>8|------ 10</td>
 						<td>10</td>
 						<td>9</td>
 						<td>9² = 81</td>
-						<td>81*10 = 810</td>
+						<td>81 × 10 = 810</td>
 					</tr>
 					<tr>
 						<td>10|------ 12</td>
 						<td>5</td>
 						<td>11</td>
 						<td>11² = 121</td>
-						<td>121*5 = 605</td>
+						<td>121 × 5 = 605</td>
 					</tr>
 				</table>
 			</div>
 
 			<h3>Resolução</h3>
 			<h4><span class="tab"></span><b>1ºPasso:</b> Obter os dados da tabela, caso a mesma não esteja completa;</h4>
-			<h4><span class="tab"></span><b>2ºPasso:</b> Obter <b>xi²</b>, ou seja, o quadrado de cada média. Em seguida multiplicar pelo seu peso (<b>fi</b>);</h4>
-			<h4><span class="tab"></span><b>3ºPasso:</b> A soma dos resultados de <b>xi²*fi</b>, dividida pela soma dos pesos (<b>fi</b>);</h4>
+			<h4><span class="tab"></span><b>2ºPasso:</b> Obter <b><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span>²</b>, ou seja, o quadrado de cada média. Em seguida multiplicar pelo seu peso (<b><span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span></b>);</h4>
+			<h4><span class="tab"></span><b>3ºPasso:</b> A soma dos resultados de <b><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span>² × <span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span></b>, dividida pela soma dos pesos (<b><span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span></b>);</h4>
 			<h4><span class="tab"></span><b>4ºPasso:</b> Raiz quadrada da divisão das somas anteriores;</h4>
 			<div class="text-center mais-bottom">
 				<img src="assets/img/media-quadratica-dados-agrupados-formula-2.jpg">
 			</div>
 
-			<h4 class="muito-mais-bottom">Observe que os valores estão divididos em classes e possuem pesos (<b>Xi</b>) diferentes, em que <b>Xi</b> é a média aritmética de cada classe e <b>xi²</b> é o quadrado da média aritmética.</h4>
+			<h4 class="muito-mais-bottom">Observe que os valores estão divididos em classes e possuem pesos (<b><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span></b>) diferentes, em que <b><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span></b> é a média aritmética de cada classe e <b><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span>²</b> é o quadrado da média aritmética.</h4>
 
 		</div>
 
@@ -4549,10 +4579,10 @@ var parts = {
 
 				<table class="table text-center">
 					<tr>
-						<th>Xi (valores)</th>
-						<th>X&#772; (média)</th>
-						<th>(Xi - X&#772;) (valor - média)</th>
-						<th>(Xi - X&#772;)²</th>
+						<th><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> (valores)</th>
+						<th><span class="formula-a">X&#772;</span> (média)</th>
+						<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>) (valor - média)</th>
+						<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>)²</th>
 					</tr>
 					<tr>
 						<td><span class="preenchimento-a">19</span></td>
@@ -5187,10 +5217,10 @@ var parts = {
 
 				<table class="table text-center">
 					<tr>
-						<th>Xi (valores)</th>
-						<th>X&#772; (média)</th>
-						<th>(Xi - X&#772;) (valor - média)</th>
-						<th>(Xi - X&#772;)²</th>
+						<th><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> (valores)</th>
+						<th><span class="formula-a">X&#772;</span> (média)</th>
+						<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>) (valor - média)</th>
+						<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>)²</th>
 					</tr>
 					<tr>
 						<td><span class="preenchimento-a">16</span></td>
@@ -5840,10 +5870,10 @@ var parts = {
 
 				<table class="table text-center">
 					<tr>
-						<th>Xi (valores)</th>
-						<th>X&#772; (média)</th>
-						<th>(Xi - X&#772;) (valor - média)</th>
-						<th>(Xi - X&#772;)²</th>
+						<th><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> (valores)</th>
+						<th><span class="formula-a">X&#772;</span> (média)</th>
+						<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>) (valor - média)</th>
+						<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>)²</th>
 					</tr>
 					<tr>
 						<td><span class="preenchimento-a">18</span></td>
@@ -7207,6 +7237,11 @@ var parts = {
 				<div class="text-center mais-top muitissimo-mais-bottom">
 					<button type="button" class="btn" id="questao-9-saiba-mais">Saiba mais!</button>
 				</div>
+
+			</div>
+
+			<div class="col-xs-12 text-center aviso muito-mais-bottom">
+				<h4>Para realizar esta atividade, você precisa primeiramente completar as tabelas abaixo.</h4>
 			</div>
 
 			<div class="col-xs-12 col-md-6">
@@ -7256,10 +7291,10 @@ var parts = {
 							<th>Quadrado dos desvios</th>
 						</tr>
 						<tr>
-							<th>Xi (valores)</th>
-							<th>X&#772; (média)</th>
-							<th>(Xi - X&#772;) (valor - média)</th>
-							<th>(Xi - X&#772;)²</th>
+							<th><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> (valores)</th>
+							<th><span class="formula-a">X&#772;</span> (média)</th>
+							<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>) (valor - média)</th>
+							<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>)²</th>
 						</tr>
 						<tr>
 							<td><span class="preenchimento-a">1</span></td>
@@ -7404,10 +7439,10 @@ var parts = {
 							<th>Quadrado dos desvios</th>
 						</tr>
 						<tr>
-							<th>Xi (valores)</th>
-							<th>X&#772; (média)</th>
-							<th>(Xi - X&#772;) (valor - média)</th>
-							<th>(Xi - X&#772;)²</th>
+							<th><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> (valores)</th>
+							<th><span class="formula-a">X&#772;</span> (média)</th>
+							<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>) (valor - média)</th>
+							<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>)²</th>
 						</tr>
 						<tr>
 							<td><span class="preenchimento-a">2</span></td>
@@ -7655,6 +7690,14 @@ var parts = {
 		color: #FFFFFF;
 		background-color: #46D079;
 		transition: .3s ease;
+	}
+
+	.aviso {
+
+		color: #FFFFFF;
+		background-color: #0F81B1;
+		border-radius: 4px;
+		padding: 12px;
 	}
 
 	</style>
@@ -8260,10 +8303,10 @@ var parts = {
 							<th>Quadrado dos desvios</th>
 						</tr>
 						<tr>
-							<th>Xi (valores)</th>
-							<th>X&#772; (média)</th>
-							<th>(Xi - X&#772;) (valor - média)</th>
-							<th>(Xi - X&#772;)²</th>
+							<th><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> (valores)</th>
+							<th><span class="formula-a">X&#772;</span> (média)</th>
+							<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>) (valor - média)</th>
+							<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>)²</th>
 						</tr>
 						<tr>
 							<td><span class="preenchimento-a">3</span></td>
@@ -8344,12 +8387,12 @@ var parts = {
 								<hr>
 							</div>
 							<div class="baixo">
-								<h4>X&#772;</h4>
+								<h4><span class="formula-a">X&#772;</span></h4>
 							</div>
 						</div>
 
 						<div class="calculo">
-							<h4> * 100 = </h4>
+							<h4> × 100 = </h4>
 						</div>
 
 						<div class="calculo">
@@ -8369,7 +8412,7 @@ var parts = {
 						</div>
 
 						<div class="calculo">
-							<h4> * 100 = </h4>
+							<h4> × 100 = </h4>
 						</div>
 
 						<div class="calculo">
@@ -8379,7 +8422,7 @@ var parts = {
 						</div>
 
 						<div class="calculo">
-							<h4> * 100 = </h4>
+							<h4> × 100 = </h4>
 						</div>
 
 						<div class="calculo">
@@ -8749,10 +8792,10 @@ var parts = {
 							<th>Quadrado dos desvios</th>
 						</tr>
 						<tr>
-							<th>Xi (valores)</th>
-							<th>X&#772; (média)</th>
-							<th>(Xi - X&#772;) (valor - média)</th>
-							<th>(Xi - X&#772;)²</th>
+							<th><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> (valores)</th>
+							<th><span class="formula-a">X&#772;</span> (média)</th>
+							<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>) (valor - média)</th>
+							<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>)²</th>
 						</tr>
 						<tr>
 							<td><span class="preenchimento-a">19</span></td>
@@ -8833,12 +8876,12 @@ var parts = {
 								<hr>
 							</div>
 							<div class="baixo">
-								<h4>X&#772;</h4>
+								<h4><span class="formula-a">X&#772;</span></h4>
 							</div>
 						</div>
 
 						<div class="calculo">
-							<h4> * 100 = </h4>
+							<h4> × 100 = </h4>
 						</div>
 
 						<div class="calculo">
@@ -8858,7 +8901,7 @@ var parts = {
 						</div>
 
 						<div class="calculo">
-							<h4> * 100 = </h4>
+							<h4> × 100 = </h4>
 						</div>
 
 						<div class="calculo">
@@ -8868,7 +8911,7 @@ var parts = {
 						</div>
 
 						<div class="calculo">
-							<h4> * 100 = </h4>
+							<h4> × 100 = </h4>
 						</div>
 
 						<div class="calculo">
@@ -9488,10 +9531,32 @@ var parts = {
 	"variancia.html":
 	`
 	<div class="geral-interno">
-		<img id='img-fundo' class="fundo" src="assets/img/variancia-1.png"/>
+		<img id='img-fundo' class="fundo" src="assets/img/coeficiente-variacao.png"/>
 
-		<div class='explicacoes container oculto muito-mais-top'>
-			<h3>Exemplo: Calcular a variância dos seguintes valores da tabela:</h3>
+		<div class='explicacoes-1 container muito-mais-top oculto'>
+
+			<h4><span class="tab"></span>É a razão entre o desvio padrão e a média referentes a dados de uma mesma série, dado pela fórmula:</h4>
+
+			<div class="text-center mais-top">
+				<img src="assets/img/coeficiente-variacao-formula-1.png">
+			</div>
+
+			<h4>Onde,</h4>
+			<h4><i>CV</i> > é o coeficiente de variação</h4>
+			<h4><i>S</i> > é o desvio padrão</h4>
+			<h4><span class="formula-a">X&#772;</span> > é a média dos dados</h4>
+
+			<h4 class="muito-mais-top">O coeficiente de variação é dado em %, por isso a fórmula é multiplicada por 100.</h4>
+			<div class="text-center mais-top">
+				<img src="assets/img/coeficiente-variacao-formula-2.png">
+			</div>
+
+		</div>
+
+		<div class='explicacoes-2 container muito-mais-top oculto'>
+
+			<h4>Tabelas utilizadas para estudar variância e desvio padrão</h4>
+
 			<div class="tabela col-xs-12 col-md-6">
 				<table class="table text-center">
 					<tr>
@@ -9523,268 +9588,93 @@ var parts = {
 						<td>31</td>
 					</tr>
 					<tr class="total">
-						<td>Variância</td>
+						<td>Variância (S²)</td>
 						<td>36.445,6</td>
 					</tr>
+					<tr class="total">
+						<td>Desvio Padrão (S)</td>
+						<td>√36.445,6 = 190,91</td>
+					</tr>
 				</table>
 			</div>
 
-			<div class="col-xs-12 col-md-6" style="display:flex">
-
-				<div class="formula">
-					<h4>1º Média Aritmética = </h4>
-
-					<div class="calculo">
-						<div class="cima">
-							<h5>20 + 73 + 403 + 453 + 31</h5>
-						</div>
-						<div class="linha">
-							<hr>
-						</div>
-						<div class="baixo">
-							<h5>5</h5>
-						</div>
-					</div>
-
-					<h5> = </h5>
-
-					<div class="calculo">
-						<div class="cima">
-							<h5>980</h5>
-						</div>
-						<div class="linha">
-							<hr>
-						</div>
-						<div class="baixo">
-							<h5>5</h5>
-						</div>
-					</div>
-
-					<h5> = <span class='preenchimento-b'>196</span></h5>
-				</div>
-			</div>
-
-			<div class="col-xs-12 col-md-6 mais-top">
-				<h4>2º Variância: média dos quadrados dos desvios (desvio é cada um dos valores menos a média)</h4>
-
-				<div class="row">
-
-					<div class="col-xs-12 mais-top pre-formula">
-						<div class="formula">
-							<h5>Variância = </h5>
-
-							<div class="calculo">
-								<div class="cima">
-									<h5>(valor1 - média)² + (valor2 + média)² + (valor3 + média)²</h5>
-								</div>
-								<div class="linha">
-									<hr>
-								</div>
-								<div class="baixo">
-									<h5>(número de valores)</h5>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-xs-12 mais-top pre-formula">
-						<div class="formula">
-							<h5>Var = </h5>
-
-							<div class="calculo">
-								<div class="cima">
-									<h5>
-										(<span class="preenchimento-a">20</span> - <span class="media-pre preenchimento-b">196</span>)² +
-										(<span class="preenchimento-a">73</span> - <span class="media-pre preenchimento-b">196</span>)² +
-										(<span class="preenchimento-a">403</span> - <span class="media-pre preenchimento-b">196</span>)² +
-										(<span class="preenchimento-a">453</span> - <span class="media-pre preenchimento-b">196</span>)² +
-										(<span class="preenchimento-a">31</span> - <span class="media-pre preenchimento-b">196</span>)²
-									</h5>
-								</div>
-								<div class="linha">
-									<hr>
-								</div>
-								<div class="baixo">
-									<h5>5</h5>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-xs-12 mais-top pre-formula">
-						<div class="formula">
-							<h5>Var = </h5>
-
-							<div class="calculo">
-								<div class="cima">
-									<h5>
-										(<span class="preenchimento-c">-176</span>)² +
-										(<span class="preenchimento-c">-123</span>)² +
-										(<span class="preenchimento-c">207</span>)² +
-										(<span class="preenchimento-c">257</span>)² +
-										(<span class="preenchimento-c">-165</span>)²
-									</h5>
-								</div>
-								<div class="linha">
-									<hr>
-								</div>
-								<div class="baixo">
-									<h5><b>5</b></h5>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-xs-12 mais-top pre-formula">
-						<div class="formula">
-							<h5>Var = </h5>
-
-							<div class="calculo">
-								<div class="cima">
-									<h5>
-										<span class="preenchimento-d">30.976</span> +
-										<span class="preenchimento-d">15.129</span> +
-										<span class="preenchimento-d">42.849</span> +
-										<span class="preenchimento-d">66.049</span> +
-										<span class="preenchimento-d">27.225</span>
-									</h5>
-								</div>
-								<div class="linha">
-									<hr>
-								</div>
-								<div class="baixo">
-									<h5><b>5</b></h5>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-xs-12 mais-top pre-formula">
-						<div class="formula">
-							<h5>Var = </h5>
-
-							<div class="calculo">
-								<div class="cima">
-									<h5>
-										<b><span class="totalizado-final">182.228</span></b>
-									</h5>
-								</div>
-								<div class="linha">
-									<hr>
-								</div>
-								<div class="baixo">
-									<h5><b>5</b></h5>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-xs-12 mais-top pre-formula">
-						<div class="formula">
-							<h5>Var = </h5>
-
-							<div class="calculo">
-								<h5>
-									<b><span class="final-geral">36.445,6</span></b>
-								</h5>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="tabela col-xs-12 mais-top">
-				<h4>Podemos organizar os dados em uma tabela, da seguinte forma:</h4>
-
+			<div class="tabela col-xs-12 col-md-6">
 				<table class="table text-center">
 					<tr>
-						<th>Xi (valores)</th>
-						<th>X&#772; (média)</th>
-						<th>(Xi - X&#772;) (valor - média)</th>
-						<th>(Xi - X&#772;)²</th>
+						<th>Grandes Regiões</th>
+						<th>Municípios com serviço de coleta seletiva de metal</th>
 					</tr>
 					<tr>
-						<td><span class="preenchimento-a">20</span></td>
-						<td><span class="preenchimento-b">196</span></td>
-						<td><span class="preenchimento-a">20</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">-176</span></td>
-						<td><span class="preenchimento-d">30.976</span></td>
+						<th>Brasil</th>
+						<th>915</th>
 					</tr>
 					<tr>
-						<td><span class="preenchimento-a">73</span></td>
-						<td><span class="preenchimento-b">196</span></td>
-						<td><span class="preenchimento-a">74</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">-123</span></td>
-						<td><span class="preenchimento-d">15.129</span></td>
+						<td>Norte</td>
+						<td>18</td>
 					</tr>
 					<tr>
-						<td><span class="preenchimento-a">403</span></td>
-						<td><span class="preenchimento-b">196</span></td>
-						<td><span class="preenchimento-a">403</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">207</span></td>
-						<td><span class="preenchimento-d">42.849</span></td>
+						<td>Nordeste</td>
+						<td>66</td>
 					</tr>
 					<tr>
-						<td><span class="preenchimento-a">453</span></td>
-						<td><span class="preenchimento-b">196</span></td>
-						<td><span class="preenchimento-a">453</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">257</span></td>
-						<td><span class="preenchimento-d">66.049</span></td>
+						<td>Sudeste</td>
+						<td>383</td>
 					</tr>
 					<tr>
-						<td><span class="preenchimento-a">31</span></td>
-						<td><span class="preenchimento-b">196</span></td>
-						<td><span class="preenchimento-a">31</span> - <span class="preenchimento-b">196</span> = <span class="preenchimento-c">-165</span></td>
-						<td><span class="preenchimento-d">27.225</span></td>
+						<td>Sul</td>
+						<td>419</td>
+					</tr>
+					<tr>
+						<td>Centro-Oeste</td>
+						<td>29</td>
 					</tr>
 					<tr class="total">
-						<td colspan="2"></td>
-						<td>Soma = </td>
-						<td><span class="totalizado-final">182.228</span></td>
+						<td>Variância (S²)</td>
+						<td>32.065,2</td>
 					</tr>
-
+					<tr class="total">
+						<td>Desvio Padrão (S)</td>
+						<td>√32.065,2 = 179,07</td>
+					</tr>
 				</table>
+			</div>
 
-				<div class="col-xs-12 mais-top pre-formula">
-					<div class="formula">
-						<h5>Var = </h5>
-
-						<div class="calculo">
-							<div class="cima">
-								<h5>
-									<b><span class="totalizado-final">182.228</span></b>
-								</h5>
-							</div>
-							<div class="linha">
-								<hr>
-							</div>
-							<div class="baixo">
-								<h5><b>5</b></h5>
-							</div>
-						</div>
-
-						<div class="calculo">
-							<h5>
-								<b><span class="final-geral"> = 36.445,6</span></b>
-							</h5>
-						</div>
-					</div>
+			<div class="col-xs-12">
+				<h4>Ex:  Tomemos os resultados dos municípios com serviço de coleta seletiva de papel e de metal, apresentados nas tabelas acima:</h4>
+				<div class="tabela col-xs-12 col-md-6 col-md-offset-3">
+					<table class="table text-center">
+						<tr>
+							<th>Discriminação</th>
+							<th>Média</th>
+							<th>Desvio Padrão</th>
+						</tr>
+						<tr>
+							<td>Papel</td>
+							<td>196</td>
+							<td>190,91</td>
+						</tr>
+						<tr>
+							<td>Metal</td>
+							<td>183</td>
+							<td>179,07</td>
+						</tr>
+					</table>
 				</div>
+
 			</div>
 
-		</div>
+			<div class="col-xs-12 muitissimo-mais-bottom">
+				<h4>Qual dos materiais (Papel ou Metal) possui maior homogeneidade ?</h4>
 
-		<div class='explicacoes-quadrado container oculto muito-mais-top'>
-			<h2 class="text-center muito-mais-bottom"><b>Variância - S²</b></h2>
-			<h4><span class='tab'></span><span class='tab'></span>A variância é uma medida que tem pouca utilidade como estatística descritiva, porém é extremamente importante na inferência estatística e em combinações de amostras.</h4>
-			<h4 class="muito-mais-top"><span class='tab'></span><span class='tab'></span>A <b>variância</b> é calculada da seguinte forma:</h4>
-			<h4>O cálculo é igual ao somatório dos quadrados das diferenças entre cada valor e a média aritmética, dividido pelo número de valores:</h4>
-			<div class="text-center mais-top">
-				<img src="assets/img/variancia-formula-4.jpg">
+				<h4>Teremos que calcular o <b>CVP</b> (Coeficiente de Variação de Pearson) do <b>Papel</b> e do <b>Metal</b>. O <b>resultado menor</b> será o de <b>maior homogenidade</b> (menor dispersão ou variabilidade).</h4>
+
+				<div class="text-center mais-top">
+					<img src="assets/img/coeficiente-variacao-formula-3.png">
+				</div>
+
+				<h4>Logo o papel apresenta menor grau de dispersão que o metal.</h4>
 			</div>
-			<h4>Se indicarmos a Variância por S² e a média por x&#772; temos:</h4>
-			<div class="text-center mais-top">
-				<img src="assets/img/variancia-formula-5.jpg">
-			</div>
-			<h4>O símbolo &#x2211; significa o somatório da expressão indicada após esse símbolo, para cada um dos valores de Xi. Os valores do índice i são: 1, 2, 3, ..., n.</h4>
+
 		</div>
 
 		<div class="mensagens">
@@ -9806,7 +9696,8 @@ var parts = {
 		text-align: center;
 	}
 
-	.tabela th, .tabela .total {
+	.tabela th, .tabela .total,
+	.tabela .bg-colorido {
 		background-color: #F1ECF6;
 	}
 
@@ -9902,7 +9793,7 @@ var parts = {
 
 	<script type="text/javascript">
 
-	console.log('variancia.html');
+	console.log('coeficiente-variacao.html');
 
 	$("#iconSetaEsquerda").show();
 	$("#iconSetaDireita").show();
@@ -9928,29 +9819,23 @@ var parts = {
 
 			default:
 			case 0:
-				carregarParte('questao-2.html');
+				carregarParte('questao-9.html');
 				break;
 
 			case 1:
-				let imgFundo = document.querySelector('#img-fundo');
-				imgFundo.src = 'assets/img/variancia-1.png';
+				document.querySelector('#img-fundo').classList.remove('oculto');
+				document.querySelector(".explicacoes-1").classList.add('oculto');
 
 				posIndexVariancia--;
 				break;
 
 			case 2:
-				document.querySelector('#img-fundo').classList.remove('oculto');
-				document.querySelector(".explicacoes").classList.add('oculto');
+				document.querySelector(".explicacoes-1").classList.remove('oculto');
+				document.querySelector(".explicacoes-2").classList.add('oculto');
 
 				posIndexVariancia--;
 				break;
 
-			case 3:
-				document.querySelector('.explicacoes').classList.remove('oculto');
-				document.querySelector(".explicacoes-quadrado").classList.add('oculto');
-
-				posIndexVariancia--;
-				break;
 		}
 	}
 
@@ -9958,38 +9843,32 @@ var parts = {
 		switch (posIndexVariancia) {
 
 			case 0:
-				let imgFundo = document.querySelector('#img-fundo');
-				imgFundo.src = 'assets/img/variancia-2.png';
+				document.querySelector('#img-fundo').classList.add('oculto');
+				document.querySelector(".explicacoes-1").classList.remove('oculto');
 
 				posIndexVariancia++;
 				break;
 
 			case 1:
-				document.querySelector('#img-fundo').classList.add('oculto');
-				document.querySelector(".explicacoes").classList.remove('oculto');
-
-				posIndexVariancia++;
-				break;
-
-			case 2:
-				document.querySelector('.explicacoes').classList.add('oculto');
-				document.querySelector(".explicacoes-quadrado").classList.remove('oculto');
+				document.querySelector(".explicacoes-1").classList.add('oculto');
+				document.querySelector(".explicacoes-2").classList.remove('oculto');
 
 				posIndexVariancia++;
 				break;
 
 			default:
-			case 3:
-				carregarParte('questao-3.html');
+			case 2:
+				carregarParte('questao-10.html');
 				break;
+
 		}
 	}
 
 	function ajuda() {
+
 	}
 
 	</script>
-
 
 	`
 };
