@@ -1678,7 +1678,7 @@ function loadQuestion() {
 				mesesErradosAtividade1 = null;
 				getValuesMediana();
 				for (var i = 0; i <= corretasAtividade1Mediana.length -1; i++) {
-					if (inputAtividade1Mediana[i] == corretasAtividade1Mediana[i] || inputAtividade1Mediana[i] == corretasAlternativaAtividade1Mediana[i]) {
+					if (Math.abs(inputAtividade1Mediana[i] - corretasAtividade1Mediana[i]) < 0.011 || Math.abs(inputAtividade1Mediana[i] == corretasAlternativaAtividade1Mediana[i]) < 0.011) {
 					} else {
 
 						numeroErradasMediana++;
@@ -1720,14 +1720,14 @@ function loadQuestion() {
 				getValoresAtv2();
 
 				for (var i = 0; i <= corretasAtividade2Media.length - 1; i++) {
-					if (valoresAtividade2Media[i] == corretasAtividade2Media[i]) {
+					if (Math.abs(valoresAtividade2Media[i] - corretasAtividade2Media[i]) < 1) {
 					} else {
 						numeroErradasMediaAtv2++;
 						replaceTipoValorErradoMediaAtv2(i+1);
 					}
 				}
 				for (var i = 0; i <= corretasAtividade2Mediana.length - 1; i++) {
-					if (valoresAtividade2Mediana[i] == corretasAtividade2Mediana[i]) {
+					if (Math.abs(valoresAtividade2Mediana[i] - corretasAtividade2Mediana[i]) < 1) {
 					} else {
 						numeroErradasMedianaAtv2++;
 						replaceTipoValorErradoMedianaAtv2(i+1);
@@ -1776,7 +1776,8 @@ function loadQuestion() {
 				getValoresAtv3();
 
 				for (var i = 0; i <= corretasAtividade3Media.length - 1; i++) {
-					if (valoresAtividade3Media[i] == corretasAtividade3Media[i]) {
+					if (Math.abs(valoresAtividade3Media[i] - corretasAtividade3Media[i]) < 0.011) {
+
 					} else {
 						numeroErradasMediaAtv3++;
 						replaceRegiaoValorErradoMediaAtv3(i+1);
@@ -1784,7 +1785,7 @@ function loadQuestion() {
 				}
 
 				for (var i = 0; i <= corretasAtividade3Mediana.length - 1; i++){
-					if (valoresAtividade3Mediana[i] == corretasAtividade3Mediana[i]) {
+					if (Math.abs(valoresAtividade3Mediana[i] - corretasAtividade3Mediana[i]) < 0.011) {
 					} else {
 						numeroErradasMedianaAtv3++;
 						replaceRegiaoValorErradoMedianaAtv3(i+1);
@@ -1882,7 +1883,7 @@ function loadQuestion() {
 			} else if (verificacaoAtividade3[3] == false) {
 				erradoAtividade3Questao3 = false;
 
-				if (parseFloat($("#atv3DiferencaNorte").val().replace(",",".")) == corretasAtividade3Questao3[0]) {
+				if (Math.abs(parseFloat($("#atv3DiferencaNorte").val().replace(",",".")) - corretasAtividade3Questao3[0]) < 0.011) {
 					$("#atv3DiferencaNorte").css('background-color', '');
 				} else {
 					erradoAtividade3Questao3 = true;
@@ -1890,7 +1891,7 @@ function loadQuestion() {
 				}
 
 
-				if (parseFloat($("#atv3DiferencaNordeste").val().replace(",", ".")) == corretasAtividade3Questao3[1]) {
+				if (Math.abs(parseFloat($("#atv3DiferencaNordeste").val().replace(",", ".")) - corretasAtividade3Questao3[1]) < 0.011){
 					$("#atv3DiferencaNordeste").css('background-color', '');
 				} else {
 					erradoAtividade3Questao3 = true;
@@ -1898,7 +1899,7 @@ function loadQuestion() {
 				}
 
 
-				if (parseFloat($("#atv3DiferencaSudeste").val().replace(",", ".")) == corretasAtividade3Questao3[2]) {
+				if (Math.abs(parseFloat($("#atv3DiferencaSudeste").val().replace(",", ".")) - corretasAtividade3Questao3[2]) < 0.011) {
 					$("#atv3DiferencaSudeste").css('background-color', '');
 				} else {
 					erradoAtividade3Questao3 = true;
@@ -1907,7 +1908,7 @@ function loadQuestion() {
 
 
 
-				if (parseFloat($("#atv3DiferencaSul").val().replace(",", ".")) == corretasAtividade3Questao3[3]) {
+				if (Math.abs(parseFloat($("#atv3DiferencaSul").val().replace(",", ".")) - corretasAtividade3Questao3[3]) < 0.011) {
 					$("#atv3DiferencaSul").css('background-color', '');
 				} else {
 					erradoAtividade3Questao3 = true;
@@ -1916,7 +1917,7 @@ function loadQuestion() {
 
 
 
-				if (parseFloat($("#atv3DiferencaCentroOeste").val().replace(",", ".")) == corretasAtividade3Questao3[4]) {
+				if (Math.abs(parseFloat($("#atv3DiferencaCentroOeste").val().replace(",", ".")) - corretasAtividade3Questao3[4]) < 0.011) {
 					$("#atv3DiferencaCentroOeste").css('background-color', '');
 				} else {
 					erradoAtividade3Questao3 = true;
