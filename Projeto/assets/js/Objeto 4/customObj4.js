@@ -499,7 +499,7 @@ function checkIfStuck() {
 			break;
 
 			default:
-			if (respostasCorretas[questionNumber-1] == $("#inputResposta").val().replace(",", ".") || respostasCorretasOutra[questionNumber-1] == $("#inputResposta").val().replace(",", ".") || respostasCorretasTerceira[questionNumber-1] == $("#inputResposta").val().replace(",", ".") || respostasCorretasQuarta[questionNumber-1] == $("#inputResposta").val().replace(",", ".")) {
+			if (Math.abs(respostasCorretas[questionNumber-1] - $("#inputResposta").val().replace(",", ".")) <= 0.011 || Math.abs(respostasCorretasOutra[questionNumber-1] - $("#inputResposta").val().replace(",", ".")) <= 1 || respostasCorretasTerceira[questionNumber-1] == $("#inputResposta").val().replace(",", ".") || respostasCorretasQuarta[questionNumber-1] == $("#inputResposta").val().replace(",", ".")) {
 				questoesCorretas[questionNumber-1] = true;
 				allowNextScene();
 				blockQuestionButtons();
