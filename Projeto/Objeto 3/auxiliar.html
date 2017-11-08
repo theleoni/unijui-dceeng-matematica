@@ -14,7 +14,10 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/calculadora.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/jquery-ui.css">
+
 	<script src="assets/js/sweetalert.min.js"></script>
+
+	<script src='assets/js/lista-partes.js'></script>
 
 </head>
 
@@ -250,6 +253,7 @@
 	</style>
 
 	<script type="text/javascript">
+
 	var iconSetaEsquerda;
 	var iconSetaDireita;
 	var iconAjuda;
@@ -268,35 +272,61 @@
 	var ultimoLinkCarregado = '';
 	var qtdErroCarregar = 0;
 	var qtdErroCarregarMax = 5;
+
+	var modoLocal = true;
 	function carregarParte(link) {
 
-		if (qtdErroCarregar < qtdErroCarregarMax) {
+		// console.log('modoLocal = ' + modoLocal);
+		if(modoLocal) {
 
-			ultimoLinkCarregado = link;
 			recarregarBotoes();
-			$('.geral').load(`assets/parts/${link}`,
-				function (responseText, status, jqXHR) {
 
-					switch (status) {
+			let partTmp = parts[link];
+			partTmp = partTmp.replace(/\$\%\&/g, '`'); // $%& >> `
+			partTmp = partTmp.replace(/\#\@\*/g, '${'); // $%& >> ${
+			document.querySelector('.geral').innerHTML = partTmp;
 
-						case "success":
-						case "notmodified":
+			//
+			// console.log(partTmp);
 
-							qtdErroCarregar = 0;
-							break;
+			let start_pos = partTmp.indexOf('<script') + 1;
+			let str_pos_yolo = partTmp.indexOf('>', start_pos) + 1;
+			let end_pos = partTmp.indexOf('</script', str_pos_yolo);
+			let text_to_get = partTmp.substring(str_pos_yolo, end_pos);
 
-						default:
-						case "error":
-						case "timeout":
-						case "parsererror":
+			// document.querySelector('.geral').innerHTML = partTmp.substring(0, str_pos_yolo - 1);
 
-							qtdErroCarregar++;
-							carregarParte(link);
+			eval(text_to_get);
+		} else {
 
-							break;
+			if (qtdErroCarregar < qtdErroCarregarMax) {
+
+				ultimoLinkCarregado = link;
+				recarregarBotoes();
+				$('.geral').load(`assets/parts/${link}`,
+					function (responseText, status, jqXHR) {
+
+						switch (status) {
+
+							case "success":
+							case "notmodified":
+
+								qtdErroCarregar = 0;
+								break;
+
+							default:
+							case "error":
+							case "timeout":
+							case "parsererror":
+
+								qtdErroCarregar++;
+								carregarParte(link);
+
+								break;
+						}
 					}
-				}
-			);
+				);
+			}
 		}
 	}
 
@@ -399,7 +429,7 @@
 	</script>
 
 	<script src='assets/js/calculadora.js'></script>
-	<script src='http://localhost:32778/livereload.js'></script>
+	<script src='http://localhost:35729/livereload.js'></script>
 
 </body>
 </html>

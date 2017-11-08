@@ -2,15 +2,18 @@
 	<img class="fundo" src="assets/img/lixeira_fundo.jpg"/>
 
 	<div class="lixeiras text-center">
-		<img class="lixeira" src="assets/img/lixeira_1_papel.png" onclick="popUp('papel')"/>
-		<img class="lixeira" src="assets/img/lixeira_2_plastico.png" onclick="popUp('plastico')"/>
-		<img class="lixeira" src="assets/img/lixeira_3_vidro.png" onclick="popUp('vidro')"/>
-		<img class="lixeira" src="assets/img/lixeira_4_metal.png" onclick="popUp('metal')"/>
-		<img class="lixeira" src="assets/img/lixeira_5_organico.png" onclick="popUp('organico')"/>
+		<img id="lixeiras-papel" class="lixeira" src="assets/img/lixeira_1_papel.png"/>
+		<img id="lixeiras-plastico" class="lixeira" src="assets/img/lixeira_2_plastico.png"/>
+		<img id="lixeiras-vidro" class="lixeira" src="assets/img/lixeira_3_vidro.png"/>
+		<img id="lixeiras-metal" class="lixeira" src="assets/img/lixeira_4_metal.png"/>
+		<img id="lixeiras-organico" class="lixeira" src="assets/img/lixeira_5_organico.png"/>
 	</div>
 
 	<div class="lixeiras-texto text-center">
 		<h4>Clique nas lixeiras para saber mais sobre separação do lixo</h4>
+	</div>
+
+	<div class="mensagens">
 	</div>
 </div>
 
@@ -128,11 +131,27 @@ function proxima() {
 	carregarParte('explicacao-professora.html');
 }
 
+document.querySelector("#lixeiras-papel").addEventListener('click', function() {
+	popUp('papel');
+});
+document.querySelector("#lixeiras-plastico").addEventListener('click', function() {
+	popUp('plastico');
+});
+document.querySelector("#lixeiras-vidro").addEventListener('click', function() {
+	popUp('vidro');
+});
+document.querySelector("#lixeiras-metal").addEventListener('click', function() {
+	popUp('metal');
+});
+document.querySelector("#lixeiras-organico").addEventListener('click', function() {
+	popUp('organico');
+});
+
 function popUp(tipo) {
 
 	if (document.querySelector('#dialog-lixeiras-pop-up') == null) {
-		let inner = document.querySelector(".geral-interno").innerHTML;
-		inner += `
+		let innerAjuda = document.querySelector(".mensagens").innerHTML;
+		innerAjuda += `
 		<div id="dialog-lixeiras-pop-up">
 			<div class="lixeira-explicacao row">
 				<div class="imagem text-center col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -144,9 +163,8 @@ function popUp(tipo) {
 					<p id="lixeira-explicacao-secundario">texto</p>
 				</div>
 			</div>
-		</div>`
-		document.querySelector(".geral-interno").innerHTML = inner;
-
+		</div>`;
+		document.querySelector(".mensagens").innerHTML = innerAjuda;
 	}
 
 	let caminhoImg = 'assets/img/';
@@ -173,10 +191,10 @@ function popUp(tipo) {
 				</ul>
 
 				<h4>
-				<span class="tab"/>O mesmo papel pode ser reciclado entre 7 a 10 vezes. O papel é formado essencialmente por fibras celulósicas e estas vão se degradando a cada processo de reciclagem.
+				<span class="tab"></span>O mesmo papel pode ser reciclado entre 7 a 10 vezes. O papel é formado essencialmente por fibras celulósicas e estas vão se degradando a cada processo de reciclagem.
 				</h4>
 			</div>
-			`
+			`;
 			break;
 
 		case 'plastico':
@@ -184,7 +202,7 @@ function popUp(tipo) {
 			titulo = 'Plástico';
 			secundario = `
 			<div class="lixeira-explicacao-plastico">
-				<h4><span class="tab"/>A partir do processo de polimerização são inúmeras as variedades de resinas plásticas e de soluções que esse material oferece para os diversos setores. São elas: 1. PET 2. PEAD 3. PVC 4. PEBD 5. PP 6. PS 7. OUTROS.</h4>
+				<h4><span class="tab"></span>A partir do processo de polimerização são inúmeras as variedades de resinas plásticas e de soluções que esse material oferece para os diversos setores. São elas: 1. PET 2. PEAD 3. PVC 4. PEBD 5. PP 6. PS 7. OUTROS.</h4>
 
 				<h2>1 PET Poli (tereftalato de etileno)</h2>
 				<h3>Principais Aplicações:</h3>
@@ -245,7 +263,7 @@ function popUp(tipo) {
 				</ul>
 
 				<h4>
-				<span class="tab"/>São tantas as possibilidades, soluções e inovações que não dá para imaginar nossa vida sem o plástico.
+				<span class="tab"></span>São tantas as possibilidades, soluções e inovações que não dá para imaginar nossa vida sem o plástico.
 				<h4>
 			</div>
 			`;
@@ -256,7 +274,7 @@ function popUp(tipo) {
 			titulo = 'Vidro';
 			secundario = `
 			<div class="lixeira-explicacao-vidro">
-				<h4><span class="tab"/>O vidro das embalagens é um material totalmente reciclável, podendo ser reciclado várias vezes, pois é feito de minerais como areia, barrilha, calcário e feldspato. Ao se agregar o caco na etapa de fusão de vidro, diminui-se a retirada de matéria-prima da natureza.</h4>
+				<h4><span class="tab"></span>O vidro das embalagens é um material totalmente reciclável, podendo ser reciclado várias vezes, pois é feito de minerais como areia, barrilha, calcário e feldspato. Ao se agregar o caco na etapa de fusão de vidro, diminui-se a retirada de matéria-prima da natureza.</h4>
 
 				<h3>As aplicações de vidros mais conhecidas e utilizadas são:</h3>
 				<ul>
@@ -267,7 +285,7 @@ function popUp(tipo) {
 				</ul>
 
 				<h4 class="mais-top">
-				<span class="tab"/>Com aparência plástica e de alta resistência, a fibra de vidro tem sido um dos materiais mais utilizados pela indústria automotiva. Composta por 60% de resina de poliéster e 40% de fibra de vidro, os resíduos gerados por este componente são considerados prejudiciais ao Meio Ambiente, já que são necessários mais de quatro mil anos para sua decomposição. Como consequência, em 27 de dezembro do ano 2000, foi sancionada a Lei Federal de número 10.165, que determina a fiscalização das atividades potencialmente poluidoras e estipula que os resíduos gerados pelas indústrias sejam destinados a aterros apropriados.
+				<span class="tab"></span>Com aparência plástica e de alta resistência, a fibra de vidro tem sido um dos materiais mais utilizados pela indústria automotiva. Composta por 60% de resina de poliéster e 40% de fibra de vidro, os resíduos gerados por este componente são considerados prejudiciais ao Meio Ambiente, já que são necessários mais de quatro mil anos para sua decomposição. Como consequência, em 27 de dezembro do ano 2000, foi sancionada a Lei Federal de número 10.165, que determina a fiscalização das atividades potencialmente poluidoras e estipula que os resíduos gerados pelas indústrias sejam destinados a aterros apropriados.
 				</h4>
 			</div>
 			`;
@@ -282,14 +300,14 @@ function popUp(tipo) {
 				<h4><b>Lixo comum:</b> clipes, esponjas de aço, grampos, tachinhas. </h4>
 
 				<h2>Alumínio</h2>
-				<h4><span class="tab"/>O ciclo de vida de uma lata de bebida de alumínio é de apenas 30 dias, de uma lata para outra. Nesse período, a lata vai da prateleira para o consumidor e, descartada corretamente, para uma instalação de reciclagem em que poderá ser refundida e reformatada em outra lata de alumínio com exatamente as mesmas características físicas da lata original. Como o alumínio pode ser reciclado sem nenhuma perda de qualidade, as latas de alumínio são o produto ideal para uma reciclagem de ciclo fechado.</h4>
+				<h4><span class="tab"></span>O ciclo de vida de uma lata de bebida de alumínio é de apenas 30 dias, de uma lata para outra. Nesse período, a lata vai da prateleira para o consumidor e, descartada corretamente, para uma instalação de reciclagem em que poderá ser refundida e reformatada em outra lata de alumínio com exatamente as mesmas características físicas da lata original. Como o alumínio pode ser reciclado sem nenhuma perda de qualidade, as latas de alumínio são o produto ideal para uma reciclagem de ciclo fechado.</h4>
 
 				<h2>Ferro</h2>
-				<h4><span class="tab"/>O ferro é o metal mais utilizado na produção mundial devido a sua dureza e seu baixo custo. Ele é indispensável para a construção de diversos bens como os automóveis, barcos, eletrodomésticos e componentes estruturais de construções. Portanto, a reciclagem do ferro é fundamental, já que ele mantém suas propriedades como resistência, versatilidade e durabilidade.</h2>
-				<h4><span class="tab"/>A sucata é responsável por mais de um quarto do material novo no país. Atualmente, no Brasil, em torno de 2.500 empresas compõem o setor de reciclagem de ferro, processando mensalmente até 420 mil toneladas de sucata. Cada tonelada de aço reciclado representa uma economia de 1.140 kg de minério de ferro, 154 kg de carvão e 18 kg de cal, segundo o site Reviverde.</h2>
-				<h4><span class="tab"/>No Brasil existem dois processos diferentes de reciclagem de ferro: um voltado apenas para o reaproveitamento das latas de aço e outro para uso das siderúrgicas em geral. O processo tanto de captação quanto de beneficiamento das latas de aço é muito semelhante ao da lata de alumínio, começando pelos catadores e terminando na própria chapa de aço.</h2>
-				<h4><span class="tab"/>Já os outros materiais têm um rumo diferente. Assim que os caminhões chegam às fábricas com o material, eles são examinados para verificar se não há radioatividade. Muitos canos e vigas acabam não sendo processados por conter resíduos radioativos. Os eletrodomésticos e outros produtos com ferro passam por uma triagem. </h2>
-				<h4><span class="tab"/>A forma como esse material será reciclado depende das leis do mercado. O reprocessamento começa com a separação de tipos de sucata. Existem aquelas com muita tinta, cola, plástico ou outros materiais e aquelas mais limpas como os retalhos que vêm das próprias siderúrgicas. A separação dos dois tipos varia de acordo a pureza do ferro. Feito isso, o material passa por uma esteira para ser cortado. Em alguns casos, ele passa por outra esteira para ser prensado. Uma das formas de enviar esse material é em pequenos cilindros para serem refundidos. Prontas, as peças são levadas para as siderúrgicas que irão refundi-las em fornos a 1.550°C.</h2>
+				<h4><span class="tab"></span>O ferro é o metal mais utilizado na produção mundial devido a sua dureza e seu baixo custo. Ele é indispensável para a construção de diversos bens como os automóveis, barcos, eletrodomésticos e componentes estruturais de construções. Portanto, a reciclagem do ferro é fundamental, já que ele mantém suas propriedades como resistência, versatilidade e durabilidade.</h2>
+				<h4><span class="tab"></span>A sucata é responsável por mais de um quarto do material novo no país. Atualmente, no Brasil, em torno de 2.500 empresas compõem o setor de reciclagem de ferro, processando mensalmente até 420 mil toneladas de sucata. Cada tonelada de aço reciclado representa uma economia de 1.140 kg de minério de ferro, 154 kg de carvão e 18 kg de cal, segundo o site Reviverde.</h2>
+				<h4><span class="tab"></span>No Brasil existem dois processos diferentes de reciclagem de ferro: um voltado apenas para o reaproveitamento das latas de aço e outro para uso das siderúrgicas em geral. O processo tanto de captação quanto de beneficiamento das latas de aço é muito semelhante ao da lata de alumínio, começando pelos catadores e terminando na própria chapa de aço.</h2>
+				<h4><span class="tab"></span>Já os outros materiais têm um rumo diferente. Assim que os caminhões chegam às fábricas com o material, eles são examinados para verificar se não há radioatividade. Muitos canos e vigas acabam não sendo processados por conter resíduos radioativos. Os eletrodomésticos e outros produtos com ferro passam por uma triagem. </h2>
+				<h4><span class="tab"></span>A forma como esse material será reciclado depende das leis do mercado. O reprocessamento começa com a separação de tipos de sucata. Existem aquelas com muita tinta, cola, plástico ou outros materiais e aquelas mais limpas como os retalhos que vêm das próprias siderúrgicas. A separação dos dois tipos varia de acordo a pureza do ferro. Feito isso, o material passa por uma esteira para ser cortado. Em alguns casos, ele passa por outra esteira para ser prensado. Uma das formas de enviar esse material é em pequenos cilindros para serem refundidos. Prontas, as peças são levadas para as siderúrgicas que irão refundi-las em fornos a 1.550°C.</h2>
 			</div>
 			`;
 		break;
@@ -317,7 +335,6 @@ function popUp(tipo) {
 		modal: true,
 		buttons: {}
 	});
-
 	dialogLixeirasPopUp.dialog("open");
 }
 

@@ -70,7 +70,7 @@
 			</table>
 
 			<div class="text-center mais-top muitissimo-mais-bottom">
-				<button type="button" class="btn" onclick="saibaMais()">Saiba mais!</button>
+				<button type="button" class="btn" id="questao-9-saiba-mais">Saiba mais!</button>
 			</div>
 		</div>
 
@@ -131,7 +131,7 @@
 						<td><span class="preenchimento-b">1,4</span></td>
 						<td><span class="preenchimento-a">1</span> - <span class="preenchimento-b">1,4</span> =
 							<span class="preenchimento-c">
-								<input id='input-menor-a' class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+								<input id='input-menor-a' class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 							</span>
 						</td>
 						<td><span class="preenchimento-d total-a">0,16</span></td>
@@ -147,7 +147,7 @@
 						<td><span class="preenchimento-b">1,4</span></td>
 						<td><span class="preenchimento-a">2</span> - <span class="preenchimento-b">1,4</span> = <span class="preenchimento-c soma-c">0,6</span></td>
 						<td><span class="preenchimento-d total-c">
-							<input id="input-menor-b" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+							<input id="input-menor-b" class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 						</span></td>
 					</tr>
 					<tr>
@@ -166,7 +166,7 @@
 						<td colspan="2"></td>
 						<td>Soma = </td>
 						<td><span class="totalizado-final">
-							<input id="input-menor-c" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+							<input id="input-menor-c" class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 						</span></td>
 					</tr>
 				</table>
@@ -193,7 +193,7 @@
 					<div class="calculo">
 						<div class="cima">
 							<div class="input-x fundo-normal preenchimento-c" id="campo-variancia-a">
-								<input id='input-variancia-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								<input id='input-variancia-a' type="text" placeholder="?">
 							</div>
 						</div>
 					</div>
@@ -213,7 +213,7 @@
 					<div class="calculo">
 						<div class="cima">
 							<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-a">
-								<input id='input-desvio-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								<input id='input-desvio-a' type="text" placeholder="?">
 							</div>
 						</div>
 					</div>
@@ -280,7 +280,7 @@
 						<td><span class="preenchimento-a">2</span> - <span class="preenchimento-b">12,6</span> = <span class="preenchimento-c soma-a">-10,6</span></td>
 						<td>
 							<span class="preenchimento-c">
-								<input id="input-maior-b" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+								<input id="input-maior-b" class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 							</span>
 						</td>
 					</tr>
@@ -295,7 +295,7 @@
 						<td><span class="preenchimento-b">12,6</span></td>
 						<td><span class="preenchimento-a">26</span> - <span class="preenchimento-b">12,6</span> =
 							<span class="preenchimento-c">
-								<input id="input-maior-a" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+								<input id="input-maior-a" class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 							</span>
 						</td>
 						<td><span class="preenchimento-d total-c">179,56</span></td>
@@ -312,7 +312,7 @@
 						<td><span class="preenchimento-a">7</span> - <span class="preenchimento-b">12,6</span> = <span class="preenchimento-c soma-e">-5,6</span></td>
 						<td>
 							<span class="preenchimento-c">
-								<input id="input-maior-c" class="fundo-editavel fundo-editavel-normal" placeholder='?' onblur='validarValores()' onkeyup='validarValores()' type="text">
+								<input id="input-maior-c" class="fundo-editavel fundo-editavel-normal" placeholder='?' type="text">
 							</span>
 						</td>
 					</tr>
@@ -345,7 +345,7 @@
 					<div class="calculo">
 						<div class="cima">
 							<div class="input-x fundo-normal preenchimento-c" id="campo-variancia-b">
-								<input id='input-variancia-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								<input id='input-variancia-b' type="text" placeholder="?">
 							</div>
 						</div>
 					</div>
@@ -365,7 +365,7 @@
 					<div class="calculo">
 						<div class="cima">
 							<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-b">
-								<input id='input-desvio-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								<input id='input-desvio-b' type="text" placeholder="?">
 							</div>
 						</div>
 					</div>
@@ -571,10 +571,10 @@ function ajuda() {
 				<div class="principal text-center">
 
 					<div class='muitissimo-mais-top'>
-						<button class='btn' onclick="ajudaPage('variancia')">Variância</button>
+						<button class='btn' id="questao-9-saiba-mais-variancia">Variância</button>
 					</div>
 					<div class='muitissimo-mais-top'>
-						<button class='btn' onclick="ajudaPage('desvio')">Desvio Padrão</button>
+						<button class='btn' id="questao-9-saiba-mais-desvio">Desvio Padrão</button>
 					</div>
 
 				</div>
@@ -595,7 +595,7 @@ function ajuda() {
 					</div>
 
 					<div class='text-center muito-mais-bottom'>
-						<button class='btn' onclick="ajudaPage('principal')">Voltar</button>
+						<button class='btn' id="questao-9-saiba-mais-variancia-voltar">Voltar</button>
 					</div>
 				</div>
 
@@ -609,13 +609,27 @@ function ajuda() {
 					</div>
 
 					<div class='text-center muito-mais-bottom'>
-						<button class='btn' onclick="ajudaPage('principal')">Voltar</button>
+						<button class='btn' id="questao-9-saiba-mais-desvio-voltar">Voltar</button>
 					</div>
 				</div>
 
 			</div>
 		</div>`;
 		document.querySelector(".mensagens").innerHTML = innerAjuda;
+
+		document.querySelector("#questao-9-saiba-mais-variancia").addEventListener('click', function() {
+			ajudaPage('variancia');
+		});
+		document.querySelector("#questao-9-saiba-mais-desvio").addEventListener('click', function() {
+			ajudaPage('desvio');
+		});
+		document.querySelector("#questao-9-saiba-mais-variancia-voltar").addEventListener('click', function() {
+			ajudaPage('principal');
+		});
+		document.querySelector("#questao-9-saiba-mais-desvio-voltar").addEventListener('click', function() {
+			ajudaPage('principal');
+		});
+
 		ajudaPage('principal');
 	}
 
@@ -670,6 +684,41 @@ swal({
 		closeModal: true,
 		className: 'btn',
 	},
+});
+
+//!
+document.querySelector("#questao-9-saiba-mais").addEventListener('click', function() {
+	saibaMais();
+});
+document.querySelector("#input-maior-a").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-maior-b").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-maior-c").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-menor-a").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-menor-b").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-menor-c").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-variancia-a").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-variancia-b").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-desvio-a").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-desvio-b").addEventListener('input', function() {
+	validarValores();
 });
 
 let inputQuestao9VarianciaA = document.querySelector("#input-variancia-a");
@@ -910,7 +959,7 @@ function saibaMais() {
 		<div id="dialog-questao-9-saiba-mais">
 			<h3 class="text-center">Desvio Padrão Amostral</h3>
 
-			<h4><span class="tab"/>Quando nosso interesse não se restringe à descrição dos dados, mas, partindo da <b>amostra</b>, visamos tirar inferências válidas para a respectiva população, convém efetuar uma modificação, que consiste em usar o divisor <b>n – 1</b> em lugar de <b>n</b>. A fórmula ficará então:</h4>
+			<h4><span class="tab"></span>Quando nosso interesse não se restringe à descrição dos dados, mas, partindo da <b>amostra</b>, visamos tirar inferências válidas para a respectiva população, convém efetuar uma modificação, que consiste em usar o divisor <b>n – 1</b> em lugar de <b>n</b>. A fórmula ficará então:</h4>
 			<div class="text-center mais-top">
 				<img src="assets/img/desvio-amostral-formula-1.png">
 			</div>

@@ -51,7 +51,7 @@
 		<div class="col-xs-12">
 
 			<div class="text-center mais-top muitissimo-mais-bottom">
-				<button type="button" class="btn" onclick="saibaMais()">Saiba mais!</button>
+				<button id="desvio-tabela-saiba-mais" type="button" class="btn">Saiba mais!</button>
 			</div>
 
 			<h4>Encontre o desvio padrão:</h4>
@@ -170,7 +170,7 @@
 						<h4> = <span class="valor-diferenciado">74</span></h4>
 					</div>
 
-					<h4><spanc class='tab'/> > <spanc class='tab'/></h4>
+					<h4><spanc class='tab'></span> > <spanc class='tab'></span></h4>
 
 					<h4>Desvio padrão: S = &#8730;<span class="valor-diferenciado">74</span> = 8,6</h4>
 
@@ -335,6 +335,10 @@ function proxima() {
 function ajuda() {
 }
 
+document.querySelector("#desvio-tabela-saiba-mais").addEventListener('click', function() {
+	saibaMais();
+});
+
 function saibaMais() {
 	if (document.querySelector('#dialog-desvio-tabela-saiba-mais') == null) {
 		let innerAjuda = document.querySelector(".mensagens").innerHTML;
@@ -342,9 +346,9 @@ function saibaMais() {
 		<div id="dialog-desvio-tabela-saiba-mais">
 			<h3 class="text-center">CATADORES DE MATERIA RECICLÁVEL</h3>
 
-			<h4><span class="tab"/>Os catadores de materiais recicláveis desempenham papel fundamental na implementação da Política Nacional de Resíduos Sólidos (PNRS). De modo geral, atuam nas atividades da coleta seletiva, triagem, classificação, processamento e comercialização dos resíduos reutilizáveis e recicláveis, contribuindo de forma significativa para a cadeia produtiva da reciclagem.</h4>
+			<h4><span class="tab"></span>Os catadores de materiais recicláveis desempenham papel fundamental na implementação da Política Nacional de Resíduos Sólidos (PNRS). De modo geral, atuam nas atividades da coleta seletiva, triagem, classificação, processamento e comercialização dos resíduos reutilizáveis e recicláveis, contribuindo de forma significativa para a cadeia produtiva da reciclagem.</h4>
 
-			<h4><span class="tab"/>Os catadores podem ser:</h4>
+			<h4><span class="tab"></span>Os catadores podem ser:</h4>
 			<ul>
 				<li><h4><b>Trecheiros:</b> que vivem no trecho entre uma cidade e outra, catam lata pra comprar comida.</h4></li>
 				<li><h4><b>Catadores do lixão:</b> catam diuturnamente, fazem seu horário, catam há muito tempo ou só quando estão sem serviço de obra, pintura etc.</h4></li>
@@ -352,7 +356,7 @@ function saibaMais() {
 				<li><h4><b>Catadores organizados:</b> em grupos auto gestionários onde todos são donos do empreendimento, legalizados ou em fase de legalização como cooperativas, associações ou ONGs. </h4></li>
 			</ul>
 
-			<h4><span class="tab"/>Dentre as organizações de catadores existem:</h4>
+			<h4><span class="tab"></span>Dentre as organizações de catadores existem:</h4>
 			<ul>
 				<li><h4><b>Grupos em organização:</b> com pouca ou nenhuma infraestrutura, muita necessidade de apoio, e vontade de trabalhar em grupo e se fortalecerem.</h4></li>
 				<li><h4><b>Catadores organizados auto gestionários:</b> grupos que funcionam como cooperativas onde decisões são tomadas de modo democrático e as vendas e os resultados são de domínio de todos. Não há uma liderança única e todos os associados representam o empreendimento como dono.</h4></li>
@@ -370,12 +374,12 @@ function saibaMais() {
 			<div class="muito-mais-top">
 				<h4 class="text-center mais-bottom">Legislação</h4>
 
-				<h4><span class="tab"/>§ <b>Decreto nº 5.940, de 25 de outubro de 2006</b> - institui a separação dos resíduos recicláveis descartados pelos órgãos e entidades da administração pública federal direta e indireta, na fonte geradora, e a sua destinação às associações e cooperativas dos catadores de materiais recicláveis, e dá outras providências.</h4>
-				<h4><span class="tab"/>§ <b>Lei nº 11.445, de 5 de janeiro de 2007</b> - estabelece diretrizes nacionais para o saneamento básico; altera as Leis nºs 6.766, de 19 de dezembro de 1979, 8.036, de 11 de maio de 1990, 8.666, de 21 de junho de 1993, 8.987, de 13 de fevereiro de 1995; revoga a Lei nº 6.528, de 11 de maio de 1978; e dá outras providências.</h4>
+				<h4><span class="tab"></span>§ <b>Decreto nº 5.940, de 25 de outubro de 2006</b> - institui a separação dos resíduos recicláveis descartados pelos órgãos e entidades da administração pública federal direta e indireta, na fonte geradora, e a sua destinação às associações e cooperativas dos catadores de materiais recicláveis, e dá outras providências.</h4>
+				<h4><span class="tab"></span>§ <b>Lei nº 11.445, de 5 de janeiro de 2007</b> - estabelece diretrizes nacionais para o saneamento básico; altera as Leis nºs 6.766, de 19 de dezembro de 1979, 8.036, de 11 de maio de 1990, 8.666, de 21 de junho de 1993, 8.987, de 13 de fevereiro de 1995; revoga a Lei nº 6.528, de 11 de maio de 1978; e dá outras providências.</h4>
 				<h4>Essa Lei alterou o inciso XXVII do caput do art. 24 da Lei nº 8.666, de 21 de junho de 1993, tornando dispensável a licitação “na contratação da coleta, processamento e comercialização de resíduos sólidos urbanos recicláveis ou reutilizáveis, em áreas com sistema de coleta seletiva de lixo, <b>efetuados por associações ou cooperativas formadas exclusivamente por pessoas físicas de baixa renda reconhecidas pelo poder público como catadores de materiais recicláveis</b>, com o uso de equipamentos compatíveis com as normas técnicas, ambientais e de saúde pública”.</h4>
-				<h4><span class="tab"/>§ <b>Lei nº 12.305, de 2 de agosto de 2010</b> - institui a Política Nacional de Resíduos Sólidos; altera a Lei nº 9.605, de 12 de fevereiro de 1998; e dá outras providências.</h4>
-				<h4><span class="tab"/>§ <b>Decreto nº 7.404, de 23 de dezembro de 2010</b> - regulamenta a Lei nº 12.305, de 2 de agosto de 2010, que institui a Política Nacional de Resíduos Sólidos, cria o Comitê Interministerial da Política Nacional de Resíduos Sólidos e o Comitê Orientador para a Implantação dos Sistemas de Logística Reversa, e dá outras providências.</h4>
-				<h4><span class="tab"/>§ <b>Decreto nº 7.405, de 23 de dezembro de 2010</b> - institui o Programa Pró-Catador, denomina Comitê Interministerial para Inclusão Social e Econômica dos Catadores de Materiais Reutilizáveis e Recicláveis o Comitê Interministerial da Inclusão Social de Catadores de Lixo criado pelo Decreto de 11 de setembro de 2003, dispõe sobre sua organização e funcionamento, e dá outras providências.</h4>
+				<h4><span class="tab"></span>§ <b>Lei nº 12.305, de 2 de agosto de 2010</b> - institui a Política Nacional de Resíduos Sólidos; altera a Lei nº 9.605, de 12 de fevereiro de 1998; e dá outras providências.</h4>
+				<h4><span class="tab"></span>§ <b>Decreto nº 7.404, de 23 de dezembro de 2010</b> - regulamenta a Lei nº 12.305, de 2 de agosto de 2010, que institui a Política Nacional de Resíduos Sólidos, cria o Comitê Interministerial da Política Nacional de Resíduos Sólidos e o Comitê Orientador para a Implantação dos Sistemas de Logística Reversa, e dá outras providências.</h4>
+				<h4><span class="tab"></span>§ <b>Decreto nº 7.405, de 23 de dezembro de 2010</b> - institui o Programa Pró-Catador, denomina Comitê Interministerial para Inclusão Social e Econômica dos Catadores de Materiais Reutilizáveis e Recicláveis o Comitê Interministerial da Inclusão Social de Catadores de Lixo criado pelo Decreto de 11 de setembro de 2003, dispõe sobre sua organização e funcionamento, e dá outras providências.</h4>
 			</div>
 
 		</div>`;

@@ -8,13 +8,13 @@
 
 			<div class="input-x fundo-normal">
 				<h5>Nº Linha(s):</h5>
-				<input id="input-linha" type="text" oninput="validarLinhasTabela()" onkeyup="enterCarregarTabela(event)">
+				<input id="input-linha" type="text">
 			</div>
 			<div class="input-x fundo-normal">
 				<h5>Nº Coluna(s):</h5>
-				<input id="input-coluna" type="text" oninput="validarLinhasTabela()" onkeyup="enterCarregarTabela(event)">
+				<input id="input-coluna" type="text">
 			</div>
-			<button id="input-calcular" type="button" class="btn" onclick="carregarTabela()">Criar tabela!</button>
+			<button id="input-calcular" type="button" class="btn">Criar tabela!</button>
 
 		</div>
 
@@ -159,6 +159,22 @@ function proxima() {
 
 function ajuda() {
 }
+
+document.querySelector("#input-coluna").addEventListener('keyup', function(event) {
+	enterCarregarTabela(event);
+});
+document.querySelector("#input-coluna").addEventListener('input', function(event) {
+	validarLinhasTabela();
+});
+document.querySelector("#input-linha").addEventListener('keyup', function(event) {
+	enterCarregarTabela(event);
+});
+document.querySelector("#input-linha").addEventListener('input', function(event) {
+	validarLinhasTabela();
+});
+document.querySelector("#input-calcular").addEventListener('click', function(event) {
+	carregarTabela();
+});
 
 let buttonCalcular = document.querySelector("#input-calcular");
 let inputColuna = document.querySelector("#input-coluna");

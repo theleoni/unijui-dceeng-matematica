@@ -49,11 +49,11 @@
 			<div class="text-center mais-top">
 				<span>S = &#8730;</span>
 				<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao-a">
-					<input id='input-desvio-padrao-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+					<input id='input-desvio-padrao-a' type="text" placeholder="?">
 				</div>
 				<span> = </span>
 				<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao-b">
-					<input id='input-desvio-padrao-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+					<input id='input-desvio-padrao-b' type="text" placeholder="?">
 				</div>
 			</div>
 
@@ -226,6 +226,13 @@ function ajuda() {
 	});
 	dialogQuestao8Ajuda.dialog("open");
 }
+
+document.querySelector("#input-desvio-padrao-a").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-desvio-padrao-b").addEventListener('input', function() {
+	validarValores()
+});
 
 let inputQuestao6ADesvioPadrao = document.querySelector("#input-desvio-padrao-a");
 let inputQuestao6BDesvioPadrao = document.querySelector("#input-desvio-padrao-b");

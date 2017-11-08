@@ -112,7 +112,7 @@
 						<h4> = 36.160,24</h4>
 					</div>
 
-					<h4><spanc class='tab'/> > <spanc class='tab'/></h4>
+					<h4><spanc class='tab'></span> > <spanc class='tab'></span></h4>
 
 					<h4>Desvio padrão: S = &#8730;36.160,24 = 190,16</h4>
 
@@ -144,7 +144,7 @@
 					<div class="calculo">
 						<div class="cima">
 							<div class="input-x fundo-normal preenchimento-c" id="campo-valor-a">
-								<input id='input-valor-a' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								<input id='input-valor-a' type="text" placeholder="?">
 							</div>
 						</div>
 						<div class="linha">
@@ -152,7 +152,7 @@
 						</div>
 						<div class="baixo">
 							<div class="input-x fundo-normal preenchimento-c" id="campo-valor-b">
-								<input id='input-valor-b' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+								<input id='input-valor-b' type="text" placeholder="?">
 							</div>
 						</div>
 					</div>
@@ -163,7 +163,7 @@
 
 					<div class="calculo">
 						<div class="input-x fundo-normal preenchimento-c" id="campo-valor-c">
-							<input id='input-valor-c' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+							<input id='input-valor-c' type="text" placeholder="?">
 						</div>
 					</div>
 
@@ -173,7 +173,7 @@
 
 					<div class="calculo">
 						<div class="input-x fundo-normal preenchimento-c" id="campo-valor-d">
-							<input id='input-valor-d' type="text" onkeyup="validarValores()" onblur="validarValores()" placeholder="?">
+							<input id='input-valor-d' type="text" placeholder="?">
 						</div>
 					</div>
 
@@ -326,6 +326,7 @@ console.log('questao-11.html');
 apenasNumeros(document.querySelector("#input-valor-a"));
 apenasNumeros(document.querySelector("#input-valor-b"));
 apenasNumeros(document.querySelector("#input-valor-c"));
+apenasNumeros(document.querySelector("#input-valor-d"));
 
 $("#iconSetaEsquerda").show();
 $("#iconSetaDireita").hide();
@@ -363,7 +364,7 @@ function ajuda() {
 		<div id="dialog-questao-11-ajuda">
 			<h3>Coeficiente de Variação de Pearson - CVP</h3>
 
-			<h4><span class='tab'/>É a razão entre o desvio padrão e a média referentes a dados de uma mesma série, dado pela fórmula:</h4>
+			<h4><span class='tab'></span>É a razão entre o desvio padrão e a média referentes a dados de uma mesma série, dado pela fórmula:</h4>
 			<div class='text-center'>
 				<img src='assets/img/questao-10-ajuda-formula-1.png'/>
 			</div>
@@ -381,6 +382,20 @@ function ajuda() {
 	});
 	dialogQuestao11Ajuda.dialog("open");
 }
+
+//!
+document.querySelector("#input-valor-a").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-valor-b").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-valor-c").addEventListener('input', function() {
+	validarValores();
+});
+document.querySelector("#input-valor-d").addEventListener('input', function() {
+	validarValores();
+});
 
 let valorCorretoA = 190.16;
 let valorCorretoB = 195.4;
