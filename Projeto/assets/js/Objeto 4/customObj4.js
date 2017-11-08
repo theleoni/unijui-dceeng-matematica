@@ -366,7 +366,11 @@ function checkIfStuck() {
 
 	//Função utilizada para carregar a questão correta
 	function loadQuestion() {
-
+		if (questionNumber > 8) {
+			$("#iconMais").hide();
+		} else {
+			$("#iconMais").show();
+		}
 		switch (questionNumber) {
 			case 1:
 			swal("Atenção!", "Nas respostas dos exercícios a seguir utilize valores arredondados para duas casas após a virgula");
@@ -499,7 +503,7 @@ function checkIfStuck() {
 			break;
 
 			default:
-			if (respostasCorretas[questionNumber-1] == $("#inputResposta").val().replace(",", ".") || respostasCorretasOutra[questionNumber-1] == $("#inputResposta").val().replace(",", ".") || respostasCorretasTerceira[questionNumber-1] == $("#inputResposta").val().replace(",", ".") || respostasCorretasQuarta[questionNumber-1] == $("#inputResposta").val().replace(",", ".")) {
+			if (Math.abs(respostasCorretas[questionNumber-1] - $("#inputResposta").val().replace(",", ".")) <= 0.011 || Math.abs(respostasCorretasOutra[questionNumber-1] - $("#inputResposta").val().replace(",", ".")) <= 1 || respostasCorretasTerceira[questionNumber-1] == $("#inputResposta").val().replace(",", ".") || respostasCorretasQuarta[questionNumber-1] == $("#inputResposta").val().replace(",", ".")) {
 				questoesCorretas[questionNumber-1] = true;
 				allowNextScene();
 				blockQuestionButtons();

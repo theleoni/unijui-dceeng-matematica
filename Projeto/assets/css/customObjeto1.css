@@ -285,7 +285,8 @@ body {
 
 .sceneIntroGeralText1 {
 	position: absolute;
-	left: 32%;
+	left: 33%;
+	top: 1vh;
 	right: 5%;
 	text-align: justify;
 	z-index: 1;
@@ -297,6 +298,7 @@ body {
 
 .sceneIntroGeralText2 {
 	position:absolute;
+	top: 1vh;
 	left: 32%;
 	right: 20%;
 	text-align: justify;
@@ -363,7 +365,7 @@ body {
 	color: #FFFFFF;
 	font-size: calc((2vh + 1vw)/2);
 	font-family: 'Roboto Condensed', sans-serif;
-	top: 0.5vh;
+	top: 5.5vh;
 }
 
 
@@ -374,6 +376,7 @@ body {
 	z-index:1;
 	width: 20vw;
 	height: 10vh;
+	top: 5vh;
 }
 
 .sceneTiposUsinasSub1 {
@@ -449,7 +452,7 @@ body {
 	position: absolute;
 	max-width: 40%;
 	z-index: 1;
-	top: 50%;
+	top: 5vh;
 	margin-top: -4%;
 }
 
@@ -572,22 +575,22 @@ body {
 
 .sceneIntroGraficosBubble1 {
 	position: absolute;
-	left: -8%;
-	top: 12%;
-	width: 70vw;
-	height: 40vh;
+	left: 45%;
+	top: 6vh;
+	width: 40vw;
+	height: 28vh;
 }
 
 .sceneIntroGraficosText1 {
 	position: absolute;
-	left: -5%;
-	line-height: 125%;
+	left: 48%;
+	line-height: 100%;
 	right: -10%;
-	top: 2000%;
+	top: 7vh;
 	text-align: justify;
 	z-index: 1;
 	color: #FFFFFF;
-	font-size: calc((4vh + 2vw)/1.9);
+	font-size: calc((2vh + 2vw)/1.9);
 	font-family: 'Roboto Condensed', sans-serif;
 }
 

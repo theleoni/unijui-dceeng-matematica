@@ -1023,7 +1023,7 @@
 	  		break;
 
 	  		case 7:
-	  		if($("#inputNumbersceneQuestoesGraficos").val().replace(",", ".") == respostaCorreta7) {
+	  		if(Math.abs($("#inputNumbersceneQuestoesGraficos").val().replace(",", ".") - respostaCorreta7) < 0.011) {
 	  			respostaCorreta();
 	  		}
 	  		else {

@@ -204,6 +204,7 @@ body {
 	left: 20vw;
 	right: 40vw;
 	font-size: calc((2vh + 1vw)/2);
+	font-family: 'Indie Flower', sans-serif;
 }
 
 #textoSalaDeAula2 {
