@@ -442,19 +442,19 @@ var parts = {
 	}
 
 	.destino-lixo {
-		top: 7%;
+		top: 18%;
 		position: absolute;
 	}
 
 	.destino {
-		width: 20%;
+		width: 15%;
 		margin: 0.4%;
 		vertical-align: top;
 		transition: .3s ease;
 	}
 
 	.destino:hover {
-		width: 22%;
+		width: 16%;
 		transition: .3s ease;
 		cursor: pointer;
 	}
@@ -1579,7 +1579,7 @@ var parts = {
 
 	function anterior() {
 
-		carregarParte('reduzir-reutilizar-reciclar.html');
+		carregarParte('questao-11.html');
 	}
 
 	function proxima() {
@@ -1846,7 +1846,6 @@ var parts = {
 	}
 
 	</script>
-
 
 	`,
 
@@ -9187,7 +9186,7 @@ var parts = {
 
 	function proxima() {
 
-		carregarParte('reduzir-reutilizar-reciclar.html');
+		carregarParte('final.html');
 	}
 
 	function ajuda() {
