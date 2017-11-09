@@ -451,14 +451,14 @@ function anterior() {
 
 		case 2:
 			document.querySelector('#img-fundo').classList.remove('oculto');
-			document.querySelector(".explicacoes").classList.add('oculto');
+			document.querySelector(".explicacoes-quadrado").classList.add('oculto');
 
 			posIndexVariancia--;
 			break;
 
 		case 3:
-			document.querySelector('.explicacoes').classList.remove('oculto');
-			document.querySelector(".explicacoes-quadrado").classList.add('oculto');
+			document.querySelector('.explicacoes-quadrado').classList.remove('oculto');
+			document.querySelector(".explicacoes").classList.add('oculto');
 
 			posIndexVariancia--;
 			break;
@@ -477,14 +477,14 @@ function proxima() {
 
 		case 1:
 			document.querySelector('#img-fundo').classList.add('oculto');
-			document.querySelector(".explicacoes").classList.remove('oculto');
+			document.querySelector(".explicacoes-quadrado").classList.remove('oculto');
 
 			posIndexVariancia++;
 			break;
 
 		case 2:
-			document.querySelector('.explicacoes').classList.add('oculto');
-			document.querySelector(".explicacoes-quadrado").classList.remove('oculto');
+			document.querySelector('.explicacoes-quadrado').classList.add('oculto');
+			document.querySelector(".explicacoes").classList.remove('oculto');
 
 			posIndexVariancia++;
 			break;

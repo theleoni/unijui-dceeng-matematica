@@ -675,6 +675,10 @@ var parts = {
 
 		</div>
 
+		<div class="oculto text-center muito-mais-top muitissimo-mais-bottom" id="desvio-padrao-saiba-mais-div">
+			<button type="button" class="btn" id="desvio-padrao-saiba-mais">Saiba Mais</button>
+		</div>
+
 		<div class="mensagens">
 		</div>
 	</div>
@@ -823,12 +827,16 @@ var parts = {
 				document.querySelector('#img-fundo').classList.remove('oculto');
 				document.querySelector('#img-fundo').src = 'assets/img/desvio_padrao.png';
 
+				document.querySelector("#desvio-padrao-saiba-mais-div").classList.add('oculto');
+
 				posIndexVariancia--;
 				break;
 
-			case 3:
+			case 2:
 				document.querySelector('#img-fundo').classList.remove('oculto');
 				document.querySelector(".explicacoes-tabela-1").classList.add('oculto');
+
+				document.querySelector("#desvio-padrao-saiba-mais-div").classList.remove('oculto');
 
 				posIndexVariancia--;
 				break;
@@ -840,6 +848,7 @@ var parts = {
 
 			case 0:
 				document.querySelector('#img-fundo').src = 'assets/img/desvio_padrao-2.png';
+				document.querySelector("#desvio-padrao-saiba-mais-div").classList.remove('oculto');
 
 				posIndexVariancia++;
 				break;
@@ -847,6 +856,8 @@ var parts = {
 			case 1:
 				document.querySelector('#img-fundo').classList.add('oculto');
 				document.querySelector(".explicacoes-tabela-1").classList.remove('oculto');
+
+				document.querySelector("#desvio-padrao-saiba-mais-div").classList.add('oculto');
 
 				posIndexVariancia++;
 				break;
@@ -891,6 +902,49 @@ var parts = {
 			buttons: {}
 		});
 		dialogDesvioPadraoAjuda.dialog("open");
+	}
+
+	document.querySelector("#desvio-padrao-saiba-mais").addEventListener('click', function() {
+		saibaMais();
+	});
+	function saibaMais() {
+		if (document.querySelector('#dialog-desvio-padrao-saiba-mais') == null) {
+			let innerAjuda = document.querySelector(".mensagens").innerHTML;
+			innerAjuda += $%&
+			<div id="dialog-desvio-padrao-saiba-mais">
+
+				<h3>Desvio Padrão amostral</h3>
+
+				<h4><span class="super-tab"></span>Quando nosso interesse não se restringe à descrição dos dados, mas, partindo da <b>amostra</b>, visamos tirar inferências válidas para a respectiva população, convém efetuar uma modificação, que consiste em usar o divisor <b>n – 1</b> em lugar de <b>n</b>. A fórmula ficará então:</h4>
+
+				<div class='text-center'>
+					<img src='assets/img/desvio-amostral-formula-1.png'/>
+				</div>
+
+				<h4><span class="super-tab"></span>Se os dados 18, 66, 383, 419 e 29 representassem uma amostra o <b>desvio padrão amostral</b> seria:</h4>
+
+				<div class='text-center'>
+					<img src='assets/img/desvio-amostral-formula-2.png'/>
+				</div>
+
+				<h4><span class="super-tab"></span><b>Quando os dados estão agrupados, temos a presença de frequências (<span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span>), e a fórmula do desvio padrão ficará:</b></h4>
+
+				<div class='text-center'>
+					<img src='assets/img/desvio-amostral-formula-3.png'/>
+				</div>
+
+			</div>$%&;
+			document.querySelector(".mensagens").innerHTML = innerAjuda;
+		}
+
+		let dialogDesvioPadraoSaibaMais = $("#dialog-desvio-padrao-saiba-mais").dialog({
+			autoOpen: false,
+			height: 500,
+			width: 850,
+			modal: true,
+			buttons: {}
+		});
+		dialogDesvioPadraoSaibaMais.dialog("open");
 	}
 	</script>
 
@@ -10020,14 +10074,14 @@ var parts = {
 
 			case 2:
 				document.querySelector('#img-fundo').classList.remove('oculto');
-				document.querySelector(".explicacoes").classList.add('oculto');
+				document.querySelector(".explicacoes-quadrado").classList.add('oculto');
 
 				posIndexVariancia--;
 				break;
 
 			case 3:
-				document.querySelector('.explicacoes').classList.remove('oculto');
-				document.querySelector(".explicacoes-quadrado").classList.add('oculto');
+				document.querySelector('.explicacoes-quadrado').classList.remove('oculto');
+				document.querySelector(".explicacoes").classList.add('oculto');
 
 				posIndexVariancia--;
 				break;
@@ -10046,14 +10100,14 @@ var parts = {
 
 			case 1:
 				document.querySelector('#img-fundo').classList.add('oculto');
-				document.querySelector(".explicacoes").classList.remove('oculto');
+				document.querySelector(".explicacoes-quadrado").classList.remove('oculto');
 
 				posIndexVariancia++;
 				break;
 
 			case 2:
-				document.querySelector('.explicacoes').classList.add('oculto');
-				document.querySelector(".explicacoes-quadrado").classList.remove('oculto');
+				document.querySelector('.explicacoes-quadrado').classList.add('oculto');
+				document.querySelector(".explicacoes").classList.remove('oculto');
 
 				posIndexVariancia++;
 				break;
