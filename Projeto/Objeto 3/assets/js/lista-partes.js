@@ -1072,7 +1072,16 @@ var parts = {
 
 						<h4><spanc class='tab'></span> > <spanc class='tab'></span></h4>
 
-						<h4>Desvio padrão: S = &#8730;<span class="valor-diferenciado">74</span> = 8,6</h4>
+						<div class="inline">
+							<h4>Desvio padrão: S = </h4>
+
+							<div class="raiz-3" style="margin-top:6px;">
+								<span class="valor-diferenciado">74</span>
+							</div>
+
+							<h4> = 8,6</h4>
+						</div>
+
 
 					</div>
 				</div>
@@ -6615,17 +6624,20 @@ var parts = {
 			<div class="col-xs-12">
 				<h4>Encontre o desvio padrão:</h4>
 
-				<div class="text-center mais-top">
-					<span>S = &#8730;</span>
-					<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao-a">
-						<input id='input-desvio-padrao-a' type="text" placeholder="?">
+				<div class="text-center mais-top centro-vertical">
+					<div class="inline">
+						<span>S = </span>
+						<div class="raiz-2">
+							<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao-a">
+								<input id='input-desvio-padrao-a' type="text" placeholder="?">
+							</div>
+						</div>
+						<span> = </span>
+						<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao-b">
+							<input id='input-desvio-padrao-b' type="text" placeholder="?">
 					</div>
-					<span> = </span>
-					<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao-b">
-						<input id='input-desvio-padrao-b' type="text" placeholder="?">
 					</div>
 				</div>
-
 			</div>
 
 		</div>
@@ -6635,6 +6647,10 @@ var parts = {
 	</div>
 
 	<style media="screen">
+
+	.centro-vertical {
+		vertical-align: middle;
+	}
 
 	.geral-interno {
 		position: relative;
@@ -6910,17 +6926,20 @@ var parts = {
 			<div class="col-xs-12">
 				<h4>Encontre o desvio padrão:</h4>
 
-				<div class="text-center mais-top">
-					<span>S = &#8730;</span>
-					<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao-a">
-						<input id='input-desvio-padrao-a' type="text" placeholder="?">
+				<div class="text-center mais-top centro-vertical">
+					<div class="inline">
+						<span>S = </span>
+						<div class="raiz-2">
+							<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao-a">
+								<input id='input-desvio-padrao-a' type="text" placeholder="?">
+							</div>
+						</div>
+						<span> = </span>
+						<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao-b">
+							<input id='input-desvio-padrao-b' type="text" placeholder="?">
 					</div>
-					<span> = </span>
-					<div class="input-x fundo-normal preenchimento-c" id="campo-desvio-padrao-b">
-						<input id='input-desvio-padrao-b' type="text" placeholder="?">
 					</div>
 				</div>
-
 			</div>
 
 		</div>
@@ -7372,10 +7391,12 @@ var parts = {
 
 				<div class="text-center">
 					<div class="formula">
-						<h4>Desvio padrão: S = √</h4>
+						<h4>Desvio padrão: S = </h4>
 
-						<div class="calculo">
-							<h4 class="valor-menor-variancia">?</h4>
+						<div class="calculo inline">
+							<div class="raiz-2">
+								<h4 class="valor-menor-variancia">?</h4>
+							</div>
 						</div>
 						<div class="calculo">
 							<h4>=</h4>
@@ -7524,10 +7545,12 @@ var parts = {
 
 				<div class="text-center">
 					<div class="formula">
-						<h4>Desvio padrão: S = √</h4>
+						<h4>Desvio padrão: S = </h4>
 
-						<div class="calculo">
-							<h4 class="valor-maior-variancia">?</h4>
+						<div class="calculo inline">
+							<div class="raiz-2">
+								<h4 class="valor-maior-variancia">?</h4>
+							</div>
 						</div>
 						<div class="calculo">
 							<h4>=</h4>
@@ -8366,9 +8389,15 @@ var parts = {
 							<h4> = 74</h4>
 						</div>
 
-						<h4><spanc class='tab'></span> > <spanc class='tab'></span></h4>
+						<h4><span class='tab'></span> > <span class='tab'></span></h4>
 
-						<h4>Desvio padrão: S = &#8730;74 = 8,6</h4>
+						<div class="inline">
+							<h4>Desvio padrão: S = </h4>
+							<div class="raiz-2">
+								<h4>74</h4>
+							</div>
+							<h4> = 8,6</h4>
+						</div>
 
 					</div>
 				</div>
@@ -8616,12 +8645,12 @@ var parts = {
 			let innerAjuda = document.querySelector(".mensagens").innerHTML;
 			innerAjuda += $%&
 			<div id="dialog-questao-10-ajuda">
-				<h3>Coeficiente de Variação de Pearson - CVP</h3>
+			<h3>Coeficiente de Variação de Pearson - CVP</h3>
 
-				<h4><span class='tab'></span>É a razão entre o desvio padrão e a média referentes a dados de uma mesma série, dado pela fórmula:</h4>
-				<div class='text-center'>
-					<img src='assets/img/questao-10-ajuda-formula-1.png'/>
-				</div>
+			<h4><span class='tab'></span>É a razão entre o desvio padrão e a média referentes a dados de uma mesma série, dado pela fórmula:</h4>
+			<div class='text-center'>
+			<img src='assets/img/questao-10-ajuda-formula-1.png'/>
+			</div>
 
 			</div>$%&;
 			document.querySelector(".mensagens").innerHTML = innerAjuda;
@@ -8855,9 +8884,17 @@ var parts = {
 							<h4> = 36.160,24</h4>
 						</div>
 
-						<h4><spanc class='tab'></span> > <spanc class='tab'></span></h4>
+						<h4>
+							<span class='tab'></span> > <span class='tab'></span>
+						</h4>
 
-						<h4>Desvio padrão: S = &#8730;36.160,24 = 190,16</h4>
+						<div class="inline">
+							<h4>Desvio padrão: S = </h4>
+							<div class="raiz-2">
+								<h4>36.160,24</h4>
+							</div>
+							<h4> = 190,16</h4>
+						</div>
 
 					</div>
 				</div>
@@ -9105,12 +9142,12 @@ var parts = {
 			let innerAjuda = document.querySelector(".mensagens").innerHTML;
 			innerAjuda += $%&
 			<div id="dialog-questao-11-ajuda">
-				<h3>Coeficiente de Variação de Pearson - CVP</h3>
+			<h3>Coeficiente de Variação de Pearson - CVP</h3>
 
-				<h4><span class='tab'></span>É a razão entre o desvio padrão e a média referentes a dados de uma mesma série, dado pela fórmula:</h4>
-				<div class='text-center'>
-					<img src='assets/img/questao-10-ajuda-formula-1.png'/>
-				</div>
+			<h4><span class='tab'></span>É a razão entre o desvio padrão e a média referentes a dados de uma mesma série, dado pela fórmula:</h4>
+			<div class='text-center'>
+			<img src='assets/img/questao-10-ajuda-formula-1.png'/>
+			</div>
 
 			</div>$%&;
 			document.querySelector(".mensagens").innerHTML = innerAjuda;
