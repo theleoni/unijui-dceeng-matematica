@@ -4,16 +4,15 @@
 	<meta charset="utf-8">
 	<title>DESVIO PADRÃO APLICADO AO TRATAMENTO DE RESÍDUOS SÓLIDOS</title>
 
-	<script src="assets/js/jquery-1.12.4.js"></script>
-	<script src="assets/js/jquery-ui-1.12.1.js"></script>
-
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/bib/highcharts/code/highcharts.js"></script>
-
 	<!-- <link rel="stylesheet" type="text/css" href="assets/css/navbar.css"> -->
 	<link rel="stylesheet" type="text/css" href="assets/css/calculadora.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/jquery-ui.css">
+
+	<script src="assets/js/jquery-1.12.4.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/jquery-ui-1.12.1.js"></script>
+	<script src="assets/bib/highcharts/code/highcharts.js"></script>
 
 	<script src="assets/js/sweetalert.min.js"></script>
 
@@ -62,7 +61,7 @@
 				<button type="button" class="btn butonlousso" onclick="carregarParte('coeficiente-variacao.html');">Coeficiente Variação</button>
 				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-10.html');">Questão 10</button>
 				<button type="button" class="btn butonlousso" onclick="carregarParte('questao-11.html');">Questão 11</button>
-				<button type="button" class="btn butonlousso" onclick="carregarParte('reduzir-reutilizar-reciclar.html');">3 Rs</button>
+				<!-- <button type="button" class="btn butonlousso" onclick="carregarParte('reduzir-reutilizar-reciclar.html');">3 Rs</button> -->
 				<button type="button" class="btn butonlousso" onclick="carregarParte('final.html');">Final</button>
 			</div>
 		</center>
@@ -244,6 +243,11 @@
 		bottom: 1rem;
 		right: 1rem;
 	}
+
+	#iconCalculadora {
+		vertical-align: top;
+	}
+
 	.demais-icones {
 		position: absolute;
 		z-index: 999;
@@ -276,6 +280,8 @@
 		padding-left: 12px;
 		padding-top: 2px;
 	}
+
+
 
 	.inline {
 		display:inline-flex;
@@ -388,7 +394,7 @@
 
 		<div class='demais-icones'>
 			<i id='iconAjuda' class="material-icons icon">help_outline</i>
-			<i id='iconCalculadora' class="material-icons icon">grid_on</i>
+			<img id="iconCalculadora" class="icon" src="assets/img/fa_calculator.png" alt="Calculadora" />
 		</div>
 		`;
 
@@ -441,7 +447,9 @@
 				autoOpen: false,
 				height: 470,
 				width: 360,
+				closeText: "Fechar",
 				modal: false,
+				resizable: false,
 				buttons: {}
 			});
 			dialogCalculadora.dialog("open");
