@@ -371,7 +371,13 @@ function carregarTabela() {
 
 			let colunaTexto = linha.insertCell(j + 1);
 			colunaTexto.classList.add("text-center");
-			colunaTexto.innerHTML = '<input id="input-texto-' + (i + 1) + '-' + (j + 1) + '" class="fundo-editavel fundo-editavel-normal" placeholder="?" oninput="validarTabela()" type="text">';
+
+			let nomeCampo = 'input-texto-' + (i + 1) + '-' + (j + 1);
+			colunaTexto.innerHTML = '<input id="' + nomeCampo + '" class="fundo-editavel fundo-editavel-normal" placeholder="?" type="text">';
+
+			document.querySelector(`#${nomeCampo}`).addEventListener('input', function() {
+				validarTabela();
+			});
 
 			apenasNumeros(document.querySelector('#input-texto-' + (i + 1) + '-' + (j + 1) + ''));
 		}

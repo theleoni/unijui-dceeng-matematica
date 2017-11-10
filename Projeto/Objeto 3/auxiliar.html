@@ -254,12 +254,12 @@
 	.formula-a {
 		font-family: serif;
 		font-style: italic !important;
-		font-size: 18px;
+		/*font-size: 18px;*/
 	}
 
 	.formula-b {
 		font-family: serif;
-		font-size: 18px;
+		/*font-size: 18px;*/
 
 	}
 
@@ -267,14 +267,14 @@
 		background-image: url('assets/img/raiz-2.png');
 		background-repeat: no-repeat;
 		padding-left: 24px;
-		padding-top: 10px;
+		padding-top: 8px;
 	}
 
 	.raiz-3 {
 		background-image: url('assets/img/raiz-3.png');
 		background-repeat: no-repeat;
 		padding-left: 12px;
-		padding-top: 4px;
+		padding-top: 2px;
 	}
 
 	.inline {
@@ -425,8 +425,9 @@
 							<span id="DivisaoCalculadora" class="operator">÷</span>
 							<span id="0Calculadora">0</span>
 							<span id="PontoCalculadora">.</span>
-							<span id="IgualCalculadora" class="eval">=</span>
+							<span id="RaizCalculadora" class="operator">√</span>
 							<span id="MultiplicacaoCalculadora" class="operator">x</span>
+							<span id="IgualCalculadora" class="eval">=</span>
 						</div>
 					</div>
 
@@ -438,7 +439,7 @@
 
 			let dialogCalculadora = $("#dialog-calculadora").dialog({
 				autoOpen: false,
-				height: 340,
+				height: 470,
 				width: 360,
 				modal: false,
 				buttons: {}

@@ -342,8 +342,8 @@ function ajuda() {
 
 					<h4>Se desejas rever algum destes conteúdos clique sobre ele:</h4>
 					<div class='text-center'>
-						<button class='btn' onclick="ajudaPage('media')">Média Aritmética</button>
-						<button class='btn' onclick="ajudaPage('mediana')">Mediana</button>
+						<button id="questao-1-ajuda-media" class='btn'>Média Aritmética</button>
+						<button id="questao-1-ajuda-mediana" class='btn'>Mediana</button>
 					</div>
 				</div>
 
@@ -358,7 +358,7 @@ function ajuda() {
 					<h4>Na semana analisada, o catador recolheu, <b>em média</b>, 59 latinhas por dia.</h4>
 
 					<div class='text-center'>
-						<button class='btn' onclick="ajudaPage('principal')">Voltar</button>
+						<button id="questao-1-ajuda-media-voltar" class='btn'>Voltar</button>
 					</div>
 				</div>
 
@@ -381,13 +381,27 @@ function ajuda() {
 					</div>
 
 					<div class='text-center'>
-						<button class='btn' onclick="ajudaPage('principal')">Voltar</button>
+						<button id="questao-1-ajuda-mediana-voltar" class='btn'>Voltar</button>
 					</div>
 				</div>
 
 			</div>
 		</div>`;
 		document.querySelector(".mensagens").innerHTML = innerAjuda;
+
+		document.querySelector("#questao-1-ajuda-media").addEventListener('click', function() {
+			ajudaPage('media');
+		});
+		document.querySelector("#questao-1-ajuda-mediana").addEventListener('click', function() {
+			ajudaPage('mediana');
+		});
+		document.querySelector("#questao-1-ajuda-media-voltar").addEventListener('click', function() {
+			ajudaPage('principal');
+		});
+		document.querySelector("#questao-1-ajuda-mediana-voltar").addEventListener('click', function() {
+			ajudaPage('principal');
+		});
+
 		ajudaPage('principal');
 	}
 

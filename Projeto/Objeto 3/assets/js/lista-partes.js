@@ -16,9 +16,9 @@ var parts = {
 			</div>
 
 			<h4>Onde,</h4>
-			<h4>CV > é o coeficiente de variação</h4>
-			<h4>S > é o desvio padrão</h4>
-			<h4>x&#772; > é a média dos dados</h4>
+			<h4><i>CV</i> > é o coeficiente de variação</h4>
+			<h4><i>S</i> > é o desvio padrão</h4>
+			<h4><span class="formula-a">X&#772;</span> > é a média dos dados</h4>
 
 			<h4 class="muito-mais-top">O coeficiente de variação é dado em %, por isso a fórmula é multiplicada por 100.</h4>
 			<div class="text-center mais-top">
@@ -67,7 +67,14 @@ var parts = {
 					</tr>
 					<tr class="total">
 						<td>Desvio Padrão (S)</td>
-						<td>√36.445,6 = 190,91</td>
+						<td>
+							<div class="inline">
+								<div class="raiz-2">
+									<h5 style="font-weight:bold">36.445,6</h5>
+								</div>
+								<h5 style="font-weight:bold"> = 190,91</h5>
+							</div>
+						</td>
 					</tr>
 				</table>
 			</div>
@@ -108,7 +115,14 @@ var parts = {
 					</tr>
 					<tr class="total">
 						<td>Desvio Padrão (S)</td>
-						<td>√32.065,2 = 179,07</td>
+						<td>
+							<div class="inline">
+								<div class="raiz-2">
+									<h5 style="font-weight:bold">32.065,2</h5>
+								</div>
+								<h5 style="font-weight:bold"> = 179,07</h5>
+							</div>
+						</td>
 					</tr>
 				</table>
 			</div>
@@ -343,6 +357,7 @@ var parts = {
 	}
 
 	</script>
+
 	`,
 
 	"creditos.html":
@@ -790,6 +805,19 @@ var parts = {
 		text-align: center;
 	}
 
+	.img-formula-1 {
+
+		width:170px;
+	}
+	.img-formula-2 {
+
+		width:460px;
+	}
+	.img-formula-3 {
+
+		width:800px;
+	}
+
 	</style>
 
 	<script type="text/javascript">
@@ -918,19 +946,19 @@ var parts = {
 				<h4><span class="super-tab"></span>Quando nosso interesse não se restringe à descrição dos dados, mas, partindo da <b>amostra</b>, visamos tirar inferências válidas para a respectiva população, convém efetuar uma modificação, que consiste em usar o divisor <b>n – 1</b> em lugar de <b>n</b>. A fórmula ficará então:</h4>
 
 				<div class='text-center'>
-					<img src='assets/img/desvio-amostral-formula-1.png'/>
+					<img src='assets/img/desvio-amostral-formula-1.png' class='img-formula-1'/>
 				</div>
 
 				<h4><span class="super-tab"></span>Se os dados 18, 66, 383, 419 e 29 representassem uma amostra o <b>desvio padrão amostral</b> seria:</h4>
 
 				<div class='text-center'>
-					<img src='assets/img/desvio-amostral-formula-2.png'/>
+					<img src='assets/img/desvio-amostral-formula-2.png' class='img-formula-2'/>
 				</div>
 
 				<h4><span class="super-tab"></span><b>Quando os dados estão agrupados, temos a presença de frequências (<span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span>), e a fórmula do desvio padrão ficará:</b></h4>
 
 				<div class='text-center'>
-					<img src='assets/img/desvio-amostral-formula-3.png'/>
+					<img src='assets/img/desvio-amostral-formula-3.png' class='img-formula-3'/>
 				</div>
 
 			</div>$%&;
@@ -1796,7 +1824,13 @@ var parts = {
 
 				let colunaTexto = linha.insertCell(j + 1);
 				colunaTexto.classList.add("text-center");
-				colunaTexto.innerHTML = '<input id="input-texto-' + (i + 1) + '-' + (j + 1) + '" class="fundo-editavel fundo-editavel-normal" placeholder="?" oninput="validarTabela()" type="text">';
+
+				let nomeCampo = 'input-texto-' + (i + 1) + '-' + (j + 1);
+				colunaTexto.innerHTML = '<input id="' + nomeCampo + '" class="fundo-editavel fundo-editavel-normal" placeholder="?" type="text">';
+
+				document.querySelector($%&##@*nomeCampo}$%&).addEventListener('input', function() {
+					validarTabela();
+				});
 
 				apenasNumeros(document.querySelector('#input-texto-' + (i + 1) + '-' + (j + 1) + ''));
 			}
@@ -3863,8 +3897,8 @@ var parts = {
 
 						<h4>Se desejas rever algum destes conteúdos clique sobre ele:</h4>
 						<div class='text-center'>
-							<button class='btn' onclick="ajudaPage('media')">Média Aritmética</button>
-							<button class='btn' onclick="ajudaPage('mediana')">Mediana</button>
+							<button id="questao-1-ajuda-media" class='btn'>Média Aritmética</button>
+							<button id="questao-1-ajuda-mediana" class='btn'>Mediana</button>
 						</div>
 					</div>
 
@@ -3879,7 +3913,7 @@ var parts = {
 						<h4>Na semana analisada, o catador recolheu, <b>em média</b>, 59 latinhas por dia.</h4>
 
 						<div class='text-center'>
-							<button class='btn' onclick="ajudaPage('principal')">Voltar</button>
+							<button id="questao-1-ajuda-media-voltar" class='btn'>Voltar</button>
 						</div>
 					</div>
 
@@ -3902,13 +3936,27 @@ var parts = {
 						</div>
 
 						<div class='text-center'>
-							<button class='btn' onclick="ajudaPage('principal')">Voltar</button>
+							<button id="questao-1-ajuda-mediana-voltar" class='btn'>Voltar</button>
 						</div>
 					</div>
 
 				</div>
 			</div>$%&;
 			document.querySelector(".mensagens").innerHTML = innerAjuda;
+
+			document.querySelector("#questao-1-ajuda-media").addEventListener('click', function() {
+				ajudaPage('media');
+			});
+			document.querySelector("#questao-1-ajuda-mediana").addEventListener('click', function() {
+				ajudaPage('mediana');
+			});
+			document.querySelector("#questao-1-ajuda-media-voltar").addEventListener('click', function() {
+				ajudaPage('principal');
+			});
+			document.querySelector("#questao-1-ajuda-mediana-voltar").addEventListener('click', function() {
+				ajudaPage('principal');
+			});
+
 			ajudaPage('principal');
 		}
 
@@ -4092,6 +4140,8 @@ var parts = {
 		});
 		dialogQuestao1PopUp.dialog("open");
 	}
+
+	</script>
 
 	</script>
 
@@ -6971,7 +7021,7 @@ var parts = {
 					</tr>
 					<tr class="total">
 						<td>Variância</td>
-						<td class="valor-total">?</td>
+						<td>32065,2</td>
 					</tr>
 				</table>
 			</div>
@@ -7175,7 +7225,7 @@ var parts = {
 	let campoQuestao6ADesvioPadrao = document.querySelector("#campo-desvio-padrao-a");
 	let campoQuestao6BDesvioPadrao = document.querySelector("#campo-desvio-padrao-b");
 
-	let campoTotal = document.querySelector(".valor-total");
+	// let campoTotal = document.querySelector(".valor-total");
 
 	let valorQuestao6ADesvioPadrao = 32065.2;
 	let valorQuestao6BDesvioPadrao = 179.07;
@@ -7201,13 +7251,13 @@ var parts = {
 			campoQuestao6ADesvioPadrao.classList.add('fundo-ok');
 			campoQuestao6ADesvioPadrao.classList.remove('fundo-normal');
 
-			campoTotal.innerHTML = valorQuestao6ADesvioPadrao.toString().replace('.', ',');
+			// campoTotal.innerHTML = valorQuestao6ADesvioPadrao.toString().replace('.', ',');
 		} else {
 
 			campoQuestao6ADesvioPadrao.classList.remove('fundo-ok');
 			campoQuestao6ADesvioPadrao.classList.add('fundo-normal');
 
-			campoTotal.innerHTML = '?';
+			// campoTotal.innerHTML = '?';
 		}
 
 		if (valorQuestao6BOk) {

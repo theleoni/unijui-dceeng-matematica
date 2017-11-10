@@ -38,7 +38,7 @@
 				</tr>
 				<tr class="total">
 					<td>Variância</td>
-					<td class="valor-total">?</td>
+					<td>32065,2</td>
 				</tr>
 			</table>
 		</div>
@@ -242,7 +242,7 @@ let inputQuestao6BDesvioPadrao = document.querySelector("#input-desvio-padrao-b"
 let campoQuestao6ADesvioPadrao = document.querySelector("#campo-desvio-padrao-a");
 let campoQuestao6BDesvioPadrao = document.querySelector("#campo-desvio-padrao-b");
 
-let campoTotal = document.querySelector(".valor-total");
+// let campoTotal = document.querySelector(".valor-total");
 
 let valorQuestao6ADesvioPadrao = 32065.2;
 let valorQuestao6BDesvioPadrao = 179.07;
@@ -268,13 +268,13 @@ function validarValores() {
 		campoQuestao6ADesvioPadrao.classList.add('fundo-ok');
 		campoQuestao6ADesvioPadrao.classList.remove('fundo-normal');
 
-		campoTotal.innerHTML = valorQuestao6ADesvioPadrao.toString().replace('.', ',');
+		// campoTotal.innerHTML = valorQuestao6ADesvioPadrao.toString().replace('.', ',');
 	} else {
 
 		campoQuestao6ADesvioPadrao.classList.remove('fundo-ok');
 		campoQuestao6ADesvioPadrao.classList.add('fundo-normal');
 
-		campoTotal.innerHTML = '?';
+		// campoTotal.innerHTML = '?';
 	}
 
 	if (valorQuestao6BOk) {
