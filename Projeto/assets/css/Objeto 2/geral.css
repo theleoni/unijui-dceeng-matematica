@@ -351,7 +351,7 @@ body {
 	font-size: calc((2.6vh+1.3vw));
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 900px) {
 	#falaModa {
 		margin-top: -100%;
 	}
