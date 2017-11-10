@@ -359,7 +359,6 @@ function unloadScene() {
 		$("#tabelasModa").hide();
 		$("body").css("overflow", "hidden");
 		window.scrollTo(0,0);
-
 		break;
 
 		case 13:
