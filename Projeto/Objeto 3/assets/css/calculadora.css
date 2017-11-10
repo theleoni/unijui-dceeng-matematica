@@ -93,6 +93,11 @@
 	margin-right: 0;
 }
 
+#RaizCalculadora {
+	margin: 0 7px 11px 0 !important;
+}
+
+
 #calculadora .keys span.eval {
 	background: #f1ff92;
 	box-shadow: 0px 4px #9da853;
