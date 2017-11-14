@@ -1677,7 +1677,7 @@ function loadQuestion() {
 				mesesErradosAtividade1 = null;
 				getValuesMediana();
 				for (var i = 0; i <= corretasAtividade1Mediana.length -1; i++) {
-					if (Math.abs(inputAtividade1Mediana[i] - corretasAtividade1Mediana[i]) < 0.011 || Math.abs(inputAtividade1Mediana[i] == corretasAlternativaAtividade1Mediana[i]) < 0.011) {
+					if (Math.abs(inputAtividade1Mediana[i] - corretasAtividade1Mediana[i]) < 0.011 || Math.abs(inputAtividade1Mediana[i] - corretasAlternativaAtividade1Mediana[i]) < 0.011) {
 					} else {
 
 						numeroErradasMediana++;

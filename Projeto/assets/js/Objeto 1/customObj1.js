@@ -1652,7 +1652,7 @@
 						enabled: false
 					},
 					title: {
-						text: 'Percentagem de uso de energia elétrica por eletrodoméstico'
+						text: 'Percentagem de uso de energia elétrica'
 					},
 					tooltip: {
 						pointFormat: '{series.name}: <b>{point.y}</b>'
@@ -2104,7 +2104,7 @@
 	  			$('#textosceneCaminhosEnergia').fadeOut(500);
 	  			sleep(500).then(() => {
 	  				$('#imgCirculo').attr("src", "../assets/img/Objeto 1/circular6.gif").fadeIn(1000);
-	  				$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg5).fadeIn(1000);
+	  				$('#textosceneCaminhosEnergia').html(dataJSON.mensagensCaminhoEnergia.msg6).fadeIn(1000);
 	  			});
 	  			$("#iconSetaDireita").show();
 	  			jaViuTransmissao = true;

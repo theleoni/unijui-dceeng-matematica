@@ -35,12 +35,12 @@
 			"respostaCorreta": "Resposta correta! Prossiga para a próxima questão   <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>",
 			"respostaIncorreta": "Resposta errada! Tente novamente   <span class='glyphicon glyphicon-remove' aria-hidden='true'</span>",
 			"mensagemIntroQuestoesIniciais": "Agora que você já sabe um pouco sobre a produção da eletricidade, vamos analisar, interpretar e responder algumas questões a partir de diferentes tipos de gráficos, referentes ao consumo de energia.",
-			"mensagem2IntroQuestoesIniciais": "Por gráfico entendemos, que é uma forma de transmitir dados e informação estatística. Eles, os gráficos, são usados em meio de comunicação como, jornais, televisão, e páginas de internet. Algumas formas em que se utilizam os gráficos são para representar variação de indicadores financeiros, pesquisa de opinião, entre outros.",
+			"mensagem2IntroQuestoesIniciais": "Por gráfico entendemos que são formas representar dados e informações estatísticas. Os gráficos, são usados em meio de comunicação como, jornais, televisão, e páginas de internet, para representar variações de indicadores econômicos, pesquisas de opiniões, entre outros.",
 			"mensagem3IntroQuestoesIniciais": "A Estatística é uma parte da Matemática Aplicada que fornece métodos para a coleta, organização, descrição, análise, e  interpretação.  Informação estatística consiste na apresentação dos resultados de uma pesquisa."
 		},
 		"questao1": {
 			"numeroQuestao": "1.",
-			"textoQuestao": "De acordo com o gráfico, qual o eletrodoméstico que possuí o <b>maior</b> consumo de energia?",
+			"textoQuestao": "De acordo com o gráfico, qual o equipamento elétrico que possui maior consumo de energia?",
 			"alternativa1Questao": "<span class='containerLetra'>A</span>Iluminação",
 			"alternativa2Questao": "<span class='containerLetra'>B</span>Televisão",
 			"alternativa3Questao": "<span class='containerLetra'>C</span>Chuveiro elétrico",
@@ -49,7 +49,7 @@
 
 		"questao2": {
 			"numeroQuestao": "2.",
-			"textoQuestao": "De acordo com o gráfico, qual o eletrodoméstico que possuí o <b>menor</b> consumo de energia?",
+			"textoQuestao": "De acordo com o gráfico, o que possuí o menor consumo de energia?",
 			"alternativa1Questao": "<span class='containerLetra'>A</span>Ferro Elétrico",
 			"alternativa2Questao": "<span class='containerLetra'>B</span>Outros",
 			"alternativa3Questao": "<span class='containerLetra'>C</span>Televisão",
@@ -140,7 +140,7 @@
 		},
 		"questao19": {
 			"numeroQuestao": "1.",
-			"textoQuestao": "Considerando as informações da tabela e do gráfico, analise as afirmações abaixo.<br>I - Os custos de energia referente à compra, transmissão e encargos setoriais representam atualmente o maior percentual do valor final da energia, seguido dos custos com tributos.<br>II - A parcela referente aos custos com distribuição representa 17% dos custos do valor final.<br>III - O maior percentual dos custos do valor final de energia elétrica são impostos.<br>IV - A parte dos custos de energia refente à compra, transmissão e encargos setoriais representam atualmente menos da metade do valor final da energia.<br>V - A parcela referente aos custos com distribuição representa 29,5% dos custos do valor final"
+			"textoQuestao": "Considerando as informações do gráfico, analise as afirmações abaixo.<br>I - Os custos de energia referente à compra, transmissão e encargos setoriais representam atualmente o maior percentual do valor final da energia, seguido dos custos com tributos.<br>II - A parcela referente aos custos com distribuição representa 17% dos custos do valor final.<br>III - O maior percentual dos custos do valor final de energia elétrica são impostos.<br>IV - A parte dos custos de energia refente à compra, transmissão e encargos setoriais representam atualmente menos da metade do valor final da energia.<br>V - A parcela referente aos custos com distribuição representa 29,5% dos custos do valor final"
 		},
 		"mensagensCaminhoEnergia": {
 			"title1": "Geração",
@@ -149,9 +149,9 @@
 			"title4": "Subestação abaixadora",
 			"title5": "Distribuição",
 			"title6": "Transformador para tensão final",
-			"msg1": "A energia elétrica pode ser gerada de diversas formas, mas a princípio, no Brasil, a principal geração de energia é através de hidrelétricas. Assim na geração, em que o gerador é entrado em movimento para a produção de energia, ela é gerada a uma voltagem de aproximadamente de 15.000V.",
+			"msg1": "A energia elétrica pode ser gerada de diversas formas, mas a princípio, no Brasil, a principal fonte de energia  elétrica é através de hidrelétricas. Assim na geração, o gerador entra em movimento para a produção de energia, gerando uma voltagem de aproximadamente de 15.000V.",
 			"msg2": "No próximo passo a energia é direcionada para a subestação elevadora, em que encontra-se transformadores que elevam a tensão para a transmissão (aproximadamente acima de 230.000 V).",
-			"msg3": "Na etapa seguinte, a energia é passada para as linhas de transmissão, em que a elevação de energia são para que as perdas de energia sejam minimizadas, através do aquecimento por efeito Joule, essas linhas percorrem centenas de quilômetros onde cabos de alta tensão são sustentados por torres que fazem a transmissão de energia elétrica até chegar a subestação abaixadora.",
+			"msg3": "Na etapa seguinte, a energia é passada para as linhas de transmissão, em que a elevação de energia serve para que as perdas de energia sejam minimizadas, através do aquecimento por efeito Joule, essas linhas percorrem centenas de quilômetros onde cabos de alta tensão são sustentados por torres que fazem a transmissão de energia elétrica até chegar a subestação abaixadora.",
 			"msg4": "Na subestação de distribuição, em que a tensão é abaixada novamente, através de transformadores, a energia segue para as redes de distribuição nas cidades.",
 			"msg5": "O próximo passo, a energia é percorrida, depois da subestação de distribuição, para a fiação dos postes, em que é direcionada para os transformadores abaixadores novamente para a os consumidores.",
 			"msg6": "Na última etapa, depois de passar pelos transformadores, que são energizados pelas linhas de distribuição, a energia é rebaixada para tensões em que usamos em nossas residências. Nesta etapa a energia é utilizada no mesmo momento em que é gerada."
