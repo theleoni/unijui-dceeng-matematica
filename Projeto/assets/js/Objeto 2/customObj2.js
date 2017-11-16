@@ -1692,7 +1692,7 @@ function loadQuestion() {
 					verificacaoAtividade1[1] = true;
 					atividadesCompletas[0] = true;
 					$("#botaoEnviarRespostaAtv1").hide();
-					swal("Parabéns!", "Você finalizou esta atividade! Clique na seta do lado esquerdo da tela para retornar à seleção de atividades", "success")
+					swal("Parabéns!", "Você finalizou esta atividade! Clique na seta do lado esquerdo da tela para retornar à seleção de atividades.", "success")
 					fixarValoresMediana();
 					updateQuestionAtividadeText();
 				} else {
@@ -1744,7 +1744,7 @@ function loadQuestion() {
 					updateQuestionAtividadeText();
 					fixarValoresAtv2();
 					if (verificacaoAtividade2[1] == true) {
-						swal("Parabéns!", "Você finalizou esta atividade! Clique na seta do lado esquerdo da tela para retornar à seleção de atividades", "success")
+						swal("Parabéns!", "Você finalizou esta atividade! Clique na seta do lado esquerdo da tela para retornar à seleção de atividades.", "success")
 					}
 				} else if (numeroErradasMedianaAtv2 == 0) {
 					$("#alertAtividade2").show();
@@ -1936,7 +1936,7 @@ function loadQuestion() {
 					});
 					$("#botaoEnviarRespostaAtv3").hide();
 					atividadesCompletas[2] = true;
-					swal("Parabéns!", "Você finalizou esta atividade! Clique na seta do lado esquerdo da tela para retornar à seleção de atividades", "success")
+					swal("Parabéns!", "Você finalizou esta atividade! Clique na seta do lado esquerdo da tela para retornar à seleção de atividades.", "success")
 				}
 				
 			}
@@ -1967,7 +1967,7 @@ function loadQuestion() {
 				updateQuestionAtividadeText();
 				$("#botaoEnviarRespostaAtv4").hide();
 				atividadesCompletas[3] = true;
-				swal("Parabéns!", "Você finalizou esta atividade! Clique na seta do lado esquerdo da tela para retornar à seleção de atividades", "success")
+				swal("Parabéns!", "Você finalizou esta atividade! Clique na seta do lado esquerdo da tela para retornar à seleção de atividades.", "success")
 				$("#atv4InputModa").prop('disabled','true');
 				$("#atv4InputMediana").prop('disabled','true');
 
