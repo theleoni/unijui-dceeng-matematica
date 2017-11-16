@@ -249,6 +249,10 @@ body {
 	text-align: center;
 }
 
+.textoJustificado {
+	text-align: justify;
+}
+
 @media (device-aspect-ratio: 4/3) {
 	#textoDados {
 		top: 40vh !important;

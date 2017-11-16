@@ -23,9 +23,9 @@ var conversaLaboratorioCompleta = false;
 
 var questionNumber = 1;
 var questoesCorretas = [false,false,false,false,false,false,false,false,false,false,false,false,false, false, false, false, false, false]
-var respostasCorretas = ['#buttonAf4', '#buttonAf1', 0.5, '#buttonAf3', 0.33, '#buttonAf2', 0.2, '#buttonAf1', '#buttonAf4', 0.16, '#buttonAf3', 0.10, 0.80, 1, 0, 1, '#buttonAf4', '#buttonAf2', '#buttonAf5'];
+var respostasCorretas = ['#buttonAf4', '#buttonAf1', 0.5, '#buttonAf3', 0.33, '#buttonAf2', 0.2, '#buttonAf1', '#buttonAf4', 0.17, '#buttonAf3', 0.10, 0.80, 1, 0, 1, '#buttonAf4', '#buttonAf2', '#buttonAf5'];
 var respostasCorretasOutra = ["Sem resposta", "Sem resposta", 50, "Sem resposta", 33, "Sem resposta", 20, "Sem resposta", "Sem resposta", 16, "Sem resposta", 10, 80, 100, 0, 100, "Sem resposta", "Sem resposta", "Sem resposta"];
-var respostasCorretasTerceira = ["Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", 0.17, "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem Resposta"];
+var respostasCorretasTerceira = ["Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", 0.16, "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem Resposta"];
 var respostasCorretasQuarta = ["Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", 17, "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem resposta", "Sem Resposta"];
 
 
@@ -279,34 +279,34 @@ function checkIfStuck() {
 			break;
 
 			case 'floculacao':
-			swal("Floculação", "<img class='img-responsive'src='../assets/img/Objeto 4/floculacao.png' <br>Nessa etapa, a água é direcionada para outro tanque, onde será adicionado um polímero que favorecerá que os flocos formados na etapa de coagulação juntem-se e formem flocos ainda maiores e mais pesados.");
+			swal("Floculação", "<img class='img-responsive'src='../assets/img/Objeto 4/floculacao.png' <br><div style='text-align:justify'>Nessa etapa, a água é direcionada para outro tanque, onde será adicionado um polímero que favorecerá que os flocos formados na etapa de coagulação juntem-se e formem flocos ainda maiores e mais pesados.");
 			break;
 
 			case 'decantacao':
-			swal("Decantação", "<img class='img-responsive'src='../assets/img/Objeto 4/decantacao.png' <br>Após a floculação, a água é direcionada para um novo tanque, onde ela permanecerá em repouso para que os flocos formados sejam decantados para o fundo do tanque, haja vista que eles são mais densos que a água.");
+			swal("Decantação", "<img class='img-responsive'src='../assets/img/Objeto 4/decantacao.png' <br><div style='text-align:justify'>Após a floculação, a água é direcionada para um novo tanque, onde ela permanecerá em repouso para que os flocos formados sejam decantados para o fundo do tanque, haja vista que eles são mais densos que a água.");
 			break;
 
 			case 'filtracao':
-			swal("Filtração", "<img class='img-responsive'src='../assets/img/Objeto 4/filtracao.png' <br>Após a decantação, a água atravessa um grande filtro formado por areia, carvão ativado e cascalho. Nessa etapa, as impurezas que não aderiram aos flocos ficam retidas no filtro, além de a água sofrer uma desodorização pela presença do carvão ativado.");
+			swal("Filtração", "<img class='img-responsive'src='../assets/img/Objeto 4/filtracao.png' <br><div style='text-align:justify'>Após a decantação, a água atravessa um grande filtro formado por areia, carvão ativado e cascalho. Nessa etapa, as impurezas que não aderiram aos flocos ficam retidas no filtro, além de a água sofrer uma desodorização pela presença do carvão ativado.");
 			break;
 
 
 			case 'fluoretacao':
-			swal("Fluoretação", "<img class='img-responsive'src='../assets/img/Objeto 4/fluoretacao.png' <br>Nessa etapa, é adicionada à água uma quantidade de ácido com flúor, o Ácido Fluossilícico (H2SiF6), para auxiliar na redução de cáries na população.");
+			swal("Fluoretação", "<img class='img-responsive'src='../assets/img/Objeto 4/fluoretacao.png' <br><div style='text-align:justify'>Nessa etapa, é adicionada à água uma quantidade de ácido com flúor, o Ácido Fluossilícico (H2SiF6), para auxiliar na redução de cáries na população.");
 			break;
 
 
 			case 'cloracao':
-			swal("Cloração", "<img class='img-responsive'src='../assets/img/Objeto 4/cloracao.png' <br>Além da adicção de Flúor, o Cloro também é adicionado à água, na forma de sal, com o objetivo de eliminar os micro-organismos presentes.");
+			swal("Cloração", "<img class='img-responsive'src='../assets/img/Objeto 4/cloracao.png' <br><div style='text-align:justify'>Além da adicção de Flúor, o Cloro também é adicionado à água, na forma de sal, com o objetivo de eliminar os micro-organismos presentes.");
 			break;
 
 
 			case 'correcaoPH':
-			swal("Correção do PH (Ácidez da água)", "<img class='img-responsive'src='../assets/img/Objeto 4/correcaoPH.png' <br>Nessa etapa, é adicionada à água hidróxido de cálcio para diminuir a acidez do meio.");
+			swal("Correção do PH (Ácidez da água)", "<img class='img-responsive'src='../assets/img/Objeto 4/correcaoPH.png'> <br<div style='text-align:justify'>Nessa etapa, é adicionada à água hidróxido de cálcio para diminuir a acidez do meio.");
 			break;
 
 			case 'reservatorio':
-			swal("Água própria para consumo", "<img class='img-responsive'src='../assets/img/Objeto 4/reservatorio.png' <br>E por fim, a água é conduzida dos reservatórios e distribuída na cidade por tubulações subterrâneas. ");
+			swal("Água própria para consumo", "<img class='img-responsive'src='../assets/img/Objeto 4/reservatorio.png' <br><div style='text-align:justify'>E por fim, a água é conduzida dos reservatórios e distribuída na cidade por tubulações subterrâneas. ");
 			break;
 		}
 	}
@@ -373,7 +373,7 @@ function checkIfStuck() {
 		}
 		switch (questionNumber) {
 			case 1:
-			swal("Atenção!", "Nas respostas dos exercícios a seguir utilize valores arredondados para duas casas após a virgula");
+			swal("Atenção!", "Nas respostas dos exercícios a seguir utilize valores arredondados para duas casas após a virgula.");
 			case 2:
 			case 4:
 			case 6:

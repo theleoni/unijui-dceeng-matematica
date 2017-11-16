@@ -21,25 +21,27 @@ var saibaMais10 = [
 {
   title: 'Saiba mais!',
   width: '42%',
-  html: '<div style="text-align:left;">Para saber mais sobre a Legislação sobre os procedimentos de controle e de vigilância da qualidade da água para consumo humano e seu padrão de potabilidade, acesse os links abaixo.<br><br><a target="_blank" href="http://bvsms.saude.gov.br/bvs/saudelegis/gm/2011/prt2914_12_12_2011.html"> Portaria Nº 2914 de 12 de dezembro de 2011, do Ministério da Saúde.</a><br><h6>Dispõe sobre os procedimentos de controle e de vigilância da qualidade da água para consumo humano e seu padrão de potabilidade.</h6> <br><a target="_blank" href="http://www.vigilanciasanitaria.sc.gov.br/index.php/download/category/229-vigiagua?download=1257:diretriz-nacional-do-plano-de-amostragem-do-vigiagua"> Diretriz Nacional do Plano de Amostragem da Vigilância da Qualidade da Água para Consumo Humano.</a><br><br><br><a target="_blank" href="http://bvsms.saude.gov.br/bvs/saudelegis/gm/2011/anexo/anexo_prt2914_12_12_2011.pdf"> Anexos da Portaria Nº 2914 de 12 de dezembro de 2011, do Ministério da Saúde contendo tabelas</a> </div>'
+  html: '<div style="text-align:left;">Para saber mais sobre a Legislação sobre os procedimentos de controle e de vigilância da qualidade da água para consumo humano e seu padrão de potabilidade, acesse os links abaixo.<br><br><a target="_blank" href="http://bvsms.saude.gov.br/bvs/saudelegis/gm/2011/prt2914_12_12_2011.html"> Portaria Nº 2914 de 12 de dezembro de 2011, do Ministério da Saúde.</a><br><h6>Dispõe sobre os procedimentos de controle e de vigilância da qualidade da água para consumo humano e seu padrão de potabilidade.</h6> <br><a target="_blank" href="http://www.vigilanciasanitaria.sc.gov.br/index.php/download/category/229-vigiagua?download=1257:diretriz-nacional-do-plano-de-amostragem-do-vigiagua"> Diretriz Nacional do Plano de Amostragem da Vigilância da Qualidade da Água para Consumo Humano.</a><br><br><br><a target="_blank" href="http://bvsms.saude.gov.br/bvs/saudelegis/gm/2011/anexo/anexo_prt2914_12_12_2011.pdf"> Anexos da Portaria Nº 2914 de 12 de dezembro de 2011, do Ministério da Saúde contendo tabelas.</a> </div>'
 }]
 
 var saibaMais13 = [
 {
   progressSteps: ['1', '2', '3'],
   title: 'Saiba mais!',
-  width: '42%',
+  width: '50%',
   html: '<div style="text-align:left;"><center><img class="img-responsive" src="../assets/img/Objeto 4/turbidezAgua.PNG"></center> <br><br>A turbidez é medida com turbidímetros e é expressa em Unidade  Nefelométrico   de Turbidez ( NTU) ou  Unidades de Turbidez (UT), ou ainda em  mg/L de Si02 (miligramas por litro em Sílica). Para tal, mede-se  a propriedade óptica de absorção e reflexão da luz.  <br>Nas  águas superficiais existe a presença de partículas que causam a turbidez, tais como  silte, argila, colóides, sílica. Na águas subterrâneas estes elementos são ausentes.<br><br>Turbidímetros são os instrumentos  que  medem  turbidez. <br><br><center><img class="img-responsive" src="../assets/img/Objeto 4/turbidimetro.png"></center> </div>'
 },
 
 {
   progressSteps: ['1', '2', '3'],
   title: 'Saiba mais!',
+  width: '50%',
   html: '<div style="text-align:left;"><h3>Cor  em uma amostra de água</h3><h5>A cor de uma amostra de água está associada ao grau de redução de intensidade que a luz sofre ao atravessá-la, devido à presença sólidos dissolvidos, principalmente material em estado coloidal orgânico e inorgânico. Dentre os colóides orgânicos pode-se mencionar os ácidos húmico e fúlvico, substâncias naturais resultantes da decomposição parcial de compostos orgânicos presentes em folhas, dentre outros substratos. <br>1 Unidade de Cor (uC) = 1 unidade Hazen (uH) = 1 mg Pt Co/L<br>Quanto menor a cor da água melhor é a qualidade da mesma.</h5><br><br><h3>Cloro Livre Residual</h3><h5>Chama-se cloro residual livre o cloro presente na água nas formas do ácido hipocloroso (HOCl) ou do íon hipoclorito (OCl-). A unidade de medida  utilizada  é  de mg/L. Recomenda-se que o teor máximo de cloro residual livre em qualquer ponto do sistema de abastecimento seja de 2 mg/L e no máximo 5mg/L<br>O cloro é comumente utilizado na etapa de desinfecção do tratamento da água, pelo seu poder de destruição/inativação dos organismos patogênicos, bem como, dos outros organismos indesejáveis capazes de afetar a saúde humana.</h5> </div>'
 },
 {
   progressSteps: ['1', '2', '3'],
   title: 'Saiba mais!',
+  width: '50%',
   html: '<div style="text-align:left"><h3>Coliformes Totais  e  Escherichia. Colli</h3><h5> Segundo consta no Manual Pratico de Analise de Água, coliformes totais são bactérias do grupo coliforme – bacilos  gram-negativos, aeróbios ou anaeróbios facultativos, não formadores de esporos, oxidase-negativos, capazes de desenvolver na presença de sais biliares ou agentes tensoativos que fermentam a lactose com produção de ácido, gás e aldeído a 35,0 ± 0,5ºC em 24-48 horas, e que podem apresentar atividade da enzima ß - galactosidase. A maioria das bactérias do grupo coliforme pertence aos gêneros Escherichia, Citrobacter, Klebsiella e Enterobacter, embora vários outros gêneros e espécies pertençam ao grupo.<br>Os testes laboratoriais verificam a presença ou ausência em cada amostra de 100ml da água distribuída.</h5> <br><br> <h6>O manual pode ser acessado <a target="_blank" href=http://www.funasa.gov.br/site/wp-content/files_mf/manual_pratico_de_analise_de_agua_2.pdf> clicando aqui </a></h6>'
 }
 ]
@@ -48,13 +50,13 @@ var saibaMais18 = [
 {
   title: 'Saiba mais!',
   width: '42%',
-  html: '<div style="text-align:left;">Probabilidade é o estudo das chances de obtenção de cada resultado de um experimento. A essas chances são atribuídos os números reais do intervalo entre 0 e 1. Resultados mais próximos de 1 têm mais chances de ocorrer. Além disso, a probabilidade também pode ser apresentada na forma de percentual. Para transformar a probabilidade expressa com valores em porcentagem, basta multiplicá-lo por 100% conservando o símbolo %. Ou seja multiplica-se por 100 e acrescenta o símbolo %. </div>'
+  html: '<div style="text-align:left; font-size:18px;">Probabilidade é o estudo das chances de obtenção de cada resultado de um experimento. A essas chances são atribuídos os números reais do intervalo entre 0 e 1. Resultados mais próximos de 1 têm mais chances de ocorrer. Além disso, a probabilidade também pode ser apresentada na forma de percentual. Para transformar a probabilidade expressa com valores em porcentagem, basta multiplicá-lo por 100% conservando o símbolo %. Ou seja multiplica-se por 100 e acrescenta o símbolo %. </div>'
 }]
 
 var saibaMais19 = [
 {
   title: 'Saiba mais!',
-  width: '42%',
+  width: '55%',
   html: '<div style="text-align:left;">Existem normatizações para a coleta de água. Seguem alguns endereços para consultas técnicas. <br><a target="_blank" href="http://arquivos.ana.gov.br/institucional/sge/CEDOC/Catalogo/2012/GuiaNacionalDeColeta.pdf"> Guia Nacional de Coleta de Água </a> <br> <a target="_blank" href="http://www.ctec.ufal.br/professor/elca/manual_coleta_%C3%81gua.pdf>  Manual Técnico para Coleta de Amostras de Água </a></div>'
 }]
 
@@ -62,7 +64,7 @@ var saibaMaisQuestao1 = [
 {
   title: 'Saiba mais!',
   width: '42%',
-  html: '<div style="text-align:left;">Para saber mais sobre a Legislação sobre os procedimentos de controle e de vigilância da qualidade da água para consumo humano e seu padrão de potabilidade, acesse os links abaixo.<br><br><a target="_blank" href="http://bvsms.saude.gov.br/bvs/saudelegis/gm/2011/prt2914_12_12_2011.html"> Portaria Nº 2914 de 12 de dezembro de 2011, do Ministério da Saúde.</a><br><h6>Dispõe sobre os procedimentos de controle e de vigilância da qualidade da água para consumo humano e seu padrão de potabilidade.</h6> <br><a target="_blank" href="http://www.vigilanciasanitaria.sc.gov.br/index.php/download/category/229-vigiagua?download=1257:diretriz-nacional-do-plano-de-amostragem-do-vigiagua"> Diretriz Nacional do Plano de Amostragem da Vigilância da Qualidade da Água para Consumo Humano.</a><br><br><br><a target="_blank" href="http://bvsms.saude.gov.br/bvs/saudelegis/gm/2011/anexo/anexo_prt2914_12_12_2011.pdf"> Anexos da Portaria Nº 2914 de 12 de dezembro de 2011, do Ministério da Saúde contendo tabelas</a> </div>'
+  html: '<div style="text-align:left;">Para saber mais sobre a Legislação sobre os procedimentos de controle e de vigilância da qualidade da água para consumo humano e seu padrão de potabilidade, acesse os links abaixo.<br><br><a target="_blank" href="http://bvsms.saude.gov.br/bvs/saudelegis/gm/2011/prt2914_12_12_2011.html"> Portaria Nº 2914 de 12 de dezembro de 2011, do Ministério da Saúde.</a><br><h6>Dispõe sobre os procedimentos de controle e de vigilância da qualidade da água para consumo humano e seu padrão de potabilidade.</h6> <br><a target="_blank" href="http://www.vigilanciasanitaria.sc.gov.br/index.php/download/category/229-vigiagua?download=1257:diretriz-nacional-do-plano-de-amostragem-do-vigiagua"> Diretriz Nacional do Plano de Amostragem da Vigilância da Qualidade da Água para Consumo Humano.</a><br><br><br><a target="_blank" href="http://bvsms.saude.gov.br/bvs/saudelegis/gm/2011/anexo/anexo_prt2914_12_12_2011.pdf"> Anexos da Portaria Nº 2914 de 12 de dezembro de 2011, do Ministério da Saúde contendo tabelas.</a> </div>'
 }]
 
 
