@@ -10,17 +10,17 @@
 
 		"textosUsinas": {
 			"titleHidreletrica": "Energia Hídrica",
-			"usinaHidreletrica": "Energia gerada pela água em usinas Hidrelétricas. A energia contida nas correntezas de rios é transformada em energia cinética que movimenta uma turbina, movendo um gerador que por sua vez irá gerar energia elétrica",
+			"usinaHidreletrica": "Energia gerada pela água em usinas Hidrelétricas. A energia contida nas correntezas de rios é transformada em energia cinética que movimenta uma turbina, movendo um gerador que por sua vez irá gerar energia elétrica.",
 			"titleEolica": "Energia Eólica",
 			"usinaEolica": "É a energia gerada pelo vento, grandes turbinas são posicionadas em locais abertos e com grande quantidade de vento. O vento, ao mover as turbinas gera energia elétrica através de um gerador.",
 			"titleFossil": "Energia Fóssil",
-			"usinaFossil": "Energia gerada através de reações químicas de combustão de materiais orgânicos decompostos, quando as ligações químicas dos hidrocarbonetos são quebradas, a energia é liberada",
+			"usinaFossil": "Energia gerada através de reações químicas de combustão de materiais orgânicos decompostos, quando as ligações químicas dos hidrocarbonetos são quebradas, a energia é liberada.",
 			"titleNuclear": "Energia Nuclear",
 			"usinaNuclear": "Utiliza a energia proveniente de reações de fissão nuclear para gerar energia. A fissão nuclear libera grande quantidade de calor que aquece a água e produz o vapor responsável por movimentar as turbinas do gerador em grandes velocidades, gerando a corrente elétrica.",
 			"titleSolar": "Energia Solar",
-			"usinaSolar": "É a energia irradiada pelo sol. Pode ser utilizada para geração de calor, ou pode ser convertida em energia elétrica através de células fotovoltaicas",
+			"usinaSolar": "É a energia irradiada pelo sol. Pode ser utilizada para geração de calor, ou pode ser convertida em energia elétrica através de células fotovoltaicas.",
 			"titleBiomassa": "Energia de Biomassa",
-			"usinaBiomassa": "Gerada através da decomposição de materiais orgânicos (esterco, resto de alimentos). É transformada em energia por meio de combustão, gaseificação e fermentação"
+			"usinaBiomassa": "Gerada através da decomposição de materiais orgânicos (esterco, resto de alimentos). É transformada em energia por meio de combustão, gaseificação e fermentação."
 		},
 
 		"textosImpostos": {
@@ -84,7 +84,7 @@
 		},
 		"questao7": {
 			"numeroQuestao": "7.",
-			"textoQuestao": "De acordo com o gráfico apresentado, qual a diferença em <b>porcentagem</b> da produção entre <i>Energia Nuclear</i> e <i>Energia Hidrelétrica</i>?"
+			"textoQuestao": "De acordo com o gráfico apresentado, qual a diferença em <b>porcentagem</b> da produção entre Energia Nuclear e Energia Hidrelétrica?"
 		},
 		"questao8": {
 			"numeroQuestao": "8.",
@@ -104,7 +104,7 @@
 		},
 		"questao10": {
 			"numeroQuestao": "10.",
-			"textoQuestao": "Complete a tabela de acordo com o gráfico"
+			"textoQuestao": "Complete a tabela de acordo com o gráfico."
 		},
 		"questao11": {
 			"numeroQuestao": "1.",
@@ -116,7 +116,7 @@
 		},
 		"questao13": {
 			"numeroQuestao": "3.",
-			"textoQuestao": "Segundo a tabela, qual das formas de produção de energia elétrica é a que mais produz em KW?"
+			"textoQuestao": "Segundo a tabela, qual das formas de produção de energia elétrica é a que mais produz em kW?"
 		},
 		"questao14": {
 			"numeroQuestao": "4.",
