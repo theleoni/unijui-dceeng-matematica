@@ -13,6 +13,9 @@
 					title: {
 						text: 'Gás natural'
 					},
+					xAxis: {
+						categories: ['2011', '2012', '2013', '2014', '2015']
+					},
 					yAxis: {
 						plotLines: [{
 							color:'green',
@@ -74,7 +77,7 @@
 					yAxis: {
 						plotLines: [{
 							color:'green',
-							value: '393629.8',
+							value: '393569.8',
 							width: '2',
 							zIndex: 5
 						},

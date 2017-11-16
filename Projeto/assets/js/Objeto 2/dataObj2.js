@@ -51,10 +51,10 @@
 		},
 
 		"telaAtividade1": {
-			"atv1": "Classifique a moda dos dados apresentados na tabela",
-			"atv2": "Calcule e preencha a tabela com os valores da mediana",
-			"atv3": "Organize a tabela em ordem crescente, de acordo com a mediana<br><h5>Para organizar a tabela clique a arraste a mesma</h5>",
-			"finalizada": "Parabéns! Você finalizou esta atividade. Retorne para a tela de seleção para realizar as demais atividades"
+			"atv1": "<h1>Atividade 1</h1><br>Classifique a moda dos dados apresentados na tabela.",
+			"atv2": "<h1>Atividade 1</h1><br>Calcule e preencha a tabela com os valores da mediana.",
+			"atv3": "<h1>Atividade 1</h1><br>Organize a tabela em ordem crescente, de acordo com a mediana<br><h5>Para organizar a tabela clique a arraste a mesma</h5>",
+			"finalizada": "<h1>Atividade 1</h1><br>Parabéns! Você finalizou esta atividade. Retorne para a tela de seleção para realizar as demais atividades"
 		},
 
 		"atividadeLivro1": {
@@ -64,10 +64,10 @@
 		},
 
 		"telaAtividade2": {
-			"ambas": "Preencha a média e a mediana de acordo com os dados apresentados na tabela, e veja os gráficos referentes à cada tipo de geração de energia clicando nos seus respectivos ícones",
-			"finalizada": "Parabéns! Você finalizou esta atividade. Retorne para a tela de seleção para realizar as demais atividades",
-			"grafico": "Veja os gráficos referentes à cada tipo de geração de energia clicando nos seus respectivos ícones",
-			"tabela": "Preencha os valores da média e mediana de acordo com os dados apresentados na tabela."
+			"ambas": "<h1>Atividade 2</h1><br>Preencha a média e a mediana de acordo com os dados apresentados na tabela, e veja os gráficos referentes à cada tipo de geração de energia clicando nos seus respectivos ícones",
+			"finalizada": "<h1>Atividade 2</h1><br>Parabéns! Você finalizou esta atividade. Retorne para a tela de seleção para realizar as demais atividades",
+			"grafico": "<h1>Atividade 2</h1><br>Veja os gráficos referentes à cada tipo de geração de energia clicando nos seus respectivos ícones",
+			"tabela": "<h1>Atividade 2</h1><br>Preencha os valores da média e mediana de acordo com os dados apresentados na tabela."
 		},
 		"atividadeLivro2": {
 			"msgCorreta": "<center>Resposta correta!</center>",
@@ -78,7 +78,7 @@
 		},
 		"graficos": {
 			"gasNatural": "A linha verde indica a média no valor de 60284,2GWh (Gigawatt-hora), ou seja, se todos os valores fossem iguais seriam esse mesmo valor da média. A linha laranja indica a mediana, sendo assim o valor central dos dados, ou seja, 50% dos dados são iguais ou maiores que 69003GWh e 50% dos dados são iguais ou menores que 69003GWh.",
-			"hidreletrica": "A linha verde indica a média no vlaor de 393629,8GWh (Gigawatt-hora), ou seja, se todos os valores fossem iguais teriam esse mesmo valor da média. A linha laranja indica a mediana, sendo assim o valor central dos dados, ou seja, 50% dos dados são iguais ou maiores que 390992GWh e 50% dos dados são iguais ou menores que 390992GWh.",
+			"hidreletrica": "A linha verde indica a média no vlaor de 393569,8GWh (Gigawatt-hora), ou seja, se todos os valores fossem iguais teriam esse mesmo valor da média. A linha laranja indica a mediana, sendo assim o valor central dos dados, ou seja, 50% dos dados são iguais ou maiores que 390992GWh e 50% dos dados são iguais ou menores que 390992GWh.",
 			"petroleo": "A linha verde indica a média no valor de 21546,8GWh (Gigawatt-hora), ou seja, se todos os valores fossem iguais seriam esse mesmo valor da média. A linha laranja indica a mediana, sendo assim o valor central dos dados, ou seja, 50% dos dados são iguais ou maiores que 22090GWh e 50% dos dados são iguais ou menores que 22090GWh.",
 			"carvao": "A linha verde indica a média no valor de 13437,8GWh (Gigawatt-hora), ou seja, se todos os valores fossem iguais seriam esse mesmo valor da média. A linha laranja indica a mediana, sendo assim o valor central dos dados, ou seja, 50% dos dados são iguais ou maiores que 14801GWh e 50% dos dados são iguais ou menores que 14801GWh.",
 			"nuclear": "A linha verde indica a média no valor de 15493,6GWh (Gigawatt-hora), ou seja, se todos os valores fossem iguais seriam esse mesmo valor da média. A linha laranja indica a mediana, sendo assim o valor central dos dados, ou seja, 50% dos dados são iguais ou maiores que 15659GWh e 50% dos dados são iguais ou menores que 15659GWh.",
@@ -88,10 +88,10 @@
 		},
 
 		"telaAtividade3": {
-			"atv1": "Preencha os valores da média e mediana de acordo com os dados apresentados na tabela.",
-			"atv2": "Em quais regiões a mediana é superior à média?",
-			"atv3": "Em quais regiões a média é superior à mediana?",
-			"atv4": "Calcule a diferença entre a média e mediana para cada uma das regiões (Média - Mediana)",
+			"atv1": "<h1>Atividade 3</h1><br>Preencha os valores da média e mediana de acordo com os dados apresentados na tabela.",
+			"atv2": "<h1>Atividade 3</h1><br>Em quais regiões a mediana é superior à média?",
+			"atv3": "<h1>Atividade 3</h1><br>Em quais regiões a média é superior à mediana?",
+			"atv4": "<h1>Atividade 3</h1><br>Calcule a diferença entre a média e mediana para cada uma das regiões (Média - Mediana)",
 			"finalizada": "Parabéns! Você finalizou esta atividade. Retorne para a tela de seleção para realizar as demais atividades"
 
 		},
@@ -103,8 +103,8 @@
 			"msgErradaGeral": "<center><strong>Oops!</strong> Resposta errada! Verifique novamente as alternativas selecionadas</center>"
 		},
 		"telaAtividade4": {
-			"atv1": "Calcule a moda e a mediana do percentual de aumento utilizando os seguintes dados",
-			"finalizada": "Parabéns! Você finalizou esta atividade. Retorne para a tela de seleção para realizar as demais atividades"
+			"atv1": "<h1>Atividade 4</h1><br>Calcule a moda e a mediana do percentual de aumento utilizando os seguintes dados.",
+			"finalizada": "<h1>Atividade 4</h1><br>Parabéns! Você finalizou esta atividade. Retorne para a tela de seleção para realizar as demais atividades"
 
 		},
 		"atividadeLivro4": {

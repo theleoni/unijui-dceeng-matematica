@@ -55,7 +55,7 @@ var numeroErradasMediaAtv3 = 0;
 var numeroErradasMedianaAtv3 = 0;
 var regioesErradasAtividade3Media;
 var regioesErradasAtividade3Mediana;
-var corretasAtividade3Media = [29.84, 76.87, 237.25, 79.28, 31.51];
+var corretasAtividade3Media = [29.84, 76.87, 237.25, 79.28, 31.50];
 var corretasAtividade3Mediana = [29.61, 77.42, 237.66, 78.94, 31.73];
 var verificacaoAtividade3 = [false, false, false, false];
 var corretasAtividade3Questao1 = ["buttonAlternativa2Atv3", "buttonAlternativa3Atv3", "buttonAlternativa5Atv3"];
