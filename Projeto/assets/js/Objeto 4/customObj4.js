@@ -297,16 +297,16 @@ function checkIfStuck() {
 
 
 			case 'cloracao':
-			swal("Cloração", "<img class='img-responsive'src='../assets/img/Objeto 4/cloracao.png' <br><div style='text-align:justify'>Além da adicção de Flúor, o Cloro também é adicionado à água, na forma de sal, com o objetivo de eliminar os micro-organismos presentes.");
+			swal("Cloração", "<img class='img-responsive'src='../assets/img/Objeto 4/cloracao.png' <br><div style='text-align:justify'>Além da adição de Flúor, o Cloro também é adicionado à água, na forma de sal, com o objetivo de eliminar os micro-organismos presentes.");
 			break;
 
 
 			case 'correcaoPH':
-			swal("Correção do PH (Ácidez da água)", "<img class='img-responsive'src='../assets/img/Objeto 4/correcaoPH.png'> <br<div style='text-align:justify'>Nessa etapa, é adicionada à água hidróxido de cálcio para diminuir a acidez do meio.");
+			swal("Correção do PH (acidez da água)", "<img class='img-responsive'src='../assets/img/Objeto 4/correcaoPH.png'> <br<div style='text-align:justify'>Nessa etapa, é adicionada à água hidróxido de cálcio para diminuir a acidez do meio.");
 			break;
 
 			case 'reservatorio':
-			swal("Água própria para consumo", "<img class='img-responsive'src='../assets/img/Objeto 4/reservatorio.png' <br><div style='text-align:justify'>E por fim, a água é conduzida dos reservatórios e distribuída na cidade por tubulações subterrâneas. ");
+			swal("Água própria para consumo", "<img class='img-responsive'src='../assets/img/Objeto 4/reservatorio.png' <br><div style='text-align:justify'>E, por fim, a água é conduzida dos reservatórios e distribuída na cidade por tubulações subterrâneas. ");
 			break;
 		}
 	}
