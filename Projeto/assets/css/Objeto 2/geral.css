@@ -573,3 +573,7 @@ body {
 .tdCentralizado {
 	text-align: center;
 }
+
+.justifyText {
+	text-align:justify;
+}
