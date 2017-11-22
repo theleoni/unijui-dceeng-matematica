@@ -563,7 +563,7 @@
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
 	  		$("#tabelaQuestoesGraficos").hide();
 	  		grafico1();
-	  		$("#fonteGraficos1").html("<center>Fonte: Procel - 2005</center>");
+	  		$("#fonteGraficos1").html("<center>Fonte: Procel - 2005.</center>");
 
 	  		if (corretas[0] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -589,7 +589,7 @@
 	  		$("#tabelaQuestoesGraficos").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
 	  		grafico1();
-	  		$("#fonteGraficos1").html("<center>Fonte: Procel - 2005</center>");
+	  		$("#fonteGraficos1").html("<center>Fonte: Procel - 2005.</center>");
 
 
 	  		if (corretas[1] == false) {
@@ -613,7 +613,7 @@
 	  		$("#sceneIntroGraficosQuestion").html(dataJSON.questao3.textoQuestao);
 
 	  		grafico2();
-	  		$("#fonteGraficos1").html("<center>Fonte: Professor Hugo Gomes</center>");
+	  		$("#fonteGraficos1").html("<center>Fonte: Professor Hugo Gomes.</center>");
 
 	  		if (corretas[2] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -636,7 +636,7 @@
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
 
 	  		grafico2();
-	  		$("#fonteGraficos1").html("<center>Fonte: Professor Hugo Gomes</center>");
+	  		$("#fonteGraficos1").html("<center>Fonte: Professor Hugo Gomes.</center>");
 
 	  		if (corretas[3] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -662,7 +662,7 @@
 	  		$("#tabelaQuestoesGraficos").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
 	  		grafico2();
-	  		$("#fonteGraficos1").html("<center>Fonte: Professor Hugo Gomes</center>");
+	  		$("#fonteGraficos1").html("<center>Fonte: Professor Hugo Gomes.</center>");
 
 	  		if (corretas[4] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -685,7 +685,7 @@
 	  		$("#questionGroup").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
 	  		grafico3();
-	  		$("#fonteGraficos1").html("<center>Fonte: Dados fictícios</center>");
+	  		$("#fonteGraficos1").html("<center>Fonte: Dados fictícios.</center>");
 
 
 	  		if (corretas[5] == false) {
@@ -707,7 +707,7 @@
 	  		$("#tabelaQuestoesGraficos").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").show();
 	  		grafico4();
-	  		$("#fonteGraficos1").html("<center>Fonte: Empresa de Pesquisa Energética – EPE</center>");
+	  		$("#fonteGraficos1").html("<center>Fonte: Empresa de Pesquisa Energética – EPE.</center>");
 
 	  		if (corretas[6] == false) {
 	  			$("#iconSetaDireita").hide();
@@ -731,7 +731,7 @@
 	  		$("#questionGroup").hide();
 	  		$("#inputRespostasceneQuestoesGraficos").hide();
 	  		grafico4();
-	  		$("#fonteGraficos1").html("<center>Fonte: Empresa de Pesquisa Energética – EPE</center>");
+	  		$("#fonteGraficos1").html("<center>Fonte: Empresa de Pesquisa Energética – EPE.</center>");
 	  		if (corretas[7] == false) {
 	  			$("#iconSetaDireita").hide();
 	  			resetQuestionButtons();
@@ -1172,7 +1172,7 @@
 
 	  		swal({
 	  			title: "",
-	  			html: "<div style='text-align:justify'>Quando nos referimos ao consumo de energia elétrica estamos nos referindo a passagem de corrente no condutor de energia em que relacionado com a tensão temos a potência do aparelho. Pensamos como se fosse uma mangueira de água em que a água é a corrente e a pressão da água é a tensão da rede elétrica, assim quanto maior a quantidade de água passando na torneira, maior é o consumo, podemos aplicar a mesma lógica ao condutor elétrico.<br> Porque o fio aquece então? Porque temos uma passagem de corrente maior que o suportado pelo condutor, o que acarretará com o desarmamento do disjuntor termoelétrico consequentemente.",
+	  			html: "<div style='text-align:justify'>Quando nos referimos ao consumo de energia elétrica, estamos nos referindo a passagem de corrente no condutor de energia em que relacionado com a tensão temos a potência do aparelho. Pensamos como se fosse uma mangueira de água em que a água é a corrente e a pressão da água é a tensão da rede elétrica, assim quanto maior a quantidade de água passando na torneira, maior é o consumo, podemos aplicar a mesma lógica ao condutor elétrico.<br> Por que o fio aquece então? Porque temos uma passagem de corrente maior que o suportado pelo condutor, o que acarretará o desarmamento do disjuntor termoelétrico.",
 	  		}).catch(swal.noop);
 	  		break;
 	  		case 4:
@@ -1180,26 +1180,26 @@
 	  			case 1:
 	  			swal({
 	  				title: "O que significa kWh?",
-	  				html: "<div style='text-align:justify'>É uma unidade de medida elétrica, onde essa medida é determinada tempo de uso de um aparelho elétrico. O Watt-hora é o consumo de 1 Watts durante uma hora. Por exemplo em um chuveiro elétrico onde a potência marcada em sua embalagem é de 7500 Watts, significa que essa potência irá ser consumida em uma hora. Se esse chuveiro for ligado 7 horas temos então 7500 Watts X 7 horas = 52.500 Watt-hora, ou seja, 52,5 kWh.",
+	  				html: "<div style='text-align:justify'>É uma unidade de medida elétrica, que determina o tempo de uso de um aparelho elétrico. O Watt-hora é o consumo de 1 Watt durante uma hora. Por exemplo, em um chuveiro elétrico onde a potência marcada em sua embalagem é de 7500 Watts, significa que essa potência irá ser consumida em uma hora. Se esse chuveiro for ligado 7 horas, temos então 7500 Watts X 7 horas = 52.500 Watts-hora, ou seja, 52,5 kWh.",
 	  			}).catch(swal.noop);
 	  			break;
 	  			case 2:
 	  			swal({
 	  				title: "Energia Elétrica",
-	  				html: "<div style='text-align:justify'>E a capacidade de gerar, de alguma forma, trabalho, ou seja, o movimento de um motor ou a produção de calor em uma resistência. A energia elétrica, por ser gerada através de fontes renováveis como visto neste projeto, como das águas, do sol, dos ventos e através da biomassa, também pode ser gerada através de fontes não renováveis como a nuclear.",
+	  				html: "<div style='text-align:justify'>É a capacidade de gerar, de alguma forma, trabalho, ou seja, o movimento de um motor ou a produção de calor em uma resistência. A energia elétrica, por ser gerada através de fontes renováveis, como visto neste projeto, como das águas, do sol, dos ventos e através da biomassa, também pode ser gerada através de fontes não renováveis como a nuclear.",
 	  			}).catch(swal.noop);
 	  			break;
 
 	  			case 3:
 	  			swal({
 	  				title: "Usina de Itaipu",
-	  				html: "<div style='text-align:justify'>Temos como a principal fonte de energia elétrica no Brasil a Usina de Itaipu, localizada no Rio Paraná na fronteira entre o Brasil e Paraguai, em que sua geração de energia elétrica se da através da diferença de potencial elétrico em dois condutores diferentes. Pois assim, quem descobriu a energia elétrica, foi Tales de Mileto (624 a.C.-558 a.C.) , grego, com a descoberta das cargas elétricas.",
+	  				html: "<div style='text-align:justify'>Temos como a principal fonte de energia elétrica no Brasil a Usina de Itaipu, localizada no Rio Paraná, na fronteira entre o Brasil e o Paraguai, na qual a geração de energia elétrica se dá através da diferença de potencial elétrico em dois condutores diferentes. O descobridor da energia elétrica foi Tales de Mileto (624 a.C.-558 a.C.) grego, com a descoberta das cargas elétricas.",
 	  			}).catch(swal.noop);
 	  			break;
 	  			case 4:
 	  			swal({
-	  				title: "Calculo de Energia Elétrica",
-	  				html: "<div style='text-align:justify'>Para calcular a energia elétrica temos a seguinte fórmula <br> <b> E  = P . ∆t </b> <br> Onde: <br> <b>E </b>: energia elétrica <br> <b>P</b>: Potência <br> <b>∆t</b>: Variação do tempo",
+	  				title: "Cálculo de Energia Elétrica",
+	  				html: "<div style='text-align:justify'>Para calcular a energia elétrica temos a seguinte fórmula <br> <b> E  = P . ∆t,</b> <br> Onde: <br> <b>E </b>: Energia elétrica <br> <b>P</b>: Potência <br> <b>∆t</b>: Variação do tempo",
 	  			}).catch(swal.noop);
 	  			break;
 	  			case 5:
@@ -1211,18 +1211,18 @@
 	  			case 6:
 	  			swal({
 	  				title: "O que significa Joule?",
-	  				html: "<div style='text-align:justify'>1 Wh equivale a 3.600 joules,<br>É uma unidade de medida, onde ocorre a passagem de corrente em uma resistência, e que essa passagem de correte é transformada em calor. <br>Entendemos como Joule, a quantidade de elétrons que passa por segundo em um condutor com uma tensão de 1Volt.",
+	  				html: "<div style='text-align:justify'>1 Wh equivale a 3.600 joules.<br>É uma unidade de medida, onde ocorre a passagem de corrente em uma resistência e essa passagem de corrente é transformada em calor. <br>Entendemos como Joule a quantidade de elétrons que passa por segundo em um condutor com uma tensão de 1Volt.",
 	  			}).catch(swal.noop);
 	  			break;
 	  			case 7:
 	  			swal({
 	  				title: "Resistência",
-	  				html: "<div style='text-align:justify'>A resistência estabelecida pelo condutor, pode estabelecer uma resistência elétrica de forma que possa dificultar ap assagem de corrente elétrica, ou de modo que facilite a passagem de corrente. O cálculo para acharmos a reistência é definido pela primeira lei de Ohm. <br><b>R = U/I</b> <br><i>U = Tensão <br><i> I = Corrente",
+	  				html: "<div style='text-align:justify'>A resistência estabelecida pelo condutor pode estabelecer uma resistência elétrica de forma que possa dificultar a passagem de corrente elétrica ou de modo que facilite a passagem de corrente. O cálculo para achar a resistência é definido pela primeira lei de Ohm. <br><b>R = U/I</b> <br><i>U = Tensão <br><i> I = Corrente",
 	  			}).catch(swal.noop);
 	  			break;
 	  			case 8:
 	  			swal({
-	  				title: "Multiplos da tensão",
+	  				title: "Múltiplos da Tensão",
 	  				html: "<div style='text-align:justify'>Megavolt (MV) = 1.000.000 V <br> Quilovolt (kV) = 1.000 V <br> Volt (V) = 1 V <br> Milivolt (mV) = 0,001 V <br> Microvolt (µV) = 0,000.001 V",
 	  			}).catch(swal.noop);
 	  			break;
@@ -1230,7 +1230,7 @@
 	  			case 10:
 	  			swal ({
 	  				title: "",
-	  				html: "<div style='text-align:justify'>Energia elétrica é a capacidade de produzir trabalho. <br> Queda de tensão é a diferença de potencial, ou seja, a diferença de tensão entre dois pontos distintos do circuito elétrico. <br> Potência elétrica é a rapidez com que se gasta energia, ou a rapidez com que se produz trabalho. <br><br> WATT-HORA (Wh) = 3.600 WATTS-SEGUNDOS = 3.600 JOULES <br><br> QUILOWATT-HORA (kWh) =1.000 Wh = 3.600.000 JOULES <br><br> HORSEPOWER (HP) = 746 Watts <br><br> CAVALO-VAPOR (cv) = 736 Watts",
+	  				html: "<div style='text-align:justify'>Energia elétrica é a capacidade de produzir trabalho. <br> Queda de tensão é a diferença de potencial, ou seja, a diferença de tensão entre dois pontos distintos do circuito elétrico. <br> Potência elétrica é a rapidez com que se gasta energia ou a rapidez com que se produz trabalho. <br><br> WATT-HORA (Wh) = 3.600 WATTS-SEGUNDOS = 3.600 JOULES <br><br> QUILOWATT-HORA (kWh) =1.000 Wh = 3.600.000 JOULES <br><br> HORSEPOWER (HP) = 746 Watts <br><br> CAVALO-VAPOR (cv) = 736 Watts",
 	  			}).catch(swal.noop);
 	  			break;
 
@@ -1238,7 +1238,7 @@
 	  		break;
 	  		case 6:
 	  		swal ({
-	  			title: "Transformadores de energia elétrica",
+	  			title: "Transformador de Energia Elétrica",
 	  			html: "<div style='text-align:justify'>De acordo com a ABNT (Associação Brasileira de Normas Técnicas) este é definido como um equipamento elétrico estático. São os elementos da rede de energia que transformam a tensão em outras tensões sejam elas elevadas ou rebaixadas. <br>São peças muito caras na rede elétrica e muito importantes para fazer a interligação da rede de alta tensão para a baixa tensão que é geralmente encontrada nos postes de energia nas ruas de nossas cidades.",
 	  		}).catch(swal.noop);
 	  		break;
@@ -1246,7 +1246,7 @@
 	  		case 9:
 	  		swal ({
 	  			title: "Corrente Elétrica",
-	  			html: '<div style="text-align:justify">Para saber calcular a corrente elétrica em um condutor de eletrodoméstico, adotamos a lei de Ohm. George Simon Ohm estudou as relações entre a tensão (V), a corrente (A), e a resistência elétrica (R), e chegou a uma afirmação: "A intensidade da corrente elétrica de um condutor é diretamente proporcional à força eletromotriz e inversamente proporcional à sua resistência elétrica". Com a seguinte fórmula:<br> I = V/R',
+	  			html: '<div style="text-align:justify">Para saber calcular a corrente elétrica em um condutor de eletrodoméstico, adotamos a lei de Ohm. George Simon Ohm estudou as relações entre a tensão (V), a corrente (A), e a resistência elétrica (R) e chegou a uma afirmação: "A intensidade da corrente elétrica de um condutor é diretamente proporcional à força eletromotriz e inversamente proporcional à sua resistência elétrica". Com a seguinte fórmula:<br> I = V/R',
 	  		}).catch(swal.noop);
 	  		break;
 	  	}
@@ -1687,10 +1687,10 @@
 							name: 'Televisão',
 							y: 10
 						}, {
-							name: 'Ferro Elétrico',
+							name: 'Ferro elétrico',
 							y: 6
 						}, {
-							name: 'Maquina de lavar',
+							name: 'Máquina de lavar',
 							y: 5
 						}, {
 							name: 'Outros',
@@ -2028,7 +2028,7 @@
 							name: 'Tributos: ICMS e PIS/COFINS',
 							y: 29.5
 						}, {
-							name: 'Parcela A: Compra, Transmissao e Encargos',
+							name: 'Parcela A: Compra, Transmissão e Encargos',
 							y: 53.5
 
 						}, {
@@ -2781,7 +2781,7 @@
 	  				{
 	  					title: 'Ajuda',
 	  					width: '57%',
-	  					html: '<div class="col-xs-6">Preencha a tabela com os dados do texto. <br><br><b>Critérios de arredondamento</b><br><br>1-Se o primeiro valor após os que irão permanecer for menor que 5, então apenas elimine as demais casa decimais  que estão a tua direita.<br>Por exemplo: 24,37<span style="color:#0AC813; font-size:14px">2</span>01 se for arredondado para  duas casas decimais fica 24,3<span style="color:#FF0000; font-size:14px">7</span>.<br><br>2-Se o primeiro valor após os que irão permanecer for maior que 5, então o último que permanece fica acrescido de uma unidade.<br>Por exemplo: 24,37<span style="color:#0AC813; font-size:14px">6</span>01 se for arredondado para  duas casas decimais fica 24,3<span style="color:#FF0000; font-size:14px">8</span>.<br><br>3-Se o primeiro valor após os que irão permanecer for igual a 5, e após este tiverem outros algarismos onde pelo menos um é diferente de zero, então o último que permanece fica acrescido de uma unidade.   Por exemplo: 24,37<span style="color:#0AC813; font-size:14px">501</span>  fica 24,3<span style="color:#FF0000; font-size:14px">8</span>.<br><br>4-Se o primeiro valor após os que irão permanecer for igual a 5, e após este não tiverem outros algarismos diferente de zero, então o último que permanece fica acrescido de uma unidade somente se o que permanecer é impar, caso contrário o último que fica permanece sem alteração.</div><div class="col-xs-6"><table class="table table-bordered"><thead><tr><th>Valor original</th><th>Valor arredondado com 2 casa decimais</th></tr></thead><tbody><tr><td>24,3<span style="color:#FF0000">7</span><span style="color:#3A0EF7">2</span>01</td><td>24,3<span style="color:#FF0000">7</span></td></tr><tr><td>24,3<span style="color:#FF0000">7</span><span style="color:#3A0EF7">6</span>01</td><td>24,3<span style="color:#FF0000">8</span></td></tr><tr><td>24,3<span style="color:#FF0000">7</span><span style="color:#00D053">501</span></td><td>24,3<span style="color:#FF0000">8</span></td></tr><tr><td>24,3<span style="color:#FF0000">7</span><span style="color:#00D053">500</span></td><td>24,3<span style="color:#FF0000">8</span></td></tr><tr><td>24,3<span style="color:#FF0000">2</span><span style="color:#00D053">500</span></td><td>24,3<span style="color:#FF0000">2</span></td></tr><tr><td>24,3<span style="color:#FF0000">5</span><span style="color:#00D053">500</span></td><td>24,3<span style="color:#FF0000">6</span></td></tr><tr><td>24,3<span style="color:#FF0000">6</span><span style="color:#00D053">500</span></td><td>24,3<span style="color:#FF0000">6</span></td></tr></tbody></table></div>'
+	  					html: '<div class="col-xs-6">Preencha a tabela com os dados do texto. <br><br><b>Critérios de arredondamento</b><br><br>1-Se o primeiro valor após os que irão permanecer for menor que 5, então apenas elimine as demais casas decimais  que estão a sua direita.<br>Por exemplo: 24,37<span style="color:#0AC813; font-size:14px">2</span>01 se for arredondado para  duas casas decimais fica 24,3<span style="color:#FF0000; font-size:14px">7</span>.<br><br>2-Se o primeiro valor após os que irão permanecer for maior que 5, então o último que permanece fica acrescido de uma unidade.<br>Por exemplo: 24,37<span style="color:#0AC813; font-size:14px">6</span>01 se for arredondado para  duas casas decimais fica 24,3<span style="color:#FF0000; font-size:14px">8</span>.<br><br>3-Se o primeiro valor após os que irão permanecer for igual a 5, e após este tiverem outros algarismos onde pelo menos um é diferente de zero, então o último que permanece fica acrescido de uma unidade.   Por exemplo: 24,37<span style="color:#0AC813; font-size:14px">501</span>  fica 24,3<span style="color:#FF0000; font-size:14px">8</span>.<br><br>4-Se o primeiro valor após os que irão permanecer for igual a 5, e após este não tiverem outros algarismos diferente de zero, então o último que permanece fica acrescido de uma unidade somente se o que permanecer é impar, caso contrário o último que fica permanece sem alteração.</div><div class="col-xs-6"><table class="table table-bordered"><thead><tr><th>Valor original</th><th>Valor arredondado com 2 casas decimais</th></tr></thead><tbody><tr><td>24,3<span style="color:#FF0000">7</span><span style="color:#3A0EF7">2</span>01</td><td>24,3<span style="color:#FF0000">7</span></td></tr><tr><td>24,3<span style="color:#FF0000">7</span><span style="color:#3A0EF7">6</span>01</td><td>24,3<span style="color:#FF0000">8</span></td></tr><tr><td>24,3<span style="color:#FF0000">7</span><span style="color:#00D053">501</span></td><td>24,3<span style="color:#FF0000">8</span></td></tr><tr><td>24,3<span style="color:#FF0000">7</span><span style="color:#00D053">500</span></td><td>24,3<span style="color:#FF0000">8</span></td></tr><tr><td>24,3<span style="color:#FF0000">2</span><span style="color:#00D053">500</span></td><td>24,3<span style="color:#FF0000">2</span></td></tr><tr><td>24,3<span style="color:#FF0000">5</span><span style="color:#00D053">500</span></td><td>24,3<span style="color:#FF0000">6</span></td></tr><tr><td>24,3<span style="color:#FF0000">6</span><span style="color:#00D053">500</span></td><td>24,3<span style="color:#FF0000">6</span></td></tr></tbody></table></div>'
 	  				}
 	  				).catch(swal.noop);
 
@@ -2793,7 +2793,7 @@
 	  			case 12:
 	  			switch (questionNumber) {
 	  				case 16:
-	  				swal("Ajuda!", "Em caso de dúvida, volte a tela anterior").catch(swal.noop);
+	  				swal("Ajuda!", "Em caso de dúvida, volte à tela anterior").catch(swal.noop);
 	  				break;
 	  				case 17:
 	  				swal("Ajuda!", "Em caso de dúvida volte 2 telas").catch(swal.noop);
@@ -2818,7 +2818,7 @@
 	  	var ajuda15 = [
 	  	{
 	  		title: 'Ajuda!',
-	  		html: '<div class="row"><div style="text-align:left;" class="col-xs-12"><ul><li>Adicione um título para o gráfico;</li><li>Insira a fonte (referencia, site);</li><li>Em seguida insira os identificadores e seus respectivos valores;</li><li>Abaixo deverá ser inserido o nome para os dados;</li><li>Coloque a unidade dos dados (reais, cm, metros, kg, entre outros).</li></ul><br><h3>Veja o exemplo a seguir</h3></div><div class="col-xs-8"> <img class="img-responsive" src="../assets/img/Objeto 1/ajuda15.PNG"></div></div>',
+	  		html: '<div class="row"><div style="text-align:left;" class="col-xs-12"><ul><li>Adicione um título para o gráfico;</li><li>Insira a fonte (referência, site);</li><li>Em seguida insira os identificadores e seus respectivos valores;</li><li>Abaixo deverá ser inserido o nome para os dados;</li><li>Coloque a unidade dos dados (reais, cm, metros, kg, entre outros).</li></ul><br><h3>Veja o exemplo a seguir</h3></div><div class="col-xs-8"> <img class="img-responsive" src="../assets/img/Objeto 1/ajuda15.PNG"></div></div>',
 	  		width: '90%'
 	  	}]
 

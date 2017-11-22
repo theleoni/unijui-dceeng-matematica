@@ -1,6 +1,6 @@
 	var dados = {
 		"stringsGerais": {
-			"sceneIntroGeralBalao01": "! Eu sou o engenheiro Euler, estou aqui para auxiliá-lo neste percurso de aprendizado. A partir da matemática iremos conhecer os modos de geração de energia elétrica, o caminho e o custo até chegar à sua casa.",
+			"sceneIntroGeralBalao01": "! Eu sou o engenheiro Euler e estou aqui para auxiliá-lo neste percurso de aprendizado. A partir da matemática iremos conhecer os modos de geração de energia elétrica, o caminho e o custo até chegar à sua casa.",
 			"title1": "Formas de produção de energia",
 			"title2": "Impostos pagos sobre a energia elétrica",
 			"title3": "Entenda a tarifa de Energia",
@@ -10,24 +10,24 @@
 
 		"textosUsinas": {
 			"titleHidreletrica": "Energia Hídrica",
-			"usinaHidreletrica": "Energia gerada pela água em usinas Hidrelétricas. A energia contida nas correntezas de rios é transformada em energia cinética que movimenta uma turbina, movendo um gerador que por sua vez irá gerar energia elétrica.",
+			"usinaHidreletrica": "Energia gerada pela água em usinas Hidrelétricas. A energia contida nas correntezas de rios é transformada em energia cinética que movimenta uma turbina, movendo um gerador, que por sua vez, irá gerar energia elétrica.",
 			"titleEolica": "Energia Eólica",
-			"usinaEolica": "É a energia gerada pelo vento, grandes turbinas são posicionadas em locais abertos e com grande quantidade de vento. O vento, ao mover as turbinas gera energia elétrica através de um gerador.",
+			"usinaEolica": "É a energia gerada pelo vento, grandes turbinas são posicionadas em locais abertos e com grande quantidade de vento. O vento, ao mover as turbinas, gera energia elétrica através de um gerador.",
 			"titleFossil": "Energia Fóssil",
-			"usinaFossil": "Energia gerada através de reações químicas de combustão de materiais orgânicos decompostos, quando as ligações químicas dos hidrocarbonetos são quebradas, a energia é liberada.",
+			"usinaFossil": "Energia gerada através de reações químicas de combustão de materiais orgânicos decompostos. Quando as ligações químicas dos hidrocarbonetos são quebradas, a energia é liberada.",
 			"titleNuclear": "Energia Nuclear",
 			"usinaNuclear": "Utiliza a energia proveniente de reações de fissão nuclear para gerar energia. A fissão nuclear libera grande quantidade de calor que aquece a água e produz o vapor responsável por movimentar as turbinas do gerador em grandes velocidades, gerando a corrente elétrica.",
 			"titleSolar": "Energia Solar",
-			"usinaSolar": "É a energia irradiada pelo sol. Pode ser utilizada para geração de calor, ou pode ser convertida em energia elétrica através de células fotovoltaicas.",
+			"usinaSolar": "É a energia irradiada pelo sol. Pode ser utilizada para geração de calor ou pode ser convertida em energia elétrica através de células fotovoltaicas.",
 			"titleBiomassa": "Energia de Biomassa",
 			"usinaBiomassa": "Gerada através da decomposição de materiais orgânicos (esterco, resto de alimentos). É transformada em energia por meio de combustão, gaseificação e fermentação."
 		},
 
 		"textosImpostos": {
-			"icms": "Poderá levar até 30% do valor consumido, este imposto é cobrado referente a circulação de mercadorias (eletrodomésticos, alimentos, cosméticos e outras mercadorias relacionadas ao segmentos) e prestação de serviços de transporte interestadual e intermunicipal e comunicação.",
+			"icms": "Poderá levar até 30% do valor consumido. Este imposto é cobrado referente a circulação de mercadorias (eletrodomésticos, alimentos, cosméticos e outras mercadorias relacionadas ao segmento) e prestação de serviços de transporte interestadual e intermunicipal e comunicação.",
 			"tusd": "Tarifa de Uso do Sistema de Distribuição, que remunera instalações, equipamentos e componentes da rede de distribuição para levar a energia até as casas (Imposto estabelecido pela ANEEL, dando poder para as concessionárias cobrarem de seus clientes sobre a conta de energia.",
-			"cofins": "Contribuição Social para Financiamento da Seguridade Social, destinada a financiar as despesas das áreas de Saúde, Previdência, e Assistência social. COFINS leva 4.45% do valor de sua fatura.",
-			"cip": "Contribuição de Iluminação Pública, é uma taxa cobrada baseada no custo total do serviço/manutenção do sistema de iluminação pública.",
+			"cofins": "Contribuição Social para Financiamento da Seguridade Social, destinada a financiar as despesas das áreas de Saúde, Previdência, e Assistência Social. COFINS leva 4.45% do valor de sua fatura.",
+			"cip": "Contribuição de Iluminação Pública. É uma taxa cobrada baseada no custo total do serviço/manutenção do sistema de iluminação pública.",
 			"pispasep": "Programas de Integração Social e de Formação do Patrimônio do Servidor Público, tem como finalidade o financiamento do programa do Seguro-Desemprego e o abono aos empregados que recebem até dois salários mínimos mensais. De forma geral, o contribuinte acaba pagando no PIS a alíquota de 0.95% do valor de consumo da energia elétrica.",
 			"tust": "Tarifa de Uso do Sistema de Transmissão, que remunera instalações, equipamentos e componentes da rede de transmissão. (Imposto estabelecido pela Agência Nacional de Energia Elétrica, dando poder para as concessionárias cobraram de seus clientes sobre a conta de energia)."
 		},
@@ -35,7 +35,7 @@
 			"respostaCorreta": "Resposta correta! Prossiga para a próxima questão   <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>",
 			"respostaIncorreta": "Resposta errada! Tente novamente   <span class='glyphicon glyphicon-remove' aria-hidden='true'</span>",
 			"mensagemIntroQuestoesIniciais": "Agora que você já sabe um pouco sobre a produção da eletricidade, vamos analisar, interpretar e responder algumas questões a partir de diferentes tipos de gráficos, referentes ao consumo de energia.",
-			"mensagem2IntroQuestoesIniciais": "Por gráfico entendemos que são formas representar dados e informações estatísticas. Os gráficos, são usados em meio de comunicação como, jornais, televisão, e páginas de internet, para representar variações de indicadores econômicos, pesquisas de opiniões, entre outros.",
+			"mensagem2IntroQuestoesIniciais": "Por gráfico, entendemos que são formas representar dados e informações estatísticas. Os gráficos, são usados em meios de comunicação como jornais, televisão, e páginas de internet, para representar variações de indicadores econômicos, pesquisas de opiniões, entre outros.",
 			"mensagem3IntroQuestoesIniciais": "A Estatística é uma parte da Matemática Aplicada que fornece métodos para a coleta, organização, descrição, análise, e  interpretação.  Informação estatística consiste na apresentação dos resultados de uma pesquisa."
 		},
 		"questao1": {
@@ -50,7 +50,7 @@
 		"questao2": {
 			"numeroQuestao": "2.",
 			"textoQuestao": "De acordo com o gráfico, o que possuí o menor consumo de energia?",
-			"alternativa1Questao": "<span class='containerLetra'>A</span>Ferro Elétrico",
+			"alternativa1Questao": "<span class='containerLetra'>A</span>Ferro elétrico",
 			"alternativa2Questao": "<span class='containerLetra'>B</span>Outros",
 			"alternativa3Questao": "<span class='containerLetra'>C</span>Televisão",
 			"alternativa4Questao": "<span class='containerLetra'>D</span>Máquina de lavar"
@@ -140,20 +140,20 @@
 		},
 		"questao19": {
 			"numeroQuestao": "1.",
-			"textoQuestao": "Considerando as informações do gráfico, analise as afirmações abaixo.<br>I - Os custos de energia referente à compra, transmissão e encargos setoriais representam atualmente o maior percentual do valor final da energia, seguido dos custos com tributos.<br>II - A parcela referente aos custos com distribuição representa 17% dos custos do valor final.<br>III - O maior percentual dos custos do valor final de energia elétrica são impostos.<br>IV - A parte dos custos de energia refente à compra, transmissão e encargos setoriais representam atualmente menos da metade do valor final da energia.<br>V - A parcela referente aos custos com distribuição representa 29,5% dos custos do valor final"
+			"textoQuestao": "Considerando as informações do gráfico, analise as afirmações abaixo.<br>I - Os custos de energia referente à compra, transmissão e encargos setoriais representam atualmente o maior percentual do valor final da energia, seguido dos custos com tributos.<br>II - A parcela referente aos custos com distribuição representa 17% dos custos do valor final.<br>III - O maior percentual dos custos do valor final de energia elétrica são impostos.<br>IV - A parte dos custos de energia referente à compra, transmissão e encargos setoriais representa atualmente menos da metade do valor final da energia.<br>V - A parcela referente aos custos com distribuição representa 29,5% dos custos do valor final."
 		},
 		"mensagensCaminhoEnergia": {
 			"title1": "Geração",
-			"title2": "Subestação elevadora",
+			"title2": "Subestação Elevadora",
 			"title3": "Transmissão",
-			"title4": "Subestação abaixadora",
+			"title4": "Subestação Abaixadora",
 			"title5": "Distribuição",
 			"title6": "Transformador para tensão final",
-			"msg1": "A energia elétrica pode ser gerada de diversas formas, mas a princípio, no Brasil, a principal fonte de energia  elétrica é através de hidrelétricas. Assim na geração, o gerador entra em movimento para a produção de energia, gerando uma voltagem de aproximadamente de 15.000V.",
-			"msg2": "No próximo passo a energia é direcionada para a subestação elevadora, em que encontra-se transformadores que elevam a tensão para a transmissão (aproximadamente acima de 230.000 V).",
+			"msg1": "A energia elétrica pode ser gerada de diversas formas, mas, a princípio, no Brasil, a principal fonte de energia  elétrica é através de hidrelétricas. Assim, na geração, o gerador entra em movimento para a produção de energia, gerando uma voltagem de aproximadamente de 15.000V.",
+			"msg2": "No próximo passo a energia é direcionada para a subestação elevadora, na qual se encontram transformadores que elevam a tensão para a transmissão (aproximadamente acima de 230.000 V).",
 			"msg3": "Na etapa seguinte, a energia é passada para as linhas de transmissão, em que a elevação de energia serve para que as perdas de energia sejam minimizadas, através do aquecimento por efeito Joule, essas linhas percorrem centenas de quilômetros onde cabos de alta tensão são sustentados por torres que fazem a transmissão de energia elétrica até chegar a subestação abaixadora.",
-			"msg4": "Na subestação de distribuição, em que a tensão é abaixada novamente, através de transformadores, a energia segue para as redes de distribuição nas cidades.",
-			"msg5": "O próximo passo, a energia é percorrida, depois da subestação de distribuição, para a fiação dos postes, em que é direcionada para os transformadores abaixadores novamente para a os consumidores.",
+			"msg4": "Na subestação de distribuição, a tensão é abaixada novamente, através de transformadores, a energia segue para as redes de distribuição nas cidades.",
+			"msg5": "No próximo passo, a energia percorre, depois da subestação de distribuição, para a fiação dos postes, em que é direcionada para os transformadores abaixadores novamente para a os consumidores.",
 			"msg6": "Na última etapa, depois de passar pelos transformadores, que são energizados pelas linhas de distribuição, a energia é rebaixada para tensões em que usamos em nossas residências. Nesta etapa a energia é utilizada no mesmo momento em que é gerada."
 		}
 	}
