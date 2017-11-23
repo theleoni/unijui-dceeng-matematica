@@ -1286,8 +1286,8 @@
 									<td class="tdCentralizado">77,49</td>
 									<td class="tdCentralizado">80,39</td>
 									<td class="tdCentralizado">84,81</td>
-									<td class="tdCentralizado" class="inputRegioes tdCentralizado" id="tdInputMediaSul">
-										<input type="text" class="form-control" id="inputMediaSul">
+									<td class="inputRegioes tdCentralizado" id="tdInputMediaSul">
+										<input type="text" class="form-control tdCentralizado" id="inputMediaSul">
 									</td>
 									<td class="tdCentralizado" class="inputRegioes" id="tdInputMedianaSul">
 										<input type="text" class="form-control tdCentralizado" id="inputMedianaSul">
@@ -1454,6 +1454,35 @@
 							</div>
 						</div>
 					</div>
+				</div>
+
+				<div id="calculadoraMediaModaMediana">
+					<div clas="row">
+						<div class="col-xs-offset-2 col-xs-4">
+							<div id="texto1Calcular">
+								<h2>Defina quantos valores você deseja utilizar para realizar o cálculo da Média, Mediana e Moda.</h2>
+								<input type="number" class="form-control" id="numeroItensCalcular" min="1" max="10" step="1" pattern="[0-9]">
+								<button type="button" id="botaoItensCalcular" class="btn btn-primary btn-block">Confirmar</button>
+							</div>
+							<div id="rowInputsValoresCalcular" class="row">
+								<div class="col-xs-6" id="inputsValoresCalcular">
+									<h4>Insira os valores que serão utilizados no cálculo</h4>
+								</div>
+								<button type="button" id="botaoItensCalcularFinal" class="btn btn-primary btn-block">Calcular</button>
+
+							</div>
+						</div>
+
+						<div id="resultadosCalculo" class="col-xs-offset-1 col-xs-4">
+							<h3>Média:</h3><span id="resultadoMediaCalculada" class="resultadosCalculadoraMediaMedianaModa"> </span>
+							<br>
+							<h3>Mediana:</h3><span id="resultadoMedianaCalculada" class="resultadosCalculadoraMediaMedianaModa"> </span>
+							<br>
+							<h3>Moda:</h3><span id="resultadoModaCalculada" class="resultadosCalculadoraMediaMedianaModa"> </span>
+
+						</div>
+					</div>
+
 				</div>
 
 				<div id="telaAgradecimento">

@@ -72,6 +72,7 @@ var corretasAtividade4 = [12,12];
 var verificacaoAtividade4 = false;
 
 
+
 $(document).ready(function() {
 	hideDivsOnObjectStart();
 	setSwalDefaults();
@@ -152,6 +153,8 @@ function hideDivsOnObjectStart() {
 	$("#formAtividade3").hide();		
 	$("#divQuestaoAtividade3").hide();
 	$("#telaFinal").hide();
+	$("#calculadoraMediaModaMediana").hide();
+	$("#rowInputsValoresCalcular").hide();
 	hideIconsNome();
 }
 
@@ -274,13 +277,19 @@ function loadScene() {
 		break;
 
 		case 15:
+		$("#calculadoraMediaModaMediana").show();
+		$("#iconSetaDireita").show();
+		changeTitle(" ");
+		break;
+
+		case 16:
 		$("#telaAgradecimento").show();
 		changeTitle(" ");
 		$("#iconSetaDireita").show();
 		break;
 
 
-		case 16:
+		case 17:
 		$("#telaFinal").show();
 		$("#imagensFixasCima").hide();
 		$("#iconSetaDireita").hide();
@@ -369,11 +378,15 @@ function unloadScene() {
 		$("#telaSelecaoQuestoes").hide();
 		break;
 
-		case 15:
-		$("#telaAgradecimento").hide();
+		case 15:		
+		$("#calculadoraMediaModaMediana").hide();
 		break;
 
 		case 16:
+		$("#telaAgradecimento").hide();
+		break;
+
+		case 17:
 		$("#telaFinal").hide();
 		$("#imagensFixasCima").show();
 		$(".navbar").show();
@@ -714,6 +727,7 @@ $(document).on('click', '#iconSetaDireita', function() {
 		case 13:
 		case 14:
 		case 15:
+		case 16:
 		nextScene();
 		break;
 		case 3:
@@ -783,6 +797,7 @@ $(document).on('click', '#iconSetaEsquerda', function() {
 		case 14:
 		case 15:
 		case 16:
+		case 17:
 		allowNextScene();
 		previousScene();
 		break;
@@ -825,11 +840,100 @@ $(document).on('click', '#iconCalculadora', function () {
 	showCalc();
 });
 
+
+$(document).on('click', '#botaoItensCalcular', function () {
+	if ($("#numeroItensCalcular").val() > 0) {
+		gerarCamposCalcular($("#numeroItensCalcular").val());
+		$("#texto1Calcular").hide();
+	}
+});
+
 $(document).on('click', '#iconFechar', function () {
 	closeObject();
 });
 
+$(document).on('click', '#botaoItensCalcularFinal', function () {
+	calcularMediaModaMediana();
+});
 
+function contarNoArray(array, valor) {
+	var count = 0;
+	for (var i = 0; i < array.length; i++) {
+		if (array[i] == valor) {
+			count++;
+		}
+	}
+	return count;
+}
+function calcularMediaModaMediana() {
+	var valores = [];
+	var media;
+	var mediana;
+	//Calcular média
+	var qtdTotal = 0;
+	var somaTotal = 0;
+	$(".numerosParaCalcular").each(function() {
+		if ($(this).val() != "") {
+			qtdTotal++;
+			somaTotal += parseInt($(this).val());
+			valores.push($(this).val());
+
+		}
+	})
+	if(qtdTotal != 0) {
+		media = parseFloat(somaTotal/qtdTotal).toFixed(2);
+	}
+
+	//Calcular Mediana
+	valores = valores.sort();
+	if (valores.length % 2 == 0) {
+		mediana = parseFloat(((parseInt(valores[valores.length/2]) + parseInt(valores[(valores.length/2) - 1])) / 2)).toFixed(2);
+	} else {
+		mediana = valores[Math.floor(valores.length/2)];
+	}
+
+
+	//Calcular Moda
+	var qtdRepeticoes = 0;
+	var maiorQtdRepeticoes = 0;
+	var moda = [];
+	for (var i = 0; i < valores.length; i++) {
+		qtdRepeticoes = contarNoArray(valores, valores[i]);
+		if (qtdRepeticoes > maiorQtdRepeticoes && qtdRepeticoes > 1) {
+			maiorQtdRepeticoes = qtdRepeticoes;
+			moda = [valores[i]];
+		} else if (qtdRepeticoes == maiorQtdRepeticoes && qtdRepeticoes > 1) {
+			if (moda.indexOf(valores[i]) <= -1) {
+				moda.push(valores[i]);
+			}
+		}
+	}
+
+
+
+
+
+	$("#resultadoMediaCalculada").text(media);
+	$("#resultadoMedianaCalculada").text(mediana);
+	if (moda.length == 0) {
+		$("#resultadoModaCalculada").text("Amodal. Nenhum número se repete mais vezes do que os demais.");
+	} else if (moda.length == 1) {
+		$("#resultadoModaCalculada").text("Unimodal. Apenas o número " + moda + " se repete mais vezes do que os demais");
+	} else if (moda.length == 2) {
+		$("#resultadoModaCalculada").text("Bimodal. Os números " + moda + " se repetem mais vezes do que os demais");
+	} else {
+		$("#resultadoModaCalculada").text("Plurimodal. Os números " + moda + " se repetem mais vezes do que os demais");
+	}
+
+}
+
+function gerarCamposCalcular(numeroItens) {
+	for (var i = 1; i <= numeroItens; i++) {
+		var inputCalcular = $('<h6>Valor ' + i + ':</h6> <input type="number" class="form-control numerosParaCalcular">');
+		$("#inputsValoresCalcular").append(inputCalcular.clone());
+	}
+	$("#rowInputsValoresCalcular").show();
+}
 function showCalc() {
 	$("#calculadora").dialog({
 		closeOnEscape: false,

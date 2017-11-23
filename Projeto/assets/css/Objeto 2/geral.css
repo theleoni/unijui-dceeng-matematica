@@ -577,3 +577,12 @@ body {
 .justifyText {
 	text-align:justify;
 }
+
+.numerosParaCalcular {
+	margin-top: 1vh;
+}
+
+.resultadosCalculadoraMediaMedianaModa {
+	color: #29a029;
+	font-size: 32px;
+}
