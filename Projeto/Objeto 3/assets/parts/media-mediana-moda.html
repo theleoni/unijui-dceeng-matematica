@@ -154,7 +154,7 @@
 console.log('media-mediana-moda.html');
 
 $("#iconSetaEsquerda").show();
-$("#iconSetaDireita").show();
+$("#iconSetaDireita").hide();
 $("#iconAjuda").hide();
 $("#iconCalculadora").hide();
 
@@ -197,6 +197,7 @@ document.querySelector("#media-mediana-moda-moda").addEventListener('click', fun
 
 function popUp(tipo) {
 
+	$("#iconSetaDireita").show();
 	$("#iconAjuda").show();
 
 	if (document.querySelector('#dialog-form-mmm') == null) {
@@ -341,12 +342,12 @@ function popUp(tipo) {
 				<h4>Primeiro colocamos em ordem crescente, conforme o gráfico.</h4>
 				<div id="mediana-grafico-1" class="grafico-mediana"></div>
 
-				<h4>Observe que o valor 21.345, referente a região Sul, divide o conjunto exatamente ao meio, portanto ele é a própria mediana.</h4>
+				<h4>Observe que o valor 21.345, referente à região Sul, divide o conjunto exatamente ao meio, portanto ele é a própria mediana.</h4>
 
 				<ul class='muito-mais-top'><li><h4><b>Quando o número de dados for par, existem dois valores centrais e a mediana será a média aritmética destes dois valores.</b></h4></li></ul>
 				<h4 class='muito-mais-top'>Exemplo: Um determinado catador recolheu 52 latinhas de refrigerante na segunda-feira, 44 na terça-feira, 69 na quarta-feira, 57 na quinta-feira, 73 na sexta-feira e 60 no sábado. Identifique a mediana das latinhas recolhidas pelo catador, nesse período:</h4>
 				<div id="mediana-grafico-2" class="grafico-mediana"></div>
-				<h4 class='mais-top'>Como podemos observar, existem dois valores centrais, e nesse caso, a mediana será o valor da média aritmética dos dois valores centrais:</h4>
+				<h4 class='mais-top'>Como podemos observar, existem dois valores centrais e, nesse caso, a mediana será o valor da média aritmética dos dois valores centrais:</h4>
 
 				<div class="formula">
 					<div class="formula-descrita">
@@ -395,16 +396,16 @@ function popUp(tipo) {
 			msgAjudaMediaMedianaModa = '';
 			secundario = `
 			<div class="botao-explicacao-mediana">
-				<h4>A moda corresponde ao valor que aparece com mais frequência, ou seja, que detém o maior número de observações no conjunto em estudo. O nome é influenciado pela maneira de falar das pessoas, ao afirmarem que tal objeto está na moda porque a maioria das pessoas estava utilizando</h4>
+				<h4>A moda corresponde ao valor que aparece com mais frequência, ou seja, que detém o maior número de observações no conjunto em estudo. O nome é influenciado pela maneira de falar das pessoas, ao afirmarem que tal objeto está na moda porque a maioria das pessoas estava utilizando.</h4>
 				<h4 class='mais-top'><span class="tab"></span>Pode existir mais de uma moda para um mesmo grupo de dados. </h4>
 
 				<h2 class='muitissimo-mais-top'>Exemplos:</h2>
-				<h3>1. Na região sudeste temos os seguintes dados de coleta de lixo per capita (kg/hab/dia):</h3>
+				<h3>1. Na região sudeste temos os seguintes dados de coleta de lixo per capita (KG/hab/dia):</h3>
 				<div class='tabela mais-top mais-bottom'>
 					<table class='table'>
 						<tr>
 							<th>Estados</th>
-							<th>Coleta per capita (Kg/hab/dia)</th>
+							<th>Coleta per capita (KG/hab/dia)</th>
 						</tr>
 						<tr>
 	    					<td>Espírito Santo (ES)</td>
@@ -426,7 +427,7 @@ function popUp(tipo) {
 				</div>
 				<h4>Apenas dois valores são iguais, ou seja, apresenta uma moda definida como <span class='texto-vermelho'>0,9</span>. A classificação para uma moda é <b>unimodal</b>. </h4>
 
-				<h3 class='muitissimo-mais-top'>2. Na região norte temos os seguintes dados de coleta de lixo per capita (kg/hab/dia):</h3>
+				<h3 class='muitissimo-mais-top'>2. Na região norte temos os seguintes dados de coleta de lixo per capita (KG/hab/dia):</h3>
 				<div class='tabela mais-bottom'>
 					<table class='table'>
 						<tr>
@@ -463,9 +464,9 @@ function popUp(tipo) {
 						</tr>
 					</table>
 				</div>
-				<h4>Existem dois valores diferentes que se repetiram, <span class='texto-verde'>0,85</span> e <span class='texto-vermelho'>0,86</span>. Sendo assim, apresenta duas modas, sua classificação é <b>bimodal</b>.</h4>
+				<h4>Existem dois valores diferentes que se repetiram, <span class='texto-verde'>0,85</span> e <span class='texto-vermelho'>0,86</span>. Sendo assim, apresenta duas modas e sua classificação é <b>bimodal</b>.</h4>
 
-				<h3 class='muitissimo-mais-top'>3. Na região nordeste temos os seguintes dados de coleta de lixo per capita (kg/hab/dia):</h3>
+				<h3 class='muitissimo-mais-top'>3. Na região nordeste temos os seguintes dados de coleta de lixo per capita (KG/hab/dia):</h3>
 				<div class='tabela mais-bottom'>
 					<table class='table'>
 						<tr>
@@ -510,9 +511,9 @@ function popUp(tipo) {
 						</tr>
 					</table>
 				</div>
-				<h4>Existem três valores diferentes que se repetiram, <span class='texto-verde'>1,0</span>; <span class='texto-amarelo'>0,95</span> e <span class='texto-vermelho'>0,96</span>. Sendo assim, apresenta mais que duas modas, sua classificação é <b>plurimodal</b>.</h4>
+				<h4>Existem três valores diferentes que se repetiram, <span class='texto-verde'>1,0</span>; <span class='texto-amarelo'>0,95</span> e <span class='texto-vermelho'>0,96</span>. Sendo assim, apresenta mais que duas modas e sua classificação é <b>plurimodal</b>.</h4>
 
-				<h3 class='muitissimo-mais-top'>4. Na região sul temos os seguintes dados de coleta de lixo per capita (kg/hab/dia):</h3>
+				<h3 class='muitissimo-mais-top'>4. Na região sul temos os seguintes dados de coleta de lixo per capita (KG/hab/dia):</h3>
 				<div class='tabela mais-bottom'>
 					<table class='table'>
 						<tr>

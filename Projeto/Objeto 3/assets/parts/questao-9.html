@@ -569,7 +569,7 @@ iconAjuda.addEventListener("click", function() {
 
 function anterior() {
 
-	carregarParte('desvio-tabela.html');
+	carregarParte('questao-8.html');
 }
 
 function proxima() {
@@ -976,7 +976,7 @@ function saibaMais() {
 		<div id="dialog-questao-9-saiba-mais">
 			<h3 class="text-center">Desvio Padrão Amostral</h3>
 
-			<h4><span class="tab"></span>Quando nosso interesse não se restringe à descrição dos dados, mas, partindo da <b>amostra</b>, visamos tirar inferências válidas para a respectiva população, convém efetuar uma modificação, que consiste em usar o divisor <b>n – 1</b> em lugar de <b>n</b>. A fórmula ficará então:</h4>
+			<h4><span class="tab"></span>Quando nosso interesse não se restringe à descrição dos dados, mas, partindo da <b>amostra</b>, visamos tirar inferências válidas para a respectiva população. Convém efetuar uma modificação, que consiste em usar o divisor <b>n – 1</b> em lugar de <b>n</b>. A fórmula ficará então:</h4>
 			<div class="text-center mais-top">
 				<img src="assets/img/desvio-amostral-formula-1.png">
 			</div>
@@ -986,7 +986,7 @@ function saibaMais() {
 				<img src="assets/img/desvio-amostral-formula-2.png">
 			</div>
 
-			<h4>Quando os dados estão agrupados, temos a presença de frequências (fi), e a fórmula do desvio padrão ficará:</h4>
+			<h4>Quando os dados estão agrupados, temos a presença de frequências (fi) e a fórmula do desvio padrão ficará:</h4>
 			<div class="text-center mais-top">
 				<img src="assets/img/desvio-amostral-formula-3.png">
 			</div>
@@ -995,13 +995,13 @@ function saibaMais() {
 			<div class="tabela mais-top">
 				<table class="table text-center">
 					<tr>
-						<th>Xi<br/>(Dados população)</th>
-						<th>fi<br/>(Frequência)</th>
-						<th>(Xi - fi)</th>
-						<th>X&#772;<br/>(média)</th>
-						<th>(Xi - X&#772;)</th>
-						<th>(Xi - X&#772;)²</th>
-						<th>(Xi - X&#772;)² * fi</th>
+						<th><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> (Dados população)</th>
+						<th><span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span> (Frequência)</th>
+						<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span>)</th>
+						<th><span class="formula-a">X&#772;</span> (Média)</th>
+						<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>)</th>
+						<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>)²</th>
+						<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>)² * <span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span></th>
 					</tr>
 					<tr>
 						<td>0</td>

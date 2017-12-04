@@ -574,12 +574,12 @@ var parts = {
 
 			case 'aterro-controlado':
 				titulo = 'Aterro controlado';
-				texto = 'Local onde o lixo é jogado sobre um terreno, e diariamente é coberto por uma camada de terra, afim de minimizar os impactos.';
+				texto = 'Local onde o lixo é jogado sobre um terreno, e diariamente é coberto por uma camada de terra, a fim de minimizar os impactos.';
 				break;
 
 			case 'aterro-sanitario':
 				titulo = 'Aterro sanitário';
-				texto = 'Uma forma mais adequada e controlada, para que não sejam causados danos a saúde e ao meio ambiente. É orientado conforme a legislação ambiental vigente.';
+				texto = 'Uma forma mais adequada e controlada, para que não sejam causados danos à saúde e ao meio ambiente. É orientado conforme a legislação ambiental vigente.';
 				break;
 
 			case 'compostagem':
@@ -1456,7 +1456,7 @@ var parts = {
 
 		<div class='container'>
 
-			<h3>Você pode realizar os testes que quiser. Preencha os valores conforme quiser para que a Média, Mediana, Desvio Padrão e Variância sejam preenchidas automaticamente.</h3>
+			<h3>Você pode realizar os testes que quiser. Preencha os valores, conforme quiser para que a Média, Mediana, Desvio Padrão e Variância sejam preenchidas automaticamente.</h3>
 
 			<div class="row text-center mais-top mais-bottom">
 
@@ -1622,13 +1622,13 @@ var parts = {
 			let innerAjuda = document.querySelector(".mensagens").innerHTML;
 			innerAjuda += $%&
 			<div id="dialog-final-ajuda">
-				<h3><span class='super-tab'></span>Adicione o número de linhas e colunas conforme quiser e achar necessário, <span class="obs">OBSERVANDO</span> o máximo de 12 linhas e 12 colunas! Coloque um Título para a tabela, em seguida nomeie cada linha, insira valores em cada linha e coluna e observe que abaixo será dado automaticamente o valor referente à Media, Mediana, Desvio Padrão e Variância. Por exemplo:</h3>
+				<h3><span class='super-tab'></span>Adicione o número de linhas e colunas, conforme quiser e achar necessário, <span class="obs">OBSERVANDO</span> o máximo de 12 linhas e 12 colunas! Coloque um Título para a tabela, em seguida nomeie cada linha, insira valores em cada linha e coluna e observe que abaixo será dado automaticamente o valor referente à Media, Mediana, Desvio Padrão e Variância. Por exemplo:</h3>
 
 				<div class='mais-top mais-bottom text-center'>
 					<img src='assets/img/final-ajuda.png'/>
 				</div>
 
-				<h3><span class='super-tab'></span>Foi adicionado valores referente à altura e o peso de cada aluno citado na tabela, foi dado os resultados de Média, Mediana, Desvio Padrão e Variância, tudo de forma Automática, ou seja, não é necessário realizar nenhuma operação, apenas é necessário usar a criatividade para inserir os dados na tabela!</h3>
+				<h3><span class='super-tab'></span>Foram adicionados valores referente à altura e o peso de cada aluno citado na tabela. Foi dado os resultados de Média, Mediana, Desvio Padrão e Variância, tudo de forma Automática, ou seja, não é necessário realizar nenhuma operação, apenas é necessário usar a criatividade para inserir os dados na tabela!</h3>
 
 			</div>$%&;
 			document.querySelector(".mensagens").innerHTML = innerAjuda;
@@ -1994,7 +1994,7 @@ var parts = {
 		</div>
 
 		<div class="lixeiras-texto text-center">
-			<h4>Clique nas lixeiras para saber mais sobre separação do lixo</h4>
+			<h4>Clique nas lixeiras para saber mais sobre separação do lixo.</h4>
 		</div>
 
 		<div class="mensagens">
@@ -2168,7 +2168,7 @@ var parts = {
 					<ul>
 						<li><h4>Embalagens (papel craft e papelão);</h4></li>
 						<li><h4>Fins sanitários (papel toalha, guardanapo);</h4></li>
-						<li><h4>Imprimir-escrever;</h4></li>
+						<li><h4>Imprimir, escrever;</h4></li>
 						<li><h4>Artesanato;</h4></li>
 						<li><h4>Blocos de anotações e cadernos;</h4></li>
 						<li><h4>Sacolas de papel.</h4></li>
@@ -2186,7 +2186,7 @@ var parts = {
 				titulo = 'Plástico';
 				secundario = $%&
 				<div class="lixeira-explicacao-plastico">
-					<h4><span class="tab"></span>A partir do processo de polimerização são inúmeras as variedades de resinas plásticas e de soluções que esse material oferece para os diversos setores. São elas: 1. PET 2. PEAD 3. PVC 4. PEBD 5. PP 6. PS 7. OUTROS.</h4>
+					<h4><span class="tab"></span>A partir do processo de polimerização são inúmeras as variedades de resinas plásticas e de soluções que esse material oferece para os diversos setores. São elas: 1. PET, 2. PEAD, 3. PVC, 4. PEBD, 5. PP, 6. PS, 7. OUTROS.</h4>
 
 					<h2>1 PET Poli (tereftalato de etileno)</h2>
 					<h3>Principais Aplicações:</h3>
@@ -2197,7 +2197,7 @@ var parts = {
 					Peças Técnicas: telas para pneumáticos.
 					</h4>
 
-					<h2>2 PEAD Polietileno de alta densidade</h2>
+					<h2>2 PEAD (polietileno de alta densidade)</h2>
 					<h3>Principais Aplicações:</h3>
 					<h4>
 					Embalagens: bolsas, garrafas, caixas, embalagens de alimentos, embalagens para compostos químicos, frascos, rolhas, tampas, cápsulas. Eletrônicos: isolante de fios.
@@ -2210,7 +2210,7 @@ var parts = {
 					Filmes, laminados, solados de calçados, brinquedos, embalagens para remédios (blister), mangueiras, tubulação para água e esgoto, revestimento de fios e cabos, cateteres e bolsas de soro.
 					</h4>
 
-					<h2>4 PEBD Polietileno de baixa densidade</h2>
+					<h2>4 PEBD (polietileno de baixa densidade)</h2>
 					<h3>Principais Aplicações:</h3>
 					<h4>
 					Eletrônicos: isolantes de fios e pequenas peças.
@@ -2218,23 +2218,23 @@ var parts = {
 					Construção Civil: tubulação, mangueiras, telas de sombreamento.
 					</h4>
 
-					<h2>5 PP Polipropileno</h2>
+					<h2>5 PP (polipropileno)</h2>
 					<h3>Principais Aplicações:</h3>
 					<h4>
 					Homopolímero: embalagens, películas de embalagens de alimentos, embalagens de ráfia e industriais e sacolas.
 					Medicina: próteses, material hospitalar esterilizável e seringas descartáveis.
 					Copolímero: brinquedos, potes conservadores, caixas de uso industrial, garrafas, tampas e películas.
-					Automobilístico: botões diversos, reservatórios para água e fluído de freio, e para-choques.
+					Automobilístico: botões diversos, reservatórios para água e fluído de freio e para-choques.
 					</h4>
 
-					<h2>6 PS Poliestireno</h2>
+					<h2>6 PS (poliestireno)</h2>
 					<h3>Principais Aplicações:</h3>
 					<h4>
 					Cristal: embalagens para alimentos, remédios e cosméticos, brinquedos, material de escritório.
-					Expandido: isopor, peças técnicas: isolantes, reforços, chapas, componentes de garrafas térmicas, embalagens de produtos agrícolas e industrializados, embalagens para produtos eletroeletrônicos e eletrodomésticos
+					Expandido: isopor, peças técnicas: isolantes, reforços, chapas, componentes de garrafas térmicas, embalagens de produtos agrícolas e industrializados, embalagens para produtos eletroeletrônicos e eletrodomésticos.
 					</h4>
 
-					<h2>7 OUTROS </h2>
+					<h2>7 (OUTROS)</h2>
 					<h3>Os tipos de resinas plásticas não param por aí. Na categoria 7 entram as resinas como:</h3>
 
 					<ul>
@@ -2280,7 +2280,7 @@ var parts = {
 				titulo = 'Metal';
 				secundario = $%&
 				<div class="lixeira-explicacao-metal">
-					<h4><b>Recicláveis:</b> folha de flandres (é o aço revestido de estanho das latas de óleo, sardinha, creme de leite etc.), latas de aerossol, latas de bebidas, papel-alumínio limpo, tampas de garrafa. </h4>
+					<h4><b>Recicláveis:</b> folha de flandres (é o aço revestido de estanho das latas de óleo, sardinha, creme de leite, etc.), latas de aerossol, latas de bebidas, papel-alumínio limpo, tampas de garrafa. </h4>
 					<h4><b>Lixo comum:</b> clipes, esponjas de aço, grampos, tachinhas. </h4>
 
 					<h2>Alumínio</h2>
@@ -2291,7 +2291,7 @@ var parts = {
 					<h4><span class="tab"></span>A sucata é responsável por mais de um quarto do material novo no país. Atualmente, no Brasil, em torno de 2.500 empresas compõem o setor de reciclagem de ferro, processando mensalmente até 420 mil toneladas de sucata. Cada tonelada de aço reciclado representa uma economia de 1.140 kg de minério de ferro, 154 kg de carvão e 18 kg de cal, segundo o site Reviverde.</h2>
 					<h4><span class="tab"></span>No Brasil existem dois processos diferentes de reciclagem de ferro: um voltado apenas para o reaproveitamento das latas de aço e outro para uso das siderúrgicas em geral. O processo tanto de captação quanto de beneficiamento das latas de aço é muito semelhante ao da lata de alumínio, começando pelos catadores e terminando na própria chapa de aço.</h2>
 					<h4><span class="tab"></span>Já os outros materiais têm um rumo diferente. Assim que os caminhões chegam às fábricas com o material, eles são examinados para verificar se não há radioatividade. Muitos canos e vigas acabam não sendo processados por conter resíduos radioativos. Os eletrodomésticos e outros produtos com ferro passam por uma triagem. </h2>
-					<h4><span class="tab"></span>A forma como esse material será reciclado depende das leis do mercado. O reprocessamento começa com a separação de tipos de sucata. Existem aquelas com muita tinta, cola, plástico ou outros materiais e aquelas mais limpas como os retalhos que vêm das próprias siderúrgicas. A separação dos dois tipos varia de acordo a pureza do ferro. Feito isso, o material passa por uma esteira para ser cortado. Em alguns casos, ele passa por outra esteira para ser prensado. Uma das formas de enviar esse material é em pequenos cilindros para serem refundidos. Prontas, as peças são levadas para as siderúrgicas que irão refundi-las em fornos a 1.550°C.</h2>
+					<h4><span class="tab"></span>A forma como esse material será reciclado depende das leis do mercado. O reprocessamento começa com a separação de tipos de sucata. Existem aquelas com muita tinta, cola, plástico ou outros materiais e aquelas mais limpas como os retalhos que vêm das próprias siderúrgicas. A separação dos dois tipos varia de acordo com a pureza do ferro. Feito isso, o material passa por uma esteira para ser cortado. Em alguns casos, ele passa por outra esteira para ser prensado. Uma das formas de enviar esse material é em pequenos cilindros para serem refundidos. Prontas, as peças são levadas para as siderúrgicas que irão refundi-las em fornos a 1.550°C.</h2>
 				</div>
 				$%&;
 			break;
@@ -2549,7 +2549,7 @@ var parts = {
 	console.log('media-mediana-moda.html');
 
 	$("#iconSetaEsquerda").show();
-	$("#iconSetaDireita").show();
+	$("#iconSetaDireita").hide();
 	$("#iconAjuda").hide();
 	$("#iconCalculadora").hide();
 
@@ -2592,6 +2592,7 @@ var parts = {
 
 	function popUp(tipo) {
 
+		$("#iconSetaDireita").show();
 		$("#iconAjuda").show();
 
 		if (document.querySelector('#dialog-form-mmm') == null) {
@@ -2736,12 +2737,12 @@ var parts = {
 					<h4>Primeiro colocamos em ordem crescente, conforme o gráfico.</h4>
 					<div id="mediana-grafico-1" class="grafico-mediana"></div>
 
-					<h4>Observe que o valor 21.345, referente a região Sul, divide o conjunto exatamente ao meio, portanto ele é a própria mediana.</h4>
+					<h4>Observe que o valor 21.345, referente à região Sul, divide o conjunto exatamente ao meio, portanto ele é a própria mediana.</h4>
 
 					<ul class='muito-mais-top'><li><h4><b>Quando o número de dados for par, existem dois valores centrais e a mediana será a média aritmética destes dois valores.</b></h4></li></ul>
 					<h4 class='muito-mais-top'>Exemplo: Um determinado catador recolheu 52 latinhas de refrigerante na segunda-feira, 44 na terça-feira, 69 na quarta-feira, 57 na quinta-feira, 73 na sexta-feira e 60 no sábado. Identifique a mediana das latinhas recolhidas pelo catador, nesse período:</h4>
 					<div id="mediana-grafico-2" class="grafico-mediana"></div>
-					<h4 class='mais-top'>Como podemos observar, existem dois valores centrais, e nesse caso, a mediana será o valor da média aritmética dos dois valores centrais:</h4>
+					<h4 class='mais-top'>Como podemos observar, existem dois valores centrais e, nesse caso, a mediana será o valor da média aritmética dos dois valores centrais:</h4>
 
 					<div class="formula">
 						<div class="formula-descrita">
@@ -2790,16 +2791,16 @@ var parts = {
 				msgAjudaMediaMedianaModa = '';
 				secundario = $%&
 				<div class="botao-explicacao-mediana">
-					<h4>A moda corresponde ao valor que aparece com mais frequência, ou seja, que detém o maior número de observações no conjunto em estudo. O nome é influenciado pela maneira de falar das pessoas, ao afirmarem que tal objeto está na moda porque a maioria das pessoas estava utilizando</h4>
+					<h4>A moda corresponde ao valor que aparece com mais frequência, ou seja, que detém o maior número de observações no conjunto em estudo. O nome é influenciado pela maneira de falar das pessoas, ao afirmarem que tal objeto está na moda porque a maioria das pessoas estava utilizando.</h4>
 					<h4 class='mais-top'><span class="tab"></span>Pode existir mais de uma moda para um mesmo grupo de dados. </h4>
 
 					<h2 class='muitissimo-mais-top'>Exemplos:</h2>
-					<h3>1. Na região sudeste temos os seguintes dados de coleta de lixo per capita (kg/hab/dia):</h3>
+					<h3>1. Na região sudeste temos os seguintes dados de coleta de lixo per capita (KG/hab/dia):</h3>
 					<div class='tabela mais-top mais-bottom'>
 						<table class='table'>
 							<tr>
 								<th>Estados</th>
-								<th>Coleta per capita (Kg/hab/dia)</th>
+								<th>Coleta per capita (KG/hab/dia)</th>
 							</tr>
 							<tr>
 		    					<td>Espírito Santo (ES)</td>
@@ -2821,7 +2822,7 @@ var parts = {
 					</div>
 					<h4>Apenas dois valores são iguais, ou seja, apresenta uma moda definida como <span class='texto-vermelho'>0,9</span>. A classificação para uma moda é <b>unimodal</b>. </h4>
 
-					<h3 class='muitissimo-mais-top'>2. Na região norte temos os seguintes dados de coleta de lixo per capita (kg/hab/dia):</h3>
+					<h3 class='muitissimo-mais-top'>2. Na região norte temos os seguintes dados de coleta de lixo per capita (KG/hab/dia):</h3>
 					<div class='tabela mais-bottom'>
 						<table class='table'>
 							<tr>
@@ -2858,9 +2859,9 @@ var parts = {
 							</tr>
 						</table>
 					</div>
-					<h4>Existem dois valores diferentes que se repetiram, <span class='texto-verde'>0,85</span> e <span class='texto-vermelho'>0,86</span>. Sendo assim, apresenta duas modas, sua classificação é <b>bimodal</b>.</h4>
+					<h4>Existem dois valores diferentes que se repetiram, <span class='texto-verde'>0,85</span> e <span class='texto-vermelho'>0,86</span>. Sendo assim, apresenta duas modas e sua classificação é <b>bimodal</b>.</h4>
 
-					<h3 class='muitissimo-mais-top'>3. Na região nordeste temos os seguintes dados de coleta de lixo per capita (kg/hab/dia):</h3>
+					<h3 class='muitissimo-mais-top'>3. Na região nordeste temos os seguintes dados de coleta de lixo per capita (KG/hab/dia):</h3>
 					<div class='tabela mais-bottom'>
 						<table class='table'>
 							<tr>
@@ -2905,9 +2906,9 @@ var parts = {
 							</tr>
 						</table>
 					</div>
-					<h4>Existem três valores diferentes que se repetiram, <span class='texto-verde'>1,0</span>; <span class='texto-amarelo'>0,95</span> e <span class='texto-vermelho'>0,96</span>. Sendo assim, apresenta mais que duas modas, sua classificação é <b>plurimodal</b>.</h4>
+					<h4>Existem três valores diferentes que se repetiram, <span class='texto-verde'>1,0</span>; <span class='texto-amarelo'>0,95</span> e <span class='texto-vermelho'>0,96</span>. Sendo assim, apresenta mais que duas modas e sua classificação é <b>plurimodal</b>.</h4>
 
-					<h3 class='muitissimo-mais-top'>4. Na região sul temos os seguintes dados de coleta de lixo per capita (kg/hab/dia):</h3>
+					<h3 class='muitissimo-mais-top'>4. Na região sul temos os seguintes dados de coleta de lixo per capita (KG/hab/dia):</h3>
 					<div class='tabela mais-bottom'>
 						<table class='table'>
 							<tr>
@@ -3165,7 +3166,7 @@ var parts = {
 					<tr>
 						<th>Classes</th>
 						<th><span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span> (Frequência)</th>
-						<th><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> (Média Aritmética de cada class)</th>
+						<th><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> (Média Aritmética de cada classe)</th>
 						<th><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span>² (Média ao quadrado)</th>
 						<th><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span>² × <span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span></th>
 					</tr>
@@ -3208,10 +3209,10 @@ var parts = {
 			</div>
 
 			<h3>Resolução</h3>
-			<h4><span class="tab"></span><b>1ºPasso:</b> Obter os dados da tabela, caso a mesma não esteja completa;</h4>
-			<h4><span class="tab"></span><b>2ºPasso:</b> Obter <b><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span>²</b>, ou seja, o quadrado de cada média. Em seguida multiplicar pelo seu peso (<b><span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span></b>);</h4>
-			<h4><span class="tab"></span><b>3ºPasso:</b> A soma dos resultados de <b><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span>² × <span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span></b>, dividida pela soma dos pesos (<b><span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span></b>);</h4>
-			<h4><span class="tab"></span><b>4ºPasso:</b> Raiz quadrada da divisão das somas anteriores;</h4>
+			<h4><span class="tab"></span><b>1º passo:</b> Obter os dados da tabela, caso a mesma não esteja completa;</h4>
+			<h4><span class="tab"></span><b>2º passo:</b> Obter <b><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span>²</b>, ou seja, o quadrado de cada média. Em seguida multiplicar pelo seu peso (<b><span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span></b>);</h4>
+			<h4><span class="tab"></span><b>3º passo:</b> A soma dos resultados de <b><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span>² × <span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span></b>, dividida pela soma dos pesos (<b><span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span></b>);</h4>
+			<h4><span class="tab"></span><b>4º passo:</b> Raiz quadrada da divisão das somas anteriores.</h4>
 			<div class="text-center mais-bottom">
 				<img src="assets/img/media-quadratica-dados-agrupados-formula-2.jpg">
 			</div>
@@ -4334,7 +4335,7 @@ var parts = {
 				<h5><b>1° passo:</b> Elevar cada um dos números ao quadrado;</h5>
 				<h5><b>2° passo:</b> Resolver os quadrados e somar os resultados;</h5>
 				<h5><b>3° passo:</b> Dividir por n, ou seja, a quantidade de números elevados ao quadrado;</h5>
-				<h5><b>4° passo:</b> Obter a raiz quadrada;</h5>
+				<h5><b>4° passo:</b> Obter a raiz quadrada.</h5>
 
 			</div>$%&;
 			document.querySelector(".mensagens").innerHTML = innerAjuda;
@@ -4507,7 +4508,7 @@ var parts = {
 	<div class="geral-interno">
 		<div class="container">
 
-			<h3 class="top">Atividade 3 - Calcular a variância dos valores da seguinte tabela, complete onde for <span id='auto-completar'>indicado</span> por '<b>?</b>'.</h3>
+			<h3 class="top">Atividade 3 - Calcular a variância dos valores da seguinte tabela. Complete onde for <span id='auto-completar'>indicado</span> por '<b>?</b>'.</h3>
 			<div class="tabela col-xs-12 col-md-6">
 				<table class="table text-center">
 					<tr>
@@ -4557,7 +4558,7 @@ var parts = {
 			</div>
 
 			<div class="col-xs-12 col-md-6 mais-top">
-				<h4>2º Variância: média dos quadrados dos desvios (desvio é cada um dos valores menos a média)</h4>
+				<h4>2º Variância: média dos quadrados dos desvios (desvio é cada um dos valores menos a média).</h4>
 
 				<div class="row">
 
@@ -5108,7 +5109,7 @@ var parts = {
 	<div class="geral-interno">
 		<div class="container">
 
-			<h3 class="top">Atividade 4 - Calcular a variância dos valores da seguinte tabela, complete onde for <span id='auto-completar'>indicado</span> por '<b>?</b>'.</h3>
+			<h3 class="top">Atividade 4 - Calcular a variância dos valores da seguinte tabela. Complete onde for <span id='auto-completar'>indicado</span> por '<b>?</b>'.</h3>
 			<div class="tabela col-xs-12 col-md-6">
 				<table class="table text-center">
 					<tr>
@@ -5182,7 +5183,7 @@ var parts = {
 			</div>
 
 			<div class="col-xs-12 col-md-6 mais-top muitissimo-mais-bottom">
-				<h4>2º Variância: média dos quadrados dos desvios (desvio é cada um dos valores menos a média)</h4>
+				<h4>2º Variância: média dos quadrados dos desvios (desvio é cada um dos valores menos a média).</h4>
 
 				<div class="row">
 
@@ -5326,7 +5327,7 @@ var parts = {
 			</div>
 
 			<div class="tabela col-xs-12 mais-top">
-				<h4>Podemos organizar os dados em uma tabela, da seguinte forma:</h4>
+				<h4>Podemos organizar os dados em uma tabela da seguinte forma:</h4>
 
 				<table class="table text-center">
 					<tr>
@@ -5762,7 +5763,7 @@ var parts = {
 	<div class="geral-interno">
 		<div class="container">
 
-			<h3 class="top">Atividade 5 - Calcular a variância dos valores da seguinte tabela, complete onde for <span id='auto-completar'>indicado</span> por '<b>?</b>'.</h3>
+			<h3 class="top">Atividade 5 - Calcular a variância dos valores da seguinte tabela. Complete onde for <span id='auto-completar'>indicado</span> por '<b>?</b>'.</h3>
 			<div class="tabela col-xs-12 col-md-6">
 				<table class="table text-center">
 					<tr>
@@ -5836,7 +5837,7 @@ var parts = {
 			</div>
 
 			<div class="col-xs-12 col-md-6 mais-top">
-				<h4>2º Variância: média dos quadrados dos desvios (desvio é cada um dos valores menos a média)</h4>
+				<h4>2º Variância: média dos quadrados dos desvios (desvio é cada um dos valores menos a média).</h4>
 
 				<div class="row">
 
@@ -5979,7 +5980,7 @@ var parts = {
 			</div>
 
 			<div class="tabela col-xs-12 mais-top muitissimo-mais-bottom">
-				<h4>Podemos organizar os dados em uma tabela, da seguinte forma:</h4>
+				<h4>Podemos organizar os dados em uma tabela da seguinte forma:</h4>
 
 				<table class="table text-center">
 					<tr>
@@ -6417,7 +6418,7 @@ var parts = {
 		<div class='explicacoes-tabela-1 container muito-mais-top muitissimo-mais-bottom'>
 
 			<div class="col-xs-12">
-				<h3 class="top">Atividade 6 - Calcular o Desvio Padrão, complete onde for <span id='auto-completar'>indicado</span> por '<b>?</b>'.</h3>
+				<h3 class="top">Atividade 6 - Calcular o Desvio Padrão. Complete onde for <span id='auto-completar'>indicado</span> por '<b>?</b>'.</h3>
 			</div>
 
 			<div class="tabela col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
@@ -6685,7 +6686,7 @@ var parts = {
 		<div class='explicacoes-tabela-1 container muito-mais-top muitissimo-mais-bottom'>
 
 			<div class="col-xs-12">
-				<h3 class="top">Atividade 7 - Calcular o Desvio Padrão, complete onde for <span id='auto-completar'>indicado</span> por '<b>?</b>'.</h3>
+				<h3 class="top">Atividade 7 - Calcular o Desvio Padrão. Complete onde for <span id='auto-completar'>indicado</span> por '<b>?</b>'.</h3>
 			</div>
 
 			<div class="tabela col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
@@ -6987,7 +6988,7 @@ var parts = {
 		<div class='explicacoes-tabela-1 container muito-mais-top muitissimo-mais-bottom'>
 
 			<div class="col-xs-12">
-				<h3 class="top">Atividade 8 - Calcular o Desvio Padrão, complete onde for <span id='auto-completar'>indicado</span> por '<b>?</b>'.</h3>
+				<h3 class="top">Atividade 8 - Calcular o Desvio Padrão. Complete onde for <span id='auto-completar'>indicado</span> por '<b>?</b>'.</h3>
 			</div>
 
 			<div class="tabela col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
@@ -7857,7 +7858,7 @@ var parts = {
 
 	function anterior() {
 
-		carregarParte('desvio-tabela.html');
+		carregarParte('questao-8.html');
 	}
 
 	function proxima() {
@@ -8264,7 +8265,7 @@ var parts = {
 			<div id="dialog-questao-9-saiba-mais">
 				<h3 class="text-center">Desvio Padrão Amostral</h3>
 
-				<h4><span class="tab"></span>Quando nosso interesse não se restringe à descrição dos dados, mas, partindo da <b>amostra</b>, visamos tirar inferências válidas para a respectiva população, convém efetuar uma modificação, que consiste em usar o divisor <b>n – 1</b> em lugar de <b>n</b>. A fórmula ficará então:</h4>
+				<h4><span class="tab"></span>Quando nosso interesse não se restringe à descrição dos dados, mas, partindo da <b>amostra</b>, visamos tirar inferências válidas para a respectiva população. Convém efetuar uma modificação, que consiste em usar o divisor <b>n – 1</b> em lugar de <b>n</b>. A fórmula ficará então:</h4>
 				<div class="text-center mais-top">
 					<img src="assets/img/desvio-amostral-formula-1.png">
 				</div>
@@ -8274,7 +8275,7 @@ var parts = {
 					<img src="assets/img/desvio-amostral-formula-2.png">
 				</div>
 
-				<h4>Quando os dados estão agrupados, temos a presença de frequências (fi), e a fórmula do desvio padrão ficará:</h4>
+				<h4>Quando os dados estão agrupados, temos a presença de frequências (fi) e a fórmula do desvio padrão ficará:</h4>
 				<div class="text-center mais-top">
 					<img src="assets/img/desvio-amostral-formula-3.png">
 				</div>
@@ -8283,13 +8284,13 @@ var parts = {
 				<div class="tabela mais-top">
 					<table class="table text-center">
 						<tr>
-							<th>Xi<br/>(Dados população)</th>
-							<th>fi<br/>(Frequência)</th>
-							<th>(Xi - fi)</th>
-							<th>X&#772;<br/>(média)</th>
-							<th>(Xi - X&#772;)</th>
-							<th>(Xi - X&#772;)²</th>
-							<th>(Xi - X&#772;)² * fi</th>
+							<th><span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> (Dados população)</th>
+							<th><span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span> (Frequência)</th>
+							<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span>)</th>
+							<th><span class="formula-a">X&#772;</span> (Média)</th>
+							<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>)</th>
+							<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>)²</th>
+							<th>(<span class="formula-a">x</span><span class="formula-b"><sub>i</sub></span> - <span class="formula-a">X&#772;</span>)² * <span class="formula-a">f</span><span class="formula-b"><sub>i</sub></span></th>
 						</tr>
 						<tr>
 							<td>0</td>
@@ -8384,7 +8385,7 @@ var parts = {
 
 			<div class="col-xs-12">
 
-				<h3 class="top">Atividade 10 - Calcule o coeficiente de variação dos seguintes valores: 3, 13, 28, 18 e 8; utilizando os dados já calculados da tabela e <span id='auto-completar'>resolvendo</span> o que se pede.</h3>
+				<h3 class="top">Atividade 10 - Calcule o coeficiente de variação dos seguintes valores: 3, 13, 28, 18 e 8, utilizando os dados já calculados da tabela e <span id='auto-completar'>resolvendo</span> o que se pede.</h3>
 
 				<div class="text-center">
 					<div class="formula">
@@ -8879,7 +8880,7 @@ var parts = {
 		<div class='explicacoes-1 container muito-mais-top muitissimo-mais-bottom'>
 
 			<div class="col-xs-12">
-				<h3 class="top">Atividade 11 - Calcule o coeficiente de variação dos seguintes valores: 19, 74, 403, 450 e 31; utilizando os dados já calculados da tabela e <span id='auto-completar'>resolvendo</span> o que se pede.</h3>
+				<h3 class="top">Atividade 11 - Calcule o coeficiente de variação dos seguintes valores: 19, 74, 403, 450 e 31, utilizando os dados já calculados da tabela e <span id='auto-completar'>resolvendo</span> o que se pede.</h3>
 
 				<div class="text-center">
 					<div class="formula">
@@ -9749,7 +9750,7 @@ var parts = {
 			</div>
 
 			<div class="col-xs-12 col-md-6 mais-top">
-				<h4>2º Variância: média dos quadrados dos desvios (desvio é cada um dos valores menos a média)</h4>
+				<h4>2º Variância: média dos quadrados dos desvios (desvio é cada um dos valores menos a média).</h4>
 
 				<div class="row">
 
@@ -9880,7 +9881,7 @@ var parts = {
 			</div>
 
 			<div class="tabela col-xs-12 mais-top">
-				<h4>Podemos organizar os dados em uma tabela, da seguinte forma:</h4>
+				<h4>Podemos organizar os dados em uma tabela da seguinte forma:</h4>
 
 				<table class="table text-center">
 					<tr>
